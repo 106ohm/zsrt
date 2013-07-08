@@ -1,6 +1,6 @@
 program generoMatrici
 implicit none
-!lavoro in doppia precisione (usero' la libreria LAPACK)
+!lavoro in doppia precisione
 integer, parameter :: dp=kind(0.d0)
 real(dp), dimension(:,:), allocatable :: A, B, C
 real(dp), dimension(:), allocatable :: v 
