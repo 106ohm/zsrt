@@ -13,9 +13,10 @@ end program sperimentazione
 !in esso contenuti. L'intervallo I e` generalizzato,
 !cioe` puo` essere della forma [a,b] o  (-infty,b] o [a,+infty) od 
 !anche (-infty,+infty).
-!Gli autovalori sono salvati nella matrice chiamata "Eigenvalues".
-!La i-esima colonna contiene dall'alto verso il basso gli autovalori
-!della pensil (T^,S^).
+!Gli autovalori sono salvati nella matrice chiamata "Eigenvalues",
+!che ha dimensioni en*em.
+!La numCol-esima colonna contiene dall'alto verso il basso 
+!gli autovalori della pensil (T^,S^).
 !l'ultima colonna contiene gli autovalori del problema di partenza. 
 !!!
 recursive subroutine calcoloAutovaloriDentroI(a, b, n, T, S, Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
@@ -88,20 +89,24 @@ S1fine=Sfine
 !Questo e` il cuore del calcolo.
 !!!
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, T0inizio, T0fine, S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
+call calcoloAutovaloriDentroI(a, b, n, T, S, T0inizio, T0fine, &
+S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, T1inizio, T1fine, S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
+call calcoloAutovaloriDentroI(a, b, n, T, S, T1inizio, T1fine, &
+S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 
 !!!
-!MERGE, iterazione di Laguerre (pagina 17 dell'articolo)
+!MERGE, pagina 17 dell'articolo
 !!!
 
-!In questo momento ho a disposizione \hat\lambda_{k+1}, ..., \hat\lambda_{k+m}, salvati nella numCol-esima colonna di Eigenvalues.
-!Mi devo ricordare sempre che \hat\lambda_{k}=a e \hat\lambda_{k+m+1}=b.
+!Ho a disposizione \hat\lambda_{k+1}, ..., \hat\lambda_{k+m}, 
+!salvati nella numCol-esima colonna di Eigenvalues.
+!Mi devo ricordare sempre che \hat\lambda_{k}=a e 
+!\hat\lambda_{k+m+1}=b.
 !Calcolo kappa(a) e kappa(b), e da questi ricavo k1 e k2
 !OSS: in questo caso considero kappa(a)=0 e kappa(b)=n
 k1=0+1
-k2=n
+k2=dim
 
 do j=k1:k2
 
@@ -114,7 +119,7 @@ do j=k1:k2
       x = Eigenvalues(j,numCol)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      !100 call calcoli(...)
+      100 call calcoli(...)
       !ATTENZIONE ho messo una etichetta!!!
       if ( kappaX < j ) then
          aj = x
