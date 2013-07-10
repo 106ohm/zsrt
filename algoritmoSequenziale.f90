@@ -58,8 +58,6 @@ real(dp) :: machinePrecision, x, aj, bj, sign, mlt, fPrimo, fSecondo, lambdaJ
 
 machinePrecision=epsilon(1.d0)
 
-!allocate( T(n,n), S(n,n), Eigenvalues(en,em) )
-
 !!!
 !SPLIT
 !!!
@@ -107,9 +105,13 @@ S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 !Mi devo ricordare sempre che \hat\lambda_{k}=a e 
 !\hat\lambda_{k+m+1}=b.
 !Calcolo kappa(a) e kappa(b), e da questi ricavo k1 e k2
-!OSS: in questo caso considero kappa(a)=0 e kappa(b)=n
-k1=0+1
-k2=dim
+call calcoli(a, T, S, n, fPrimo, fSecondo, kappa)
+k1=kappa+1
+call calcoli(b, T, S, n, fPrimo, fSecondo, kappa)
+k2=kappa
+
+!OSS: nel caso del calcolo di tutti gli autovalori ho
+!kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
 
 do j=k1:k2
 
@@ -123,7 +125,7 @@ do j=k1:k2
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, fPrimo, fSecondo, kappa)
-      !ATTENZIONE ho messo una etichetta!!!
+  
       if ( kappa < j ) then
          aj = x
       else
@@ -171,7 +173,11 @@ real(dp), dimension(en,em), intent(INOUT) :: Eigenvalues
 
 integer :: k, m
 
+real(dp) :: machinePrecision
+
 !FINE DICHIARAZIONI
+
+machinePrecision=epsilon(1.d0)
 
 mlt=1
 
@@ -227,7 +233,11 @@ real(dp), dimension(-2:0) :: xl
 
 real(dp), intent(OUT) :: lambdaJ
 
+real(dp) :: machinePrecision
+
 !vedi p. 16
+
+machinePrecision=epsilon(1.d0)
 
 lambdaJ = 0.d0
 !Se uscendo dallla subroutine questo valore non e`
@@ -310,7 +320,11 @@ integer :: i, j, k, l
 
 real(dp), dimension(-2:0) :: xi, eta, zeta
 
+real(dp) :: machinePrecision
+
 !FINE DICHIARAZIONI
+
+machinePrecision=epsilon(1.d0)
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, zeta_{i-2}, eta_{i-1} ed eta_{i-2}
