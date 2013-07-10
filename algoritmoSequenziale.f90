@@ -48,9 +48,9 @@ integer, save :: Tinizio, Tfine, Sinizio, Sfine
 integer, save :: T0inizio, T0fine, T1inizio, T1fine, S0inizio, S0fine,S1inizio, S1fine
 !Anche qui uso variabili locali
 
-integer :: i, j, k, dim, kappaX, k1, k2
+integer :: i, j, k, dim, kappa, k1, k2
 
-real(dp) :: machinePrecision, x, aj, bj, sign, mlt
+real(dp) :: machinePrecision, x, aj, bj, sign, mlt, fPrimo, fSecondo, lambdaJ
 
 !!!
 !FINE DICHIARAZIONI
@@ -122,24 +122,26 @@ do j=k1:k2
       x = Eigenvalues(j,numCol)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      100 call calcoli(...)
+      100 call calcoli(x, T, S, n, fPrimo, fSecondo, kappa)
       !ATTENZIONE ho messo una etichetta!!!
-      if ( kappaX < j ) then
+      if ( kappa < j ) then
          aj = x
       else
          bJ = x
       end if
       !Adesso cerco un nuovo x
-      if ( () .OR. () ) then
+      if ( kappa /= j-1 .AND. kappa /= j ) then
          x = (aj+bj)/2.d0
          !ripeto il calcolo fatto alla etichetta 100:
          GOTO 100
       end if
       !Chiamo EstMlt e LagIt
-      sign = sign(...)
+      sign = sign( - fPrimo )
       !vedi meta` p. 14
-      call  EstMlt(x, sign, en, em, Eigenvalues, numCol, mlt)
-      !call ...
+      call EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
+      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, j, &
+      fPrimo, fSecondo, kappa, lambdaJ)
+      Eigenvalues(j,numCol+1) = lambdaJ
    else
       Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
    end if
@@ -153,7 +155,7 @@ end subroutine calcoloAutovaloriDentroI
 !!!
 !Stima la molteplicita` dell'autovalore
 !!!
-subroutine EstMlt(x, sign, en, em, Eigenvalues, numCol, mlt)
+subroutine EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
 
 implicit none
 
@@ -161,7 +163,7 @@ integer, parameter :: dp=kind(1.d0)
 
 real(dp), intent(IN) :: x
 
-integer, intent(IN) :: sign, en, em, numCol
+integer, intent(IN) :: sign, en, em, numCol, j
 
 integer, intent(OUT) :: mlt
 
@@ -177,9 +179,9 @@ k=1
 
 do while ( .TRUE. )
 
-   m = numCol + k*sign
+   m = j + k*sign
 
-   if ( abs( Eigenvalues(numCol, numCol)-Eigenvalues(m, numCol) ) < 0.01 * abs( Eigenvalues(numCol, numCol) - x ) ) then
+   if ( abs( Eigenvalues(j, numCol)-Eigenvalues(m, numCol) ) < 0.01 * abs( Eigenvalues(j, numCol) - x ) ) then
       mlt = mlt + 1
    else
       GOTO 10
@@ -189,12 +191,15 @@ do while ( .TRUE. )
 
 10 end do
 
+!OSS: incrementare k non modifica il calcolo, ma fornisce indicazioni
+!sull'avanzamento dello stesso
+
 end subroutine EstMlt
 
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
-subroutine LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol)
+subroutine LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, j, fPrimo, fSecondo, kappa, lambdaJ)
 
 implicit none
 
@@ -204,19 +209,81 @@ real(dp), intent(IN) :: x
 
 real(dp), intent(INOUT) :: aj, bj
 
-integer, intent(IN) :: en, em, numCol
+integer, intent(IN) :: en, em, numCol, j
 
 integer, intent(IN) :: mlt
 
+integer, intento(INOUT) :: kappa
+
+real(dp), intent(INOUT) :: fPrimo, fSecondo
+
 real(dp), dimension(en,em), intent(INOUT) :: Eigenvalues
 
-integer :: i, j, k, l
+integer :: i, j, k, l, exKappa
 
-real(dp) :: xl
+real(dp) :: deltaL
 
-!!!
-!DA SCRIVERE, vedi p. 16
-!!!
+real(dp), dimension(-2:0) :: xl
+
+real(dp), intent(OUT) :: lambdaJ
+
+!vedi p. 16
+
+lambdaJ = 0.d0
+!Se uscendo dallla subroutine questo valore non e`
+!cambiato allora il calcolo e` errato.
+
+xl(-2) = x
+xl(-1) = x
+xl(0) = x
+
+l = 2
+
+do while ( .TRUE. )
+
+   exKappa = kappa
+
+   !aggiorno le variabili
+   xl(-2) = xl(-1)
+   xl(-1) = xl(0)
+
+   if ( kappa < j ) then
+      !Calcolo xl(0) = L_{mlt +}(xl(-1))
+      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + sqrt( ((n-mlt)/(mlt*1.d0))* &
+     ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+   else
+      !Calcolo x_l(0) = L_{mlt -}(xl(-1))
+      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - sqrt( ((n-mlt)/(mlt*1.d0))* &
+     ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+   end if
+
+   deltal = xl(0) - xl(-1)
+
+  ! condizione (24)
+  if ( ( abs(xl(0)-xl(-1)) <= machinePrecision*abs(xl(0)) ) .OR. & 
+  ( abs(xl(0)-xl(-1)) >= abs(xl(-1)-xl(-2)) ) .OR. &
+  ( ((xl(0)-xl(-1))**2)/(abs(xl(-1)-xl(-2))-xl(0)-xl(-1)) <= machinePrecision*abs(xl(0)) )  ) then
+     GOTO 30
+  end if
+
+  !calcolo (12), (13) e (14)
+  20 call  calcoli(xl(0), T, S, n, fPrimo, fSecondo, kappa)
+
+  !aggiorno [aj, bj] secondo il nuovo kappa
+  if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
+     mlt = abs(kappa-exKappa)
+     xl(0) = (xl(0)+xl(-1))/2.d0
+     GOTO 20
+  end if
+
+  l = l+1
+
+end do
+
+30 lambdaJ = xl(0)
+
+!OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
+!dello stesso
 
 end subroutine LagIt
 
@@ -300,7 +367,7 @@ zeta(-1) = zeta(0)
 end do
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
-fPrimo=eta(0)
-fSecondo=zeta(0)
+fPrimo = - eta(0)
+fSecondo = zeta(0)
 
 end subroutine calcoli
