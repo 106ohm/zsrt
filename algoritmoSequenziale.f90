@@ -15,17 +15,32 @@ end program sperimentazione
 !anche (-infty,+infty).
 !Gli autovalori sono salvati nella matrice chiamata "Eigenvalues",
 !che ha dimensioni en*em.
-!La numCol-esima colonna contiene dall'alto verso il basso 
-!gli autovalori della pensil (T^,S^).
-!l'ultima colonna contiene gli autovalori del problema di partenza. 
+!La nuova pensil (\hatT,\hupS) e` composta da sue sotto-pensil,
+!(T0,S0) e (T1,S1), dove \hatT e` diagonale a blocchi T0 eT1 (
+!similmente \hatS). Dunque gli autovalori di (\hatT,\hatS) sono
+!l'unione degli autovaliri di (T0,S0) e di quelli di (T1,S1).  
+!La subroutine calcoloAutovaloriDentroI chiama se stessa ricorsivamente
+!due volte. Quando siamo alla "profondita` di ricorsione" identificata
+!dal numero "numCol" vengono salvati nella colonna numCol-esima di 
+!Eigenvalues gli autovalori delle pencil (T0,S0) e (T1,S1); 
+!questi vengono successivamente ordinati e vanno a formare
+!gli autovalori della pencil (\hatT, \hatS).
+!La prima colonna di Eigenvalues contiene gli autovalori del problema 
+!di partenza.  
+!Si e` scelto di immagazzinare gli autovalori di (T0,S0) dall'alto
+!verso il basso e quelli di (T1,S1) dal basso verso l'alto,
+!per questo una bandiera "flag", positiva o negativa, orienta
+!la subroutine stessa nella scrittura all'interno di Eigenvalues.
 !!!
-recursive subroutine calcoloAutovaloriDentroI(a, b, n, T, S, Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
+recursive subroutine calcoloAutovaloriDentroI(flag, a, b, n, T, S, Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
 
 !dichiaro la precisione di macchina (doppia):
 integer, parameter :: dp = kind(1.d0)
+
+integer, intent(IN) :: flag
 
 integer, intent(IN) :: n
 
@@ -90,10 +105,10 @@ S1fine=Sfine
 !Questo e` il cuore del calcolo.
 !!!
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, T0inizio, T0fine, &
+call calcoloAutovaloriDentroI(1, a, b, n, T, S, T0inizio, T0fine, &
 S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, T1inizio, T1fine, &
+call calcoloAutovaloriDentroI(-1, a, b, n, T, S, T1inizio, T1fine, &
 S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 
 !!!
@@ -105,9 +120,9 @@ S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 !Mi devo ricordare sempre che \hat\lambda_{k}=a e 
 !\hat\lambda_{k+m+1}=b.
 !Calcolo kappa(a) e kappa(b), e da questi ricavo k1 e k2
-call calcoli(a, T, S, n, fPrimo, fSecondo, kappa)
+call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
 k1=kappa+1
-call calcoli(b, T, S, n, fPrimo, fSecondo, kappa)
+call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
 k2=kappa
 
 !OSS: nel caso del calcolo di tutti gli autovalori ho
@@ -124,7 +139,7 @@ do j=k1:k2
       x = Eigenvalues(j,numCol)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      100 call calcoli(x, T, S, n, fPrimo, fSecondo, kappa)
+      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
   
       if ( kappa < j ) then
          aj = x
@@ -272,12 +287,14 @@ do while ( .TRUE. )
   ! condizione (24)
   if ( ( abs(xl(0)-xl(-1)) <= machinePrecision*abs(xl(0)) ) .OR. & 
   ( abs(xl(0)-xl(-1)) >= abs(xl(-1)-xl(-2)) ) .OR. &
-  ( ((xl(0)-xl(-1))**2)/(abs(xl(-1)-xl(-2))-xl(0)-xl(-1)) <= machinePrecision*abs(xl(0)) )  ) then
+  ( ((xl(0)-xl(-1))**2)/(abs(xl(-1)-xl(-2))-xl(0)-xl(-1)) <= &
+  machinePrecision*abs(xl(0)) )  ) then
      GOTO 30
   end if
 
   !calcolo (12), (13) e (14)
-  20 call  calcoli(xl(0), T, S, n, fPrimo, fSecondo, kappa)
+  20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+  Sfine, fPrimo, fSecondo, kappa)
 
   !aggiorno [aj, bj] secondo il nuovo kappa
   if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
@@ -300,7 +317,8 @@ end subroutine LagIt
 !!!                                                                    
 !Calcola (12), (13) e (14)               
 !!!                                                                    
-subroutine calcoli(x, T, S, n, fPrimo, fSecondo, kappa)
+subroutine calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+ fPrimo, fSecondo, kappa)
 
 implicit none
 
@@ -309,6 +327,8 @@ integer, parameter :: dp=kind(1.d0)
 real(dp), intent(IN) :: x
 
 integer, intent(IN) :: n
+
+integer, intent(IN) :: dim, Tinizio, Tfine, Sinizio, Sfine
 
 integer, intent(OUT) :: kappa
 
@@ -326,57 +346,79 @@ real(dp) :: machinePrecision
 
 machinePrecision=epsilon(1.d0)
 
+
+!ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
+!da Tinizio e da Sinizio. T ed S sono state definite con indici che
+!vanno da 1 a n, dunque per iniziare a contare da 1 ri-definisco
+!Tinizio, Tfine, Sinizio ed Sfine.
+Tinizio = Tinizio-1
+Tfine = Tfine-1
+Sinizio = Sinizio-1
+Sfine = Sfine-1 
+
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, zeta_{i-2}, eta_{i-1} ed eta_{i-2}
 
 xi(-2) = 0.d0
 
-xi(-1) = T(1,1) - x * S(1,1)
+xi(-1) = T(Tinizio+1,Tinizio+1) - x * S(Sinizio+1,Sinizio+1)
 if ( xi(-1) == 0 ) then
-   xi(-1) = T(1,1)* machinePrecision**2
+   xi(-1) = T(Tinizio+1,Tinizio+1)* machinePrecision**2
 end if
 
 eta(-2) = 0.d0
-eta(-1) = S(1,1)/xi(0)
+eta(-1) = S(Sinizio+1,Sinizio+1)/xi(0)
 
 zeta(-1) = zeta(-2) = 0.d0
 
 kappa = 0
 
-do i=2,n
+do i=2,dim
 
-!mi occupo di xi
+   !mi occupo di xi
 
-xi(0) = T(i,i) - x*S(i,i) - (( T(i-1,i)-x*S(i-1,i) )**2)/xi(-1)
+   xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
+   (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/xi(-1)
 
-if ( xi(0) == 0 ) then
-   xi(0) = ( (abs(T(i-1,i))+abs(x*S(i-1,i)))**2 * machinePrecision**2 )/xi(-1)
-end if
+   if ( xi(0) == 0 ) then
+      xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
+      abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/ &
+      xi(-1)
+   end if
 
-!mi occupo di eta
+   !mi occupo di eta
 
-eta(0) = ( (T(i,i)-x*S(i,i))*eta(-1) + S(i,i) - ( 2*(T(i-1,i)-x*S(i-1,i))*S(i-1,i) + (T(i-1,i)-x*S(i-1,i))**2 * eta(-2) )/xi(-1) )/xi(0)
+   eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
+   eta(-1) + S(Sinizio+i,Sinizio+i) - ( 2*(T(Tinizio+i-1,Tinizio+i)- &
+   x*S(Sinizio+i-1,Sinizio+i))*S(Sinizio+i-1,Sinizio+i) + & 
+   (T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i))**2 * &
+    eta(-2) )/xi(-1) )/xi(0)
 
-!mi occupo di zeta
+   !mi occupo di zeta
 
-zeta(0) = ( - ( 2*S(i-1,i)**2 + 4*(T(i-1,i)-x*S(i-1,i))*S(i-1,i)*eta(-2) - (T(i-1,i)-x*S(i-1,i))**2*zeta(-2) )/xi(-1) )/xi(0)
+   zeta(0) = ( - ( 2*S(Sinizio+i-1,Sinizio+i)**2 + &
+   4*(T(Tinizio+i-1,Tinizio+i)- x*S(Sinizio+i-1,Sinizio+i))* &
+   S(Sinizio+i-1,Sinizio+i)*eta(-2) - (T(Tinizio+i-1,Tinizio+i)- &
+   x*S(Sinizio+i-1,Sinizio+i))**2* & 
+   zeta(-2) )/xi(-1) )/xi(0)
 
-!tengo conto di quanti termini negativi compaiono nella successione degli xi
+   !tengo conto di quanti termini negativi compaiono 
+   !nella successione degli xi
 
-if ( xi(0) < 0.d0 ) then
-   kappa = kappa+1
-end if
+   if ( xi(0) < 0.d0 ) then
+      kappa = kappa+1
+   end if
 
-!aggiiorno le variabili
+   !aggiiorno le variabili
 
-xi(-2)=xi(-1)
-xi(-1)=xi(0)
+   xi(-2)=xi(-1)
+   xi(-1)=xi(0)
 
-eta(-2)=eta(-1)
-eta(-1)=eta(0)
+   eta(-2)=eta(-1)
+   eta(-1)=eta(0)
 
-zeta(-2) = zeta(-1)
-zeta(-1) = zeta(0)
+   zeta(-2) = zeta(-1)
+   zeta(-1) = zeta(0)
 
 end do
 
