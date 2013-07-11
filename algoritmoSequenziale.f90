@@ -51,7 +51,7 @@ integer, save :: numCol
 real(dp), intent(IN) :: a, b
 
 real(dp), dimension(n,n), save, intent(IN) :: T, S
-real(dp), dimension(en,em), save, intent(INOUT) :: Eigenvalues
+real(dp), dimension(em,en), save, intent(INOUT) :: Eigenvalues
 
 !indici per identificare la T e la S in input:                                                                                   
 integer, save :: Tinizio, Tfine, Sinizio, Sfine
@@ -178,6 +178,7 @@ end do
 
 !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS)
+call quick_sort(Eigenvalues, en, em, numCol+1)
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -197,7 +198,7 @@ integer, intent(IN) :: sign, en, em, numCol, j
 
 integer, intent(OUT) :: mlt
 
-real(dp), dimension(en,em), intent(INOUT) :: Eigenvalues
+real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 integer :: k, m
 
@@ -251,7 +252,7 @@ integer, intento(INOUT) :: kappa
 
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
-real(dp), dimension(en,em), intent(INOUT) :: Eigenvalues
+real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 integer :: i, j, k, l, exKappa
 
@@ -440,3 +441,20 @@ fPrimo = - eta(0)
 fSecondo = zeta(0)
 
 end subroutine calcoli
+
+
+recursive subroutine quick_sort(Eigenvalues, en, em, numCol+1)
+
+  implicit none
+
+  integer, parameter :: dp=kind(1.d0)
+
+  integer, intent(IN) :: en, em, numCol
+
+  real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
+
+  integer :: i, j, k
+
+  !da scrivere
+
+end subroutine quick_sort
