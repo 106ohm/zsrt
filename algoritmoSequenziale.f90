@@ -156,15 +156,28 @@ do j=k1:k2
       sign = sign( - fPrimo )
       !vedi meta` p. 14
       call EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
-      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, j, &
-      fPrimo, fSecondo, kappa, lambdaJ)
-      Eigenvalues(j,numCol+1) = lambdaJ
+      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, &
+      j, fPrimo, fSecondo, kappa, lambdaJ)
+      if ( flag > 0 ) then
+         !altro verso basso
+         Eigenvalues(j,numCol+1) = lambdaJ
+      else
+         !basso verso alto
+         Eigenvalues(em-j,numCol+1) = lambdaJ
+      end if
    else
-      Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
+      if ( flag > 0 ) then
+         !alto verso basso
+         Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
+      else
+         !basso verso alto
+         Eigenvalues(em-j,numCol+1) = (aj+bj)/2.d0
+      end if
    end if
 end do
 
-
+!Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
+!autovalori di (\hatT,\hatS)
 
 end subroutine calcoloAutovaloriDentroI
 
