@@ -7,7 +7,7 @@ implicit none
 
 integer, parameter :: dp = kind(1.d0)
 
-integer :: n, i, j
+integer :: n, i, j, em, en
 
 real(dp) :: a,b
 
@@ -40,7 +40,9 @@ end do
 !ed inizializzo i suoi valori a zero
 
 em=n+1
-en=int( log2(n) ) + 2
+!ATTENIONE: il "logarithmus dualis", ovvero in base 2,
+!lo calcoliamo tramite ld(n)=log(n)/log(2)
+en=int( log(n*1.d0)/log(2.d0) ) + 2
 
 allocate( Eigenvalues(em,en) )
 
@@ -122,26 +124,26 @@ integer, intent(IN) :: n
 
 integer, intent(IN) :: en, em
 
-integer, save :: numCol
+integer :: numCol
 
 real(dp), intent(IN) :: a, b
 
-real(dp), dimension(n,n), save, intent(IN) :: T, S
-real(dp), dimension(em,en), save, intent(INOUT) :: Eigenvalues
+real(dp), dimension(n,n), intent(IN) :: T, S
+real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 !indici per identificare la T e la S in input:                                                                                   
-integer, save :: Tinizio, Tfine, Sinizio, Sfine
+integer :: Tinizio, Tfine, Sinizio, Sfine
 !ATTENZIONE: voglio siano variabili locali, dunque non aggiungo SAVE!!!
 
 !Di seguito le variabili che non provengono dall'esterno
 
 !indici per identificare le due nuove pencil:
-integer, save :: T0inizio, T0fine, T1inizio, T1fine, S0inizio, S0fine,S1inizio, S1fine
+integer :: T0inizio, T0fine, T1inizio, T1fine, S0inizio, S0fine,S1inizio, S1fine
 !Anche qui uso variabili locali
 
-integer :: i, j, k, dim, kappa, k1, k2
+integer :: i, j, k, dim, kappa, k1, k2, segno, mlt
 
-real(dp) :: machinePrecision, x, aj, bj, sign, mlt, fPrimo, fSecondo, lambdaJ
+real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
 real(dp) :: menoBeqSecGrado, cEqSecGrado
 
@@ -163,13 +165,13 @@ dim = Tfine - Tinizio
 !dim=0, (ovvero le matrici sono 1x1), 
 !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
 if (dim <= 1) then
-   if (dimm == 0) then
+   if (dim == 0) then
       !non puo` accadere che S(Tinizio,Tinizio)=0
       !poiche' S e` non singolare; comunque controllo
       !che non sia "numericamente zero"
       if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
          !immagazzino zero, cioe` non aggiorno Eigenvalues
-         exit
+         return
       else
          if ( flag >= 0 ) then
             !altro verso basso
@@ -189,7 +191,7 @@ if (dim <= 1) then
       !i risultati.
 
       if ( abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
-      S(Sinizio,Sfine)**2)<= 10.d0*machinePrecision ) exit
+      S(Sinizio,Sfine)**2)<= 10.d0*machinePrecision ) return
 
       menoBeqSecGrado = ( S(Sinizio,Sfine)*T(Tinizio,Tfine)- &
       S(Sinizio,Sinizio)*T(Tfine,Tfine)- &
@@ -231,7 +233,7 @@ if (dim <= 1) then
       end if
 
    end if
-   exit
+   return
 end if
 
 
@@ -278,7 +280,7 @@ k2=kappa
 !OSS: nel caso del calcolo di tutti gli autovalori ho
 !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
 
-do j=k1:k2
+do j=k1,k2
 
 
    !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -302,12 +304,19 @@ do j=k1:k2
          !ripeto il calcolo fatto alla etichetta 100:
          GOTO 100
       end if
+
       !Chiamo EstMlt e LagIt
-      sign = sign( - fPrimo )
+      if ( -fPrimo >= 0.d0 ) then
+         segno = 1
+      else
+         segno = -1
+      end if
+      !segno = sign( - fPrimo )
       !vedi meta` p. 14
-      call EstMlt(x, sign, en, em, Eigenvalues, numCol+1, j, mlt)
-      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol+1, &
-      j, fPrimo, fSecondo, kappa, lambdaJ)
+
+      call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+      call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
+      Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
       if ( flag >= 0 ) then
          !altro verso basso
@@ -341,7 +350,7 @@ end subroutine calcoloAutovaloriDentroI
 !!!
 !Stima la molteplicita` dell'autovalore
 !!!
-subroutine EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
+subroutine EstMlt(x, segno, en, em, Eigenvalues, numCol, j, mlt)
 
 implicit none
 
@@ -349,7 +358,7 @@ integer, parameter :: dp=kind(1.d0)
 
 real(dp), intent(IN) :: x
 
-integer, intent(IN) :: sign, en, em, numCol, j
+integer, intent(IN) :: segno, en, em, numCol, j
 
 integer, intent(OUT) :: mlt
 
@@ -369,7 +378,7 @@ k=1
 
 do while ( .TRUE. )
 
-   m = j + k*sign
+   m = j + k*segno
 
    if ( abs( Eigenvalues(j, numCol)-Eigenvalues(m, numCol) ) < 0.01 * abs( Eigenvalues(j, numCol) - x ) ) then
       mlt = mlt + 1
@@ -389,27 +398,36 @@ end subroutine EstMlt
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
-subroutine LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, j, fPrimo, fSecondo, kappa, lambdaJ)
+subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
+Sfine, en, em, Eigenvalues, numCol, j, fPrimo, fSecondo, kappa, lambdaJ)
 
 implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
-real(dp), intent(IN) :: x 
+real(dp), intent(IN) :: x
+
+integer, intent(IN) :: n
+
+real(dp), dimension(n,n), intent(IN) :: T, S 
+
+integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
 real(dp), intent(INOUT) :: aj, bj
 
 integer, intent(IN) :: en, em, numCol, j
 
-integer, intent(IN) :: mlt
+integer, intent(INOUT) :: mlt
 
-integer, intento(INOUT) :: kappa
+integer, intent(INOUT) :: dim
+
+integer, intent(INOUT) :: kappa
 
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
-integer :: i, j, k, l, exKappa
+integer :: i, k, l, exKappa
 
 real(dp) :: deltaL
 
@@ -497,7 +515,7 @@ real(dp), intent(IN) :: x
 
 integer, intent(IN) :: n
 
-integer, intent(IN) :: dim, Tinizio, Tfine, Sinizio, Sfine
+integer, intent(INOUT) :: dim, Tinizio, Tfine, Sinizio, Sfine
 
 integer, intent(OUT) :: kappa
 
@@ -538,7 +556,8 @@ end if
 eta(-2) = 0.d0
 eta(-1) = S(Sinizio+1,Sinizio+1)/xi(0)
 
-zeta(-1) = zeta(-2) = 0.d0
+zeta(-2) = 0.d0
+zeta(-1) = zeta(-2)
 
 kappa = 0
 
@@ -641,7 +660,7 @@ recursive subroutine quick_sort(a)
          end do
          
          do
-            if ( (j<i) .OR. (a()<=a(1)) ) exit
+            if ( (j<i) .OR. (a(j)<=a(1)) ) exit
             j = j-1
          end do
 
