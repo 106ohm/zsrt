@@ -5,6 +5,66 @@ program sperimentazione
 
 implicit none
 
+integer, parameter :: dp = kind(1.d0)
+
+integer :: n, i, j
+
+real(dp) :: a,b
+
+real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
+
+!!!
+!FINE DICHIARAZIONI
+!!!
+
+!leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
+!alloco la memoria e carico le matrici T ed S;
+!cosi` avro` a disposizione la pencil (T,S).
+
+open(unit=1, file="T.txt")
+open(unit=2, file="S.txt")
+
+read(1,*) n
+read(2,*) n
+
+allocate( T(n,n),S(n,n) )
+
+do j=1,n
+   do i=1,n
+      read(1,*) T(i,j)
+      read(2,*) S(i,j)
+   end do
+end do
+
+!scelgo le dimensioni di Eigenvalues, alloco memoria
+!ed inizializzo i suoi valori a zero
+
+em=n+1
+en=int( log2(n) ) + 2
+
+allocate( Eigenvalues(em,en) )
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+!Chiamo la subroutine che trova gli autovalori nell'intervallo
+![a,b] e li salva nella prima colonna della matrice Eigenvalues
+!(le altre colonne di Eigenvalues vengono utilizzate nella
+!ricorsione e possono fornire informazioni sui calcoli).
+!Per guidare la scrittura nella matrice utiliziamo una bandiera:
+!se flag>0 allora scriviamo dall'alto verso il basso,
+!se flag<0 allora scriviamo dal basso verso l'alto,
+!se flag=0 allora siamo nella prima chiamata e dunque e` indifferente;
+!abbiamo scelto di scrivere dall'alto verso il basso.
+
+a=-100.d0
+b=100.d0
+
+call calcoloAutovaloriDentroI(0, a, b, n, T, S, 1, n, 1, n, en, em, Eigenvalues, 0)
+
 end program sperimentazione
 
 
@@ -32,7 +92,8 @@ end program sperimentazione
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la subroutine stessa nella scrittura all'interno di Eigenvalues.
 !!!
-recursive subroutine calcoloAutovaloriDentroI(flag, a, b, n, T, S, Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
+recursive subroutine calcoloAutovaloriDentroI(flag, a, b, n, T, S, & 
+Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -95,7 +156,7 @@ if (dim <= 1) then
          !immagazzino zero, cioe` non aggiorno Eigenvalues
          exit
       else
-         if ( flag > 0 ) then
+         if ( flag >= 0 ) then
             !altro verso basso
             Eigenvalues(1,numCol+1) = T(Tinizio,Tfine)/ &
             S(Sinizio,Sfine)
@@ -140,7 +201,7 @@ if (dim <= 1) then
       !\sqrt{menoBeqSecGrad^2 -4*cEqSecGrado} }{2}
       
       !immagazzino i risultati
-      if ( flag > 0 ) then
+      if ( flag >= 0 ) then
          !altro verso basso
          Eigenvalues(1,numCol+1) = 5.d-1*(menoBeqSecGrado + &
          sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
@@ -233,7 +294,7 @@ do j=k1:k2
       call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, &
       j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
-      if ( flag > 0 ) then
+      if ( flag >= 0 ) then
          !altro verso basso
          Eigenvalues(j,numCol+1) = lambdaJ
       else
@@ -241,7 +302,7 @@ do j=k1:k2
          Eigenvalues(em-j,numCol+1) = lambdaJ
       end if
    else
-      if ( flag > 0 ) then
+      if ( flag >= 0 ) then
          !alto verso basso
          Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
       else
