@@ -147,9 +147,14 @@ real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
 real(dp) :: menoBeqSecGrado, cEqSecGrado
 
+!$
+real(dp), dimension(em) :: vettoreAusiliario
+!$
+
 !!!
 !FINE DICHIARAZIONI
 !!!
+
 
 machinePrecision=epsilon(1.d0)
 
@@ -338,7 +343,19 @@ end do
 
 !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS)
-call quick_sort(Eigenvalues(:,numCol+1))
+
+!do i=1,em
+!   vettoreAusiliario(i) = Eigenvalues(i,numCol+1)
+!end do
+
+!call quick_sort(vettoreAusiliario)
+
+!do i=1,em
+!   Eigenvalues(i,numCol+1) = vettoreAusiliario(i)
+!end do
+
+call quick_sort( Eigenvalues(:,numCol+1), em )
+
 !P.S. cosi` come e` scritta la chiamata al quick sort
 !necessita la creazione di un array, chiamato "a", non
 !necessario: si potrebbe lavorare direttamente sulla colonna
@@ -617,7 +634,7 @@ fSecondo = zeta(0)
 end subroutine calcoli
 
 
-recursive subroutine quick_sort(a)
+recursive subroutine quick_sort(a, n)
 !!!
 !Copiata dal libro p.282
 !!!
@@ -627,23 +644,29 @@ recursive subroutine quick_sort(a)
   integer, parameter :: dp=kind(1.d0)
 
 
-  integer, dimension(:), intent(INOUT) :: a
+  real(dp), dimension(n), intent(INOUT) :: a
 
-  integer :: i, n
+  integer :: i
 
-  n = size(a)
+  integer :: n
+
+  !n = size(a)
 
   if (n>1) then
      call partition(a,i)
-     call quick_sort(a(:i-1))
-     call quick_sort(a(i+1:))
+     call quick_sort( a(:i-1), i-1 )
+     call quick_sort( a(i+1:), n-i )
   end if
 
   contains
 
     subroutine partition(a,j)
 
-      integer, dimension(:), intent(INOUT) :: a
+      implicit none
+
+      integer, parameter :: dp=kind(1.d0)
+
+      real(dp), dimension(:), intent(INOUT) :: a
 
       integer, intent(OUT) :: j
 
