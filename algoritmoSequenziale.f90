@@ -77,13 +77,40 @@ machinePrecision=epsilon(1.d0)
 !SPLIT
 !!!
 
+!T... e S... si muovono nello stesso modo,
+!prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio
 
-!SE dim=2 oppure dim=1 ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
-if (dim <= 2) then
-   !da scrivere
-   return
+!SE dim=1, (ovvero se le matrici sono 2x2), oppure 
+!dim=0, (ovvero le matrici sono 1x1), 
+!ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
+if (dim <= 1) then
+   if (dimm == 0) then
+      !non puo` accadere che S(Tinizio,Tinizio)=0
+      !poiche' S e` non singolare; comunque controllo
+      !che non sia "numericamente zero"
+      if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
+         !immagazzino zero, cioe` non aggiorno Eigenvalues
+         exit
+      else
+         if ( flag > 0 ) then
+            !altro verso basso
+            Eigenvalues(j,numCol+1) = T(Tinizio,Tfine)/ &
+            S(Sinizio,Sfine)
+         else
+            !basso verso alto
+            Eigenvalues(em-j,numCol+1) = T(Tinizio,Tfine)/ &
+            S(Sinizio,Sfine)
+         end if
+      end if
+   else
+      !se mi trovo qui allora dim=1
+      !risolvo a mano S^{-1}T x = \lambda x e trascrivo
+      !il risultato
+   end if
+   exit
 end if
+
 
 !ALTRIMENTI PREPARO LE PENCIL PER LA RICORSIONE
 
@@ -158,6 +185,7 @@ do j=k1:k2
       call EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
       call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, &
       j, fPrimo, fSecondo, kappa, lambdaJ)
+      !immagazzino i risultati
       if ( flag > 0 ) then
          !altro verso basso
          Eigenvalues(j,numCol+1) = lambdaJ
@@ -178,7 +206,11 @@ end do
 
 !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS)
-call quick_sort(Eigenvalues, en, em, numCol+1)
+call quick_sort(Eigenvalues(:,numCol+1))
+!P.S. cosi` come e` scritta la chiamata al quick sort
+!necessita la creazione di un array, chiamato "a", non
+!necessario: si potrebbe lavorare direttamente sulla colonna
+!numCol di Eigenvalues...
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -443,18 +475,65 @@ fSecondo = zeta(0)
 end subroutine calcoli
 
 
-recursive subroutine quick_sort(Eigenvalues, en, em, numCol+1)
+recursive subroutine quick_sort(a)
+!!!
+!Copiata dal libro p.282
+!!!
 
   implicit none
 
   integer, parameter :: dp=kind(1.d0)
 
-  integer, intent(IN) :: en, em, numCol
 
-  real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
+  integer, dimension(:), intent(INOUT) :: a
 
-  integer :: i, j, k
+  integer :: i, n
 
-  !da scrivere
+  n = size(a)
+
+  if (n>1) then
+     call partition(a,i)
+     call quick_sort(a(:i-1))
+     call quick_sort(a(i+1:))
+  end if
+
+  contains
+
+    subroutine partition(a,j)
+
+      integer, dimension(:), intent(INOUT) :: a
+
+      integer, intent(OUT) :: j
+
+      integer :: i,temp
+
+      i=1
+      j=size(a)
+
+      do
+         do
+            if (i>j) exit
+            if (a(j)>a(1)) exit
+            i=i+1
+         end do
+         
+         do
+            if ( (j<i) .OR. (a()<=a(1)) ) exit
+            j = j-1
+         end do
+
+         if (i>=j) exit
+
+         temp=a(i)
+         a(i)=a(j)
+         a(j)=temp
+
+      end do
+
+      temp = a(j)
+      a(j)=a(1)
+      a(1)=temp
+
+    end subroutine partition
 
 end subroutine quick_sort
