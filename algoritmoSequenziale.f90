@@ -63,7 +63,22 @@ end do
 a=-100.d0
 b=100.d0
 
+!ATTENZIONE: numCol=0 poiche' l'indice di colonna di Eigenvalues parte da 1.
+!ATTENZIONE: la prima chiamata della subroutine e` con flag=0, le altre no.
+
 call calcoloAutovaloriDentroI(0, a, b, n, T, S, 1, n, 1, n, en, em, Eigenvalues, 0)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file "risultato.txt"
+
+open(unit=3,file="risultato.txt")
+
+write(3,*) em
+
+do i=1,em
+   write(3,*) Eigenvalues(i,1)
+end do
+
+write(*,*) "FINE CALCOLO AUTOVALORI!"
 
 end program sperimentazione
 
@@ -271,7 +286,7 @@ do j=k1:k2
    aj=a
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
-      x = Eigenvalues(j,numCol)
+      x = Eigenvalues(j,numCol+1)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
@@ -290,8 +305,8 @@ do j=k1:k2
       !Chiamo EstMlt e LagIt
       sign = sign( - fPrimo )
       !vedi meta` p. 14
-      call EstMlt(x, sign, en, em, Eigenvalues, numCol, j, mlt)
-      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol, &
+      call EstMlt(x, sign, en, em, Eigenvalues, numCol+1, j, mlt)
+      call LagIt(x, mlt, aj, bj, en, em, Eigenvalues, numCol+1, &
       j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
       if ( flag >= 0 ) then
