@@ -67,6 +67,8 @@ integer :: i, j, k, dim, kappa, k1, k2
 
 real(dp) :: machinePrecision, x, aj, bj, sign, mlt, fPrimo, fSecondo, lambdaJ
 
+real(dp) :: menoBeqSecGrado, cEqSecGrado
+
 !!!
 !FINE DICHIARAZIONI
 !!!
@@ -95,18 +97,63 @@ if (dim <= 1) then
       else
          if ( flag > 0 ) then
             !altro verso basso
-            Eigenvalues(j,numCol+1) = T(Tinizio,Tfine)/ &
+            Eigenvalues(1,numCol+1) = T(Tinizio,Tfine)/ &
             S(Sinizio,Sfine)
          else
             !basso verso alto
-            Eigenvalues(em-j,numCol+1) = T(Tinizio,Tfine)/ &
+            Eigenvalues(em-1,numCol+1) = T(Tinizio,Tfine)/ &
             S(Sinizio,Sfine)
          end if
       end if
    else
       !se mi trovo qui allora dim=1
-      !risolvo a mano S^{-1}T x = \lambda x e trascrivo
-      !il risultato
+      !risolvo a mano S^{-1}T x = \lambda x.
+      !Dopo aver controllato che S sia
+      !"numericamente definita positiva", trascrivo
+      !i risultati.
+
+      if ( abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
+      S(Sinizio,Sfine)**2)<= 10.d0*machinePrecision ) exit
+
+      menoBeqSecGrado = ( S(Sinizio,Sfine)*T(Tinizio,Tfine)- &
+      S(Sinizio,Sinizio)*T(Tfine,Tfine)- &
+      S(Sfine,Sfine)*T(Tinizio,Tinizio)+ &
+      S(Sinizio,Sfine)*T(Tinizio,Tfine) )/ &
+      ( -S(Sinizio,Sinizio)*S(Sfine,Sfine)+S(Sinizio,Sfine)**2 )
+
+      cEqSecGrado = ( S(Sinizio,Sfine)**2*T(Tinizio,Tfine)**2 - &
+      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+      T(Tinizio,Tfine) + &
+      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+      T(Tfine,Tfine) - &
+      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
+      T(Tfine,Tfine) + &
+      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+      T(Tinizio,Tfine) - &
+      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tfine)**2 - &
+      S(Sinizio,Sfine)**2*T(Tinizio,Tfine)*T(Tfine,Tfine) + &
+      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
+      T(Tfine,Tfine) )/ &
+      ( S(Sinizio,Sinizio)*S(Sfine,Sfine)-S(Sinizio,Sfine)**2 )
+      
+      !\lambda = \frac{ menoBeqSecGrado \pm
+      !\sqrt{menoBeqSecGrad^2 -4*cEqSecGrado} }{2}
+      
+      !immagazzino i risultati
+      if ( flag > 0 ) then
+         !altro verso basso
+         Eigenvalues(1,numCol+1) = 5.d-1*(menoBeqSecGrado + &
+         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+         Eigenvalues(2,numCol+1) = 5.d-1*(menoBeqSecGrado - &
+         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+      else
+         !basso verso alto
+         Eigenvalues(em-1,numCol+1) = 5.d-1*(menoBeqSecGrado + &
+         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+         Eigenvalues(em-2,numCol+1) = 5.d-1*(menoBeqSecGrado - &
+         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+      end if
+
    end if
    exit
 end if
