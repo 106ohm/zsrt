@@ -52,6 +52,11 @@ do j=1,en
    end do
 end do
 
+write(*,*) "Eigenvalues prima del calcolo:"
+do i=1,n
+   write(*,*) Eigenvalues(i,:)
+end do
+
 !Chiamo la subroutine che trova gli autovalori nell'intervallo
 ![a,b] e li salva nella prima colonna della matrice Eigenvalues
 !(le altre colonne di Eigenvalues vengono utilizzate nella
@@ -72,7 +77,12 @@ call calcoloAutovaloriDentroI(0, a, b, n, T, S, 1, n, 1, n, en, em, Eigenvalues,
 
 !Scrivo la prima colonna della matrice Eigenvalues sul file "risultato.txt"
 
-open(unit=3,file="risultato.txt")
+write(*,*) "Eigenvalues dopo il calcolo:"
+do i=1,n
+   write(*,*) Eigenvalues(i,:)
+end do
+
+Open(unit=3,file="risultato.txt")
 
 write(3,*) em
 
@@ -239,11 +249,11 @@ if (dim <= 1) then
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
       else
          !basso verso alto
-         Eigenvalues(em-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         Eigenvalues(em,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
 
-         Eigenvalues(em-2,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         Eigenvalues(em-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
       end if
@@ -279,6 +289,9 @@ S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
 call calcoloAutovaloriDentroI(-1, a, b, n, T, S, T1inizio, T1fine, &
 S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 
+write(*,*) "inizia il MERGE dentro:"
+write(*,*) "numCol=", numCol, "flag=", flag
+
 !!!
 !MERGE, pagina 17 dell'articolo
 !!!
@@ -288,13 +301,21 @@ S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 !Mi devo ricordare sempre che \hat\lambda_{k}=a e 
 !\hat\lambda_{k+m+1}=b.
 !Calcolo kappa(a) e kappa(b), e da questi ricavo k1 e k2
-call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k1=kappa+1
-call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k2=kappa
 
-!OSS: nel caso del calcolo di tutti gli autovalori ho
+!call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
+!k1=kappa+1
+!call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
+!k2=kappa
+
+kappa=0
+k1=1
+k2=4
+
+!OSS: nel caso del calcolo di tutti gli autovalori ho,
+!nella 0-esima chiamata ricorsiva,
 !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
+
+write(*,*)"k1=",k1,"k2=",k2
 
 do j=k1,k2
 
@@ -308,7 +329,7 @@ do j=k1,k2
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-  
+
       if ( kappa < j ) then
          aj = x
       else
@@ -330,7 +351,14 @@ do j=k1,k2
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
+      write(*,*)"prima di EstMlt"
+      write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
+
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+
+      write(*,*)"prima di LagIt"
+      write(*,*)"x=",x,"mlt=",mlt
+
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
       Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
@@ -339,7 +367,7 @@ do j=k1,k2
          Eigenvalues(j,numCol+1) = lambdaJ
       else
          !basso verso alto
-         Eigenvalues(em-j,numCol+1) = lambdaJ
+         Eigenvalues(em-j+1,numCol+1) = lambdaJ
       end if
    else
       if ( flag >= 0 ) then
@@ -347,7 +375,7 @@ do j=k1,k2
          Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
       else
          !basso verso alto
-         Eigenvalues(em-j,numCol+1) = (aj+bj)/2.d0
+         Eigenvalues(em-j+1,numCol+1) = (aj+bj)/2.d0
       end if
    end if
 end do
@@ -384,11 +412,11 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
-real(dp), intent(IN) :: x
+real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: segno, en, em, numCol, j
 
-integer, intent(OUT) :: mlt
+integer, intent(INOUT) :: mlt
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
@@ -416,7 +444,9 @@ do while ( .TRUE. )
 
    k = k+1
 
-10 end do
+end do
+
+10 write(*,*)""
 
 !OSS: incrementare k non modifica il calcolo, ma fornisce indicazioni
 !sull'avanzamento dello stesso
@@ -433,7 +463,7 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
-real(dp), intent(IN) :: x
+real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: n
 
@@ -457,7 +487,7 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 integer :: i, k, l, exKappa
 
-real(dp) :: deltaL
+real(dp) :: deltaL, exDeltaL
 
 real(dp), dimension(-2:0) :: xl
 
@@ -481,6 +511,9 @@ l = 2
 
 do while ( .TRUE. )
 
+   !write(*,*) "l=",l
+   write(*,*)"x=",x
+
    exKappa = kappa
 
    !aggiorno le variabili
@@ -497,13 +530,16 @@ do while ( .TRUE. )
      ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    end if
 
-   deltal = xl(0) - xl(-1)
+   exDeltaL = xl(-1) - xl(-2)
+   deltaL = xl(0) - xl(-1)
 
-  ! condizione (24)
-  if ( ( abs(xl(0)-xl(-1)) <= machinePrecision*abs(xl(0)) ) .OR. & 
-  ( abs(xl(0)-xl(-1)) >= abs(xl(-1)-xl(-2)) ) .OR. &
-  ( ((xl(0)-xl(-1))**2)/(abs(xl(-1)-xl(-2))-xl(0)-xl(-1)) <= &
-  machinePrecision*abs(xl(0)) )  ) then
+   ! condizione (24)
+   if ( &
+   ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) .OR. & 
+   ( abs(deltaL) >= abs(exDeltaL) ) .OR. &
+   ( ((deltaL)**2)/(abs(exDeltaL)-xl(0)-xl(-1)) <= &
+   machinePrecision*abs(xl(0)) ) & 
+   ) then
      GOTO 30
   end if
 
@@ -559,17 +595,24 @@ real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
+
 machinePrecision=epsilon(1.d0)
 
+!write(*,*)"Tinizio= ", Tinizio
+!write(*,*)"Tfine= ", Tfine
+!write(*,*)"Sinizio= ", Sinizio
+!write(*,*)"Sfine= ", Sfine
 
 !ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
 !da Tinizio e da Sinizio. T ed S sono state definite con indici che
 !vanno da 1 a n, dunque per iniziare a contare da 1 ri-definisco
 !Tinizio, Tfine, Sinizio ed Sfine.
-Tinizio = Tinizio-1
-Tfine = Tfine-1
-Sinizio = Sinizio-1
-Sfine = Sfine-1 
+
+!Tinizio = Tinizio-1
+!Tfine = Tfine-1
+!Sinizio = Sinizio-1
+!Sfine = Sfine-1 
+
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, zeta_{i-2}, eta_{i-1} ed eta_{i-2}
@@ -588,6 +631,7 @@ zeta(-2) = 0.d0
 zeta(-1) = zeta(-2)
 
 kappa = 0
+
 
 do i=2,dim
 

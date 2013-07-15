@@ -15,7 +15,7 @@ real(dp) :: rnd, machinePrecision
 machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
-n=2
+n=4
 
 !alloco memoria
 allocate( T(n,n), S(n,n) )
@@ -125,6 +125,7 @@ end do
 !!$!!!
 !!$!Matrici AD HOC
 !!$!!!
+!!$n=2
 !!$T(1,1)= 2.d0
 !!$T(2,2)= 2.d0
 !!$T(1,2)= 1.d0
