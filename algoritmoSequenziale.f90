@@ -39,7 +39,7 @@ end do
 !scelgo le dimensioni di Eigenvalues, alloco memoria
 !ed inizializzo i suoi valori a zero
 
-em=n+1
+em=n
 !ATTENIONE: il "logarithmus dualis", ovvero in base 2,
 !lo calcoliamo tramite ld(n)=log(n)/log(2)
 en=int( log(n*1.d0)/log(2.d0) ) + 2
