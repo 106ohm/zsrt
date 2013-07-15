@@ -145,7 +145,7 @@ integer :: i, j, k, dim, kappa, k1, k2, segno, mlt
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
-real(dp) :: menoBeqSecGrado, cEqSecGrado
+real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 
 !$
 real(dp), dimension(em) :: vettoreAusiliario
@@ -191,50 +191,84 @@ if (dim <= 1) then
    else
       !se mi trovo qui allora dim=1
       !risolvo a mano S^{-1}T x = \lambda x.
-      !Dopo aver controllato che S sia
-      !"numericamente definita positiva", trascrivo
-      !i risultati.
 
-      if ( abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
-      S(Sinizio,Sfine)**2)<= 10.d0*machinePrecision ) return
+      deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
+      S(Sinizio,Sfine)**2)
 
-      menoBeqSecGrado = ( S(Sinizio,Sfine)*T(Tinizio,Tfine)- &
-      S(Sinizio,Sinizio)*T(Tfine,Tfine)- &
-      S(Sfine,Sfine)*T(Tinizio,Tinizio)+ &
-      S(Sinizio,Sfine)*T(Tinizio,Tfine) )/ &
-      ( -S(Sinizio,Sinizio)*S(Sfine,Sfine)+S(Sinizio,Sfine)**2 )
+      if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
+         write(*,*) "evitata divisione per zero."
+         return
+      end if
 
-      cEqSecGrado = ( S(Sinizio,Sfine)**2*T(Tinizio,Tfine)**2 - &
-      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
-      T(Tinizio,Tfine) + &
-      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
-      T(Tfine,Tfine) - &
-      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
-      T(Tfine,Tfine) + &
-      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
-      T(Tinizio,Tfine) - &
-      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tfine)**2 - &
-      S(Sinizio,Sfine)**2*T(Tinizio,Tfine)*T(Tfine,Tfine) + &
-      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
-      T(Tfine,Tfine) )/ &
-      ( S(Sinizio,Sinizio)*S(Sfine,Sfine)-S(Sinizio,Sfine)**2 )
-      
-      !\lambda = \frac{ menoBeqSecGrado \pm
-      !\sqrt{menoBeqSecGrad^2 -4*cEqSecGrado} }{2}
+      !                              |\alpha  \gamma|
+      !chiamo S^{-1}T = delta^{-1} * |              | e risolvo
+      !                              |\gamma  \beta |
+      !
+      !det[ S^{-1}T - \lambdaI ]=0.
+      !
+      ! alla fine ottengo \lambda = frac{1}{2*\delta} * 
+      ![ \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
+      !\gamma^2 - \alpha*\beta } ]
+
+      alphaSecGrado = S(Sfine,Sfine)*T(Tinizio,Tinizio) - &
+      S(Sinizio,Sfine)*T(Tinizio,Tfine)
+
+      betaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
+      S(Sinizio,Sinizio)*T(Tfine,Tfine)
+
+      gammaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
+      S(Sinizio,Sinizio)*T(Tinizio,Tfine)
+
+      !controllo di non dover estrarre una radice negativa:
+      if ( alphaSecGrado**2 + betaSecGrado**2 + gammaSecGrado**2 - &
+      2.d0*alphaSecGrado*betaSecGrado < 0.d0 ) then
+         write(*,*) "radice negativa!"
+         return
+      end if
+
+!!$      menoBeqSecGrado = ( S(Sinizio,Sfine)*T(Tinizio,Tfine)- &
+!!$      S(Sinizio,Sinizio)*T(Tfine,Tfine)- &
+!!$      S(Sfine,Sfine)*T(Tinizio,Tinizio)+ &
+!!$      S(Sinizio,Sfine)*T(Tinizio,Tfine) )/ &
+!!$      ( -S(Sinizio,Sinizio)*S(Sfine,Sfine)+S(Sinizio,Sfine)**2 )
+!!$
+!!$      cEqSecGrado = ( S(Sinizio,Sfine)**2*T(Tinizio,Tfine)**2 - &
+!!$      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+!!$      T(Tinizio,Tfine) + &
+!!$      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+!!$      T(Tfine,Tfine) - &
+!!$      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
+!!$      T(Tfine,Tfine) + &
+!!$      S(Sinizio,Sfine)*S(Sfine,Sfine)*T(Tinizio,Tinizio)* &
+!!$      T(Tinizio,Tfine) - &
+!!$      S(Sinizio,Sinizio)*S(Sfine,Sfine)*T(Tinizio,Tfine)**2 - &
+!!$      S(Sinizio,Sfine)**2*T(Tinizio,Tfine)*T(Tfine,Tfine) + &
+!!$      S(Sinizio,Sinizio)*S(Sinizio,Sfine)*T(Tinizio,Tfine)* &
+!!$      T(Tfine,Tfine) )/ &
+!!$      ( S(Sinizio,Sinizio)*S(Sfine,Sfine)-S(Sinizio,Sfine)**2 )
+!!$
+!!$      write(*,*) "menoBeqSecGrado= ", menoBeqSecGrado, ", cEqSecGrado= ", cEqSecGrado
+
       
       !immagazzino i risultati
       if ( flag >= 0 ) then
          !altro verso basso
-         Eigenvalues(1,numCol+1) = 5.d-1*(menoBeqSecGrado + &
-         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
-         Eigenvalues(2,numCol+1) = 5.d-1*(menoBeqSecGrado - &
-         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+         Eigenvalues(1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
+         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) ) 
+
+         Eigenvalues(1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
+         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
       else
          !basso verso alto
-         Eigenvalues(em-1,numCol+1) = 5.d-1*(menoBeqSecGrado + &
-         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
-         Eigenvalues(em-2,numCol+1) = 5.d-1*(menoBeqSecGrado - &
-         sqrt( menoBeqSecGrado**2 -4.d0*cEqSecGrado ))
+         Eigenvalues(em-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
+         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
+
+         Eigenvalues(em-2,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
+         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
       end if
 
    end if
