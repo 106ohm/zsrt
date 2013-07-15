@@ -5,8 +5,14 @@ integer, parameter :: dp=kind(0.d0)
 real(dp), dimension(:,:), allocatable :: T,S
 real(dp), dimension(:), allocatable :: v 
 integer :: n, i, j
-real(dp) :: rnd
+real(dp) :: rnd, machinePrecision
 
+
+!!!
+!Fine dichiarazioni
+!!!
+
+machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
 n=2
@@ -14,6 +20,11 @@ n=2
 !alloco memoria
 allocate( T(n,n), S(n,n) )
 
+!!!
+!ATTENZIONE: mi devo ricordare di generale pencil (T,S)
+!che siano "non riducibili", ovvero t.c.
+!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
+!!!
 
 !!$!!!
 !!$!Matrici identita`
@@ -43,38 +54,38 @@ allocate( T(n,n), S(n,n) )
 
 
 
-!!$!!!
-!!$!Matrici simmetriche random, ma dominanti diagonali 
-!!$!(autovalori "distanti")
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !T(i,i)> somma_su_j_di T(i,j)
-!!$         T(i,j) = rnd+n+1
-!!$      else
-!!$         T(i,j) = rnd
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !S(i,i)> somma_su_j_di S(i,j)
-!!$         S(i,i) = rnd+n+1
-!!$      else
-!!$         S(i,j) = rnd
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$   end do
-!!$end do
+!!!
+!Matrici simmetriche random, ma dominanti diagonali 
+!(autovalori "distanti")
+!!!
+do i=1,n
+   do j=1,i
+      call random_number(rnd)
+      if (i == j) then
+         !aggiungo n+1, cosi' sono sicuro che 
+         !T(i,i)> somma_su_j_di T(i,j)
+         T(i,j) = rnd+n+1
+      else
+         T(i,j) = rnd
+         T(j,i) = T(i,j)
+      end if
+   end do
+end do
+
+
+do i=1,n
+   do j=1,i
+      call random_number(rnd)
+      if (i == j) then
+         !aggiungo n+1, cosi' sono sicuro che 
+         !S(i,i)> somma_su_j_di S(i,j)
+         S(i,i) = rnd+n+1
+      else
+         S(i,j) = rnd
+         S(j,i) = S(i,j)
+      end if
+   end do
+end do
 
 !!$!!!
 !!$!matrici random, "poco" dominanti diagonali 
@@ -111,22 +122,31 @@ allocate( T(n,n), S(n,n) )
 !!$   S(i,i) = sum(S(i,:)) + 1.0d-015
 !!$end do
 
-!!!
-!Matrici AD HOC
-!!!
-T(1,1)= 2.d0
-T(2,2)= 2.d0
-T(1,2)= 1.d0
-T(2,1)= 1.d0
+!!$!!!
+!!$!Matrici AD HOC
+!!$!!!
+!!$T(1,1)= 2.d0
+!!$T(2,2)= 2.d0
+!!$T(1,2)= 1.d0
+!!$T(2,1)= 1.d0
+!!$
+!!$S(1,1)=2.d0
+!!$S(2,2)=3.d0
+!!$S(1,2)=1.d0
+!!$S(2,1)=1.d0
 
-S(1,1)=2.d0
-S(2,2)=3.d0
-S(1,2)=1.d0
-S(2,1)=1.d0
-!mi aspetto:
-!menoBeqSecGrado=1,6
-!cEqSecGrado=3,4
-!ed il calcolo conferma
+
+!!!
+!ATTENZIONE: mi devo ricordare di generale pencil (T,S)
+!che siano "non riducibili", ovvero t.c.
+!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
+!!!
+do i=1,n-1
+   if ( abs(T(i,i+1)**2 + S(i,i+1)**2) <= 10*machinePrecision ) then
+      write(*,*) "PENCIL NON IRRIDUCIBILE"
+   end if
+end do
+
 
 !!!
 !Stapo a video le matrici
