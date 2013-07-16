@@ -181,7 +181,7 @@ machinePrecision=epsilon(1.d0)
 !prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio + 1
 
-write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
+!write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
 
 
 !SE dim=2, (ovvero se le matrici sono 2x2), oppure 
@@ -320,7 +320,7 @@ dim = Tfine - Tinizio + 1
 !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS).
 if ( sum(Eigenvalues(:,numCol+2)) /= 0.d0 ) then
-   write(*,*)"ordino la colonna numero ",numCol+2
+   !write(*,*)"ordino la colonna numero ",numCol+2
    call quick_sort( Eigenvalues(:,numCol+2), em )
 end if
 
@@ -336,8 +336,6 @@ k2=kappa+1
 
 write(*,*)"k1=",k1,"k2=",k2
 
-!k1=1
-!k2=4
 
 !OSS: nel caso del calcolo di tutti gli autovalori ho,
 !nella 0-esima chiamata ricorsiva,
@@ -345,7 +343,7 @@ write(*,*)"k1=",k1,"k2=",k2
 
 do j=k1,k2
 
-   write(*,*)"j=",j
+   !write(*,*)"j=",j
 
    !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
    !nel ricercare \lambda_j
@@ -365,13 +363,13 @@ do j=k1,k2
          bJ = x
       end if
       
-      write(*,*)"x=",x
+      !write(*,*)"x=",x
 
       !Adesso cerco un nuovo x
       if ( kappa /= j-1 .AND. kappa /= j ) then
          x = (aj+bj)/2.d0
          !ripeto il calcolo fatto alla etichetta 100:
-         Write(*,*)"GOTO 100"
+         !Write(*,*)"GOTO 100"
          GOTO 100
       end if
 
@@ -385,18 +383,18 @@ do j=k1,k2
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
-      write(*,*)"inizio EstMlt"
+      !write(*,*)"inizio EstMlt"
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+2, j, mlt)
-      write(*,*)"fine EstMlt"
+      !write(*,*)"fine EstMlt"
 
-      write(*,*)"j=",j,"mlt=",mlt
+      !write(*,*)"j=",j,"mlt=",mlt
       !write(*,*)"aj=",aj,"bj=",bj
 
-      write(*,*)"inizio LagIt"
+      !write(*,*)"inizio LagIt"
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
       Sinizio, Sfine, en, em, Eigenvalues, numCol+2,j, &
       fPrimo, fSecondo, kappa, lambdaJ)
-      write(*,*)"fine LagIt"
+      !write(*,*)"fine LagIt"
 
       !immagazzino i risultati
      
@@ -422,7 +420,7 @@ end do
 
 200 write(*,*)""
 
-write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
+!write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -545,7 +543,7 @@ do while ( .TRUE. )
    if ( l >= 10 ) exit
 
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
-   write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
+   !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
 
    exKappa = kappa
 
@@ -605,7 +603,7 @@ do while ( .TRUE. )
    if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
       mlt = abs(kappa-exKappa)
       xl(0) = (xl(0)+xl(-1))/2.d0
-      write(*,*)"GOTO 20"
+      !write(*,*)"GOTO 20"
       GOTO 20
    end if
 
