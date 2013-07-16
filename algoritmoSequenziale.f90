@@ -76,7 +76,7 @@ b=5.d0
 !le altre no.
 
 call calcoloAutovaloriDentroI(0, a, b, n, T, S, 1, n, 1, n, en, em, &
-Eigenvalues, 0)
+Eigenvalues, 1)
 
 !Scrivo la prima colonna della matrice Eigenvalues sul file 
 !"risultato.txt"
@@ -139,7 +139,7 @@ integer, intent(IN) :: n
 
 integer, intent(IN) :: en, em
 
-integer :: numCol
+integer, intent(IN) :: numCol
 
 real(dp), intent(IN) :: a, b
 
@@ -157,6 +157,8 @@ integer :: T0inizio, T0fine, T1inizio, T1fine, S0inizio, S0fine, &
 S1inizio, S1fine
 
 integer :: i, j, k, dim, kappa, k1, k2, segno, mlt
+
+integer :: ordFlag
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
@@ -181,6 +183,8 @@ machinePrecision=epsilon(1.d0)
 !prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio + 1
 
+write(*,*)"dim=",dim,"numCol=",numCol
+
 !write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
 
 
@@ -188,6 +192,7 @@ dim = Tfine - Tinizio + 1
 !dim=1, (ovvero le matrici sono 1x1), 
 !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
 if (dim <= 2) then
+   
    if (dim == 1) then
       !non puo` accadere che S(Tinizio,Tinizio)=0
       !poiche' S e` non singolare; comunque controllo
@@ -196,7 +201,7 @@ if (dim <= 2) then
          !immagazzino zero, cioe` non aggiorno Eigenvalues
          return
       else
-         Eigenvalues(Tinizio,numCol+1) = T(Tinizio,Tfine)/ &
+         Eigenvalues(Tinizio,numCol) = T(Tinizio,Tfine)/ &
          S(Sinizio,Sfine)
       end if
    else
@@ -241,30 +246,38 @@ if (dim <= 2) then
       !immagazzino i risultati
       if ( flag >= 0 ) then
          !altro verso basso
-         write(*,*),"(",Tinizio,",",numCol+1,")"
-         Eigenvalues(Tinizio,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         
+         Eigenvalues(Tinizio,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) ) 
 
-         write(*,*),"(",Tinizio+1,",",numCol+1,")"
-         Eigenvalues(Tinizio+1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         !write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
+
+         Eigenvalues(Tinizio+1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
+
+         !write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
+
       else
          !basso verso alto
-         write(*,*),"(",Tfine,",",numCol+1,")"
-         Eigenvalues(Tfine,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         
+         Eigenvalues(Tfine,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
 
-         write(*,*),"(",Tfine-1,",",numCol+1,")"
-         Eigenvalues(Tfine-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) )* &
+         !write(*,*),"(",Tfine,",",numCol,")=",Eigenvalues(Tfine,numCol)
+
+         Eigenvalues(Tfine-1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) )* &
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
+
+         !write(*,*),"(",Tfine-1,",",numCol,")=",Eigenvalues(Tfine-1,numCol)
+
       end if
 
    end if
@@ -316,9 +329,16 @@ dim = Tfine - Tinizio + 1
 
 !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS).
-if ( sum(Eigenvalues(:,numCol+2)) /= 0.d0 ) then
-   write(*,*)"ordino la colonna numero ",numCol+2
-   call quick_sort( Eigenvalues(:,numCol+2), em )
+ordFlag=1
+do i=1,em
+   if ( Eigenvalues(i,numCol+1) == 0.d0 ) then
+      ordFlag = 0
+      exit
+   end if
+end do
+if ( ordFlag /= 0 ) then
+   write(*,*)"ordino la colonna numero ",numCol+1
+   call quick_sort( Eigenvalues(:,numCol+1), em )
 end if
 
 
@@ -348,7 +368,7 @@ do j=k1,k2
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
-      x = Eigenvalues(j,numCol+2)
+      x = Eigenvalues(j,numCol+1)
       !cioe` x=\hat\lambda_j.
       !Chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
@@ -381,7 +401,7 @@ do j=k1,k2
       !vedi meta` p. 14
 
       !write(*,*)"inizio EstMlt"
-      call EstMlt(x, segno, en, em, Eigenvalues, numCol+2, j, mlt)
+      call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
       !write(*,*)"fine EstMlt"
 
       !write(*,*)"j=",j,"mlt=",mlt
@@ -389,7 +409,7 @@ do j=k1,k2
 
       !write(*,*)"inizio LagIt"
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
-      Sinizio, Sfine, en, em, Eigenvalues, numCol+2,j, &
+      Sinizio, Sfine, en, em, Eigenvalues, numCol+1, j, &
       fPrimo, fSecondo, kappa, lambdaJ)
       !write(*,*)"fine LagIt"
 
@@ -397,20 +417,20 @@ do j=k1,k2
      
       if ( flag >= 0 ) then
          !altro verso basso
-         Eigenvalues(j,numCol+1) = lambdaJ
+         Eigenvalues(j,numCol) = lambdaJ
       else
          !basso verso alto
-         Eigenvalues(em-j+1,numCol+1) = lambdaJ
+         Eigenvalues(em-j+1,numCol) = lambdaJ
       end if
    else
       !in questo caso a e b distano solo "un passo macchina"
       write(*,*)"a e b distano pochissimo!"
       if ( flag >= 0 ) then
          !alto verso basso
-         Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
+         Eigenvalues(j,numCol) = (aj+bj)/2.d0
       else
          !basso verso alto
-         Eigenvalues(em-j+1,numCol+1) = (aj+bj)/2.d0
+         Eigenvalues(em-j+1,numCol) = (aj+bj)/2.d0
       end if
    end if
 end do
