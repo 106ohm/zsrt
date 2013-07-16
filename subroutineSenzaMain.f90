@@ -1,3 +1,5 @@
+
+
 !!!
 !Fissato l'intervallo I, calcolo gli autovalori della pencil (T,S)
 !in esso contenuti. L'intervallo I e` generalizzato,
@@ -69,6 +71,9 @@ real(dp), dimension(em) :: vettoreAusiliario
 !!!
 
 
+write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
+
+
 machinePrecision=epsilon(1.d0)
 
 !!!
@@ -79,11 +84,13 @@ machinePrecision=epsilon(1.d0)
 !prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio + 1
 
-!SE dim=1, (ovvero se le matrici sono 2x2), oppure 
-!dim=0, (ovvero le matrici sono 1x1), 
+write(*,*)"dim=",dim
+
+!SE dim=2, (ovvero se le matrici sono 2x2), oppure 
+!dim=1, (ovvero le matrici sono 1x1), 
 !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
-if (dim <= 1) then
-   if (dim == 0) then
+if (dim <= 2) then
+   if (dim == 1) then
       !non puo` accadere che S(Tinizio,Tinizio)=0
       !poiche' S e` non singolare; comunque controllo
       !che non sia "numericamente zero"
@@ -102,14 +109,14 @@ if (dim <= 1) then
          end if
       end if
    else
-      !se mi trovo qui allora dim=1
+      !se mi trovo qui allora dim=2
       !risolvo a mano S^{-1}T x = \lambda x.
 
       deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
       S(Sinizio,Sfine)**2)
 
       if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
-         write(*,*) "evitata divisione per zero."
+         write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
          return
       end if
 
@@ -162,6 +169,11 @@ if (dim <= 1) then
       end if
 
    end if
+
+   !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
+   !autovalori di (\hatT,\hatS)
+   !call quick_sort( Eigenvalues(:,numCol+1), em )
+   !ESCO
    return
 end if
 
@@ -192,8 +204,6 @@ S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
 call calcoloAutovaloriDentroI(-1, a, b, n, T, S, T1inizio, T1fine, &
 S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 
-write(*,*) "inizia il MERGE dentro:"
-write(*,*) "numCol=", numCol, "flag=", flag
 
 !!!
 !MERGE, pagina 17 dell'articolo
@@ -211,13 +221,12 @@ dim = Tfine - Tinizio + 1
 call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
 k1=kappa+1
 call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k2=kappa
+k2=kappa+1
 
 write(*,*)"k1=",k1,"k2=",k2
 
-kappa=0
-k1=1
-k2=4
+!k1=1
+!k2=4
 
 !OSS: nel caso del calcolo di tutti gli autovalori ho,
 !nella 0-esima chiamata ricorsiva,
@@ -231,11 +240,13 @@ do j=k1,k2
    aj=a
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
+      write(*,*)"cucu1"
       x = Eigenvalues(j,numCol+1)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-
+      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+               fPrimo, fSecondo, kappa)
+      write(*,*)"cucu2"
       if ( kappa < j ) then
          aj = x
       else
@@ -248,26 +259,25 @@ do j=k1,k2
          GOTO 100
       end if
 
-      !Chiamo EstMlt e LagIt
+      !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
       if ( -fPrimo >= 0.d0 ) then
          segno = 1
       else
          segno = -1
       end if
+      
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
-      write(*,*)"prima di EstMlt"
-      write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
-
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
-      write(*,*)"prima di LagIt"
-      write(*,*)"x=",x,"mlt=",mlt
+      write(*,*)"j=",j,"mlt=",mlt
+      write(*,*)"aj=",aj,"bj=",bj
 
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
       Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
+      write(*,*)"immagazzino i risultati"
       if ( flag >= 0 ) then
          !altro verso basso
          Eigenvalues(j,numCol+1) = lambdaJ
@@ -286,25 +296,15 @@ do j=k1,k2
    end if
 end do
 
+
 !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS)
-
-!do i=1,em
-!   vettoreAusiliario(i) = Eigenvalues(i,numCol+1)
-!end do
-
-!call quick_sort(vettoreAusiliario)
-
-!do i=1,em
-!   Eigenvalues(i,numCol+1) = vettoreAusiliario(i)
-!end do
-
 call quick_sort( Eigenvalues(:,numCol+1), em )
+if ( numCol /= 0 ) then
+   call quick_sort( Eigenvalues(:,numCol), em )
+end if
 
-!P.S. cosi` come e` scritta la chiamata al quick sort
-!necessita la creazione di un array, chiamato "a", non
-!necessario: si potrebbe lavorare direttamente sulla colonna
-!numCol di Eigenvalues...
+write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -415,6 +415,9 @@ xl(0) = x
 
 l = 2
 
+write(*,*)"~sono dentro LagIt~"
+write(*,*)"x=",x
+
 do while ( .TRUE. )
 
    !write(*,*) "l=",l
@@ -428,7 +431,8 @@ do while ( .TRUE. )
 
    if ( abs(fPrimo) <= machinePrecision .OR. abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
-      return
+      write(*,*)"...ignoro questo fatto e vado avanti..."
+      !return
    end if
 
    if ( kappa < j ) then
@@ -466,6 +470,9 @@ do while ( .TRUE. )
   end if
 
   l = l+1
+
+  write(*,*)"aj=",aj,"bj=",bj
+  write(*,*)"xl(0)=",xl(0)
 
 end do
 
@@ -626,7 +633,7 @@ recursive subroutine quick_sort(a, n)
 
   integer :: n
 
-  !n = size(a)
+  n = size(a)
 
   if (n>1) then
      call partition(a,i)
@@ -646,34 +653,36 @@ recursive subroutine quick_sort(a, n)
 
       integer, intent(OUT) :: j
 
-      integer :: i,temp
+      integer :: i
+
+      real(dp) :: temp
 
       i=1
       j=size(a)
 
       do
          do
-            if (i>j) exit
-            if (a(j)>a(1)) exit
+            if ( i>j ) exit
+            if ( a(j) > a(1) ) exit
             i=i+1
          end do
          
          do
-            if ( (j<i) .OR. (a(j)<=a(1)) ) exit
+            if ( (j<i) .OR. ( a(j) <= a(1) ) ) exit
             j = j-1
          end do
 
-         if (i>=j) exit
+         if ( i >= j ) exit
 
-         temp=a(i)
-         a(i)=a(j)
-         a(j)=temp
+         temp = a(i)
+         a(i) = a(j)
+         a(j) = temp
 
       end do
 
       temp = a(j)
-      a(j)=a(1)
-      a(1)=temp
+      a(j) = a(1)
+      a(1) = temp
 
     end subroutine partition
 

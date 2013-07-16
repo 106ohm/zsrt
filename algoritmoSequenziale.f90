@@ -53,7 +53,7 @@ do j=1,en
 end do
 
 write(*,*) "Eigenvalues prima del calcolo:"
-do i=1,n
+do i=1,em
    write(*,*) Eigenvalues(i,:)
 end do
 
@@ -264,6 +264,11 @@ if (dim <= 2) then
       end if
 
    end if
+
+   !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
+   !autovalori di (\hatT,\hatS)
+   !call quick_sort( Eigenvalues(:,numCol+1), em )
+   !ESCO
    return
 end if
 
@@ -386,25 +391,13 @@ do j=k1,k2
    end if
 end do
 
+
 !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS)
-
-!do i=1,em
-!   vettoreAusiliario(i) = Eigenvalues(i,numCol+1)
-!end do
-
-!call quick_sort(vettoreAusiliario)
-
-!do i=1,em
-!   Eigenvalues(i,numCol+1) = vettoreAusiliario(i)
-!end do
-
 call quick_sort( Eigenvalues(:,numCol+1), em )
-
-!P.S. cosi` come e` scritta la chiamata al quick sort
-!necessita la creazione di un array, chiamato "a", non
-!necessario: si potrebbe lavorare direttamente sulla colonna
-!numCol di Eigenvalues...
+if ( numCol /= 0 ) then
+   call quick_sort( Eigenvalues(:,numCol), em )
+end if
 
 write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
 
@@ -735,7 +728,7 @@ recursive subroutine quick_sort(a, n)
 
   integer :: n
 
-  !n = size(a)
+  n = size(a)
 
   if (n>1) then
      call partition(a,i)
@@ -755,34 +748,36 @@ recursive subroutine quick_sort(a, n)
 
       integer, intent(OUT) :: j
 
-      integer :: i,temp
+      integer :: i
+
+      real(dp) :: temp
 
       i=1
       j=size(a)
 
       do
          do
-            if (i>j) exit
-            if (a(j)>a(1)) exit
+            if ( i>j ) exit
+            if ( a(j) > a(1) ) exit
             i=i+1
          end do
          
          do
-            if ( (j<i) .OR. (a(j)<=a(1)) ) exit
+            if ( (j<i) .OR. ( a(j) <= a(1) ) ) exit
             j = j-1
          end do
 
-         if (i>=j) exit
+         if ( i >= j ) exit
 
-         temp=a(i)
-         a(i)=a(j)
-         a(j)=temp
+         temp = a(i)
+         a(i) = a(j)
+         a(j) = temp
 
       end do
 
       temp = a(j)
-      a(j)=a(1)
-      a(1)=temp
+      a(j) = a(1)
+      a(1) = temp
 
     end subroutine partition
 
