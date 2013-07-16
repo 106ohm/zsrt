@@ -641,110 +641,97 @@ machinePrecision=epsilon(1.d0)
 
 !write(*,*)"dim=",dim
 
-do i=0,dim-1
+xi(-2) = 0.d0
 
-   if ( i==0 ) then
+xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
+if ( xi(-1) == 0 ) then
+   xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
+end if
+
+xi(0)=xi(-1)
+
+eta(-2) = 0.d0
+eta(-1) = S(Sinizio,Sinizio)/xi(0)
+eta(0) = eta(-1)
+
+zeta(-2) = 0.d0
+zeta(-1) = zeta(-2)
+zeta(0) = zeta(-1)
+
+kappa = 0
+
+do i=1,dim-1
       
-      xi(-2) = 0.d0
+   !ATTENZIONE: qui ho i=1,dim-1
+   
+   !mi occupo di xi
+   
+   xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
+   (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/&
+   xi(-1)
 
-      xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
-      if ( xi(-1) == 0 ) then
-         xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
-      end if
-
-      xi(0)=xi(-1)
-
-      eta(-2) = 0.d0
-      eta(-1) = S(Sinizio,Sinizio)/xi(0)
-      eta(0) = eta(-1)
-
-      zeta(-2) = 0.d0
-      zeta(-1) = zeta(-2)
-      zeta(0) = zeta(-1)
-      
-      kappa = 0
-
-   else
-      
-      !ATTENZIONE: qui ho i=1,dim-1
-
-      !mi occupo di xi
-
-      xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
-      (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/&
+   if ( abs(xi(0)) <= machinePrecision ) then
+      xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
+      abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/&
       xi(-1)
-
-      if ( xi(0) == 0 ) then
-         xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
-         abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/&
-         xi(-1)
-      end if
-
-      !mi occupo di eta:
-      !divido in due tappe il calcolo.
-
-      eta(0) =2.d0*(T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))*&
-      S(Sinizio+i-1,Sinizio+i) + (T(Tinizio+i-1,Tinizio+i)- &
-      x*S(Sinizio+i-1,Sinizio+i))**2*eta(-2)
-      
-      !if ( abs(eta(0))<= machinePrecision ) then
-      !   write(*,*)"primo pezzo di eta e` zero!"
-      !end if
-
-      eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
-      eta(-1) + S(Sinizio+i,Sinizio+i) - eta(0)/xi(-1) )/xi(0)
-
-      if ( abs(eta(0))<= machinePrecision ) then
-         write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
-      end if
-
-      !eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
-      !eta(-1) + S(Sinizio+i,Sinizio+i)-( 2*(T(Tinizio+i-1,Tinizio+i)-&
-      !x*S(Sinizio+i-1,Sinizio+i))*S(Sinizio+i-1,Sinizio+i) + & 
-      !(T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i))**2 * &
-      !eta(-2) )/xi(-1) )/xi(0)
-      
-      !mi occupo di zeta: 
-      !divido in due tappe il calcolo.
-      
-      zeta(0) = 2.d0*S(Sinizio+i-1,Sinizio+i)**2 + &
-      4.d0*( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )*&
-      S(Sinizio+i-1,Sinizio+i)*eta(-2) - &
-      ( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2*&
-      zeta(-2)
-
-      !if ( abs(zeta(0))<= machinePrecision ) then
-      !   write(*,*)"primo pezzo di zeta e` zero!"
-      !end if
-
-      zeta(0) = (( T(Tinizio+i,Tinizio+i) -x*S(Sinizio+i,Sinizio+i))*&
-      zeta(-1) + 2.d0*S(Sinizio+i,Sinizio+i)*eta(-1) - &
-      zeta(0)/xi(-1) )/xi(0)
-
-      if ( abs(zeta(0))<= machinePrecision ) then
-         write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
-      end if
-
-
-      !tengo conto di quanti termini negativi compaiono 
-      !nella successione degli xi
-      
-      if ( xi(0) <= 0.d0 ) then
-         kappa = kappa+1
-      end if
-      
-      !aggiiorno le variabili
-      
-      xi(-2)=xi(-1)
-      xi(-1)=xi(0)
-
-      eta(-2)=eta(-1)
-      eta(-1)=eta(0)
-
-      zeta(-2) = zeta(-1)
-      zeta(-1) = zeta(0)
-
    end if
+
+   !mi occupo di eta:
+   !divido in due tappe il calcolo.
+
+   eta(0) =2.d0*(T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))*&
+   S(Sinizio+i-1,Sinizio+i) + (T(Tinizio+i-1,Tinizio+i)- &
+   x*S(Sinizio+i-1,Sinizio+i))**2*eta(-2)
+      
+   !if ( abs(eta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di eta e` zero!"
+   !end if
+
+   eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
+   eta(-1) + S(Sinizio+i,Sinizio+i) - eta(0)/xi(-1) )/xi(0)
+
+   if ( abs(eta(0))<= machinePrecision ) then
+      write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
+   end if
+   
+   !mi occupo di zeta: 
+   !divido in due tappe il calcolo.
+      
+   zeta(0) = 2.d0*S(Sinizio+i-1,Sinizio+i)**2 + &
+   4.d0*( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )*&
+   S(Sinizio+i-1,Sinizio+i)*eta(-2) - &
+   ( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2*&
+   zeta(-2)
+
+   !if ( abs(zeta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di zeta e` zero!"
+   !end if
+
+   zeta(0) = (( T(Tinizio+i,Tinizio+i) -x*S(Sinizio+i,Sinizio+i))*&
+   zeta(-1) + 2.d0*S(Sinizio+i,Sinizio+i)*eta(-1) - &
+   zeta(0)/xi(-1) )/xi(0)
+   
+   if ( abs(zeta(0))<= machinePrecision ) then
+      write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
+   end if
+
+   !tengo conto di quanti termini negativi compaiono 
+   !nella successione degli xi
+      
+   if ( xi(0) <= 0.d0 ) then
+      kappa = kappa+1
+   end if
+      
+   !aggiiorno le variabili
+      
+   xi(-2)=xi(-1)
+   xi(-1)=xi(0)
+
+   eta(-2)=eta(-1)
+   eta(-1)=eta(0)
+
+   zeta(-2) = zeta(-1)
+   zeta(-1) = zeta(0)
 
    !write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
    !write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
