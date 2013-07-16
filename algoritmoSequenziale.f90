@@ -353,7 +353,7 @@ do j=k1,k2
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
-      x = Eigenvalues(j,numCol+1)
+      x = Eigenvalues(j,numCol+2)
       !cioe` x=\hat\lambda_j.
       !Chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
@@ -386,7 +386,7 @@ do j=k1,k2
       !vedi meta` p. 14
 
       write(*,*)"inizio EstMlt"
-      call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+      call EstMlt(x, segno, en, em, Eigenvalues, numCol+2, j, mlt)
       write(*,*)"fine EstMlt"
 
       write(*,*)"j=",j,"mlt=",mlt
@@ -394,7 +394,7 @@ do j=k1,k2
 
       write(*,*)"inizio LagIt"
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
-      Sinizio, Sfine, en, em, Eigenvalues, numCol+1,j, &
+      Sinizio, Sfine, en, em, Eigenvalues, numCol+2,j, &
       fPrimo, fSecondo, kappa, lambdaJ)
       write(*,*)"fine LagIt"
 
@@ -538,6 +538,8 @@ l = 2
 !write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
+
+   if ( l >= 1000 ) exit
 
    !write(*,*) "l=",l
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
