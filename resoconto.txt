@@ -3,60 +3,71 @@
    0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
    0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
    0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
- INIZIO CHIAMATA RICORSIVA(numCol=           0 flag=           0 )
- dim=           4
- INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=           1 )
- dim=           2
- INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=          -1 )
- dim=           2
+ INIZIO CHIAMATA RICORSIVA(numCol=           0 flag=           0 dim=           4 )
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=           1 dim=           2 )
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           1 flag=           1 dim=           2 )
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=          -1 dim=           2 )
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           1 flag=          -1 dim=           2 )
+ ordino la colonna numero            2
  k1=           1 k2=           4
- cucu1
- cucu2
+ j=           1
+ x=   0.0000000000000000     
+ inizio EstMlt
  
+ fine EstMlt
  j=           1 mlt=           1
- aj=   0.0000000000000000      bj=   5.0000000000000000     
- ~sono dentro LagIt~
- fPrimo=  -2.0833333333333330      fSecondo=   2.9166666666666665     
- immagazzino i risultati
- cucu1
- cucu2
+ inizio LagIt
+ Ho incontrato la condizione di arresto (24).
+ fine LagIt
+ j=           2
+ x=   0.0000000000000000     
+ GOTO 100
  secondo -ed ultimo- pezzo di eta e` zero!
- cucu2
+ x=   2.5000000000000000     
+ inizio EstMlt
  
+ fine EstMlt
  j=           2 mlt=           3
- aj=   2.5000000000000000      bj=   5.0000000000000000     
- ~sono dentro LagIt~
- fPrimo=  -1.4802973661668753E-016 fSecondo=  -8.8888888888888875     
+ inizio LagIt
  fPrimo oppure fSecondo sono troppo piccoli!
- ...ignoro questo fatto e vado avanti...
- immagazzino i risultati
- cucu1
- cucu2
+ fine LagIt
+ j=           3
+ x=   0.0000000000000000     
+ GOTO 100
  secondo -ed ultimo- pezzo di eta e` zero!
- cucu2
- cucu2
+ x=   2.5000000000000000     
+ GOTO 100
+ x=   3.7500000000000000     
+ inizio EstMlt
  
+ fine EstMlt
  j=           3 mlt=           2
- aj=   3.7500000000000000      bj=   5.0000000000000000     
- ~sono dentro LagIt~
- fPrimo=  -1.7316017316017316      fSecondo=  -15.238095238095239     
- immagazzino i risultati
- cucu1
- cucu2
+ inizio LagIt
+ Ho incontrato la condizione di arresto (24).
+ fine LagIt
+ j=           4
+ x=   0.0000000000000000     
+ GOTO 100
  secondo -ed ultimo- pezzo di eta e` zero!
- cucu2
- cucu2
- cucu2
+ x=   2.5000000000000000     
+ GOTO 100
+ x=   3.7500000000000000     
+ GOTO 100
+ x=   4.3750000000000000     
+ inizio EstMlt
  
+ fine EstMlt
  j=           4 mlt=           1
- aj=   4.3750000000000000      bj=   5.0000000000000000     
- ~sono dentro LagIt~
- fPrimo=   4.1112883218146372      fSecondo=   8.9975781203851373     
- immagazzino i risultati
- FINE CHIAMATA RICORSIVA(numCol=           0 flag=           0 )
+ inizio LagIt
+ Ho incontrato la condizione di arresto (24).
+ fine LagIt
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           0 flag=           0 dim=           4 )
  Eigenvalues dopo il calcolo:
-  0.97587210612522179        2.0000000000000000        0.0000000000000000        0.0000000000000000     
-   2.5000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000     
+  0.97587210612522179        1.0000000000000000        0.0000000000000000        0.0000000000000000     
+   2.5000000000000000        2.0000000000000000        0.0000000000000000        0.0000000000000000     
    4.1462327472470868        3.0000000000000000        0.0000000000000000        0.0000000000000000     
    5.9538399473812129        4.0000000000000000        0.0000000000000000        0.0000000000000000     
  FINE CALCOLO AUTOVALORI!

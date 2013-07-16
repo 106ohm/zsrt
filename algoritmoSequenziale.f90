@@ -171,9 +171,6 @@ real(dp), dimension(em) :: vettoreAusiliario
 !!!
 
 
-write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
-
-
 machinePrecision=epsilon(1.d0)
 
 !!!
@@ -184,7 +181,8 @@ machinePrecision=epsilon(1.d0)
 !prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio + 1
 
-write(*,*)"dim=",dim
+write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
+
 
 !SE dim=2, (ovvero se le matrici sono 2x2), oppure 
 !dim=1, (ovvero le matrici sono 1x1), 
@@ -274,11 +272,8 @@ if (dim <= 2) then
 
    end if
 
-   !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
-   !autovalori di (\hatT,\hatS)
-   !call quick_sort( Eigenvalues(:,numCol+1), em )
-   !ESCO
-   return
+   GOTO 200
+   !cioe` alla fine della subroutine
 end if
 
 
@@ -322,6 +317,16 @@ S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 !Torno alla dim che mi occorre
 dim = Tfine - Tinizio + 1
 
+!Riordino gli autovalori di (T0,S0) e (T1,S1) negli
+!autovalori di (\hatT,\hatS).
+if ( sum(Eigenvalues(:,numCol+2)) /= 0.d0 ) then
+   write(*,*)"ordino la colonna numero ",numCol+2
+   call quick_sort( Eigenvalues(:,numCol+2), em )
+end if
+
+
+!cerco k1 e k2
+
 call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
 fPrimo, fSecondo, kappa)
 k1=kappa+1
@@ -340,28 +345,33 @@ write(*,*)"k1=",k1,"k2=",k2
 
 do j=k1,k2
 
+   write(*,*)"j=",j
 
    !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
    !nel ricercare \lambda_j
    aj=a
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
-      write(*,*)"cucu1"
+
       x = Eigenvalues(j,numCol+1)
       !cioe` x=\hat\lambda_j.
       !Chiamo la subroutine per il calcolo di (12), (13) e (14).
       100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
       Sinizio, Sfine, fPrimo, fSecondo, kappa)
-      write(*,*)"cucu2"
+
       if ( kappa < j ) then
          aj = x
       else
          bJ = x
       end if
+      
+      write(*,*)"x=",x
+
       !Adesso cerco un nuovo x
       if ( kappa /= j-1 .AND. kappa /= j ) then
          x = (aj+bj)/2.d0
          !ripeto il calcolo fatto alla etichetta 100:
+         Write(*,*)"GOTO 100"
          GOTO 100
       end if
 
@@ -375,16 +385,21 @@ do j=k1,k2
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
+      write(*,*)"inizio EstMlt"
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+      write(*,*)"fine EstMlt"
 
       write(*,*)"j=",j,"mlt=",mlt
-      write(*,*)"aj=",aj,"bj=",bj
+      !write(*,*)"aj=",aj,"bj=",bj
 
+      write(*,*)"inizio LagIt"
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
       Sinizio, Sfine, en, em, Eigenvalues, numCol+1,j, &
       fPrimo, fSecondo, kappa, lambdaJ)
+      write(*,*)"fine LagIt"
+
       !immagazzino i risultati
-      write(*,*)"immagazzino i risultati"
+     
       if ( flag >= 0 ) then
          !altro verso basso
          Eigenvalues(j,numCol+1) = lambdaJ
@@ -393,6 +408,8 @@ do j=k1,k2
          Eigenvalues(em-j+1,numCol+1) = lambdaJ
       end if
    else
+      !in questo caso a e b distano solo "un passo macchina"
+      write(*,*)"a e b distano pochissimo!"
       if ( flag >= 0 ) then
          !alto verso basso
          Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
@@ -403,15 +420,9 @@ do j=k1,k2
    end if
 end do
 
+200 write(*,*)""
 
-!Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
-!autovalori di (\hatT,\hatS)
-call quick_sort( Eigenvalues(:,numCol+1), em )
-if ( numCol /= 0 ) then
-   call quick_sort( Eigenvalues(:,numCol), em )
-end if
-
-write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
+write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,"dim=",dim,")"
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -524,8 +535,7 @@ xl(0) = x
 
 l = 2
 
-write(*,*)"~sono dentro LagIt~"
-write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
+!write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
 
@@ -541,7 +551,6 @@ do while ( .TRUE. )
    if ( abs(fPrimo) <= machinePrecision .OR. &
    abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
-      write(*,*)"...ignoro questo fatto e vado avanti..."
       !esco con xl(0) precedentemente calcolato
       GOTO 30
    end if
@@ -566,7 +575,8 @@ do while ( .TRUE. )
    ( ((deltaL)**2)/(abs(exDeltaL)-xl(0)-xl(-1)) <= &
    machinePrecision*abs(xl(0)) ) & 
    ) then
-     GOTO 30
+      write(*,*)"Ho incontrato la condizione di arresto (24)."
+      GOTO 30
   end if
 
   !calcolo (12), (13) e (14)
@@ -577,13 +587,11 @@ do while ( .TRUE. )
   if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
      mlt = abs(kappa-exKappa)
      xl(0) = (xl(0)+xl(-1))/2.d0
+     write(*,*)"GOTO 20"
      GOTO 20
   end if
 
   l = l+1
-
-  write(*,*)"aj=",aj,"bj=",bj
-  write(*,*)"xl(0)=",xl(0)
 
 end do
 
@@ -761,9 +769,9 @@ recursive subroutine quick_sort(a, n)
 
   integer :: i
 
-  integer :: n
+  integer, intent(IN) :: n
 
-  n = size(a)
+  !n = size(a)
 
   if (n>1) then
      call partition(a,i)
