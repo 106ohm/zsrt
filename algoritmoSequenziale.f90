@@ -67,8 +67,8 @@ end do
 !se flag=0 allora siamo nella prima chiamata e dunque e` indifferente;
 !abbiamo scelto di scrivere dall'alto verso il basso.
 
-a=-100.d0
-b=100.d0
+a=0.d0
+b=5.d0
 
 !ATTENZIONE: numCol=0 poiche' l'indice di colonna di Eigenvalues parte da 1.
 !ATTENZIONE: la prima chiamata della subroutine e` con flag=0, le altre no.
@@ -315,7 +315,6 @@ k2=kappa+1
 
 write(*,*)"k1=",k1,"k2=",k2
 
-!kappa=0
 !k1=1
 !k2=4
 
@@ -331,11 +330,13 @@ do j=k1,k2
    aj=a
    bj=b
    if ( bj-aj > max(aj,bj)*machinePrecision ) then
+      write(*,*)"cucu1"
       x = Eigenvalues(j,numCol+1)
       !cioe` x=\hat\lambda_j.
       !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-
+      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+               fPrimo, fSecondo, kappa)
+      write(*,*)"cucu2"
       if ( kappa < j ) then
          aj = x
       else
@@ -348,22 +349,20 @@ do j=k1,k2
          GOTO 100
       end if
 
-      !Chiamo EstMlt e LagIt
+      !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
       if ( -fPrimo >= 0.d0 ) then
          segno = 1
       else
          segno = -1
       end if
+      
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
-      !write(*,*)"~prima di EstMlt~"
-      !write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
-
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
-      !write(*,*)"~prima di LagIt~"
       write(*,*)"j=",j,"mlt=",mlt
+      write(*,*)"aj=",aj,"bj=",bj
 
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
       Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
@@ -518,7 +517,7 @@ xl(0) = x
 
 l = 2
 
-write(*,*)"aj=",aj,"bj=",bj
+write(*,*)"~sono dentro LagIt~"
 write(*,*)"x=",x
 
 do while ( .TRUE. )
