@@ -42,7 +42,7 @@ end do
 em=n
 !ATTENIONE: il "logarithmus dualis", ovvero in base 2,
 !lo calcoliamo tramite ld(n)=log(n)/log(2)
-en=int( log(n*1.d0)/log(2.d0) ) + 2
+en=int( log(n*1.d0)/log(2.d0) ) + 1
 
 allocate( Eigenvalues(em,en) )
 
@@ -196,15 +196,8 @@ if (dim <= 2) then
          !immagazzino zero, cioe` non aggiorno Eigenvalues
          return
       else
-         if ( flag >= 0 ) then
-            !altro verso basso
-            Eigenvalues(1,numCol+1) = T(Tinizio,Tfine)/ &
-            S(Sinizio,Sfine)
-         else
-            !basso verso alto
-            Eigenvalues(em-1,numCol+1) = T(Tinizio,Tfine)/ &
-            S(Sinizio,Sfine)
-         end if
+         Eigenvalues(Tinizio,numCol+1) = T(Tinizio,Tfine)/ &
+         S(Sinizio,Sfine)
       end if
    else
       !se mi trovo qui allora dim=2
@@ -248,23 +241,27 @@ if (dim <= 2) then
       !immagazzino i risultati
       if ( flag >= 0 ) then
          !altro verso basso
-         Eigenvalues(1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         write(*,*),"(",Tinizio,",",numCol+1,")"
+         Eigenvalues(Tinizio,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) ) 
 
-         Eigenvalues(2,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         write(*,*),"(",Tinizio+1,",",numCol+1,")"
+         Eigenvalues(Tinizio+1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
       else
          !basso verso alto
-         Eigenvalues(em,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+         write(*,*),"(",Tfine,",",numCol+1,")"
+         Eigenvalues(Tfine,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
 
-         Eigenvalues(em-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) )* &
+         write(*,*),"(",Tfine-1,",",numCol+1,")"
+         Eigenvalues(Tfine-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) )* &
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
@@ -320,7 +317,7 @@ dim = Tfine - Tinizio + 1
 !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS).
 if ( sum(Eigenvalues(:,numCol+2)) /= 0.d0 ) then
-   !write(*,*)"ordino la colonna numero ",numCol+2
+   write(*,*)"ordino la colonna numero ",numCol+2
    call quick_sort( Eigenvalues(:,numCol+2), em )
 end if
 
