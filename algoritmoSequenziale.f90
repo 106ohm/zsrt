@@ -512,13 +512,18 @@ l = 2
 do while ( .TRUE. )
 
    !write(*,*) "l=",l
-   write(*,*)"x=",x
+   !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
 
    exKappa = kappa
 
    !aggiorno le variabili
    xl(-2) = xl(-1)
    xl(-1) = xl(0)
+
+   if ( abs(fPrimo) <= machinePrecision .OR. abs(fSecondo) <= machinePRecision ) then
+      write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
+      return
+   end if
 
    if ( kappa < j ) then
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
@@ -598,24 +603,24 @@ real(dp) :: machinePrecision
 
 machinePrecision=epsilon(1.d0)
 
-!write(*,*)"Tinizio= ", Tinizio
-!write(*,*)"Tfine= ", Tfine
-!write(*,*)"Sinizio= ", Sinizio
-!write(*,*)"Sfine= ", Sfine
-
 !ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
 !da Tinizio e da Sinizio. T ed S sono state definite con indici che
 !vanno da 1 a n, dunque per iniziare a contare da 1 ri-definisco
 !Tinizio, Tfine, Sinizio ed Sfine.
 
-!Tinizio = Tinizio-1
-!Tfine = Tfine-1
-!Sinizio = Sinizio-1
-!Sfine = Sfine-1 
+Tinizio = Tinizio-1
+Tfine = Tfine-1
+Sinizio = Sinizio-1
+Sfine = Sfine-1 
 
+write(*,*)"Tinizio= ", Tinizio
+write(*,*)"Tfine= ", Tfine
+write(*,*)"Sinizio= ", Sinizio
+write(*,*)"Sfine= ", Sfine
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
-!OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, zeta_{i-2}, eta_{i-1} ed eta_{i-2}
+!OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, 
+!zeta_{i-2}, eta_{i-1} ed eta_{i-2}
 
 xi(-2) = 0.d0
 
@@ -623,6 +628,8 @@ xi(-1) = T(Tinizio+1,Tinizio+1) - x * S(Sinizio+1,Sinizio+1)
 if ( xi(-1) == 0 ) then
    xi(-1) = T(Tinizio+1,Tinizio+1)* machinePrecision**2
 end if
+
+xi(0)=xi(-1)
 
 eta(-2) = 0.d0
 eta(-1) = S(Sinizio+1,Sinizio+1)/xi(0)
@@ -634,6 +641,12 @@ kappa = 0
 
 
 do i=2,dim
+
+   write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
+   write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
+   write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1),"zeta(0)=", &
+   zeta(0)
+   write(*,*)"k=",k
 
    !mi occupo di xi
 
