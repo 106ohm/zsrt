@@ -1,0 +1,78 @@
+!!!
+!PROGRAMMA PRINCIPALE
+!!!
+program proveCalcoli
+
+implicit none
+
+integer, parameter :: dp = kind(1.d0)
+
+integer :: n, i, j, em, en
+
+real(dp) :: a,b
+
+real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
+
+!!!
+!FINE DICHIARAZIONI
+!!!
+
+!leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
+!alloco la memoria e carico le matrici T ed S;
+!cosi` avro` a disposizione la pencil (T,S).
+
+open(unit=1, file="T.txt")
+open(unit=2, file="S.txt")
+
+read(1,*) n
+read(2,*) n
+
+allocate( T(n,n),S(n,n) )
+
+do j=1,n
+   do i=1,n
+      read(1,*) T(i,j)
+      read(2,*) S(i,j)
+   end do
+end do
+
+!scelgo le dimensioni di Eigenvalues, alloco memoria
+!ed inizializzo i suoi valori a zero
+
+em=n
+!ATTENIONE: il "logarithmus dualis", ovvero in base 2,
+!lo calcoliamo tramite ld(n)=log(n)/log(2)
+en=int( log(n*1.d0)/log(2.d0) ) + 2
+
+allocate( Eigenvalues(em,en) )
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+write(*,*) "Eigenvalues prima del calcolo:"
+do i=1,n
+   write(*,*) Eigenvalues(i,:)
+end do
+
+!Chiamo la subroutine che trova gli autovalori nell'intervallo
+![a,b] e li salva nella prima colonna della matrice Eigenvalues
+!(le altre colonne di Eigenvalues vengono utilizzate nella
+!ricorsione e possono fornire informazioni sui calcoli).
+!Per guidare la scrittura nella matrice utiliziamo una bandiera:
+!se flag>0 allora scriviamo dall'alto verso il basso,
+!se flag<0 allora scriviamo dal basso verso l'alto,
+!se flag=0 allora siamo nella prima chiamata e dunque e` indifferente;
+!abbiamo scelto di scrivere dall'alto verso il basso.
+
+a=-100.d0
+b=100.d0
+
+!ATTENZIONE: numCol=0 poiche' l'indice di colonna di Eigenvalues parte da 1.
+!ATTENZIONE: la prima chiamata della subroutine e` con flag=0, le altre no.
+
+
+
+end program proveCalcoli
