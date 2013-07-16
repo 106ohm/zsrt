@@ -181,11 +181,11 @@ dim = Tfine - Tinizio + 1
 
 write(*,*)"dim=",dim
 
-!SE dim=1, (ovvero se le matrici sono 2x2), oppure 
-!dim=0, (ovvero le matrici sono 1x1), 
+!SE dim=2, (ovvero se le matrici sono 2x2), oppure 
+!dim=1, (ovvero le matrici sono 1x1), 
 !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
-if (dim <= 1) then
-   if (dim == 0) then
+if (dim <= 2) then
+   if (dim == 1) then
       !non puo` accadere che S(Tinizio,Tinizio)=0
       !poiche' S e` non singolare; comunque controllo
       !che non sia "numericamente zero"
@@ -204,7 +204,7 @@ if (dim <= 1) then
          end if
       end if
    else
-      !se mi trovo qui allora dim=1
+      !se mi trovo qui allora dim=2
       !risolvo a mano S^{-1}T x = \lambda x.
 
       deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
