@@ -166,6 +166,9 @@ real(dp), dimension(em) :: vettoreAusiliario
 !!!
 
 
+write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
+
+
 machinePrecision=epsilon(1.d0)
 
 !!!
@@ -175,6 +178,8 @@ machinePrecision=epsilon(1.d0)
 !T... e S... si muovono nello stesso modo,
 !prendo quindi come dimensione uno dei due:
 dim = Tfine - Tinizio + 1
+
+write(*,*)"dim=",dim
 
 !SE dim=1, (ovvero se le matrici sono 2x2), oppure 
 !dim=0, (ovvero le matrici sono 1x1), 
@@ -206,7 +211,7 @@ if (dim <= 1) then
       S(Sinizio,Sfine)**2)
 
       if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
-         write(*,*) "evitata divisione per zero."
+         write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
          return
       end if
 
@@ -289,8 +294,6 @@ S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
 call calcoloAutovaloriDentroI(-1, a, b, n, T, S, T1inizio, T1fine, &
 S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 
-write(*,*) "inizia il MERGE dentro:"
-write(*,*) "numCol=", numCol, "flag=", flag
 
 !!!
 !MERGE, pagina 17 dell'articolo
@@ -312,9 +315,9 @@ k2=kappa
 
 write(*,*)"k1=",k1,"k2=",k2
 
-kappa=0
-k1=1
-k2=4
+!kappa=0
+!k1=1
+!k2=4
 
 !OSS: nel caso del calcolo di tutti gli autovalori ho,
 !nella 0-esima chiamata ricorsiva,
@@ -354,17 +357,18 @@ do j=k1,k2
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
-      write(*,*)"prima di EstMlt"
+      write(*,*)"~prima di EstMlt~"
       write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
 
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
-      write(*,*)"prima di LagIt"
+      write(*,*)"~prima di LagIt~"
       write(*,*)"x=",x,"mlt=",mlt
 
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
       Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
       !immagazzino i risultati
+      write(*,*)"immagazzino i risultati"
       if ( flag >= 0 ) then
          !altro verso basso
          Eigenvalues(j,numCol+1) = lambdaJ
@@ -402,6 +406,8 @@ call quick_sort( Eigenvalues(:,numCol+1), em )
 !necessita la creazione di un array, chiamato "a", non
 !necessario: si potrebbe lavorare direttamente sulla colonna
 !numCol di Eigenvalues...
+
+write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
 
 end subroutine calcoloAutovaloriDentroI
 
