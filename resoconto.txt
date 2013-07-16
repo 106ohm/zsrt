@@ -10,51 +10,71 @@
  dim=           8 numCol=           1
  dim=           4 numCol=           2
  dim=           2 numCol=           3
+ (           1 ,           3 )=   2.0000000000000000     
+ (           2 ,           3 )=   1.0000000000000000     
  
  dim=           2 numCol=           3
+ (           4 ,           3 )=   4.0000000000000000     
+ (           3 ,           3 )=   3.0000000000000000     
  
+ evito di ordinare per dim=           4 numCol+1=           3 flag=           1
  k1=           1 k2=           4
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           1 ,           2 )=   2.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           2 ,           2 )=   3.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           3 ,           2 )=   3.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           4 ,           2 )=   4.0000000000000000     
  
  dim=           4 numCol=           2
  dim=           2 numCol=           3
+ (           5 ,           3 )=   6.0000000000000000     
+ (           6 ,           3 )=   5.0000000000000000     
  
  dim=           2 numCol=           3
+ (           8 ,           3 )=   8.0000000000000000     
+ (           7 ,           3 )=   7.0000000000000000     
  
  ordino la colonna numero            3
  k1=           1 k2=           1
  
  condizione di arresto (24) del secondo tipo
  l=           2
+ (           8 ,           2 )=   3.7999364382939698     
  
+ evito di ordinare per dim=           8 numCol+1=           2 flag=           0
  k1=           1 k2=           5
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           1 ,           1 )=   2.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           2 ,           1 )=   3.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           3 ,           1 )=   3.0000000000000000     
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           4 ,           1 )=   4.0000000000000000     
  secondo -ed ultimo- pezzo di eta e` zero!
  
  condizione di arresto particolare: xl(0) e` NaN!
  l=           2
+ (           5 ,           1 )=   5.0000000000000000     
  
  Eigenvalues dopo il calcolo:
    2.0000000000000000        2.0000000000000000        1.0000000000000000        0.0000000000000000     

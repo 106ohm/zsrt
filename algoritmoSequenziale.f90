@@ -252,14 +252,14 @@ if (dim <= 2) then
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) ) 
 
-         !write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
+         write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
 
          Eigenvalues(Tinizio+1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
 
-         !write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
+         write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
 
       else
          !basso verso alto
@@ -269,14 +269,14 @@ if (dim <= 2) then
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
 
-         !write(*,*),"(",Tfine,",",numCol,")=",Eigenvalues(Tfine,numCol)
+         write(*,*),"(",Tfine,",",numCol,")=",Eigenvalues(Tfine,numCol)
 
          Eigenvalues(Tfine-1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) )* &
          ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
          betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
          betaSecGrado ) )
 
-         !write(*,*),"(",Tfine-1,",",numCol,")=",Eigenvalues(Tfine-1,numCol)
+         write(*,*),"(",Tfine-1,",",numCol,")=",Eigenvalues(Tfine-1,numCol)
 
       end if
 
@@ -327,6 +327,7 @@ S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
 !Torno alla dim che mi occorre
 dim = Tfine - Tinizio + 1
 
+
 !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
 !autovalori di (\hatT,\hatS).
 ordFlag=1
@@ -339,8 +340,11 @@ end do
 if ( ordFlag /= 0 ) then
    write(*,*)"ordino la colonna numero ",numCol+1
    call quick_sort( Eigenvalues(:,numCol+1), em )
+else
+   write(*,*)"evito di ordinare per dim=",dim,"numCol+1=",numCol+1,"flag=",flag
 end if
 
+!if ( dim == 4 ) return
 
 !cerco k1 e k2
 
@@ -417,20 +421,24 @@ do j=k1,k2
      
       if ( flag >= 0 ) then
          !altro verso basso
-         Eigenvalues(j,numCol) = lambdaJ
+         Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
+         write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
       else
          !basso verso alto
-         Eigenvalues(em-j+1,numCol) = lambdaJ
+         Eigenvalues(Tfine-j+1,numCol) = lambdaJ
+         write(*,*),"(",Tfine-j+1,",",numCol,")=",Eigenvalues(Tfine-j+1,numCol)
       end if
    else
       !in questo caso a e b distano solo "un passo macchina"
       write(*,*)"a e b distano pochissimo!"
       if ( flag >= 0 ) then
          !alto verso basso
-         Eigenvalues(j,numCol) = (aj+bj)/2.d0
+         Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
+         write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
       else
          !basso verso alto
-         Eigenvalues(em-j+1,numCol) = (aj+bj)/2.d0
+         Eigenvalues(Tfine-j+1,numCol) = (aj+bj)/2.d0
+         write(*,*),"(",Tfine-j+1,",",numCol,")=",Eigenvalues(Tfine-j+1,numCol)
       end if
    end if
 end do
