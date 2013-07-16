@@ -540,7 +540,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 10 ) exit
+   if ( l >= 10000 ) exit
 
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
    !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
@@ -611,7 +611,9 @@ do while ( .TRUE. )
 
 end do
 
-30 lambdaJ = xl(0)
+30 write(*,*) "l=",l 
+
+lambdaJ = xl(0)
 
 !OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
 !dello stesso
