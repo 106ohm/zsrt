@@ -511,7 +511,7 @@ xl(0) = x
 l = 2
 
 write(*,*)"~sono dentro LagIt~"
-write(*,*)"x=",x
+write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
 
@@ -527,7 +527,8 @@ do while ( .TRUE. )
    if ( abs(fPrimo) <= machinePrecision .OR. abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
       write(*,*)"...ignoro questo fatto e vado avanti..."
-      !return
+      !esco con xl(0) precedentemente calcolato
+      GOTO 30
    end if
 
    if ( kappa < j ) then
