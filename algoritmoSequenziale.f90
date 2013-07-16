@@ -533,16 +533,19 @@ xl(-2) = x
 xl(-1) = x
 xl(0) = x
 
+exDeltaL=10.d0
+deltaL=10.d0
+
 l = 2
 
 !write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
 
-   if ( l >= 1000 ) exit
+   if ( l >= 10 ) exit
 
-   !write(*,*) "l=",l
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
+   write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
 
    exKappa = kappa
 
@@ -567,33 +570,46 @@ do while ( .TRUE. )
       sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    end if
 
+   if ( isnan(xl(0)) ) then
+      write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
+      xl(0)=xl(-1)
+      GOTO 30
+   end if
+
    exDeltaL = xl(-1) - xl(-2)
    deltaL = xl(0) - xl(-1)
 
    ! condizione (24)
-   if ( &
-   ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) .OR. & 
-   ( abs(deltaL) >= abs(exDeltaL) ) .OR. &
-   ( ((deltaL)**2)/(abs(exDeltaL)-xl(0)-xl(-1)) <= &
-   machinePrecision*abs(xl(0)) ) & 
-   ) then
-      write(*,*)"Ho incontrato la condizione di arresto (24)."
+
+   if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
+      write(*,*)"condizione di arresto (24) del primo tipo"
       GOTO 30
-  end if
+   end if
 
-  !calcolo (12), (13) e (14)
-  20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
-  Sfine, fPrimo, fSecondo, kappa)
+   if ( abs(deltaL) >= abs(exDeltaL) ) then
+      write(*,*)"condizione di arresto (24) del secondo tipo"
+      GOTO 30
+   end if
 
-  !aggiorno [aj, bj] secondo il nuovo kappa
-  if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
-     mlt = abs(kappa-exKappa)
-     xl(0) = (xl(0)+xl(-1))/2.d0
-     write(*,*)"GOTO 20"
-     GOTO 20
-  end if
+   if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
+   machinePrecision*abs(xl(0)) ) then
+      write(*,*)"condizione di arresto (24) del terzo tipo"
+      GOTO 30
+   end if
 
-  l = l+1
+   !calcolo (12), (13) e (14)
+20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+   Sfine, fPrimo, fSecondo, kappa)
+
+   !aggiorno [aj, bj] secondo il nuovo kappa
+   if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
+      mlt = abs(kappa-exKappa)
+      xl(0) = (xl(0)+xl(-1))/2.d0
+      write(*,*)"GOTO 20"
+      GOTO 20
+   end if
+
+   l = l+1
 
 end do
 

@@ -1,0 +1,62 @@
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ INIZIO CHIAMATA RICORSIVA(numCol=           0 flag=           0 dim=           4 )
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=           1 dim=           2 )
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           1 flag=           1 dim=           2 )
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=          -1 dim=           2 )
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           1 flag=          -1 dim=           2 )
+ ordino la colonna numero            2
+ k1=           1 k2=           4
+ j=           1
+ x=   1.0000000000000000     
+ inizio EstMlt
+ 
+ fine EstMlt
+ j=           1 mlt=           1
+ inizio LagIt
+ exDeltaL=   10.000000000000000      deltaL=   10.000000000000000     
+ condizione di arresto (24) del primo tipo
+ fine LagIt
+ j=           2
+ x=   2.0000000000000000     
+ inizio EstMlt
+ 
+ fine EstMlt
+ j=           2 mlt=           1
+ inizio LagIt
+ exDeltaL=   10.000000000000000      deltaL=   10.000000000000000     
+ condizione di arresto particolare: xl(0) e` NaN!
+ fine LagIt
+ j=           3
+ x=   3.0000000000000000     
+ inizio EstMlt
+ 
+ fine EstMlt
+ j=           3 mlt=           1
+ inizio LagIt
+ exDeltaL=   10.000000000000000      deltaL=   10.000000000000000     
+ condizione di arresto particolare: xl(0) e` NaN!
+ fine LagIt
+ j=           4
+ x=   4.0000000000000000     
+ inizio EstMlt
+ 
+ fine EstMlt
+ j=           4 mlt=           1
+ inizio LagIt
+ exDeltaL=   10.000000000000000      deltaL=   10.000000000000000     
+ condizione di arresto particolare: xl(0) e` NaN!
+ fine LagIt
+ 
+ FINE CHIAMATA RICORSIVA(numCol=           0 flag=           0 dim=           4 )
+ Eigenvalues dopo il calcolo:
+   1.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000     
+   2.0000000000000000        2.0000000000000000        0.0000000000000000        0.0000000000000000     
+   3.0000000000000000        3.0000000000000000        0.0000000000000000        0.0000000000000000     
+   4.0000000000000000        4.0000000000000000        0.0000000000000000        0.0000000000000000     
+ FINE CALCOLO AUTOVALORI!
