@@ -54,38 +54,38 @@ allocate( T(n,n), S(n,n) )
 
 
 
-!!!
-!Matrici simmetriche random, ma dominanti diagonali 
-!(autovalori "distanti")
-!!!
-do i=1,n
-   do j=1,i
-      call random_number(rnd)
-      if (i == j) then
-         !aggiungo n+1, cosi' sono sicuro che 
-         !T(i,i)> somma_su_j_di T(i,j)
-         T(i,j) = rnd+n+1
-      else
-         T(i,j) = rnd
-         T(j,i) = T(i,j)
-      end if
-   end do
-end do
-
-
-do i=1,n
-   do j=1,i
-      call random_number(rnd)
-      if (i == j) then
-         !aggiungo n+1, cosi' sono sicuro che 
-         !S(i,i)> somma_su_j_di S(i,j)
-         S(i,i) = rnd+n+1
-      else
-         S(i,j) = rnd
-         S(j,i) = S(i,j)
-      end if
-   end do
-end do
+!!$!!!
+!!$!Matrici simmetriche random, ma dominanti diagonali 
+!!$!(autovalori "distanti")
+!!$!!!
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !T(i,i)> somma_su_j_di T(i,j)
+!!$         T(i,j) = rnd+n+1
+!!$      else
+!!$         T(i,j) = rnd
+!!$         T(j,i) = T(i,j)
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !S(i,i)> somma_su_j_di S(i,j)
+!!$         S(i,i) = rnd+n+1
+!!$      else
+!!$         S(i,j) = rnd
+!!$         S(j,i) = S(i,j)
+!!$      end if
+!!$   end do
+!!$end do
 
 !!$!!!
 !!$!matrici random, "poco" dominanti diagonali 
@@ -122,19 +122,45 @@ end do
 !!$   S(i,i) = sum(S(i,:)) + 1.0d-015
 !!$end do
 
-!!$!!!
-!!$!Matrici AD HOC
-!!$!!!
-!!$n=2
-!!$T(1,1)= 2.d0
-!!$T(2,2)= 2.d0
-!!$T(1,2)= 1.d0
-!!$T(2,1)= 1.d0
-!!$
-!!$S(1,1)=2.d0
-!!$S(2,2)=3.d0
-!!$S(1,2)=1.d0
-!!$S(2,1)=1.d0
+!!!
+!Matrici AD HOC
+!!!
+n=4
+T(1,1)= 1.d0
+T(2,2)= 2.d0
+T(3,3)= 3.d0
+T(4,4)= 4.d0
+
+T(1,2)= 0.d0
+T(1,3)= 0.d0
+T(1,4)= 0.d0
+T(2,1)= 0.d0
+T(2,3)= 0.d0
+T(2,4)= 0.d0
+T(3,1)= 0.d0
+T(3,2)= 0.d0
+T(3,4)= 0.d0
+T(4,1)= 0.d0
+T(4,2)= 0.d0
+T(4,3)= 0.d0
+!!!
+S(1,1)= 1.d0
+S(2,2)= 1.d0
+S(3,3)= 1.d0
+S(4,4)= 1.d0
+
+S(1,2)= 0.d0
+S(1,3)= 0.d0
+S(1,4)= 0.d0
+S(2,1)= 0.d0
+S(2,3)= 0.d0
+S(2,4)= 0.d0
+S(3,1)= 0.d0
+S(3,2)= 0.d0
+S(3,4)= 0.d0
+S(4,1)= 0.d0
+S(4,2)= 0.d0
+S(4,3)= 0.d0
 
 
 !!!
