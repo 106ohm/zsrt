@@ -311,7 +311,7 @@ dim = Tfine - Tinizio + 1
 call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
 k1=kappa+1
 call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k2=kappa
+k2=kappa+1
 
 write(*,*)"k1=",k1,"k2=",k2
 
@@ -357,13 +357,13 @@ do j=k1,k2
       !segno = sign( - fPrimo )
       !vedi meta` p. 14
 
-      write(*,*)"~prima di EstMlt~"
-      write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
+      !write(*,*)"~prima di EstMlt~"
+      !write(*,*)"x=",x,"segno=",segno,"mlt=", mlt
 
       call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
-      write(*,*)"~prima di LagIt~"
-      write(*,*)"x=",x,"mlt=",mlt
+      !write(*,*)"~prima di LagIt~"
+      write(*,*)"j=",j,"mlt=",mlt
 
       call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
       Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
@@ -518,6 +518,9 @@ xl(0) = x
 
 l = 2
 
+write(*,*)"aj=",aj,"bj=",bj
+write(*,*)"x=",x
+
 do while ( .TRUE. )
 
    !write(*,*) "l=",l
@@ -531,7 +534,8 @@ do while ( .TRUE. )
 
    if ( abs(fPrimo) <= machinePrecision .OR. abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
-      return
+      write(*,*)"...ignoro questo fatto e vado avanti..."
+      !return
    end if
 
    if ( kappa < j ) then
@@ -569,6 +573,9 @@ do while ( .TRUE. )
   end if
 
   l = l+1
+
+  write(*,*)"aj=",aj,"bj=",bj
+  write(*,*)"xl(0)=",xl(0)
 
 end do
 

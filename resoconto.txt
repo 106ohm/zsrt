@@ -1,0 +1,47 @@
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ INIZIO CHIAMATA RICORSIVA(numCol=           0 flag=           0 )
+ dim=           4
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=           1 )
+ dim=           2
+ INIZIO CHIAMATA RICORSIVA(numCol=           1 flag=          -1 )
+ dim=           2
+ k1=           1 k2=           4
+ 
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=   100.00000000000000     
+ x=   0.0000000000000000     
+ fPrimo oppure fSecondo sono troppo piccoli!
+ ...ignoro questo fatto e vado avanti...
+ immagazzino i risultati
+ 
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=   3.1250000000000000     
+ x=   3.1250000000000000     
+ fPrimo oppure fSecondo sono troppo piccoli!
+ ...ignoro questo fatto e vado avanti...
+ immagazzino i risultati
+ 
+ j=           3 mlt=           1
+ aj=   0.0000000000000000      bj=   50.000000000000000     
+ x=   50.000000000000000     
+ fPrimo oppure fSecondo sono troppo piccoli!
+ ...ignoro questo fatto e vado avanti...
+ immagazzino i risultati
+ 
+ j=           4 mlt=           1
+ aj=   50.000000000000000      bj=   100.00000000000000     
+ x=   50.000000000000000     
+ fPrimo oppure fSecondo sono troppo piccoli!
+ ...ignoro questo fatto e vado avanti...
+ immagazzino i risultati
+ FINE CHIAMATA RICORSIVA(numCol=           0 flag=           0 )
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000        2.0000000000000000        0.0000000000000000        0.0000000000000000     
+   3.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000     
+   38.000000000000000        3.0000000000000000        0.0000000000000000        0.0000000000000000     
+   73.736837437273905        4.0000000000000000        0.0000000000000000        0.0000000000000000     
+ FINE CALCOLO AUTOVALORI!
