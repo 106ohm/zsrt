@@ -28,7 +28,8 @@ real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
 !1) stapo Eigenvalues prima e dopo il calcolo
 !2) stampo k1, k2 e le condizioni di arresto
 !3) stampo (per ogni j=k1,k2) l'intervallo
-!chiamato [aj, bj] ed x iniziale con la sua mlt 
+!chiamato [aj, bj], il numero x iniziale,
+! con la sua mlt, ed il numero di iterazioni 
 verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
@@ -298,7 +299,7 @@ do while (dim <= n)
            fPrimo, fSecondo, kappa)
       k2=kappa+1
 
-      if (verbose <= 2) then
+      if (verbose >= 2) then
          write(*,*)"k1=",k1,"k2=",k2
       end if
 
@@ -349,7 +350,7 @@ do while (dim <= n)
 
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
-            if (verbose <= 3) then
+            if (verbose >= 3) then
                write(*,*)"entro il LagIt con"
                write(*,*)"j=",j,"mlt=",mlt
                write(*,*)"aj=",aj,"bj=",bj
@@ -540,7 +541,7 @@ do while ( .TRUE. )
    end if
 
    if ( isnan(xl(0)) ) then
-      if (verbose <= 2) then
+      if (verbose >= 2) then
          write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
       end if
       xl(0)=xl(-1)
@@ -553,14 +554,14 @@ do while ( .TRUE. )
    ! condizione (24)
 
    if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
-      if (verbose <= 2) then
+      if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del primo tipo"
       end if
       GOTO 30
    end if
 
    if ( abs(deltaL) >= abs(exDeltaL) ) then
-      if (verbose <= 2) then
+      if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del secondo tipo"
       end if
       GOTO 30
@@ -568,7 +569,7 @@ do while ( .TRUE. )
 
    if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
    machinePrecision*abs(xl(0)) ) then
-      if (verbose <= 2) then
+      if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del terzo tipo"
       end if
       GOTO 30
@@ -590,7 +591,11 @@ do while ( .TRUE. )
 
 end do
 
-30 write(*,*) "l=",l 
+30 write(*,*) ""
+
+if ( verbose >= 3 ) then
+   write(*,*) "LagIt compie ",l," iterazioni."
+end if
 
 lambdaJ = xl(0)
 
