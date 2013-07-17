@@ -392,7 +392,7 @@ do while (dim <= n)
 
    dim = dim * 2
    
-   numCol = cumCol-1
+   numCol = numCol-1
 
 end do
 
