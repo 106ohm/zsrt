@@ -1,5 +1,3 @@
-
-
 !!!
 !Fissato l'intervallo I, calcolo gli autovalori della pencil (T,S)
 !in esso contenuti. L'intervallo I e` generalizzato,
@@ -10,9 +8,8 @@
 !La nuova pensil (\hatT,\hupS) e` composta da sue sotto-pensil,
 !(T0,S0) e (T1,S1), dove \hatT e` diagonale a blocchi T0 eT1 (
 !similmente \hatS). Dunque gli autovalori di (\hatT,\hatS) sono
-!l'unione degli autovaliri di (T0,S0) e di quelli di (T1,S1).  
-!La subroutine calcoloAutovaloriDentroI chiama se stessa ricorsivamente
-!due volte. Quando siamo alla "profondita` di ricorsione" identificata
+!l'unione degli autovaliri di (T0,S0) e di quelli di (T1,S1).   
+!Quando siamo alla "profondita`" identificata
 !dal numero "numCol" vengono salvati nella colonna numCol-esima di 
 !Eigenvalues gli autovalori delle pencil (T0,S0) e (T1,S1); 
 !questi vengono successivamente ordinati e vanno a formare
@@ -22,10 +19,9 @@
 !Si e` scelto di immagazzinare gli autovalori di (T0,S0) dall'alto
 !verso il basso e quelli di (T1,S1) dal basso verso l'alto,
 !per questo una bandiera "flag", positiva o negativa, orienta
-!la subroutine stessa nella scrittura all'interno di Eigenvalues.
+!la scrittura all'interno di Eigenvalues.
 !!!
-recursive subroutine calcoloAutovaloriDentroI(flag, a, b, n, T, S, & 
-Tinizio, Tfine, Sinizio, Sfine, en, em, Eigenvalues, numCol)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -33,278 +29,259 @@ implicit  none
 !dichiaro la precisione di macchina (doppia):
 integer, parameter :: dp = kind(1.d0)
 
-integer, intent(IN) :: flag
-
 integer, intent(IN) :: n
 
 integer, intent(IN) :: en, em
 
-integer :: numCol
-
 real(dp), intent(IN) :: a, b
 
+integer, intent(IN) :: verbose
+
 real(dp), dimension(n,n), intent(IN) :: T, S
+
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
-!indici per identificare la T e la S in input:                                                                                   
+!indici per identificare la T e la S:                       
+                                                          
 integer :: Tinizio, Tfine, Sinizio, Sfine
-!ATTENZIONE: voglio siano variabili locali, dunque non aggiungo SAVE!!!
 
-!Di seguito le variabili che non provengono dall'esterno
+integer :: numCol
 
-!indici per identificare le due nuove pencil:
-integer :: T0inizio, T0fine, T1inizio, T1fine, S0inizio, S0fine,S1inizio, S1fine
-!Anche qui uso variabili locali
+integer :: i, j, k, h, dim, kappa, k1, k2, segno, mlt
 
-integer :: i, j, k, dim, kappa, k1, k2, segno, mlt
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
 real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
-
-!$
-real(dp), dimension(em) :: vettoreAusiliario
-!$
 
 !!!
 !FINE DICHIARAZIONI
 !!!
 
 
-write(*,*) "INIZIO CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
-
-
 machinePrecision=epsilon(1.d0)
-
-!!!
-!SPLIT
-!!!
 
 !T... e S... si muovono nello stesso modo,
 !prendo quindi come dimensione uno dei due:
-dim = Tfine - Tinizio + 1
 
-write(*,*)"dim=",dim
+dim=2
 
-!SE dim=2, (ovvero se le matrici sono 2x2), oppure 
-!dim=1, (ovvero le matrici sono 1x1), 
-!ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
-if (dim <= 2) then
-   if (dim == 1) then
-      !non puo` accadere che S(Tinizio,Tinizio)=0
-      !poiche' S e` non singolare; comunque controllo
-      !che non sia "numericamente zero"
-      if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
-         !immagazzino zero, cioe` non aggiorno Eigenvalues
-         return
-      else
-         if ( flag >= 0 ) then
-            !altro verso basso
-            Eigenvalues(1,numCol+1) = T(Tinizio,Tfine)/ &
-            S(Sinizio,Sfine)
+numCol=en
+
+do while (dim <= n)
+   
+   do k=0, n/dim - 1
+
+      Tinizio = 1 + k * dim
+      Tfine = (1 + k) * dim
+
+      Sinizio = 1 + k * dim
+      Sfine = (1 + k) * dim
+
+      !SE dim=2, (ovvero se le matrici sono 2x2), oppure 
+      !dim=1, (ovvero le matrici sono 1x1), 
+      !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
+      if (dim <= 2) then
+
+      
+         if (dim == 1) then
+            !non puo` accadere che S(Tinizio,Tinizio)=0
+            !poiche' S e` non singolare; comunque controllo
+            !che non sia "numericamente zero"
+            if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
+               !immagazzino zero, cioe` non aggiorno Eigenvalues
+               return
+            else
+               Eigenvalues(Tinizio,numCol) = T(Tinizio,Tfine)/ &
+                    S(Sinizio,Sfine)
+            end if
          else
-            !basso verso alto
-            Eigenvalues(em-1,numCol+1) = T(Tinizio,Tfine)/ &
-            S(Sinizio,Sfine)
+            !se mi trovo qui allora dim=2
+            !risolvo a mano S^{-1}T x = \lambda x.
+            
+            deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
+                 S(Sinizio,Sfine)**2)
+
+            if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
+               write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
+               return
+            end if
+
+            !                              |\alpha  \gamma|
+            !chiamo S^{-1}T = delta^{-1} * |              | e risolvo
+            !                              |\gamma  \beta |
+            !
+            !det[ S^{-1}T - \lambdaI ]=0.
+            !
+            ! alla fine ottengo \lambda = frac{1}{2*\delta} * 
+            ![ \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
+            !\gamma^2 - \alpha*\beta } ]
+         
+            alphaSecGrado = S(Sfine,Sfine)*T(Tinizio,Tinizio) - &
+                 S(Sinizio,Sfine)*T(Tinizio,Tfine)
+
+            betaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
+                 S(Sinizio,Sinizio)*T(Tfine,Tfine)
+
+            gammaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
+                 S(Sinizio,Sinizio)*T(Tinizio,Tfine)
+
+            !controllo di non dover estrarre una radice negativa:
+            if ( alphaSecGrado**2 + betaSecGrado**2 + gammaSecGrado**2 - &
+                 2.d0*alphaSecGrado*betaSecGrado < 0.d0 ) then
+               write(*,*) "radice negativa!"
+               return
+            end if
+
+            !!!
+            !immagazzino i risultati,
+            !d'altro verso basso
+            !!!
+
+            Eigenvalues(Tinizio,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+                 ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
+                 betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
+                 betaSecGrado ) ) 
+
+            !write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
+            
+            Eigenvalues(Tinizio+1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
+                 ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
+                 betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
+                 betaSecGrado ) )
+
+            !write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
+
+
          end if
-      end if
-   else
-      !se mi trovo qui allora dim=2
-      !risolvo a mano S^{-1}T x = \lambda x.
 
-      deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
-      S(Sinizio,Sfine)**2)
+         
+      GOTO 200
+      !cioe` riparti dal "do k=... end do" con k+1
 
-      if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
-         write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
-         return
       end if
 
-      !                              |\alpha  \gamma|
-      !chiamo S^{-1}T = delta^{-1} * |              | e risolvo
-      !                              |\gamma  \beta |
-      !
-      !det[ S^{-1}T - \lambdaI ]=0.
-      !
-      ! alla fine ottengo \lambda = frac{1}{2*\delta} * 
-      ![ \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
-      !\gamma^2 - \alpha*\beta } ]
 
-      alphaSecGrado = S(Sfine,Sfine)*T(Tinizio,Tinizio) - &
-      S(Sinizio,Sfine)*T(Tinizio,Tfine)
+      !!!
+      !Adesso dim>2 e numCol=numCol-1
+      !!!
 
-      betaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-      S(Sinizio,Sinizio)*T(Tfine,Tfine)
 
-      gammaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-      S(Sinizio,Sinizio)*T(Tinizio,Tfine)
+      !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
+      !autovalori di (\hatT,\hatS).
+      call quick_sort( Eigenvalues(:,numCol+1), em )
 
-      !controllo di non dover estrarre una radice negativa:
-      if ( alphaSecGrado**2 + betaSecGrado**2 + gammaSecGrado**2 - &
-      2.d0*alphaSecGrado*betaSecGrado < 0.d0 ) then
-         write(*,*) "radice negativa!"
-         return
+
+      !cerco k1 e k2
+
+      call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+           fPrimo, fSecondo, kappa)
+      k1=kappa+1
+      call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+           fPrimo, fSecondo, kappa)
+      k2=kappa+1
+
+      if (verbose >= 2) then
+         write(*,*)"Adesso dim=",dim
+         write(*,*)"Tinizio=",Tinizio,"Tfine=",Tfine
+         write(*,*)"k1=",k1,"k2=",k2
       end if
+
+
+      !OSS: nel caso del calcolo di tutti gli autovalori ho,
+      !nella 0-esima chiamata ricorsiva,
+      !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
+      
+      j=k1
+      do while ( j <= k2 )
+
+         !write(*,*)"j=",j
+
+         !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
+         !nel ricercare \lambda_j
+         aj=a
+         bj=b
+         if ( bj-aj > max(aj,bj)*machinePrecision ) then
+
+            x = Eigenvalues(j,numCol+1)
+            !cioe` x=\hat\lambda_j.
+            !Chiamo la subroutine per il calcolo di (12), (13) e (14).
+100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+
+            if ( kappa < j ) then
+               aj = x
+            else
+               bJ = x
+            end if
+      
+            !Adesso cerco un nuovo x
+            if ( kappa /= j-1 .AND. kappa /= j ) then
+               x = (aj+bj)/2.d0
+               !ripeto il calcolo fatto alla etichetta 100:
+               !Write(*,*)"GOTO 100"
+               GOTO 100
+            end if
+
+            !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
+            if ( -fPrimo >= 0.d0 ) then
+               segno = 1
+            else
+               segno = -1
+            end if
+      
+            !segno = sign( - fPrimo )
+            !vedi meta` p. 14
+
+            call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+
+            if (verbose >= 3) then
+               write(*,*)"entro il LagIt con"
+               write(*,*)"j=",j,"mlt=",mlt
+               write(*,*)"aj=",aj,"bj=",bj
+            end if
+
+            call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+                 Sinizio, Sfine, en, em, Eigenvalues, numCol+1, j, &
+                 fPrimo, fSecondo, kappa, lambdaJ, verbose)
+            !!!
+            !immagazzino i risultati,
+            !dall'altro verso basso
+            do h=0,mlt-1
+               if ( Tinizio+j-1+h > Tfine ) exit
+               Eigenvalues(Tinizio+j-1+h,numCol) = lambdaJ
+               !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            end do
 
       
-      !immagazzino i risultati
-      if ( flag >= 0 ) then
-         !altro verso basso
-         Eigenvalues(1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
-         ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
-         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) ) 
-
-         Eigenvalues(2,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
-         ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
-         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
-      else
-         !basso verso alto
-         Eigenvalues(em,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
-         ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
-         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
-
-         Eigenvalues(em-1,numCol+1) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
-         ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
-         betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado*betaSecGrado ) )
-      end if
-
-   end if
-
-   !Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
-   !autovalori di (\hatT,\hatS)
-   !call quick_sort( Eigenvalues(:,numCol+1), em )
-   !ESCO
-   return
-end if
-
-
-!ALTRIMENTI PREPARO LE PENCIL PER LA RICORSIONE
-
-!divisione intera per due
-dim = dim/2
-!le nuove pencil, (T0, S0) e (T1, S1), sono identificate 
-!dagli indici di inizio/fine delle rispettive diagonali
-T0inizio=Tinizio
-T0fine=T0inizio+dim-1
-T1inizio=T0fine+1
-T1fine=Tfine
-S0inizio=Sinizio
-S0fine=S0inizio+dim-1
-S1inizio=S0fine+1
-S1fine=Sfine
-
-!!!
-!EVALUATE: usiamo la ricorsione.
-!Questo e` il cuore del calcolo.
-!!!
-
-call calcoloAutovaloriDentroI(1, a, b, n, T, S, T0inizio, T0fine, &
-S0inizio, S0fine, en, em, Eigenvalues, numCol+1)
-
-call calcoloAutovaloriDentroI(-1, a, b, n, T, S, T1inizio, T1fine, &
-S1inizio, S1fine, en, em, Eigenvalues, numCol+1)
-
-
-!!!
-!MERGE, pagina 17 dell'articolo
-!!!
-
-!Ho a disposizione \hat\lambda_{k+1}, ..., \hat\lambda_{k+m}, 
-!salvati nella numCol-esima colonna di Eigenvalues.
-!Mi devo ricordare sempre che \hat\lambda_{k}=a e 
-!\hat\lambda_{k+m+1}=b.
-!Calcolo kappa(a) e kappa(b), e da questi ricavo k1 e k2
-
-!Torno alla dim che mi occorre
-dim = Tfine - Tinizio + 1
-
-call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k1=kappa+1
-call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-k2=kappa+1
-
-write(*,*)"k1=",k1,"k2=",k2
-
-!k1=1
-!k2=4
-
-!OSS: nel caso del calcolo di tutti gli autovalori ho,
-!nella 0-esima chiamata ricorsiva,
-!kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
-
-do j=k1,k2
-
-
-   !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
-   !nel ricercare \lambda_j
-   aj=a
-   bj=b
-   if ( bj-aj > max(aj,bj)*machinePrecision ) then
-      write(*,*)"cucu1"
-      x = Eigenvalues(j,numCol+1)
-      !cioe` x=\hat\lambda_j.
-      !Adesso chiamo la subroutine per il calcolo di (12), (13) e (14).
-      100 call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
-               fPrimo, fSecondo, kappa)
-      write(*,*)"cucu2"
-      if ( kappa < j ) then
-         aj = x
-      else
-         bJ = x
-      end if
-      !Adesso cerco un nuovo x
-      if ( kappa /= j-1 .AND. kappa /= j ) then
-         x = (aj+bj)/2.d0
-         !ripeto il calcolo fatto alla etichetta 100:
-         GOTO 100
-      end if
-
-      !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
-      if ( -fPrimo >= 0.d0 ) then
-         segno = 1
-      else
-         segno = -1
-      end if
+         else
       
-      !segno = sign( - fPrimo )
-      !vedi meta` p. 14
+            !in questo caso a e b distano solo "un passo macchina"
+            write(*,*)"a e b distano pochissimo!"
 
-      call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+            !alto verso basso
+            Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
+            !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
 
-      write(*,*)"j=",j,"mlt=",mlt
-      write(*,*)"aj=",aj,"bj=",bj
+         end if
 
-      call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
-      Sfine, en, em, Eigenvalues, numCol+1,j, fPrimo, fSecondo, kappa, lambdaJ)
-      !immagazzino i risultati
-      write(*,*)"immagazzino i risultati"
-      if ( flag >= 0 ) then
-         !altro verso basso
-         Eigenvalues(j,numCol+1) = lambdaJ
-      else
-         !basso verso alto
-         Eigenvalues(em-j+1,numCol+1) = lambdaJ
-      end if
-   else
-      if ( flag >= 0 ) then
-         !alto verso basso
-         Eigenvalues(j,numCol+1) = (aj+bj)/2.d0
-      else
-         !basso verso alto
-         Eigenvalues(em-j+1,numCol+1) = (aj+bj)/2.d0
-      end if
-   end if
+         !ATTENZIONE: devo scalare in base alla molteplicita`
+         j = j + mlt
+   
+      end do
+
+200   write(*,*)""
+
+   end do
+
+   dim = dim * 2
+   
+   numCol = numCol-1
+
 end do
 
-
-!Unisco e riordino gli autovalori di (T0,S0) e (T1,S1) negli
-!autovalori di (\hatT,\hatS)
-call quick_sort( Eigenvalues(:,numCol+1), em )
-if ( numCol /= 0 ) then
-   call quick_sort( Eigenvalues(:,numCol), em )
-end if
-
-write(*,*) "FINE CHIAMATA RICORSIVA(numCol=",numCol,"flag=",flag,")"
+!ordino la prima colonna di Eigenvalues
+call quick_sort( Eigenvalues(:,1), em )
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -342,7 +319,8 @@ do while ( .TRUE. )
 
    m = j + k*segno
 
-   if ( abs( Eigenvalues(j, numCol)-Eigenvalues(m, numCol) ) < 0.01 * abs( Eigenvalues(j, numCol) - x ) ) then
+   if ( abs( Eigenvalues(j, numCol)-Eigenvalues(m, numCol) ) < & 
+   0.01 * abs( Eigenvalues(j, numCol) - x ) ) then
       mlt = mlt + 1
    else
       GOTO 10
@@ -362,8 +340,9 @@ end subroutine EstMlt
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
-subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, Sinizio, &
-Sfine, en, em, Eigenvalues, numCol, j, fPrimo, fSecondo, kappa, lambdaJ)
+subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+Sinizio, Sfine, en, em, Eigenvalues, numCol, j, &
+fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
 implicit none
 
@@ -378,6 +357,8 @@ real(dp), dimension(n,n), intent(IN) :: T, S
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
 real(dp), intent(INOUT) :: aj, bj
+
+integer, intent(IN) :: verbose
 
 integer, intent(IN) :: en, em, numCol, j
 
@@ -413,15 +394,19 @@ xl(-2) = x
 xl(-1) = x
 xl(0) = x
 
+exDeltaL=10.d0
+deltaL=10.d0
+
 l = 2
 
-write(*,*)"~sono dentro LagIt~"
-write(*,*)"x=",x
+!write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
 
-   !write(*,*) "l=",l
+   if ( l >= 10000 ) exit
+
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
+   !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
 
    exKappa = kappa
 
@@ -429,65 +414,93 @@ do while ( .TRUE. )
    xl(-2) = xl(-1)
    xl(-1) = xl(0)
 
-   if ( abs(fPrimo) <= machinePrecision .OR. abs(fSecondo) <= machinePRecision ) then
+   if ( abs(fPrimo) <= machinePrecision .OR. &
+   abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
-      write(*,*)"...ignoro questo fatto e vado avanti..."
-      !return
+      !esco con xl(0) precedentemente calcolato
+      GOTO 30
    end if
 
    if ( kappa < j ) then
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
-      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + sqrt( ((n-mlt)/(mlt*1.d0))* &
-     ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
+      sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
       !Calcolo x_l(0) = L_{mlt -}(xl(-1))
-      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - sqrt( ((n-mlt)/(mlt*1.d0))* &
-     ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
+      sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+   end if
+
+   if ( isnan(xl(0)) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
+      end if
+      xl(0)=xl(-1)
+      GOTO 30
    end if
 
    exDeltaL = xl(-1) - xl(-2)
    deltaL = xl(0) - xl(-1)
 
    ! condizione (24)
-   if ( &
-   ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) .OR. & 
-   ( abs(deltaL) >= abs(exDeltaL) ) .OR. &
-   ( ((deltaL)**2)/(abs(exDeltaL)-xl(0)-xl(-1)) <= &
-   machinePrecision*abs(xl(0)) ) & 
-   ) then
-     GOTO 30
-  end if
 
-  !calcolo (12), (13) e (14)
-  20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
-  Sfine, fPrimo, fSecondo, kappa)
+   if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del primo tipo"
+      end if
+      GOTO 30
+   end if
 
-  !aggiorno [aj, bj] secondo il nuovo kappa
-  if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
-     mlt = abs(kappa-exKappa)
-     xl(0) = (xl(0)+xl(-1))/2.d0
-     GOTO 20
-  end if
+   if ( abs(deltaL) >= abs(exDeltaL) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del secondo tipo"
+      end if
+      GOTO 30
+   end if
 
-  l = l+1
+   if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
+   machinePrecision*abs(xl(0)) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del terzo tipo"
+      end if
+      GOTO 30
+   end if
 
-  write(*,*)"aj=",aj,"bj=",bj
-  write(*,*)"xl(0)=",xl(0)
+   !calcolo (12), (13) e (14)
+20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+   Sfine, fPrimo, fSecondo, kappa)
+
+   !aggiorno [aj, bj] secondo il nuovo kappa
+   if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
+      mlt = abs(kappa-exKappa)
+      xl(0) = (xl(0)+xl(-1))/2.d0
+      !write(*,*)"GOTO 20"
+      GOTO 20
+   end if
+
+   l = l+1
 
 end do
 
-30 lambdaJ = xl(0)
+30 write(*,*) ""
+
+if ( verbose >= 3 ) then
+   write(*,*) "LagIt compie ",l," iterazioni."
+end if
+
+lambdaJ = xl(0)
 
 !OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
 !dello stesso
 
 end subroutine LagIt
 
-!!!                                                                    
+!!!                                                                   
 !Calcola (12), (13) e (14)               
-!!!                                                                    
+!!!                                                                 
+  
 subroutine calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
- fPrimo, fSecondo, kappa)
+fPrimo, fSecondo, kappa)
 
 implicit none
 
@@ -526,82 +539,106 @@ machinePrecision=epsilon(1.d0)
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, 
 !zeta_{i-2}, eta_{i-1} ed eta_{i-2}
 
-
+!write(*,*)"~"
 !write(*,*)"dim=",dim
+!write(*,*)"Tinizio=",Tinizio
+!write(*,*)"Tfine=",Tfine
+!write(*,*)"Sinizio=",Sinizio
+!write(*,*)"Sfine=",Sfine
+!write(*,*)"~"
 
-do i=0,dim-1
 
-   if ( i==0 ) then
+xi(-2) = 0.d0
+
+xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
+if ( xi(-1) == 0 ) then
+   xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
+end if
+
+xi(0)=xi(-1)
+
+eta(-2) = 0.d0
+eta(-1) = S(Sinizio,Sinizio)/xi(0)
+eta(0) = eta(-1)
+
+zeta(-2) = 0.d0
+zeta(-1) = zeta(-2)
+zeta(0) = zeta(-1)
+
+kappa = 0
+
+do i=1,dim-1
       
-      xi(-2) = 0.d0
+   !ATTENZIONE: qui ho i=1,dim-1
+   
+   !mi occupo di xi
+   
+   xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
+   (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/&
+   xi(-1)
 
-      xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
-      if ( xi(-1) == 0 ) then
-         xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
-      end if
-
-      xi(0)=xi(-1)
-
-      eta(-2) = 0.d0
-      eta(-1) = S(Sinizio,Sinizio)/xi(0)
-      eta(0) = eta(-1)
-
-      zeta(-2) = 0.d0
-      zeta(-1) = zeta(-2)
-      zeta(0) = zeta(-1)
-      
-      kappa = 0
-
-   else
-      
-      !ATTENZIONE: qui ho i=1,dim-1
-
-      !mi occupo di xi
-
-      xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
-           (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/xi(-1)
-
-      if ( xi(0) == 0 ) then
-         xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
-              abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/ &
-              xi(-1)
-      end if
-
-      !mi occupo di eta
-      
-      eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
-           eta(-1) + S(Sinizio+i,Sinizio+i) - ( 2*(T(Tinizio+i-1,Tinizio+i)- &
-           x*S(Sinizio+i-1,Sinizio+i))*S(Sinizio+i-1,Sinizio+i) + & 
-           (T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i))**2 * &
-           eta(-2) )/xi(-1) )/xi(0)
-      
-      !mi occupo di zeta
-      
-      zeta(0) = ( - ( 2*S(Sinizio+i-1,Sinizio+i)**2 + &
-           4*(T(Tinizio+i-1,Tinizio+i)- x*S(Sinizio+i-1,Sinizio+i))* &
-           S(Sinizio+i-1,Sinizio+i)*eta(-2) - (T(Tinizio+i-1,Tinizio+i)- &
-           x*S(Sinizio+i-1,Sinizio+i))**2* & 
-           zeta(-2) )/xi(-1) )/xi(0)
-      
-      !tengo conto di quanti termini negativi compaiono 
-      !nella successione degli xi
-      
-      if ( xi(0) <= 0.d0 ) then
-         kappa = kappa+1
-      end if
-      
-      !aggiiorno le variabili
-      
-      xi(-2)=xi(-1)
-      xi(-1)=xi(0)
-
-      eta(-2)=eta(-1)
-      eta(-1)=eta(0)
-
-      zeta(-2) = zeta(-1)
-      zeta(-1) = zeta(0)
-
+   if ( abs(xi(0)) <= machinePrecision ) then
+      xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
+      abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/&
+      xi(-1)
    end if
+
+   !mi occupo di eta:
+   !divido in due tappe il calcolo.
+
+   eta(0) =2.d0*(T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))*&
+   S(Sinizio+i-1,Sinizio+i) + (T(Tinizio+i-1,Tinizio+i)- &
+   x*S(Sinizio+i-1,Sinizio+i))**2*eta(-2)
+      
+   !if ( abs(eta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di eta e` zero!"
+   !end if
+
+   eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
+   eta(-1) + S(Sinizio+i,Sinizio+i) - eta(0)/xi(-1) )/xi(0)
+
+   if ( abs(eta(0))<= machinePrecision ) then
+      write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
+   end if
+   
+   !mi occupo di zeta: 
+   !divido in due tappe il calcolo.
+      
+   zeta(0) = 2.d0*S(Sinizio+i-1,Sinizio+i)**2 + &
+   4.d0*( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )*&
+   S(Sinizio+i-1,Sinizio+i)*eta(-2) - &
+   ( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2*&
+   zeta(-2)
+
+   !if ( abs(zeta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di zeta e` zero!"
+   !end if
+
+   zeta(0) = (( T(Tinizio+i,Tinizio+i) -x*S(Sinizio+i,Sinizio+i))*&
+   zeta(-1) + 2.d0*S(Sinizio+i,Sinizio+i)*eta(-1) - &
+   zeta(0)/xi(-1) )/xi(0)
+   
+   if ( abs(zeta(0))<= machinePrecision ) then
+      write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
+   end if
+
+   !tengo conto di quanti termini negativi compaiono 
+   !nella successione degli xi
+      
+   if ( xi(0) <= 0.d0 ) then
+      kappa = kappa+1
+   end if
+      
+   !aggiiorno le variabili
+      
+   xi(-2)=xi(-1)
+   xi(-1)=xi(0)
+
+   eta(-2)=eta(-1)
+   eta(-1)=eta(0)
+
+   zeta(-2) = zeta(-1)
+   zeta(-1) = zeta(0)
 
    !write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
    !write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
@@ -631,9 +668,9 @@ recursive subroutine quick_sort(a, n)
 
   integer :: i
 
-  integer :: n
+  integer, intent(IN) :: n
 
-  n = size(a)
+  !n = size(a)
 
   if (n>1) then
      call partition(a,i)
