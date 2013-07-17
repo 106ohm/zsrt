@@ -23,7 +23,12 @@ real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
 !FINE DICHIARAZIONI
 !!!
 
-
+!verbose=
+!0) non stampo a video informazioni
+!1) stapo Eigenvalues prima e dopo il calcolo
+!2) stampo k1, k2 e le condizioni di arresto
+!3) stampo (per ogni j=k1,k2) l'intervallo
+!chiamato [aj, bj] ed x iniziale con la sua mlt 
 verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
