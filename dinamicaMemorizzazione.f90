@@ -30,7 +30,7 @@ real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 3
+verbose = 2
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -277,7 +277,6 @@ do while (dim <= n)
       !cioe` riparti dal "do k=... end do" con k+1
 
       end if
-
 
 
       !!!
@@ -650,8 +649,14 @@ machinePrecision=epsilon(1.d0)
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, 
 !zeta_{i-2}, eta_{i-1} ed eta_{i-2}
 
-
+!write(*,*)"~"
 !write(*,*)"dim=",dim
+!write(*,*)"Tinizio=",Tinizio
+!write(*,*)"Tfine=",Tfine
+!write(*,*)"Sinizio=",Sinizio
+!write(*,*)"Sfine=",Sfine
+!write(*,*)"~"
+
 
 xi(-2) = 0.d0
 

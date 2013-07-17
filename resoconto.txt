@@ -1,106 +1,714 @@
- en=           3
+ en=           4
  Eigenvalues prima del calcolo:
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
  
  
  
  
+ 
+ 
+ 
+ 
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
  Adesso dim=           4
  Tinizio=           1 Tfine=           4
  k1=           1 k2=           4
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
  
- entro il LagIt con
- j=           1 mlt=           1
- aj=   1.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto (24) del primo tipo
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
  
- entro il LagIt con
- j=           2 mlt=           1
- aj=   2.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
  
- entro il LagIt con
- j=           3 mlt=           1
- aj=   3.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           4
+ Tinizio=           1
+ Tfine=           4
+ Sinizio=           1
+ Sfine=           4
+ ~
  
- entro il LagIt con
- j=           4 mlt=           1
- aj=   4.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
  
+ ~
+ dim=           4
+ Tinizio=           5
+ Tfine=           8
+ Sinizio=           5
+ Sfine=           8
+ ~
+ ~
+ dim=           4
+ Tinizio=           5
+ Tfine=           8
+ Sinizio=           5
+ Sfine=           8
+ ~
  Adesso dim=           4
  Tinizio=           5 Tfine=           8
  k1=           1 k2=           1
+ ~
+ dim=           4
+ Tinizio=           5
+ Tfine=           8
+ Sinizio=           5
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           1 mlt=           1
- aj=   1.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto (24) del secondo tipo
  
- LagIt compie            2  iterazioni.
  
+ ~
+ dim=           4
+ Tinizio=           9
+ Tfine=          12
+ Sinizio=           9
+ Sfine=          12
+ ~
+ ~
+ dim=           4
+ Tinizio=           9
+ Tfine=          12
+ Sinizio=           9
+ Sfine=          12
+ ~
+ Adesso dim=           4
+ Tinizio=           9 Tfine=          12
+ k1=           1 k2=           1
+ ~
+ dim=           4
+ Tinizio=           9
+ Tfine=          12
+ Sinizio=           9
+ Sfine=          12
+ ~
+ 
+ condizione di arresto (24) del secondo tipo
+ 
+ 
+ ~
+ dim=           4
+ Tinizio=          13
+ Tfine=          16
+ Sinizio=          13
+ Sfine=          16
+ ~
+ ~
+ dim=           4
+ Tinizio=          13
+ Tfine=          16
+ Sinizio=          13
+ Sfine=          16
+ ~
+ Adesso dim=           4
+ Tinizio=          13 Tfine=          16
+ k1=           1 k2=           1
+ ~
+ dim=           4
+ Tinizio=          13
+ Tfine=          16
+ Sinizio=          13
+ Sfine=          16
+ ~
+ 
+ condizione di arresto (24) del secondo tipo
+ 
+ 
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  Adesso dim=           8
  Tinizio=           1 Tfine=           8
  k1=           1 k2=           5
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           1 mlt=           1
- aj=   0.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto (24) del secondo tipo
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           2 mlt=           1
- aj=   2.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           3 mlt=           1
- aj=   3.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           4 mlt=           1
- aj=   4.3999682191469844      bj=   5.0000000000000000     
  condizione di arresto (24) del secondo tipo
  
- LagIt compie            2  iterazioni.
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
+ ~
+ dim=           8
+ Tinizio=           1
+ Tfine=           8
+ Sinizio=           1
+ Sfine=           8
+ ~
  
- entro il LagIt con
- j=           5 mlt=           1
- aj=   5.0000000000000000      bj=   5.0000000000000000     
  condizione di arresto particolare: xl(0) e` NaN!
  
- LagIt compie            2  iterazioni.
+ 
+ ~
+ dim=           8
+ Tinizio=           9
+ Tfine=          16
+ Sinizio=           9
+ Sfine=          16
+ ~
+ ~
+ dim=           8
+ Tinizio=           9
+ Tfine=          16
+ Sinizio=           9
+ Sfine=          16
+ ~
+ Adesso dim=           8
+ Tinizio=           9 Tfine=          16
+ k1=           1 k2=           1
+ ~
+ dim=           8
+ Tinizio=           9
+ Tfine=          16
+ Sinizio=           9
+ Sfine=          16
+ ~
+ 
+ condizione di arresto (24) del secondo tipo
+ 
+ 
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ Adesso dim=          16
+ Tinizio=           1 Tfine=          16
+ k1=           1 k2=           5
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ 
+ condizione di arresto (24) del secondo tipo
+ 
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ 
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ 
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ 
+ condizione di arresto (24) del secondo tipo
+ 
+ ~
+ dim=          16
+ Tinizio=           1
+ Tfine=          16
+ Sinizio=           1
+ Sfine=          16
+ ~
+ 
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
  
  Eigenvalues dopo il calcolo:
-   0.0000000000000000        0.0000000000000000        1.0000000000000000     
-   2.0000000000000000        2.0000000000000000        2.0000000000000000     
-   3.0000000000000000        3.0000000000000000        3.0000000000000000     
-   4.7471703207905716        3.7999364382939698        4.0000000000000000     
-   5.0000000000000000        4.0000000000000000        5.0000000000000000     
-   0.0000000000000000        0.0000000000000000        6.0000000000000000     
-   0.0000000000000000        0.0000000000000000        7.0000000000000000     
-  0.93741840601555082        1.0000000000000000        8.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.0000000000000000     
+   2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
+   3.0000000000000000        3.0000000000000000        3.0000000000000000        3.0000000000000000     
+   4.9291905145715083        4.6337651433601970        3.6645960657717529        4.0000000000000000     
+   5.0000000000000000        5.0000000000000000        4.0000000000000000        5.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        6.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        7.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        8.0000000000000000     
+   0.0000000000000000        4.8163956756223305        5.8213085543170280        9.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        10.000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        11.000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        12.000000000000000     
+   0.0000000000000000        0.0000000000000000        7.9293849621447574        13.000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        14.000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        15.000000000000000     
+  0.89732601651766752       0.85511273442591063        1.0000000000000000        16.000000000000000     
  FINE CALCOLO AUTOVALORI!
