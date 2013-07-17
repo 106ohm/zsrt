@@ -119,8 +119,7 @@ end program sperimentazione
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la scrittura all'interno di Eigenvalues.
 !!!
-subroutine calcoloAutovaloriDentroI(a, b, n, T, S, & 
-en, em, Eigenvalues)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -167,7 +166,7 @@ dim=2
 
 numCol=en
 
-do while (dim <= Tfine - Tinizio + 1)
+do while (dim <= n)
    
    do k=0, n/dim - 1
 
