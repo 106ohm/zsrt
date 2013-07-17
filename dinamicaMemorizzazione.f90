@@ -13,6 +13,8 @@ integer, parameter :: dp = kind(1.d0)
 
 integer :: n, i, j, em, en
 
+integer :: verbose
+
 real(dp) :: a,b
 
 real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
@@ -20,6 +22,9 @@ real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
 !!!
 !FINE DICHIARAZIONI
 !!!
+
+
+verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -48,8 +53,6 @@ em=n
 !lo calcoliamo tramite ld(n)=log(n)/log(2)
 en=int( log(n*1.d0)/log(2.d0) )
 
-write(*,*) "en=",en
-
 allocate( Eigenvalues(em,en) )
 
 do j=1,en
@@ -58,10 +61,16 @@ do j=1,en
    end do
 end do
 
-write(*,*) "Eigenvalues prima del calcolo:"
-do i=1,em
-   write(*,*) Eigenvalues(i,:)
-end do
+if ( verbose >= 1 ) then
+
+   write(*,*) "en=",en
+
+   write(*,*) "Eigenvalues prima del calcolo:"
+   do i=1,em
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
 
 !Chiamo la subroutine che trova gli autovalori nell'intervallo
 ![a,b] e li salva nella prima colonna della matrice Eigenvalues
@@ -75,15 +84,17 @@ a=0.d0
 b=5.d0
 
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues)
+call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 
 !Scrivo la prima colonna della matrice Eigenvalues sul file 
 !"risultato.txt"
 
-write(*,*) "Eigenvalues dopo il calcolo:"
-do i=1,n
-   write(*,*) Eigenvalues(i,:)
-end do
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
 
 Open(unit=3,file="risultato.txt")
 
@@ -121,7 +132,7 @@ end program sperimentazione
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la scrittura all'interno di Eigenvalues.
 !!!
-subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -135,6 +146,8 @@ integer, intent(IN) :: en, em
 
 real(dp), intent(IN) :: a, b
 
+integer, intent(IN) :: verbose
+
 real(dp), dimension(n,n), intent(IN) :: T, S
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
@@ -142,8 +155,6 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 !indici per identificare la T e la S:                       
                                                           
 integer :: Tinizio, Tfine, Sinizio, Sfine
-
-integer :: flag
 
 integer :: numCol
 
@@ -234,42 +245,24 @@ do while (dim <= n)
             end if
 
             !!!
-            !immagazzino i risultati
+            !immagazzino i risultati,
+            !d'altro verso basso
             !!!
 
-            flag = 1
-            !altro verso basso
-         
             Eigenvalues(Tinizio,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
                  ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
                  betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
                  betaSecGrado ) ) 
 
-            write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
+            !write(*,*),"(",Tinizio,",",numCol,")=",Eigenvalues(Tinizio,numCol)
             
             Eigenvalues(Tinizio+1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
                  ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
                  betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
                  betaSecGrado ) )
 
-            write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
+            !write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
 
-            flag = -1
-            !basso verso alto
-         
-            Eigenvalues(Tfine,numCol) = ( 1.d0/(2.d0*deltaSecGrado) ) * & 
-                 ( alphaSecGrado + betaSecGrado + sqrt( alphaSecGrado**2 + &
-                 betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
-                 betaSecGrado ) )
-
-            write(*,*),"(",Tfine,",",numCol,")=",Eigenvalues(Tfine,numCol)
-
-            Eigenvalues(Tfine-1,numCol) = ( 1.d0/(2.d0*deltaSecGrado) )* &
-                 ( alphaSecGrado + betaSecGrado - sqrt( alphaSecGrado**2 + &
-                 betaSecGrado**2 + gammaSecGrado**2 -2.d0*alphaSecGrado* &
-                 betaSecGrado ) )
-
-            write(*,*),"(",Tfine-1,",",numCol,")=",Eigenvalues(Tfine-1,numCol)
 
          end if
 
@@ -300,7 +293,9 @@ do while (dim <= n)
            fPrimo, fSecondo, kappa)
       k2=kappa+1
 
-      write(*,*)"k1=",k1,"k2=",k2
+      if (verbose <= 2) then
+         write(*,*)"k1=",k1,"k2=",k2
+      end if
 
 
       !OSS: nel caso del calcolo di tutti gli autovalori ho,
@@ -329,8 +324,6 @@ do while (dim <= n)
                bJ = x
             end if
       
-            !write(*,*)"x=",x
-
             !Adesso cerco un nuovo x
             if ( kappa /= j-1 .AND. kappa /= j ) then
                x = (aj+bj)/2.d0
@@ -349,45 +342,32 @@ do while (dim <= n)
             !segno = sign( - fPrimo )
             !vedi meta` p. 14
 
-            !write(*,*)"inizio EstMlt"
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
-            !write(*,*)"fine EstMlt"
 
-            !write(*,*)"j=",j,"mlt=",mlt
-            !write(*,*)"aj=",aj,"bj=",bj
+            if (verbose <= 3) then
+               write(*,*)"entro il LagIt con"
+               write(*,*)"j=",j,"mlt=",mlt
+               write(*,*)"aj=",aj,"bj=",bj
+            end if
 
-            !write(*,*)"inizio LagIt"
             call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
                  Sinizio, Sfine, en, em, Eigenvalues, numCol+1, j, &
-                 fPrimo, fSecondo, kappa, lambdaJ)
-            !write(*,*)"fine LagIt"
-
-            !immagazzino i risultati
-            
-            flag = 1
-            !altro verso basso
+                 fPrimo, fSecondo, kappa, lambdaJ, verbose)
+            !!!
+            !immagazzino i risultati,
+            !dall'altro verso basso
             Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
-            write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
 
-            flag = -1
-            !basso verso alto
-            Eigenvalues(Tfine-j+1,numCol) = lambdaJ
-            write(*,*),"(",Tfine-j+1,",",numCol,")=",Eigenvalues(Tfine-j+1,numCol)
       
          else
       
             !in questo caso a e b distano solo "un passo macchina"
             write(*,*)"a e b distano pochissimo!"
 
-            flag = 1
             !alto verso basso
             Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
-            write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
-      
-            flag = -1
-            !basso verso alto
-            Eigenvalues(Tfine-j+1,numCol) = (aj+bj)/2.d0
-            write(*,*),"(",Tfine-j+1,",",numCol,")=",Eigenvalues(Tfine-j+1,numCol)
+            !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
 
          end if
    
@@ -465,7 +445,7 @@ end subroutine EstMlt
 !!!
 subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
 Sinizio, Sfine, en, em, Eigenvalues, numCol, j, &
-fPrimo, fSecondo, kappa, lambdaJ)
+fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
 implicit none
 
@@ -480,6 +460,8 @@ real(dp), dimension(n,n), intent(IN) :: T, S
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
 real(dp), intent(INOUT) :: aj, bj
+
+integer, intent(IN) :: verbose
 
 integer, intent(IN) :: en, em, numCol, j
 
@@ -553,7 +535,9 @@ do while ( .TRUE. )
    end if
 
    if ( isnan(xl(0)) ) then
-      write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
+      if (verbose <= 2) then
+         write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
+      end if
       xl(0)=xl(-1)
       GOTO 30
    end if
@@ -564,18 +548,24 @@ do while ( .TRUE. )
    ! condizione (24)
 
    if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
-      write(*,*)"condizione di arresto (24) del primo tipo"
+      if (verbose <= 2) then
+         write(*,*)"condizione di arresto (24) del primo tipo"
+      end if
       GOTO 30
    end if
 
    if ( abs(deltaL) >= abs(exDeltaL) ) then
-      write(*,*)"condizione di arresto (24) del secondo tipo"
+      if (verbose <= 2) then
+         write(*,*)"condizione di arresto (24) del secondo tipo"
+      end if
       GOTO 30
    end if
 
    if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
    machinePrecision*abs(xl(0)) ) then
-      write(*,*)"condizione di arresto (24) del terzo tipo"
+      if (verbose <= 2) then
+         write(*,*)"condizione di arresto (24) del terzo tipo"
+      end if
       GOTO 30
    end if
 
