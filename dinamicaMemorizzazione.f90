@@ -30,7 +30,7 @@ real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 0
+verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -300,6 +300,8 @@ do while (dim <= n)
       k2=kappa+1
 
       if (verbose >= 2) then
+         write(*,*)"Adesso dim=",dim
+         write(*,*)"Tinizio=",Tinizio,"Tfine=",Tfine
          write(*,*)"k1=",k1,"k2=",k2
       end if
 
