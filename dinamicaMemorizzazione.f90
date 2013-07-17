@@ -164,7 +164,7 @@ integer :: Tinizio, Tfine, Sinizio, Sfine
 
 integer :: numCol
 
-integer :: i, j, k, dim, kappa, k1, k2, segno, mlt
+integer :: i, j, k, h, dim, kappa, k1, k2, segno, mlt
 
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
@@ -309,7 +309,8 @@ do while (dim <= n)
       !nella 0-esima chiamata ricorsiva,
       !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
       
-      do j=k1,k2
+      j=k1
+      do while ( j <= k2 )
 
          !write(*,*)"j=",j
 
@@ -363,8 +364,11 @@ do while (dim <= n)
             !!!
             !immagazzino i risultati,
             !dall'altro verso basso
-            Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
-            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            do h=0,mlt-1
+               if ( Tinizio+j-1+h > Tfine ) exit
+               Eigenvalues(Tinizio+j-1+h,numCol) = lambdaJ
+               !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            end do
 
       
          else
@@ -377,6 +381,9 @@ do while (dim <= n)
             !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
 
          end if
+
+         !ATTENZIONE: devo scalare in base alla molteplicita`
+         j = j + mlt
    
       end do
 

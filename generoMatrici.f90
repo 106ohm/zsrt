@@ -15,7 +15,7 @@ real(dp) :: rnd, machinePrecision
 machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
-n=16
+n=4
 
 !alloco memoria
 allocate( T(n,n), S(n,n) )
@@ -167,10 +167,15 @@ allocate( T(n,n), S(n,n) )
 do i=1,n
    do j=1,i
       if (i == j) then
-         T(i,j) = 1.d0*i
+         T(i,j) = 2.d0
       else
-         T(i,j) = 0.d0
-         T(j,i) = T(i,j)
+         if ( abs(i-j) == 1 ) then
+            T(i,j) = -1.d0
+            T(j,i) = T(i,j)
+         else
+            T(i,j) = 0.d0
+            T(j,i) = T(i,j)
+         end if
       end if
    end do
 end do
