@@ -61,8 +61,11 @@ c
    10 if (matz .ne. 0) go to 20
 c     .......... find eigenvalues only ..........
       tf = .false.
+      !reduction, generalized matrix:
       call  qzhes(nm,n,a,b,tf,z)
+      !further reduction, generalized Hessenberg matrix:
       call  qzit(nm,n,a,b,0.0d0,tf,z,ierr)
+      !all eigenvalues, generalized Hessenberg matrix:
       call  qzval(nm,n,a,b,alfr,alfi,beta,tf,z)
       go to 50
 c     .......... find both eigenvalues and eigenvectors ..........
@@ -71,6 +74,7 @@ c     .......... find both eigenvalues and eigenvectors ..........
       call  qzit(nm,n,a,b,0.0d0,tf,z,ierr)
       call  qzval(nm,n,a,b,alfr,alfi,beta,tf,z)
       if (ierr .ne. 0) go to 50
+      !all eigenvectors, generalized Hessenberg matrix:
       call  qzvec(nm,n,a,b,alfr,alfi,beta,z)
    50 return
       end
