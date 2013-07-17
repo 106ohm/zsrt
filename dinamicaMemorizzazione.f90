@@ -46,7 +46,9 @@ end do
 em=n
 !ATTENIONE: il "logarithmus dualis", ovvero in base 2,
 !lo calcoliamo tramite ld(n)=log(n)/log(2)
-en=int( log(n*1.d0)/log(2.d0) ) + 1
+en=int( log(n*1.d0)/log(2.d0) )
+
+write(*,*) "en=",en
 
 allocate( Eigenvalues(em,en) )
 
@@ -173,10 +175,14 @@ do while (dim <= n)
       Tinizio = 1 + k * dim
       Tfine = (1 + k) * dim
 
+      Sinizio = 1 + k * dim
+      Sfine = (1 + k) * dim
+
       !SE dim=2, (ovvero se le matrici sono 2x2), oppure 
       !dim=1, (ovvero le matrici sono 1x1), 
       !ALLORA CALCOLO DIRETTAMENTE GLI AUTOVALORI
       if (dim <= 2) then
+
       
          if (dim == 1) then
             !non puo` accadere che S(Tinizio,Tinizio)=0
@@ -230,6 +236,7 @@ do while (dim <= n)
             !!!
             !immagazzino i risultati
             !!!
+
             flag = 1
             !altro verso basso
          
@@ -395,6 +402,9 @@ do while (dim <= n)
    numCol = numCol-1
 
 end do
+
+!ordino la prima colonna di Eigenvalues
+call quick_sort( Eigenvalues(:,1), em )
 
 end subroutine calcoloAutovaloriDentroI
 
