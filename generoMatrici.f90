@@ -15,7 +15,7 @@ real(dp) :: rnd, machinePrecision
 machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
-n=4
+n=8
 
 !alloco memoria
 allocate( T(n,n), S(n,n) )
@@ -26,78 +26,71 @@ allocate( T(n,n), S(n,n) )
 !T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
 !!!
 
+
+
+!!!
+!Matrici tridiagonali simmetriche random, 
+!ma dominanti diagonali (autovalori "distanti")
+!Per i teoremi di Gershgorin T ed S sono
+!definite positive
+!!!
+do i=1,n
+   do j=1,i
+      call random_number(rnd)
+      if (i == j) then
+         !aggiungo n+1, cosi' sono sicuro che 
+         !T(i,i)> somma_su_j_di T(i,j)
+         T(i,j) = rnd+n+1
+      else
+         if ( abs(i-j) == 1 ) then
+            T(i,j) = rnd
+            T(j,i) = T(i,j)
+         else
+            T(i,j)=0.d0
+            T(j,i)=T(i,j)
+         end if
+      end if
+   end do
+end do
+
+
+do i=1,n
+   do j=1,i
+      call random_number(rnd)
+      if (i == j) then
+         !aggiungo n+1, cosi' sono sicuro che 
+         !S(i,i)> somma_su_j_di S(i,j)
+         S(i,i) = rnd+n+1
+      else
+         if ( abs(i-j) == 1 ) then
+            S(i,j) = rnd
+            S(j,i) = S(i,j)
+         else
+            S(i,j)=0.d0
+            S(j,i)=S(i,j)
+         end if
+      end if
+   end do
+end do
+
+
 !!$!!!
-!!$!Matrici identita`
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         T(i,j) = 1.d0
-!!$      else
-!!$         T(i,j) = 0.d0
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         S(i,j) = 1.d0
-!!$      else
-!!$         S(i,j) = 0.d0
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-
-
-
-
-!!$!!!
-!!$!Matrici simmetriche random, ma dominanti diagonali 
-!!$!(autovalori "distanti")
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (per poco)
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
 !!$!!!
 !!$do i=1,n
 !!$   do j=1,i
 !!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !T(i,i)> somma_su_j_di T(i,j)
-!!$         T(i,j) = rnd+n+1
-!!$      else
-!!$         T(i,j) = rnd
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !S(i,i)> somma_su_j_di S(i,j)
-!!$         S(i,i) = rnd+n+1
-!!$      else
-!!$         S(i,j) = rnd
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-
-!!$!!!
-!!$!matrici random, "poco" dominanti diagonali 
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         T(i,j) = 0.d0
-!!$      else
-!!$         call random_number(rnd)
-!!$         T(i,j) = rnd
-!!$         T(j,i) = T(i,j)
+!!$      if (i /= j) then
+!!$         if ( abs(i-j) == 1 ) then
+!!$            T(i,j) = rnd
+!!$            T(j,i) = T(i,j)
+!!$         else
+!!$            T(i,j)=0.d0
+!!$            T(j,i)=T(i,j)
+!!$         end if
 !!$      end if
 !!$   end do
 !!$end do
@@ -107,18 +100,23 @@ allocate( T(n,n), S(n,n) )
 !!$
 !!$do i=1,n
 !!$   do j=1,i
-!!$      if (i == j) then
-!!$         S(i,j) = 0.d0
-!!$      else
-!!$         call random_number(rnd)
-!!$         S(i,j) = rnd
-!!$         S(j,i) = S(i,j)
+!!$      call random_number(rnd)
+!!$      if (i /= j) then
+!!$         if ( abs(i-j) == 1 ) then
+!!$            S(i,j) = rnd
+!!$            S(j,i) = S(i,j)
+!!$         else
+!!$            S(i,j)=0.d0
+!!$            S(j,i)=S(i,j)
+!!$         end if
 !!$      end if
 !!$   end do
 !!$end do
 !!$do i=1,n
 !!$   S(i,i) = sum(S(i,:)) + machinePrecision
 !!$end do
+
+
 
 !!$!!!
 !!$!Matrici AD HOC
@@ -161,35 +159,36 @@ allocate( T(n,n), S(n,n) )
 !!$S(4,3)= 0.d0
 
 
-!!!
-!S=I,T=diag(1,...,n)
-!!!
-do i=1,n
-   do j=1,i
-      if (i == j) then
-         T(i,j) = 2.d0
-      else
-         if ( abs(i-j) == 1 ) then
-            T(i,j) = -1.d0
-            T(j,i) = T(i,j)
-         else
-            T(i,j) = 0.d0
-            T(j,i) = T(i,j)
-         end if
-      end if
-   end do
-end do
-
-do i=1,n
-   do j=1,i
-      if (i == j) then
-         S(i,j) = 1.d0
-      else
-         S(i,j) = 0.d0
-         S(j,i) = S(i,j)
-      end if
-   end do
-end do
+!!$!!!
+!!$!ATTENZIONE: ...
+!!$!S=I,T=diag(1,...,n)
+!!$!!!
+!!$do i=1,n
+!!$   do j=1,i
+!!$      if (i == j) then
+!!$         T(i,j) = 2.d0
+!!$      else
+!!$         if ( abs(i-j) == 1 ) then
+!!$            T(i,j) = -1.d0
+!!$            T(j,i) = T(i,j)
+!!$         else
+!!$            T(i,j) = 0.d0
+!!$            T(j,i) = T(i,j)
+!!$         end if
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$do i=1,n
+!!$   do j=1,i
+!!$      if (i == j) then
+!!$         S(i,j) = 1.d0
+!!$      else
+!!$         S(i,j) = 0.d0
+!!$         S(j,i) = S(i,j)
+!!$      end if
+!!$   end do
+!!$end do
 
 
 !!!

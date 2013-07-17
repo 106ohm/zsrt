@@ -1,24 +1,134 @@
- en=           2
+ en=           3
  Eigenvalues prima del calcolo:
-   0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ 
+ 
  
  
  Adesso dim=           4
  Tinizio=           1 Tfine=           4
- k1=           1 k2=           3
+ k1=           1 k2=           4
  
+ entro il LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=  0.95519945550362595     
  condizione di arresto (24) del secondo tipo
  
+ LagIt compie            2  iterazioni.
  
+ entro il LagIt con
+ j=           2 mlt=           1
+ aj=  0.96175043740451727      bj=   5.0000000000000000     
  condizione di arresto (24) del secondo tipo
  
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           3 mlt=           3
+ aj=  0.96828706676072707      bj=   2.9841435333803634     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ Adesso dim=           4
+ Tinizio=           5 Tfine=           8
+ k1=           1 k2=           4
+ 
+ entro il LagIt con
+ j=           1 mlt=           1
+ aj=  0.47759972775181297      bj=  0.95519945550362595     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=  0.96175043740451727     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           3 mlt=           3
+ aj=  0.96828706676072707      bj=   2.9841435333803634     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
+ 
+ Adesso dim=           8
+ Tinizio=           1 Tfine=           8
+ k1=           1 k2=           8
+ 
+ entro il LagIt con
+ j=           1 mlt=           1
+ aj= -0.94609875471272398      bj=   5.0000000000000000     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           2 mlt=           1
+ aj=  0.91412168857853171      bj=  0.97506313448376714     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           3 mlt=           1
+ aj=  0.91205710613500235      bj=   1.0049648991773887     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           4 mlt=           1
+ aj=  0.97223725752895840      bj=   1.0428997617828364     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           5 mlt=           1
+ aj=  0.92634998366081434      bj=   1.0536515466714138     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           6 mlt=           1
+ aj=   1.0698773463728304      bj=   1.1966554964898359     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           7 mlt=           1
+ aj=   0.0000000000000000      bj=   2.9841435333803634     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
+ 
+ entro il LagIt con
+ j=           8 mlt=           1
+ aj=   2.9841435333803634      bj=   5.0000000000000000     
+ condizione di arresto particolare: xl(0) e` NaN!
+ 
+ LagIt compie            2  iterazioni.
  
  Eigenvalues dopo il calcolo:
-   0.0000000000000000        3.5000000000000000     
-   2.6310539291170212        3.5000000000000000     
-   4.9683846822955671        4.5000000000000000     
-   2.6310539291170212        4.5000000000000000     
+ -0.94609875471272398      -0.94609875471272398       0.95519945550362595     
+  0.91812092831100178       0.97506313448376714       0.96175043740451727     
+  0.98355266164992139      -0.94609875471272398       0.96828706676072707     
+  0.99735628397061948       0.47759972775181297       0.99748196610416828     
+   1.0441391774290150       0.92634998366081434        1.0015814835606895     
+   1.0698773463728304       0.94309919625582495        1.0125589151792089     
+   2.9841435333803634        2.9841435333803634        1.0236951573537922     
+   2.9841435333803634        2.9841435333803634        1.0913293607900958     
  FINE CALCOLO AUTOVALORI!
