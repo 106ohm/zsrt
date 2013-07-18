@@ -15,9 +15,11 @@ integer :: n, i, j, em, en
 
 integer :: verbose
 
-real(dp) :: a,b
+real(dp) :: a,b, lettore1, lettore2
 
-real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
+real(dp), dimension(:,:), allocatable :: T, S
+
+real(dp), dimension(:,:), allocatable :: Eigenvalues
 
 !!!
 !FINE DICHIARAZIONI
@@ -42,13 +44,31 @@ open(unit=2, file="S.txt")
 read(1,*) n
 read(2,*) n
 
-allocate( T(n,n),S(n,n) )
+allocate( T(1:n,0:1),S(1:n,0:1) )
 
 do j=1,n
    do i=1,n
-      read(1,*) T(i,j)
-      read(2,*) S(i,j)
+      read(1,*) lettore1
+      read(2,*) lettore2
+      if ( i==j ) then
+         T(i,0) = lettore1
+         S(i,0) = lettore2
+         exit
+      end if
+      if ( abs(i-j)==1 .AND. j>i ) then
+         T(i,1) = lettore1
+         S(i,1) = lettore2
+         exit
+      end if
    end do
+end do
+
+do i=1,n
+   write(*,*)"S(i,0)=",S(i,0)
+end do
+
+do i=1,n
+   write(*,*)"S(i,1)=",S(i,1)
 end do
 
 !scelgo le dimensioni di Eigenvalues, alloco memoria
@@ -154,7 +174,7 @@ real(dp), intent(IN) :: a, b
 
 integer, intent(IN) :: verbose
 
-real(dp), dimension(n,n), intent(IN) :: T, S
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
@@ -205,19 +225,19 @@ do while (dim <= n)
             !non puo` accadere che S(Tinizio,Tinizio)=0
             !poiche' S e` non singolare; comunque controllo
             !che non sia "numericamente zero"
-            if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
+            if ( abs(S(Sinizio,0)) <= 10.d0*machinePrecision ) then
                !immagazzino zero, cioe` non aggiorno Eigenvalues
                return
             else
-               Eigenvalues(Tinizio,numCol) = T(Tinizio,Tfine)/ &
-                    S(Sinizio,Sfine)
+               Eigenvalues(Tinizio,numCol) = T(Tinizio,1)/ &
+                    S(Sinizio,1)
             end if
          else
             !se mi trovo qui allora dim=2
             !risolvo a mano S^{-1}T x = \lambda x.
             
-            deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
-                 S(Sinizio,Sfine)**2)
+            deltaSecGrado = abs(S(Sinizio,0)*S(Sfine,0)- &
+                 S(Sinizio,1)**2)
 
             if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
                write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
@@ -234,14 +254,14 @@ do while (dim <= n)
             ![ \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
             !\gamma^2 - \alpha*\beta } ]
          
-            alphaSecGrado = S(Sfine,Sfine)*T(Tinizio,Tinizio) - &
-                 S(Sinizio,Sfine)*T(Tinizio,Tfine)
+            alphaSecGrado = S(Sfine,0)*T(Tinizio,0) - &
+                 S(Sinizio,1)*T(Tinizio,1)
 
-            betaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-                 S(Sinizio,Sinizio)*T(Tfine,Tfine)
+            betaSecGrado = -S(Sinizio,1)*T(Tinizio,1) + &
+                 S(Sinizio,0)*T(Tfine,0)
 
-            gammaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-                 S(Sinizio,Sinizio)*T(Tinizio,Tfine)
+            gammaSecGrado = -S(Sinizio,1)*T(Tinizio,1) + &
+                 S(Sinizio,0)*T(Tinizio,1)
 
             !controllo di non dover estrarre una radice negativa:
             if ( alphaSecGrado**2 + betaSecGrado**2 + gammaSecGrado**2 - &
@@ -533,7 +553,7 @@ real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: n
 
-real(dp), dimension(n,n), intent(IN) :: T, S 
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S 
 
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -704,7 +724,7 @@ integer, intent(OUT) :: kappa
 
 real(dp), intent(OUT) :: fPrimo, fSecondo
 
-real(dp), dimension(n,n), intent(IN) :: T, S
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 integer :: i, j, k, l
 
@@ -738,15 +758,15 @@ machinePrecision=epsilon(1.d0)
 
 xi(-2) = 0.d0
 
-xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
+xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
 if ( xi(-1) == 0 ) then
-   xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
+   xi(-1) = T(Tinizio,0)* machinePrecision**2
 end if
 
 xi(0)=xi(-1)
 
 eta(-2) = 0.d0
-eta(-1) = S(Sinizio,Sinizio)/xi(0)
+eta(-1) = S(Sinizio,0)/xi(0)
 eta(0) = eta(-1)
 
 zeta(-2) = 0.d0
@@ -761,29 +781,29 @@ do i=1,dim-1
    
    !mi occupo di xi
    
-   xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
-   (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/&
+   xi(0) = T(Tinizio+i,0) - x*S(Sinizio+i,0) - &
+   (( T(Tinizio+i,1)-x*S(Sinizio+i,1) )**2)/&
    xi(-1)
 
    if ( abs(xi(0)) <= machinePrecision ) then
-      xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
-      abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/&
+      xi(0) = ( (abs(T(Tinizio+i,1))+ & 
+      abs(x*S(Sinizio+i,1)))**2 * machinePrecision**2 )/&
       xi(-1)
    end if
 
    !mi occupo di eta:
    !divido in due tappe il calcolo.
 
-   eta(0) =2.d0*(T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))*&
-   S(Sinizio+i-1,Sinizio+i) + (T(Tinizio+i-1,Tinizio+i)- &
-   x*S(Sinizio+i-1,Sinizio+i))**2*eta(-2)
+   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
+   S(Sinizio+i,1) + (T(Tinizio+i,1)- &
+   x*S(Sinizio+i,1))**2*eta(-2)
       
    !if ( abs(eta(0))<= machinePrecision ) then
    !   write(*,*)"primo pezzo di eta e` zero!"
    !end if
 
-   eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
-   eta(-1) + S(Sinizio+i,Sinizio+i) - eta(0)/xi(-1) )/xi(0)
+   eta(0) = ( (T(Tinizio+i,0)-x*S(Sinizio+i,0))* &
+   eta(-1) + S(Sinizio+i,0) - eta(0)/xi(-1) )/xi(0)
 
    if ( abs(eta(0))<= machinePrecision ) then
       write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
@@ -792,18 +812,18 @@ do i=1,dim-1
    !mi occupo di zeta: 
    !divido in due tappe il calcolo.
       
-   zeta(0) = 2.d0*S(Sinizio+i-1,Sinizio+i)**2 + &
-   4.d0*( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )*&
-   S(Sinizio+i-1,Sinizio+i)*eta(-2) - &
-   ( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2*&
+   zeta(0) = 2.d0*S(Sinizio+i,1)**2 + &
+   4.d0*( T(Tinizio+i,1)-x*S(Sinizio+i,1) )*&
+   S(Sinizio+i,1)*eta(-2) - &
+   ( T(Tinizio+i,1)-x*S(Sinizio+i,1) )**2*&
    zeta(-2)
 
    !if ( abs(zeta(0))<= machinePrecision ) then
    !   write(*,*)"primo pezzo di zeta e` zero!"
    !end if
 
-   zeta(0) = (( T(Tinizio+i,Tinizio+i) -x*S(Sinizio+i,Sinizio+i))*&
-   zeta(-1) + 2.d0*S(Sinizio+i,Sinizio+i)*eta(-1) - &
+   zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
+   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
    zeta(0)/xi(-1) )/xi(0)
    
    if ( abs(zeta(0))<= machinePrecision ) then
