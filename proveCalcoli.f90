@@ -1,35 +1,31 @@
 !!!
-!PROGRAMMA PRINCIPALE
+!PROGRAMMA PROVECALCOLI
 !!!
+!Al momento funziona solo per "n=2^numero",
+!fra poco estendero` il calcolo al caso
+!"n > 1".
+
 program proveCalcoli
 
 implicit none
 
 integer, parameter :: dp = kind(1.d0)
 
-integer :: n, i, j, em, en, dim
+integer :: n, i, j, dim, Tinizio, Tfine, Sinizio, Sfine, kappa
 
-integer :: Tinizio,Tfine,Sinizio,Sfine
+real(dp) :: x, lettore1, lettore2, fPrimo, fSecondo
 
-integer :: T0inizio,T0fine,T1inizio,T1fine
+real(dp), dimension(:,:), allocatable :: T,S
 
-integer :: S0inizio, S0fine, S1inizio, S1fine
-
-integer :: kappa, k1, k2
-
-real(dp) :: fPrimo, fSecondo
-
-real(dp) :: a,b
-
-real(dp), dimension(:,:), allocatable :: T,S, Eigenvalues
+real(dp), dimension(:), allocatable :: autovalori
 
 !!!
 !FINE DICHIARAZIONI
 !!!
 
+
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
-!alloco la memoria e carico le matrici T ed S;
-!cosi` avro` a disposizione la pencil (T,S).
+!alloco la memoria e carico le matrici T ed S.
 
 open(unit=1, file="T.txt")
 open(unit=2, file="S.txt")
@@ -37,83 +33,68 @@ open(unit=2, file="S.txt")
 read(1,*) n
 read(2,*) n
 
-allocate( T(n,n),S(n,n) )
+allocate( T(1:n,0:1),S(1:n,0:1) )
 
 do j=1,n
    do i=1,n
-      read(1,*) T(i,j)
-      read(2,*) S(i,j)
+      read(1,*) lettore1
+      read(2,*) lettore2
+      if ( i == j ) then
+         T(i,0) = lettore1
+         S(i,0) = lettore2
+      end if
+      if ( abs(i-j)==1 .AND. j>i ) then
+         T(i,1) = lettore1
+         S(i,1) = lettore2
+      end if
    end do
 end do
 
-!scelgo le dimensioni di Eigenvalues, alloco memoria
-!ed inizializzo i suoi valori a zero
+T(n,1)=-100.d0
+S(n,1)=-100.d0
 
-em=n
-!ATTENIONE: il "logarithmus dualis", ovvero in base 2,
-!lo calcoliamo tramite ld(n)=log(n)/log(2)
-en=int( log(n*1.d0)/log(2.d0) ) + 2
+do i=1,n
+   write(*,*)"S(i,0)=",S(i,0)
+end do
 
-write(*,*)"n=",n
-
-Tinizio=1
-Tfine=n
-Sinizio=1
-Sfine=n
-
-a=-100.d0
-b=100.d0
-
-!ATTENZIONE: numCol=0 poiche' l'indice di colonna di Eigenvalues parte da 1.
-!ATTENZIONE: la prima chiamata della subroutine e` con flag=0, le altre no.
-
-dim = Tfine - Tinizio + 1
-
-write(*,*)"dim=",dim
-
-write(*,*)"PREPARO LA CHIAMATA RICORSIVA"
-
-!divisione intera per due
-dim = dim/2
-
-write(*,*)"(per la ricorsione) dim=",dim
-
-!Le nuove pencil, (T0, S0) e (T1, S1), sono identificate 
-!dagli indici di inizio/fine delle rispettive diagonali
-T0inizio=Tinizio
-T0fine=T0inizio+dim-1
-T1inizio=T0fine+1
-T1fine=Tfine
-S0inizio=Sinizio
-S0fine=S0inizio+dim-1
-S1inizio=S0fine+1
-S1fine=Sfine
-
-write(*,*)"T0inizio=",T0inizio,"T0fine=",T0fine
-write(*,*)"T1inizio=",T1inizio,"T1fine=",T1fine
-write(*,*)"S0inizio=",S0inizio,"S0fine=",S0fine
-write(*,*)"S1inizio=",S1inizio,"S1fine=",S1fine
-
-write(*,*)"FINE CHIAMATA RICORSIVA"
-
-!torno alla dim che mi occorre
-dim = Tfine - Tinizio + 1
-
-write(*,*)"dim=",dim
-
-call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
-
-write(*,*)"a=",a,"fPrimo=",fPrimo,"fSecondo=",fSecondo
-
-k1=kappa+1
+do i=1,n
+   write(*,*)"S(i,1)=",S(i,1)
+end do
 
 
-call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, fPrimo, fSecondo, kappa)
+dim= 8
+Tinizio= 1
+Tfine= 8
+Sinizio= 1
+Sfine= 8
 
-write(*,*)"b=",b,"fPrimo",fPrimo,"fSecondo",fSecondo
 
-k2=kappa
+open(unit=3, file="Eispack/ris_eispack.txt")
 
-write(*,*)"k1=",k1,"k2=",k2
+read(3,*) n
+
+allocate(autovalori(n))
+
+do i=1,n
+
+   read(3,*) autovalori(i)
+
+end do
+
+call quick_sort(autovalori,n)
+
+do i=1,n
+
+   write(*,*)"i=",i
+   write(*,*)"i-esimo autovalore=", autovalori(i)
+
+   x = autovalori(i) + 2.d-2
+
+   call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, &
+        Sfine, fPrimo, fSecondo, kappa)
+
+   write(*,*)"x=",x,"fPrimo=",fPrimo,"fSecondo=",fSecondo,"kappa=",kappa
+
+end do
 
 end program proveCalcoli

@@ -320,10 +320,12 @@ do while (dim <= n)
       k2=kappa+1
 
       if (verbose >= 2) then
-         write(*,*)"Adesso dim=",dim
-         write(*,*)"Tinizio=",Tinizio,"Tfine=",Tfine
-         write(*,*)"k1=",k1,"k2=",k2
-      end if
+         write(*,*)"-------------------------------------"
+         write(*,*)"|Adesso dim=",dim
+         write(*,*)"|Tinizio=",Tinizio,"Tfine=",Tfine
+         write(*,*)"|k1=",k1,"k2=",k2
+         write(*,*)"-------------------------------------"
+      End if
 
 
       !OSS: nel caso del calcolo di tutti gli autovalori ho,
@@ -332,7 +334,7 @@ do while (dim <= n)
       
       do j = k1, k2
 
-         !write(*,*)"j=",j
+         write(*,*)"j=",j
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
          !nel ricercare \lambda_j
@@ -343,13 +345,13 @@ do while (dim <= n)
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
 
-            write(*,*)"x=",x
+            write(*,*)"x=",x,"kappa=",kappa
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
 
-            write(*,*)"x=",x
+            write(*,*)"x=",x,"kappa=",kappa
 
             if ( kappa < j ) then
                aj = x
@@ -360,8 +362,8 @@ do while (dim <= n)
             !Se il segno di -fPrimo non coincide con quello di
             !\lambda_j-x ( il fatto che questa condizione
             !coincida con quella scritta sotto e` da
-            !ricercarsi a p. 17 dell'articolo) allora
-            !procedo con la bisezione
+            !ricercarsi a p. 17 dell'articolo)
+            !allora procedo con la bisezione
             if ( kappa < j-1 .OR. j < kappa ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
@@ -716,6 +718,7 @@ machinePrecision=epsilon(1.d0)
 !write(*,*)"Sfine=",Sfine
 !write(*,*)"~"
 
+kappa = 0
 
 xi(-2) = 0.d0
 
@@ -725,6 +728,11 @@ if ( xi(-1) == 0 ) then
 end if
 
 xi(0)=xi(-1)
+
+!if ( xi(0) <= 0.d0 ) then
+!   write(*,*)"...altro xi(0) negativo!"
+!   kappa = kappa+1
+!end if
 
 eta(-2) = 0.d0
 eta(-1) = S(Sinizio,0)/xi(0)
@@ -799,6 +807,7 @@ do i=1,dim-1
    !nella successione degli xi
       
    if ( xi(0) <= 0.d0 ) then
+      write(*,*)"...altro xi(0) negativo!"
       kappa = kappa+1
    end if
       
@@ -819,6 +828,7 @@ do i=1,dim-1
    !write(*,*)"kappa=",kappa
    
 end do
+
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
 fPrimo = - eta(0)

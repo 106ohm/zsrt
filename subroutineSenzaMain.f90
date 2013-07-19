@@ -37,7 +37,7 @@ real(dp), intent(IN) :: a, b
 
 integer, intent(IN) :: verbose
 
-real(dp), dimension(n,n), intent(IN) :: T, S
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
@@ -88,19 +88,19 @@ do while (dim <= n)
             !non puo` accadere che S(Tinizio,Tinizio)=0
             !poiche' S e` non singolare; comunque controllo
             !che non sia "numericamente zero"
-            if ( abs(S(Sinizio,Sinizio)) <= 10.d0*machinePrecision ) then
+            if ( abs(S(Sinizio,0)) <= 10.d0*machinePrecision ) then
                !immagazzino zero, cioe` non aggiorno Eigenvalues
                return
             else
-               Eigenvalues(Tinizio,numCol) = T(Tinizio,Tfine)/ &
-                    S(Sinizio,Sfine)
+               Eigenvalues(Tinizio,numCol) = T(Tinizio,1)/ &
+                    S(Sinizio,1)
             end if
          else
             !se mi trovo qui allora dim=2
             !risolvo a mano S^{-1}T x = \lambda x.
             
-            deltaSecGrado = abs(S(Sinizio,Sinizio)*S(Sfine,Sfine)- &
-                 S(Sinizio,Sfine)**2)
+            deltaSecGrado = abs(S(Sinizio,0)*S(Sfine,0)- &
+                 S(Sinizio,1)**2)
 
             if ( deltaSecGrado <= 10.d0*machinePrecision ) then 
                write(*,*) "evitata divisione per zero: detaSecGrado troppo piccolo!"
@@ -117,14 +117,14 @@ do while (dim <= n)
             ![ \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
             !\gamma^2 - \alpha*\beta } ]
          
-            alphaSecGrado = S(Sfine,Sfine)*T(Tinizio,Tinizio) - &
-                 S(Sinizio,Sfine)*T(Tinizio,Tfine)
+            alphaSecGrado = S(Sfine,0)*T(Tinizio,0) - &
+                 S(Sinizio,1)*T(Tinizio,1)
 
-            betaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-                 S(Sinizio,Sinizio)*T(Tfine,Tfine)
+            betaSecGrado = -S(Sinizio,1)*T(Tinizio,1) + &
+                 S(Sinizio,0)*T(Tfine,0)
 
-            gammaSecGrado = -S(Sinizio,Sfine)*T(Tinizio,Tfine) + &
-                 S(Sinizio,Sinizio)*T(Tinizio,Tfine)
+            gammaSecGrado = -S(Sinizio,1)*T(Tinizio,1) + &
+                 S(Sinizio,0)*T(Tinizio,1)
 
             !controllo di non dover estrarre una radice negativa:
             if ( alphaSecGrado**2 + betaSecGrado**2 + gammaSecGrado**2 - &
@@ -182,20 +182,21 @@ do while (dim <= n)
       k2=kappa+1
 
       if (verbose >= 2) then
-         write(*,*)"Adesso dim=",dim
-         write(*,*)"Tinizio=",Tinizio,"Tfine=",Tfine
-         write(*,*)"k1=",k1,"k2=",k2
-      end if
+         write(*,*)"-------------------------------------"
+         write(*,*)"|Adesso dim=",dim
+         write(*,*)"|Tinizio=",Tinizio,"Tfine=",Tfine
+         write(*,*)"|k1=",k1,"k2=",k2
+         write(*,*)"-------------------------------------"
+      End if
 
 
       !OSS: nel caso del calcolo di tutti gli autovalori ho,
       !nella 0-esima chiamata ricorsiva,
       !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
       
-      j=k1
-      do while ( j <= k2 )
+      do j = k1, k2
 
-         !write(*,*)"j=",j
+         write(*,*)"j=",j
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
          !nel ricercare \lambda_j
@@ -203,11 +204,16 @@ do while (dim <= n)
          bj=b
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
-            x = Eigenvalues(j,numCol+1)
+            x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
+
+            write(*,*)"x=",x,"kappa=",kappa
+
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
+
+            write(*,*)"x=",x,"kappa=",kappa
 
             if ( kappa < j ) then
                aj = x
@@ -215,13 +221,19 @@ do while (dim <= n)
                bJ = x
             end if
       
-            !Adesso cerco un nuovo x
-            if ( kappa /= j-1 .AND. kappa /= j ) then
+            !Se il segno di -fPrimo non coincide con quello di
+            !\lambda_j-x ( il fatto che questa condizione
+            !coincida con quella scritta sotto e` da
+            !ricercarsi a p. 17 dell'articolo)
+            !allora procedo con la bisezione
+            if ( kappa < j-1 .OR. j < kappa ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
-               !Write(*,*)"GOTO 100"
+               !write(*,*)"cucu"
                GOTO 100
             end if
+
+            !write(*,*)"aj=",aj,"bj=",bj
 
             !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
             if ( -fPrimo >= 0.d0 ) then
@@ -230,30 +242,34 @@ do while (dim <= n)
                segno = -1
             end if
       
-            !segno = sign( - fPrimo )
+            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
+            !con sign( \lambda_j - x )
             !vedi meta` p. 14
 
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then
-               write(*,*)"entro il LagIt con"
+               write(*,*)"entro in LagIt con"
                write(*,*)"j=",j,"mlt=",mlt
                write(*,*)"aj=",aj,"bj=",bj
             end if
 
+
             call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
                  Sinizio, Sfine, en, em, Eigenvalues, numCol+1, j, &
                  fPrimo, fSecondo, kappa, lambdaJ, verbose)
+
+            if (verbose >= 3) then
+               write(*,*)"esco da LagIt"
+            end if
+
             !!!
             !immagazzino i risultati,
-            !dall'altro verso basso
-            do h=0,mlt-1
-               if ( Tinizio+j-1+h > Tfine ) exit
-               Eigenvalues(Tinizio+j-1+h,numCol) = lambdaJ
-               !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
-            end do
+            !dall'alto verso basso
+            !!!
+            Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
+            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
 
-      
          else
       
             !in questo caso a e b distano solo "un passo macchina"
@@ -265,8 +281,6 @@ do while (dim <= n)
 
          end if
 
-         !ATTENZIONE: devo scalare in base alla molteplicita`
-         j = j + mlt
    
       end do
 
@@ -313,11 +327,19 @@ machinePrecision=epsilon(1.d0)
 
 mlt=1
 
-k=1
+!write(*,*)"segno=", segno
 
-do while ( .TRUE. )
+!k=1,...,numeroGrande (ho scelto 2*em)
+do k=1,em*2
 
    m = j + k*segno
+
+   !write(*,*)"m=",m
+
+   if ( m <= 0 ) then
+      write(*,*)"EstMlt sovrastima la molteplicita`."
+      GOTO 10
+   end if
 
    if ( abs( Eigenvalues(j, numCol)-Eigenvalues(m, numCol) ) < & 
    0.01 * abs( Eigenvalues(j, numCol) - x ) ) then
@@ -325,8 +347,6 @@ do while ( .TRUE. )
    else
       GOTO 10
    end if
-
-   k = k+1
 
 end do
 
@@ -352,7 +372,7 @@ real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: n
 
-real(dp), dimension(n,n), intent(IN) :: T, S 
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S 
 
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -403,7 +423,10 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 10000 ) exit
+   if ( l >= 10000 ) then
+      write(*,*)"LagIt impiega troppo iterazioni."
+      exit
+   end if
 
    !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
    !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
@@ -414,6 +437,10 @@ do while ( .TRUE. )
    xl(-2) = xl(-1)
    xl(-1) = xl(0)
 
+   if ( verbose >= 3 ) then
+      write(*,*)"xl(0)=",xl(0)
+   end if
+
    if ( abs(fPrimo) <= machinePrecision .OR. &
    abs(fSecondo) <= machinePRecision ) then
       write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
@@ -422,10 +449,16 @@ do while ( .TRUE. )
    end if
 
    if ( kappa < j ) then
+      if ( verbose >=3 ) then
+         write(*,*)"mi muovo verso destra"
+      end if
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
       xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
       sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
+      if ( verbose >=3 ) then
+         write(*,*)"mi muovo verso sinistra"
+      end if
       !Calcolo x_l(0) = L_{mlt -}(xl(-1))
       xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
       sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
@@ -516,7 +549,7 @@ integer, intent(OUT) :: kappa
 
 real(dp), intent(OUT) :: fPrimo, fSecondo
 
-real(dp), dimension(n,n), intent(IN) :: T, S
+real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 integer :: i, j, k, l
 
@@ -547,18 +580,24 @@ machinePrecision=epsilon(1.d0)
 !write(*,*)"Sfine=",Sfine
 !write(*,*)"~"
 
+kappa = 0
 
 xi(-2) = 0.d0
 
-xi(-1) = T(Tinizio,Tinizio) - x * S(Sinizio,Sinizio)
+xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
 if ( xi(-1) == 0 ) then
-   xi(-1) = T(Tinizio,Tinizio)* machinePrecision**2
+   xi(-1) = T(Tinizio,0)* machinePrecision**2
 end if
 
 xi(0)=xi(-1)
 
+!if ( xi(0) <= 0.d0 ) then
+!   write(*,*)"...altro xi(0) negativo!"
+!   kappa = kappa+1
+!end if
+
 eta(-2) = 0.d0
-eta(-1) = S(Sinizio,Sinizio)/xi(0)
+eta(-1) = S(Sinizio,0)/xi(0)
 eta(0) = eta(-1)
 
 zeta(-2) = 0.d0
@@ -568,34 +607,38 @@ zeta(0) = zeta(-1)
 kappa = 0
 
 do i=1,dim-1
+
+   !write(*,*)"~"
+   !write(*,*)"T(Tinizio+i,0)=T(",Tinizio+i,",0)=",T(Tinizio+i,0)
+   !write(*,*)"T(Tinizio+i-1,1)=T(",Tinizio+i-1,",1)=",T(Tinizio+i-1,1)
       
    !ATTENZIONE: qui ho i=1,dim-1
    
    !mi occupo di xi
    
-   xi(0) = T(Tinizio+i,Tinizio+i) - x*S(Sinizio+i,Sinizio+i) - &
-   (( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2)/&
+   xi(0) = T(Tinizio+i,0) - x*S(Sinizio+i,0) - &
+   (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)/&
    xi(-1)
 
    if ( abs(xi(0)) <= machinePrecision ) then
-      xi(0) = ( (abs(T(Tinizio+i-1,Tinizio+i))+ & 
-      abs(x*S(Sinizio+i-1,Sinizio+i)))**2 * machinePrecision**2 )/&
+      xi(0) = ( (abs(T(Tinizio+i-1,1))+ & 
+      abs(x*S(Sinizio+i-1,1)))**2 * machinePrecision**2 )/&
       xi(-1)
    end if
 
    !mi occupo di eta:
    !divido in due tappe il calcolo.
 
-   eta(0) =2.d0*(T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))*&
-   S(Sinizio+i-1,Sinizio+i) + (T(Tinizio+i-1,Tinizio+i)- &
-   x*S(Sinizio+i-1,Sinizio+i))**2*eta(-2)
+   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
+   S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
+   x*S(Sinizio+i-1,1))**2*eta(-2)
       
    !if ( abs(eta(0))<= machinePrecision ) then
    !   write(*,*)"primo pezzo di eta e` zero!"
    !end if
 
-   eta(0) = ( (T(Tinizio+i,Tinizio+i)-x*S(Sinizio+i,Sinizio+i))* &
-   eta(-1) + S(Sinizio+i,Sinizio+i) - eta(0)/xi(-1) )/xi(0)
+   eta(0) = ( (T(Tinizio+i,0)-x*S(Sinizio+i,0))* &
+   eta(-1) + S(Sinizio+i,0) - eta(0)/xi(-1) )/xi(0)
 
    if ( abs(eta(0))<= machinePrecision ) then
       write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
@@ -604,18 +647,18 @@ do i=1,dim-1
    !mi occupo di zeta: 
    !divido in due tappe il calcolo.
       
-   zeta(0) = 2.d0*S(Sinizio+i-1,Sinizio+i)**2 + &
-   4.d0*( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )*&
-   S(Sinizio+i-1,Sinizio+i)*eta(-2) - &
-   ( T(Tinizio+i-1,Tinizio+i)-x*S(Sinizio+i-1,Sinizio+i) )**2*&
+   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
+   4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
+   S(Sinizio+i-1,1)*eta(-2) - &
+   ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
    zeta(-2)
 
    !if ( abs(zeta(0))<= machinePrecision ) then
    !   write(*,*)"primo pezzo di zeta e` zero!"
    !end if
 
-   zeta(0) = (( T(Tinizio+i,Tinizio+i) -x*S(Sinizio+i,Sinizio+i))*&
-   zeta(-1) + 2.d0*S(Sinizio+i,Sinizio+i)*eta(-1) - &
+   zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
+   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
    zeta(0)/xi(-1) )/xi(0)
    
    if ( abs(zeta(0))<= machinePrecision ) then
@@ -626,6 +669,7 @@ do i=1,dim-1
    !nella successione degli xi
       
    if ( xi(0) <= 0.d0 ) then
+      write(*,*)"...altro xi(0) negativo!"
       kappa = kappa+1
    end if
       
@@ -646,6 +690,7 @@ do i=1,dim-1
    !write(*,*)"kappa=",kappa
    
 end do
+
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
 fPrimo = - eta(0)

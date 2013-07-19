@@ -1,0 +1,73 @@
+ S(i,0)=   9.9786602381321465     
+ S(i,0)=   9.2567979861831606     
+ S(i,0)=   9.5540051353968156     
+ S(i,0)=   9.7288585083995631     
+ S(i,0)=   9.7696143092758962     
+ S(i,0)=   9.7311286518535542     
+ S(i,0)=   9.7463096553073090     
+ S(i,0)=   9.5585945195965554     
+ S(i,1)=  0.99914226942680318     
+ S(i,1)=  0.65904751789363791     
+ S(i,1)=  0.65792468442021090     
+ S(i,1)=  0.67452929906378811     
+ S(i,1)=  0.94709465592406572     
+ S(i,1)=  0.99039474804151328     
+ S(i,1)=  0.81380966648249919     
+ S(i,1)=  -100.00000000000000     
+ i=           1
+ i-esimo autovalore=  0.89626353946034520     
+ ...altro xi(0) negativo!
+ x=  0.91626353946034522      fPrimo=  -113.93475782931513      fSecondo=  -62471.674138657021      kappa=           1
+ i=           2
+ i-esimo autovalore=  0.92568073607522261     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=  0.94568073607522263      fPrimo=  -104.39706376126605      fSecondo=   20546.673069534227      kappa=           2
+ i=           3
+ i-esimo autovalore=  0.95501110817178869     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=  0.97501110817178871      fPrimo=  -130.05046103314135      fSecondo=  -2068.3124770020381      kappa=           3
+ i=           4
+ i-esimo autovalore=  0.98052861946565262     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=   1.0005286194656526      fPrimo=  -64.139633386999293      fSecondo=  -3232.1803623367859      kappa=           4
+ i=           5
+ i-esimo autovalore=   1.0105684309651279     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=   1.0305684309651280      fPrimo=  -33.780332608932596      fSecondo=   3041.4192076630425      kappa=           4
+ i=           6
+ i-esimo autovalore=   1.0407608243340198     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=   1.0607608243340199      fPrimo=   63.508466253458920      fSecondo=   803.67837369057088      kappa=           5
+ i=           7
+ i-esimo autovalore=   1.1048595483898147     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=   1.1248595483898147      fPrimo=   222.54640596086870      fSecondo=   118738.16605215748      kappa=           7
+ i=           8
+ i-esimo autovalore=   1.1183401311720127     
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ ...altro xi(0) negativo!
+ x=   1.1383401311720127      fPrimo=   106.17441602454289      fSecondo=   25668.595606095889      kappa=           7
