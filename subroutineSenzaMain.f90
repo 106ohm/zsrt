@@ -29,6 +29,8 @@ implicit  none
 !dichiaro la precisione di macchina (doppia):
 integer, parameter :: dp = kind(1.d0)
 
+integer, parameter :: qp=16
+
 integer, intent(IN) :: n
 
 integer, intent(IN) :: en, em
@@ -50,7 +52,9 @@ integer :: numCol
 integer :: i, j, k, h, dim, kappa, k1, k2, segno, mlt
 
 
-real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
+real(dp) :: machinePrecision, x, aj, bj, lambdaJ
+
+real(qp) :: fPrimo, fSecondo
 
 real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 
@@ -368,6 +372,8 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
+integer, parameter :: qp=16
+
 real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: n
@@ -388,7 +394,7 @@ integer, intent(INOUT) :: dim
 
 integer, intent(INOUT) :: kappa
 
-real(dp), intent(INOUT) :: fPrimo, fSecondo
+real(qp), intent(INOUT) :: fPrimo, fSecondo
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
@@ -539,6 +545,8 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
+integer, parameter :: qp=16
+
 real(dp), intent(IN) :: x
 
 integer, intent(IN) :: n
@@ -547,7 +555,7 @@ integer, intent(INOUT) :: dim, Tinizio, Tfine, Sinizio, Sfine
 
 integer, intent(OUT) :: kappa
 
-real(dp), intent(OUT) :: fPrimo, fSecondo
+real(qp), intent(OUT) :: fPrimo, fSecondo
 
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 

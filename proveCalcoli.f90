@@ -11,9 +11,13 @@ implicit none
 
 integer, parameter :: dp = kind(1.d0)
 
+integer, parameter :: qp=16
+
 integer :: n, i, j, dim, Tinizio, Tfine, Sinizio, Sfine, kappa
 
-real(dp) :: x, lettore1, lettore2, fPrimo, fSecondo
+real(dp) :: x, lettore1, lettore2
+
+real(qp) :: fPrimo, fSecondo
 
 real(dp), dimension(:,:), allocatable :: T,S
 
