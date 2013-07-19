@@ -1,0 +1,15 @@
+\frametitle {Matrix storin}
+
+\begin{equation*}
+  T = trid(sub,diag,super)
+\end{equation*}
+
+But $T$ is symmetric, so $sub=super$. We define and use
+
+\begin{lstlisting}
+  integer, parameter :: dp = kind(1.d0)
+  real(dp), dimension(1:n,0:1) :: T, S
+\end{lstlisting}
+
+with $T(:,0)=diag$ and $T(:,1)=super$.
+

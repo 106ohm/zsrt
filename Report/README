@@ -1,0 +1,11 @@
+Tex Compiler is a simple Python script that provides on-the-fly preview
+of LaTeX documents. 
+
+It is mainly thought as a tool to help the creation of slides with Beamer. 
+It can be used by passing the name of the main .tex file as the first parameter
+on command line, and the name of the others following. For example: 
+
+ ./tex_compiler.py main.tex chapter1.tex chapter2.tex ...
+
+It will then monitor the files and automatically recompile main.tex when needed. 
+

@@ -1,0 +1,79 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{MR739278}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bunse-Gerstner}{B.-G.}%
+     {A.}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BGA1}
+  \strng{fullhash}{BGA1}
+  \field{sortinit}{B}
+  \verb{doi}
+  \verb 10.1016/0024-3795(84)90203-9
+  \endverb
+  \field{issn}{0024-3795}
+  \field{pages}{43\bibrangedash 68}
+  \field{title}{An algorithm for the symmetric generalized eigenvalue problem}
+  \verb{url}
+  \verb http://dx.doi.org/10.1016/0024-3795(84)90203-9
+  \endverb
+  \field{volume}{58}
+  \field{journaltitle}{Linear Algebra Appl.}
+  \field{year}{1984}
+\endentry
+
+\entry{MR1289159}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Li}{L.}%
+     {T.~Y.}{T.~Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zeng}{Z.}%
+     {Zhong~Gang}{Z.~G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LTYZZG1}
+  \strng{fullhash}{LTYZZG1}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1137/0915071
+  \endverb
+  \field{issn}{1064-8275}
+  \field{number}{5}
+  \field{pages}{1145\bibrangedash 1173}
+  \field{title}{The {L}aguerre iteration in solving the symmetric tridiago nal
+  eigenproblem, revisited}
+  \verb{url}
+  \verb http://dx.doi.org/10.1137/0915071
+  \endverb
+  \field{volume}{15}
+  \field{journaltitle}{SIAM J. Sci. Comput.}
+  \field{year}{1994}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

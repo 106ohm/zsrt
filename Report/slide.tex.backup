@@ -1,0 +1,398 @@
+\documentclass{beamer}
+
+%\usepackage[utf8x]{inputenc}
+
+
+\usepackage{default}
+%\usepackage[english]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsthm, amsfonts, amssymb}%fortmattazione teoremi, ecc
+\usepackage{bbm}%simboli degli insiemi
+\usepackage{mathrsfs}%fornisce un \mathscr, alternativo a \mathcal
+
+\usepackage{fancybox}
+
+\usepackage{biblatex}
+
+
+\usepackage{listings} %Per inserire codice
+%\usepackage[usenames]{color} 
+\usepackage{color}
+
+%\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+%%%
+%Definizione nuovi comandi
+%%%
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+
+% %NARE, CARE, ecc.
+% \newcommand{\nare}{\mathrm{NARE}}
+% \newcommand{\care}{\mathrm{CARE}}
+% \newcommand{\gcare}{\mathrm{GCARE}}
+% \newcommand{\mnare}{\mathsf{M}-\mathrm{NARE}}
+% \newcommand{\adi}{\mathrm{ADI}}
+% \newcommand{\cfadi}{\mathrm{C}\mathrm{f}-\mathrm{ADI}}
+% \newcommand{\fadi}{\mathrm{f}-\mathrm{ADI}}
+
+%trasposta:
+\newcommand{\tras}[1]{#1^{\mathrm{T}}}
+%trasposta e coniugata
+\newcommand{\trasCon}[1]{#1^{\mathrm{*}}}
+%Funzioni ad hoc
+\newcommand{\effe}[2]{\mathcal{F}_{#1}(#2)}
+\newcommand{\g}[2]{\mathcal{G}_{#1,#2}}
+
+%puntini in diagonale inversa
+\newcommand{\iddots}{\reflectbox{$\ddots$}}
+
+%determinante dimensione, rango ecc.
+\newcommand{\deter}[1]{\mathrm{det}(#1)} 
+\newcommand{\rk}[1]{\mathrm{rk}(#1)}
+\newcommand{\Dim}[1]{\mathrm{dim}(#1)}
+\newcommand{\imminv}[1]{\mathrm{Im}^{-1}(#1)}
+
+
+%tale che
+% \newcommand{\tc}{ $\text{ } tale che \text{ }$ }
+\newcommand{\tc}{ $ such that $ }
+
+%Stile delle def, teo, prop, lem, ecc.
+\theoremstyle{definition} \newtheorem{de}{Def}
+\theoremstyle{remark} \newtheorem{os}[de]{Oss}
+\theoremstyle{plain} \newtheorem{te}[de]{Teo}
+\theoremstyle{plain} \newtheorem{co}[de]{Cor}
+\theoremstyle{plain} \newtheorem{pr}[de]{Prop}
+\theoremstyle{plain} \newtheorem{lem}[de]{Lemm}
+\theoremstyle{remark} \newtheorem{rem}[de]{Remark}
+
+
+%%%
+%Stile: codice FORTRAN90
+%%%
+
+% \lstset{
+% basicstyle=\footnotesize,
+% numbers=left,
+% numbersep=5pt,
+% keywordstyle=\color{blue},
+% commentstyle=\color{green},
+% captionpos=b,
+% frame=single,
+% escapeinside={\!*}{*)},
+% language=Fortran,
+% caption=\lstname
+% }
+
+
+
+%%%
+%%%
+%%%
+\usetheme{Copenhagen}
+%\usetheme{Antibes}
+%\usepackage{iwona}
+%\beamertemplatetransparentcovereddynamicmedium
+%\beamertemplateshadingbackground{blue!12}{white}
+%\setbeamertemplate{navigation symbols}{}
+%%%
+%%%
+%%%
+\title{An Algorithm for the \\
+Generalized Symmetric Tridiagonal \\
+Eigenvalue Problem}
+\subtitle{Kuiyuam Li, Tien-Yien Li, Zhonggang Zeng}
+\author{Giulio Masetti}
+\institute{Universit\`a di Pisa\\
+Corso Metodi di Approssimazione 2012-2013
+}
+\date{\today}
+
+%\bibliographystyle{authordate1}
+\bibliography{slide}
+
+%%%
+%%%
+%%%
+\begin{document}
+
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\tikzstyle{selected}=[draw=red,fill=red!30]
+\tikzstyle{optional}=[dashed,fill=gray!50]
+
+\newenvironment{fminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}
+\end{Sbox}
+\fbox{\TheSbox}}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+\section{Contents}
+
+\begin{frame} 
+\frametitle{Generalized Eigenvalue Problem}  
+
+\begin{de}
+  $T,S\in\R^{n\times n}$. We call $(T,S)$ \emph{pencil}.
+\end{de}
+
+We consider \emph{only} \begin{fminipage}{0.8in} symmetric \\ and \\ tridiagonal\end{fminipage} pencil.
+
+
+\pause
+
+\begin{de}[Problem]
+  Find $\lambda \tc T x = \lambda S x$. \\
+  $T,S$ symmetric implies $\lambda\in\R$.
+\end{de}
+\end{frame}
+
+\begin{frame}
+\frametitle{Algorithm philosophy}
+
+We find zeros of the polynomial equation
+
+\begin{equation*}
+  \effe{(T,S)}{\lambda} = \deter{T-\lambda S} = 0
+\end{equation*}
+
+using an iterative method, living on real line.
+\end{frame}
+
+\section{Ideas and tecnology}
+
+\begin{frame}
+\frametitle{Brainstorming}
+
+\begin{Bdescription}
+  \item [We want:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Fast and secure iterative method.
+  \item Starting points for our method.
+  \item Scalability.
+  \end{Bitemize}}
+  
+  \item [We have:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Laguerre's method.
+  \item Cuppen's divide and conquer method.
+  \item Symmetric tridiagonal matrices.
+  \end{Bitemize}}
+
+  \item [We add:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Unreducible condition.
+  \item Dynamic programming (Bottom-up).
+  \item Efficient matrix storing.
+  \end{Bitemize}}
+\end{Bdescription}
+\end{frame}
+
+\subsection{Rapid tour}
+
+\begin{frame}
+\frametitle{Unreducible pencil}
+
+\begin{de}[ as in \cite{MR739278} ]
+  $(T,S)$ is an \emph{unreducible pencil} if $t_{i,i+1}^2 + s_{i,i+1}^2 \neq 0$\\
+  for $i=1,2,\dots,n-1$.
+\end{de}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Matrix storin}
+
+\begin{equation*}
+  T = trid(sub,diag,super)
+\end{equation*}
+
+But $T$ is symmetric, so $sub=super$. We define and use
+
+\begin{lstlisting}
+  integer, parameter :: dp = kind(1.d0)
+  real(dp), dimension(1:n,0:1) :: T, S  
+\end{lstlisting}
+
+with $T(:,0)=diag$ and $T(:,1)=super$.
+
+\end{frame}
+
+\section{Laguerre's method}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+$\effe{T,S}{\lambda}$ is a polynomial with only real zeros; we call them
+\begin{equation*}
+  \lambda_1 < \lambda_2 < \dots < \lambda_n
+\end{equation*}
+
+where we count with multiplicity.\\ 
+If $\lambda_m$ and $\lambda_{m+1}$ are simple zeros (mlt=1), then we consider now the quadric
+
+\begin{equation*}
+  g_{u}(X) = (x-X)^2 \sum_{i=1}^n \frac{(u-\lambda_i)^2}{(x-\lambda_i)^2} - (u-X)^2
+\end{equation*}
+
+if $\fbox{$u\neq x$}$ then $g_u(x)<0$ and $g_u(\lambda_m)>0$. \\
+So we have two sign change. \\
+Bolzano's Theorem tell us that there are two zeros of $g_u$ between $\lambda_m$ and $\lambda_{m+1}$. We call them $X_{-},X_{+}$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{equation*}
+  \lambda_m < X_{-} < x < X_{+} < \lambda_{m+1}
+\end{equation*}
+
+We have one freedom: the $u$ parameter. Calling $\hat X_{-}=min_{u} X_{-}$ and $\hat X_{+}=max_{u} X_{+}$  we can obtain
+
+%($\frac{\partial X^{'}}{\partial u}=\frac{\partial X^{''}}{\partial u}=0$)
+
+\begin{equation*}
+  \lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \lambda_{m+1}
+\end{equation*}
+
+With algebraic manipulations 
+
+%(in which we consider $\frac{\effe{T,S}{\lambda}^{'}}{\effe{T,S}{\lambda}}=\sum \frac{1}{x-\lambda_i}$ and  $(\frac{\effe{T,S}{\lambda}^{'}}{\effe{T,S}{\lambda}})^2-\frac{\effe{T,S}{\lambda}^{''}}{\effe{T,S}{\lambda}}=\sum \frac{1}{(x-\lambda_i)^2}$ )
+
+we obtain 
+
+\begin{equation*}
+  \hat X_{-}, \hat X_{+} = L_{\pm}(x) = x + \frac{ n }{ -\frac{f^{'}}{f} \pm \sqrt{(n-1)[ (n-1)(-\frac{f^{'}}{f}) -n\frac{f^{''}}{f} ]} }
+\end{equation*}
+
+with $\frac{f^{'}}{f}=\frac{ (\effe{T,S}{\lambda})^{'} }{ \effe{T,S}{\lambda} }$.
+
+\end{frame}
+
+%%%
+%Inizio immagine
+%%%
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{tikzpicture}
+ \draw[->] (-1.5,0) -- (5.5,0) node [above] {$\R$};
+ \draw [black, thick] (2.5,0) circle [radius=0.01];
+ \node[align=center, above]  at (2.5,1) {$x_{0}$};
+ \draw [black, thick] (1.5,0) circle [radius=0.01];
+ \node[align=center, below] at (1.5,1) {$x^{(1)}_{-}$};
+ \draw [black, thick] (3,0) circle [radius=0.01];
+ \node[align=center, below] at (3,1) {$x^{(1)}_{+}$};
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{tikzpicture}
+ \draw[->] (-1.5,0) -- (5.5,0) node [below] {$\R$};
+ \node[draw=white] at (2.5,0) {$x_{0}$};
+ \node[draw=white] at (1.2,0) {$x^{(2)}_{-}$};
+ \node[draw=white] at (3.5,0) {$x^{(2)}_{+}$};
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{tikzpicture}
+ \draw[->] (-1.5,0) -- (5.5,0) node [below] {$\R$};
+ \node[draw=white] at (2.5,0) {$x_{0}$};
+ \node[draw=white] at (1.1,0) {$x^{(3)}_{-}$};
+ \node[draw=white] at (3.9,0) {$x^{(3)}_{+}$};
+\end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{tikzpicture}
+ \draw[->] (-1.5,0) -- (5.5,0) node [below] {$\R$};
+ \node[draw=white] at (2.5,0) {$x_{0}$};
+ \node[draw=white] at (1.1,0) {$x^{(3)}_{-}$};
+ \node[draw=white] at (3.9,0) {$x^{(3)}_{+}$};
+ \node[draw=white] at (1,0) {$\lambda_m$};
+ \node[draw=white] at (4,0) {$\lambda_{m+1}$};
+\end{tikzpicture}
+
+\end{frame}
+
+%%%
+%Fine immagine
+%%%
+
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{de}[Laguerre's iteration]
+  If $mlt(\lambda_m)=mlt(\lambda_{m+1})=1$ then
+  \begin{align*}
+    x_{+}^{(k)} &= L_{+}^k(x)=L_{+}(L_{+}(\dots(x_{0})))\\
+    x_{-}^{(k)} &= L_{-}^k(x)=L_{-}(L_{-}(\dots(x_{0})))
+  \end{align*}
+  else we have a similar expression.
+\end{de} 
+
+We can prove that
+
+\begin{equation*}
+  \lambda_m \leftarrow \dots x_{-}^{(2)} < x_{-}^{(1)} < x_{0} < x_{+}^{(1)} < x_{+}^{(2)} \dots \rightarrow \lambda_{m+1}
+\end{equation*}
+  
+\end{frame}
+
+%%%
+%DIMOSTRAZIONE
+%%%
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+It's clear that we need a powerfull method to obtain $x_{0}$ and an algorithm to 
+estimate $mlt(\lambda_m)$. \\
+\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{MR1289159}) causes no trouble, so the most importan aspects of our calculation are: good $x_{0}$ and good evaluation of $L_{\pm}(x)$. 
+\end{frame}
+
+
+\section{Good initial point}
+
+
+
+\frame{
+\begin{center}
+Grazie per l'attenzione.
+\end{center}
+}
+
+
+
+%%%
+%%%
+%%%
+\end{document}
