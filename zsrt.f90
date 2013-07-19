@@ -61,6 +61,9 @@ do j=1,n
    end do
 end do
 
+T(n,1)=-100.d0
+S(n,1)=-100.d0
+
 do i=1,n
    write(*,*)"S(i,0)=",S(i,0)
 end do
@@ -385,53 +388,6 @@ do while (dim <= n)
                write(*,*)"j=",j,"mlt=",mlt
                write(*,*)"aj=",aj,"bj=",bj
             end if
-
-            !!!
-            !ESPERIMENTO: forzo aj e bj, solo per dim=8
-            if ( dim == 8 ) then
-               write(*,*)"forzo intervallo [aj, bj]"
-               if ( j == 1 ) then
-                  write(*,*)"cucu"
-                  aj=0.88*1.d0
-                  bj=0.91*1.d0
-               end if
-               if ( j == 2 ) then
-                  write(*,*)"cucu"
-                  aj=0.91*1.d0
-                  bj=0.93*1.d0
-               end if
-               if ( j == 3 ) then
-                  write(*,*)"cucu"
-                  aj=0.94*1.d0
-                  bj=0.96*1.d0
-               end if
-               if ( j == 4 ) then
-                  write(*,*)"cucu"
-                  aj=0.97*1.d0
-                  bj=0.99*1.d0
-               end if
-               if ( j == 5 ) then
-                  write(*,*)"cucu"
-                  aj=1.00*1.d0
-                  bj=0.99*1.d0
-               end if
-               if ( j == 6 ) then
-                  write(*,*)"cucu"
-                  aj=1.03*1.d0
-                  bj=1.05*1.d0
-               end if
-               if ( j == 7 ) then
-                  write(*,*)"cucu"
-                  aj=1.09*1.d0
-                  bj=1.11*1.d0
-               end if
-               if ( j == 8 ) then
-                  write(*,*)"cucu"
-                  aj=1.10*1.d0
-                  bj=1.12*1.d0
-               end if
-            end if
-            !!!
 
 
             call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &

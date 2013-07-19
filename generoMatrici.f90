@@ -15,7 +15,7 @@ real(dp) :: rnd, machinePrecision
 machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
-n=4
+n=8
 
 !alloco memoria
 allocate( T(n,n), S(n,n) )
@@ -207,13 +207,23 @@ end do
 !Stapo a video le matrici
 !!!
 write(*,*)"T="
+write(*,*)"diag"
 do i=1,n
-   write(*,*) T(i,:)
+   write(*,*) T(i,i)
+end do
+write(*,*)"super"
+do i=1,n-1
+   write(*,*) T(i,i+1)
 end do
 
 write(*,*)"S="
+write(*,*)"diag"
 do i=1,n
-   write(*,*) S(i,:)
+   write(*,*) S(i,i)
+end do
+write(*,*)"super"
+do i=1,n-1
+   write(*,*) S(i,i+1)
 end do
 
 !!!
