@@ -32,7 +32,7 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 0
+verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -340,24 +340,22 @@ do while (dim <= n)
          bj=b
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
-            x = Eigenvalues(j,numCol+1)
+            x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
 
-            !write(*,*)"x=",x
+            write(*,*)"x=",x
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
 
-            !write(*,*)"x=",x
+            write(*,*)"x=",x
 
             if ( kappa < j ) then
                aj = x
             else
                bJ = x
             end if
-
-            !write(*,*)"aj=",aj,"bj=",bj
       
             !Se il segno di -fPrimo non coincide con quello di
             !\lambda_j-x ( il fatto che questa condizione
@@ -371,6 +369,8 @@ do while (dim <= n)
                GOTO 100
             end if
 
+            !write(*,*)"aj=",aj,"bj=",bj
+
             !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
             if ( -fPrimo >= 0.d0 ) then
                segno = 1
@@ -378,7 +378,8 @@ do while (dim <= n)
                segno = -1
             end if
       
-            !segno = sign( - fPrimo )
+            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
+            !con sign( \lambda_j - x )
             !vedi meta` p. 14
 
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
@@ -584,10 +585,16 @@ do while ( .TRUE. )
    end if
 
    if ( kappa < j ) then
+      if ( verbose >=3 ) then
+         write(*,*)"mi muovo verso destra"
+      end if
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
       xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
       sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
+      if ( verbose >=3 ) then
+         write(*,*)"mi muovo verso sinistra"
+      end if
       !Calcolo x_l(0) = L_{mlt -}(xl(-1))
       xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
       sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
