@@ -357,7 +357,7 @@ do while (dim <= n)
                bJ = x
             end if
 
-            write(*,*)"aj=",aj,"bj=",bj
+            !write(*,*)"aj=",aj,"bj=",bj
       
             !Se il segno di -fPrimo non coincide con quello di
             !\lambda_j-x ( il fatto che questa condizione
@@ -367,7 +367,7 @@ do while (dim <= n)
             if ( kappa < j-1 .OR. j < kappa ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
-               Write(*,*)"cucu"
+               !write(*,*)"cucu"
                GOTO 100
             end if
 
@@ -730,18 +730,22 @@ zeta(0) = zeta(-1)
 kappa = 0
 
 do i=1,dim-1
+
+   !write(*,*)"~"
+   !write(*,*)"T(Tinizio+i,0)=T(",Tinizio+i,",0)=",T(Tinizio+i,0)
+   !write(*,*)"T(Tinizio+i-1,1)=T(",Tinizio+i-1,",1)=",T(Tinizio+i-1,1)
       
    !ATTENZIONE: qui ho i=1,dim-1
    
    !mi occupo di xi
    
    xi(0) = T(Tinizio+i,0) - x*S(Sinizio+i,0) - &
-   (( T(Tinizio+i,1)-x*S(Sinizio+i,1) )**2)/&
+   (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)/&
    xi(-1)
 
    if ( abs(xi(0)) <= machinePrecision ) then
-      xi(0) = ( (abs(T(Tinizio+i,1))+ & 
-      abs(x*S(Sinizio+i,1)))**2 * machinePrecision**2 )/&
+      xi(0) = ( (abs(T(Tinizio+i-1,1))+ & 
+      abs(x*S(Sinizio+i-1,1)))**2 * machinePrecision**2 )/&
       xi(-1)
    end if
 
@@ -749,8 +753,8 @@ do i=1,dim-1
    !divido in due tappe il calcolo.
 
    eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
-   S(Sinizio+i,1) + (T(Tinizio+i,1)- &
-   x*S(Sinizio+i,1))**2*eta(-2)
+   S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
+   x*S(Sinizio+i-1,1))**2*eta(-2)
       
    !if ( abs(eta(0))<= machinePrecision ) then
    !   write(*,*)"primo pezzo di eta e` zero!"
@@ -766,10 +770,10 @@ do i=1,dim-1
    !mi occupo di zeta: 
    !divido in due tappe il calcolo.
       
-   zeta(0) = 2.d0*S(Sinizio+i,1)**2 + &
-   4.d0*( T(Tinizio+i,1)-x*S(Sinizio+i,1) )*&
-   S(Sinizio+i,1)*eta(-2) - &
-   ( T(Tinizio+i,1)-x*S(Sinizio+i,1) )**2*&
+   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
+   4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
+   S(Sinizio+i-1,1)*eta(-2) - &
+   ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
    zeta(-2)
 
    !if ( abs(zeta(0))<= machinePrecision ) then
