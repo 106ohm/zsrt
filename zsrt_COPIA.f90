@@ -651,9 +651,6 @@ do while ( .TRUE. )
 
    l = l+1
 
-   !OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
-   !dello stesso
-
 end do
 
 30 write(*,*) ""
@@ -664,12 +661,13 @@ end if
 
 lambdaJ = xl(0)
 
+!OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
+!dello stesso
+
 end subroutine LagIt
 
-
 !!!                                                                   
-!Calcola (12), (13) e (14). Nell'altro articolo
-!questo algoritmo viene chiamato DetEvl               
+!Calcola (12), (13) e (14)               
 !!!                                                                 
   
 subroutine calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
@@ -703,17 +701,22 @@ real(dp) :: machinePrecision
 machinePrecision=epsilon(1.d0)
 
 !ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
-!da Tinizio e da Sinizio. Si noti che T(:,0) ha n elementi,
-!mentre T(:,1) ne ha n-1 (ugualmente S)
+!da Tinizio e da Sinizio. T ed S sono state definite con indici che
+!vanno da 1 a n, dunque per iniziare a contare da 1 ri-definisco
+!Tinizio, Tfine, Sinizio ed Sfine.
 
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
 !OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, 
 !zeta_{i-2}, eta_{i-1} ed eta_{i-2}
 
-!FONDAMENTALE:
-!tengo conto di quanti termini negativi compaiono 
-!nella successione degli xi; questo sara` kappa!
+!write(*,*)"~"
+!write(*,*)"dim=",dim
+!write(*,*)"Tinizio=",Tinizio
+!write(*,*)"Tfine=",Tfine
+!write(*,*)"Sinizio=",Sinizio
+!write(*,*)"Sfine=",Sfine
+!write(*,*)"~"
 
 kappa = 0
 
@@ -726,9 +729,10 @@ end if
 
 xi(0)=xi(-1)
 
-if ( xi(0) <= 0.d0 ) then
-   kappa = kappa+1
-end if
+!if ( xi(0) <= 0.d0 ) then
+!   write(*,*)"...altro xi(0) negativo!"
+!   kappa = kappa+1
+!end if
 
 eta(-2) = 0.d0
 eta(-1) = S(Sinizio,0)/xi(0)
@@ -742,8 +746,11 @@ kappa = 0
 
 do i=1,dim-1
 
+   !write(*,*)"~"
    !write(*,*)"T(Tinizio+i,0)=T(",Tinizio+i,",0)=",T(Tinizio+i,0)
    !write(*,*)"T(Tinizio+i-1,1)=T(",Tinizio+i-1,",1)=",T(Tinizio+i-1,1)
+      
+   !ATTENZIONE: qui ho i=1,dim-1
    
    !mi occupo di xi
    
@@ -757,10 +764,6 @@ do i=1,dim-1
       xi(-1)
    end if
 
-   if ( xi(0) <= 0.d0 ) then
-      kappa = kappa+1
-   end if
-
    !mi occupo di eta:
    !divido in due tappe il calcolo.
 
@@ -768,9 +771,9 @@ do i=1,dim-1
    S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
    x*S(Sinizio+i-1,1))**2*eta(-2)
       
-   if ( abs(eta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di eta e` zero!"
-   end if
+   !if ( abs(eta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di eta e` zero!"
+   !end if
 
    eta(0) = ( (T(Tinizio+i,0)-x*S(Sinizio+i,0))* &
    eta(-1) + S(Sinizio+i,0) - eta(0)/xi(-1) )/xi(0)
@@ -788,9 +791,9 @@ do i=1,dim-1
    ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
    zeta(-2)
 
-   if ( abs(zeta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di zeta e` zero!"
-   end if
+   !if ( abs(zeta(0))<= machinePrecision ) then
+   !   write(*,*)"primo pezzo di zeta e` zero!"
+   !end if
 
    zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
    zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
@@ -800,13 +803,12 @@ do i=1,dim-1
       write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
    end if
 
-
-   if ( verbose >= 4 ) then
-      write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
-      write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
-      write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
-           "zeta(0)=", zeta(0)
-      write(*,*)"kappa=",kappa
+   !tengo conto di quanti termini negativi compaiono 
+   !nella successione degli xi
+      
+   if ( xi(0) <= 0.d0 ) then
+      write(*,*)"...altro xi(0) negativo!"
+      kappa = kappa+1
    end if
       
    !aggiiorno le variabili
@@ -820,6 +822,10 @@ do i=1,dim-1
    zeta(-2) = zeta(-1)
    zeta(-1) = zeta(0)
 
+   !write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
+   !write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
+   !write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1),"zeta(0)=", zeta(0)
+   !write(*,*)"kappa=",kappa
    
 end do
 
