@@ -16,89 +16,99 @@
  S(i,1)=  -100.00000000000000     
  j=           1
  j-esimo autovalore=  0.89626353946034520     
- x=   1.0962635394603453      fPrimo=  -18.558594761454270      kappa=           2
- aj= -0.90373646053965473      bj=   3.0962635394603453     
- xl(0)=   1.0962635394603453     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
+ x=  0.69626353946034514      fPrimo=  -23.236781745591561      kappa=           0
+ aj=  0.69526353946034514      bj=   2.6962635394603449     
+ xl(0) prima della radice quadrata=  -6986.0461553423775     
+ mi muovo verso destra
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   1.0738225128337389     
- abs(lambdaj-autovalori(j))=  0.17755897337339366     
+ lambdaj=  0.69626353946034514     
+ abs(lambdaj-autovalori(j))=  0.20000000000000007     
  j=           2
  j-esimo autovalore=  0.92568073607522261     
- x=   1.1256807360752226      fPrimo=   142.00628495322366      kappa=           3
- aj= -0.87431926392477743      bj=   3.1256807360752226     
- xl(0)=   1.1256807360752226     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
+ x=  0.72568073607522265      fPrimo=  -25.980646884556421      kappa=           0
+ aj=  0.72468073607522265      bj=   2.7256807360752227     
+ xl(0) prima della radice quadrata=  -9486.1327867930086     
+ mi muovo verso destra
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   1.1172313985683662     
- abs(lambdaj-autovalori(j))=  0.19155066249314356     
+ lambdaj=  0.72568073607522265     
+ abs(lambdaj-autovalori(j))=  0.19999999999999996     
  j=           3
  j-esimo autovalore=  0.95501110817178869     
- x=   1.1550111081717886      fPrimo=   40.466329178291218      kappa=           3
- aj= -0.84498889182821135      bj=   3.1550111081717889     
- xl(0)=   1.1550111081717886     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
+ x=  0.75501110817178874      fPrimo=  -29.514322283797579      kappa=           0
+ aj=  0.75401110817178874      bj=   2.7550111081717885     
+ xl(0) prima della radice quadrata=  -13707.339569086262     
+ mi muovo verso destra
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   1.1077078502432325     
- abs(lambdaj-autovalori(j))=  0.15269674207144379     
+ lambdaj=  0.75501110817178874     
+ abs(lambdaj-autovalori(j))=  0.19999999999999996     
  j=           4
  j-esimo autovalore=  0.98052861946565262     
- x=   1.1805286194656526      fPrimo=   28.149882923589605      kappa=           3
- aj= -0.81947138053434743      bj=   3.1805286194656528     
- xl(0)=   1.1805286194656526     
+ x=  0.78052861946565266      fPrimo=  -33.580137993171007      kappa=           0
+ aj=  0.77952861946565266      bj=   2.7805286194656524     
+ xl(0) prima della radice quadrata=  -20295.964591608448     
  mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   1.4067165372105135     
- abs(lambdaj-autovalori(j))=  0.42618791774486087     
+ lambdaj=  0.78052861946565266     
+ abs(lambdaj-autovalori(j))=  0.19999999999999996     
  j=           5
  j-esimo autovalore=   1.0105684309651279     
- x=   1.2105684309651279      fPrimo=   21.538608191745933      kappa=           3
- aj= -0.78943156903487210      bj=   3.2105684309651279     
- xl(0)=   1.2105684309651279     
+ x=  0.81056843096512798      fPrimo=  -40.374471724539070      kappa=           0
+ aj=  0.80956843096512798      bj=   2.8105684309651280     
+ xl(0) prima della radice quadrata=  -36669.064365735758     
  mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   1.7784302208818210     
- abs(lambdaj-autovalori(j))=  0.76786178991669307     
+ lambdaj=  0.81056843096512798     
+ abs(lambdaj-autovalori(j))=  0.19999999999999996     
  j=           6
  j-esimo autovalore=   1.0407608243340198     
- x=   1.2407608243340198      fPrimo=   17.707905098216695      kappa=           3
- aj= -0.75923917566598020      bj=   3.2407608243340196     
- xl(0)=   1.2407608243340198     
+ x=  0.84076082433401989      fPrimo=  -51.681546863132240      kappa=           0
+ aj=  0.83976082433401988      bj=   2.8407608243340201     
+ xl(0) prima della radice quadrata=  -84210.088851832174     
  mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ xl(0) prima della fine=                       NaN
+ condizione di arresto particolare: xl(0) e` NaN!
  
  LagIt compie            2  iterazioni.
- lambdaj=   2.8212650149007246     
- abs(lambdaj-autovalori(j))=   1.7805041905667047     
+ lambdaj=  0.84076082433401989     
+ abs(lambdaj-autovalori(j))=  0.19999999999999996     
  j=           7
  j-esimo autovalore=   1.1048595483898147     
- x=   1.3048595483898147      fPrimo=   13.082682622983768      kappa=           3
- aj= -0.69514045161018534      bj=   3.3048595483898149     
- xl(0)=   1.3048595483898147     
+ x=  0.90485954838981475      fPrimo=  -17.027832221944230      kappa=           1
+ aj=  0.90385954838981475      bj=   2.9048595483898145     
+ xl(0) prima della radice quadrata=   3907073.5027958611     
  mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ xl(0) prima della fine=   1993.6596904079497     
+ xl(0)=  0.90887226933636855     
+ condizione di arresto (24) del terzo tipo
  
  LagIt compie            2  iterazioni.
- lambdaj=  -2.6674927534755399     
- abs(lambdaj-autovalori(j))=   3.7723523018653546     
+ lambdaj=  0.90887226933636855     
+ abs(lambdaj-autovalori(j))=  0.19598727905344615     
  j=           8
  j-esimo autovalore=   1.1183401311720127     
- x=   1.3183401311720127      fPrimo=   12.421350120249228      kappa=           3
- aj= -0.68165986882798735      bj=   3.3183401311720129     
- xl(0)=   1.3183401311720127     
+ x=  0.91834013117201274      fPrimo=  -142.45448523977475      kappa=           1
+ aj=  0.91734013117201274      bj=   2.9183401311720125     
+ xl(0) prima della radice quadrata=   5036069.9926417880     
  mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ xl(0) prima della fine=   2386.5734644032655     
+ xl(0)=  0.92169221738235707     
+ condizione di arresto (24) del terzo tipo
  
  LagIt compie            2  iterazioni.
- lambdaj=  -1.6827729883698306     
- abs(lambdaj-autovalori(j))=   2.8011131195418431     
+ lambdaj=  0.92169221738235707     
+ abs(lambdaj-autovalori(j))=  0.19664791378965563     

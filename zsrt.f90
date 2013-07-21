@@ -411,7 +411,7 @@ do while (dim <= n)
 
 
             call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
-                 Sinizio, Sfine, en, em, Eigenvalues, numCol+1, j, &
+                 Sinizio, Sfine, j, &
                  fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
             if (verbose >= 3) then
@@ -516,7 +516,7 @@ end subroutine EstMlt
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
 subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
-Sinizio, Sfine, en, em, Eigenvalues, numCol, j, &
+Sinizio, Sfine, j, &
 fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
 implicit none
@@ -535,7 +535,7 @@ real(dp), intent(INOUT) :: aj, bj
 
 integer, intent(IN) :: verbose
 
-integer, intent(IN) :: en, em, numCol, j
+integer, intent(IN) :: j
 
 integer, intent(INOUT) :: mlt
 
@@ -544,8 +544,6 @@ integer, intent(INOUT) :: dim
 integer, intent(INOUT) :: kappa
 
 real(dp), intent(INOUT) :: fPrimo, fSecondo
-
-real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 integer :: i, k, l, exKappa
 

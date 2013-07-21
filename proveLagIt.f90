@@ -69,11 +69,11 @@ do i=1,n
 end do
 
 
-dim= 4
+dim= 8
 Tinizio= 1
-Tfine= 4
+Tfine= 8
 Sinizio= 1
-Sfine= 4
+Sfine= 8
 
 
 open(unit=3, file="Eispack/ris_eispack.txt")
@@ -90,19 +90,19 @@ end do
 
 call quick_sort(autovalori,n)
 
-do j=1,n
+do j=1,8
 
    write(*,*)"j=",j
    write(*,*)"j-esimo autovalore=", autovalori(j)
 
-   x = autovalori(j) + 2.d-1
+   x = autovalori(j) - 2.d-1
 
    call  calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, &
    Sfine, fPrimo, fSecondo, kappa)
 
    write(*,*)"x=",x,"fPrimo=",fPrimo,"kappa=",kappa
 
-   aj = x - 2.d0
+   aj = x - 1.d-3
    bj = x + 2.d0
 
    write(*,*)"aj=",aj,"bj=",bj

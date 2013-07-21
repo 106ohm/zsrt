@@ -426,12 +426,7 @@ lambdaJ = 0.d0
 !Se uscendo dallla subroutine questo valore non e`
 !cambiato allora il calcolo e` errato.
 
-xl(-2) = x
-xl(-1) = x
 xl(0) = x
-
-exDeltaL=10.d0
-deltaL=10.d0
 
 l = 2
 
@@ -453,9 +448,6 @@ do while ( .TRUE. )
    xl(-2) = xl(-1)
    xl(-1) = xl(0)
 
-   if ( verbose >= 3 ) then
-      write(*,*)"xl(0)=",xl(0)
-   end if
 
    if ( abs(fPrimo) <= machinePrecision .OR. &
    abs(fSecondo) <= machinePRecision ) then
@@ -464,20 +456,44 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
+
+   !calcolo x_l(0) a tappe:
+   !questa e` la parte comune a + e -
+   xl(0) = (n-1)*fPrimo**2 - n*fSecondo
+   xl(0) = ( (n-mlt) * xl(0) )/ (mlt*1.d0)
+
+   write(*,*)"xl(0) prima della radice quadrata=",xl(0)
+
    if ( kappa < j ) then
+
       if ( verbose >=3 ) then
          write(*,*)"mi muovo verso destra"
       end if
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
-      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
-      sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+
+      xl(0) = -fPrimo + sqrt(xl(0))
+      
+      write(*,*)"xl(0) prima della fine=", xl(0)
+
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+
+
+      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
+      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
       if ( verbose >=3 ) then
          write(*,*)"mi muovo verso sinistra"
       end if
       !Calcolo x_l(0) = L_{mlt -}(xl(-1))
-      xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
-      sqrt( ((n-mlt)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+
+      xl(0) = -fPrimo - sqrt(xl(0))
+
+      write(*,*)"xl(0) prima della fine=", xl(0)
+      
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+
+      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
+      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    end if
 
    if ( isnan(xl(0)) ) then
@@ -486,6 +502,10 @@ do while ( .TRUE. )
       end if
       xl(0)=xl(-1)
       GOTO 30
+   end if
+
+   if ( verbose >= 3 ) then
+      write(*,*)"xl(0)=",xl(0)
    end if
 
    exDeltaL = xl(-1) - xl(-2)
@@ -500,12 +520,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   if ( abs(deltaL) >= abs(exDeltaL) ) then
-      if (verbose >= 2) then
-         write(*,*)"condizione di arresto (24) del secondo tipo"
-      end if
-      GOTO 30
-   end if
+   !if ( abs(deltaL) >= abs(exDeltaL) ) then
+   !   if (verbose >= 2) then
+   !      write(*,*)"condizione di arresto (24) del secondo tipo"
+   !   end if
+   !   GOTO 30
+   !end if
 
    if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
    machinePrecision*abs(xl(0)) ) then
@@ -529,8 +549,7 @@ do while ( .TRUE. )
       xl(-1) = xl(-2)
       !non sono in grado di fare un corretto
       !xl(-2)=xl(-1)
-      !ma non mi interessa...
-      xl(-2)=0.d0
+      !ma non mi interessa poiche'
       !appena ri-entro nel ciclo lo perco comunque
       
       GOTO 20
