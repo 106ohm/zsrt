@@ -14,499 +14,224 @@
  S(i,1)=  0.99039474804151328     
  S(i,1)=  0.81380966648249919     
  S(i,1)=  -100.00000000000000     
- en=           3
- Eigenvalues prima del calcolo:
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
  
  
  
  
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- -------------------------------------
- |Adesso dim=           4
- |Tinizio=           1 Tfine=           4
- |k1=           1 k2=           4
- -------------------------------------
- j=           1
- x=  0.95519945550362595      kappa=           3
- ...altro xi(0) negativo!
- x=  0.95519945550362595      kappa=           1
- EstMlt sovrastima la molteplicita`.
- 
- entro in LagIt con
- j=           1 mlt=           1
+ work in progres...
+ x=  0.95519945550362595      j=           1 kappa=           1
+ fine lavoro:
+ x=  0.95519945550362595      j=           1 kappa=           1
  aj=   0.0000000000000000      bj=  0.95519945550362595     
- xl(0)=  0.95519945550362595     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           2
- x=  0.96175043740451727      kappa=           1
- ...altro xi(0) negativo!
- x=  0.96175043740451727      kappa=           1
  
- entro in LagIt con
- j=           2 mlt=           1
+ (           1 ,           2 )=  0.94309919625582495     
+ work in progres...
+ x=  0.96175043740451727      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.96175043740451727      j=           2 kappa=           1
  aj=  0.96175043740451727      bj=   5.0000000000000000     
- xl(0)=  0.96175043740451727     
- mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ kappa di aj=           1
+ kappa di bj=           3
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           3
- x=  0.96828706676072707      kappa=           1
- ...altro xi(0) negativo!
- x=  0.96828706676072707      kappa=           1
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.9841435333803634      kappa=           3
- EstMlt sovrastima la molteplicita`.
  
- entro in LagIt con
- j=           3 mlt=           3
+ (           2 ,           2 )=  0.97506313448376714     
+ work in progres...
+ x=  0.96828706676072707      j=           3 kappa=           1
+ work in progres...
+ x=   2.9841435333803634      j=           3 kappa=           3
+ fine lavoro:
+ x=   2.9841435333803634      j=           3 kappa=           3
  aj=  0.96828706676072707      bj=   2.9841435333803634     
- xl(0)=   2.9841435333803634     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
- 
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           4
- x=  0.99748196610416828      kappa=           3
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=  0.99748196610416828      kappa=           2
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.9987409830520839      kappa=           3
- 
- entro in LagIt con
- j=           4 mlt=           1
- aj=   2.9987409830520839      bj=   5.0000000000000000     
- xl(0)=   2.9987409830520839     
- mi muovo verso destra
- condizione di arresto (24) del secondo tipo
- 
- LagIt compie            2  iterazioni.
- esco da LagIt
- 
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- -------------------------------------
- |Adesso dim=           4
- |Tinizio=           5 Tfine=           8
- |k1=           1 k2=           4
- -------------------------------------
- j=           1
- x=   1.0015814835606895      kappa=           3
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0015814835606895      kappa=           1
- 
- entro in LagIt con
- j=           1 mlt=           1
- aj=   0.0000000000000000      bj=   1.0015814835606895     
- xl(0)=   1.0015814835606895     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
- 
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           2
- x=   1.0125589151792089      kappa=           1
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0125589151792089      kappa=           1
- 
- entro in LagIt con
- j=           2 mlt=           1
- aj=   1.0125589151792089      bj=   5.0000000000000000     
- xl(0)=   1.0125589151792089     
- mi muovo verso destra
- condizione di arresto (24) del secondo tipo
- 
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           3
- x=   1.0236951573537922      kappa=           1
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0236951573537922      kappa=           1
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   3.0118475786768961      kappa=           3
+ kappa di aj=           1
+ kappa di bj=           3
  EstMlt sovrastima la molteplicita`.
  
- entro in LagIt con
- j=           3 mlt=           3
+ 
+ (           3 ,           2 )= -0.94609875471272398     
+ work in progres...
+ x=  0.99748196610416828      j=           4 kappa=           2
+ work in progres...
+ x=   2.9987409830520839      j=           4 kappa=           3
+ fine lavoro:
+ x=   2.9987409830520839      j=           4 kappa=           3
+ aj=   2.9987409830520839      bj=   5.0000000000000000     
+ kappa di aj=           3
+ kappa di bj=           3
+ 
+ 
+ (           4 ,           2 )=  -3.0284880621290187     
+ 
+ work in progres...
+ x=   1.0015814835606895      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.0015814835606895      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=   1.0015814835606895     
+ kappa di aj=           0
+ kappa di bj=           1
+ 
+ 
+ (           1 ,           2 )=  0.94309919625582495     
+ work in progres...
+ x=   1.0125589151792089      j=           2 kappa=           1
+ fine lavoro:
+ x=   1.0125589151792089      j=           2 kappa=           1
+ aj=   1.0125589151792089      bj=   5.0000000000000000     
+ kappa di aj=           1
+ kappa di bj=           3
+ 
+ 
+ (           2 ,           2 )=  0.97506313448376714     
+ work in progres...
+ x=   1.0236951573537922      j=           3 kappa=           1
+ work in progres...
+ x=   3.0118475786768961      j=           3 kappa=           3
+ fine lavoro:
+ x=   3.0118475786768961      j=           3 kappa=           3
  aj=   1.0236951573537922      bj=   3.0118475786768961     
- xl(0)=   3.0118475786768961     
- mi muovo verso sinistra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           1
+ kappa di bj=           3
+ EstMlt sovrastima la molteplicita`.
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           4
- x=   1.0913293607900958      kappa=           3
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0913293607900958      kappa=           2
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   3.0456646803950478      kappa=           3
  
- entro in LagIt con
- j=           4 mlt=           1
+ (           3 ,           2 )= -0.94609875471272398     
+ work in progres...
+ x=   1.0913293607900958      j=           4 kappa=           2
+ work in progres...
+ x=   3.0456646803950478      j=           4 kappa=           3
+ fine lavoro:
+ x=   3.0456646803950478      j=           4 kappa=           3
  aj=   3.0456646803950478      bj=   5.0000000000000000     
- xl(0)=   3.0456646803950478     
- mi muovo verso destra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           3
+ kappa di bj=           3
  
- LagIt compie            2  iterazioni.
- esco da LagIt
  
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- -------------------------------------
- |Adesso dim=           8
- |Tinizio=           1 Tfine=           8
- |k1=           1 k2=           8
- -------------------------------------
- j=           1
- x=  -3.0284880621290187      kappa=           7
- x=  -3.0284880621290187      kappa=           0
+ (           4 ,           2 )=  -3.0284880621290187     
  
- entro in LagIt con
- j=           1 mlt=           1
+ work in progres...
+ x=  -3.0284880621290187      j=           1 kappa=           0
+ fine lavoro:
+ x=  -3.0284880621290187      j=           1 kappa=           0
  aj=  -3.0284880621290187      bj=   5.0000000000000000     
- xl(0)=  -3.0284880621290187     
- mi muovo verso destra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           0
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           2
- x= -0.94609875471272398      kappa=           0
- x= -0.94609875471272398      kappa=           0
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.0269506226436382      kappa=           7
- x=  0.54042593396545713      kappa=           0
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.2836882783045476      kappa=           7
- ...altro xi(0) negativo!
- x=  0.91205710613500235      kappa=           1
  
- entro in LagIt con
- j=           2 mlt=           1
+ (           1 ,           1 )=  -3.0284880621290187     
+ work in progres...
+ x= -0.94609875471272398      j=           2 kappa=           0
+ work in progres...
+ x=   2.0269506226436382      j=           2 kappa=           7
+ work in progres...
+ x=  0.54042593396545713      j=           2 kappa=           0
+ work in progres...
+ x=   1.2836882783045476      j=           2 kappa=           7
+ work in progres...
+ x=  0.91205710613500235      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.91205710613500235      j=           2 kappa=           1
  aj=  0.91205710613500235      bj=   1.2836882783045476     
- xl(0)=  0.91205710613500235     
- mi muovo verso destra
- condizione di arresto (24) del secondo tipo
+ kappa di aj=           1
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           3
- x=  0.94309919625582495      kappa=           1
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=  0.94309919625582495      kappa=           2
  
- entro in LagIt con
- j=           3 mlt=           1
+ (           2 ,           1 )=  0.91622487220724191     
+ work in progres...
+ x=  0.94309919625582495      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.94309919625582495      j=           3 kappa=           2
  aj=  0.94309919625582495      bj=   5.0000000000000000     
- xl(0)=  0.94309919625582495     
- mi muovo verso destra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           2
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           4
- x=  0.94806574481362516      kappa=           2
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=  0.94806574481362516      kappa=           2
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.9740328724068128      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.9610493086102190      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.4545575267119220      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.2013116357627736      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0746886902881994      kappa=           5
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0113772175509124      kappa=           4
  
- entro in LagIt con
- j=           4 mlt=           1
+ (           3 ,           1 )=  0.94309919625582495     
+ work in progres...
+ x=  0.94806574481362516      j=           4 kappa=           2
+ work in progres...
+ x=   2.9740328724068128      j=           4 kappa=           7
+ work in progres...
+ x=   1.9610493086102190      j=           4 kappa=           7
+ work in progres...
+ x=   1.4545575267119220      j=           4 kappa=           7
+ work in progres...
+ x=   1.2013116357627736      j=           4 kappa=           7
+ work in progres...
+ x=   1.0746886902881994      j=           4 kappa=           5
+ work in progres...
+ x=   1.0113772175509124      j=           4 kappa=           4
+ fine lavoro:
+ x=   1.0113772175509124      j=           4 kappa=           4
  aj=  0.94806574481362516      bj=   1.0113772175509124     
- xl(0)=   1.0113772175509124     
- mi muovo verso sinistra
- condizione di arresto (24) del secondo tipo
+ kappa di aj=           2
+ kappa di bj=           4
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           5
- x=  0.97506313448376714      kappa=           4
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=  0.97506313448376714      kappa=           3
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.9875315672418834      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.9812973508628253      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.4781802426732962      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.2266216885785317      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.1008424115311495      kappa=           5
  
- entro in LagIt con
- j=           5 mlt=           1
+ (           4 ,           1 )=   1.0105511917478780     
+ work in progres...
+ x=  0.97506313448376714      j=           5 kappa=           3
+ work in progres...
+ x=   2.9875315672418834      j=           5 kappa=           7
+ work in progres...
+ x=   1.9812973508628253      j=           5 kappa=           7
+ work in progres...
+ x=   1.4781802426732962      j=           5 kappa=           7
+ work in progres...
+ x=   1.2266216885785317      j=           5 kappa=           7
+ work in progres...
+ x=   1.1008424115311495      j=           5 kappa=           5
+ fine lavoro:
+ x=   1.1008424115311495      j=           5 kappa=           5
  aj=  0.97506313448376714      bj=   1.1008424115311495     
- xl(0)=   1.1008424115311495     
- mi muovo verso sinistra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           3
+ kappa di bj=           5
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           6
- x=   1.0405650638461723      kappa=           5
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.0405650638461723      kappa=           4
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   3.0202825319230859      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   2.0304237978846293      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.5354944308654008      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.2880297473557865      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.1642974056009794      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   1.1024312347235758      kappa=           5
  
- entro in LagIt con
- j=           6 mlt=           1
+ (           5 ,           1 )=   1.1008424115311495     
+ work in progres...
+ x=   1.0405650638461723      j=           6 kappa=           4
+ work in progres...
+ x=   3.0202825319230859      j=           6 kappa=           7
+ work in progres...
+ x=   2.0304237978846293      j=           6 kappa=           7
+ work in progres...
+ x=   1.5354944308654008      j=           6 kappa=           7
+ work in progres...
+ x=   1.2880297473557865      j=           6 kappa=           7
+ work in progres...
+ x=   1.1642974056009794      j=           6 kappa=           7
+ work in progres...
+ x=   1.1024312347235758      j=           6 kappa=           5
+ fine lavoro:
+ x=   1.1024312347235758      j=           6 kappa=           5
  aj=   1.1024312347235758      bj=   1.1642974056009794     
- xl(0)=   1.1024312347235758     
- mi muovo verso destra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           5
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           7
- x=   3.0118475786768961      kappa=           5
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   3.0118475786768961      kappa=           7
  
- entro in LagIt con
- j=           7 mlt=           1
+ (           6 ,           1 )=   1.1024312347235758     
+ work in progres...
+ x=   3.0118475786768961      j=           7 kappa=           7
+ fine lavoro:
+ x=   3.0118475786768961      j=           7 kappa=           7
  aj=   0.0000000000000000      bj=   3.0118475786768961     
- xl(0)=   3.0118475786768961     
- mi muovo verso sinistra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           0
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
- j=           8
- x=   3.0456646803950478      kappa=           7
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- ...altro xi(0) negativo!
- x=   3.0456646803950478      kappa=           7
  
- entro in LagIt con
- j=           8 mlt=           1
+ (           7 ,           1 )=   3.0118475786768961     
+ work in progres...
+ x=   3.0456646803950478      j=           8 kappa=           7
+ fine lavoro:
+ x=   3.0456646803950478      j=           8 kappa=           7
  aj=   3.0456646803950478      bj=   5.0000000000000000     
- xl(0)=   3.0456646803950478     
- mi muovo verso destra
- condizione di arresto particolare: xl(0) e` NaN!
+ kappa di aj=           7
+ kappa di bj=           7
  
- LagIt compie            2  iterazioni.
- esco da LagIt
  
- Eigenvalues dopo il calcolo:
-  -3.0284880621290187       -3.0284880621290187       0.95519945550362595     
-  0.91622487220724191      -0.94609875471272398       0.96175043740451727     
-  0.94309919625582495       0.94309919625582495       0.96828706676072707     
-   1.0105511917478780       0.94806574481362516       0.99748196610416828     
-   1.1008424115311495       0.97506313448376714        1.0015814835606895     
-   1.1024312347235758        1.0405650638461723        1.0125589151792089     
-   3.0118475786768961        3.0118475786768961        1.0236951573537922     
-   3.0456646803950478        3.0456646803950478        1.0913293607900958     
+ (           8 ,           1 )=   3.0456646803950478     
+ 
  FINE CALCOLO AUTOVALORI!

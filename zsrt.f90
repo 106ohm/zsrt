@@ -32,7 +32,7 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 3
+verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -334,8 +334,6 @@ do while (dim <= n)
       
       do j = k1, k2
 
-         write(*,*)"j=",j
-
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
          !nel ricercare \lambda_j
          aj=a
@@ -345,13 +343,13 @@ do while (dim <= n)
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
 
-            write(*,*)"x=",x,"kappa=",kappa
-
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
+
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
 
-            write(*,*)"x=",x,"kappa=",kappa
+            write(*,*)"work in progres..."
+            write(*,*)"x=",x,"j=",j,"kappa=",kappa
 
             if ( kappa < j ) then
                aj = x
@@ -371,7 +369,26 @@ do while (dim <= n)
                GOTO 100
             end if
 
-            !write(*,*)"aj=",aj,"bj=",bj
+
+            write(*,*)"fine lavoro:"
+            write(*,*)"x=",x,"j=",j,"kappa=",kappa
+            write(*,*)"aj=",aj,"bj=",bj
+
+            !!!
+            call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            !
+            write(*,*)"kappa di aj=", kappa
+            !
+            call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            !
+            write(*,*)"kappa di bj=", kappa
+            !
+            call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            !!!
+            
 
             !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
             if ( -fPrimo >= 0.d0 ) then
@@ -406,7 +423,7 @@ do while (dim <= n)
             !dall'alto verso basso
             !!!
             Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
-            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
 
          else
       
@@ -642,10 +659,19 @@ do while ( .TRUE. )
    Sfine, fPrimo, fSecondo, kappa)
 
    !aggiorno [aj, bj] secondo il nuovo kappa
-   if ( ( mlt > 1 ) .AND. ( abs(kappa-exKappa) > 1 ) ) then
+   if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
+
       mlt = abs(kappa-exKappa)
+
+      xl(-2) = xl(0)
       xl(0) = (xl(0)+xl(-1))/2.d0
-      !write(*,*)"GOTO 20"
+      xl(-1) = xl(-2)
+      !non sono in grado di fare un corretto
+      !xl(-2)=xl(-1)
+      !ma non mi interessa...
+      xl(-2)=0.d0
+      !appena ri-entro nel ciclo lo perco comunque
+      
       GOTO 20
    end if
 
@@ -693,12 +719,15 @@ real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 integer :: i, j, k, l
 
+integer :: verboseCalcoli
+
 real(dp), dimension(-2:0) :: xi, eta, zeta
 
 real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
+verboseCalcoli = 0
 
 machinePrecision=epsilon(1.d0)
 
@@ -801,7 +830,7 @@ do i=1,dim-1
    end if
 
 
-   if ( verbose >= 4 ) then
+   if ( verboseCalcoli >= 4 ) then
       write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
       write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
       write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
