@@ -460,9 +460,7 @@ do while ( .TRUE. )
    !calcolo x_l(0) a tappe:
    !questa e` la parte comune a + e -
    xl(0) = (n-1)*fPrimo**2 - n*fSecondo
-   xl(0) = ( (n-mlt) * xl(0) )/ (mlt*1.d0)
-
-   write(*,*)"xl(0) prima della radice quadrata=",xl(0)
+   xl(0) = abs( ( (n-mlt) * xl(0) )/ (mlt*1.d0) )
 
    if ( kappa < j ) then
 
@@ -472,8 +470,6 @@ do while ( .TRUE. )
       !Calcolo xl(0) = L_{mlt +}(xl(-1))
 
       xl(0) = -fPrimo + sqrt(xl(0))
-      
-      write(*,*)"xl(0) prima della fine=", xl(0)
 
       xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
@@ -487,8 +483,6 @@ do while ( .TRUE. )
       !Calcolo x_l(0) = L_{mlt -}(xl(-1))
 
       xl(0) = -fPrimo - sqrt(xl(0))
-
-      write(*,*)"xl(0) prima della fine=", xl(0)
       
       xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
@@ -520,14 +514,14 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   !if ( abs(deltaL) >= abs(exDeltaL) ) then
-   !   if (verbose >= 2) then
-   !      write(*,*)"condizione di arresto (24) del secondo tipo"
-   !   end if
-   !   GOTO 30
-   !end if
+   if ( abs(deltaL) >= abs(exDeltaL) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del secondo tipo"
+      end if
+      GOTO 30
+   end if
 
-   if ( deltaL**2/( abs(exDeltaL)-xl(0)-xl(-1) ) <= &
+   if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then
       if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del terzo tipo"
