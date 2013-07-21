@@ -1,237 +1,662 @@
- S(i,0)=   9.9786602381321465     
- S(i,0)=   9.2567979861831606     
- S(i,0)=   9.5540051353968156     
- S(i,0)=   9.7288585083995631     
- S(i,0)=   9.7696143092758962     
- S(i,0)=   9.7311286518535542     
- S(i,0)=   9.7463096553073090     
- S(i,0)=   9.5585945195965554     
- S(i,1)=  0.99914226942680318     
- S(i,1)=  0.65904751789363791     
- S(i,1)=  0.65792468442021090     
- S(i,1)=  0.67452929906378811     
- S(i,1)=  0.94709465592406572     
- S(i,1)=  0.99039474804151328     
- S(i,1)=  0.81380966648249919     
+ S(i,0)=  0.30099914226942687     
+ S(i,0)=  0.40165818978732049     
+ S(i,0)=  0.50131697220231386     
+ S(i,0)=  0.60133245398348412     
+ S(i,0)=  0.70162162395498795     
+ S(i,0)=  0.80193748940396559     
+ S(i,0)=  0.90180420441452402     
+ S(i,0)=   1.0008138096664825     
+ S(i,1)=   9.9914226942680309E-004
+ S(i,1)=   6.5904751789363798E-004
+ S(i,1)=   6.5792468442021088E-004
+ S(i,1)=   6.7452929906378816E-004
+ S(i,1)=   9.4709465592406571E-004
+ S(i,1)=   9.9039474804151341E-004
+ S(i,1)=   8.1380966648249926E-004
  S(i,1)=  -100.00000000000000     
+ en=           3
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
  
  
  
  
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           4
+ -------------------------------------
  work in progres...
- x=  0.95519945550362595      j=           1 kappa=           1
+ x=   3.3222919458103184      j=           1 kappa=           2
+ work in progres...
+ x=   1.6611459729051592      j=           1 kappa=           0
+ work in progres...
+ x=   2.4917189593577387      j=           1 kappa=           3
+ work in progres...
+ x=   2.0764324661314491      j=           1 kappa=           2
+ work in progres...
+ x=   1.8687892195183040      j=           1 kappa=           1
  fine lavoro:
- x=  0.95519945550362595      j=           1 kappa=           1
- aj=   0.0000000000000000      bj=  0.95519945550362595     
- kappa di aj=           0
- kappa di bj=           1
- EstMlt sovrastima la molteplicita`.
- 
- 
- (           1 ,           2 )=  0.94309919625582495     
- work in progres...
- x=  0.96175043740451727      j=           2 kappa=           1
- fine lavoro:
- x=  0.96175043740451727      j=           2 kappa=           1
- aj=  0.96175043740451727      bj=   5.0000000000000000     
- kappa di aj=           1
- kappa di bj=           3
- 
- 
- (           2 ,           2 )=  0.97506313448376714     
- work in progres...
- x=  0.96828706676072707      j=           3 kappa=           1
- work in progres...
- x=   2.9841435333803634      j=           3 kappa=           3
- fine lavoro:
- x=   2.9841435333803634      j=           3 kappa=           3
- aj=  0.96828706676072707      bj=   2.9841435333803634     
- kappa di aj=           1
- kappa di bj=           3
- EstMlt sovrastima la molteplicita`.
- 
- 
- (           3 ,           2 )= -0.94609875471272398     
- work in progres...
- x=  0.99748196610416828      j=           4 kappa=           2
- work in progres...
- x=   2.9987409830520839      j=           4 kappa=           3
- fine lavoro:
- x=   2.9987409830520839      j=           4 kappa=           3
- aj=   2.9987409830520839      bj=   5.0000000000000000     
- kappa di aj=           3
- kappa di bj=           3
- 
- 
- (           4 ,           2 )=  -3.0284880621290187     
- 
- work in progres...
- x=   1.0015814835606895      j=           1 kappa=           1
- fine lavoro:
- x=   1.0015814835606895      j=           1 kappa=           1
- aj=   0.0000000000000000      bj=   1.0015814835606895     
+ x=   1.8687892195183040      j=           1 kappa=           1
+ aj=   1.6611459729051592      bj=   1.8687892195183040     
  kappa di aj=           0
  kappa di bj=           1
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   1.6611459729051592      bj=   1.8687892195183040     
+ mi muovo verso sinistra
+ xl(0)=   1.7437082475783652     
+ mi muovo verso sinistra
+ xl(0)=   1.6660075681960620     
+ mi muovo verso sinistra
+ xl(0)=   1.6629681777142289     
+ mi muovo verso sinistra
+ xl(0)=   1.6629680274059626     
+ mi muovo verso destra
+ xl(0)=   1.6629680274074496     
+ condizione di arresto (24) del terzo tipo
  
- (           1 ,           2 )=  0.94309919625582495     
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   1.0125589151792089      j=           2 kappa=           1
+ x=   2.4896943783365835      j=           2 kappa=           3
+ work in progres...
+ x=   1.2448471891682917      j=           2 kappa=           0
+ work in progres...
+ x=   1.8672707837524376      j=           2 kappa=           1
+ work in progres...
+ x=   2.1784825810445105      j=           2 kappa=           2
  fine lavoro:
- x=   1.0125589151792089      j=           2 kappa=           1
- aj=   1.0125589151792089      bj=   5.0000000000000000     
+ x=   2.1784825810445105      j=           2 kappa=           2
+ aj=   1.8672707837524376      bj=   2.1784825810445105     
  kappa di aj=           1
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   1.8672707837524376      bj=   2.1784825810445105     
+ mi muovo verso sinistra
+ xl(0)=   2.0257235281328798     
+ mi muovo verso sinistra
+ xl(0)=   1.9948610584121038     
+ mi muovo verso sinistra
+ xl(0)=   1.9947459612650971     
+ mi muovo verso destra
+ xl(0)=   1.9947462640475504     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462632507953     
+ mi muovo verso destra
+ xl(0)=   1.9947462632528921     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462632528865     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.9947483072122012      j=           3 kappa=           2
+ fine lavoro:
+ x=   1.9947483072122012      j=           3 kappa=           2
+ aj=   1.9947483072122012      bj=   4.0000000000000000     
+ kappa di aj=           2
  kappa di bj=           3
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   1.9947483072122012      bj=   4.0000000000000000     
+ mi muovo verso destra
+ xl(0)=   1.9947510396631283     
+ mi muovo verso destra
+ xl(0)=   1.9947574249709050     
+ condizione di arresto (24) del terzo tipo
  
- (           2 ,           2 )=  0.97506313448376714     
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   1.0236951573537922      j=           3 kappa=           1
+ x=   1.6629749869886066      j=           4 kappa=           1
  work in progres...
- x=   3.0118475786768961      j=           3 kappa=           3
+ x=   2.8314874934943033      j=           4 kappa=           3
  fine lavoro:
- x=   3.0118475786768961      j=           3 kappa=           3
- aj=   1.0236951573537922      bj=   3.0118475786768961     
- kappa di aj=           1
- kappa di bj=           3
- EstMlt sovrastima la molteplicita`.
- 
- 
- (           3 ,           2 )= -0.94609875471272398     
- work in progres...
- x=   1.0913293607900958      j=           4 kappa=           2
- work in progres...
- x=   3.0456646803950478      j=           4 kappa=           3
- fine lavoro:
- x=   3.0456646803950478      j=           4 kappa=           3
- aj=   3.0456646803950478      bj=   5.0000000000000000     
+ x=   2.8314874934943033      j=           4 kappa=           3
+ aj=   2.8314874934943033      bj=   4.0000000000000000     
  kappa di aj=           3
  kappa di bj=           3
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   2.8314874934943033      bj=   4.0000000000000000     
+ mi muovo verso destra
+ xl(0)=   3.1538881414158482     
+ mi muovo verso destra
+ xl(0)=   3.3184422718164459     
+ mi muovo verso destra
+ xl(0)=   3.3223694746723194     
+ mi muovo verso destra
+ xl(0)=   3.3224038366269073     
+ mi muovo verso destra
+ xl(0)=   3.3224843216399438     
+ condizione di arresto (24) del terzo tipo
  
- (           4 ,           2 )=  -3.0284880621290187     
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           4
+ -------------------------------------
  work in progres...
- x=  -3.0284880621290187      j=           1 kappa=           0
+ x=   1.4252715962145477      j=           1 kappa=           2
+ work in progres...
+ x=  0.71263579810727384      j=           1 kappa=           0
+ work in progres...
+ x=   1.0689536971609108      j=           1 kappa=           1
  fine lavoro:
- x=  -3.0284880621290187      j=           1 kappa=           0
- aj=  -3.0284880621290187      bj=   5.0000000000000000     
+ x=   1.0689536971609108      j=           1 kappa=           1
+ aj=  0.71263579810727384      bj=   1.0689536971609108     
  kappa di aj=           0
- kappa di bj=           7
+ kappa di bj=           1
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.71263579810727384      bj=   1.0689536971609108     
+ mi muovo verso sinistra
+ xl(0)=   1.0280752083340761     
+ mi muovo verso sinistra
+ xl(0)=   1.0004981073614267     
+ mi muovo verso sinistra
+ xl(0)=  0.99918251578666140     
+ mi muovo verso sinistra
+ xl(0)=  0.99918242019932413     
+ mi muovo verso destra
+ xl(0)=  0.99918242020037618     
+ condizione di arresto (24) del terzo tipo
  
- (           1 ,           1 )=  -3.0284880621290187     
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x= -0.94609875471272398      j=           2 kappa=           0
+ x=   1.2469812042849742      j=           2 kappa=           3
  work in progres...
- x=   2.0269506226436382      j=           2 kappa=           7
+ x=  0.62349060214248708      j=           2 kappa=           0
  work in progres...
- x=  0.54042593396545713      j=           2 kappa=           0
+ x=  0.93523590321373062      j=           2 kappa=           0
  work in progres...
- x=   1.2836882783045476      j=           2 kappa=           7
+ x=   1.0911085537493523      j=           2 kappa=           1
  work in progres...
- x=  0.91205710613500235      j=           2 kappa=           1
+ x=   1.1690448790171633      j=           2 kappa=           2
  fine lavoro:
- x=  0.91205710613500235      j=           2 kappa=           1
- aj=  0.91205710613500235      bj=   1.2836882783045476     
+ x=   1.1690448790171633      j=           2 kappa=           2
+ aj=   1.0911085537493523      bj=   1.1690448790171633     
  kappa di aj=           1
- kappa di bj=           7
+ kappa di bj=           2
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   1.0911085537493523      bj=   1.1690448790171633     
+ mi muovo verso sinistra
+ xl(0)=   1.1221944842198355     
+ mi muovo verso sinistra
+ xl(0)=   1.1090306053130912     
+ mi muovo verso sinistra
+ xl(0)=   1.1088894885151259     
+ mi muovo verso destra
+ xl(0)=   1.1088897431020903     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426417106     
+ mi muovo verso destra
+ xl(0)=   1.1088897426425430     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425415     
+ condizione di arresto (24) del terzo tipo
  
- (           2 ,           1 )=  0.91622487220724191     
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=  0.94309919625582495      j=           3 kappa=           2
+ x=   1.1088888839482789      j=           3 kappa=           1
+ work in progres...
+ x=   2.5544444419741392      j=           3 kappa=           3
+ work in progres...
+ x=   1.8316666629612091      j=           3 kappa=           3
+ work in progres...
+ x=   1.4702777734547441      j=           3 kappa=           3
+ work in progres...
+ x=   1.2895833287015115      j=           3 kappa=           3
+ work in progres...
+ x=   1.1992361063248951      j=           3 kappa=           2
  fine lavoro:
- x=  0.94309919625582495      j=           3 kappa=           2
- aj=  0.94309919625582495      bj=   5.0000000000000000     
+ x=   1.1992361063248951      j=           3 kappa=           2
+ aj=   1.1992361063248951      bj=   1.2895833287015115     
  kappa di aj=           2
- kappa di bj=           7
+ kappa di bj=           3
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   1.1992361063248951      bj=   1.2895833287015115     
+ mi muovo verso destra
+ xl(0)=   1.2410022896479314     
+ mi muovo verso destra
+ xl(0)=   1.2469829291948857     
+ mi muovo verso sinistra
+ xl(0)=   1.2469787006431270     
+ mi muovo verso destra
+ xl(0)=   1.2469787111165904     
+ mi muovo verso sinistra
+ xl(0)=   1.2469787110906494     
+ mi muovo verso destra
+ xl(0)=   1.2469787110907138     
+ condizione di arresto (24) del terzo tipo
  
- (           3 ,           1 )=  0.94309919625582495     
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=  0.94806574481362516      j=           4 kappa=           2
+ x=  0.99918739779966248      j=           4 kappa=           1
  work in progres...
- x=   2.9740328724068128      j=           4 kappa=           7
- work in progres...
- x=   1.9610493086102190      j=           4 kappa=           7
- work in progres...
- x=   1.4545575267119220      j=           4 kappa=           7
- work in progres...
- x=   1.2013116357627736      j=           4 kappa=           7
- work in progres...
- x=   1.0746886902881994      j=           4 kappa=           5
- work in progres...
- x=   1.0113772175509124      j=           4 kappa=           4
+ x=   2.4995936988998313      j=           4 kappa=           3
  fine lavoro:
- x=   1.0113772175509124      j=           4 kappa=           4
- aj=  0.94806574481362516      bj=   1.0113772175509124     
+ x=   2.4995936988998313      j=           4 kappa=           3
+ aj=   2.4995936988998313      bj=   4.0000000000000000     
+ kappa di aj=           3
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   2.4995936988998313      bj=   4.0000000000000000     
+ mi muovo verso destra
+ xl(0)=   4.0404002763979658     
+ mi muovo verso destra
+ xl(0)=   7.5133257135938099     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           8
+ -------------------------------------
+ work in progres...
+ x=   1.6629680274074496      j=           1 kappa=           4
+ work in progres...
+ x=  0.83148401370372482      j=           1 kappa=           0
+ work in progres...
+ x=   1.2472260205555872      j=           1 kappa=           3
+ work in progres...
+ x=   1.0393550171296559      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.0393550171296559      j=           1 kappa=           1
+ aj=  0.83148401370372482      bj=   1.0393550171296559     
+ kappa di aj=           0
+ kappa di bj=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.83148401370372482      bj=   1.0393550171296559     
+ mi muovo verso sinistra
+ xl(0)=   1.0027938602851241     
+ mi muovo verso sinistra
+ xl(0)=  0.99918399794138979     
+ mi muovo verso sinistra
+ xl(0)=  0.99918242018305314     
+ mi muovo verso destra
+ xl(0)=  0.99918242020037629     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.9947462632528865      j=           2 kappa=           5
+ work in progres...
+ x=  0.99737313162644325      j=           2 kappa=           0
+ work in progres...
+ x=   1.4960596974396649      j=           2 kappa=           4
+ work in progres...
+ x=   1.2467164145330540      j=           2 kappa=           2
+ work in progres...
+ x=   1.1220447730797487      j=           2 kappa=           2
+ work in progres...
+ x=   1.0597089523530960      j=           2 kappa=           1
+ fine lavoro:
+ x=   1.0597089523530960      j=           2 kappa=           1
+ aj=   1.0597089523530960      bj=   1.1220447730797487     
+ kappa di aj=           1
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           2
+ aj=   1.0597089523530960      bj=   1.1220447730797487     
+ mi muovo verso destra
+ xl(0)=   1.1149792012720299     
+ mi muovo verso sinistra
+ xl(0)=   1.1062392252816908     
+ mi muovo verso destra
+ xl(0)=   1.1100396472244345     
+ mi muovo verso sinistra
+ xl(0)=   1.1083883658057769     
+ mi muovo verso destra
+ xl(0)=   1.1091080317118496     
+ mi muovo verso sinistra
+ xl(0)=   1.1087946310909602     
+ mi muovo verso destra
+ xl(0)=   1.1089311712376586     
+ mi muovo verso sinistra
+ xl(0)=   1.1088716946985393     
+ mi muovo verso destra
+ xl(0)=   1.1088976045741781     
+ mi muovo verso sinistra
+ xl(0)=   1.1088863177875172     
+ mi muovo verso destra
+ xl(0)=   1.1088912345784578     
+ mi muovo verso sinistra
+ xl(0)=   1.1088890927219364     
+ mi muovo verso destra
+ xl(0)=   1.1088900257618586     
+ mi muovo verso sinistra
+ xl(0)=   1.1088896193095945     
+ mi muovo verso destra
+ xl(0)=   1.1088897963690396     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897192381129     
+ mi muovo verso destra
+ xl(0)=   1.1088897528380177     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897382011706     
+ mi muovo verso destra
+ xl(0)=   1.1088897445772987     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897417997192     
+ mi muovo verso destra
+ xl(0)=   1.1088897430096929     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897424826021     
+ mi muovo verso destra
+ xl(0)=   1.1088897427122144     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426121902     
+ mi muovo verso destra
+ xl(0)=   1.1088897426557629     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426367816     
+ mi muovo verso destra
+ xl(0)=   1.1088897426450504     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426414484     
+ mi muovo verso destra
+ xl(0)=   1.1088897426430175     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426423339     
+ mi muovo verso destra
+ xl(0)=   1.1088897426426318     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425017     
+ mi muovo verso destra
+ xl(0)=   1.1088897426425588     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425337     
+ mi muovo verso destra
+ xl(0)=   1.1088897426425448     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425399     
+ mi muovo verso destra
+ xl(0)=   1.1088897426425421     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425410     
+ mi muovo verso destra
+ xl(0)=   1.1088897426425415     
+ mi muovo verso sinistra
+ xl(0)=   1.1088897426425413     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie           41  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.9947574249709050      j=           3 kappa=           6
+ work in progres...
+ x=  0.99737871248545251      j=           3 kappa=           0
+ work in progres...
+ x=   1.4960680687281789      j=           3 kappa=           4
+ work in progres...
+ x=   1.2467233906068156      j=           3 kappa=           2
+ work in progres...
+ x=   1.3713957296674972      j=           3 kappa=           3
+ fine lavoro:
+ x=   1.3713957296674972      j=           3 kappa=           3
+ aj=   1.2467233906068156      bj=   1.3713957296674972     
  kappa di aj=           2
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   1.2467233906068156      bj=   1.3713957296674972     
+ mi muovo verso sinistra
+ xl(0)=   1.3162046243170544     
+ mi muovo verso sinistra
+ xl(0)=   1.2604148952548508     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   3.3224843216399438      j=           4 kappa=           7
+ work in progres...
+ x=   1.6612421608199719      j=           4 kappa=           4
+ work in progres...
+ x=  0.83062108040998595      j=           4 kappa=           0
+ work in progres...
+ x=   1.2459316206149789      j=           4 kappa=           2
+ work in progres...
+ x=   1.4535868907174754      j=           4 kappa=           4
+ work in progres...
+ x=   1.3497592556662270      j=           4 kappa=           3
+ fine lavoro:
+ x=   1.3497592556662270      j=           4 kappa=           3
+ aj=   1.3497592556662270      bj=   1.4535868907174754     
+ kappa di aj=           3
  kappa di bj=           4
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   1.3497592556662270      bj=   1.4535868907174754     
+ mi muovo verso destra
+ xl(0)=   1.4095404108386052     
+ mi muovo verso destra
+ xl(0)=   1.4251811823972838     
+ mi muovo verso destra
+ xl(0)=   1.4252771176547729     
+ mi muovo verso sinistra
+ xl(0)=   1.4252768591579335     
+ mi muovo verso destra
+ xl(0)=   1.4252768598546615     
+ mi muovo verso sinistra
+ xl(0)=   1.4252768598527834     
+ mi muovo verso destra
+ xl(0)=   1.4252768598527887     
+ condizione di arresto (24) del terzo tipo
  
- (           4 ,           1 )=   1.0105511917478780     
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=  0.97506313448376714      j=           5 kappa=           3
+ x=  0.99918242020037618      j=           5 kappa=           0
  work in progres...
- x=   2.9875315672418834      j=           5 kappa=           7
+ x=   2.4995912101001880      j=           5 kappa=           7
  work in progres...
- x=   1.9812973508628253      j=           5 kappa=           7
+ x=   1.7493868151502820      j=           5 kappa=           5
  work in progres...
- x=   1.4781802426732962      j=           5 kappa=           7
+ x=   1.3742846176753292      j=           5 kappa=           3
  work in progres...
- x=   1.2266216885785317      j=           5 kappa=           7
- work in progres...
- x=   1.1008424115311495      j=           5 kappa=           5
+ x=   1.5618357164128056      j=           5 kappa=           4
  fine lavoro:
- x=   1.1008424115311495      j=           5 kappa=           5
- aj=  0.97506313448376714      bj=   1.1008424115311495     
- kappa di aj=           3
+ x=   1.5618357164128056      j=           5 kappa=           4
+ aj=   1.5618357164128056      bj=   1.7493868151502820     
+ kappa di aj=           4
  kappa di bj=           5
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=   1.5618357164128056      bj=   1.7493868151502820     
+ mi muovo verso destra
+ xl(0)=   1.6429636907523408     
+ mi muovo verso destra
+ xl(0)=   1.6628641415603638     
+ mi muovo verso destra
+ xl(0)=   1.6629736590231810     
+ mi muovo verso sinistra
+ xl(0)=   1.6629734129298364     
+ mi muovo verso destra
+ xl(0)=   1.6629734134831766     
+ mi muovo verso sinistra
+ xl(0)=   1.6629734134819325     
+ mi muovo verso destra
+ xl(0)=   1.6629734134819354     
+ condizione di arresto (24) del terzo tipo
  
- (           5 ,           1 )=   1.1008424115311495     
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   1.0405650638461723      j=           6 kappa=           4
+ x=   1.1088897426425415      j=           6 kappa=           2
  work in progres...
- x=   3.0202825319230859      j=           6 kappa=           7
+ x=   2.5544448713212708      j=           6 kappa=           7
  work in progres...
- x=   2.0304237978846293      j=           6 kappa=           7
+ x=   1.8316673069819061      j=           6 kappa=           5
  work in progres...
- x=   1.5354944308654008      j=           6 kappa=           7
- work in progres...
- x=   1.2880297473557865      j=           6 kappa=           7
- work in progres...
- x=   1.1642974056009794      j=           6 kappa=           7
- work in progres...
- x=   1.1024312347235758      j=           6 kappa=           5
+ x=   2.1930560891515887      j=           6 kappa=           6
  fine lavoro:
- x=   1.1024312347235758      j=           6 kappa=           5
- aj=   1.1024312347235758      bj=   1.1642974056009794     
+ x=   2.1930560891515887      j=           6 kappa=           6
+ aj=   1.8316673069819061      bj=   2.1930560891515887     
  kappa di aj=           5
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=   1.8316673069819061      bj=   2.1930560891515887     
+ mi muovo verso sinistra
+ xl(0)=   2.0444433235682764     
+ mi muovo verso sinistra
+ xl(0)=   1.9955738746859990     
+ mi muovo verso sinistra
+ xl(0)=   1.9947440827399363     
+ mi muovo verso destra
+ xl(0)=   1.9947462690986466     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462633452175     
+ mi muovo verso destra
+ xl(0)=   1.9947462633603579     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462633603179     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.2469787110907138      j=           7 kappa=           3
+ work in progres...
+ x=   2.6234893555453569      j=           7 kappa=           7
+ work in progres...
+ x=   1.9352340333180353      j=           7 kappa=           5
+ work in progres...
+ x=   2.2793616944316959      j=           7 kappa=           6
+ fine lavoro:
+ x=   2.2793616944316959      j=           7 kappa=           6
+ aj=   2.2793616944316959      bj=   2.6234893555453569     
+ kappa di aj=           6
  kappa di bj=           7
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=   2.2793616944316959      bj=   2.6234893555453569     
+ mi muovo verso destra
+ xl(0)=   2.4589401082267539     
+ mi muovo verso destra
+ xl(0)=   2.4896684828787934     
+ mi muovo verso sinistra
+ xl(0)=   2.4896586903249323     
+ mi muovo verso destra
+ xl(0)=   2.4896587227766438     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226691045     
+ mi muovo verso destra
+ xl(0)=   2.4896587226694611     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226694598     
+ condizione di arresto (24) del terzo tipo
  
- (           6 ,           1 )=   1.1024312347235758     
+ LagIt compie            8  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   3.0118475786768961      j=           7 kappa=           7
+ x=   7.5133257135938099      j=           8 kappa=           7
  fine lavoro:
- x=   3.0118475786768961      j=           7 kappa=           7
- aj=   0.0000000000000000      bj=   3.0118475786768961     
- kappa di aj=           0
- kappa di bj=           7
- 
- 
- (           7 ,           1 )=   3.0118475786768961     
- work in progres...
- x=   3.0456646803950478      j=           8 kappa=           7
- fine lavoro:
- x=   3.0456646803950478      j=           8 kappa=           7
- aj=   3.0456646803950478      bj=   5.0000000000000000     
+ x=   7.5133257135938099      j=           8 kappa=           7
+ aj=   7.5133257135938099      bj=   4.0000000000000000     
  kappa di aj=           7
  kappa di bj=           7
  
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           1
+ aj=   7.5133257135938099      bj=   4.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.86642467659006872     
+ mi muovo verso destra
+ xl(0)=  0.98658664003606278     
+ mi muovo verso destra
+ xl(0)=  0.99913966259999809     
+ mi muovo verso destra
+ xl(0)=  0.99918242069964791     
+ mi muovo verso destra
+ xl(0)=  0.99918242136535107     
+ mi muovo verso destra
+ xl(0)=  0.99918242291866821     
+ condizione di arresto (24) del terzo tipo
  
- (           8 ,           1 )=   3.0456646803950478     
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
  
+ Eigenvalues dopo il calcolo:
+  0.99918242020037629        1.6629680274074496        3.3222919458103184     
+   1.1088897426425413        1.9947462632528865        2.4896943783365835     
+   1.2604148952548508        1.9947574249709050        1.9947483072122012     
+   1.4252768598527887        3.3224843216399438        1.6629749869886066     
+   1.6629734134819354       0.99918242020037618        1.4252715962145477     
+   1.9947462633603179        1.1088897426425415        1.2469812042849742     
+   2.4896587226694598        1.2469787110907138        1.1088888839482789     
+  0.99918242291866821        7.5133257135938099       0.99918739779966248     
  FINE CALCOLO AUTOVALORI!

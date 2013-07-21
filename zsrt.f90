@@ -32,7 +32,7 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 0
+verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -108,7 +108,7 @@ end if
 !se flag<0 allora scriviamo dal basso verso l'alto.
 
 a=0.d0
-b=5.d0
+b=4.d0
 
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
@@ -185,7 +185,7 @@ integer :: Tinizio, Tfine, Sinizio, Sfine
 
 integer :: numCol
 
-integer :: i, j, k, h, dim, kappa, k1, k2, segno, mlt
+integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
@@ -307,18 +307,18 @@ do while (dim <= n)
 
       !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
       !autovalori di (\hatT,\hatS).
-      call quick_sort( Eigenvalues(:,numCol+1), em )
+      !call quick_sort( Eigenvalues(:,numCol+1), em )
 
 
       !cerco k1 e k2
 
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
-      k1=kappa+1
+      k1 = kappa+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
       k2=kappa+1
-
+      
       if (verbose >= 2) then
          write(*,*)"-------------------------------------"
          write(*,*)"|Adesso dim=",dim
@@ -338,6 +338,10 @@ do while (dim <= n)
          !nel ricercare \lambda_j
          aj=a
          bj=b
+
+         kappaA = k1-1
+         kappaB = k2-1
+
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
             x = Eigenvalues(Tinizio+j-1,numCol+1)
@@ -348,13 +352,17 @@ do while (dim <= n)
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
 
-            write(*,*)"work in progres..."
-            write(*,*)"x=",x,"j=",j,"kappa=",kappa
+            if ( verbose >= 3 ) then
+               write(*,*)"work in progres..."
+               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+            end if
 
             if ( kappa < j ) then
                aj = x
+               kappaA = kappa
             else
                bJ = x
+               kappaB = kappa
             end if
       
             !Se il segno di -fPrimo non coincide con quello di
@@ -362,32 +370,30 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            if ( kappa < j-1 .OR. j < kappa ) then
+            if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
-               !write(*,*)"cucu"
                GOTO 100
             end if
 
+            if ( verbose >= 3 ) then
+               write(*,*)"fine lavoro:"
+               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"aj=",aj,"bj=",bj
 
-            write(*,*)"fine lavoro:"
-            write(*,*)"x=",x,"j=",j,"kappa=",kappa
-            write(*,*)"aj=",aj,"bj=",bj
-
-            !!!
-            call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               
+               write(*,*)"kappa di aj=", kappa
+            
+               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
+                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            
+               write(*,*)"kappa di bj=", kappa
+               
+               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !
-            write(*,*)"kappa di aj=", kappa
-            !
-            call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !
-            write(*,*)"kappa di bj=", kappa
-            !
-            call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !!!
+            end if
             
 
             !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
@@ -404,6 +410,7 @@ do while (dim <= n)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
                write(*,*)"entro in LagIt con"
                write(*,*)"j=",j,"mlt=",mlt
                write(*,*)"aj=",aj,"bj=",bj
@@ -416,21 +423,19 @@ do while (dim <= n)
 
             if (verbose >= 3) then
                write(*,*)"esco da LagIt"
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
             end if
 
-            !!!
-            !immagazzino i risultati,
-            !dall'alto verso basso
-            !!!
+            !immagazzino i risultati.
             Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
-            write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
 
          else
       
             !in questo caso a e b distano solo "un passo macchina"
             write(*,*)"a e b distano pochissimo!"
 
-            !alto verso basso
+            !immagazzino i risultati
             Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
             !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
 
@@ -450,7 +455,7 @@ do while (dim <= n)
 end do
 
 !ordino la prima colonna di Eigenvalues
-call quick_sort( Eigenvalues(:,1), em )
+!call quick_sort( Eigenvalues(:,1), em )
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -547,7 +552,7 @@ integer, intent(INOUT) :: kappa
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
 
-integer :: i, k, l, exKappa
+integer :: i, k, l, exKappa, kappaA, kappaB
 
 real(dp) :: deltaL, exDeltaL
 
@@ -573,8 +578,8 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 10000 ) then
-      write(*,*)"LagIt impiega troppo iterazioni."
+   if ( l >= 1000 ) then
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
 
@@ -653,12 +658,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   if ( abs(deltaL) >= abs(exDeltaL) ) then
-      if (verbose >= 2) then
-         write(*,*)"condizione di arresto (24) del secondo tipo"
-      end if
-      GOTO 30
-   end if
+   !if ( abs(deltaL) >= abs(exDeltaL) ) then
+   !   if (verbose >= 2) then
+   !      write(*,*)"condizione di arresto (24) del secondo tipo"
+   !   end if
+   !   GOTO 30
+   !end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then

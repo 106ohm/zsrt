@@ -306,3 +306,453 @@
  LagIt compie            7  iterazioni.
  lambdaj=  0.92600385713816014     
  abs(lambdaj-autovalori(j))=  0.19233627403385256     
+ j=           1
+ j-esimo autovalore=  0.99918242020037529     
+ x=  0.79918242020037522      fPrimo=  -15.016156417160838      kappa=           0
+ aj=  0.79818242020037522      bj=   2.7991824202003750     
+ mi muovo verso destra
+ xl(0)=  0.97382661753160549     
+ mi muovo verso destra
+ xl(0)=  0.99888734164506210     
+ mi muovo verso destra
+ xl(0)=  0.99918242420322223     
+ mi muovo verso sinistra
+ xl(0)=  0.99918242020033199     
+ mi muovo verso destra
+ xl(0)=  0.99918242020037606     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242020037606     
+ abs(lambdaj-autovalori(j))=   7.7715611723760958E-016
+ j=           2
+ j-esimo autovalore=   1.1088897426425421     
+ x=  0.90888974264254219      fPrimo=  -24.231549822035909      kappa=           0
+ aj=  0.90788974264254219      bj=   2.9088897426425424     
+ mi muovo verso destra
+ xl(0)=  0.99319682868397696     
+ mi muovo verso destra
+ xl(0)=  0.99917765780714418     
+ mi muovo verso destra
+ xl(0)=  0.99918242025317194     
+ mi muovo verso destra
+ xl(0)=  0.99918242032356719     
+ mi muovo verso destra
+ xl(0)=  0.99918242048782380     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242048782380     
+ abs(lambdaj-autovalori(j))=  0.10970732215471835     
+ j=           3
+ j-esimo autovalore=   1.2469787110423027     
+ x=   1.0469787110423028      fPrimo=  -6.6246687238068800      kappa=           1
+ aj=   1.0459787110423029      bj=   3.0469787110423026     
+ mi muovo verso destra
+ xl(0)=   1.0853346550782701     
+ mi muovo verso destra
+ xl(0)=   1.1078070429614739     
+ mi muovo verso destra
+ xl(0)=   1.1088916378726996     
+ mi muovo verso destra
+ xl(0)=   1.1088941694070995     
+ mi muovo verso destra
+ xl(0)=   1.1089000823854811     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=   1.1089000823854811     
+ abs(lambdaj-autovalori(j))=  0.13807862865682163     
+ j=           4
+ j-esimo autovalore=   1.4252768598527878     
+ x=   1.2252768598527879      fPrimo=  -42.790091993129096      kappa=           2
+ aj=   1.2242768598527880      bj=   3.2252768598527881     
+ mi muovo verso destra
+ xl(0)=   1.2464273486183592     
+ mi muovo verso destra
+ xl(0)=   1.2469800707240144     
+ mi muovo verso destra
+ xl(0)=   1.2469818881238255     
+ mi muovo verso destra
+ xl(0)=   1.2469861347276154     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   1.2469861347276154     
+ abs(lambdaj-autovalori(j))=  0.17829072512517241     
+ j=           5
+ j-esimo autovalore=   1.6629734134819341     
+ x=   1.4629734134819341      fPrimo=   27.680417825465220      kappa=           4
+ aj=   1.4619734134819342      bj=   3.4629734134819339     
+ mi muovo verso destra
+ xl(0)=   1.5112464193508395     
+ mi muovo verso destra
+ xl(0)=   1.5951970683991203     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ lambdaj=   1.5951970683991203     
+ abs(lambdaj-autovalori(j))=   6.7776345082813716E-002
+ j=           6
+ j-esimo autovalore=   1.9947462633603201     
+ x=   1.7947462633603202      fPrimo=   7.7330703406366270      kappa=           5
+ aj=   1.7937462633603203      bj=   3.7947462633603202     
+ mi muovo verso destra
+ xl(0)=   1.9199436463722879     
+ mi muovo verso destra
+ xl(0)=   1.9912347823810153     
+ mi muovo verso destra
+ xl(0)=   1.9947550061814669     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462403524427     
+ mi muovo verso destra
+ xl(0)=   1.9947462634208639     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462633601585     
+ mi muovo verso destra
+ xl(0)=   1.9947462633603184     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   1.9947462633603184     
+ abs(lambdaj-autovalori(j))=   1.7763568394002505E-015
+ j=           7
+ j-esimo autovalore=   2.4896587226694593     
+ x=   2.2896587226694591      fPrimo=   2.7593552494342615      kappa=           6
+ aj=   2.2886587226694592      bj=   4.2896587226694596     
+ mi muovo verso destra
+ xl(0)=   2.4636132071058174     
+ mi muovo verso destra
+ xl(0)=   2.4896881423050932     
+ mi muovo verso sinistra
+ xl(0)=   2.4896586251702706     
+ mi muovo verso destra
+ xl(0)=   2.4896587229925555     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226683891     
+ mi muovo verso destra
+ xl(0)=   2.4896587226694633     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226694598     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   2.4896587226694598     
+ abs(lambdaj-autovalori(j))=   4.4408920985006262E-016
+ j=           8
+ j-esimo autovalore=   3.3223438734680943     
+ x=   3.1223438734680942      fPrimo=  0.26280257119597816      kappa=           7
+ aj=   3.1213438734680943      bj=   5.1223438734680942     
+ mi muovo verso destra
+ xl(0)=   3.3199028770892007     
+ mi muovo verso destra
+ xl(0)=   3.3223599361181280     
+ mi muovo verso destra
+ xl(0)=   3.3223814954600743     
+ mi muovo verso destra
+ xl(0)=   3.3224319934703401     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   3.3224319934703401     
+ abs(lambdaj-autovalori(j))=   8.8120002245783979E-005
+ j=           1
+ j-esimo autovalore=  0.99918242020037529     
+ x=  0.79918242020037522      fPrimo=  -15.016156417160838      kappa=           0
+ aj=  0.79818242020037522      bj=   2.7991824202003750     
+ mi muovo verso destra
+ xl(0)=  0.97382661753160549     
+ mi muovo verso destra
+ xl(0)=  0.99888734164506210     
+ mi muovo verso destra
+ xl(0)=  0.99918242420322223     
+ mi muovo verso sinistra
+ xl(0)=  0.99918242020033199     
+ mi muovo verso destra
+ xl(0)=  0.99918242020037606     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242020037606     
+ abs(lambdaj-autovalori(j))=   7.7715611723760958E-016
+ j=           2
+ j-esimo autovalore=   1.1088897426425421     
+ x=  0.90888974264254219      fPrimo=  -24.231549822035909      kappa=           0
+ aj=  0.90788974264254219      bj=   2.9088897426425424     
+ mi muovo verso destra
+ xl(0)=  0.99319682868397696     
+ mi muovo verso destra
+ xl(0)=  0.99917765780714418     
+ mi muovo verso destra
+ xl(0)=  0.99918242025317194     
+ mi muovo verso destra
+ xl(0)=  0.99918242032356719     
+ mi muovo verso destra
+ xl(0)=  0.99918242048782380     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242048782380     
+ abs(lambdaj-autovalori(j))=  0.10970732215471835     
+ j=           3
+ j-esimo autovalore=   1.2469787110423027     
+ x=   1.0469787110423028      fPrimo=  -6.6246687238068800      kappa=           1
+ aj=   1.0459787110423029      bj=   3.0469787110423026     
+ mi muovo verso destra
+ xl(0)=   1.0853346550782701     
+ mi muovo verso destra
+ xl(0)=   1.1078070429614739     
+ mi muovo verso destra
+ xl(0)=   1.1088916378726996     
+ mi muovo verso destra
+ xl(0)=   1.1088941694070995     
+ mi muovo verso destra
+ xl(0)=   1.1089000823854811     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=   1.1089000823854811     
+ abs(lambdaj-autovalori(j))=  0.13807862865682163     
+ j=           4
+ j-esimo autovalore=   1.4252768598527878     
+ x=   1.2252768598527879      fPrimo=  -42.790091993129096      kappa=           2
+ aj=   1.2242768598527880      bj=   3.2252768598527881     
+ mi muovo verso destra
+ xl(0)=   1.2464273486183592     
+ mi muovo verso destra
+ xl(0)=   1.2469800707240144     
+ mi muovo verso destra
+ xl(0)=   1.2469818881238255     
+ mi muovo verso destra
+ xl(0)=   1.2469861347276154     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   1.2469861347276154     
+ abs(lambdaj-autovalori(j))=  0.17829072512517241     
+ j=           5
+ j-esimo autovalore=   1.6629734134819341     
+ x=   1.4629734134819341      fPrimo=   27.680417825465220      kappa=           4
+ aj=   1.4619734134819342      bj=   3.4629734134819339     
+ mi muovo verso destra
+ xl(0)=   1.5112464193508395     
+ mi muovo verso destra
+ xl(0)=   1.5951970683991203     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ lambdaj=   1.5951970683991203     
+ abs(lambdaj-autovalori(j))=   6.7776345082813716E-002
+ j=           6
+ j-esimo autovalore=   1.9947462633603201     
+ x=   1.7947462633603202      fPrimo=   7.7330703406366270      kappa=           5
+ aj=   1.7937462633603203      bj=   3.7947462633603202     
+ mi muovo verso destra
+ xl(0)=   1.9199436463722879     
+ mi muovo verso destra
+ xl(0)=   1.9912347823810153     
+ mi muovo verso destra
+ xl(0)=   1.9947550061814669     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462403524427     
+ mi muovo verso destra
+ xl(0)=   1.9947462634208639     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462633601585     
+ mi muovo verso destra
+ xl(0)=   1.9947462633603184     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   1.9947462633603184     
+ abs(lambdaj-autovalori(j))=   1.7763568394002505E-015
+ j=           7
+ j-esimo autovalore=   2.4896587226694593     
+ x=   2.2896587226694591      fPrimo=   2.7593552494342615      kappa=           6
+ aj=   2.2886587226694592      bj=   4.2896587226694596     
+ mi muovo verso destra
+ xl(0)=   2.4636132071058174     
+ mi muovo verso destra
+ xl(0)=   2.4896881423050932     
+ mi muovo verso sinistra
+ xl(0)=   2.4896586251702706     
+ mi muovo verso destra
+ xl(0)=   2.4896587229925555     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226683891     
+ mi muovo verso destra
+ xl(0)=   2.4896587226694633     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226694598     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   2.4896587226694598     
+ abs(lambdaj-autovalori(j))=   4.4408920985006262E-016
+ j=           8
+ j-esimo autovalore=   3.3223438734680943     
+ x=   3.1223438734680942      fPrimo=  0.26280257119597816      kappa=           7
+ aj=   3.1213438734680943      bj=   5.1223438734680942     
+ mi muovo verso destra
+ xl(0)=   3.3199028770892007     
+ mi muovo verso destra
+ xl(0)=   3.3223599361181280     
+ mi muovo verso destra
+ xl(0)=   3.3223814954600743     
+ mi muovo verso destra
+ xl(0)=   3.3224319934703401     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   3.3224319934703401     
+ abs(lambdaj-autovalori(j))=   8.8120002245783979E-005
+ j=           1
+ j-esimo autovalore=  0.99918242020037529     
+ x=  0.79918242020037522      fPrimo=  -15.016156417160838      kappa=           0
+ aj=  0.79818242020037522      bj=   2.7991824202003750     
+ mi muovo verso destra
+ xl(0)=  0.97382661753160549     
+ mi muovo verso destra
+ xl(0)=  0.99888734164506210     
+ mi muovo verso destra
+ xl(0)=  0.99918242420322223     
+ mi muovo verso sinistra
+ xl(0)=  0.99918242020033199     
+ mi muovo verso destra
+ xl(0)=  0.99918242020037606     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242020037606     
+ abs(lambdaj-autovalori(j))=   7.7715611723760958E-016
+ j=           2
+ j-esimo autovalore=   1.1088897426425421     
+ x=  0.90888974264254219      fPrimo=  -24.231549822035909      kappa=           0
+ aj=  0.90788974264254219      bj=   2.9088897426425424     
+ mi muovo verso destra
+ xl(0)=  0.99319682868397696     
+ mi muovo verso destra
+ xl(0)=  0.99917765780714418     
+ mi muovo verso destra
+ xl(0)=  0.99918242025317194     
+ mi muovo verso destra
+ xl(0)=  0.99918242032356719     
+ mi muovo verso destra
+ xl(0)=  0.99918242048782380     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=  0.99918242048782380     
+ abs(lambdaj-autovalori(j))=  0.10970732215471835     
+ j=           3
+ j-esimo autovalore=   1.2469787110423027     
+ x=   1.0469787110423028      fPrimo=  -6.6246687238068800      kappa=           1
+ aj=   1.0459787110423029      bj=   3.0469787110423026     
+ mi muovo verso destra
+ xl(0)=   1.0853346550782701     
+ mi muovo verso destra
+ xl(0)=   1.1078070429614739     
+ mi muovo verso destra
+ xl(0)=   1.1088916378726996     
+ mi muovo verso destra
+ xl(0)=   1.1088941694070995     
+ mi muovo verso destra
+ xl(0)=   1.1089000823854811     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ lambdaj=   1.1089000823854811     
+ abs(lambdaj-autovalori(j))=  0.13807862865682163     
+ j=           4
+ j-esimo autovalore=   1.4252768598527878     
+ x=   1.2252768598527879      fPrimo=  -42.790091993129096      kappa=           2
+ aj=   1.2242768598527880      bj=   3.2252768598527881     
+ mi muovo verso destra
+ xl(0)=   1.2464273486183592     
+ mi muovo verso destra
+ xl(0)=   1.2469800707240144     
+ mi muovo verso destra
+ xl(0)=   1.2469818881238255     
+ mi muovo verso destra
+ xl(0)=   1.2469861347276154     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   1.2469861347276154     
+ abs(lambdaj-autovalori(j))=  0.17829072512517241     
+ j=           5
+ j-esimo autovalore=   1.6629734134819341     
+ x=   1.4629734134819341      fPrimo=   27.680417825465220      kappa=           4
+ aj=   1.4619734134819342      bj=   3.4629734134819339     
+ mi muovo verso destra
+ xl(0)=   1.5112464193508395     
+ mi muovo verso destra
+ xl(0)=   1.5951970683991203     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ lambdaj=   1.5951970683991203     
+ abs(lambdaj-autovalori(j))=   6.7776345082813716E-002
+ j=           6
+ j-esimo autovalore=   1.9947462633603201     
+ x=   1.7947462633603202      fPrimo=   7.7330703406366270      kappa=           5
+ aj=   1.7937462633603203      bj=   3.7947462633603202     
+ mi muovo verso destra
+ xl(0)=   1.9199436463722879     
+ mi muovo verso destra
+ xl(0)=   1.9912347823810153     
+ mi muovo verso destra
+ xl(0)=   1.9947550061814669     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462403524427     
+ mi muovo verso destra
+ xl(0)=   1.9947462634208639     
+ mi muovo verso sinistra
+ xl(0)=   1.9947462633601585     
+ mi muovo verso destra
+ xl(0)=   1.9947462633603184     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   1.9947462633603184     
+ abs(lambdaj-autovalori(j))=   1.7763568394002505E-015
+ j=           7
+ j-esimo autovalore=   2.4896587226694593     
+ x=   2.2896587226694591      fPrimo=   2.7593552494342615      kappa=           6
+ aj=   2.2886587226694592      bj=   4.2896587226694596     
+ mi muovo verso destra
+ xl(0)=   2.4636132071058174     
+ mi muovo verso destra
+ xl(0)=   2.4896881423050932     
+ mi muovo verso sinistra
+ xl(0)=   2.4896586251702706     
+ mi muovo verso destra
+ xl(0)=   2.4896587229925555     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226683891     
+ mi muovo verso destra
+ xl(0)=   2.4896587226694633     
+ mi muovo verso sinistra
+ xl(0)=   2.4896587226694598     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ lambdaj=   2.4896587226694598     
+ abs(lambdaj-autovalori(j))=   4.4408920985006262E-016
+ j=           8
+ j-esimo autovalore=   3.3223438734680943     
+ x=   3.1223438734680942      fPrimo=  0.26280257119597816      kappa=           7
+ aj=   3.1213438734680943      bj=   5.1223438734680942     
+ mi muovo verso destra
+ xl(0)=   3.3199028770892007     
+ mi muovo verso destra
+ xl(0)=   3.3223599361181280     
+ mi muovo verso destra
+ xl(0)=   3.3223814954600743     
+ mi muovo verso destra
+ xl(0)=   3.3224319934703401     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ lambdaj=   3.3224319934703401     
+ abs(lambdaj-autovalori(j))=   8.8120002245783979E-005

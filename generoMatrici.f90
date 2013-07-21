@@ -40,10 +40,10 @@ do i=1,n
       if (i == j) then
          !aggiungo n+1, cosi' sono sicuro che 
          !T(i,i)> somma_su_j_di T(i,j)
-         T(i,j) = rnd+n+1
+         T(i,j) = 1.d0
       else
          if ( abs(i-j) == 1 ) then
-            T(i,j) = rnd
+            T(i,j) = rnd*1.d-3
             T(j,i) = T(i,j)
          else
             T(i,j)=0.d0
@@ -53,6 +53,10 @@ do i=1,n
    end do
 end do
 
+!do i=1,n
+!   rnd = sum(T(i,:))
+!   T(i,i) = 2.d0*rnd
+!end do
 
 do i=1,n
    do j=1,i
@@ -60,10 +64,10 @@ do i=1,n
       if (i == j) then
          !aggiungo n+1, cosi' sono sicuro che 
          !S(i,i)> somma_su_j_di S(i,j)
-         S(i,i) = rnd+n+1
+         S(i,j) = 0.d0
       else
          if ( abs(i-j) == 1 ) then
-            S(i,j) = rnd
+            S(i,j) = rnd*1.d-3
             S(j,i) = S(i,j)
          else
             S(i,j)=0.d0
@@ -72,6 +76,50 @@ do i=1,n
       end if
    end do
 end do
+
+do i=1,n
+   rnd = sum(S(i,:))
+   S(i,i) = (i+2)*1.d-1 + rnd
+end do
+
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !T(i,i)> somma_su_j_di T(i,j)
+!!$         T(i,j) = rnd+n+1
+!!$      else
+!!$         if ( abs(i-j) == 1 ) then
+!!$            T(i,j) = rnd
+!!$            T(j,i) = T(i,j)
+!!$         else
+!!$            T(i,j)=0.d0
+!!$            T(j,i)=T(i,j)
+!!$         end if
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !S(i,i)> somma_su_j_di S(i,j)
+!!$         S(i,i) = rnd+n+1
+!!$      else
+!!$         if ( abs(i-j) == 1 ) then
+!!$            S(i,j) = rnd
+!!$            S(j,i) = S(i,j)
+!!$         else
+!!$            S(i,j)=0.d0
+!!$            S(j,i)=S(i,j)
+!!$         end if
+!!$      end if
+!!$   end do
+!!$end do
 
 
 !!$!!!

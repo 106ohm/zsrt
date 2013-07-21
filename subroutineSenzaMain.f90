@@ -210,8 +210,10 @@ do while (dim <= n)
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
 
-            write(*,*)"work in progres..."
-            write(*,*)"x=",x,"j=",j,"kappa=",kappa
+            if ( verbose >= 3 ) then
+               write(*,*)"work in progres..."
+               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+            end if
 
             if ( kappa < j ) then
                aj = x
@@ -231,25 +233,24 @@ do while (dim <= n)
                GOTO 100
             end if
 
+            if ( verbose >= 3 ) then
+               write(*,*)"fine lavoro:"
+               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"aj=",aj,"bj=",bj
 
-            write(*,*)"fine lavoro:"
-            write(*,*)"x=",x,"j=",j,"kappa=",kappa
-            write(*,*)"aj=",aj,"bj=",bj
-
-            !!!
-            call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               
+               write(*,*)"kappa di aj=", kappa
+            
+               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
+                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            
+               write(*,*)"kappa di bj=", kappa
+               
+               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !
-            write(*,*)"kappa di aj=", kappa
-            !
-            call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !
-            write(*,*)"kappa di bj=", kappa
-            !
-            call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            !!!
+            end if
             
 
             !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
@@ -280,19 +281,16 @@ do while (dim <= n)
                write(*,*)"esco da LagIt"
             end if
 
-            !!!
-            !immagazzino i risultati,
-            !dall'alto verso basso
-            !!!
+            !immagazzino i risultati.
             Eigenvalues(Tinizio+j-1,numCol) = lambdaJ
-            write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
+            !write(*,*),"(",j,",",numCol,")=",Eigenvalues(j,numCol)
 
          else
       
             !in questo caso a e b distano solo "un passo macchina"
             write(*,*)"a e b distano pochissimo!"
 
-            !alto verso basso
+            !immagazzino i risultati
             Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
             !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
 
@@ -374,6 +372,7 @@ end do
 
 end subroutine EstMlt
 
+
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
@@ -434,8 +433,8 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 10000 ) then
-      write(*,*)"LagIt impiega troppo iterazioni."
+   if ( l >= 1000 ) then
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
 
@@ -514,12 +513,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   if ( abs(deltaL) >= abs(exDeltaL) ) then
-      if (verbose >= 2) then
-         write(*,*)"condizione di arresto (24) del secondo tipo"
-      end if
-      GOTO 30
-   end if
+   !if ( abs(deltaL) >= abs(exDeltaL) ) then
+   !   if (verbose >= 2) then
+   !      write(*,*)"condizione di arresto (24) del secondo tipo"
+   !   end if
+   !   GOTO 30
+   !end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then
@@ -565,6 +564,8 @@ end if
 lambdaJ = xl(0)
 
 end subroutine LagIt
+
+
 
 
 !!!                                                                   
