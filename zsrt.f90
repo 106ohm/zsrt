@@ -404,6 +404,7 @@ do while (dim <= n)
       k1 = kappa+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
+      !ATTENZIONE: c'e` qualche problema con k2
       k2=kappa+1
       
       if (verbose >= 2) then
@@ -431,9 +432,10 @@ do while (dim <= n)
 
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
-            !x = Eigenvalues(Tinizio+j-1,en)
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
+            !if ( dim > 4 .AND. x == 0.d0 ) cycle
+            !Se x == 0.d0 non e` un candidato
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 
@@ -748,12 +750,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   !if ( abs(deltaL) >= abs(exDeltaL) ) then
-   !   if (verbose >= 2) then
-   !      write(*,*)"condizione di arresto (24) del secondo tipo"
-   !   end if
-   !   GOTO 30
-   !end if
+   if ( abs(deltaL) >= abs(exDeltaL) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del secondo tipo"
+      end if
+      GOTO 30
+   end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then

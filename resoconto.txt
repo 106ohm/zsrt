@@ -109,7 +109,7 @@
  xl(0)=   1.2487942711912490     
  mi muovo verso sinistra
  xl(0)=   1.2487941770330842     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -167,7 +167,7 @@
  xl(0)=  0.83268514860889287     
  mi muovo verso sinistra
  xl(0)=  0.83267329782062793     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -188,7 +188,7 @@
  xl(0)=  0.76852168142204458     
  mi muovo verso destra
  xl(0)=  0.76853455494170209     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -211,7 +211,7 @@
  xl(0)=  0.88027179028383817     
  mi muovo verso destra
  xl(0)=  0.90454033410762591     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -269,7 +269,7 @@
  xl(0)=  0.62466633572954067     
  mi muovo verso sinistra
  xl(0)=  0.62465493256203597     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -290,7 +290,7 @@
  xl(0)=  0.58792712056946139     
  mi muovo verso destra
  xl(0)=  0.58794057059243610     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -313,7 +313,7 @@
  xl(0)=  0.88302195670365424     
  mi muovo verso destra
  xl(0)=   1.0677125800928331     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -391,7 +391,7 @@
  xl(0)=  0.99993154616944702     
  mi muovo verso destra
  xl(0)=   1.0008296410494464     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -453,7 +453,7 @@
  xl(0)=  0.62411657348602734     
  mi muovo verso sinistra
  xl(0)=  0.62284727781235172     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -805,1765 +805,9 @@
  xl(0)=  0.66614110800489690     
  mi muovo verso destra
  xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- mi muovo verso sinistra
- xl(0)=  0.66614110800489690     
- mi muovo verso destra
- xl(0)=  0.66614110800489723     
- LagIt impiega troppo iterazioni (piu` di mille).
+ condizione di arresto (24) del secondo tipo
  
- LagIt compie         1000  iterazioni.
+ LagIt compie          121  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
@@ -2586,7 +830,7 @@
  xl(0)=  0.66692628956488231     
  mi muovo verso destra
  xl(0)=  0.66782430086703615     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -2609,7 +853,7 @@
  xl(0)=  0.79408237069625687     
  mi muovo verso sinistra
  xl(0)=  0.77430343740482421     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -2661,7 +905,7 @@
  xl(0)=   1.3696065658982444     
  mi muovo verso destra
  xl(0)=   2.1112918500098750     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -2794,7 +1038,7 @@
  xl(0)=  0.57417254563136055     
  mi muovo verso destra
  xl(0)=  0.58947951795072695     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -2852,7 +1096,7 @@
  xl(0)=  0.62555952854409591     
  mi muovo verso destra
  xl(0)=  0.62708192733576085     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -2879,7 +1123,7 @@
  xl(0)=  0.71563498361621458     
  mi muovo verso sinistra
  xl(0)=  0.71136104021278257     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            4  iterazioni.
  esco da LagIt
@@ -3173,7 +1417,7 @@
  xl(0)=  0.85723986210311676     
  mi muovo verso sinistra
  xl(0)=  0.80731139830383047     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            4  iterazioni.
  esco da LagIt
@@ -3200,7 +1444,7 @@
  xl(0)=  0.95113473929801062     
  mi muovo verso sinistra
  xl(0)=  0.86888125789354198     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3274,7 +1518,7 @@
  xl(0)=  0.99939408788344208     
  mi muovo verso destra
  xl(0)=  0.99967437029550710     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3353,7 +1597,7 @@
  xl(0)=  0.30069479659713355     
  mi muovo verso destra
  xl(0)=  0.30069782848983290     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3397,7 +1641,7 @@
  xl(0)=  0.90659629533712482     
  mi muovo verso destra
  xl(0)=   1.1909481395204660     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3941,7 +2185,7 @@
  xl(0)= -0.30069479659713355     
  mi muovo verso sinistra
  xl(0)= -0.30069782848983290     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3969,7 +2213,7 @@
  xl(0)= -0.70128722132178012     
  mi muovo verso destra
  xl(0)= -0.70128675281219066     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -3997,7 +2241,7 @@
  xl(0)=  -1.1007424706593874     
  mi muovo verso destra
  xl(0)=  -1.1007411510183354     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -4025,7 +2269,7 @@
  xl(0)=  -1.5011792995182216     
  mi muovo verso destra
  xl(0)=  -1.5011790915123868     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -4054,7 +2298,7 @@
  xl(0)= -0.30069213291171953     
  mi muovo verso destra
  xl(0)= -0.30069211717660993     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            4  iterazioni.
  esco da LagIt
@@ -4082,7 +2326,7 @@
  xl(0)=  -1.1007383213361279     
  mi muovo verso destra
  xl(0)=  -1.1007322536534108     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
@@ -4110,7 +2354,7 @@
  xl(0)= -0.30069208343821047     
  mi muovo verso destra
  xl(0)= -0.30069201109808941     
- condizione di arresto (24) del terzo tipo
+ condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
