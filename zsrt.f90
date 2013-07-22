@@ -15,7 +15,7 @@ integer :: n, i, j, em, en
 
 integer :: verbose
 
-real(dp) :: a,b, lettore1, lettore2
+real(dp) :: a,b, lettore1, lettore2, machinePrecision
 
 real(dp), dimension(:,:), allocatable :: T, S
 
@@ -24,6 +24,8 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues
 !!!
 !FINE DICHIARAZIONI
 !!!
+
+machinePrecision=epsilon(1.d0)
 
 !verbose=
 !0) non stampo a video informazioni
@@ -64,13 +66,13 @@ end do
 T(n,1)=-100.d0
 S(n,1)=-100.d0
 
-do i=1,n
-   write(*,*)"S(i,0)=",S(i,0)
-end do
+!do i=1,n
+!   write(*,*)"S(i,0)=",S(i,0)
+!end do
 
-do i=1,n
-   write(*,*)"S(i,1)=",S(i,1)
-end do
+!do i=1,n
+!   write(*,*)"S(i,1)=",S(i,1)
+!end do
 
 !scelgo le dimensioni di Eigenvalues, alloco memoria
 !ed inizializzo i suoi valori a zero
@@ -100,15 +102,17 @@ end if
 
 
 !Chiamo la subroutine che trova gli autovalori nell'intervallo
-![a,b] e li salva nella prima colonna della matrice Eigenvalues
-!(le altre colonne di Eigenvalues vengono utilizzate nella
-!ricorsione e possono fornire informazioni sui calcoli).
-!Per guidare la scrittura nella matrice utiliziamo una bandiera:
-!se flag>0 allora scriviamo dall'alto verso il basso,
-!se flag<0 allora scriviamo dal basso verso l'alto.
+![a,b] e li salva nella prima colonna della matrice Eigenvalues.
+
+
+!!!
+!i)
+!!!
+
+write(*,*)"i)"
 
 a=0.d0
-b=4.d0
+b=1.d0 + machinePrecision
 
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
@@ -123,13 +127,96 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=3,file="risultato.txt")
+Open(unit=3,file="risultato_i.txt")
 
 write(3,*) em
 
 do i=1,em
    write(3,*) Eigenvalues(i,1)
 end do
+
+
+!!!
+!ii)
+!!!
+
+write(*,*)"ii)"
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+a=0.d0
+b=1.d0
+
+
+call calcoloAutovaloriDentroI(a, b, n, S, T, en, em, Eigenvalues, verbose)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file 
+!"risultato.txt"
+
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
+Open(unit=4,file="risultato_ii.txt")
+
+write(4,*) em
+
+do i=1,em
+   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
+      write(4,*) 1.d0/Eigenvalues(i,1)
+   else
+      write(4,*) 0.d0
+   end if
+end do
+
+
+!!!
+!iii)
+!!!
+
+write(*,*)"iii)"
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+a=0.d0
+b=1.d0
+
+
+call calcoloAutovaloriDentroI(a, b, n, S, -T, en, em, Eigenvalues, verbose)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file 
+!"risultato.txt"
+
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
+Open(unit=5,file="risultato_iii.txt")
+
+write(5,*) em
+
+do i=1,em
+   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
+      write(5,*) -1.d0/Eigenvalues(i,1)
+   else
+      write(5,*) 0.d0
+   end if
+end do
+
 
 write(*,*) "FINE CALCOLO AUTOVALORI!"
 
@@ -344,6 +431,7 @@ do while (dim <= n)
 
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
+            !x = Eigenvalues(Tinizio+j-1,en)
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
 
@@ -370,7 +458,8 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
+            !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
+            if ( kappa+1 < j .OR. j < kappa ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
@@ -407,6 +496,7 @@ do while (dim <= n)
             !con sign( \lambda_j - x )
             !vedi meta` p. 14
 
+            !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then

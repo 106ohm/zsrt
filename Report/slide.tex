@@ -151,7 +151,8 @@ Corso Metodi di Approssimazione 2012-2013
   $T,S\in\R^{n\times n}$. We call $(T,S)$ \emph{pencil}.
 \end{de}
 
-We consider \emph{only} \begin{fminipage}{0.8in} symmetric \\ and \\ tridiagonal\end{fminipage} pencil.
+We consider \emph{only} \begin{fminipage}{0.8in} symmetric \\ and \\ 
+tridiagonal\end{fminipage} pencil.
 
 
 \pause
@@ -212,7 +213,8 @@ using an iterative method, living on real line.
 \frametitle{Unreducible pencil}
 
 \begin{de}[ as in \cite{MR739278} ]
-  $(T,S)$ is an \emph{unreducible pencil} if $t_{i,i+1}^2 + s_{i,i+1}^2 \neq 0$\\
+  $(T,S)$ is an \emph{unreducible pencil} if $t_{i,i+1}^2 + 
+s_{i,i+1}^2 \neq 0$\\
   for $i=1,2,\dots,n-1$.
 \end{de}
 \end{frame}
@@ -380,7 +382,16 @@ estimate $mlt(\lambda_m)$. \\
 
 \section{Good initial point}
 
+\begin{frame}
+\frametitle{Split}
 
+Consider $(\hat T, \hat S)$ with
+
+\begin{align*}
+ \hat T &= \begin{bmatrix} T_{0} & 0\\ 0 & T_{1} \end{bmatrix}\\
+ \hat S &= \begin{bmatrix} S_{0} & 0\\ 0 & S_{1} \end{bmatrix}\\
+\end{align*}
+\end{frame}
 
 \frame{
 \begin{center}

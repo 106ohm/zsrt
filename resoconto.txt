@@ -1,29 +1,3307 @@
- S(i,0)=  0.30099914226942687     
- S(i,0)=  0.40165818978732049     
- S(i,0)=  0.50131697220231386     
- S(i,0)=  0.60133245398348412     
- S(i,0)=  0.70162162395498795     
- S(i,0)=  0.80193748940396559     
- S(i,0)=  0.90180420441452402     
- S(i,0)=   1.0008138096664825     
- S(i,1)=   9.9914226942680309E-004
- S(i,1)=   6.5904751789363798E-004
- S(i,1)=   6.5792468442021088E-004
- S(i,1)=   6.7452929906378816E-004
- S(i,1)=   9.4709465592406571E-004
- S(i,1)=   9.9039474804151341E-004
- S(i,1)=   8.1380966648249926E-004
- S(i,1)=  -100.00000000000000     
- en=           3
+ en=           4
  Eigenvalues prima del calcolo:
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
-   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ i)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=   3.3256409580099411      j=           1 kappa=           2
+ work in progres...
+ x=   1.6628204790049705      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.6628204790049705      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=   1.6628204790049705     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=   1.6628204790049705     
+ mi muovo verso sinistra
+ xl(0)=   1.6613937874485545     
+ mi muovo verso sinistra
+ xl(0)=   1.6613937852382430     
+ mi muovo verso destra
+ xl(0)=   1.6613937852382974     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            4  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           2
+ -------------------------------------
+ work in progres...
+ x=   1.4259484353087128      j=           1 kappa=           3
+ work in progres...
+ x=  0.71297421765435642      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.71297421765435642      j=           1 kappa=           0
+ aj=  0.71297421765435642      bj=   1.4259484353087128     
+ kappa di aj=           0
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.71297421765435642      bj=   1.4259484353087128     
+ mi muovo verso destra
+ xl(0)=  0.92358444742287837     
+ mi muovo verso destra
+ xl(0)=  0.99236064968463999     
+ mi muovo verso destra
+ xl(0)=  0.99913238903165136     
+ mi muovo verso destra
+ xl(0)=  0.99914400107501700     
+ mi muovo verso sinistra
+ xl(0)=  0.99914400099354828     
+ mi muovo verso destra
+ xl(0)=  0.99914400099354872     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.2487943151073921      j=           2 kappa=           2
+ fine lavoro:
+ x=   1.2487943151073921      j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=   1.2487943151073921     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=   1.2487943151073921     
+ mi muovo verso sinistra
+ xl(0)=   1.2487942711912490     
+ mi muovo verso sinistra
+ xl(0)=   1.2487941770330842     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           4
+ -------------------------------------
+ work in progres...
+ x=  0.90847745069969466      j=           1 kappa=           3
+ work in progres...
+ x=  0.45423872534984733      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.45423872534984733      j=           1 kappa=           0
+ aj=  0.45423872534984733      bj=  0.90847745069969466     
+ kappa di aj=           0
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.45423872534984733      bj=  0.90847745069969466     
+ mi muovo verso destra
+ xl(0)=  0.62508341205509210     
+ mi muovo verso destra
+ xl(0)=  0.69560797341392289     
+ mi muovo verso destra
+ xl(0)=  0.71295869772225728     
+ mi muovo verso destra
+ xl(0)=  0.71357130773139443     
+ mi muovo verso destra
+ xl(0)=  0.71357133942057860     
+ mi muovo verso sinistra
+ xl(0)=  0.71357133942057227     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.83269067721302970      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.83269067721302970      j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=  0.83269067721302970     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=  0.83269067721302970     
+ mi muovo verso sinistra
+ xl(0)=  0.83268514860889287     
+ mi muovo verso sinistra
+ xl(0)=  0.83267329782062793     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.76851567786324815      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.76851567786324815      j=           3 kappa=           2
+ aj=  0.76851567786324815      bj=   1.0000000000000002     
+ kappa di aj=           2
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.76851567786324815      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.76852168142204458     
+ mi muovo verso destra
+ xl(0)=  0.76853455494170209     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.71357054791142938      j=           4 kappa=           0
+ work in progres...
+ x=  0.85678527395571480      j=           4 kappa=           3
+ fine lavoro:
+ x=  0.85678527395571480      j=           4 kappa=           3
+ aj=  0.85678527395571480      bj=   1.0000000000000002     
+ kappa di aj=           3
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.85678527395571480      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.88027179028383817     
+ mi muovo verso destra
+ xl(0)=  0.90454033410762591     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           4
+ -------------------------------------
+ work in progres...
+ x=  0.66614260267325309      j=           1 kappa=           2
+ work in progres...
+ x=  0.33307130133662655      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.33307130133662655      j=           1 kappa=           0
+ aj=  0.33307130133662655      bj=  0.66614260267325309     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.33307130133662655      bj=  0.66614260267325309     
+ mi muovo verso destra
+ xl(0)=  0.47120626782638880     
+ mi muovo verso destra
+ xl(0)=  0.53249051955292381     
+ mi muovo verso destra
+ xl(0)=  0.55314409866896053     
+ mi muovo verso destra
+ xl(0)=  0.55533832034097852     
+ mi muovo verso destra
+ xl(0)=  0.55534312473089675     
+ mi muovo verso destra
+ xl(0)=  0.55534312473526781     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.62467165650897272      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.62467165650897272      j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=  0.62467165650897272     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=  0.62467165650897272     
+ mi muovo verso sinistra
+ xl(0)=  0.62466633572954067     
+ mi muovo verso sinistra
+ xl(0)=  0.62465493256203597     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.58792084651588283      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.58792084651588283      j=           3 kappa=           2
+ aj=  0.58792084651588283      bj=   1.0000000000000002     
+ kappa di aj=           2
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.58792084651588283      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.58792712056946139     
+ mi muovo verso destra
+ xl(0)=  0.58794057059243610     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.55534267082538513      j=           4 kappa=           0
+ work in progres...
+ x=  0.77767133541269273      j=           4 kappa=           3
+ fine lavoro:
+ x=  0.77767133541269273      j=           4 kappa=           3
+ aj=  0.77767133541269273      bj=   1.0000000000000002     
+ kappa di aj=           3
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.77767133541269273      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.88302195670365424     
+ mi muovo verso destra
+ xl(0)=   1.0677125800928331     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           2
+ -------------------------------------
+ work in progres...
+ x=   1.6613937852382974      j=           1 kappa=           4
+ work in progres...
+ x=  0.83069689261914870      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.83069689261914870      j=           1 kappa=           0
+ aj=  0.83069689261914870      bj=   1.6613937852382974     
+ kappa di aj=           0
+ kappa di bj=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.83069689261914870      bj=   1.6613937852382974     
+ mi muovo verso destra
+ xl(0)=  0.96780642265543049     
+ mi muovo verso destra
+ xl(0)=  0.99835126293454102     
+ mi muovo verso destra
+ xl(0)=  0.99914399464412718     
+ mi muovo verso destra
+ xl(0)=  0.99914400099359235     
+ mi muovo verso sinistra
+ xl(0)=  0.99914400099354883     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           2 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           2 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.87500000000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.93750000000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.96875000000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.98437500000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.99218750000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.99609375000000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.99804687500000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.99902343750000022      j=           2 kappa=           0
+ work in progres...
+ x=  0.99951171875000022      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.99951171875000022      j=           2 kappa=           1
+ aj=  0.99951171875000022      bj=   1.0000000000000002     
+ kappa di aj=           1
+ kappa di bj=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=  0.99951171875000022      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.99993154616944702     
+ mi muovo verso destra
+ xl(0)=   1.0008296410494464     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           8
+ -------------------------------------
+ work in progres...
+ x=  0.71357133942057227      j=           1 kappa=           4
+ work in progres...
+ x=  0.35678566971028614      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.35678566971028614      j=           1 kappa=           0
+ aj=  0.35678566971028614      bj=  0.71357133942057227     
+ kappa di aj=           0
+ kappa di bj=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.35678566971028614      bj=  0.71357133942057227     
+ mi muovo verso destra
+ xl(0)=  0.47631098223726198     
+ mi muovo verso destra
+ xl(0)=  0.53417968645257374     
+ mi muovo verso destra
+ xl(0)=  0.55355505488204071     
+ mi muovo verso destra
+ xl(0)=  0.55534066805342375     
+ mi muovo verso destra
+ xl(0)=  0.55534312473291192     
+ mi muovo verso destra
+ xl(0)=  0.55534312473526781     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.83267329782062793      j=           2 kappa=           6
+ work in progres...
+ x=  0.41633664891031397      j=           2 kappa=           0
+ work in progres...
+ x=  0.62450497336547095      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.62450497336547095      j=           2 kappa=           2
+ aj=  0.41633664891031397      bj=  0.62450497336547095     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           3
+ aj=  0.41633664891031397      bj=  0.62450497336547095     
+ mi muovo verso sinistra
+ xl(0)=  0.62411657348602734     
+ mi muovo verso sinistra
+ xl(0)=  0.62284727781235172     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.76853455494170209      j=           3 kappa=           6
+ work in progres...
+ x=  0.38426727747085104      j=           3 kappa=           0
+ work in progres...
+ x=  0.57640091620627654      j=           3 kappa=           1
+ work in progres...
+ x=  0.67246773557398931      j=           3 kappa=           4
+ work in progres...
+ x=  0.62443432589013292      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.62443432589013292      j=           3 kappa=           2
+ aj=  0.62443432589013292      bj=  0.67246773557398931     
+ kappa di aj=           2
+ kappa di bj=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           2
+ aj=  0.62443432589013292      bj=  0.67246773557398931     
+ mi muovo verso destra
+ xl(0)=  0.62477863561760993     
+ mi muovo verso sinistra
+ xl(0)=  0.62463302386953456     
+ mi muovo verso destra
+ xl(0)=  0.62469462101873452     
+ mi muovo verso sinistra
+ xl(0)=  0.62466856543959348     
+ mi muovo verso destra
+ xl(0)=  0.62467958731688267     
+ mi muovo verso sinistra
+ xl(0)=  0.62467492496554466     
+ mi muovo verso destra
+ xl(0)=  0.62467689719235830     
+ mi muovo verso sinistra
+ xl(0)=  0.62467606292026545     
+ mi muovo verso destra
+ xl(0)=  0.62467641582623379     
+ mi muovo verso sinistra
+ xl(0)=  0.62467626654331798     
+ mi muovo verso destra
+ xl(0)=  0.62467632969156384     
+ mi muovo verso sinistra
+ xl(0)=  0.62467630297919263     
+ mi muovo verso destra
+ xl(0)=  0.62467631427880665     
+ mi muovo verso sinistra
+ xl(0)=  0.62467630949895103     
+ mi muovo verso destra
+ xl(0)=  0.62467631152088032     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631066558293     
+ mi muovo verso destra
+ xl(0)=  0.62467631102738275     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631087433750     
+ mi muovo verso destra
+ xl(0)=  0.62467631093907727     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091169173     
+ mi muovo verso destra
+ xl(0)=  0.62467631092327602     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091837583     
+ mi muovo verso destra
+ xl(0)=  0.62467631092044873     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091957176     
+ mi muovo verso destra
+ xl(0)=  0.62467631091994280     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091978593     
+ mi muovo verso destra
+ xl(0)=  0.62467631091985221     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091982412     
+ mi muovo verso destra
+ xl(0)=  0.62467631091983600     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091983100     
+ mi muovo verso destra
+ xl(0)=  0.62467631091983311     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091983233     
+ mi muovo verso destra
+ xl(0)=  0.62467631091983256     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie           34  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.90454033410762591      j=           4 kappa=           7
+ work in progres...
+ x=  0.45227016705381295      j=           4 kappa=           0
+ work in progres...
+ x=  0.67840525058071943      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.67840525058071943      j=           4 kappa=           4
+ aj=  0.45227016705381295      bj=  0.67840525058071943     
+ kappa di aj=           0
+ kappa di bj=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           3
+ aj=  0.45227016705381295      bj=  0.67840525058071943     
+ mi muovo verso sinistra
+ xl(0)=  0.65859434609783807     
+ mi muovo verso destra
+ xl(0)=  0.67146882036738753     
+ mi muovo verso sinistra
+ xl(0)=  0.66222194475871377     
+ mi muovo verso destra
+ xl(0)=  0.66908823838029352     
+ mi muovo verso sinistra
+ xl(0)=  0.66391130734123849     
+ mi muovo verso destra
+ xl(0)=  0.66784174247256634     
+ mi muovo verso sinistra
+ xl(0)=  0.66484324059739397     
+ mi muovo verso destra
+ xl(0)=  0.66713503792951068     
+ mi muovo verso sinistra
+ xl(0)=  0.66538026260264471     
+ mi muovo verso destra
+ xl(0)=  0.66672448809825957     
+ mi muovo verso sinistra
+ xl(0)=  0.66569402345944595     
+ mi muovo verso destra
+ xl(0)=  0.66648402566359732     
+ mi muovo verso sinistra
+ xl(0)=  0.66587818637158103     
+ mi muovo verso destra
+ xl(0)=  0.66634278469706743     
+ mi muovo verso sinistra
+ xl(0)=  0.66598644851950939     
+ mi muovo verso destra
+ xl(0)=  0.66625974056879611     
+ mi muovo verso sinistra
+ xl(0)=  0.66605012438142042     
+ mi muovo verso destra
+ xl(0)=  0.66621089632944075     
+ mi muovo verso sinistra
+ xl(0)=  0.66608758249152034     
+ mi muovo verso destra
+ xl(0)=  0.66618216370886263     
+ mi muovo verso sinistra
+ xl(0)=  0.66610961883098840     
+ mi muovo verso destra
+ xl(0)=  0.66616526089419414     
+ mi muovo verso sinistra
+ xl(0)=  0.66612258283947900     
+ mi muovo verso destra
+ xl(0)=  0.66615531711234155     
+ mi muovo verso sinistra
+ xl(0)=  0.66613020960539071     
+ mi muovo verso destra
+ xl(0)=  0.66614946721993862     
+ mi muovo verso sinistra
+ xl(0)=  0.66613469645411116     
+ mi muovo verso destra
+ xl(0)=  0.66614602573502668     
+ mi muovo verso sinistra
+ xl(0)=  0.66613733607823100     
+ mi muovo verso destra
+ xl(0)=  0.66614400110957595     
+ mi muovo verso sinistra
+ xl(0)=  0.66613888897448825     
+ mi muovo verso destra
+ xl(0)=  0.66614281002131848     
+ mi muovo verso sinistra
+ xl(0)=  0.66613980254607430     
+ mi muovo verso destra
+ xl(0)=  0.66614210930307183     
+ mi muovo verso sinistra
+ xl(0)=  0.66614034000166600     
+ mi muovo verso destra
+ xl(0)=  0.66614169706980186     
+ mi muovo verso sinistra
+ xl(0)=  0.66614065618756813     
+ mi muovo verso destra
+ xl(0)=  0.66614145455250096     
+ mi muovo verso sinistra
+ xl(0)=  0.66614084220016956     
+ mi muovo verso destra
+ xl(0)=  0.66614131187928360     
+ mi muovo verso sinistra
+ xl(0)=  0.66614095163163123     
+ mi muovo verso destra
+ xl(0)=  0.66614122794445474     
+ mi muovo verso sinistra
+ xl(0)=  0.66614101601030351     
+ mi muovo verso destra
+ xl(0)=  0.66614117856549038     
+ mi muovo verso sinistra
+ xl(0)=  0.66614105388435985     
+ mi muovo verso destra
+ xl(0)=  0.66614114951578363     
+ mi muovo verso sinistra
+ xl(0)=  0.66614107616571583     
+ mi muovo verso destra
+ xl(0)=  0.66614113242580442     
+ mi muovo verso sinistra
+ xl(0)=  0.66614108927386606     
+ mi muovo verso destra
+ xl(0)=  0.66614112237174794     
+ mi muovo verso sinistra
+ xl(0)=  0.66614109698540758     
+ mi muovo verso destra
+ xl(0)=  0.66614111645693375     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110152211736     
+ mi muovo verso destra
+ xl(0)=  0.66614111297724099     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110419106942     
+ mi muovo verso destra
+ xl(0)=  0.66614111093013340     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110576121743     
+ mi muovo verso destra
+ xl(0)=  0.66614110972581730     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110668493753     
+ mi muovo verso destra
+ xl(0)=  0.66614110901731660     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110722836317     
+ mi muovo verso destra
+ xl(0)=  0.66614110860050479     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110754806122     
+ mi muovo verso destra
+ xl(0)=  0.66614110835529383     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110773613999     
+ mi muovo verso destra
+ xl(0)=  0.66614110821103589     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110784678704     
+ mi muovo verso destra
+ xl(0)=  0.66614110812616867     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110791188086     
+ mi muovo verso destra
+ xl(0)=  0.66614110807624127     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110795017556     
+ mi muovo verso destra
+ xl(0)=  0.66614110804686899     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110797270432     
+ mi muovo verso destra
+ xl(0)=  0.66614110802958926     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110798595805     
+ mi muovo verso destra
+ xl(0)=  0.66614110801942350     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110799375514     
+ mi muovo verso destra
+ xl(0)=  0.66614110801344295     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110799834236     
+ mi muovo verso destra
+ xl(0)=  0.66614110800992454     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800104098     
+ mi muovo verso destra
+ xl(0)=  0.66614110800785475     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800262849     
+ mi muovo verso destra
+ xl(0)=  0.66614110800663717     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800356241     
+ mi muovo verso destra
+ xl(0)=  0.66614110800592075     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800411197     
+ mi muovo verso destra
+ xl(0)=  0.66614110800549919     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800443527     
+ mi muovo verso destra
+ xl(0)=  0.66614110800525128     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800462545     
+ mi muovo verso destra
+ xl(0)=  0.66614110800510540     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800473736     
+ mi muovo verso destra
+ xl(0)=  0.66614110800501958     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800480308     
+ mi muovo verso destra
+ xl(0)=  0.66614110800496917     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800484172     
+ mi muovo verso destra
+ xl(0)=  0.66614110800493953     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800486448     
+ mi muovo verso destra
+ xl(0)=  0.66614110800492210     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800487791     
+ mi muovo verso destra
+ xl(0)=  0.66614110800491166     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800488591     
+ mi muovo verso destra
+ xl(0)=  0.66614110800490556     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489057     
+ mi muovo verso destra
+ xl(0)=  0.66614110800490201     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489335     
+ mi muovo verso destra
+ xl(0)=  0.66614110800490001     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489490     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489879     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489579     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489812     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489623     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489779     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489656     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489745     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489679     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ mi muovo verso sinistra
+ xl(0)=  0.66614110800489690     
+ mi muovo verso destra
+ xl(0)=  0.66614110800489723     
+ LagIt impiega troppo iterazioni (piu` di mille).
+ 
+ LagIt compie         1000  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.55534312473526781      j=           5 kappa=           0
+ work in progres...
+ x=  0.77767156236763402      j=           5 kappa=           6
+ work in progres...
+ x=  0.66650734355145091      j=           5 kappa=           4
+ fine lavoro:
+ x=  0.66650734355145091      j=           5 kappa=           4
+ aj=  0.66650734355145091      bj=  0.77767156236763402     
+ kappa di aj=           4
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=  0.66650734355145091      bj=  0.77767156236763402     
+ mi muovo verso destra
+ xl(0)=  0.66692628956488231     
+ mi muovo verso destra
+ xl(0)=  0.66782430086703615     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.62465493256203597      j=           6 kappa=           2
+ work in progres...
+ x=  0.81232746628101804      j=           6 kappa=           6
+ fine lavoro:
+ x=  0.81232746628101804      j=           6 kappa=           6
+ aj=  0.62465493256203597      bj=  0.81232746628101804     
+ kappa di aj=           2
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=  0.62465493256203597      bj=  0.81232746628101804     
+ mi muovo verso sinistra
+ xl(0)=  0.79408237069625687     
+ mi muovo verso sinistra
+ xl(0)=  0.77430343740482421     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.58794057059243610      j=           7 kappa=           2
+ work in progres...
+ x=  0.79397028529621816      j=           7 kappa=           6
+ fine lavoro:
+ x=  0.79397028529621816      j=           7 kappa=           6
+ aj=  0.79397028529621816      bj=   1.0000000000000002     
+ kappa di aj=           6
+ kappa di bj=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=  0.79397028529621816      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.81586402752953791     
+ mi muovo verso destra
+ xl(0)=  0.83137723156626941     
+ mi muovo verso destra
+ xl(0)=  0.83269568994218335     
+ mi muovo verso sinistra
+ xl(0)=  0.83269551166111344     
+ mi muovo verso destra
+ xl(0)=  0.83269551177196555     
+ mi muovo verso sinistra
+ xl(0)=  0.83269551177189660     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.0677125800928331      j=           8 kappa=           7
+ fine lavoro:
+ x=   1.0677125800928331      j=           8 kappa=           7
+ aj=   1.0677125800928331      bj=   1.0000000000000002     
+ kappa di aj=           7
+ kappa di bj=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           2
+ aj=   1.0677125800928331      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=   1.3696065658982444     
+ mi muovo verso destra
+ xl(0)=   2.1112918500098750     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=          10
+ -------------------------------------
+ work in progres...
+ x=  0.99914400099354883      j=           1 kappa=           8
+ work in progres...
+ x=  0.49957200049677442      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.49957200049677442      j=           1 kappa=           0
+ aj=  0.49957200049677442      bj=  0.99914400099354883     
+ kappa di aj=           0
+ kappa di bj=           8
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           2
+ aj=  0.49957200049677442      bj=  0.99914400099354883     
+ mi muovo verso destra
+ xl(0)=  0.56089937481935404     
+ mi muovo verso sinistra
+ xl(0)=  0.55302986660125975     
+ mi muovo verso destra
+ xl(0)=  0.55629763640460650     
+ mi muovo verso sinistra
+ xl(0)=  0.55493733913209431     
+ mi muovo verso destra
+ xl(0)=  0.55551404953836703     
+ mi muovo verso sinistra
+ xl(0)=  0.55527080018570685     
+ mi muovo verso destra
+ xl(0)=  0.55537367261178194     
+ mi muovo verso sinistra
+ xl(0)=  0.55533021203959199     
+ mi muovo verso destra
+ xl(0)=  0.55534858118816477     
+ mi muovo verso sinistra
+ xl(0)=  0.55534081870842278     
+ mi muovo verso destra
+ xl(0)=  0.55534409925987183     
+ mi muovo verso sinistra
+ xl(0)=  0.55534271289193227     
+ mi muovo verso destra
+ xl(0)=  0.55534329878233957     
+ mi muovo verso sinistra
+ xl(0)=  0.55534305118177096     
+ mi muovo verso destra
+ xl(0)=  0.55534315581942639     
+ mi muovo verso sinistra
+ xl(0)=  0.55534311159890148     
+ mi muovo verso destra
+ xl(0)=  0.55534313028677929     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312238916372     
+ mi muovo verso destra
+ xl(0)=  0.55534312572674638     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312431626265     
+ mi muovo verso destra
+ xl(0)=  0.55534312491234206     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312466043523     
+ mi muovo verso destra
+ xl(0)=  0.55534312476689252     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312472190306     
+ mi muovo verso destra
+ xl(0)=  0.55534312474091596     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473288094     
+ mi muovo verso destra
+ xl(0)=  0.55534312473627656     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473484160     
+ mi muovo verso destra
+ xl(0)=  0.55534312473544800     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473519165     
+ mi muovo verso destra
+ xl(0)=  0.55534312473530001     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473525427     
+ mi muovo verso destra
+ xl(0)=  0.55534312473527359     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473526537     
+ mi muovo verso destra
+ xl(0)=  0.55534312473526881     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473526748     
+ mi muovo verso destra
+ xl(0)=  0.55534312473526803     
+ mi muovo verso sinistra
+ xl(0)=  0.55534312473526781     
+ mi muovo verso destra
+ xl(0)=  0.55534312473526781     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie           40  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.0008296410494464      j=           2 kappa=           9
+ work in progres...
+ x=  0.50041482052472319      j=           2 kappa=           0
+ work in progres...
+ x=  0.75062223078708479      j=           2 kappa=           5
+ work in progres...
+ x=  0.62551852565590393      j=           2 kappa=           3
+ work in progres...
+ x=  0.56296667309031356      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.56296667309031356      j=           2 kappa=           1
+ aj=  0.56296667309031356      bj=  0.62551852565590393     
+ kappa di aj=           1
+ kappa di bj=           3
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           2
+ aj=  0.56296667309031356      bj=  0.62551852565590393     
+ mi muovo verso destra
+ xl(0)=  0.57417254563136055     
+ mi muovo verso destra
+ xl(0)=  0.58947951795072695     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           3 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           3 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           3 kappa=           5
+ work in progres...
+ x=  0.62500000000000022      j=           3 kappa=           3
+ fine lavoro:
+ x=  0.62500000000000022      j=           3 kappa=           3
+ aj=  0.50000000000000011      bj=  0.62500000000000022     
+ kappa di aj=           0
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.50000000000000011      bj=  0.62500000000000022     
+ mi muovo verso sinistra
+ xl(0)=  0.62467624790712928     
+ mi muovo verso destra
+ xl(0)=  0.62467631093766962     
+ mi muovo verso sinistra
+ xl(0)=  0.62467631091982734     
+ mi muovo verso destra
+ xl(0)=  0.62467631091983244     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           4 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           4 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           4 kappa=           5
+ work in progres...
+ x=  0.62500000000000022      j=           4 kappa=           3
+ fine lavoro:
+ x=  0.62500000000000022      j=           4 kappa=           3
+ aj=  0.62500000000000022      bj=  0.75000000000000022     
+ kappa di aj=           3
+ kappa di bj=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           2
+ aj=  0.62500000000000022      bj=  0.75000000000000022     
+ mi muovo verso destra
+ xl(0)=  0.62555952854409591     
+ mi muovo verso destra
+ xl(0)=  0.62708192733576085     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           5 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           5 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           5 kappa=           5
+ fine lavoro:
+ x=  0.75000000000000022      j=           5 kappa=           5
+ aj=  0.50000000000000011      bj=  0.75000000000000022     
+ kappa di aj=           0
+ kappa di bj=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           4
+ aj=  0.50000000000000011      bj=  0.75000000000000022     
+ mi muovo verso sinistra
+ xl(0)=  0.71165427576863383     
+ mi muovo verso destra
+ xl(0)=  0.71563498361621458     
+ mi muovo verso sinistra
+ xl(0)=  0.71136104021278257     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            4  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           6 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           6 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           6 kappa=           5
+ fine lavoro:
+ x=  0.75000000000000022      j=           6 kappa=           5
+ aj=  0.75000000000000022      bj=   1.0000000000000002     
+ kappa di aj=           5
+ kappa di bj=           9
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           3
+ aj=  0.75000000000000022      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.77854186784325441     
+ mi muovo verso sinistra
+ xl(0)=  0.76148699384799357     
+ mi muovo verso destra
+ xl(0)=  0.77371005392812564     
+ mi muovo verso sinistra
+ xl(0)=  0.76462606165959235     
+ mi muovo verso destra
+ xl(0)=  0.77146639486276924     
+ mi muovo verso sinistra
+ xl(0)=  0.76626386102314847     
+ mi muovo verso destra
+ xl(0)=  0.77023205181791277     
+ mi muovo verso sinistra
+ xl(0)=  0.76719408968235248     
+ mi muovo verso destra
+ xl(0)=  0.76952106502395656     
+ mi muovo verso sinistra
+ xl(0)=  0.76773589763709582     
+ mi muovo verso destra
+ xl(0)=  0.76910532271775556     
+ mi muovo verso sinistra
+ xl(0)=  0.76805406774239771     
+ mi muovo verso destra
+ xl(0)=  0.76886094796617654     
+ mi muovo verso sinistra
+ xl(0)=  0.76824141736783302     
+ mi muovo verso destra
+ xl(0)=  0.76871703503544508     
+ mi muovo verso sinistra
+ xl(0)=  0.76835183338437041     
+ mi muovo verso destra
+ xl(0)=  0.76863222616013194     
+ mi muovo verso sinistra
+ xl(0)=  0.76841692609412204     
+ mi muovo verso destra
+ xl(0)=  0.76858223466945774     
+ mi muovo verso sinistra
+ xl(0)=  0.76845530275165896     
+ mi muovo verso destra
+ xl(0)=  0.76855276359239755     
+ mi muovo verso sinistra
+ xl(0)=  0.76847792884166533     
+ mi muovo verso destra
+ xl(0)=  0.76853538898438667     
+ mi muovo verso sinistra
+ xl(0)=  0.76849126872083828     
+ mi muovo verso destra
+ xl(0)=  0.76852514561912388     
+ mi muovo verso sinistra
+ xl(0)=  0.76849913361262101     
+ mi muovo verso destra
+ xl(0)=  0.76851910648762811     
+ mi muovo verso sinistra
+ xl(0)=  0.76850377056000863     
+ mi muovo verso destra
+ xl(0)=  0.76851554600834870     
+ mi muovo verso sinistra
+ xl(0)=  0.76850650438400225     
+ mi muovo verso destra
+ xl(0)=  0.76851344685775047     
+ mi muovo verso sinistra
+ xl(0)=  0.76850811617326653     
+ mi muovo verso destra
+ xl(0)=  0.76851220926038633     
+ mi muovo verso sinistra
+ xl(0)=  0.76850906644004469     
+ mi muovo verso destra
+ xl(0)=  0.76851147960881683     
+ mi muovo verso sinistra
+ xl(0)=  0.76850962669096456     
+ mi muovo verso destra
+ xl(0)=  0.76851104942716997     
+ mi muovo verso sinistra
+ xl(0)=  0.76850995699924196     
+ mi muovo verso destra
+ xl(0)=  0.76851079580433213     
+ mi muovo verso sinistra
+ xl(0)=  0.76851015173972548     
+ mi muovo verso destra
+ xl(0)=  0.76851064627551091     
+ mi muovo verso sinistra
+ xl(0)=  0.76851026655323096     
+ mi muovo verso destra
+ xl(0)=  0.76851055811755664     
+ mi muovo verso sinistra
+ xl(0)=  0.76851033424403581     
+ mi muovo verso destra
+ xl(0)=  0.76851050614212268     
+ mi muovo verso sinistra
+ xl(0)=  0.76851037415262380     
+ mi muovo verso destra
+ xl(0)=  0.76851047549887741     
+ mi muovo verso sinistra
+ xl(0)=  0.76851039768159990     
+ mi muovo verso destra
+ xl(0)=  0.76851045743248680     
+ mi muovo verso sinistra
+ xl(0)=  0.76851041155361954     
+ mi muovo verso destra
+ xl(0)=  0.76851044678105362     
+ mi muovo verso sinistra
+ xl(0)=  0.76851041973217027     
+ mi muovo verso destra
+ xl(0)=  0.76851044050126982     
+ mi muovo verso sinistra
+ xl(0)=  0.76851042455401264     
+ mi muovo verso destra
+ xl(0)=  0.76851043679888675     
+ mi muovo verso sinistra
+ xl(0)=  0.76851042739683473     
+ mi muovo verso destra
+ xl(0)=  0.76851043461606627     
+ mi muovo verso sinistra
+ xl(0)=  0.76851042907288225     
+ mi muovo verso destra
+ xl(0)=  0.76851043332913715     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043006103248     
+ mi muovo verso destra
+ xl(0)=  0.76851043257040008     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043064361790     
+ mi muovo verso destra
+ xl(0)=  0.76851043212307002     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043098709393     
+ mi muovo verso destra
+ xl(0)=  0.76851043185933698     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043118959750     
+ mi muovo verso destra
+ xl(0)=  0.76851043170384747     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043130898800     
+ mi muovo verso destra
+ xl(0)=  0.76851043161217514     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043137937725     
+ mi muovo verso destra
+ xl(0)=  0.76851043155812770     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043142087672     
+ mi muovo verso destra
+ xl(0)=  0.76851043152626308     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043144534359     
+ mi muovo verso destra
+ xl(0)=  0.76851043150747644     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043145976872     
+ mi muovo verso destra
+ xl(0)=  0.76851043149640041     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043146827325     
+ mi muovo verso destra
+ xl(0)=  0.76851043148987030     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147328724     
+ mi muovo verso destra
+ xl(0)=  0.76851043148602027     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147624354     
+ mi muovo verso destra
+ xl(0)=  0.76851043148375042     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147798637     
+ mi muovo verso destra
+ xl(0)=  0.76851043148241216     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147901399     
+ mi muovo verso destra
+ xl(0)=  0.76851043148162312     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147961973     
+ mi muovo verso destra
+ xl(0)=  0.76851043148115805     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043147997677     
+ mi muovo verso destra
+ xl(0)=  0.76851043148088383     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148018738     
+ mi muovo verso destra
+ xl(0)=  0.76851043148072218     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148031162     
+ mi muovo verso destra
+ xl(0)=  0.76851043148062681     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148038467     
+ mi muovo verso destra
+ xl(0)=  0.76851043148057063     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148042797     
+ mi muovo verso destra
+ xl(0)=  0.76851043148053744     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148045339     
+ mi muovo verso destra
+ xl(0)=  0.76851043148051790     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148046838     
+ mi muovo verso destra
+ xl(0)=  0.76851043148050635     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148047726     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049958     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048248     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049558     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048559     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049325     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048737     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049192     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048825     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049114     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048903     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049047     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048936     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049025     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048959     
+ mi muovo verso destra
+ xl(0)=  0.76851043148049014     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048970     
+ mi muovo verso destra
+ xl(0)=  0.76851043148048992     
+ mi muovo verso sinistra
+ xl(0)=  0.76851043148048992     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie          123  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           7 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           7 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           7 kappa=           5
+ work in progres...
+ x=  0.87500000000000022      j=           7 kappa=           7
+ fine lavoro:
+ x=  0.87500000000000022      j=           7 kappa=           7
+ aj=  0.75000000000000022      bj=  0.87500000000000022     
+ kappa di aj=           5
+ kappa di bj=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           5
+ aj=  0.75000000000000022      bj=  0.87500000000000022     
+ mi muovo verso sinistra
+ xl(0)=  0.81142672833781149     
+ mi muovo verso destra
+ xl(0)=  0.85723986210311676     
+ mi muovo verso sinistra
+ xl(0)=  0.80731139830383047     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            4  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   0.0000000000000000      j=           8 kappa=           0
+ work in progres...
+ x=  0.50000000000000011      j=           8 kappa=           0
+ work in progres...
+ x=  0.75000000000000022      j=           8 kappa=           5
+ work in progres...
+ x=  0.87500000000000022      j=           8 kappa=           7
+ fine lavoro:
+ x=  0.87500000000000022      j=           8 kappa=           7
+ aj=  0.87500000000000022      bj=   1.0000000000000002     
+ kappa di aj=           7
+ kappa di bj=           9
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           6
+ aj=  0.87500000000000022      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.95113473929801062     
+ mi muovo verso sinistra
+ xl(0)=  0.86888125789354198     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.55534312473526781      j=           9 kappa=           0
+ work in progres...
+ x=  0.77767156236763402      j=           9 kappa=           6
+ work in progres...
+ x=  0.88883578118381712      j=           9 kappa=           7
+ work in progres...
+ x=  0.94441789059190873      j=           9 kappa=           8
+ fine lavoro:
+ x=  0.94441789059190873      j=           9 kappa=           8
+ aj=  0.94441789059190873      bj=   1.0000000000000002     
+ kappa di aj=           8
+ kappa di bj=           9
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           9 mlt=           1
+ aj=  0.94441789059190873      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.97459403989883309     
+ mi muovo verso destra
+ xl(0)=  0.99681978782901748     
+ mi muovo verso destra
+ xl(0)=  0.99914796839169884     
+ mi muovo verso destra
+ xl(0)=  0.99914907376626028     
+ mi muovo verso sinistra
+ xl(0)=  0.99914907333532677     
+ mi muovo verso destra
+ xl(0)=  0.99914907333549463     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.62284727781235172      j=          10 kappa=           2
+ work in progres...
+ x=  0.81142363890617597      j=          10 kappa=           6
+ work in progres...
+ x=  0.90571181945308810      j=          10 kappa=           7
+ work in progres...
+ x=  0.95285590972654410      j=          10 kappa=           8
+ work in progres...
+ x=  0.97642795486327216      j=          10 kappa=           8
+ work in progres...
+ x=  0.98821397743163619      j=          10 kappa=           8
+ work in progres...
+ x=  0.99410698871581826      j=          10 kappa=           8
+ work in progres...
+ x=  0.99705349435790924      j=          10 kappa=           8
+ work in progres...
+ x=  0.99852674717895473      j=          10 kappa=           8
+ work in progres...
+ x=  0.99926337358947748      j=          10 kappa=           9
+ fine lavoro:
+ x=  0.99926337358947748      j=          10 kappa=           9
+ aj=  0.99926337358947748      bj=   1.0000000000000002     
+ kappa di aj=           9
+ kappa di bj=           9
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          10 mlt=           1
+ aj=  0.99926337358947748      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.99939408788344208     
+ mi muovo verso destra
+ xl(0)=  0.99967437029550710     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Eigenvalues dopo il calcolo:
+  0.55534312473526781       0.99914400099354883        1.6613937852382974        3.3256409580099411     
+  0.58947951795072695        1.0008296410494464        0.0000000000000000        2.4910428997999565     
+  0.62467631091983244        0.0000000000000000        0.0000000000000000        1.9931808023130140     
+  0.62708192733576085        0.0000000000000000        0.0000000000000000        1.6614134312278053     
+  0.71136104021278257        0.0000000000000000       0.99914400099354872        1.4259484353087128     
+  0.76851043148048992        0.0000000000000000        1.2487941770330842        1.2487943151073921     
+  0.80731139830383047        0.0000000000000000        0.0000000000000000        1.1097807588763389     
+  0.86888125789354198        0.0000000000000000        0.0000000000000000       0.99914696011489368     
+  0.99914907333549463       0.55534312473526781       0.71357133942057227       0.90847745069969466     
+  0.99967437029550710       0.62284727781235172       0.83267329782062793       0.83269067721302970     
+   0.0000000000000000       0.62467631091983256       0.76853455494170209       0.76851567786324815     
+   0.0000000000000000       0.66614110800489723       0.90454033410762591       0.71357054791142938     
+   0.0000000000000000       0.66782430086703615       0.55534312473526781       0.66614260267325309     
+   0.0000000000000000       0.77430343740482421       0.62465493256203597       0.62467165650897272     
+   0.0000000000000000       0.83269551177189660       0.58794057059243610       0.58792084651588283     
+   0.0000000000000000        2.1112918500098750        1.0677125800928331       0.55534267082538513     
+ ii)
+ 
+ 
+ 
+ 
  
  
  
@@ -34,260 +3312,719 @@
  |k1=           1 k2=           4
  -------------------------------------
  work in progres...
- x=   3.3222919458103184      j=           1 kappa=           2
- work in progres...
- x=   1.6611459729051592      j=           1 kappa=           0
- work in progres...
- x=   2.4917189593577387      j=           1 kappa=           3
- work in progres...
- x=   2.0764324661314491      j=           1 kappa=           2
- work in progres...
- x=   1.8687892195183040      j=           1 kappa=           1
+ x=  0.40144020530085467      j=           1 kappa=           1
  fine lavoro:
- x=   1.8687892195183040      j=           1 kappa=           1
- aj=   1.6611459729051592      bj=   1.8687892195183040     
+ x=  0.40144020530085467      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=  0.40144020530085467     
  kappa di aj=           0
  kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
  j=           1 mlt=           1
- aj=   1.6611459729051592      bj=   1.8687892195183040     
+ aj=   0.0000000000000000      bj=  0.40144020530085467     
  mi muovo verso sinistra
- xl(0)=   1.7437082475783652     
- mi muovo verso sinistra
- xl(0)=   1.6660075681960620     
- mi muovo verso sinistra
- xl(0)=   1.6629681777142289     
- mi muovo verso sinistra
- xl(0)=   1.6629680274059626     
+ xl(0)=  0.40143788610647729     
  mi muovo verso destra
- xl(0)=   1.6629680274074496     
+ xl(0)=  0.40143788781389222     
+ mi muovo verso sinistra
+ xl(0)=  0.40143788781263523     
+ mi muovo verso destra
+ xl(0)=  0.40143788781263617     
  condizione di arresto (24) del terzo tipo
  
- LagIt compie            6  iterazioni.
+ LagIt compie            5  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   2.4896943783365835      j=           2 kappa=           3
- work in progres...
- x=   1.2448471891682917      j=           2 kappa=           0
- work in progres...
- x=   1.8672707837524376      j=           2 kappa=           1
- work in progres...
- x=   2.1784825810445105      j=           2 kappa=           2
+ x=  0.30069338255762829      j=           2 kappa=           1
  fine lavoro:
- x=   2.1784825810445105      j=           2 kappa=           2
- aj=   1.8672707837524376      bj=   2.1784825810445105     
+ x=  0.30069338255762829      j=           2 kappa=           1
+ aj=  0.30069338255762829      bj=   1.0000000000000000     
  kappa di aj=           1
- kappa di bj=           2
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           2 mlt=           1
- aj=   1.8672707837524376      bj=   2.1784825810445105     
- mi muovo verso sinistra
- xl(0)=   2.0257235281328798     
- mi muovo verso sinistra
- xl(0)=   1.9948610584121038     
- mi muovo verso sinistra
- xl(0)=   1.9947459612650971     
- mi muovo verso destra
- xl(0)=   1.9947462640475504     
- mi muovo verso sinistra
- xl(0)=   1.9947462632507953     
- mi muovo verso destra
- xl(0)=   1.9947462632528921     
- mi muovo verso sinistra
- xl(0)=   1.9947462632528865     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.9947483072122012      j=           3 kappa=           2
- fine lavoro:
- x=   1.9947483072122012      j=           3 kappa=           2
- aj=   1.9947483072122012      bj=   4.0000000000000000     
- kappa di aj=           2
  kappa di bj=           3
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
- j=           3 mlt=           1
- aj=   1.9947483072122012      bj=   4.0000000000000000     
+ j=           2 mlt=           1
+ aj=  0.30069338255762829      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=   1.9947510396631283     
+ xl(0)=  0.30069479659713355     
  mi muovo verso destra
- xl(0)=   1.9947574249709050     
+ xl(0)=  0.30069782848983290     
  condizione di arresto (24) del terzo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=   1.6629749869886066      j=           4 kappa=           1
- work in progres...
- x=   2.8314874934943033      j=           4 kappa=           3
+ x=  0.60190058828594772      j=           3 kappa=           2
  fine lavoro:
- x=   2.8314874934943033      j=           4 kappa=           3
- aj=   2.8314874934943033      bj=   4.0000000000000000     
- kappa di aj=           3
- kappa di bj=           3
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           4 mlt=           1
- aj=   2.8314874934943033      bj=   4.0000000000000000     
- mi muovo verso destra
- xl(0)=   3.1538881414158482     
- mi muovo verso destra
- xl(0)=   3.3184422718164459     
- mi muovo verso destra
- xl(0)=   3.3223694746723194     
- mi muovo verso destra
- xl(0)=   3.3224038366269073     
- mi muovo verso destra
- xl(0)=   3.3224843216399438     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            6  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- 
- -------------------------------------
- |Adesso dim=           4
- |Tinizio=           5 Tfine=           8
- |k1=           1 k2=           4
- -------------------------------------
- work in progres...
- x=   1.4252715962145477      j=           1 kappa=           2
- work in progres...
- x=  0.71263579810727384      j=           1 kappa=           0
- work in progres...
- x=   1.0689536971609108      j=           1 kappa=           1
- fine lavoro:
- x=   1.0689536971609108      j=           1 kappa=           1
- aj=  0.71263579810727384      bj=   1.0689536971609108     
- kappa di aj=           0
- kappa di bj=           1
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           1 mlt=           1
- aj=  0.71263579810727384      bj=   1.0689536971609108     
- mi muovo verso sinistra
- xl(0)=   1.0280752083340761     
- mi muovo verso sinistra
- xl(0)=   1.0004981073614267     
- mi muovo verso sinistra
- xl(0)=  0.99918251578666140     
- mi muovo verso sinistra
- xl(0)=  0.99918242019932413     
- mi muovo verso destra
- xl(0)=  0.99918242020037618     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            6  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.2469812042849742      j=           2 kappa=           3
- work in progres...
- x=  0.62349060214248708      j=           2 kappa=           0
- work in progres...
- x=  0.93523590321373062      j=           2 kappa=           0
- work in progres...
- x=   1.0911085537493523      j=           2 kappa=           1
- work in progres...
- x=   1.1690448790171633      j=           2 kappa=           2
- fine lavoro:
- x=   1.1690448790171633      j=           2 kappa=           2
- aj=   1.0911085537493523      bj=   1.1690448790171633     
- kappa di aj=           1
- kappa di bj=           2
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           2 mlt=           1
- aj=   1.0911085537493523      bj=   1.1690448790171633     
- mi muovo verso sinistra
- xl(0)=   1.1221944842198355     
- mi muovo verso sinistra
- xl(0)=   1.1090306053130912     
- mi muovo verso sinistra
- xl(0)=   1.1088894885151259     
- mi muovo verso destra
- xl(0)=   1.1088897431020903     
- mi muovo verso sinistra
- xl(0)=   1.1088897426417106     
- mi muovo verso destra
- xl(0)=   1.1088897426425430     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425415     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.1088888839482789      j=           3 kappa=           1
- work in progres...
- x=   2.5544444419741392      j=           3 kappa=           3
- work in progres...
- x=   1.8316666629612091      j=           3 kappa=           3
- work in progres...
- x=   1.4702777734547441      j=           3 kappa=           3
- work in progres...
- x=   1.2895833287015115      j=           3 kappa=           3
- work in progres...
- x=   1.1992361063248951      j=           3 kappa=           2
- fine lavoro:
- x=   1.1992361063248951      j=           3 kappa=           2
- aj=   1.1992361063248951      bj=   1.2895833287015115     
+ x=  0.60190058828594772      j=           3 kappa=           2
+ aj=  0.60190058828594772      bj=   1.0000000000000000     
  kappa di aj=           2
  kappa di bj=           3
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
  j=           3 mlt=           1
- aj=   1.1992361063248951      bj=   1.2895833287015115     
+ aj=  0.60190058828594772      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=   1.2410022896479314     
- mi muovo verso destra
- xl(0)=   1.2469829291948857     
+ xl(0)=  0.60190426190191493     
  mi muovo verso sinistra
- xl(0)=   1.2469787006431270     
- mi muovo verso destra
- xl(0)=   1.2469787111165904     
- mi muovo verso sinistra
- xl(0)=   1.2469787110906494     
- mi muovo verso destra
- xl(0)=   1.2469787110907138     
+ xl(0)=  0.60190426188248181     
  condizione di arresto (24) del terzo tipo
  
- LagIt compie            7  iterazioni.
+ LagIt compie            3  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  work in progres...
- x=  0.99918739779966248      j=           4 kappa=           1
+ x=  0.50170936045005310      j=           4 kappa=           2
  work in progres...
- x=   2.4995936988998313      j=           4 kappa=           3
+ x=  0.75085468022502655      j=           4 kappa=           3
  fine lavoro:
- x=   2.4995936988998313      j=           4 kappa=           3
- aj=   2.4995936988998313      bj=   4.0000000000000000     
+ x=  0.75085468022502655      j=           4 kappa=           3
+ aj=  0.75085468022502655      bj=   1.0000000000000000     
  kappa di aj=           3
  kappa di bj=           3
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
  j=           4 mlt=           1
- aj=   2.4995936988998313      bj=   4.0000000000000000     
+ aj=  0.75085468022502655      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=   4.0404002763979658     
+ xl(0)=  0.90659629533712482     
  mi muovo verso destra
- xl(0)=   7.5133257135938099     
+ xl(0)=   1.1909481395204660     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           3
+ -------------------------------------
+ work in progres...
+ x=  0.80077257433195359      j=           1 kappa=           1
+ fine lavoro:
+ x=  0.80077257433195359      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=  0.80077257433195359     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=  0.80077257433195359     
+ mi muovo verso sinistra
+ xl(0)=  0.80077235851978068     
+ mi muovo verso destra
+ xl(0)=  0.80077235871720576     
+ mi muovo verso sinistra
+ xl(0)=  0.80077235871702512     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            4  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.70128743988415387      j=           2 kappa=           0
+ work in progres...
+ x=  0.85064371994207688      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.85064371994207688      j=           2 kappa=           1
+ aj=  0.85064371994207688      bj=   1.0000000000000000     
+ kappa di aj=           1
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=  0.85064371994207688      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.88540137381254380     
+ mi muovo verso destra
+ xl(0)=  0.90064147834221198     
+ mi muovo verso destra
+ xl(0)=  0.90107659390071404     
+ mi muovo verso sinistra
+ xl(0)=  0.90107647454015560     
+ mi muovo verso destra
+ xl(0)=  0.90107647457595541     
+ mi muovo verso sinistra
+ xl(0)=  0.90107647457594475     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.0008551213971937      j=           3 kappa=           2
+ fine lavoro:
+ x=   1.0008551213971937      j=           3 kappa=           2
+ aj=   1.0008551213971937      bj=   1.0000000000000000     
+ kappa di aj=           2
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   1.0008551213971937      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=   1.0008567323710280     
+ mi muovo verso sinistra
+ xl(0)=   1.0008567323685074     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=   1.2009256793553149      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.2009256793553149      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=   1.2009256793553149     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=   1.2009256793553149     
+ mi muovo verso sinistra
+ xl(0)=   1.2009191540380162     
+ mi muovo verso destra
+ xl(0)=   1.2009191665896710     
+ mi muovo verso sinistra
+ xl(0)=   1.2009191665655274     
+ mi muovo verso destra
+ xl(0)=   1.2009191665655738     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=   1.6008417571832534      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.6008417571832534      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=   1.6008417571832534     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=   1.6008417571832534     
+ mi muovo verso sinistra
+ xl(0)=   1.6008290518000154     
+ mi muovo verso destra
+ xl(0)=   1.6008290734407182     
+ mi muovo verso sinistra
+ xl(0)=   1.6008290734038566     
+ mi muovo verso destra
+ xl(0)=   1.6008290734039194     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           7
+ -------------------------------------
+ work in progres...
+ x=  0.40143788781263617      j=           1 kappa=           1
+ fine lavoro:
+ x=  0.40143788781263617      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=  0.40143788781263617     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=  0.40143788781263617     
+ mi muovo verso sinistra
+ xl(0)=  0.40143788781263495     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.30069782848983290      j=           2 kappa=           0
+ work in progres...
+ x=  0.65034891424491648      j=           2 kappa=           3
+ work in progres...
+ x=  0.47552337136737466      j=           2 kappa=           1
+ fine lavoro:
+ x=  0.47552337136737466      j=           2 kappa=           1
+ aj=  0.47552337136737466      bj=  0.65034891424491648     
+ kappa di aj=           1
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=  0.47552337136737466      bj=  0.65034891424491648     
+ mi muovo verso destra
+ xl(0)=  0.49928439737154756     
+ mi muovo verso destra
+ xl(0)=  0.50170861091006447     
+ mi muovo verso destra
+ xl(0)=  0.50170881514008459     
+ mi muovo verso sinistra
+ xl(0)=  0.50170881499850251     
+ mi muovo verso destra
+ xl(0)=  0.50170881499860065     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.60190426188248181      j=           3 kappa=           3
+ fine lavoro:
+ x=  0.60190426188248181      j=           3 kappa=           3
+ aj=   0.0000000000000000      bj=  0.60190426188248181     
+ kappa di aj=           0
+ kappa di bj=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   0.0000000000000000      bj=  0.60190426188248181     
+ mi muovo verso sinistra
+ xl(0)=  0.60189935427158048     
+ mi muovo verso destra
+ xl(0)=  0.60189935806972650     
+ mi muovo verso sinistra
+ xl(0)=  0.60189935806678707     
+ mi muovo verso destra
+ xl(0)=  0.60189935806678929     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.1909481395204660      j=           4 kappa=           7
+ work in progres...
+ x=  0.59547406976023298      j=           4 kappa=           2
+ work in progres...
+ x=  0.89321110464034947      j=           4 kappa=           5
+ work in progres...
+ x=  0.74434258720029123      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.74434258720029123      j=           4 kappa=           4
+ aj=  0.59547406976023298      bj=  0.74434258720029123     
+ kappa di aj=           2
+ kappa di bj=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.59547406976023298      bj=  0.74434258720029123     
+ mi muovo verso sinistra
+ xl(0)=  0.71212292388345477     
+ mi muovo verso sinistra
+ xl(0)=  0.70146348428004035     
+ mi muovo verso sinistra
+ xl(0)=  0.70129189880948395     
+ mi muovo verso destra
+ xl(0)=  0.70129200988546847     
+ mi muovo verso sinistra
+ xl(0)=  0.70129200981319106     
+ mi muovo verso destra
+ xl(0)=  0.70129200981323803     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.80077235871702512      j=           5 kappa=           4
+ fine lavoro:
+ x=  0.80077235871702512      j=           5 kappa=           4
+ aj=  0.80077235871702512      bj=   1.0000000000000000     
+ kappa di aj=           4
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=  0.80077235871702512      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.80077235871891861     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.90107647457594475      j=           6 kappa=           6
+ fine lavoro:
+ x=  0.90107647457594475      j=           6 kappa=           6
+ aj=   0.0000000000000000      bj=  0.90107647457594475     
+ kappa di aj=           0
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=   0.0000000000000000      bj=  0.90107647457594475     
+ mi muovo verso sinistra
+ xl(0)=  0.90107647457594475     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.0008567323685074      j=           7 kappa=           7
+ fine lavoro:
+ x=   1.0008567323685074      j=           7 kappa=           7
+ aj=   0.0000000000000000      bj=   1.0008567323685074     
+ kappa di aj=           0
+ kappa di bj=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=   0.0000000000000000      bj=   1.0008567323685074     
+ mi muovo verso sinistra
+ xl(0)=   1.0008567323685074     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=   1.2009191665655738      j=           1 kappa=           1
+ fine lavoro:
+ x=   1.2009191665655738      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj=   1.2009191665655738     
+ kappa di aj=           0
+ kappa di bj=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj=   1.2009191665655738     
+ mi muovo verso sinistra
+ xl(0)=   1.2009191665655738     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=           7
+ -------------------------------------
+ work in progres...
+ x=  0.40143788781263495      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.40143788781263495      j=           1 kappa=           0
+ aj=  0.40143788781263495      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.40143788781263495      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.40143788781263495     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.50170881499860065      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.50170881499860065      j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=  0.50170881499860065     
+ kappa di aj=           0
+ kappa di bj=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=  0.50170881499860065     
+ mi muovo verso sinistra
+ xl(0)=  0.50170881499860065     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.60189935806678929      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.60189935806678929      j=           3 kappa=           2
+ aj=  0.60189935806678929      bj=   1.0000000000000000     
+ kappa di aj=           2
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.60189935806678929      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.60189935806678929     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.70129200981323803      j=           4 kappa=           3
+ fine lavoro:
+ x=  0.70129200981323803      j=           4 kappa=           3
+ aj=  0.70129200981323803      bj=   1.0000000000000000     
+ kappa di aj=           3
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.70129200981323803      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  0.70129200981323803     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.80077235871891861      j=           5 kappa=           5
+ fine lavoro:
+ x=  0.80077235871891861      j=           5 kappa=           5
+ aj=   0.0000000000000000      bj=  0.80077235871891861     
+ kappa di aj=           0
+ kappa di bj=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=   0.0000000000000000      bj=  0.80077235871891861     
+ mi muovo verso sinistra
+ xl(0)=  0.80077235871891683     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=  0.90107647457594475      j=           6 kappa=           6
+ fine lavoro:
+ x=  0.90107647457594475      j=           6 kappa=           6
+ aj=   0.0000000000000000      bj=  0.90107647457594475     
+ kappa di aj=           0
+ kappa di bj=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=   0.0000000000000000      bj=  0.90107647457594475     
+ mi muovo verso sinistra
+ xl(0)=  0.90107647452158435     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            2  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ work in progres...
+ x=   1.0008567323685074      j=           7 kappa=           7
+ fine lavoro:
+ x=   1.0008567323685074      j=           7 kappa=           7
+ aj=   0.0000000000000000      bj=   1.0008567323685074     
+ kappa di aj=           0
+ kappa di bj=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=   0.0000000000000000      bj=   1.0008567323685074     
+ mi muovo verso sinistra
+ xl(0)=   1.0008516421025571     
+ mi muovo verso destra
+ xl(0)=   1.0008516513742116     
+ mi muovo verso sinistra
+ xl(0)=   1.0008516513573236     
+ mi muovo verso destra
+ xl(0)=   1.0008516513573542     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Eigenvalues dopo il calcolo:
+  0.40143788781263495       0.40143788781263495       0.40143788781263617       0.40144020530085467     
+  0.50170881499860065       0.50170881499860065       0.30069782848983290       0.30069338255762829     
+  0.60189935806678929       0.60189935806678929       0.60190426188248181       0.60190058828594772     
+  0.70129200981323803       0.70129200981323803        1.1909481395204660       0.50170936045005310     
+  0.80077235871891683       0.80077235871891861       0.80077235871702512       0.80077257433195359     
+  0.90107647452158435       0.90107647457594475       0.90107647457594475       0.70128743988415387     
+   1.0008516513573542        1.0008567323685074        1.0008567323685074        1.0008551213971937     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       0.90107808540742396     
+   0.0000000000000000        1.2009191665655738        1.2009191665655738        1.2009256793553149     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.1007430860860958     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.4014033214899531     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.3012092240442956     
+   0.0000000000000000        0.0000000000000000        1.6008290734039194        1.6008417571832534     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.5011793965660603     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.8006896087851734     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.7009094831686835     
+ iii)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x= -0.30069338255762829      j=           1 kappa=           1
+ fine lavoro:
+ x= -0.30069338255762829      j=           1 kappa=           1
+ aj=   0.0000000000000000      bj= -0.30069338255762829     
+ kappa di aj=           0
+ kappa di bj=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   0.0000000000000000      bj= -0.30069338255762829     
+ mi muovo verso sinistra
+ xl(0)= -0.30069479659713355     
+ mi muovo verso sinistra
+ xl(0)= -0.30069782848983290     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x= -0.70128743988415387      j=           1 kappa=           0
+ fine lavoro:
+ x= -0.70128743988415387      j=           1 kappa=           0
+ aj= -0.70128743988415387      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           0
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj= -0.70128743988415387      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)= -0.70128722132178012     
+ mi muovo verso destra
+ xl(0)= -0.70128675281219066     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=  -1.1007430860860958      j=           1 kappa=           0
+ fine lavoro:
+ x=  -1.1007430860860958      j=           1 kappa=           0
+ aj=  -1.1007430860860958      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           0
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  -1.1007430860860958      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  -1.1007424706593874     
+ mi muovo verso destra
+ xl(0)=  -1.1007411510183354     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           1
+ -------------------------------------
+ work in progres...
+ x=  -1.5011793965660603      j=           1 kappa=           0
+ fine lavoro:
+ x=  -1.5011793965660603      j=           1 kappa=           0
+ aj=  -1.5011793965660603      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           0
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  -1.5011793965660603      bj=   1.0000000000000000     
+ mi muovo verso destra
+ xl(0)=  -1.5011792995182216     
+ mi muovo verso destra
+ xl(0)=  -1.5011790915123868     
  condizione di arresto (24) del terzo tipo
  
  LagIt compie            3  iterazioni.
@@ -297,366 +4034,103 @@
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           1 Tfine=           8
- |k1=           1 k2=           8
+ |k1=           1 k2=           1
  -------------------------------------
  work in progres...
- x=   1.6629680274074496      j=           1 kappa=           4
- work in progres...
- x=  0.83148401370372482      j=           1 kappa=           0
- work in progres...
- x=   1.2472260205555872      j=           1 kappa=           3
- work in progres...
- x=   1.0393550171296559      j=           1 kappa=           1
+ x= -0.30069782848983290      j=           1 kappa=           0
  fine lavoro:
- x=   1.0393550171296559      j=           1 kappa=           1
- aj=  0.83148401370372482      bj=   1.0393550171296559     
+ x= -0.30069782848983290      j=           1 kappa=           0
+ aj= -0.30069782848983290      bj=   1.0000000000000000     
  kappa di aj=           0
- kappa di bj=           1
+ kappa di bj=           0
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
  j=           1 mlt=           1
- aj=  0.83148401370372482      bj=   1.0393550171296559     
- mi muovo verso sinistra
- xl(0)=   1.0027938602851241     
- mi muovo verso sinistra
- xl(0)=  0.99918399794138979     
- mi muovo verso sinistra
- xl(0)=  0.99918242018305314     
+ aj= -0.30069782848983290      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=  0.99918242020037629     
+ xl(0)= -0.30069214025035140     
+ mi muovo verso destra
+ xl(0)= -0.30069213291171953     
+ mi muovo verso destra
+ xl(0)= -0.30069211717660993     
  condizione di arresto (24) del terzo tipo
  
- LagIt compie            5  iterazioni.
+ LagIt compie            4  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           1
+ -------------------------------------
  work in progres...
- x=   1.9947462632528865      j=           2 kappa=           5
- work in progres...
- x=  0.99737313162644325      j=           2 kappa=           0
- work in progres...
- x=   1.4960596974396649      j=           2 kappa=           4
- work in progres...
- x=   1.2467164145330540      j=           2 kappa=           2
- work in progres...
- x=   1.1220447730797487      j=           2 kappa=           2
- work in progres...
- x=   1.0597089523530960      j=           2 kappa=           1
+ x=  -1.1007411510183354      j=           1 kappa=           0
  fine lavoro:
- x=   1.0597089523530960      j=           2 kappa=           1
- aj=   1.0597089523530960      bj=   1.1220447730797487     
- kappa di aj=           1
- kappa di bj=           2
+ x=  -1.1007411510183354      j=           1 kappa=           0
+ aj=  -1.1007411510183354      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           0
+ EstMlt sovrastima la molteplicita`.
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
- j=           2 mlt=           2
- aj=   1.0597089523530960      bj=   1.1220447730797487     
+ j=           1 mlt=           1
+ aj=  -1.1007411510183354      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=   1.1149792012720299     
- mi muovo verso sinistra
- xl(0)=   1.1062392252816908     
+ xl(0)=  -1.1007383213361279     
  mi muovo verso destra
- xl(0)=   1.1100396472244345     
- mi muovo verso sinistra
- xl(0)=   1.1083883658057769     
- mi muovo verso destra
- xl(0)=   1.1091080317118496     
- mi muovo verso sinistra
- xl(0)=   1.1087946310909602     
- mi muovo verso destra
- xl(0)=   1.1089311712376586     
- mi muovo verso sinistra
- xl(0)=   1.1088716946985393     
- mi muovo verso destra
- xl(0)=   1.1088976045741781     
- mi muovo verso sinistra
- xl(0)=   1.1088863177875172     
- mi muovo verso destra
- xl(0)=   1.1088912345784578     
- mi muovo verso sinistra
- xl(0)=   1.1088890927219364     
- mi muovo verso destra
- xl(0)=   1.1088900257618586     
- mi muovo verso sinistra
- xl(0)=   1.1088896193095945     
- mi muovo verso destra
- xl(0)=   1.1088897963690396     
- mi muovo verso sinistra
- xl(0)=   1.1088897192381129     
- mi muovo verso destra
- xl(0)=   1.1088897528380177     
- mi muovo verso sinistra
- xl(0)=   1.1088897382011706     
- mi muovo verso destra
- xl(0)=   1.1088897445772987     
- mi muovo verso sinistra
- xl(0)=   1.1088897417997192     
- mi muovo verso destra
- xl(0)=   1.1088897430096929     
- mi muovo verso sinistra
- xl(0)=   1.1088897424826021     
- mi muovo verso destra
- xl(0)=   1.1088897427122144     
- mi muovo verso sinistra
- xl(0)=   1.1088897426121902     
- mi muovo verso destra
- xl(0)=   1.1088897426557629     
- mi muovo verso sinistra
- xl(0)=   1.1088897426367816     
- mi muovo verso destra
- xl(0)=   1.1088897426450504     
- mi muovo verso sinistra
- xl(0)=   1.1088897426414484     
- mi muovo verso destra
- xl(0)=   1.1088897426430175     
- mi muovo verso sinistra
- xl(0)=   1.1088897426423339     
- mi muovo verso destra
- xl(0)=   1.1088897426426318     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425017     
- mi muovo verso destra
- xl(0)=   1.1088897426425588     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425337     
- mi muovo verso destra
- xl(0)=   1.1088897426425448     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425399     
- mi muovo verso destra
- xl(0)=   1.1088897426425421     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425410     
- mi muovo verso destra
- xl(0)=   1.1088897426425415     
- mi muovo verso sinistra
- xl(0)=   1.1088897426425413     
- condizione di arresto (24) del primo tipo
- 
- LagIt compie           41  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.9947574249709050      j=           3 kappa=           6
- work in progres...
- x=  0.99737871248545251      j=           3 kappa=           0
- work in progres...
- x=   1.4960680687281789      j=           3 kappa=           4
- work in progres...
- x=   1.2467233906068156      j=           3 kappa=           2
- work in progres...
- x=   1.3713957296674972      j=           3 kappa=           3
- fine lavoro:
- x=   1.3713957296674972      j=           3 kappa=           3
- aj=   1.2467233906068156      bj=   1.3713957296674972     
- kappa di aj=           2
- kappa di bj=           3
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           3 mlt=           1
- aj=   1.2467233906068156      bj=   1.3713957296674972     
- mi muovo verso sinistra
- xl(0)=   1.3162046243170544     
- mi muovo verso sinistra
- xl(0)=   1.2604148952548508     
+ xl(0)=  -1.1007322536534108     
  condizione di arresto (24) del terzo tipo
  
  LagIt compie            3  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=           1
+ -------------------------------------
  work in progres...
- x=   3.3224843216399438      j=           4 kappa=           7
- work in progres...
- x=   1.6612421608199719      j=           4 kappa=           4
- work in progres...
- x=  0.83062108040998595      j=           4 kappa=           0
- work in progres...
- x=   1.2459316206149789      j=           4 kappa=           2
- work in progres...
- x=   1.4535868907174754      j=           4 kappa=           4
- work in progres...
- x=   1.3497592556662270      j=           4 kappa=           3
+ x= -0.30069211717660993      j=           1 kappa=           0
  fine lavoro:
- x=   1.3497592556662270      j=           4 kappa=           3
- aj=   1.3497592556662270      bj=   1.4535868907174754     
- kappa di aj=           3
- kappa di bj=           4
+ x= -0.30069211717660993      j=           1 kappa=           0
+ aj= -0.30069211717660993      bj=   1.0000000000000000     
+ kappa di aj=           0
+ kappa di bj=           0
+ EstMlt sovrastima la molteplicita`.
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  entro in LagIt con
- j=           4 mlt=           1
- aj=   1.3497592556662270      bj=   1.4535868907174754     
+ j=           1 mlt=           1
+ aj= -0.30069211717660993      bj=   1.0000000000000000     
  mi muovo verso destra
- xl(0)=   1.4095404108386052     
+ xl(0)= -0.30069208343821047     
  mi muovo verso destra
- xl(0)=   1.4251811823972838     
- mi muovo verso destra
- xl(0)=   1.4252771176547729     
- mi muovo verso sinistra
- xl(0)=   1.4252768591579335     
- mi muovo verso destra
- xl(0)=   1.4252768598546615     
- mi muovo verso sinistra
- xl(0)=   1.4252768598527834     
- mi muovo verso destra
- xl(0)=   1.4252768598527887     
+ xl(0)= -0.30069201109808941     
  condizione di arresto (24) del terzo tipo
  
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=  0.99918242020037618      j=           5 kappa=           0
- work in progres...
- x=   2.4995912101001880      j=           5 kappa=           7
- work in progres...
- x=   1.7493868151502820      j=           5 kappa=           5
- work in progres...
- x=   1.3742846176753292      j=           5 kappa=           3
- work in progres...
- x=   1.5618357164128056      j=           5 kappa=           4
- fine lavoro:
- x=   1.5618357164128056      j=           5 kappa=           4
- aj=   1.5618357164128056      bj=   1.7493868151502820     
- kappa di aj=           4
- kappa di bj=           5
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           5 mlt=           1
- aj=   1.5618357164128056      bj=   1.7493868151502820     
- mi muovo verso destra
- xl(0)=   1.6429636907523408     
- mi muovo verso destra
- xl(0)=   1.6628641415603638     
- mi muovo verso destra
- xl(0)=   1.6629736590231810     
- mi muovo verso sinistra
- xl(0)=   1.6629734129298364     
- mi muovo verso destra
- xl(0)=   1.6629734134831766     
- mi muovo verso sinistra
- xl(0)=   1.6629734134819325     
- mi muovo verso destra
- xl(0)=   1.6629734134819354     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.1088897426425415      j=           6 kappa=           2
- work in progres...
- x=   2.5544448713212708      j=           6 kappa=           7
- work in progres...
- x=   1.8316673069819061      j=           6 kappa=           5
- work in progres...
- x=   2.1930560891515887      j=           6 kappa=           6
- fine lavoro:
- x=   2.1930560891515887      j=           6 kappa=           6
- aj=   1.8316673069819061      bj=   2.1930560891515887     
- kappa di aj=           5
- kappa di bj=           6
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           6 mlt=           1
- aj=   1.8316673069819061      bj=   2.1930560891515887     
- mi muovo verso sinistra
- xl(0)=   2.0444433235682764     
- mi muovo verso sinistra
- xl(0)=   1.9955738746859990     
- mi muovo verso sinistra
- xl(0)=   1.9947440827399363     
- mi muovo verso destra
- xl(0)=   1.9947462690986466     
- mi muovo verso sinistra
- xl(0)=   1.9947462633452175     
- mi muovo verso destra
- xl(0)=   1.9947462633603579     
- mi muovo verso sinistra
- xl(0)=   1.9947462633603179     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   1.2469787110907138      j=           7 kappa=           3
- work in progres...
- x=   2.6234893555453569      j=           7 kappa=           7
- work in progres...
- x=   1.9352340333180353      j=           7 kappa=           5
- work in progres...
- x=   2.2793616944316959      j=           7 kappa=           6
- fine lavoro:
- x=   2.2793616944316959      j=           7 kappa=           6
- aj=   2.2793616944316959      bj=   2.6234893555453569     
- kappa di aj=           6
- kappa di bj=           7
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           7 mlt=           1
- aj=   2.2793616944316959      bj=   2.6234893555453569     
- mi muovo verso destra
- xl(0)=   2.4589401082267539     
- mi muovo verso destra
- xl(0)=   2.4896684828787934     
- mi muovo verso sinistra
- xl(0)=   2.4896586903249323     
- mi muovo verso destra
- xl(0)=   2.4896587227766438     
- mi muovo verso sinistra
- xl(0)=   2.4896587226691045     
- mi muovo verso destra
- xl(0)=   2.4896587226694611     
- mi muovo verso sinistra
- xl(0)=   2.4896587226694598     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            8  iterazioni.
- esco da LagIt
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- work in progres...
- x=   7.5133257135938099      j=           8 kappa=           7
- fine lavoro:
- x=   7.5133257135938099      j=           8 kappa=           7
- aj=   7.5133257135938099      bj=   4.0000000000000000     
- kappa di aj=           7
- kappa di bj=           7
- 
- ~~~~~~~~~~~~~~~~~~~~~~~~~
- entro in LagIt con
- j=           8 mlt=           1
- aj=   7.5133257135938099      bj=   4.0000000000000000     
- mi muovo verso destra
- xl(0)=  0.86642467659006872     
- mi muovo verso destra
- xl(0)=  0.98658664003606278     
- mi muovo verso destra
- xl(0)=  0.99913966259999809     
- mi muovo verso destra
- xl(0)=  0.99918242069964791     
- mi muovo verso destra
- xl(0)=  0.99918242136535107     
- mi muovo verso destra
- xl(0)=  0.99918242291866821     
- condizione di arresto (24) del terzo tipo
- 
- LagIt compie            7  iterazioni.
+ LagIt compie            3  iterazioni.
  esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~
  
  Eigenvalues dopo il calcolo:
-  0.99918242020037629        1.6629680274074496        3.3222919458103184     
-   1.1088897426425413        1.9947462632528865        2.4896943783365835     
-   1.2604148952548508        1.9947574249709050        1.9947483072122012     
-   1.4252768598527887        3.3224843216399438        1.6629749869886066     
-   1.6629734134819354       0.99918242020037618        1.4252715962145477     
-   1.9947462633603179        1.1088897426425415        1.2469812042849742     
-   2.4896587226694598        1.2469787110907138        1.1088888839482789     
-  0.99918242291866821        7.5133257135938099       0.99918739779966248     
+ -0.30069201109808941      -0.30069211717660993      -0.30069782848983290      -0.30069338255762829     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000      -0.40144020530085467     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000      -0.50170936045005310     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000      -0.60190058828594772     
+   0.0000000000000000        0.0000000000000000      -0.70128675281219066      -0.70128743988415387     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000      -0.80077257433195359     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000      -0.90107808540742396     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.0008551213971937     
+   0.0000000000000000       -1.1007322536534108       -1.1007411510183354       -1.1007430860860958     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.2009256793553149     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.3012092240442956     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.4014033214899531     
+   0.0000000000000000        0.0000000000000000       -1.5011790915123868       -1.5011793965660603     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.6008417571832534     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.7009094831686835     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.8006896087851734     
  FINE CALCOLO AUTOVALORI!
