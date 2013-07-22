@@ -47,7 +47,7 @@ integer :: Tinizio, Tfine, Sinizio, Sfine
 
 integer :: numCol
 
-integer :: i, j, k, h, dim, kappa, k1, k2, segno, mlt
+integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
@@ -169,18 +169,19 @@ do while (dim <= n)
 
       !Riordino gli autovalori di (T0,S0) e (T1,S1) negli
       !autovalori di (\hatT,\hatS).
-      call quick_sort( Eigenvalues(:,numCol+1), em )
+      !call quick_sort( Eigenvalues(:,numCol+1), em )
 
 
       !cerco k1 e k2
 
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
-      k1=kappa+1
+      k1 = kappa+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
+      !ATTENZIONE: c'e` qualche problema con k2
       k2=kappa+1
-
+      
       if (verbose >= 2) then
          write(*,*)"-------------------------------------"
          write(*,*)"|Adesso dim=",dim
@@ -200,10 +201,16 @@ do while (dim <= n)
          !nel ricercare \lambda_j
          aj=a
          bj=b
+
+         kappaA = k1-1
+         kappaB = k2-1
+
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
 
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
+            !if ( dim > 4 .AND. x == 0.d0 ) cycle
+            !Se x == 0.d0 non e` un candidato
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 
@@ -217,8 +224,10 @@ do while (dim <= n)
 
             if ( kappa < j ) then
                aj = x
+               kappaA = kappa
             else
                bJ = x
+               kappaB = kappa
             end if
       
             !Se il segno di -fPrimo non coincide con quello di
@@ -226,10 +235,10 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            if ( kappa < j-1 .OR. j < kappa ) then
+            !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
+            if ( kappa+1 < j .OR. j < kappa ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
-               !write(*,*)"cucu"
                GOTO 100
             end if
 
@@ -264,9 +273,11 @@ do while (dim <= n)
             !con sign( \lambda_j - x )
             !vedi meta` p. 14
 
+            !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
                write(*,*)"entro in LagIt con"
                write(*,*)"j=",j,"mlt=",mlt
                write(*,*)"aj=",aj,"bj=",bj
@@ -279,6 +290,7 @@ do while (dim <= n)
 
             if (verbose >= 3) then
                write(*,*)"esco da LagIt"
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
             end if
 
             !immagazzino i risultati.
@@ -310,7 +322,7 @@ do while (dim <= n)
 end do
 
 !ordino la prima colonna di Eigenvalues
-call quick_sort( Eigenvalues(:,1), em )
+!call quick_sort( Eigenvalues(:,1), em )
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -407,7 +419,7 @@ integer, intent(INOUT) :: kappa
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
 
-integer :: i, k, l, exKappa
+integer :: i, k, l, exKappa, kappaA, kappaB
 
 real(dp) :: deltaL, exDeltaL
 
@@ -513,12 +525,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   !if ( abs(deltaL) >= abs(exDeltaL) ) then
-   !   if (verbose >= 2) then
-   !      write(*,*)"condizione di arresto (24) del secondo tipo"
-   !   end if
-   !   GOTO 30
-   !end if
+   if ( abs(deltaL) >= abs(exDeltaL) ) then
+      if (verbose >= 2) then
+         write(*,*)"condizione di arresto (24) del secondo tipo"
+      end if
+      GOTO 30
+   end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then
