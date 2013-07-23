@@ -1,0 +1,121 @@
+!!!
+!PROGRAMMA PROVECALCOLI
+!!!
+!Al momento funziona solo per "n=2^numero",
+!fra poco estendero` il calcolo al caso
+!"n > 1".
+
+program proveLagIt
+
+implicit none
+
+integer, parameter :: dp = kind(1.d0)
+
+integer :: n, i, j, dim, Tinizio, Tfine, Sinizio, Sfine, kappa, mlt
+
+integer :: verbose
+
+real(dp) :: x, lettore1, lettore2
+
+real(dp) :: fPrimo, fSecondo
+
+real(dp) :: aj, bj, lambdaj
+
+real(dp), dimension(:,:), allocatable :: T,S
+
+real(dp), dimension(:), allocatable :: autovalori
+
+!!!
+!FINE DICHIARAZIONI
+!!!
+
+verbose = 3
+
+!leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
+!alloco la memoria e carico le matrici T ed S.
+
+open(unit=1, file="T.txt")
+open(unit=2, file="S.txt")
+
+read(1,*) n
+read(2,*) n
+
+allocate( T(1:n,0:1),S(1:n,0:1) )
+
+do j=1,n
+   do i=1,n
+      read(1,*) lettore1
+      read(2,*) lettore2
+      if ( i == j ) then
+         T(i,0) = lettore1
+         S(i,0) = lettore2
+      end if
+      if ( abs(i-j)==1 .AND. j>i ) then
+         T(i,1) = lettore1
+         S(i,1) = lettore2
+      end if
+   end do
+end do
+
+T(n,1)=-100.d0
+S(n,1)=-100.d0
+
+!do i=1,n
+!   write(*,*)"S(i,0)=",S(i,0)
+!end do
+
+!do i=1,n
+!   write(*,*)"S(i,1)=",S(i,1)
+!end do
+
+
+dim= 8
+Tinizio= 1
+Tfine= 8
+Sinizio= 1
+Sfine= 8
+
+
+open(unit=3, file="Eispack/ris_eispack.txt")
+
+read(3,*) n
+
+allocate(autovalori(n))
+
+do i=1,n
+
+   read(3,*) autovalori(i)
+
+end do
+
+call quick_sort(autovalori,n)
+
+do j=1,8
+
+   write(*,*)"j=",j
+   write(*,*)"j-esimo autovalore=", autovalori(j)
+
+   x = autovalori(j) - 2.d-1
+
+   call  calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, &
+   Sfine, fPrimo, fSecondo, kappa)
+
+   write(*,*)"x=",x,"fPrimo=",fPrimo,"kappa=",kappa
+
+   aj = x - 1.d-3
+   bj = x + 2.d0
+
+   write(*,*)"aj=",aj,"bj=",bj
+
+   mlt = 1
+
+   call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+        Sinizio, Sfine, j, &
+        fPrimo, fSecondo, kappa, lambdaJ, verbose)
+
+   write(*,*)"lambdaj=",lambdaj
+   write(*,*)"abs(lambdaj-autovalori(j))=",abs(lambdaj-autovalori(j))
+
+end do
+
+end program proveLagIt

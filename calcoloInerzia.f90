@@ -24,7 +24,7 @@ character :: UPLO
 
 integer :: i, j, k, LWORK, LDA
 
-integer :: IPIV
+integer, dimension(n) :: IPIV
 
 integer :: INFO
 

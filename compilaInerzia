@@ -1,0 +1,3 @@
+#!/bin/bash
+gfortran calcoloInerzia.f90 -lblas -llapack -c
+gfortran subroutineSenzaMain.o calcoloInerzia.o proveInerzia.f90 -lblas -llapack -o proveInerzia
