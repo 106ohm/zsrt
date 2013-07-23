@@ -65,14 +65,18 @@ call quick_sort(autovalori,n)
 !Testo la subroutine per il calcolo del numero di autovalori
 !che precedono un certo valore
 
+write(*,*)"n=",n
+
 do j=1,n
 
    write(*,*)"j=",j
    write(*,*)"j-esimo autovalore=", autovalori(j)
 
-   x = autovalori(j) + 2.d-1
+   x = autovalori(j) + 1.d-3
 
-   call numAutovaloriPrimaDiX(x,n,T,S,numAut)
+   write(*,*)"x=",x
+
+   call numAutovaloriPrimaDiX(x,4,T,S,numAut)
 
    write(*,*)"numAut=",numAut
 
