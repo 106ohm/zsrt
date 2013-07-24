@@ -112,7 +112,11 @@ do j=1,n
    write(*,*)"j=",j
    write(*,*)"j-esimo autovalore=", autovalori(j)
 
-   x = autovalori(j) + 1.d-3
+   if ( j<n ) then
+      x = ( autovalori(j)+autovalori(j+1) )/2.d0
+      else
+         x = autovalori(j) + 1.d0
+      end if
 
    write(*,*)"x=",x
 

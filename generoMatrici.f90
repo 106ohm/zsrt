@@ -79,7 +79,7 @@ end do
 
 do i=1,n
    rnd = sum(S(i,:))
-   S(i,i) = (i+2)*1.d-1 + rnd
+   S(i,i) = i*1.d0 + rnd
 end do
 
 !!$do i=1,n
