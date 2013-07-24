@@ -34,7 +34,7 @@ machinePrecision=epsilon(1.d0)
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 3
+verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -402,12 +402,12 @@ do while (dim <= n)
 
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
-      call numAutovaloriPrimaDiX(a,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+      call numAutovaloriPrimaDiX(a,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
       k1 = kappa+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
       !ATTENZIONE: c'e` qualche problema con k2
-      call numAutovaloriPrimaDiX(b,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+      call numAutovaloriPrimaDiX(b,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
       !k2=kappa+1
       k2=numAut
       
@@ -445,7 +445,7 @@ do while (dim <= n)
 
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            call numAutovaloriPrimaDiX(x,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+            call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
             kappa=numAut
 
             if ( verbose >= 3 ) then
@@ -480,20 +480,20 @@ do while (dim <= n)
 
                call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
                     Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(aj,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+               call numAutovaloriPrimaDiX(aj,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
                kappa=numAut
 
                write(*,*)"kappa di aj=", kappa
             
                call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
                     Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(bj,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+               call numAutovaloriPrimaDiX(bj,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
                kappa=numAut
                write(*,*)"kappa di bj=", kappa
                
                call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(x,n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+               call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
                kappa=numAut
             end if
             
@@ -681,7 +681,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 1000 ) then
+   if ( l >= 150 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -779,7 +779,7 @@ do while ( .TRUE. )
    !calcolo (12), (13) e (14)
 20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
    Sfine, fPrimo, fSecondo, kappa)
-   call numAutovaloriPrimaDiX(xl(0),n,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+   call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
    kappa=numAut
 
    !aggiorno [aj, bj] secondo il nuovo kappa
@@ -1156,6 +1156,14 @@ UPLO = "L"
 !!$A = matmul(matmul(S,T),transpose(S)) - xI
 
 A = T - matmul(xI,S)
+
+do i=1,n
+   do j=1,n
+      if ( abs(A(i,j))<=machinePrecision ) then
+         A(i,j)=0.d0
+      end if
+   end do
+end do
 
 !stampo la matrice A
 !write(*,*)"matrice A"
