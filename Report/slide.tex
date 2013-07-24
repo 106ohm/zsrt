@@ -235,6 +235,10 @@ But $T$ is symmetric, so $sub=super$. We define and use
 
 with $T(:,0)=diag$ and $T(:,1)=super$.
 
+\begin{os}
+  We don't use T(n,1) and S(n,1). 
+\end{os}
+
 \end{frame}
 
 \section{Laguerre's method}
@@ -244,11 +248,11 @@ with $T(:,0)=diag$ and $T(:,1)=super$.
 
 $\effe{T,S}{\lambda}$ is a polynomial with only real zeros; we call them
 \begin{equation*}
-  \lambda_1 < \lambda_2 < \dots < \lambda_n
+  \lambda_1 \le \lambda_2 \le \dots \le \lambda_n
 \end{equation*}
 
 where we count with multiplicity.\\ 
-If $\lambda_m$ and $\lambda_{m+1}$ are simple zeros (mlt=1), then we consider now the quadric
+If $\lambda_m$ and $\lambda_{m+1}$ are simple zeros (mlt=1), then we consider the quadric
 
 \begin{equation*}
   g_{u}(X) = (x-X)^2 \sum_{i=1}^n \frac{(u-\lambda_i)^2}{(x-\lambda_i)^2} - (u-X)^2
@@ -391,6 +395,61 @@ Consider $(\hat T, \hat S)$ with
  \hat T &= \begin{bmatrix} T_{0} & 0\\ 0 & T_{1} \end{bmatrix}\\
  \hat S &= \begin{bmatrix} S_{0} & 0\\ 0 & S_{1} \end{bmatrix}\\
 \end{align*}
+
+and let be
+
+\begin{equation*}
+  \hat\lambda_1 \le \hat\lambda_2 \le \dots \le \hat\lambda_n
+\end{equation*}
+
+eigenvalues of $(\hat T, \hat S)$, then
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Split}
+
+\begin{align*}
+  -\infty < &\lambda_1 \le \hat\lambda_1 \\
+  \hat\lambda_{i-1} \le &\lambda_i \le \hat\lambda_{i+1} \\
+  \hat\lambda_n \le &\lambda_n < \infty
+\end{align*}
+
+with $i=2,3,\dots,n-1$.
+
+\begin{os}
+It's possible that
+
+\begin{tikzpicture}
+  \draw[->] (-2,0) -- (9,0); 
+  \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,0) {};
+  \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,0) {};
+  \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,0) {};
+  \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,0) {};
+\end{tikzpicture}
+
+\begin{tikzpicture}
+ \draw[->] (-2,0) -- (9,0); 
+ \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,0) {};
+ \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,0) {};
+ \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,0) {};
+\end{tikzpicture}
+
+and all together:
+
+\begin{tikzpicture}
+ \draw[->] (-2,0) -- (9,0); 
+ \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,0) {};
+  \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,0) {};
+  \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,0) {};
+  \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,0) {};
+ \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,0) {};
+ \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,0) {};
+ \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,0) {};
+\end{tikzpicture}
+
+\end{os}
+
 \end{frame}
 
 \frame{

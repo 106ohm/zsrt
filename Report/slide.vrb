@@ -13,3 +13,7 @@ But $T$ is symmetric, so $sub=super$. We define and use
 
 with $T(:,0)=diag$ and $T(:,1)=super$.
 
+\begin{os}
+  We don't use T(n,1) and S(n,1).
+\end{os}
+

@@ -90,8 +90,12 @@
 \headcommand {\slideentry {4}{0}{12}{17/17}{}{0}}
 \defcounter {refsection}{0}\relax 
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@partpages {1}{17}}
-\headcommand {\beamer@subsectionpages {16}{17}}
-\headcommand {\beamer@sectionpages {16}{17}}
-\headcommand {\beamer@documentpages {17}}
-\headcommand {\def \inserttotalframenumber {16}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\slideentry {4}{0}{13}{18/18}{}{0}}
+\defcounter {refsection}{0}\relax 
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@partpages {1}{18}}
+\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\beamer@sectionpages {16}{18}}
+\headcommand {\beamer@documentpages {18}}
+\headcommand {\def \inserttotalframenumber {17}}
