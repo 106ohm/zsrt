@@ -34,7 +34,7 @@ machinePrecision=epsilon(1.d0)
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni 
-verbose = 3
+verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -830,8 +830,6 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
-integer, parameter :: dq=16
-
 real(dp), intent(IN) :: x
 
 integer, intent(IN) :: n
@@ -848,21 +846,15 @@ integer :: i, j, k, l
 
 integer :: verboseCalcoli
 
-real(dq), dimension(-2:0) :: xi, eta, zeta
+real(dp), dimension(-2:0) :: xi, eta, zeta
 
-real(dq) :: machinePrecision, zero, uno, due
+real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 4
+verboseCalcoli = 0
 
-zero= z'00000000000000000000000000000000'
-
-uno = z'3fff0000000000000000000000000000'
-
-due = uno+uno
-
-machinePrecision=epsilon(uno)
+machinePrecision=epsilon(1.d0)
 
 !ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
 !da Tinizio e da Sinizio. Si noti che T(:,0) ha n elementi,
@@ -879,24 +871,24 @@ machinePrecision=epsilon(uno)
 
 kappa = 0
 
-xi(-2) = zero
+xi(-2) = 0.d0
 
-xi(-1) = (T(Tinizio,0) - x * S(Sinizio,0))*uno
-if ( abs(xi(-1)) <= machinePrecision ) then
-   xi(-1) = T(Tinizio,0) * machinePrecision**2
+xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
+if ( xi(-1) == 0 ) then
+   xi(-1) = T(Tinizio,0)* machinePrecision**2
 end if
 
 xi(0)=xi(-1)
 
-if ( xi(0) <= zero ) then
+if ( xi(0) <= 0.d0 ) then
    kappa = kappa+1
 end if
 
-eta(-2) = zero
+eta(-2) = 0.d0
 eta(-1) = S(Sinizio,0)/xi(0)
 eta(0) = eta(-1)
 
-zeta(-2) = zero
+zeta(-2) = 0.d0
 zeta(-1) = zeta(-2)
 zeta(0) = zeta(-1)
 
@@ -919,14 +911,14 @@ do i=1,dim-1
       xi(-1)
    end if
 
-   if ( xi(0) <= zero ) then
+   if ( xi(0) <= 0.d0 ) then
       kappa = kappa+1
    end if
 
    !mi occupo di eta:
    !divido in due tappe il calcolo.
 
-   eta(0) =due*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
+   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
    S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
    x*S(Sinizio+i-1,1))**2*eta(-2)
       
@@ -944,7 +936,7 @@ do i=1,dim-1
    !mi occupo di zeta: 
    !divido in due tappe il calcolo.
       
-   zeta(0) = due*S(Sinizio+i-1,1)**2 + &
+   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
    4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
    S(Sinizio+i-1,1)*eta(-2) - &
    ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
@@ -955,7 +947,7 @@ do i=1,dim-1
    end if
 
    zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
-   zeta(-1) + due*S(Sinizio+i,0)*eta(-1) - &
+   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
    zeta(0)/xi(-1) )/xi(0)
    
    if ( abs(zeta(0))<= machinePrecision ) then
@@ -963,7 +955,7 @@ do i=1,dim-1
    end if
 
 
-   if ( verboseCalcoli >= 5 ) then
+   if ( verboseCalcoli >= 4 ) then
       write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
       write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
       write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
@@ -989,10 +981,6 @@ end do
 !immagazzino i risultati in variabili dal nome piu` evocativo
 fPrimo = - eta(0)
 fSecondo = zeta(0)
-
-if ( verboseCalcoli >= 4 ) then
-   write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
-end if
 
 end subroutine calcoli
 

@@ -1,3 +1,21 @@
+ en=           4
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
  i)
  
  
@@ -7,109 +25,2062 @@
  
  
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ fPrimo=  -10.000933425099074      fSecondo=   70.050950283879644     
+ fPrimo=   1442.9670476362367      fSecondo=   13919.343246482471     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           4
+ -------------------------------------
+ fPrimo=   14669773.466764690      fSecondo=   141992102.52420303     
+ work in progres...
+ x=  0.99930569018956561      j=           1 kappa=           3
+ fPrimo=   80251.107611472311      fSecondo=   1285648.5784545080     
+ work in progres...
+ x=  0.49965284509478280      j=           1 kappa=           3
+ fPrimo=  -18210.615274474567      fSecondo=   630892.46429868985     
+ work in progres...
+ x=  0.24982642254739140      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.24982642254739140      j=           1 kappa=           0
+ aj=  0.24982642254739140      bj=  0.49965284509478280     
+ fPrimo=  -18210.615274474567      fSecondo=   630892.46429868985     
+ kappa di aj=           0
+ fPrimo=   80251.107611472311      fSecondo=   1285648.5784545080     
+ kappa di bj=           3
+ fPrimo=  -18210.615274474567      fSecondo=   630892.46429868985     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.24982642254739140      bj=  0.49965284509478280     
+ mi muovo verso destra
+ xl(0)=  0.24988138788403069     
+ fPrimo=   2313843429026.2046      fSecondo=  -80261178626572.047     
+ mi muovo verso sinistra
+ xl(0)=  0.24988138788359851     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -14674794.729795240      fSecondo=  -235137665.74839091     
+ work in progres...
+ x=  0.49964032413707093      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.49964032413707093      j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=  0.49964032413707093     
+ fPrimo=  -10.000933425099074      fSecondo=   70.050950283879644     
+ kappa di aj=           0
+ fPrimo=  -14674794.729795240      fSecondo=  -235137665.74839091     
+ kappa di bj=           2
+ fPrimo=  -14674794.729795240      fSecondo=  -235137665.74839091     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=  0.49964032413707093     
+ mi muovo verso sinistra
+ xl(0)=  0.49964024625820103     
+ fPrimo=  -6845516.8745317664      fSecondo=  -109687440.81406400     
+ mi muovo verso sinistra
+ xl(0)=  0.49964007930870180     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   29205203.455064245      fSecondo=   263316700.14189556     
+ work in progres...
+ x=  0.33314324347666818      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.33314324347666818      j=           3 kappa=           2
+ aj=  0.33314324347666818      bj=   1.0000000000000002     
+ fPrimo=   29205203.455064245      fSecondo=   263316700.14189556     
+ kappa di aj=           2
+ fPrimo=   1442.9670476362367      fSecondo=   13919.343246482471     
+ kappa di bj=           4
+ fPrimo=   29205203.455064245      fSecondo=   263316700.14189556     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.33314324347666818      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.33314328260864501     
+ fPrimo=   13624410.637447307      fSecondo=   122838589.60252278     
+ mi muovo verso destra
+ xl(0)=  0.33314336649172849     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -50085470.811532043      fSecondo=   1737333239.1278286     
+ work in progres...
+ x=  0.24988136791771751      j=           4 kappa=           0
+ fPrimo=   11.398483338737750      fSecondo=   40.357790152288750     
+ work in progres...
+ x=  0.62494068395885882      j=           4 kappa=           3
+ fine lavoro:
+ x=  0.62494068395885882      j=           4 kappa=           3
+ aj=  0.62494068395885882      bj=   1.0000000000000002     
+ fPrimo=   11.398483338737750      fSecondo=   40.357790152288750     
+ kappa di aj=           3
+ fPrimo=   1442.9670476362367      fSecondo=   13919.343246482471     
+ kappa di bj=           4
+ fPrimo=   11.398483338737750      fSecondo=   40.357790152288750     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.62494068395885882      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.74953831541317251     
+ fPrimo=   4.4018824568017925      fSecondo=  -22.411415537556799     
+ mi muovo verso destra
+ xl(0)=  0.91924234309686215     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -26.001125399261415      fSecondo=   502.12217307601867     
+ fPrimo=   4.7587993154770007      fSecondo=   16.981003608725047     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           4
+ -------------------------------------
+ fPrimo=  -22418247.905892305      fSecondo=  -2729673824.0254278     
+ work in progres...
+ x=  0.19994851994444018      j=           1 kappa=           3
+ fPrimo=  -88.305240838049784      fSecondo=   5331.0776316413430     
+ work in progres...
+ x=   9.9974259972220092E-002 j=           1 kappa=           0
+ fine lavoro:
+ x=   9.9974259972220092E-002 j=           1 kappa=           0
+ aj=   9.9974259972220092E-002 bj=  0.19994851994444018     
+ fPrimo=  -88.305240838049784      fSecondo=   5331.0776316413430     
+ kappa di aj=           0
+ fPrimo=  -22418247.905892305      fSecondo=  -2729673824.0254278     
+ kappa di bj=           3
+ fPrimo=  -88.305240838049784      fSecondo=   5331.0776316413430     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   9.9974259972220092E-002 bj=  0.19994851994444018     
+ mi muovo verso destra
+ xl(0)=  0.12055187738472775     
+ fPrimo=  -304.64447521492843      fSecondo=   39324.746578687205     
+ mi muovo verso destra
+ xl(0)=  0.12489082443825635     
+ fPrimo=  -10528.440702150208      fSecondo=   1945701.2156424173     
+ mi muovo verso destra
+ xl(0)=  0.12498665024744079     
+ fPrimo=  -738311371.42484844      fSecondo=   137868125148.53604     
+ mi muovo verso sinistra
+ xl(0)=  0.12498664869950675     
+ fPrimo=  -344545370.16486621      fSecondo=   64338459383.298111     
+ mi muovo verso sinistra
+ xl(0)=  0.12498664538250528     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -9465822.9285842944      fSecondo=  -681129529.16166246     
+ work in progres...
+ x=  0.16664519215407417      j=           2 kappa=           3
+ fPrimo=  -61.374615845914683      fSecondo=   2691.4308167950153     
+ work in progres...
+ x=   8.3322596077037084E-002 j=           2 kappa=           0
+ fPrimo=  -362742.50204706454      fSecondo=   67716118.425709292     
+ work in progres...
+ x=  0.12498389411555563      j=           2 kappa=           0
+ fPrimo=   317.09770099173841      fSecondo=  -17002.440769614030     
+ work in progres...
+ x=  0.14581454313481490      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.14581454313481490      j=           2 kappa=           2
+ aj=  0.12498389411555563      bj=  0.14581454313481490     
+ fPrimo=  -362742.50204706454      fSecondo=   67716118.425709292     
+ kappa di aj=           0
+ fPrimo=   317.09770099173841      fSecondo=  -17002.440769614030     
+ kappa di bj=           2
+ fPrimo=   317.09770099173841      fSecondo=  -17002.440769614030     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=  0.12498389411555563      bj=  0.14581454313481490     
+ mi muovo verso sinistra
+ xl(0)=  0.14289735955009142     
+ fPrimo=   16020.335351619509      fSecondo=  -127052.53102937939     
+ mi muovo verso sinistra
+ xl(0)=  0.14283495432872376     
+ fPrimo=  -89574319.490574822      fSecondo=   623059599.38066566     
+ mi muovo verso destra
+ xl(0)=  0.14283496549263819     
+ fPrimo=   472889374155.13873      fSecondo=  -3289398824592.8481     
+ mi muovo verso destra
+ xl(0)=  0.14283496549505495     
+ fPrimo=   220659237197.88348      fSecondo=  -1534896487610.5420     
+ mi muovo verso destra
+ xl(0)=  0.14283496550023422     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   6281228.2265780000      fSecondo=  -43707601.774184562     
+ work in progres...
+ x=  0.14283512466481715      j=           3 kappa=           1
+ fPrimo=   9.7346317590327640      fSecondo=   70.968619733553865     
+ work in progres...
+ x=  0.57141756233240870      j=           3 kappa=           4
+ fPrimo=   20.583862996904532      fSecondo=   315.40428878400394     
+ work in progres...
+ x=  0.35712634349861294      j=           3 kappa=           4
+ fPrimo=   49.314010336168188      fSecondo=   1737.7751308053660     
+ work in progres...
+ x=  0.24998073408171506      j=           3 kappa=           4
+ fPrimo=  -216.13629256610440      fSecondo=  -34711.702128170087     
+ work in progres...
+ x=  0.19640792937326612      j=           3 kappa=           3
+ fine lavoro:
+ x=  0.19640792937326612      j=           3 kappa=           3
+ aj=  0.14283512466481715      bj=  0.19640792937326612     
+ fPrimo=   6281228.2265780000      fSecondo=  -43707601.774184562     
+ kappa di aj=           1
+ fPrimo=  -216.13629256610440      fSecondo=  -34711.702128170087     
+ kappa di bj=           3
+ fPrimo=  -216.13629256610440      fSecondo=  -34711.702128170087     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.14283512466481715      bj=  0.19640792937326612     
+ mi muovo verso sinistra
+ xl(0)=  0.19252872944888932     
+ fPrimo=  -61.200203445061284      fSecondo=  -16532.907126656610     
+ mi muovo verso sinistra
+ xl(0)=  0.18502444037348934     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -846176867.89055216      fSecondo=   158010326042.83859     
+ work in progres...
+ x=  0.12498665042009692      j=           4 kappa=           1
+ fPrimo=   9.9518769195609078      fSecondo=   74.165967084828509     
+ work in progres...
+ x=  0.56249332521004858      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.56249332521004858      j=           4 kappa=           4
+ aj=  0.12498665042009692      bj=  0.56249332521004858     
+ fPrimo=  -846176867.89055216      fSecondo=   158010326042.83859     
+ kappa di aj=           1
+ fPrimo=   9.9518769195609078      fSecondo=   74.165967084828509     
+ kappa di bj=           4
+ fPrimo=   9.9518769195609078      fSecondo=   74.165967084828509     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=  0.12498665042009692      bj=  0.56249332521004858     
+ mi muovo verso sinistra
+ xl(0)=  0.35447300246998936     
+ fPrimo=   20.875545686544530      fSecondo=   324.33239716686199     
+ mi muovo verso sinistra
+ xl(0)=  0.25634156438953909     
+ fPrimo=   45.298709503612578      fSecondo=   1478.0698500735193     
+ mi muovo verso sinistra
+ xl(0)=  0.21337029383419190     
+ fPrimo=   121.38317610072232      fSecondo=   8399.0238400992275     
+ mi muovo verso sinistra
+ xl(0)=  0.20068473044627641     
+ fPrimo=   1418.0622407715609      fSecondo=   164901.62894907701     
+ mi muovo verso sinistra
+ xl(0)=  0.19994867247159145     
+ fPrimo=   9264248.1100530047      fSecondo=   1128015290.1612134     
+ mi muovo verso sinistra
+ xl(0)=  0.19994856452904072     
+ fPrimo=  -64826223612.007576      fSecondo=  -7893299103195.0830     
+ mi muovo verso destra
+ xl(0)=  0.19994856454446658     
+ fPrimo=   452401519508105.63      fSecondo=   55084814534805352.     
+ mi muovo verso destra
+ xl(0)=  0.19994856454446910     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            9  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -42.000786292971462      fSecondo=   1318.2005795711484     
+ fPrimo=   4.4265846903498653      fSecondo=   14.697135762261304     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           4
+ -------------------------------------
+ fPrimo=  -4461273.9271538323      fSecondo=  -1566038836.1734583     
+ work in progres...
+ x=  0.11110201097015662      j=           1 kappa=           3
+ fPrimo=  -104.79293644335208      fSecondo=   8055.6160385744215     
+ work in progres...
+ x=   5.5551005485078311E-002 j=           1 kappa=           0
+ fine lavoro:
+ x=   5.5551005485078311E-002 j=           1 kappa=           0
+ aj=   5.5551005485078311E-002 bj=  0.11110201097015662     
+ fPrimo=  -104.79293644335208      fSecondo=   8055.6160385744215     
+ kappa di aj=           0
+ fPrimo=  -4461273.9271538323      fSecondo=  -1566038836.1734583     
+ kappa di bj=           3
+ fPrimo=  -104.79293644335208      fSecondo=   8055.6160385744215     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   5.5551005485078311E-002 bj=  0.11110201097015662     
+ mi muovo verso destra
+ xl(0)=   7.4645475820858731E-002
+ fPrimo=  -243.63122062983194      fSecondo=   39988.091686012944     
+ mi muovo verso destra
+ xl(0)=   8.1977571362394960E-002
+ fPrimo=  -944.99283853446377      fSecondo=   324062.42644149513     
+ mi muovo verso destra
+ xl(0)=   8.3306209418607391E-002
+ fPrimo=  -58624.478673387071      fSecondo=   26613579.781701591     
+ mi muovo verso destra
+ xl(0)=   8.3323333578759276E-002
+ fPrimo=  -17956087245.807991      fSecondo=   8187846547316.5098     
+ mi muovo verso sinistra
+ xl(0)=   8.3323333515111939E-002
+ fPrimo=  -8379511736.2461548      fSecondo=   3820996977770.7446     
+ mi muovo verso sinistra
+ xl(0)=   8.3323333378724856E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -1623671.4876740801      fSecondo=  -259770214.46114889     
+ work in progres...
+ x=   9.9990664493835188E-002 j=           2 kappa=           3
+ fPrimo=  -90.811949117974024      fSecondo=   6081.9534186675373     
+ work in progres...
+ x=   4.9995332246917594E-002 j=           2 kappa=           0
+ fPrimo=  -250.59511415274977      fSecondo=   42073.663062325468     
+ work in progres...
+ x=   7.4992998370376387E-002 j=           2 kappa=           0
+ fPrimo=  -175.94895048663767      fSecondo=  -120932.63058745363     
+ work in progres...
+ x=   8.7491831432105788E-002 j=           2 kappa=           1
+ fine lavoro:
+ x=   8.7491831432105788E-002 j=           2 kappa=           1
+ aj=   8.7491831432105788E-002 bj=   9.9990664493835188E-002
+ fPrimo=  -175.94895048663767      fSecondo=  -120932.63058745363     
+ kappa di aj=           1
+ fPrimo=  -1623671.4876740801      fSecondo=  -259770214.46114889     
+ kappa di bj=           3
+ fPrimo=  -175.94895048663767      fSecondo=  -120932.63058745363     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   8.7491831432105788E-002 bj=   9.9990664493835188E-002
+ mi muovo verso destra
+ xl(0)=   9.0082897434946435E-002
+ fPrimo=  -1226.4499929584244      fSecondo=  -32975.636713763161     
+ mi muovo verso destra
+ xl(0)=   9.0889468837996132E-002
+ fPrimo=  -110755.72049148566      fSecondo=   5985573.1614532052     
+ mi muovo verso destra
+ xl(0)=   9.0898499920641751E-002
+ fPrimo=   730222030.51306677      fSecondo=  -40101010523.158417     
+ mi muovo verso destra
+ xl(0)=   9.0898501485723399E-002
+ fPrimo=   340742488.12606180      fSecondo=  -18712330194.752995     
+ mi muovo verso destra
+ xl(0)=   9.0898504839743155E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   1513120.9462411639      fSecondo=  -83191295.654914647     
+ work in progres...
+ x=   9.0899159324108761E-002 j=           3 kappa=           1
+ fPrimo=   8.9102817574082334      fSecondo=   59.541451314040870     
+ work in progres...
+ x=  0.54544957966205454      j=           3 kappa=           4
+ fPrimo=   18.068892743252896      fSecondo=   244.71135628232793     
+ work in progres...
+ x=  0.31817436949308164      j=           3 kappa=           4
+ fPrimo=   37.314288142790247      fSecondo=   1041.0119674909536     
+ work in progres...
+ x=  0.20453676440859520      j=           3 kappa=           4
+ fPrimo=   81.384549115346914      fSecondo=   4888.6239638791640     
+ work in progres...
+ x=  0.14771796186635197      j=           3 kappa=           4
+ fPrimo=   236.58805329685256      fSecondo=   36443.115344426609     
+ work in progres...
+ x=  0.11930856059523037      j=           3 kappa=           4
+ fPrimo=   145.18804234564061      fSecondo=  -52030.567017146059     
+ work in progres...
+ x=  0.10510385995966956      j=           3 kappa=           3
+ fine lavoro:
+ x=  0.10510385995966956      j=           3 kappa=           3
+ aj=   9.0899159324108761E-002 bj=  0.10510385995966956     
+ fPrimo=   1513120.9462411639      fSecondo=  -83191295.654914647     
+ kappa di aj=           1
+ fPrimo=   145.18804234564061      fSecondo=  -52030.567017146059     
+ kappa di bj=           3
+ fPrimo=   145.18804234564061      fSecondo=  -52030.567017146059     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   9.0899159324108761E-002 bj=  0.10510385995966956     
+ mi muovo verso sinistra
+ xl(0)=  0.10137956948477526     
+ fPrimo=   768.19585022565650      fSecondo=   48608.001011634849     
+ mi muovo verso sinistra
+ xl(0)=  0.10002056148897311     
+ fPrimo=   34228.357533846938      fSecondo=   5396855.9419212500     
+ mi muovo verso sinistra
+ xl(0)=   9.9991278418555124E-002
+ fPrimo=  -529815072.83524251      fSecondo=  -84739490481.305298     
+ mi muovo verso sinistra
+ xl(0)=   9.9991276261468615E-002
+ fPrimo=  -247237194.89173228      fSecondo=  -39543563357.302841     
+ mi muovo verso sinistra
+ xl(0)=   9.9991271638957338E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   5394917.2873499505      fSecondo=  -2460162427.5576844     
+ work in progres...
+ x=   8.3323518986431616E-002 j=           4 kappa=           1
+ fPrimo=   8.9861514845045090      fSecondo=   60.559555093975675     
+ work in progres...
+ x=  0.54166175949321593      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.54166175949321593      j=           4 kappa=           4
+ aj=   8.3323518986431616E-002 bj=  0.54166175949321593     
+ fPrimo=   5394917.2873499505      fSecondo=  -2460162427.5576844     
+ kappa di aj=           1
+ fPrimo=   8.9861514845045090      fSecondo=   60.559555093975675     
+ kappa di bj=           4
+ fPrimo=   8.9861514845045090      fSecondo=   60.559555093975675     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   8.3323518986431616E-002 bj=  0.54166175949321593     
+ mi muovo verso sinistra
+ xl(0)=  0.31069594618886670     
+ fPrimo=   18.702204207501314      fSecondo=   262.15208697082886     
+ mi muovo verso sinistra
+ xl(0)=  0.19983874663468162     
+ fPrimo=   39.042961724268977      fSecondo=   1139.3428217727262     
+ mi muovo verso sinistra
+ xl(0)=  0.14698844287548804     
+ fPrimo=   82.671700429344497      fSecondo=   5041.7847925753413     
+ mi muovo verso sinistra
+ xl(0)=  0.12256745029427965     
+ fPrimo=   188.55415420526859      fSecondo=   24342.630375096393     
+ mi muovo verso sinistra
+ xl(0)=  0.11291300475499094     
+ fPrimo=   708.77964761126123      fSecondo=   188296.44211497033     
+ mi muovo verso sinistra
+ xl(0)=  0.11112437440353218     
+ fPrimo=   45338.144674348245      fSecondo=   15848096.782055601     
+ mi muovo verso sinistra
+ xl(0)=  0.11110223238816101     
+ fPrimo=  -370778355.76843607      fSecondo=  -130148700599.18941     
+ mi muovo verso destra
+ xl(0)=  0.11110223508518879     
+ fPrimo=   2999233199803.2988      fSecondo=   1052774787673954.3     
+ mi muovo verso destra
+ xl(0)=  0.11110223508556985     
+ fPrimo=   1399556508550.4124      fSecondo=   491264835997873.50     
+ mi muovo verso destra
+ xl(0)=  0.11110223508638643     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie           11  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -58.000589927391047      fSecondo=   2518.2275716556233     
+ fPrimo=   4.2980951670616090      fSecondo=   13.856067252816899     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           4
+ -------------------------------------
+ fPrimo=  -61239649.074626975      fSecondo=  -42746145901.432297     
+ work in progres...
+ x=   7.6916102360199370E-002 j=           1 kappa=           3
+ fPrimo=  -133.38394044182758      fSecondo=   13208.769844839582     
+ work in progres...
+ x=   3.8458051180099685E-002 j=           1 kappa=           0
+ fine lavoro:
+ x=   3.8458051180099685E-002 j=           1 kappa=           0
+ aj=   3.8458051180099685E-002 bj=   7.6916102360199370E-002
+ fPrimo=  -133.38394044182758      fSecondo=   13208.769844839582     
+ kappa di aj=           0
+ fPrimo=  -61239649.074626975      fSecondo=  -42746145901.432297     
+ kappa di bj=           3
+ fPrimo=  -133.38394044182758      fSecondo=   13208.769844839582     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   3.8458051180099685E-002 bj=   7.6916102360199370E-002
+ mi muovo verso destra
+ xl(0)=   5.3753904210332132E-002
+ fPrimo=  -291.59482373922123      fSecondo=   60883.752897179438     
+ mi muovo verso destra
+ xl(0)=   6.0372554247783435E-002
+ fPrimo=  -780.57540759134486      fSecondo=   350666.47206604120     
+ mi muovo verso destra
+ xl(0)=   6.2358646716355326E-002
+ fPrimo=  -7631.8755125772204      fSecondo=   6038755.4112225026     
+ mi muovo verso destra
+ xl(0)=   6.2497061532698357E-002
+ fPrimo=  -12660975.089863062      fSecondo=   10671611800.866524     
+ mi muovo verso destra
+ xl(0)=   6.2497140518185723E-002
+ fPrimo=  -22498414440934.105      fSecondo=   18964053027532664.     
+ mi muovo verso destra
+ xl(0)=   6.2497140518230174E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -1507615.4245967870      fSecondo=  -421981117.02696353     
+ work in progres...
+ x=   7.1424270959359659E-002 j=           2 kappa=           3
+ fPrimo=  -121.90903543268908      fSecondo=   11052.054242906233     
+ work in progres...
+ x=   3.5712135479679830E-002 j=           2 kappa=           0
+ fPrimo=  -287.18566641217194      fSecondo=   59134.954993473206     
+ work in progres...
+ x=   5.3568203219519744E-002 j=           2 kappa=           0
+ fPrimo=  -1107316.0878601382      fSecondo=   932961043.93185008     
+ work in progres...
+ x=   6.2496237089439702E-002 j=           2 kappa=           0
+ fPrimo=   3253.3902653195451      fSecondo=  -773521.62646669301     
+ work in progres...
+ x=   6.6960254024399674E-002 j=           2 kappa=           2
+ fine lavoro:
+ x=   6.6960254024399674E-002 j=           2 kappa=           2
+ aj=   6.2496237089439702E-002 bj=   6.6960254024399674E-002
+ fPrimo=  -1107316.0878601382      fSecondo=   932961043.93185008     
+ kappa di aj=           0
+ fPrimo=   3253.3902653195451      fSecondo=  -773521.62646669301     
+ kappa di bj=           2
+ fPrimo=   3253.3902653195451      fSecondo=  -773521.62646669301     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   6.2496237089439702E-002 bj=   6.6960254024399674E-002
+ mi muovo verso sinistra
+ xl(0)=   6.6663521551460395E-002
+ fPrimo=   706656.70989714935      fSecondo=  -95558939.144402891     
+ mi muovo verso sinistra
+ xl(0)=   6.6662106572561400E-002
+ fPrimo=  -7693853972.6616068      fSecondo=   1036732542016.4841     
+ mi muovo verso destra
+ xl(0)=   6.6662106702535279E-002
+ fPrimo=   83590368695234.609      fSecondo=  -11263650702284576.     
+ mi muovo verso destra
+ xl(0)=   6.6662106702548948E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   1783714.0474374602      fSecondo=  -240690476.04726744     
+ work in progres...
+ x=   6.6662667257751371E-002 j=           3 kappa=           2
+ fine lavoro:
+ x=   6.6662667257751371E-002 j=           3 kappa=           2
+ aj=   6.6662667257751371E-002 bj=   1.0000000000000002     
+ fPrimo=   1783714.0474374602      fSecondo=  -240690476.04726744     
+ kappa di aj=           2
+ fPrimo=   4.2980951670616090      fSecondo=   13.856067252816899     
+ kappa di bj=           4
+ fPrimo=   1783714.0474374602      fSecondo=  -240690476.04726744     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   6.6662667257751371E-002 bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=   6.6663307947745151E-002
+ fPrimo=   832325.43107316713      fSecondo=  -112492574.70795120     
+ mi muovo verso destra
+ xl(0)=   6.6664680909653232E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   8282192.3334477860      fSecondo=  -6981513885.4478016     
+ work in progres...
+ x=   6.2497261253132479E-002 j=           4 kappa=           0
+ fPrimo=   8.6610797713560910      fSecondo=   56.262268688597779     
+ work in progres...
+ x=  0.53124863062656635      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.53124863062656635      j=           4 kappa=           4
+ aj=   6.2497261253132479E-002 bj=  0.53124863062656635     
+ fPrimo=   8282192.3334477860      fSecondo=  -6981513885.4478016     
+ kappa di aj=           0
+ fPrimo=   8.6610797713560910      fSecondo=   56.262268688597779     
+ kappa di bj=           4
+ fPrimo=   8.6610797713560910      fSecondo=   56.262268688597779     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   6.2497261253132479E-002 bj=  0.53124863062656635     
+ mi muovo verso sinistra
+ xl(0)=  0.29157764527572883     
+ fPrimo=   18.011193615316468      fSecondo=   243.27222255987655     
+ mi muovo verso sinistra
+ xl(0)=  0.17635686814725976     
+ fPrimo=   37.483072588957384      fSecondo=   1052.9080625228783     
+ mi muovo verso sinistra
+ xl(0)=  0.12105511877652060     
+ fPrimo=   78.262051880375026      fSecondo=   4576.5873100615599     
+ mi muovo verso sinistra
+ xl(0)=   9.4702900247114280E-002
+ fPrimo=   165.88328639632604      fSecondo=   20277.520229755162     
+ mi muovo verso sinistra
+ xl(0)=   8.2552915075116001E-002
+ fPrimo=   380.03416287135150      fSecondo=   98446.931024787729     
+ mi muovo verso sinistra
+ xl(0)=   7.7788245184304314E-002
+ fPrimo=   1458.9269003211309      fSecondo=   776998.78347159724     
+ mi muovo verso sinistra
+ xl(0)=   7.6926147458781305E-002
+ fPrimo=   100052.10273249172      fSecondo=   69573403.982278258     
+ mi muovo verso sinistra
+ xl(0)=   7.6916117747776416E-002
+ fPrimo=  -1063656846.9756519      fSecondo=  -742443279319.99353     
+ mi muovo verso destra
+ xl(0)=   7.6916118687928942E-002
+ fPrimo=   11153456363860.857      fSecondo=   7785223020498416.0     
+ mi muovo verso destra
+ xl(0)=   7.6916118688031401E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie           11  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -36.000198282976037      fSecondo=   1092.2235701573045     
+ fPrimo=   1447.7252267788024      fSecondo=   27671.534490644968     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           8
+ -------------------------------------
+ fPrimo=  -42043458.032477707      fSecondo=  -2694730321.1507254     
+ work in progres...
+ x=  0.24988138788359851      j=           1 kappa=           4
+ fPrimo=  -21868.947256380878      fSecondo=   4786293.6092145136     
+ work in progres...
+ x=  0.12494069394179926      j=           1 kappa=           0
+ fine lavoro:
+ x=  0.12494069394179926      j=           1 kappa=           0
+ aj=  0.12494069394179926      bj=  0.24988138788359851     
+ fPrimo=  -21868.947256380878      fSecondo=   4786293.6092145136     
+ kappa di aj=           0
+ fPrimo=  -42043458.032477707      fSecondo=  -2694730321.1507254     
+ kappa di bj=           4
+ fPrimo=  -21868.947256380878      fSecondo=   4786293.6092145136     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=  0.12494069394179926      bj=  0.24988138788359851     
+ mi muovo verso destra
+ xl(0)=  0.12498665146653533     
+ fPrimo=  -7388370249.1224661      fSecondo=   1625153696486.9529     
+ mi muovo verso sinistra
+ xl(0)=  0.12498665131185208     
+ fPrimo=  -3447906369.5354295      fSecondo=   758405101240.75452     
+ mi muovo verso sinistra
+ xl(0)=  0.12498665098038797     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            4  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -3193291.4671931840      fSecondo=  -126603157.13243549     
+ work in progres...
+ x=  0.49964007930870180      j=           2 kappa=           6
+ fPrimo=  -16254.392601418582      fSecondo=  -1045411.3144165020     
+ work in progres...
+ x=  0.24982003965435090      j=           2 kappa=           4
+ fPrimo=  -13159.083793993052      fSecondo=   2870486.3556668418     
+ work in progres...
+ x=  0.12491001982717545      j=           2 kappa=           0
+ fPrimo=  -19.991196363737139      fSecondo=  -9318.4355394804097     
+ work in progres...
+ x=  0.18736502974076319      j=           2 kappa=           3
+ fPrimo=  -31.117088679583805      fSecondo=  -15444.518601455000     
+ work in progres...
+ x=  0.15613752478396931      j=           2 kappa=           2
+ fine lavoro:
+ x=  0.15613752478396931      j=           2 kappa=           2
+ aj=  0.12491001982717545      bj=  0.15613752478396931     
+ fPrimo=  -13159.083793993052      fSecondo=   2870486.3556668418     
+ kappa di aj=           0
+ fPrimo=  -31.117088679583805      fSecondo=  -15444.518601455000     
+ kappa di bj=           2
+ fPrimo=  -31.117088679583805      fSecondo=  -15444.518601455000     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=  0.12491001982717545      bj=  0.15613752478396931     
+ mi muovo verso sinistra
+ xl(0)=  0.14793210029248285     
+ fPrimo=   147.86626568567249      fSecondo=  -21874.557022334713     
+ mi muovo verso sinistra
+ xl(0)=  0.14313710797946522     
+ fPrimo=   3285.4401531008616      fSecondo=  -161173.76340880297     
+ mi muovo verso sinistra
+ xl(0)=  0.14283498146913806     
+ fPrimo=   62571775.996283248      fSecondo=  -2757780707.2865458     
+ mi muovo verso destra
+ xl(0)=  0.14283499973386948     
+ fPrimo=   29197201.548354503      fSecondo=  -1286842638.2261660     
+ mi muovo verso destra
+ xl(0)=  0.14283503887653029     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   6355897.7983466219      fSecondo=   356953812.26892900     
+ work in progres...
+ x=  0.33314336649172849      j=           3 kappa=           6
+ fPrimo=  -13568.376278797356      fSecondo=  -384016.35185653140     
+ work in progres...
+ x=  0.16657168324586424      j=           3 kappa=           2
+ fine lavoro:
+ x=  0.16657168324586424      j=           3 kappa=           2
+ aj=  0.16657168324586424      bj=  0.33314336649172849     
+ fPrimo=  -13568.376278797356      fSecondo=  -384016.35185653140     
+ kappa di aj=           2
+ fPrimo=   6355897.7983466219      fSecondo=   356953812.26892900     
+ kappa di bj=           6
+ fPrimo=  -13568.376278797356      fSecondo=  -384016.35185653140     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=  0.16657168324586424      bj=  0.33314336649172849     
+ mi muovo verso destra
+ xl(0)=  0.16664530728850771     
+ fPrimo=   105178557.24493618      fSecondo=   2895370322.8632627     
+ mi muovo verso sinistra
+ xl(0)=  0.16664529778086512     
+ fPrimo=  -758804269414.58032      fSecondo=  -20888547794870.242     
+ mi muovo verso sinistra
+ xl(0)=  0.16664529777935899     
+ fPrimo=  -354083649666.04700      fSecondo=  -9747300511871.4531     
+ mi muovo verso sinistra
+ xl(0)=  0.16664529777613135     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -1.6275914584582765      fSecondo=  -170.82494808984578     
+ work in progres...
+ x=  0.91924234309686215      j=           4 kappa=           7
+ fPrimo= -0.74508913320660686      fSecondo=  -757.25917912349223     
+ work in progres...
+ x=  0.45962117154843107      j=           4 kappa=           6
+ fPrimo=   5.8742673033338084      fSecondo=  -4149.9873032705709     
+ work in progres...
+ x=  0.22981058577421554      j=           4 kappa=           4
+ fine lavoro:
+ x=  0.22981058577421554      j=           4 kappa=           4
+ aj=   0.0000000000000000      bj=  0.22981058577421554     
+ fPrimo=  -36.000198282976037      fSecondo=   1092.2235701573045     
+ kappa di aj=           0
+ fPrimo=   5.8742673033338084      fSecondo=  -4149.9873032705709     
+ kappa di bj=           4
+ fPrimo=   5.8742673033338084      fSecondo=  -4149.9873032705709     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   0.0000000000000000      bj=  0.22981058577421554     
+ mi muovo verso sinistra
+ xl(0)=  0.21393367971557570     
+ fPrimo=   76.985636947883378      fSecondo=  -814.00714861577819     
+ mi muovo verso sinistra
+ xl(0)=  0.20175218934635672     
+ fPrimo=   579.84430836161528      fSecondo=   27144.241130648919     
+ mi muovo verso sinistra
+ xl(0)=  0.19995334011575727     
+ fPrimo=   207646.98552739448      fSecondo=   11938476.329500405     
+ mi muovo verso sinistra
+ xl(0)=  0.19994852358317539     
+ fPrimo=  -1456956112.7969384      fSecondo=  -83811249563.839264     
+ mi muovo verso destra
+ xl(0)=  0.19994852426953785     
+ fPrimo=   10223282920013.736      fSecondo=   588093246777964.13     
+ mi muovo verso destra
+ xl(0)=  0.19994852426964965     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -160787910.02939269      fSecondo=   35367054389.459854     
+ work in progres...
+ x=  0.12498664538250528      j=           5 kappa=           1
+ fPrimo=   31.118772638278113      fSecondo=   656.46610693779769     
+ work in progres...
+ x=  0.56249332269125274      j=           5 kappa=           7
+ fPrimo=   119.17134862415614      fSecondo=   5026.1880992055649     
+ work in progres...
+ x=  0.34373998403687900      j=           5 kappa=           6
+ fPrimo=  -15.715778846474272      fSecondo=  -5285.6859711486777     
+ work in progres...
+ x=  0.23436331470969213      j=           5 kappa=           4
+ fine lavoro:
+ x=  0.23436331470969213      j=           5 kappa=           4
+ aj=  0.23436331470969213      bj=  0.34373998403687900     
+ fPrimo=  -15.715778846474272      fSecondo=  -5285.6859711486777     
+ kappa di aj=           4
+ fPrimo=   119.17134862415614      fSecondo=   5026.1880992055649     
+ kappa di bj=           6
+ fPrimo=  -15.715778846474272      fSecondo=  -5285.6859711486777     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=  0.23436331470969213      bj=  0.34373998403687900     
+ mi muovo verso destra
+ xl(0)=  0.24808041778697171     
+ fPrimo=  -521.36560818099656      fSecondo=  -37086.959418023602     
+ mi muovo verso destra
+ xl(0)=  0.24987986873192733     
+ fPrimo=  -647785.79292649275      fSecondo=  -41522682.313356735     
+ mi muovo verso destra
+ xl(0)=  0.24988141237573505     
+ fPrimo=   1391509943.4760795      fSecondo=   89187213608.503662     
+ mi muovo verso destra
+ xl(0)=  0.24988141319704227     
+ fPrimo=   649210151.31370831      fSecondo=   41610368678.496826     
+ mi muovo verso destra
+ xl(0)=  0.24988141495742325     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   102963963011.55284      fSecondo=  -4537993846805.8506     
+ work in progres...
+ x=  0.14283496550023422      j=           6 kappa=           1
+ fPrimo=   28.625245870487010      fSecondo=   569.22185068021452     
+ work in progres...
+ x=  0.57141748275011728      j=           6 kappa=           7
+ fPrimo=   63.006634568540711      fSecondo=   1986.9767269750037     
+ work in progres...
+ x=  0.35712622412517575      j=           6 kappa=           6
+ fine lavoro:
+ x=  0.35712622412517575      j=           6 kappa=           6
+ aj=  0.14283496550023422      bj=  0.35712622412517575     
+ fPrimo=   102963963011.55284      fSecondo=  -4537993846805.8506     
+ kappa di aj=           1
+ fPrimo=   63.006634568540711      fSecondo=   1986.9767269750037     
+ kappa di bj=           6
+ fPrimo=   63.006634568540711      fSecondo=   1986.9767269750037     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=  0.14283496550023422      bj=  0.35712622412517575     
+ mi muovo verso sinistra
+ xl(0)=  0.33453532328854158     
+ fPrimo=   745.49402128358759      fSecondo=   40116.185458951251     
+ mi muovo verso sinistra
+ xl(0)=  0.33314266144072874     
+ fPrimo=  -1824220.6828820461      fSecondo=  -102452397.19692220     
+ mi muovo verso destra
+ xl(0)=  0.33314320961158123     
+ fPrimo=   2828453460.5208130      fSecondo=   158849663543.68549     
+ mi muovo verso destra
+ xl(0)=  0.33314321001563851     
+ fPrimo=   1319491038.1610265      fSecondo=   74104349858.650848     
+ mi muovo verso destra
+ xl(0)=  0.33314321088177334     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   1.1991637412294132      fSecondo=  -8580.7010828741149     
+ work in progres...
+ x=  0.18502444037348934      j=           7 kappa=           3
+ fPrimo=   24.332082726151175      fSecondo=   425.47157657939078     
+ work in progres...
+ x=  0.59251222018674476      j=           7 kappa=           7
+ fine lavoro:
+ x=  0.59251222018674476      j=           7 kappa=           7
+ aj=  0.18502444037348934      bj=  0.59251222018674476     
+ fPrimo=   1.1991637412294132      fSecondo=  -8580.7010828741149     
+ kappa di aj=           3
+ fPrimo=   24.332082726151175      fSecondo=   425.47157657939078     
+ kappa di bj=           7
+ fPrimo=   24.332082726151175      fSecondo=   425.47157657939078     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=  0.18502444037348934      bj=  0.59251222018674476     
+ mi muovo verso sinistra
+ xl(0)=  0.51278278023306889     
+ fPrimo=   94.711597545321609      fSecondo=   3108.1851588819659     
+ mi muovo verso sinistra
+ xl(0)=  0.49969694966265055     
+ fPrimo=   17687.806037193077      fSecondo=   700591.36575346091     
+ mi muovo verso sinistra
+ xl(0)=  0.49964035012816754     
+ fPrimo=  -23734018.540534090      fSecondo=  -940968909.45834482     
+ mi muovo verso destra
+ xl(0)=  0.49964039226174739     
+ fPrimo=   31896169143.598145      fSecondo=   1264568078555.3528     
+ mi muovo verso destra
+ xl(0)=  0.49964039229757795     
+ fPrimo=   14878964665.693167      fSecondo=   589897290240.07446     
+ mi muovo verso destra
+ xl(0)=  0.49964039237438823     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   24825770.917218339      fSecondo=   1428093398.4677227     
+ work in progres...
+ x=  0.19994856454446910      j=           8 kappa=           3
+ fPrimo=   23.158231441367956      fSecondo=   387.97305301337462     
+ work in progres...
+ x=  0.59997428227223470      j=           8 kappa=           7
+ fine lavoro:
+ x=  0.59997428227223470      j=           8 kappa=           7
+ aj=  0.59997428227223470      bj=   1.0000000000000002     
+ fPrimo=   23.158231441367956      fSecondo=   387.97305301337462     
+ kappa di aj=           7
+ fPrimo=   1447.7252267788024      fSecondo=   27671.534490644968     
+ kappa di bj=           8
+ fPrimo=   23.158231441367956      fSecondo=   387.97305301337462     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           1
+ aj=  0.59997428227223470      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.71198918076806506     
+ fPrimo=   13.277339483143436      fSecondo=   117.25302533880875     
+ mi muovo verso destra
+ xl(0)=  0.88207052909244876     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -100.00026827667919      fSecondo=   8708.7328515642712     
+ fPrimo=   8.7245777203750379      fSecondo=   66.606396856885098     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           8
+ -------------------------------------
+ fPrimo=  -1795033.9764460293      fSecondo=  -431426349.60068405     
+ work in progres...
+ x=   8.3323333378724856E-002 j=           1 kappa=           5
+ fPrimo=  -225.79999341853730      fSecondo=   43662.873853961435     
+ work in progres...
+ x=   4.1661666689362428E-002 j=           1 kappa=           0
+ fine lavoro:
+ x=   4.1661666689362428E-002 j=           1 kappa=           0
+ aj=   4.1661666689362428E-002 bj=   8.3323333378724856E-002
+ fPrimo=  -225.79999341853730      fSecondo=   43662.873853961435     
+ kappa di aj=           0
+ fPrimo=  -1795033.9764460293      fSecondo=  -431426349.60068405     
+ kappa di bj=           5
+ fPrimo=  -225.79999341853730      fSecondo=   43662.873853961435     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   4.1661666689362428E-002 bj=   8.3323333378724856E-002
+ mi muovo verso destra
+ xl(0)=   5.4753536075764969E-002
+ fPrimo=  -420.71176551438759      fSecondo=   144854.70495760135     
+ mi muovo verso destra
+ xl(0)=   6.0745940212929610E-002
+ fPrimo=  -1018.3087290266084      fSecondo=   665651.71105233557     
+ mi muovo verso destra
+ xl(0)=   6.2413492546715021E-002
+ fPrimo=  -12500.199196179457      fSecondo=   13259812.877774542     
+ mi muovo verso destra
+ xl(0)=   6.2497123908389532E-002
+ fPrimo=  -60205859.444515109      fSecondo=   66457229361.560501     
+ mi muovo verso destra
+ xl(0)=   6.2497140518220806E-002
+ fPrimo=  -106768508029492.75      fSecondo=   1.1785559303998006E+017
+ mi muovo verso destra
+ xl(0)=   6.2497140518230174E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   159220563.17392460      fSecondo=   54733194742.686310     
+ work in progres...
+ x=   9.0898504839743155E-002 j=           2 kappa=           5
+ fPrimo=  -258.03102257139653      fSecondo=   56680.746391936635     
+ work in progres...
+ x=   4.5449252419871577E-002 j=           2 kappa=           0
+ fPrimo=   250.88837834663533      fSecondo=  -521148.43095088634     
+ work in progres...
+ x=   6.8173878629807366E-002 j=           2 kappa=           2
+ fine lavoro:
+ x=   6.8173878629807366E-002 j=           2 kappa=           2
+ aj=   4.5449252419871577E-002 bj=   6.8173878629807366E-002
+ fPrimo=  -258.03102257139653      fSecondo=   56680.746391936635     
+ kappa di aj=           0
+ fPrimo=   250.88837834663533      fSecondo=  -521148.43095088634     
+ kappa di bj=           2
+ fPrimo=   250.88837834663533      fSecondo=  -521148.43095088634     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   4.5449252419871577E-002 bj=   6.8173878629807366E-002
+ mi muovo verso sinistra
+ xl(0)=   6.6846167484113095E-002
+ fPrimo=   5189.7178415786366      fSecondo=  -2696410.2779493271     
+ mi muovo verso sinistra
+ xl(0)=   6.6662442353317600E-002
+ fPrimo=   2978791.6810775674      fSecondo=  -1318063604.5642505     
+ mi muovo verso destra
+ xl(0)=   6.6662825985430454E-002
+ fPrimo=   1389924.4645795058      fSecondo=  -615232274.90079653     
+ mi muovo verso sinistra
+ xl(0)=   6.6662106636405608E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -115372608.61718324      fSecondo=  -49608164759.416809     
+ work in progres...
+ x=   9.9991271638957338E-002 j=           3 kappa=           7
+ fPrimo=  -314.60216914114670      fSecondo=   83260.112932474964     
+ work in progres...
+ x=   4.9995635819478669E-002 j=           3 kappa=           0
+ fPrimo=  -290.53901602292166      fSecondo=  -306204.26074101351     
+ work in progres...
+ x=   7.4993453729218007E-002 j=           3 kappa=           3
+ fine lavoro:
+ x=   7.4993453729218007E-002 j=           3 kappa=           3
+ aj=   4.9995635819478669E-002 bj=   7.4993453729218007E-002
+ fPrimo=  -314.60216914114670      fSecondo=   83260.112932474964     
+ kappa di aj=           0
+ fPrimo=  -290.53901602292166      fSecondo=  -306204.26074101351     
+ kappa di bj=           3
+ fPrimo=  -290.53901602292166      fSecondo=  -306204.26074101351     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   4.9995635819478669E-002 bj=   7.4993453729218007E-002
+ mi muovo verso sinistra
+ xl(0)=   7.3277859297697298E-002
+ fPrimo=   288.55379020416649      fSecondo=  -330148.99413205229     
+ mi muovo verso sinistra
+ xl(0)=   7.1707158108715585E-002
+ fPrimo=   3459.0591757817215      fSecondo=  -688575.64635423257     
+ mi muovo verso sinistra
+ xl(0)=   7.1426030942388294E-002
+ fPrimo=   911684.80949412985      fSecondo=  -101854787.02006213     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934139278987E-002
+ fPrimo=  -28575132521.957245      fSecondo=   3182829557625.2085     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934099284174E-002
+ fPrimo=  -13334835885.397121      fSecondo=   1485295128148.1792     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934013579550E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   653082162531.37854      fSecondo=   356635876784137.50     
+ work in progres...
+ x=  0.11110223508638643      j=           4 kappa=           7
+ fPrimo=  -448.54634775240856      fSecondo=   163294.61839446411     
+ work in progres...
+ x=   5.5551117543193217E-002 j=           4 kappa=           0
+ fPrimo=   359032.53201523097      fSecondo=   86059452.257867798     
+ work in progres...
+ x=   8.3326676314789822E-002 j=           4 kappa=           5
+ fPrimo=  -308.41804715575046      fSecondo=  -335774.90830390906     
+ work in progres...
+ x=   6.9438896928991523E-002 j=           4 kappa=           2
+ fPrimo=  -1784.3201384553299      fSecondo=  -422970.24900422170     
+ work in progres...
+ x=   7.6382786621890672E-002 j=           4 kappa=           3
+ fine lavoro:
+ x=   7.6382786621890672E-002 j=           4 kappa=           3
+ aj=   7.6382786621890672E-002 bj=   8.3326676314789822E-002
+ fPrimo=  -1784.3201384553299      fSecondo=  -422970.24900422170     
+ kappa di aj=           3
+ fPrimo=   359032.53201523097      fSecondo=   86059452.257867798     
+ kappa di bj=           5
+ fPrimo=  -1784.3201384553299      fSecondo=  -422970.24900422170     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   7.6382786621890672E-002 bj=   8.3326676314789822E-002
+ mi muovo verso destra
+ xl(0)=   7.6909402048880665E-002
+ fPrimo=  -162418.04784996729      fSecondo=  -16102831.788710920     
+ mi muovo verso destra
+ xl(0)=   7.6915557121808420E-002
+ fPrimo=   1740414919.0120976      fSecondo=   169964259063.47705     
+ mi muovo verso destra
+ xl(0)=   7.6915557778466301E-002
+ fPrimo=   812152706.08398473      fSecondo=   79312529055.072342     
+ mi muovo verso destra
+ xl(0)=   7.6915559185661300E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   9.6092965735120614E+017 fSecondo=  -1.0607147812355893E+021
+ work in progres...
+ x=   6.2497140518230174E-002 j=           5 kappa=           0
+ fPrimo=   17.862420657176777      fSecondo=   279.15606414958535     
+ work in progres...
+ x=  0.53124857025911520      j=           5 kappa=           8
+ fPrimo=   37.589177190144227      fSecondo=   1235.3963642681317     
+ work in progres...
+ x=  0.29687285538867270      j=           5 kappa=           8
+ fPrimo=   85.110725310445758      fSecondo=   6308.8848187080748     
+ work in progres...
+ x=  0.17968499795345144      j=           5 kappa=           8
+ fPrimo=   285.28707594787261      fSecondo=   65786.205199907577     
+ work in progres...
+ x=  0.12109106923584081      j=           5 kappa=           8
+ fPrimo=   1250.8878962298686      fSecondo=   277216.40458288114     
+ work in progres...
+ x=   9.1794104877035487E-002 j=           5 kappa=           6
+ fPrimo=   4376.8513079661616      fSecondo=   188647.92318323290     
+ work in progres...
+ x=   7.7145622697632837E-002 j=           5 kappa=           4
+ fine lavoro:
+ x=   7.7145622697632837E-002 j=           5 kappa=           4
+ aj=   7.7145622697632837E-002 bj=   9.1794104877035487E-002
+ fPrimo=   4376.8513079661616      fSecondo=   188647.92318323290     
+ kappa di aj=           4
+ fPrimo=   1250.8878962298686      fSecondo=   277216.40458288114     
+ kappa di bj=           6
+ fPrimo=   4376.8513079661616      fSecondo=   188647.92318323290     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=   7.7145622697632837E-002 bj=   9.1794104877035487E-002
+ mi muovo verso destra
+ xl(0)=   7.7408218267479345E-002
+ fPrimo=   2039.7423915983488      fSecondo=  -36926.065349842225     
+ mi muovo verso destra
+ xl(0)=   7.7965692488325508E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   38940947177756.125      fSecondo=  -17225427777023284.     
+ work in progres...
+ x=   6.6662106702548948E-002 j=           6 kappa=           1
+ fPrimo=   17.779636734598320      fSecondo=   276.57502093956720     
+ work in progres...
+ x=  0.53333105335127462      j=           6 kappa=           8
+ fPrimo=   37.042290953829578      fSecondo=   1199.7404045027804     
+ work in progres...
+ x=  0.29999658002691176      j=           6 kappa=           8
+ fPrimo=   81.836543762874030      fSecondo=   5835.0856467253698     
+ work in progres...
+ x=  0.18332934336473036      j=           6 kappa=           8
+ fPrimo=   237.87986218079868      fSecondo=   47047.015626441760     
+ work in progres...
+ x=  0.12499572503363965      j=           6 kappa=           8
+ fPrimo=   135.18329137691353      fSecondo=  -97805.979743505872     
+ work in progres...
+ x=   9.5828915868094305E-002 j=           6 kappa=           6
+ fine lavoro:
+ x=   9.5828915868094305E-002 j=           6 kappa=           6
+ aj=   6.6662106702548948E-002 bj=   9.5828915868094305E-002
+ fPrimo=   38940947177756.125      fSecondo=  -17225427777023284.     
+ kappa di aj=           1
+ fPrimo=   135.18329137691353      fSecondo=  -97805.979743505872     
+ kappa di bj=           6
+ fPrimo=   135.18329137691353      fSecondo=  -97805.979743505872     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=   6.6662106702548948E-002 bj=   9.5828915868094305E-002
+ mi muovo verso sinistra
+ xl(0)=   9.2858992837348053E-002
+ fPrimo=   600.33231122724249      fSecondo=   57984.680698092103     
+ mi muovo verso sinistra
+ xl(0)=   9.1040040421182619E-002
+ fPrimo=   7229.8309507956465      fSecondo=   2328597.0902276887     
+ mi muovo verso sinistra
+ xl(0)=   9.0898534259230557E-002
+ fPrimo=   28007777.670832075      fSecondo=   9627741849.8109951     
+ mi muovo verso destra
+ xl(0)=   9.0898575064508713E-002
+ fPrimo=   13069316.321327506      fSecondo=   4492525322.8556395     
+ mi muovo verso destra
+ xl(0)=   9.0898662511647632E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   388211.95817685768      fSecondo=  -172127300.77976769     
+ work in progres...
+ x=   6.6664680909653232E-002 j=           7 kappa=           2
+ fPrimo=   17.779585806587015      fSecondo=   276.57343678979072     
+ work in progres...
+ x=  0.53333234045482669      j=           7 kappa=           8
+ fPrimo=   37.041957893964650      fSecondo=   1199.7188482845274     
+ work in progres...
+ x=  0.29999851068223998      j=           7 kappa=           8
+ fPrimo=   81.834600510946814      fSecondo=   5834.8098472153706     
+ work in progres...
+ x=  0.18333159579594660      j=           7 kappa=           8
+ fPrimo=   237.85682784441533      fSecondo=   47038.471093184940     
+ work in progres...
+ x=  0.12499813835279991      j=           7 kappa=           8
+ fPrimo=   134.89379441747116      fSecondo=  -97909.252635203549     
+ work in progres...
+ x=   9.5831409631226577E-002 j=           7 kappa=           6
+ fine lavoro:
+ x=   9.5831409631226577E-002 j=           7 kappa=           6
+ aj=   9.5831409631226577E-002 bj=  0.12499813835279991     
+ fPrimo=   134.89379441747116      fSecondo=  -97909.252635203549     
+ kappa di aj=           6
+ fPrimo=   237.85682784441533      fSecondo=   47038.471093184940     
+ kappa di bj=           8
+ fPrimo=   134.89379441747116      fSecondo=  -97909.252635203549     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=   9.5831409631226577E-002 bj=  0.12499813835279991     
+ mi muovo verso destra
+ xl(0)=   9.8957659710390708E-002
+ fPrimo=  -721.63985777453001      fSecondo=  -446496.63743356295     
+ mi muovo verso destra
+ xl(0)=   9.9976811678233884E-002
+ fPrimo=  -68894.536066457906      fSecondo=  -29755142.563711505     
+ mi muovo verso destra
+ xl(0)=   9.9991281338424221E-002
+ fPrimo=   968396351.17765760      fSecondo=   416391928202.96472     
+ mi muovo verso sinistra
+ xl(0)=   9.9991280305788952E-002
+ fPrimo=  -13029765856053.395      fSecondo=  -5602552135734393.0     
+ mi muovo verso sinistra
+ xl(0)=   9.9991280305701244E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   1778794.6107278140      fSecondo=   173471147.39025742     
+ work in progres...
+ x=   7.6916118688031401E-002 j=           8 kappa=           3
+ fPrimo=   17.579062658489477      fSecondo=   270.37118700555840     
+ work in progres...
+ x=  0.53845805934401580      j=           8 kappa=           8
+ fine lavoro:
+ x=  0.53845805934401580      j=           8 kappa=           8
+ aj=   7.6916118688031401E-002 bj=  0.53845805934401580     
+ fPrimo=   1778794.6107278140      fSecondo=   173471147.39025742     
+ kappa di aj=           3
+ fPrimo=   17.579062658489477      fSecondo=   270.37118700555840     
+ kappa di bj=           8
+ fPrimo=   17.579062658489477      fSecondo=   270.37118700555840     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           1
+ aj=   7.6916118688031401E-002 bj=  0.53845805934401580     
+ mi muovo verso sinistra
+ xl(0)=  0.35177191435356892     
+ fPrimo=   29.852268748894463      fSecondo=   779.42379585427432     
+ mi muovo verso sinistra
+ xl(0)=  0.24204861192318630     
+ fPrimo=   50.775632488007965      fSecondo=   2252.5406047497008     
+ mi muovo verso sinistra
+ xl(0)=  0.17791128209692314     
+ fPrimo=   86.804462980980901      fSecondo=   6561.1137594055690     
+ mi muovo verso sinistra
+ xl(0)=  0.14106524627465683     
+ fPrimo=   151.07531734024030      fSecondo=   19630.621453274583     
+ mi muovo verso sinistra
+ xl(0)=  0.12112069850972201     
+ fPrimo=   284.82556434203690      fSecondo=   65593.620654615763     
+ mi muovo verso sinistra
+ xl(0)=  0.11256168034650371     
+ fPrimo=   939.12473199740441      fSecondo=   400756.17791508121     
+ mi muovo verso sinistra
+ xl(0)=  0.11111390217849039     
+ fPrimo=   85973.391669432531      fSecondo=   46831154.847023204     
+ mi muovo verso sinistra
+ xl(0)=  0.11110223364487030     
+ fPrimo=  -694365509.46898901      fSecondo=  -379180052985.98706     
+ mi muovo verso destra
+ xl(0)=  0.11110223508503343     
+ fPrimo=   5617021122573.9873      fSecondo=   3067349513546724.5     
+ mi muovo verso destra
+ xl(0)=  0.11110223508523689     
+ fPrimo=   2621024556492.3423      fSecondo=   1431292178284551.3     
+ mi muovo verso destra
+ xl(0)=  0.11110223508567293     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie           12  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ fPrimo=  -136.00009987946470      fSecondo=   17001.525249949467     
+ fPrimo=   1456.4497501680273      fSecondo=   53001.827367590246     
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=          16
+ -------------------------------------
+ fPrimo=  -1295469.0998108487      fSecondo=  -331687328.86843240     
+ work in progres...
+ x=  0.12498665098038797      j=           1 kappa=           9
+ fPrimo=  -262730.70020272548      fSecondo=   319723736.91212940     
+ work in progres...
+ x=   6.2493325490193985E-002 j=           1 kappa=           0
+ fine lavoro:
+ x=   6.2493325490193985E-002 j=           1 kappa=           0
+ aj=   6.2493325490193985E-002 bj=  0.12498665098038797     
+ fPrimo=  -262730.70020272548      fSecondo=   319723736.91212940     
+ kappa di aj=           0
+ fPrimo=  -1295469.0998108487      fSecondo=  -331687328.86843240     
+ kappa di bj=           9
+ fPrimo=  -262730.70020272548      fSecondo=   319723736.91212940     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           1 mlt=           1
+ aj=   6.2493325490193985E-002 bj=  0.12498665098038797     
+ mi muovo verso destra
+ xl(0)=   6.2497140515139375E-002
+ fPrimo=  -323541404051.15442      fSecondo=   394479775013754.06     
+ mi muovo verso destra
+ xl(0)=   6.2497140518230167E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   13624129.898274703      fSecondo=   3368471861.7578950     
+ work in progres...
+ x=  0.14283503887653029      j=           2 kappa=           9
+ fPrimo=  -134981.02913942991      fSecondo=   31924030.280875172     
+ work in progres...
+ x=   7.1417519438265145E-002 j=           2 kappa=           2
+ fine lavoro:
+ x=   7.1417519438265145E-002 j=           2 kappa=           2
+ aj=   0.0000000000000000      bj=   7.1417519438265145E-002
+ fPrimo=  -136.00009987946470      fSecondo=   17001.525249949467     
+ kappa di aj=           0
+ fPrimo=  -134981.02913942991      fSecondo=   31924030.280875172     
+ kappa di bj=           2
+ fPrimo=  -134981.02913942991      fSecondo=   31924030.280875172     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           2 mlt=           1
+ aj=   0.0000000000000000      bj=   7.1417519438265145E-002
+ mi muovo verso sinistra
+ xl(0)=   7.1409044150315806E-002
+ fPrimo=  -63048.457309660291      fSecondo=   14740383.668936007     
+ mi muovo verso sinistra
+ xl(0)=   7.1390878973768959E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -165226228844.14908      fSecondo=  -37415440176459.141     
+ work in progres...
+ x=  0.16664529777613135      j=           3 kappa=          11
+ fPrimo=  -805360.59131311276      fSecondo=  -73081559.067893863     
+ work in progres...
+ x=   8.3322648888065676E-002 j=           3 kappa=           4
+ fPrimo=  -273.45046312873041      fSecondo=   67068.495463604297     
+ work in progres...
+ x=   4.1661324444032838E-002 j=           3 kappa=           0
+ fPrimo=  -194638.90672473365      fSecondo=   236702498.20929578     
+ work in progres...
+ x=   6.2491986666049257E-002 j=           3 kappa=           0
+ fPrimo=   401.66590020259400      fSecondo=  -405833.96776836098     
+ work in progres...
+ x=   7.2907317777057473E-002 j=           3 kappa=           3
+ fine lavoro:
+ x=   7.2907317777057473E-002 j=           3 kappa=           3
+ aj=   6.2491986666049257E-002 bj=   7.2907317777057473E-002
+ fPrimo=  -194638.90672473365      fSecondo=   236702498.20929578     
+ kappa di aj=           0
+ fPrimo=   401.66590020259400      fSecondo=  -405833.96776836098     
+ kappa di bj=           3
+ fPrimo=   401.66590020259400      fSecondo=  -405833.96776836098     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           3 mlt=           1
+ aj=   6.2491986666049257E-002 bj=   7.2907317777057473E-002
+ mi muovo verso sinistra
+ xl(0)=   7.1570035575927018E-002
+ fPrimo=   6757.2429662320501      fSecondo=  -1932713.2941709722     
+ mi muovo verso sinistra
+ xl(0)=   7.1425080197231428E-002
+ fPrimo=   6847900.1268815594      fSecondo=  -1636172030.6278439     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934169611806E-002
+ fPrimo=  -214515050202.66467      fSecondo=   51244139046832.742     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934164284179E-002
+ fPrimo=  -100105390560.08286      fSecondo=   23913541318756.879     
+ mi muovo verso sinistra
+ xl(0)=   7.1424934152867645E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   4769418987380.0928      fSecondo=   939131760777582.25     
+ work in progres...
+ x=  0.19994852426964965      j=           4 kappa=          11
+ fPrimo=  -58643.813048430478      fSecondo=  -13251539.613394376     
+ work in progres...
+ x=   9.9974262134824826E-002 j=           4 kappa=           6
+ fPrimo=  -365.61182570196127      fSecondo=   117521.45551123402     
+ work in progres...
+ x=   4.9987131067412413E-002 j=           4 kappa=           0
+ fPrimo=  -352.23352421722120      fSecondo=  -264374.90887531417     
+ work in progres...
+ x=   7.4980696601118613E-002 j=           4 kappa=           3
+ fine lavoro:
+ x=   7.4980696601118613E-002 j=           4 kappa=           3
+ aj=   7.4980696601118613E-002 bj=   9.9974262134824826E-002
+ fPrimo=  -352.23352421722120      fSecondo=  -264374.90887531417     
+ kappa di aj=           3
+ fPrimo=  -58643.813048430478      fSecondo=  -13251539.613394376     
+ kappa di bj=           6
+ fPrimo=  -352.23352421722120      fSecondo=  -264374.90887531417     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           4 mlt=           1
+ aj=   7.4980696601118613E-002 bj=   9.9974262134824826E-002
+ mi muovo verso destra
+ xl(0)=   7.6595103975789836E-002
+ fPrimo=  -3113.5765922946675      fSecondo=  -124463.76068749512     
+ mi muovo verso destra
+ xl(0)=   7.6914236355241403E-002
+ fPrimo=  -757413.33107410395      fSecondo=   29391769.642992336     
+ mi muovo verso destra
+ xl(0)=   7.6915556672137175E-002
+ fPrimo=   8008848347.9290895      fSecondo=  -313347784428.63385     
+ mi muovo verso destra
+ xl(0)=   7.6915556814836486E-002
+ fPrimo=   3737274106.6829453      fSecondo=  -146221721846.95090     
+ mi muovo verso destra
+ xl(0)=   7.6915557120636135E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   302889591.81144774      fSecondo=   48703326738.061974     
+ work in progres...
+ x=  0.24988141495742325      j=           5 kappa=          12
+ fPrimo=  -21276.619936141935      fSecondo=  -5503720.4652854074     
+ work in progres...
+ x=  0.12494070747871162      j=           5 kappa=           8
+ fPrimo=  -37939.318136248126      fSecondo=   45646952.314776145     
+ work in progres...
+ x=   6.2470353739355812E-002 j=           5 kappa=           0
+ fPrimo=   319.83039342597647      fSecondo=  -72230.868387704133     
+ work in progres...
+ x=   9.3705530609033721E-002 j=           5 kappa=           6
+ fPrimo=   740.20579162551530      fSecondo=  -260435.51693930241     
+ work in progres...
+ x=   7.8087942174194763E-002 j=           5 kappa=           4
+ fine lavoro:
+ x=   7.8087942174194763E-002 j=           5 kappa=           4
+ aj=   7.8087942174194763E-002 bj=   9.3705530609033721E-002
+ fPrimo=   740.20579162551530      fSecondo=  -260435.51693930241     
+ kappa di aj=           4
+ fPrimo=   319.83039342597647      fSecondo=  -72230.868387704133     
+ kappa di bj=           6
+ fPrimo=   740.20579162551530      fSecondo=  -260435.51693930241     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           5 mlt=           1
+ aj=   7.8087942174194763E-002 bj=   9.3705530609033721E-002
+ mi muovo verso destra
+ xl(0)=   7.9329212527371601E-002
+ fPrimo=   191.88532366106452      fSecondo=  -235072.08479061068     
+ mi muovo verso destra
+ xl(0)=   8.1366946964489678E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   615550796.62090063      fSecondo=   74082166993.567795     
+ work in progres...
+ x=  0.33314321088177334      j=           6 kappa=          13
+ fPrimo=  -13454.489471789941      fSecondo=  -3073785.6360709500     
+ work in progres...
+ x=  0.16657160544088667      j=           6 kappa=          10
+ fPrimo=  -26205.204045771741      fSecondo=  -2556667.1519180341     
+ work in progres...
+ x=   8.3285802720443336E-002 j=           6 kappa=           4
+ fPrimo=  -16900.755091427753      fSecondo=  -4383546.9085902125     
+ work in progres...
+ x=  0.12492870408066500      j=           6 kappa=           8
+ fPrimo=   226.90280494589291      fSecondo=  -42989.755112407511     
+ work in progres...
+ x=  0.10410725340055417      j=           6 kappa=           7
+ fPrimo=   321.40491816232890      fSecondo=  -71985.487820870170     
+ work in progres...
+ x=   9.3696528060498746E-002 j=           6 kappa=           6
+ fine lavoro:
+ x=   9.3696528060498746E-002 j=           6 kappa=           6
+ aj=   8.3285802720443336E-002 bj=   9.3696528060498746E-002
+ fPrimo=  -26205.204045771741      fSecondo=  -2556667.1519180341     
+ kappa di aj=           4
+ fPrimo=   321.40491816232890      fSecondo=  -71985.487820870170     
+ kappa di bj=           6
+ fPrimo=   321.40491816232890      fSecondo=  -71985.487820870170     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           6 mlt=           1
+ aj=   8.3285802720443336E-002 bj=   9.3696528060498746E-002
+ mi muovo verso sinistra
+ xl(0)=   9.1303782762153438E-002
+ fPrimo=   2536.2712559449428      fSecondo=   303050.58807850699     
+ mi muovo verso sinistra
+ xl(0)=   9.0899866046117536E-002
+ fPrimo=   731244.03950609080      fSecondo=   127014568.42623660     
+ mi muovo verso sinistra
+ xl(0)=   9.0898498351154641E-002
+ fPrimo=  -4785203326.9313889      fSecondo=  -832090926072.83752     
+ mi muovo verso destra
+ xl(0)=   9.0898498560132171E-002
+ fPrimo=   31309189576904.855      fSecondo=   5444301188312559.0     
+ mi muovo verso destra
+ xl(0)=   9.0898498560168670E-002
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   6940760759.5948381      fSecondo=   542014278934.04724     
+ work in progres...
+ x=  0.49964039237438823      j=           7 kappa=          14
+ fPrimo=  -16247.674207299588      fSecondo=  -2622482.4728993555     
+ work in progres...
+ x=  0.24982019618719412      j=           7 kappa=          12
+ fPrimo=  -12802.829773507710      fSecondo=  -3334531.9513796591     
+ work in progres...
+ x=  0.12491009809359706      j=           7 kappa=           8
+ fPrimo=  -24364.030577925172      fSecondo=   29096156.158562176     
+ work in progres...
+ x=   6.2455049046798529E-002 j=           7 kappa=           0
+ fPrimo=   323.85922647995125      fSecondo=  -71602.898090883973     
+ work in progres...
+ x=   9.3682573570197797E-002 j=           7 kappa=           6
+ fine lavoro:
+ x=   9.3682573570197797E-002 j=           7 kappa=           6
+ aj=   9.3682573570197797E-002 bj=  0.12491009809359706     
+ fPrimo=   323.85922647995125      fSecondo=  -71602.898090883973     
+ kappa di aj=           6
+ fPrimo=  -12802.829773507710      fSecondo=  -3334531.9513796591     
+ kappa di bj=           8
+ fPrimo=   323.85922647995125      fSecondo=  -71602.898090883973     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           7 mlt=           1
+ aj=   9.3682573570197797E-002 bj=  0.12491009809359706     
+ mi muovo verso destra
+ xl(0)=   9.6321810483771336E-002
+ fPrimo=  -18.453238426256263      fSecondo=  -126747.97748172205     
+ mi muovo verso destra
+ xl(0)=   9.9209488708616247E-002
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   13.046081418048333      fSecondo=   64.700786173036619     
+ work in progres...
+ x=  0.88207052909244876      j=           8 kappa=          15
+ fPrimo=   32.337612591064634      fSecondo=   524.00338953023470     
+ work in progres...
+ x=  0.44103526454622438      j=           8 kappa=          14
+ fPrimo=   101.66609526696419      fSecondo=   5660.7641431312622     
+ work in progres...
+ x=  0.22051763227311219      j=           8 kappa=          12
+ fPrimo=  -1043.6262436477396      fSecondo=  -340991.29025119933     
+ work in progres...
+ x=  0.11025881613655610      j=           8 kappa=           7
+ fine lavoro:
+ x=  0.11025881613655610      j=           8 kappa=           7
+ aj=  0.11025881613655610      bj=  0.22051763227311219     
+ fPrimo=  -1043.6262436477396      fSecondo=  -340991.29025119933     
+ kappa di aj=           7
+ fPrimo=   101.66609526696419      fSecondo=   5660.7641431312622     
+ kappa di bj=          12
+ fPrimo=  -1043.6262436477396      fSecondo=  -340991.29025119933     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           8 mlt=           1
+ aj=  0.11025881613655610      bj=  0.22051763227311219     
+ mi muovo verso destra
+ xl(0)=  0.11109546356699557     
+ fPrimo=  -166640.76481822925      fSecondo=  -41687468.737205714     
+ mi muovo verso destra
+ xl(0)=  0.11110146000043819     
+ fPrimo=   1356844585.3804138      fSecondo=   338793792425.63239     
+ mi muovo verso destra
+ xl(0)=  0.11110146084272866     
+ fPrimo=   633152567.73640466      fSecondo=   158093347683.39087     
+ mi muovo verso destra
+ xl(0)=  0.11110146264775554     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   9.6092965735120614E+017 fSecondo=  -1.1716191834432200E+021
+ work in progres...
+ x=   6.2497140518230174E-002 j=           9 kappa=           0
+ fPrimo=   66.735486236296978      fSecondo=   3342.9072442492370     
+ work in progres...
+ x=  0.53124857025911520      j=           9 kappa=          15
+ fPrimo=   55.258921242407254      fSecondo=   1396.1274477185298     
+ work in progres...
+ x=  0.29687285538867270      j=           9 kappa=          13
+ fPrimo=   132.76660951511056      fSecondo=   7051.2463624144748     
+ work in progres...
+ x=  0.17968499795345144      j=           9 kappa=          11
+ fPrimo=  -68.218462365021850      fSecondo=  -79674.200269785069     
+ work in progres...
+ x=  0.12109106923584081      j=           9 kappa=           8
+ fine lavoro:
+ x=  0.12109106923584081      j=           9 kappa=           8
+ aj=  0.12109106923584081      bj=  0.17968499795345144     
+ fPrimo=  -68.218462365021850      fSecondo=  -79674.200269785069     
+ kappa di aj=           8
+ fPrimo=   132.76660951511056      fSecondo=   7051.2463624144748     
+ kappa di bj=          11
+ fPrimo=  -68.218462365021850      fSecondo=  -79674.200269785069     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=           9 mlt=           1
+ aj=  0.12109106923584081      bj=  0.17968499795345144     
+ mi muovo verso destra
+ xl(0)=  0.12460045782637186     
+ fPrimo=  -2450.8186802729651      fSecondo=  -684880.59872657328     
+ mi muovo verso destra
+ xl(0)=  0.12498707539899820     
+ fPrimo=  -2878348.5294750272      fSecondo=  -736892524.58692920     
+ mi muovo verso sinistra
+ xl(0)=  0.12498667836609913     
+ fPrimo=  -1343131.3589135925      fSecondo=  -343888507.70596284     
+ mi muovo verso sinistra
+ xl(0)=  0.12498582756869564     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            5  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -15123159546.333231      fSecondo=   8515804861831.2441     
+ work in progres...
+ x=   6.6662106636405608E-002 j=          10 kappa=           1
+ fPrimo=   64.549773272898179      fSecondo=   3177.0251992341114     
+ work in progres...
+ x=  0.53333105331820296      j=          10 kappa=          15
+ fPrimo=   49.971405040286442      fSecondo=   760.97051625577149     
+ work in progres...
+ x=  0.29999657997730428      j=          10 kappa=          13
+ fPrimo=   97.359953673275882      fSecondo=   220.56727580946043     
+ work in progres...
+ x=  0.18332934330685494      j=          10 kappa=          11
+ fPrimo=   120572.35668462461      fSecondo=   30808615.696718901     
+ work in progres...
+ x=  0.12499572497163028      j=          10 kappa=           9
+ fine lavoro:
+ x=  0.12499572497163028      j=          10 kappa=           9
+ aj=  0.12499572497163028      bj=  0.18332934330685494     
+ fPrimo=   120572.35668462461      fSecondo=   30808615.696718901     
+ kappa di aj=           9
+ fPrimo=   97.359953673275882      fSecondo=   220.56727580946043     
+ kappa di bj=          11
+ fPrimo=   120572.35668462461      fSecondo=   30808615.696718901     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          10 mlt=           1
+ aj=  0.12499572497163028      bj=  0.18332934330685494     
+ mi muovo verso destra
+ xl(0)=  0.12500521507051943     
+ fPrimo=   56329.199551241509      fSecondo=   14362863.685047291     
+ mi muovo verso destra
+ xl(0)=  0.12502555664421217     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=  -6222817702.6819811      fSecondo=   1486529120152.2249     
+ work in progres...
+ x=   7.1424934013579550E-002 j=          11 kappa=           3
+ fPrimo=   62.330300385018127      fSecondo=   3009.2291781533486     
+ work in progres...
+ x=  0.53571246700678987      j=          11 kappa=          15
+ fPrimo=   43.502381386335607      fSecondo=  -8.0518279307347527     
+ work in progres...
+ x=  0.30356870051018470      j=          11 kappa=          13
+ fPrimo=   57.117339365318934      fSecondo=  -7347.3080027734159     
+ work in progres...
+ x=  0.18749681726188211      j=          11 kappa=          11
+ fine lavoro:
+ x=  0.18749681726188211      j=          11 kappa=          11
+ aj=   7.1424934013579550E-002 bj=  0.18749681726188211     
+ fPrimo=  -6222817702.6819811      fSecondo=   1486529120152.2249     
+ kappa di aj=           3
+ fPrimo=   57.117339365318934      fSecondo=  -7347.3080027734159     
+ kappa di bj=          11
+ fPrimo=   57.117339365318934      fSecondo=  -7347.3080027734159     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          11 mlt=           1
+ aj=   7.1424934013579550E-002 bj=  0.18749681726188211     
+ mi muovo verso sinistra
+ xl(0)=  0.17772541411171527     
+ fPrimo=   155.24765147712918      fSecondo=   11531.920819759047     
+ mi muovo verso sinistra
+ xl(0)=  0.16876053239139704     
+ fPrimo=   576.21220016979373      fSecondo=   104131.98992921837     
+ mi muovo verso sinistra
+ xl(0)=  0.16666270883911888     
+ fPrimo=   57539.937153214494      fSecondo=   13002913.245957971     
+ mi muovo verso sinistra
+ xl(0)=  0.16664529537522599     
+ fPrimo=  -415404684.39641094      fSecondo=  -94068318790.575287     
+ mi muovo verso sinistra
+ xl(0)=  0.16664529262403702     
+ fPrimo=  -193841132.58646408      fSecondo=  -43895305280.313126     
+ mi muovo verso sinistra
+ xl(0)=  0.16664528672819662     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   378985443.74151206      fSecondo=  -14828111540.297470     
+ work in progres...
+ x=   7.6915559185661300E-002 j=          12 kappa=           3
+ fPrimo=   60.074258039024670      fSecondo=   2839.4621116613225     
+ work in progres...
+ x=  0.53845777959283081      j=          12 kappa=          15
+ fPrimo=   35.053962011660680      fSecondo=  -1005.1682420441671     
+ work in progres...
+ x=  0.30768666938924605      j=          12 kappa=          13
+ fPrimo=  -10.866065423755895      fSecondo=  -20205.471039261385     
+ work in progres...
+ x=  0.19230111428745367      j=          12 kappa=          11
+ fine lavoro:
+ x=  0.19230111428745367      j=          12 kappa=          11
+ aj=  0.19230111428745367      bj=  0.30768666938924605     
+ fPrimo=  -10.866065423755895      fSecondo=  -20205.471039261385     
+ kappa di aj=          11
+ fPrimo=   35.053962011660680      fSecondo=  -1005.1682420441671     
+ kappa di bj=          13
+ fPrimo=  -10.866065423755895      fSecondo=  -20205.471039261385     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          12 mlt=           2
+ aj=  0.19230111428745367      bj=  0.30768666938924605     
+ mi muovo verso destra
+ xl(0)=  0.20283219421903431     
+ fPrimo=   438.27929409913253      fSecondo=   69551.518729430740     
+ mi muovo verso sinistra
+ xl(0)=  0.19878845860736449     
+ fPrimo=  -760.53128735743576      fSecondo=  -167021.68370862753     
+ mi muovo verso destra
+ xl(0)=  0.20044247868997214     
+ fPrimo=   2121.4232257369217      fSecondo=   400666.21797552437     
+ mi muovo verso sinistra
+ xl(0)=  0.19974077466624016     
+ fPrimo=  -4713.8363377895785      fSecondo=  -945333.68783503957     
+ mi muovo verso destra
+ xl(0)=  0.20003652268335093     
+ fPrimo=   11460.452882567519      fSecondo=   2239534.1148957214     
+ mi muovo verso sinistra
+ xl(0)=  0.19991134890965098     
+ fPrimo=  -26797.163467237646      fSecondo=  -5293672.5566575518     
+ mi muovo verso destra
+ xl(0)=  0.19996424779133434     
+ fPrimo=   63688.329143644049      fSecondo=   12523556.853718942     
+ mi muovo verso sinistra
+ xl(0)=  0.19994187717676054     
+ fPrimo=  -150321.80649078405      fSecondo=  -29616529.743349921     
+ mi muovo verso destra
+ xl(0)=  0.19995133490431169     
+ fPrimo=   355839.23818820150      fSecondo=   70050100.544139102     
+ mi muovo verso sinistra
+ xl(0)=  0.19994733593443853     
+ fPrimo=  -841295.16714472696      fSecondo=  -165673988.15538928     
+ mi muovo verso destra
+ xl(0)=  0.19994902671561227     
+ fPrimo=   1990077.7581729586      fSecondo=   391843027.83475900     
+ mi muovo verso sinistra
+ xl(0)=  0.19994831183087822     
+ fPrimo=  -4706474.0245920271      fSecondo=  -926754579.98234046     
+ mi muovo verso destra
+ xl(0)=  0.19994861409088907     
+ fPrimo=   11131710.083751462      fSecondo=   2191893995.2425737     
+ mi muovo verso sinistra
+ xl(0)=  0.19994848629201295     
+ fPrimo=  -26327579.969787233      fSecondo=  -5184100673.9742737     
+ mi muovo verso destra
+ xl(0)=  0.19994854032670364     
+ fPrimo=   62268334.943907551      fSecondo=   12261050987.539398     
+ mi muovo verso destra
+ xl(0)=  0.19994856811455686     
+ fPrimo=   22804405.047420148      fSecondo=   4490328794.8329697     
+ mi muovo verso destra
+ xl(0)=  0.19994864399064063     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie           18  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   849.32590404467828      fSecondo=  -265506.35039218224     
+ work in progres...
+ x=   7.7965692488325508E-002 j=          13 kappa=           4
+ fPrimo=   59.674449425118873      fSecondo=   2809.4711824560045     
+ work in progres...
+ x=  0.53898284624416282      j=          13 kappa=          15
+ fPrimo=   33.259889795141810      fSecondo=  -1216.4332054471456     
+ work in progres...
+ x=  0.30847426936624417      j=          13 kappa=          13
+ fine lavoro:
+ x=  0.30847426936624417      j=          13 kappa=          13
+ aj=   7.7965692488325508E-002 bj=  0.30847426936624417     
+ fPrimo=   849.32590404467828      fSecondo=  -265506.35039218224     
+ kappa di aj=           4
+ fPrimo=   33.259889795141810      fSecondo=  -1216.4332054471456     
+ kappa di bj=          13
+ fPrimo=   33.259889795141810      fSecondo=  -1216.4332054471456     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          13 mlt=           2
+ aj=   7.7965692488325508E-002 bj=  0.30847426936624417     
+ mi muovo verso sinistra
+ xl(0)=  0.27860389752702647     
+ fPrimo=   87.229871250856533      fSecondo=   5488.6899483875177     
+ mi muovo verso sinistra
+ xl(0)=  0.24762226237816881     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   6098517.7292787256      fSecondo=   1060320562.8531752     
+ work in progres...
+ x=   9.0898662511647632E-002 j=          14 kappa=           5
+ fPrimo=   55.409896010402733      fSecondo=   2491.7122846283196     
+ work in progres...
+ x=  0.54544933125582395      j=          14 kappa=          15
+ fPrimo=  0.98903117477552838      fSecondo=  -5024.9600594255216     
+ work in progres...
+ x=  0.31817399688373582      j=          14 kappa=          13
+ fine lavoro:
+ x=  0.31817399688373582      j=          14 kappa=          13
+ aj=  0.31817399688373582      bj=  0.54544933125582395     
+ fPrimo=  0.98903117477552838      fSecondo=  -5024.9600594255216     
+ kappa di aj=          13
+ fPrimo=   55.409896010402733      fSecondo=   2491.7122846283196     
+ kappa di bj=          15
+ fPrimo=  0.98903117477552838      fSecondo=  -5024.9600594255216     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          14 mlt=           1
+ aj=  0.31817399688373582      bj=  0.54544933125582395     
+ mi muovo verso destra
+ xl(0)=  0.33275541290596083     
+ fPrimo=  -2516.6684948013576      fSecondo=  -307873.32081087009     
+ mi muovo verso destra
+ xl(0)=  0.33314345163200787     
+ fPrimo=   4123260.1955135381      fSecondo=   496233623.59235609     
+ mi muovo verso sinistra
+ xl(0)=  0.33314320910193534     
+ fPrimo=  -6392860707.3076630      fSecondo=  -769387371477.91406     
+ mi muovo verso destra
+ xl(0)=  0.33314320925835983     
+ fPrimo=   9911140147526.9512      fSecondo=   1192815918591501.3     
+ mi muovo verso destra
+ xl(0)=  0.33314320925847513     
+ fPrimo=   4624121260083.9854      fSecondo=   556517753396465.50     
+ mi muovo verso destra
+ xl(0)=  0.33314320925872226     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            7  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   83233644936.718689      fSecondo=   18657896481484.754     
+ work in progres...
+ x=   9.9991280305701244E-002 j=          15 kappa=           7
+ fPrimo=   52.977342634930991      fSecondo=   2312.5899481088868     
+ work in progres...
+ x=  0.54999564015285074      j=          15 kappa=          15
+ fine lavoro:
+ x=  0.54999564015285074      j=          15 kappa=          15
+ aj=   9.9991280305701244E-002 bj=  0.54999564015285074     
+ fPrimo=   83233644936.718689      fSecondo=   18657896481484.754     
+ kappa di aj=           7
+ fPrimo=   52.977342634930991      fSecondo=   2312.5899481088868     
+ kappa di bj=          15
+ fPrimo=   52.977342634930991      fSecondo=   2312.5899481088868     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          15 mlt=           1
+ aj=   9.9991280305701244E-002 bj=  0.54999564015285074     
+ mi muovo verso sinistra
+ xl(0)=  0.50143678388676638     
+ fPrimo=   595.04884869539490      fSecondo=   44535.139530864901     
+ mi muovo verso sinistra
+ xl(0)=  0.49963912905961733     
+ fPrimo=  -791030.90304543183      fSecondo=  -61774710.690520801     
+ mi muovo verso destra
+ xl(0)=  0.49964039317033382     
+ fPrimo=   1063135110.9954826      fSecondo=   83021792447.781113     
+ mi muovo verso destra
+ xl(0)=  0.49964039424532153     
+ fPrimo=   495932926.62128490      fSecondo=   38728134343.101677     
+ mi muovo verso destra
+ xl(0)=  0.49964039654978082     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ fPrimo=   1288921.1426959550      fSecondo=   321755388.61209923     
+ work in progres...
+ x=  0.11110223508567293      j=          16 kappa=           7
+ fPrimo=   50.454848847426980      fSecondo=   2128.9472847716388     
+ work in progres...
+ x=  0.55555111754283659      j=          16 kappa=          15
+ fine lavoro:
+ x=  0.55555111754283659      j=          16 kappa=          15
+ aj=  0.55555111754283659      bj=   1.0000000000000002     
+ fPrimo=   50.454848847426980      fSecondo=   2128.9472847716388     
+ kappa di aj=          15
+ fPrimo=   1456.4497501680273      fSecondo=   53001.827367590246     
+ kappa di bj=          16
+ fPrimo=   50.454848847426980      fSecondo=   2128.9472847716388     
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ entro in LagIt con
+ j=          16 mlt=           1
+ aj=  0.55555111754283659      bj=   1.0000000000000002     
+ mi muovo verso destra
+ xl(0)=  0.63627432606743584     
+ fPrimo=   33.315037329796539      fSecondo=   987.48339034142759     
+ mi muovo verso destra
+ xl(0)=  0.83750538893692139     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+ Eigenvalues dopo il calcolo:
+   6.2497140518230167E-002  0.12498665098038797       0.24988138788359851       0.99930569018956561     
+   7.1390878973768959E-002  0.14283503887653029       0.49964007930870180       0.49964032413707093     
+   7.1424934152867645E-002  0.16664529777613135       0.33314336649172849       0.33314324347666818     
+   7.6915557120636135E-002  0.19994852426964965       0.91924234309686215       0.24988136791771751     
+   8.1366946964489678E-002  0.24988141495742325       0.12498664538250528       0.19994851994444018     
+   9.0898498560168670E-002  0.33314321088177334       0.14283496550023422       0.16664519215407417     
+   9.9209488708616247E-002  0.49964039237438823       0.18502444037348934       0.14283512466481715     
+  0.11110146264775554       0.88207052909244876       0.19994856454446910       0.12498665042009692     
+  0.12498582756869564        6.2497140518230174E-002   8.3323333378724856E-002  0.11110201097015662     
+  0.12502555664421217        6.6662106636405608E-002   9.0898504839743155E-002   9.9990664493835188E-002
+  0.16664528672819662        7.1424934013579550E-002   9.9991271638957338E-002   9.0899159324108761E-002
+  0.19994864399064063        7.6915559185661300E-002  0.11110223508638643        8.3323518986431616E-002
+  0.24762226237816881        7.7965692488325508E-002   6.2497140518230174E-002   7.6916102360199370E-002
+  0.33314320925872226        9.0898662511647632E-002   6.6662106702548948E-002   7.1424270959359659E-002
+  0.49964039654978082        9.9991280305701244E-002   6.6664680909653232E-002   6.6662667257751371E-002
+  0.83750538893692139       0.11110223508567293        7.6916118688031401E-002   6.2497261253132479E-002
  ii)
  
  
@@ -119,13 +2090,79 @@
  
  
  
+ fPrimo=  -2.0802399067213426      fSecondo=   2.9114204831649779     
+ fPrimo=  -1439.3369420993258      fSecondo=   5270.1434973670848     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo= -0.63409100823587072      fSecondo=  0.29860218459876986     
+ fPrimo= -0.75897066416178205      fSecondo=  0.42586474860210444     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo= -0.38488133229055138      fSecondo=  0.11084128987020782     
+ fPrimo= -0.42649050831708979      fSecondo=  0.13598398239063764     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo= -0.27728740653746664      fSecondo=   5.7615793703579297E-002
+ fPrimo= -0.29810162570197185      fSecondo=   6.6569528262666641E-002
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  -2.7141376431319446      fSecondo=   5.8493277499075367     
+ fPrimo=  -1440.0956550968901      fSecondo=   7456.5336941978521     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo= -0.66203660200963399      fSecondo=  0.38201343526765191     
+ fPrimo= -0.72444798601116966      fSecondo=  0.45696200752682531     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  -3.3759487885015673      fSecondo=   9.8290383718876964     
+ fPrimo=  -1440.8198454243827      fSecondo=   9546.0057256423479     
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        2.0014396430096686     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        1.0006946838166242     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        4.0018988972487639     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        3.0017117622333065     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        6.0007728288213036     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        5.0012881764424142     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        8.0008542867158052     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        7.0010792176627179     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        10.000928313767361     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        9.0007467550829929     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        12.001405397420218     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        11.001214152288812     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        14.000841431727400     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        13.001180759689349     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        16.000691495049598     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        15.000913317743635     
  iii)
  
  
@@ -135,11 +2172,77 @@
  
  
  
+ fPrimo=   2.0802399067213426      fSecondo=   2.9114204831649779     
+ fPrimo=   1.2818323829570852      fSecondo=   1.1817648387112674     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  0.63409100823587072      fSecondo=  0.29860218459876986     
+ fPrimo=  0.54528016450566519      fSecondo=  0.22141786203660677     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  0.38488133229055138      fSecondo=  0.11084128987020782     
+ fPrimo=  0.35073957671009914      fSecondo=   9.2108297752282464E-002
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  0.27728740653746664      fSecondo=   5.7615793703579297E-002
+ fPrimo=  0.25920426378448164      fSecondo=   5.0358681976547963E-002
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=   2.7141376431319446      fSecondo=   5.8493277499075367     
+ fPrimo=   1.8269579209416600      fSecondo=   2.8016883025984392     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=  0.66203660200963399      fSecondo=  0.38201343526765191     
+ fPrimo=  0.60982186814436623      fSecondo=  0.32438695309469129     
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ fPrimo=   3.3759487885015673      fSecondo=   9.8290383718876964     
+ fPrimo=   2.4365793834918965      fSecondo=   5.3567208759772953     
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=           0
+ -------------------------------------
  
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -1.0006946838166242     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -2.0014396430096686     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -3.0017117622333065     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -4.0018988972487639     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -5.0012881764424142     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -6.0007728288213036     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -7.0010792176627179     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -8.0008542867158052     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -9.0007467550829929     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -10.000928313767361     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -11.001214152288812     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -12.001405397420218     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -13.001180759689349     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -14.000841431727400     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -15.000913317743635     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000       -16.000691495049598     
  FINE CALCOLO AUTOVALORI!
