@@ -271,19 +271,15 @@ Bolzano's Theorem tell us that there are two zeros of $g_u$ between $\lambda_m$ 
   \lambda_m < X_{-} < x < X_{+} < \lambda_{m+1}
 \end{equation*}
 
-We have one freedom: the $u$ parameter. Calling $\hat X_{-}=min_{u} X_{-}$ and $\hat X_{+}=max_{u} X_{+}$  we can obtain
+We have one freedom: the $u$ parameter. \\
+Calling $\hat X_{-}=min_{u} X_{-}$ and $\hat X_{+}=max_{u} X_{+}$  we can obtain
 
-%($\frac{\partial X^{'}}{\partial u}=\frac{\partial X^{''}}{\partial u}=0$)
 
 \begin{equation*}
   \lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \lambda_{m+1}
 \end{equation*}
 
-With algebraic manipulations 
-
-%(in which we consider $\frac{\effe{T,S}{\lambda}^{'}}{\effe{T,S}{\lambda}}=\sum \frac{1}{x-\lambda_i}$ and  $(\frac{\effe{T,S}{\lambda}^{'}}{\effe{T,S}{\lambda}})^2-\frac{\effe{T,S}{\lambda}^{''}}{\effe{T,S}{\lambda}}=\sum \frac{1}{(x-\lambda_i)^2}$ )
-
-we obtain 
+and with algebraic manipulations: 
 
 \begin{equation*}
   \hat X_{-}, \hat X_{+} = L_{\pm}(x) = x + \frac{ n }{ -\frac{f^{'}}{f} \pm \sqrt{(n-1)[ (n-1)(-\frac{f^{'}}{f}) -n\frac{f^{''}}{f} ]} }
@@ -293,62 +289,31 @@ with $\frac{f^{'}}{f}=\frac{ (\effe{T,S}{\lambda})^{'} }{ \effe{T,S}{\lambda} }$
 
 \end{frame}
 
-%%%
-%Inizio immagine
-%%%
-\begin{frame}
-\frametitle{Fast and secure iterative method}
-
-\begin{tikzpicture}
- \draw[->] (-1.5,0) -- (5.5,0); 
- \node at (6,0) {$\R$};
- \node[circle, fill=black!1, label=above:$x_{0}$] at (2.5,0) {};
-\end{tikzpicture}
-
-\end{frame}
 
 \begin{frame}
 \frametitle{Fast and secure iterative method}
 
+It's clear how we use $\lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \lambda_{m+1}$ :
+
 \begin{tikzpicture}
  \draw[->] (-1.5,0) -- (5.5,0); 
- \node at (6,0) {$\R$};
  \node[circle, fill=black!1, label=above:$x_{0}$] at (2.5,0) {};
- \node[circle, fill=black!1, label=above:$x^{(1)}_{-}$] at (1,0) {};
- \node[circle, fill=black!1, label=above:$x^{(1)}_{+}$] at (3.5,0) {};
+ \uncover<2>{
+   \node[circle, fill=black!1, label=above:$x^{(1)}_{-}$] at (1,0) {};
+   \node[circle, fill=black!1, label=above:$x^{(1)}_{+}$] at (3.5,0) {};
+ }
+ \uncover<3>{
+   \node[circle, fill=black!1, label=above:$x^{(2)}_{-}$] at (-0.2,0) {};
+   \node[circle, fill=black!1, label=above:$x^{(2)}_{+}$] at (3.9,0) {};
+   }
+ \uncover<4>{
+   \node[circle, fill=black!1, label=above:$\lambda_{m}$] at (-.5,0) {};
+   \node[circle, fill=black!1, label=above:$\lambda_{m+1}$] at (4,0) {};
+ }
 \end{tikzpicture}
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Fast and secure iterative method}
-
-\begin{tikzpicture}
- \draw[->] (-1.5,0) -- (5.5,0); 
- \node at (6,0) {$\R$};
- \node[circle, fill=black!1, label=above:$x_{0}$] at (2.5,0) {};
- \node[circle, fill=black!1, label=above:$x^{(2)}_{-}$] at (-0.2,0) {};
- \node[circle, fill=black!1, label=above:$x^{(2)}_{+}$] at (3.9,0) {};
-\end{tikzpicture}
-
-\end{frame}
-
-\begin{frame}
-\frametitle{Fast and secure iterative method}
-
-\begin{tikzpicture}
- \draw[->] (-1.5,0) -- (5.5,0); 
- \node at (6,0) {$\R$};
- \node[circle, fill=black!1, label=above:$x_{0}$] at (2.5,0) {};
- \node[circle, fill=black!1, label=above:$\lambda_{m}$] at (-.5,0) {};
- \node[circle, fill=black!1, label=above:$\lambda_{m+1}$] at (4,0) {};
-\end{tikzpicture}
-
-\end{frame}
-
-%%%
-%Fine immagine
-%%%
 
 
 \begin{frame}
@@ -409,6 +374,8 @@ eigenvalues of $(\hat T, \hat S)$, then
 \begin{frame}
 \frametitle{Split}
 
+\begin{te}[A sort of ``interlacing'']
+
 \begin{align*}
   -\infty < &\lambda_1 \le \hat\lambda_1 \\
   \hat\lambda_{i-1} \le &\lambda_i \le \hat\lambda_{i+1} \\
@@ -417,35 +384,42 @@ eigenvalues of $(\hat T, \hat S)$, then
 
 with $i=2,3,\dots,n-1$.
 
+\end{te}
+
 \begin{os}
 It's possible that
 
 \begin{tikzpicture}
-  \draw[->] (-2,0) -- (9,0); 
-  \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,0) {};
-  \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,0) {};
-  \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,0) {};
-  \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,0) {};
+  \uncover<1>{
+    \draw[->] (-2,0) -- (9,0); 
+    \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,0) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,0) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,0) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,0) {};
+    %%%
+    \draw[->] (-2,-1) -- (9,-1); 
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,-1) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,-1) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,-1) {};
+  }
+  \uncover<2,3>{
+    \draw[->] (-2,-.5) -- (9,-.5); 
+    \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,-.5) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,-.5) {};
+  }
+  \uncover<3>{
+    \draw[red] (3.25,.5) rectangle (5.5,-1);
+    }
 \end{tikzpicture}
 
-\begin{tikzpicture}
- \draw[->] (-2,0) -- (9,0); 
- \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,0) {};
- \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,0) {};
- \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,0) {};
-\end{tikzpicture}
-
-and all together:
 
 \begin{tikzpicture}
- \draw[->] (-2,0) -- (9,0); 
- \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,0) {};
-  \node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,0) {};
-  \node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,0) {};
-  \node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,0) {};
- \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,0) {};
- \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,0) {};
- \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,0) {};
+ 
 \end{tikzpicture}
 
 \end{os}

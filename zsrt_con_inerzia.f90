@@ -387,7 +387,6 @@ do while (dim <= n)
 
       end if
 
-
       !!!
       !Adesso dim>2 e numCol=numCol-1
       !!!
@@ -438,8 +437,14 @@ do while (dim <= n)
 
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
+
             !if ( dim > 4 .AND. x == 0.d0 ) cycle
             !Se x == 0.d0 non e` un candidato
+
+            if ( verbose >= 3 ) then
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Inizio a scegliere l'intervallo [aj, bj]:"
+            end if
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 
@@ -448,9 +453,9 @@ do while (dim <= n)
             call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
             kappa=numAut
 
-            if ( verbose >= 3 ) then
+            if ( verbose >= 4 ) then
                write(*,*)"work in progres..."
-               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
             end if
 
             if ( kappa < j ) then
@@ -460,63 +465,51 @@ do while (dim <= n)
                bJ = x
                kappaB = kappa
             end if
-      
+ 
+
+            !Definisco segno
+            if ( -fPrimo >= 0.d0 ) then
+               segno = 1
+            else
+               segno = -1
+            end if
+
+            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
+            !con sign( \lambda_j - x )
+            !vedi meta` p. 14
+     
             !Se il segno di -fPrimo non coincide con quello di
             !\lambda_j-x ( il fatto che questa condizione
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
             !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
-            if ( kappa+1 < j .OR. j < kappa ) then
+            if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
+                 .OR. ( kappa < j .AND. segno < 0 ) ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
             end if
 
             if ( verbose >= 3 ) then
-               write(*,*)"fine lavoro:"
-               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"Ho scelto l'intervallo [aj, bj]:"
+               write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
-
-               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
-                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(aj,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-               kappa=numAut
-
-               write(*,*)"kappa di aj=", kappa
-            
-               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
-                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(bj,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-               kappa=numAut
-               write(*,*)"kappa di bj=", kappa
-               
-               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-               kappa=numAut
+               write(*,*)"kappa(aj)=",kappaA,"kappa(bj)=",kappaB
             end if
             
-
-            !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
-            if ( -fPrimo >= 0.d0 ) then
-               segno = 1
-            else
-               segno = -1
-            end if
-      
-            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
-            !con sign( \lambda_j - x )
-            !vedi meta` p. 14
+            !!!
+            !Chiamo EstMlt e LagIt
+            !!!
 
             !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then
-               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
-               write(*,*)"entro in LagIt con"
-               write(*,*)"j=",j,"mlt=",mlt
-               write(*,*)"aj=",aj,"bj=",bj
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Entro in LagIt"
+               write(*,*)"la molteplicita` del j-esimo autovalore"
+               write(*,*)"e` stimata essere mlt=",mlt,"(j=",j,")"
             end if
 
 
@@ -525,8 +518,8 @@ do while (dim <= n)
                  fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
             if (verbose >= 3) then
-               write(*,*)"esco da LagIt"
-               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Esco da LagIt"
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
             end if
 
             !immagazzino i risultati.
