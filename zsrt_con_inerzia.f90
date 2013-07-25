@@ -33,7 +33,8 @@ machinePrecision=epsilon(1.d0)
 !2) stampo k1, k2 e le condizioni di arresto
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
-! con la sua mlt, ed il numero di iterazioni 
+! con la sua mlt, ed il numero di iterazioni
+!4) stampo le informazioni dentro i cicli. 
 verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
@@ -402,12 +403,21 @@ do while (dim <= n)
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
       call numAutovaloriPrimaDiX(a,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-      k1 = kappa+1
+      if ( verbose >= 3 .AND. kappa /= numAut ) then
+         write(*,*)"kappa e` diverso da numAut!"
+         write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      end if
+      !k1 = kappa+1
+      k1 = numAut+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
-      !ATTENZIONE: c'e` qualche problema con k2
+      
       call numAutovaloriPrimaDiX(b,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-      !k2=kappa+1
+      if ( verbose >= 3 .AND. kappa /= numAut ) then
+         write(*,*)"kappa e` diverso da numAut!"
+         write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      end if
+      !k2=kappa
       k2=numAut
       
       if (verbose >= 2) then
@@ -451,6 +461,10 @@ do while (dim <= n)
 100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
             call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+            if ( verbose >= 3 .AND. kappa /= numAut ) then
+               write(*,*)"kappa e` diverso da numAut!"
+               write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+            end if
             kappa=numAut
 
             if ( verbose >= 4 ) then
@@ -519,7 +533,6 @@ do while (dim <= n)
 
             if (verbose >= 3) then
                write(*,*)"Esco da LagIt"
-               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
             end if
 
             !immagazzino i risultati.
@@ -773,6 +786,10 @@ do while ( .TRUE. )
 20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
    Sfine, fPrimo, fSecondo, kappa)
    call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+   if ( verbose >= 3 .AND. kappa /= numAut ) then
+      write(*,*)"kappa e` diverso da numAut!"
+      write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+   end if
    kappa=numAut
 
    !aggiorno [aj, bj] secondo il nuovo kappa

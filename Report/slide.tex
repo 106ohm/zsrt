@@ -127,6 +127,10 @@ Corso Metodi di Approssimazione 2012-2013
 %%%
 \begin{document}
 
+
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup} 
+
 \tikzstyle{every node}=[draw=black,thick,anchor=west]
 \tikzstyle{selected}=[draw=red,fill=red!30]
 \tikzstyle{optional}=[dashed,fill=gray!50]
@@ -210,6 +214,37 @@ using an iterative method, living on real line.
 \subsection{Rapid tour}
 
 \begin{frame}
+\frametitle{Rapid tour}
+
+\begin{Bdescription}
+  \item [We want:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Fast and secure iterative method.
+  \item Starting points for our method.
+  \item Scalability.
+  \end{Bitemize}}
+  
+  \item [We have:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Laguerre's method.
+  \item Cuppen's divide and conquer method.
+  \item \textcolor{blue}{Symmetric tridiagonal matrices}.
+  \end{Bitemize}}
+
+  \item [We add:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item \textcolor{blue}{Unreducible condition}.
+  \item Dynamic programming (Bottom-up).
+  \item \textcolor{blue}{Efficient matrix storing}.
+  \end{Bitemize}}
+\end{Bdescription}
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Unreducible pencil}
 
 \begin{de}[ as in \cite{MR739278} ]
@@ -242,6 +277,37 @@ with $T(:,0)=diag$ and $T(:,1)=super$.
 \end{frame}
 
 \section{Laguerre's method}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
+\begin{Bdescription}
+  \item [We want:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item \textcolor{blue}{Fast and secure iterative method}.
+  \item Starting points for our method.
+  \item Scalability.
+  \end{Bitemize}}
+  
+  \item [We have:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item \textcolor{blue}{Laguerre's method}.
+  \item Cuppen's divide and conquer method.
+  \item Symmetric tridiagonal matrices.
+  \end{Bitemize}}
+
+  \item [We add:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Unreducible condition.
+  \item Dynamic programming (Bottom-up).
+  \item Efficient matrix storing.
+  \end{Bitemize}}
+\end{Bdescription}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Fast and secure iterative method}
@@ -328,12 +394,18 @@ It's clear how we use $\lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \la
   else we have a similar expression.
 \end{de} 
 
+\pause
+
 We can prove that
 
 \begin{equation*}
   \lambda_m \leftarrow \dots x_{-}^{(2)} < x_{-}^{(1)} < x_{0} < x_{+}^{(1)} < x_{+}^{(2)} \dots \rightarrow \lambda_{m+1}
 \end{equation*}
   
+\pause
+
+So Laguerre's method is \textcolor{green}{secure}.
+
 \end{frame}
 
 %%%
@@ -343,13 +415,115 @@ We can prove that
 \begin{frame}
 \frametitle{Fast and secure iterative method}
 
+We also have un important property:
+
+\begin{te}
+  If we choose\symbolfootnote[1]{ for $x_0 < \lambda_{m+1}$ s.t. 
+$sign( \frac{f^{'}(x_0)}{f(x_0)} ) = sign(\lambda_m - x_0)$ we have 
+$\{ x_{+}^{(k)} \}_{k=1,\dots}$ conv. mon. cubic to $\lambda_{m+1}$ } $\lambda_m < x_0$ s.t. 
+$sign( \frac{f^{'}(x_0)}{f(x_0)} ) = sign(\lambda_m - x_0)$ then 
+$\{ x_{-}^{(k)} \}_{k=1,\dots}$ converge monotonically in asymptotically 
+cubic rate to $\lambda_m$. 
+\end{te}
+
+\pause
+
+So we can exactly define a $\fbox{neighborood ``near'' $\lambda$ }$ and in it we
+have cubic rate convergence (much, much faster then \textcolor{red}{bisection}) 
+
+\pause
+
+The Laguerre's method is \textcolor{green}{fast}.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fast and secure iterative method}
+
 It's clear that we need a powerfull method to obtain $x_{0}$ and an algorithm to 
 estimate $mlt(\lambda_m)$. \\
-\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{MR1289159}) causes no trouble, so the most importan aspects of our calculation are: good $x_{0}$ and good evaluation of $L_{\pm}(x)$. 
+\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{MR1289159}) causes no trouble, so the most importan aspects of our calculation are: 
+
+\fbox{\setlength{\itemsep}{0pt}
+\begin{Bitemize}[t]
+\item Good $x_{0}$.
+\item Good evaluation of $L_{\pm}(x)$.
+\end{Bitemize}}
+
+
 \end{frame}
 
 
 \section{Good initial point}
+
+\begin{frame}
+\frametitle{Searching $x_0$}
+
+\begin{Bdescription}
+  \item [We want:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Fast and secure iterative method.
+  \item \textcolor{blue}{Starting points for our method}.
+  \item Scalability.
+  \end{Bitemize}}
+  
+  \item [We have:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Laguerre's method.
+  \item Cuppen's divide and conquer method.
+  \item Symmetric tridiagonal matrices.
+  \end{Bitemize}}
+
+  \item [We add:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Unreducible condition.
+  \item Dynamic programming (Bottom-up).
+  \item Efficient matrix storing.
+  \end{Bitemize}}
+\end{Bdescription}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Ideas:}
+  If $n=1$ we have $t\cdot v=\lambda\cdot s\cdot v$. $s\ne 0$, so 
+  $\lambda= \frac{t}{s}$.\\
+  
+  \pause
+  
+  If $n=2$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ideas:}
+  If $n=1$ we have $t\cdot v=\lambda\cdot s\cdot v$. $s\ne 0$, so 
+  $\lambda= \frac{t}{s}$.\\
+  
+  If $n=2$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
+  
+  
+  calling\symbolfootnote[1]{$\alpha=,\beta=,\gamma=$.} 
+
+  \begin{equation*}
+    S^{-1}T = \delta^{-1} \cdot \Big( \begin{matrix} \alpha & \gamma \\ \gamma & \beta \end{matrix}\Big)
+  \end{equation*}
+
+  we resolve $det[ S^{-1}T - \lambda I ]=0$ with
+
+  \begin{equation*}
+    \lambda_{1,2} = \frac{1}{2\delta}  
+  \big( \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
+  \gamma^2 - \alpha\beta } \big)
+  \end{equation*}
+
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Split}
@@ -418,9 +592,6 @@ It's possible that
 \end{tikzpicture}
 
 
-\begin{tikzpicture}
- 
-\end{tikzpicture}
 
 \end{os}
 

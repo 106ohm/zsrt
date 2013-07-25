@@ -8,6 +8,6 @@
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {2}{1}{Rapid tour}{6}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Laguerre's method}{8}{0}{3}
+\beamer@sectionintoc {3}{Laguerre's method}{9}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Good initial point}{16}{0}{4}
+\beamer@sectionintoc {4}{Good initial point}{23}{0}{4}
