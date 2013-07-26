@@ -10,4 +10,6 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {3}{Laguerre's method}{9}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Good initial point}{23}{0}{4}
+\beamer@sectionintoc {4}{Good evaluation of $L_{\pm }(x)$}{23}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Good initial point}{27}{0}{5}

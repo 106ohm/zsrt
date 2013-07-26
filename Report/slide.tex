@@ -25,7 +25,7 @@
 \usepackage{graphicx}
 
 \usepackage{tikz}
-\usetikzlibrary{trees}
+\usetikzlibrary{trees,matrix}
 
 %%%
 %Definizione nuovi comandi
@@ -162,7 +162,7 @@ tridiagonal\end{fminipage} pencil.
 \pause
 
 \begin{de}[Problem]
-  Find $\lambda \tc T x = \lambda S x$. \\
+  Find $\lambda \tc T v = \lambda S v$. \\
   $T,S$ symmetric implies $\lambda\in\R$.
 \end{de}
 \end{frame}
@@ -450,9 +450,122 @@ estimate $mlt(\lambda_m)$. \\
 \item Good evaluation of $L_{\pm}(x)$.
 \end{Bitemize}}
 
+\end{frame}
+
+
+\section{Good evaluation of $L_{\pm}(x)$}
+
+\begin{frame}
+  \frametitle{Three term recurrence}
+  For a generic $x\in\R$ we call $\rho_n(x) = \deter{T_n-x S_n}$,
+  and $\rho_{n-1}(x) = \deter{T_{n-1}-x S_{n-1}}$, with $T_{n-1}$ leading principal submatrix. 
+
+  We have
+
+  \begin{align*}
+    \rho_0 &:= 1\, \text{, } \rho_1:=t_{1,1}- x s_{1,1} \\
+    \rho_i &:= (t_{i,i}- x s_{i,i})\textcolor{blue}{\rho_{i-1}} - (t_{i-1,i}-x s_{i-1,i})^2 \textcolor{cyan}{\rho_{i-2}}\, \text{, } i=2,3,\dots,n
+  \end{align*}
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Three term recurrence}
+
+  We can proove it with the \emph{Laplace expansion} (e.g. $n=4$)
+
+  \begin{align*}
+    T_4 - x S_4  &= \begin{pmatrix} 
+      a & b & 0 & \textcolor{green}{0}\\
+      b & c & d & \textcolor{green}{0}\\
+      0 & d & e & \textcolor{green}{f}\\
+      0 & 0 & f & \textcolor{green}{g}
+    \end{pmatrix} \\
+    det \Big( T_4 - \lambda S_4 \Big) &= g \begin{bmatrix}
+      a & b & 0\\
+      b & c & d\\
+      0 & d & e
+    \end{bmatrix} -f \begin{bmatrix}
+      a & b & 0\\
+      b & c & d\\
+      \textcolor{green}{0} & \textcolor{green}{0} & \textcolor{green}{f}
+    \end{bmatrix}\\
+    &= g \begin{bmatrix} 
+      a & b & 0\\
+      b & c & d\\
+      0 & d & e
+    \end{bmatrix} - f^2 \begin{bmatrix} a & b \\ b & c \end{bmatrix}
+  \end{align*}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Three term recurrence}
+
+  We can proove it with the \emph{Laplace expansion} (e.g. $n=4$)
+
+  \begin{align*}
+    T_4 - x S_4  &= \begin{pmatrix} 
+      \textcolor{cyan}{a} & \textcolor{cyan}{b} & \textcolor{blue}{0} & 0\\
+      \textcolor{cyan}{b} & \textcolor{cyan}{c} & \textcolor{blue}{d} & 0\\
+      \textcolor{blue}{0} & \textcolor{blue}{d} & \textcolor{blue}{e} & f\\
+      0 & 0 & f & g
+    \end{pmatrix} \\
+    det \Big( T_4 - \lambda S_4 \Big) &= g \begin{bmatrix}
+      \textcolor{cyan}{a} & \textcolor{cyan}{b} & \textcolor{blue}{0}\\
+      \textcolor{cyan}{b} & \textcolor{cyan}{c} & \textcolor{blue}{d}\\
+      \textcolor{blue}{0} & \textcolor{blue}{d} & \textcolor{blue}{e}
+    \end{bmatrix} -f \begin{bmatrix}
+      \textcolor{cyan}{a} & \textcolor{cyan}{b} & 0\\
+      \textcolor{cyan}{b} & \textcolor{cyan}{c} & d\\
+      0 & 0 & f
+    \end{bmatrix}\\
+    &= g \begin{bmatrix} 
+      \textcolor{cyan}{a} & \textcolor{cyan}{b} & \textcolor{blue}{0}\\
+      \textcolor{cyan}{b} & \textcolor{cyan}{c} & \textcolor{blue}{d}\\
+      \textcolor{blue}{0} & \textcolor{blue}{d} & \textcolor{blue}{e}
+    \end{bmatrix} - f^2 \begin{bmatrix} 
+      \textcolor{cyan}{a} & \textcolor{cyan}{b} \\ 
+      \textcolor{cyan}{b} & \textcolor{cyan}{c} 
+    \end{bmatrix}
+  \end{align*}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Three term recurrence}
+
+  \begin{os}
+    If $x = \lambda$ then $\rho_n(\lambda)=\effe{(T_n,S_n)}{\lambda}=f$
+  \end{os}
+
+  \begin{os}
+    $\rho_0,\rho_1,\dots,\rho_n$ i a \textcolor{blue}{\emph{Sturm sequence}} of polynomials so, $\forall x\in\R$, we have
+
+    \begin{align*}
+      \kappa(x) &:= \text{\# eigenvalues less then } x \\
+      \kappa(x) &= \textcolor{blue}{\text{\# consecutive sign changes in }} \{ \rho_i \}_{i=0,\dots,n}
+    \end{align*}
+  \end{os}
+
+  \begin{tikzpicture}
+    \draw[->] (-5,0) -- (2,0);
+    \node[circle, fill=black!1, label=above:$\lambda_2$] at (-3,0) {};
+    \node[circle, fill=black!1, label=above:$\lambda_3$] at (-2,0) {};
+    \node[circle, fill=black!1, label=above:$\lambda_4$] at (-1,0) {};
+    \node[circle, fill=green, label=above:$x$] at (0,0) {};
+    \node[circle, fill=green, label=below:$\kappa(x)\text{ is } 3$] at (0,0) {};
+  \end{tikzpicture}
+
+  %We will see that $\kappa(x)$ is a fondamental
+  
+
+\end{frame}
+
+%%%
+%%%
+%%%
 
 \section{Good initial point}
 
@@ -523,7 +636,20 @@ estimate $mlt(\lambda_m)$. \\
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{Ideas:}
 
+  And if $n=4$?
+  
+  \begin{equation*}
+    \begin{bmatrix}
+      a & b\\
+      c & d
+    \end{bmatrix}
+  \end{equation*}
+
+
+\end{frame}
 
 \begin{frame}
 \frametitle{Split}
@@ -592,8 +718,25 @@ It's possible that
 \end{tikzpicture}
 
 
-
 \end{os}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Split}
+
+\begin{tikzpicture}
+\draw[->] (-2,-.5) -- (9,-.5); 
+\node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,-.5) {};
+\node[circle, fill=black!1, label=above:$\hat\lambda_{1}$] at (1,-.5) {};
+\node[circle, fill=black!1, label=above:$\lambda_{2}$] at (3.5,-.5) {};
+\node[circle, fill=black!1, label=above:$\hat\lambda_{3}$] at (6.5,-.5) {};
+\node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,-.5) {};
+\node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,-.5) {};
+\node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,-.5) {};
+\end{tikzpicture}
+
+So we can't 
 
 \end{frame}
 
