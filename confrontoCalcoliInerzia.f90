@@ -66,23 +66,23 @@ do j=1,n
    end do
 end do
 
-write(*,*)"T="
-do i=1,n
-   write(*,*) T(i,:)
-end do
-write(*,*)"T diag="
-write(*,*) Tcorta(:,0)
-write(*,*)"T super="
-write(*,*) Tcorta(:,1)
-
-write(*,*)"S="
-do i=1,n
-   write(*,*) S(i,:)
-end do
-write(*,*)"S diag="
-write(*,*) Scorta(:,0)
-write(*,*)"S super="
-write(*,*) Scorta(:,1)
+!!$write(*,*)"T="
+!!$do i=1,n
+!!$   write(*,*) T(i,:)
+!!$end do
+!!$write(*,*)"T diag="
+!!$write(*,*) Tcorta(:,0)
+!!$write(*,*)"T super="
+!!$write(*,*) Tcorta(:,1)
+!!$
+!!$write(*,*)"S="
+!!$do i=1,n
+!!$   write(*,*) S(i,:)
+!!$end do
+!!$write(*,*)"S diag="
+!!$write(*,*) Scorta(:,0)
+!!$write(*,*)"S super="
+!!$write(*,*) Scorta(:,1)
 
 open(unit=3, file="Eispack/ris_eispack.txt")
 
