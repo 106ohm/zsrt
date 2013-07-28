@@ -82,146 +82,29 @@ do i=1,n
    S(i,i) = i*1.d0 + rnd
 end do
 
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !T(i,i)> somma_su_j_di T(i,j)
-!!$         T(i,j) = rnd+n+1
-!!$      else
-!!$         if ( abs(i-j) == 1 ) then
-!!$            T(i,j) = rnd
-!!$            T(j,i) = T(i,j)
-!!$         else
-!!$            T(i,j)=0.d0
-!!$            T(j,i)=T(i,j)
-!!$         end if
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i == j) then
-!!$         !aggiungo n+1, cosi' sono sicuro che 
-!!$         !S(i,i)> somma_su_j_di S(i,j)
-!!$         S(i,i) = rnd+n+1
-!!$      else
-!!$         if ( abs(i-j) == 1 ) then
-!!$            S(i,j) = rnd
-!!$            S(j,i) = S(i,j)
-!!$         else
-!!$            S(i,j)=0.d0
-!!$            S(j,i)=S(i,j)
-!!$         end if
-!!$      end if
-!!$   end do
-!!$end do
 
-
-!!$!!!
-!!$!Matrici tridiagonali simmetriche random, 
-!!$!ma dominanti diagonali (per poco)
-!!$!Per i teoremi di Gershgorin T ed S sono
-!!$!definite positive
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i /= j) then
-!!$         if ( abs(i-j) == 1 ) then
-!!$            T(i,j) = rnd
-!!$            T(j,i) = T(i,j)
-!!$         else
-!!$            T(i,j)=0.d0
-!!$            T(j,i)=T(i,j)
-!!$         end if
-!!$      end if
-!!$   end do
-!!$end do
-!!$do i=1,n
-!!$   T(i,i) = sum(T(i,:)) + machinePrecision
-!!$end do
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      call random_number(rnd)
-!!$      if (i /= j) then
-!!$         if ( abs(i-j) == 1 ) then
-!!$            S(i,j) = rnd
-!!$            S(j,i) = S(i,j)
-!!$         else
-!!$            S(i,j)=0.d0
-!!$            S(j,i)=S(i,j)
-!!$         end if
-!!$      end if
-!!$   end do
-!!$end do
-!!$do i=1,n
-!!$   S(i,i) = sum(S(i,:)) + machinePrecision
-!!$end do
-
-
-
-!!$!!!
-!!$!Matrici AD HOC
-!!$!!!
-!!$n=4
-!!$T(1,1)= 1.d0
-!!$T(2,2)= 2.d0
-!!$T(3,3)= 3.d0
-!!$T(4,4)= 4.d0
-!!$
-!!$T(1,2)= 0.d0
-!!$T(1,3)= 0.d0
-!!$T(1,4)= 0.d0
-!!$T(2,1)= 0.d0
-!!$T(2,3)= 0.d0
-!!$T(2,4)= 0.d0
-!!$T(3,1)= 0.d0
-!!$T(3,2)= 0.d0
-!!$T(3,4)= 0.d0
-!!$T(4,1)= 0.d0
-!!$T(4,2)= 0.d0
-!!$T(4,3)= 0.d0
-!!$!!!
-!!$S(1,1)= 1.d0
-!!$S(2,2)= 1.d0
-!!$S(3,3)= 1.d0
-!!$S(4,4)= 1.d0
-!!$
-!!$S(1,2)= 0.d0
-!!$S(1,3)= 0.d0
-!!$S(1,4)= 0.d0
-!!$S(2,1)= 0.d0
-!!$S(2,3)= 0.d0
-!!$S(2,4)= 0.d0
-!!$S(3,1)= 0.d0
-!!$S(3,2)= 0.d0
-!!$S(3,4)= 0.d0
-!!$S(4,1)= 0.d0
-!!$S(4,2)= 0.d0
-!!$S(4,3)= 0.d0
 
 
 !!$!!!
 !!$!ATTENZIONE: ...
-!!$!S=I,T=diag(1,...,n)
+!!$!S=I;T=trid(-1,2,-1)
 !!$!!!
 !!$do i=1,n
 !!$   do j=1,i
 !!$      if (i == j) then
 !!$         T(i,j) = 2.d0
+!!$         !T(i,j) = - S(i,j)
 !!$      else
 !!$         if ( abs(i-j) == 1 ) then
 !!$            T(i,j) = -1.d0
+!!$            !T(i,j) = - S(i,j)
 !!$            T(j,i) = T(i,j)
+!!$            !T(j,i) = - S(i,j)
 !!$         else
 !!$            T(i,j) = 0.d0
+!!$            !T(i,j) = - S(i,j)
 !!$            T(j,i) = T(i,j)
+!!$            !T(j,i) = - S(i,j)
 !!$         end if
 !!$      end if
 !!$   end do

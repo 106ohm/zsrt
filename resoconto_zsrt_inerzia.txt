@@ -25,10 +25,6 @@
  
  
  
- fPrimo=  -10.000933425099074      fSecondo=   70.050950283879644     
- fPrimo=   1442.9670476362367      fSecondo=   13919.343246482471     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           1 Tfine=           4
@@ -36,9 +32,8 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   14669773.466764690      fSecondo=   141992102.52420303     
- fPrimo=   80251.107611472311      fSecondo=   1285648.5784545080     
- fPrimo=  -18210.615274474567      fSecondo=   630892.46429868985     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  Ho scelto l'intervallo [aj, bj]:
  x=  0.24982642254739140      j=           1 kappa(x)=           0
  aj=  0.24982642254739140      bj=  0.49965284509478280     
@@ -50,7 +45,6 @@
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
  xl(0)=  0.24988138788403069     
- fPrimo=   2313843429026.2046      fSecondo=  -80261178626572.047     
  mi muovo verso sinistra
  xl(0)=  0.24988138788359851     
  condizione di arresto (24) del terzo tipo
@@ -59,9 +53,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -14674794.729795240      fSecondo=  -235137665.74839091     
- fPrimo=  -16350.309158685077      fSecondo=   566363.35418399528     
- fPrimo=   22.441477694318593      fSecondo=  -204.83223651110740     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.37473024310280323      j=           2 kappa(x)=           2
  aj=  0.24982016206853547      bj=  0.37473024310280323     
@@ -73,21 +64,16 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=  0.33712940115153767     
- fPrimo=   254.50895189658749      fSecondo=   1749.6833071990959     
  mi muovo verso sinistra
  xl(0)=  0.33314607468553920     
- fPrimo=   348767.66056413873      fSecondo=   3143958.9660675335     
  mi muovo verso sinistra
  xl(0)=  0.33314320741016745     
- fPrimo=  -540749962.37216067      fSecondo=  -4875460621.7137632     
  mi muovo verso destra
  xl(0)=  0.33314320925945096     
- fPrimo=   838424559520.62341      fSecondo=   7559326365564.6475     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
  xl(0)=  0.33314320926081403     
- fPrimo=   391131266952.83020      fSecondo=   3526481738690.6191     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -98,8 +84,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   29205203.455064245      fSecondo=   263316700.14189556     
- fPrimo=   8.3818824069266267      fSecondo=   10.644110356571669     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.66657162173833417      j=           3 kappa(x)=           3
  aj=  0.33314324347666818      bj=  0.66657162173833417     
@@ -110,22 +94,17 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso sinistra
- xl(0)=  0.53702071038879695     
- fPrimo=   32.956365691041782      fSecondo=   330.81771476711776     
+ xl(0)=  0.53702071038879684     
  mi muovo verso sinistra
  xl(0)=  0.50058545831134071     
- fPrimo=   1065.2950745027333      fSecondo=   16838.064210333894     
  mi muovo verso sinistra
  xl(0)=  0.49963970712058475     
- fPrimo=  -1458526.6684067349      fSecondo=  -23370523.013155058     
  mi muovo verso destra
  xl(0)=  0.49964039274020949     
- fPrimo=   1960131433.9810944      fSecondo=   31407612811.820683     
  kappa e` diverso da numAut!
  kappa(a)=           3 numAut=           2
  mi muovo verso destra
  xl(0)=  0.49964039332326077     
- fPrimo=   914365124.18737066      fSecondo=   14651071376.232874     
  kappa e` diverso da numAut!
  kappa(a)=           3 numAut=           2
  mi muovo verso destra
@@ -136,10 +115,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -50085470.811532043      fSecondo=   1737333239.1278286     
- fPrimo=   11.398483338737750      fSecondo=   40.357790152288750     
- fPrimo=   1.7117823233511578      fSecondo=  -43.411087948143354     
- fPrimo=  -5.0046414692880132      fSecondo=  -101.60192142873936     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.90623517098971484      j=           4 kappa(x)=           3
  aj=  0.90623517098971484      bj=   1.0000000000000002     
@@ -151,23 +126,18 @@
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso destra
  xl(0)=  0.99598808833637520     
- fPrimo=  -296.14897834898517      fSecondo=  -2914.1869878124521     
  mi muovo verso destra
  xl(0)=  0.99931005748536972     
- fPrimo=   225152.16492831061      fSecondo=   2179252.6733026784     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  mi muovo verso sinistra
  xl(0)=  0.99930561594915168     
- fPrimo=  -161910606.21508795      fSecondo=  -1567170470.5352731     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
  mi muovo verso destra
  xl(0)=  0.99930562212539920     
- fPrimo=   116433969692.08554      fSecondo=   1126991478784.9807     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=  0.99930562213521468     
- fPrimo=   54296096885.821800      fSecondo=   525544552680.59271     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=  0.99930562215626328     
  condizione di arresto (24) del secondo tipo
@@ -175,10 +145,6 @@
  LagIt compie            7  iterazioni.
  Esco da LagIt
  
- fPrimo=  -26.001125399261415      fSecondo=   502.12217307601867     
- fPrimo=   4.7587993154770007      fSecondo=   16.981003608725047     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           5 Tfine=           8
@@ -186,10 +152,6 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -22418247.905892305      fSecondo=  -2729673824.0254278     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
- fPrimo=  -88.305240838049784      fSecondo=   5331.0776316413430     
  Ho scelto l'intervallo [aj, bj]:
  x=   9.9974259972220092E-002 j=           1 kappa(x)=           0
  aj=   9.9974259972220092E-002 bj=  0.19994851994444018     
@@ -201,18 +163,14 @@
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
  xl(0)=  0.12055187738472775     
- fPrimo=  -304.64447521492843      fSecondo=   39324.746578687205     
  mi muovo verso destra
  xl(0)=  0.12489082443825635     
- fPrimo=  -10528.440702150208      fSecondo=   1945701.2156424173     
  mi muovo verso destra
  xl(0)=  0.12498665024744079     
- fPrimo=  -738311371.42484844      fSecondo=   137868125148.53604     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
  xl(0)=  0.12498664869950675     
- fPrimo=  -344545370.16486621      fSecondo=   64338459383.298111     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
@@ -223,12 +181,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -9465822.9285842944      fSecondo=  -681129529.16166246     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=  -61.374615845914683      fSecondo=   2691.4308167950153     
- fPrimo=  -362742.50204706454      fSecondo=   67716118.425709292     
- fPrimo=   317.09770099173841      fSecondo=  -17002.440769614030     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.14581454313481490      j=           2 kappa(x)=           2
  aj=  0.12498389411555563      bj=  0.14581454313481490     
@@ -240,18 +194,14 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=  0.14289735955009142     
- fPrimo=   16020.335351619509      fSecondo=  -127052.53102937939     
  mi muovo verso sinistra
  xl(0)=  0.14283495432872376     
- fPrimo=  -89574319.490574822      fSecondo=   623059599.38066566     
  mi muovo verso destra
  xl(0)=  0.14283496549263819     
- fPrimo=   472889374155.13873      fSecondo=  -3289398824592.8481     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
  xl(0)=  0.14283496549505495     
- fPrimo=   220659237197.88348      fSecondo=  -1534896487610.5420     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -262,20 +212,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   6281228.2265780000      fSecondo=  -43707601.774184562     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
- fPrimo=   9.7346317590327640      fSecondo=   70.968619733553865     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   20.583862996904532      fSecondo=   315.40428878400394     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   49.314010336168188      fSecondo=   1737.7751308053660     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=  -216.13629256610440      fSecondo=  -34711.702128170087     
- fPrimo=   362.70898268490618      fSecondo=   15715.813579575162     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.16962152701904165      j=           3 kappa(x)=           3
  aj=  0.14283512466481715      bj=  0.16962152701904165     
@@ -287,15 +225,12 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso sinistra
  xl(0)=  0.16668299980598433     
- fPrimo=   26555.949503075120      fSecondo=   1899838.5604016294     
  mi muovo verso sinistra
  xl(0)=  0.16664529263327607     
- fPrimo=  -194186499.12799940      fSecondo=  -13972807684.166937     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=  0.16664528674791892     
- fPrimo=  -90613649.742216140      fSecondo=  -6520166171.8071365     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -306,12 +241,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -846176867.89055216      fSecondo=   158010326042.83859     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
- fPrimo=   9.9518769195609078      fSecondo=   74.165967084828509     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  Ho scelto l'intervallo [aj, bj]:
  x=  0.56249332521004858      j=           4 kappa(x)=           4
  aj=  0.12498665042009692      bj=  0.56249332521004858     
@@ -323,37 +254,20 @@
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso sinistra
  xl(0)=  0.35447300246998936     
- fPrimo=   20.875545686544530      fSecondo=   324.33239716686199     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  mi muovo verso sinistra
  xl(0)=  0.25634156438953909     
- fPrimo=   45.298709503612578      fSecondo=   1478.0698500735193     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  mi muovo verso sinistra
- xl(0)=  0.21337029383419190     
- fPrimo=   121.38317610072232      fSecondo=   8399.0238400992275     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.21337029383419193     
  mi muovo verso sinistra
- xl(0)=  0.20068473044627641     
- fPrimo=   1418.0622407715609      fSecondo=   164901.62894907701     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.20068473044627644     
  mi muovo verso sinistra
- xl(0)=  0.19994867247159145     
- fPrimo=   9264248.1100530047      fSecondo=   1128015290.1612134     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.19994867247159148     
  mi muovo verso sinistra
  xl(0)=  0.19994856452904072     
- fPrimo=  -64826223612.007576      fSecondo=  -7893299103195.0830     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
  mi muovo verso destra
  xl(0)=  0.19994856454446658     
- fPrimo=   452401519508105.63      fSecondo=   55084814534805352.     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=  0.19994856454446910     
  condizione di arresto (24) del terzo tipo
@@ -361,10 +275,6 @@
  LagIt compie            9  iterazioni.
  Esco da LagIt
  
- fPrimo=  -42.000786292971462      fSecondo=   1318.2005795711484     
- fPrimo=   4.4265846903498653      fSecondo=   14.697135762261304     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           9 Tfine=          12
@@ -372,10 +282,6 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -4461273.9271538323      fSecondo=  -1566038836.1734583     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
- fPrimo=  -104.79293644335208      fSecondo=   8055.6160385744215     
  Ho scelto l'intervallo [aj, bj]:
  x=   5.5551005485078311E-002 j=           1 kappa(x)=           0
  aj=   5.5551005485078311E-002 bj=  0.11110201097015662     
@@ -386,22 +292,17 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
- xl(0)=   7.4645475820858731E-002
- fPrimo=  -243.63122062983194      fSecondo=   39988.091686012944     
+ xl(0)=   7.4645475820858717E-002
  mi muovo verso destra
- xl(0)=   8.1977571362394960E-002
- fPrimo=  -944.99283853446377      fSecondo=   324062.42644149513     
+ xl(0)=   8.1977571362394974E-002
  mi muovo verso destra
  xl(0)=   8.3306209418607391E-002
- fPrimo=  -58624.478673387071      fSecondo=   26613579.781701591     
  mi muovo verso destra
  xl(0)=   8.3323333578759276E-002
- fPrimo=  -17956087245.807991      fSecondo=   8187846547316.5098     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
  xl(0)=   8.3323333515111939E-002
- fPrimo=  -8379511736.2461548      fSecondo=   3820996977770.7446     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
@@ -412,12 +313,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -1623671.4876740801      fSecondo=  -259770214.46114889     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=  -90.811949117974024      fSecondo=   6081.9534186675373     
- fPrimo=  -250.59511415274977      fSecondo=   42073.663062325468     
- fPrimo=  -175.94895048663767      fSecondo=  -120932.63058745363     
  Ho scelto l'intervallo [aj, bj]:
  x=   8.7491831432105788E-002 j=           2 kappa(x)=           1
  aj=   8.7491831432105788E-002 bj=   9.9990664493835188E-002
@@ -429,18 +326,14 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso destra
  xl(0)=   9.0082897434946435E-002
- fPrimo=  -1226.4499929584244      fSecondo=  -32975.636713763161     
  mi muovo verso destra
  xl(0)=   9.0889468837996132E-002
- fPrimo=  -110755.72049148566      fSecondo=   5985573.1614532052     
  mi muovo verso destra
  xl(0)=   9.0898499920641751E-002
- fPrimo=   730222030.51306677      fSecondo=  -40101010523.158417     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
  xl(0)=   9.0898501485723399E-002
- fPrimo=   340742488.12606180      fSecondo=  -18712330194.752995     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -451,25 +344,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   1513120.9462411639      fSecondo=  -83191295.654914647     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
- fPrimo=   8.9102817574082334      fSecondo=   59.541451314040870     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   18.068892743252896      fSecondo=   244.71135628232793     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   37.314288142790247      fSecondo=   1041.0119674909536     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   81.384549115346914      fSecondo=   4888.6239638791640     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   236.58805329685256      fSecondo=   36443.115344426609     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   145.18804234564061      fSecondo=  -52030.567017146059     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.10510385995966956      j=           3 kappa(x)=           3
  aj=   9.0899159324108761E-002 bj=  0.10510385995966956     
@@ -481,18 +357,14 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso sinistra
  xl(0)=  0.10137956948477526     
- fPrimo=   768.19585022565650      fSecondo=   48608.001011634849     
  mi muovo verso sinistra
  xl(0)=  0.10002056148897311     
- fPrimo=   34228.357533846938      fSecondo=   5396855.9419212500     
  mi muovo verso sinistra
  xl(0)=   9.9991278418555124E-002
- fPrimo=  -529815072.83524251      fSecondo=  -84739490481.305298     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=   9.9991276261468615E-002
- fPrimo=  -247237194.89173228      fSecondo=  -39543563357.302841     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -503,10 +375,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   5394917.2873499505      fSecondo=  -2460162427.5576844     
- fPrimo=   8.9861514845045090      fSecondo=   60.559555093975675     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  Ho scelto l'intervallo [aj, bj]:
  x=  0.54166175949321593      j=           4 kappa(x)=           4
  aj=   8.3323518986431616E-002 bj=  0.54166175949321593     
@@ -517,57 +385,34 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso sinistra
- xl(0)=  0.31069594618886670     
- fPrimo=   18.702204207501314      fSecondo=   262.15208697082886     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.31069594618886642     
  mi muovo verso sinistra
- xl(0)=  0.19983874663468162     
- fPrimo=   39.042961724268977      fSecondo=   1139.3428217727262     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.19983874663468154     
  mi muovo verso sinistra
- xl(0)=  0.14698844287548804     
- fPrimo=   82.671700429344497      fSecondo=   5041.7847925753413     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.14698844287548801     
  mi muovo verso sinistra
- xl(0)=  0.12256745029427965     
- fPrimo=   188.55415420526859      fSecondo=   24342.630375096393     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.12256745029427966     
  mi muovo verso sinistra
- xl(0)=  0.11291300475499094     
- fPrimo=   708.77964761126123      fSecondo=   188296.44211497033     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.11291300475499096     
  mi muovo verso sinistra
- xl(0)=  0.11112437440353218     
- fPrimo=   45338.144674348245      fSecondo=   15848096.782055601     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.11112437440353219     
  mi muovo verso sinistra
- xl(0)=  0.11110223238816101     
- fPrimo=  -370778355.76843607      fSecondo=  -130148700599.18941     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
+ xl(0)=  0.11110223238816100     
  mi muovo verso destra
- xl(0)=  0.11110223508518879     
- fPrimo=   2999233199803.2988      fSecondo=   1052774787673954.3     
+ xl(0)=  0.11110223508518881     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
- xl(0)=  0.11110223508556985     
- fPrimo=   1399556508550.4124      fSecondo=   491264835997873.50     
+ xl(0)=  0.11110223508556986     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
- xl(0)=  0.11110223508638643     
+ xl(0)=  0.11110223508638647     
  condizione di arresto (24) del secondo tipo
  
  LagIt compie           11  iterazioni.
  Esco da LagIt
  
- fPrimo=  -58.000589927391047      fSecondo=   2518.2275716556233     
- fPrimo=   4.2980951670616090      fSecondo=   13.856067252816899     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=          13 Tfine=          16
@@ -575,10 +420,6 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -61239649.074626975      fSecondo=  -42746145901.432297     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
- fPrimo=  -133.38394044182758      fSecondo=   13208.769844839582     
  Ho scelto l'intervallo [aj, bj]:
  x=   3.8458051180099685E-002 j=           1 kappa(x)=           0
  aj=   3.8458051180099685E-002 bj=   7.6916102360199370E-002
@@ -590,19 +431,14 @@
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
  xl(0)=   5.3753904210332132E-002
- fPrimo=  -291.59482373922123      fSecondo=   60883.752897179438     
  mi muovo verso destra
  xl(0)=   6.0372554247783435E-002
- fPrimo=  -780.57540759134486      fSecondo=   350666.47206604120     
  mi muovo verso destra
  xl(0)=   6.2358646716355326E-002
- fPrimo=  -7631.8755125772204      fSecondo=   6038755.4112225026     
  mi muovo verso destra
  xl(0)=   6.2497061532698357E-002
- fPrimo=  -12660975.089863062      fSecondo=   10671611800.866524     
  mi muovo verso destra
  xl(0)=   6.2497140518185723E-002
- fPrimo=  -22498414440934.105      fSecondo=   18964053027532664.     
  mi muovo verso destra
  xl(0)=   6.2497140518230174E-002
  condizione di arresto (24) del terzo tipo
@@ -611,13 +447,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -1507615.4245967870      fSecondo=  -421981117.02696353     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=  -121.90903543268908      fSecondo=   11052.054242906233     
- fPrimo=  -287.18566641217194      fSecondo=   59134.954993473206     
- fPrimo=  -1107316.0878601382      fSecondo=   932961043.93185008     
- fPrimo=   3253.3902653195451      fSecondo=  -773521.62646669301     
  Ho scelto l'intervallo [aj, bj]:
  x=   6.6960254024399674E-002 j=           2 kappa(x)=           2
  aj=   6.2496237089439702E-002 bj=   6.6960254024399674E-002
@@ -629,13 +460,10 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=   6.6663521551460395E-002
- fPrimo=   706656.70989714935      fSecondo=  -95558939.144402891     
  mi muovo verso sinistra
  xl(0)=   6.6662106572561400E-002
- fPrimo=  -7693853972.6616068      fSecondo=   1036732542016.4841     
  mi muovo verso destra
  xl(0)=   6.6662106702535279E-002
- fPrimo=   83590368695234.609      fSecondo=  -11263650702284576.     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -646,26 +474,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   1783714.0474374602      fSecondo=  -240690476.04726744     
- fPrimo=   8.6221896268853815      fSecondo=   55.758165841207891     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   17.352922431646153      fSecondo=   225.81819381853734     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   35.178735756677838      fSecondo=   927.52430462589211     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   72.604017765063077      fSecondo=   3940.8907469464052     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   158.12507771133539      fSecondo=   18455.751510092068     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   454.64448464583910      fSecondo=   135472.99702730923     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
- fPrimo=   282.12793168925089      fSecondo=  -217120.61771010287     
  Ho scelto l'intervallo [aj, bj]:
  x=   7.3954365169800196E-002 j=           3 kappa(x)=           3
  aj=   6.6662667257751371E-002 bj=   7.3954365169800196E-002
@@ -677,18 +485,14 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso sinistra
  xl(0)=   7.2104613342952192E-002
- fPrimo=   1551.2277826138252      fSecondo=   153968.55439538081     
  mi muovo verso sinistra
  xl(0)=   7.1438267781797932E-002
- fPrimo=   75134.733597399652      fSecondo=   20727110.844923180     
  mi muovo verso sinistra
  xl(0)=   7.1424933855608524E-002
- fPrimo=  -3123301476.9457893      fSecondo=  -873612874737.88770     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=   7.1424933489695377E-002
- fPrimo=  -1457515822.3853817      fSecondo=  -407679206844.12579     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -699,12 +503,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   8282192.3334477860      fSecondo=  -6981513885.4478016     
  kappa e` diverso da numAut!
  kappa(a)=           1 numAut=           0
- fPrimo=   8.6610797713560910      fSecondo=   56.262268688597779     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  Ho scelto l'intervallo [aj, bj]:
  x=  0.53124863062656635      j=           4 kappa(x)=           4
  aj=   6.2497261253132479E-002 bj=  0.53124863062656635     
@@ -715,48 +515,25 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso sinistra
- xl(0)=  0.29157764527572883     
- fPrimo=   18.011193615316468      fSecondo=   243.27222255987655     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.29157764527572860     
  mi muovo verso sinistra
- xl(0)=  0.17635686814725976     
- fPrimo=   37.483072588957384      fSecondo=   1052.9080625228783     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.17635686814725959     
  mi muovo verso sinistra
- xl(0)=  0.12105511877652060     
- fPrimo=   78.262051880375026      fSecondo=   4576.5873100615599     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=  0.12105511877652059     
  mi muovo verso sinistra
- xl(0)=   9.4702900247114280E-002
- fPrimo=   165.88328639632604      fSecondo=   20277.520229755162     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=   9.4702900247114252E-002
  mi muovo verso sinistra
- xl(0)=   8.2552915075116001E-002
- fPrimo=   380.03416287135150      fSecondo=   98446.931024787729     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
+ xl(0)=   8.2552915075115987E-002
  mi muovo verso sinistra
  xl(0)=   7.7788245184304314E-002
- fPrimo=   1458.9269003211309      fSecondo=   776998.78347159724     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  mi muovo verso sinistra
  xl(0)=   7.6926147458781305E-002
- fPrimo=   100052.10273249172      fSecondo=   69573403.982278258     
- kappa e` diverso da numAut!
- kappa(a)=           3 numAut=           4
  mi muovo verso sinistra
  xl(0)=   7.6916117747776416E-002
- fPrimo=  -1063656846.9756519      fSecondo=  -742443279319.99353     
- kappa e` diverso da numAut!
- kappa(a)=           2 numAut=           3
  mi muovo verso destra
  xl(0)=   7.6916118687928942E-002
- fPrimo=   11153456363860.857      fSecondo=   7785223020498416.0     
+ kappa e` diverso da numAut!
+ kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=   7.6916118688031401E-002
  condizione di arresto (24) del terzo tipo
@@ -764,10 +541,6 @@
  LagIt compie           11  iterazioni.
  Esco da LagIt
  
- fPrimo=  -36.000198282976037      fSecondo=   1092.2235701573045     
- fPrimo=   1447.7252267788024      fSecondo=   27671.534490644968     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           1 Tfine=           8
@@ -775,8 +548,6 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -42043458.032477707      fSecondo=  -2694730321.1507254     
- fPrimo=  -21868.947256380878      fSecondo=   4786293.6092145136     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.12494069394179926      j=           1 kappa(x)=           0
  aj=  0.12494069394179926      bj=  0.24988138788359851     
@@ -788,12 +559,10 @@
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
  xl(0)=  0.12498665146653533     
- fPrimo=  -7388370249.1224661      fSecondo=   1625153696486.9529     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
  xl(0)=  0.12498665131185208     
- fPrimo=  -3447906369.5354295      fSecondo=   758405101240.75452     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
  mi muovo verso sinistra
@@ -804,13 +573,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   182464715353.24976      fSecondo=   10247458324519.738     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
- fPrimo=  -13553.886655865706      fSecondo=  -383617.49662581045     
- fPrimo=  -74.824709760862575      fSecondo=   4466.2474149582440     
- fPrimo=  -17366.553846647046      fSecondo=   3795951.5988420974     
- fPrimo=   305.90265754696117      fSecondo=  -29137.026717751542     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.14575015405288450      j=           2 kappa(x)=           2
  aj=  0.12492870347390099      bj=  0.14575015405288450     
@@ -822,18 +586,14 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=  0.14289398009283688     
- fPrimo=   16919.408515688854      fSecondo=  -762161.62330873206     
  mi muovo verso sinistra
  xl(0)=  0.14283495489112003     
- fPrimo=  -94327082.790962547      fSecondo=   4157318831.7632465     
  mi muovo verso destra
  xl(0)=  0.14283496549253166     
- fPrimo=   497977699579.11273      fSecondo=  -21947676293028.488     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
  xl(0)=  0.14283496549482666     
- fPrimo=   232366764088.99863      fSecondo=  -10241242786921.480     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -844,13 +604,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   426534469.18792868      fSecondo=   16910552823.369225     
  kappa e` diverso da numAut!
  kappa(a)=           7 numAut=           6
- fPrimo=  -16296.331843942149      fSecondo=  -1048099.3556964840     
- fPrimo=  -13172.519307574292      fSecondo=   2873441.5850965837     
- fPrimo=  -19.992345413942573      fSecondo=  -9318.4790543591607     
- fPrimo=  -31.118705652233174      fSecondo=  -15444.500179099707     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.15613762330411007      j=           3 kappa(x)=           2
  aj=  0.15613762330411007      bj=  0.18736514796493209     
@@ -862,21 +617,16 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso destra
  xl(0)=  0.16408923780365686     
- fPrimo=  -368.17719441173534      fSecondo=  -21290.490029581240     
  mi muovo verso destra
  xl(0)=  0.16661467203442629     
- fPrimo=  -32633.871811898392      fSecondo=  -908845.76816652482     
  mi muovo verso destra
  xl(0)=  0.16664530197574606     
- fPrimo=   238427658.83049786      fSecondo=   6563483877.1567221     
  mi muovo verso sinistra
  xl(0)=  0.16664529778160156     
- fPrimo=  -1720182509187.7786      fSecondo=  -47353600918336.805     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=  0.16664529778093717     
- fPrimo=  -802691444231.69153      fSecondo=  -22096684576963.070     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -887,11 +637,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   25319310515.828186      fSecondo=   486278705039.32086     
- fPrimo=   80482.710553687051      fSecondo=   3190182.8055098755     
- fPrimo=  -18139.241734395906      fSecondo=  -1166218.2983547912     
- fPrimo=  -13724.599552898597      fSecondo=   2994875.3626223253     
- fPrimo=  -20.037608497661299      fSecondo=  -9320.1934729580844     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  Ho scelto l'intervallo [aj, bj]:
  x=  0.18736980415429938      j=           4 kappa(x)=           3
  aj=  0.18736980415429938      bj=  0.24982640553906582     
@@ -903,18 +650,14 @@
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso destra
  xl(0)=  0.19772211213328855     
- fPrimo=  -416.04927314301074      fSecondo=  -30572.902328928179     
  mi muovo verso destra
  xl(0)=  0.19993839122077939     
- fPrimo=  -98644.135303658462      fSecondo=  -5680888.9183544591     
  mi muovo verso destra
  xl(0)=  0.19994852571302280     
- fPrimo=   692622230.83625984      fSecondo=   39843012693.719070     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=  0.19994852736306684     
- fPrimo=   323199157.30782551      fSecondo=   18591990253.258118     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
@@ -925,12 +668,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -160787910.02939269      fSecondo=   35367054389.459854     
  kappa e` diverso da numAut!
  kappa(a)=           0 numAut=           1
- fPrimo=   31.118772638278113      fSecondo=   656.46610693779769     
- fPrimo=   119.17134862415614      fSecondo=   5026.1880992055649     
- fPrimo=  -15.715778846474272      fSecondo=  -5285.6859711486777     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.23436331470969213      j=           5 kappa(x)=           4
  aj=  0.23436331470969213      bj=  0.34373998403687900     
@@ -942,18 +681,14 @@
  e` stimata essere mlt=           1 (j=           5 )
  mi muovo verso destra
  xl(0)=  0.24808041778697171     
- fPrimo=  -521.36560818099656      fSecondo=  -37086.959418023602     
  mi muovo verso destra
  xl(0)=  0.24987986873192733     
- fPrimo=  -647785.79292649275      fSecondo=  -41522682.313356735     
  mi muovo verso destra
  xl(0)=  0.24988141237573505     
- fPrimo=   1391509943.4760795      fSecondo=   89187213608.503662     
  kappa e` diverso da numAut!
  kappa(a)=           5 numAut=           4
  mi muovo verso destra
  xl(0)=  0.24988141319704227     
- fPrimo=   649210151.31370831      fSecondo=   41610368678.496826     
  kappa e` diverso da numAut!
  kappa(a)=           5 numAut=           4
  mi muovo verso destra
@@ -964,11 +699,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   102963963011.55284      fSecondo=  -4537993846805.8506     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
- fPrimo=   28.625245870487010      fSecondo=   569.22185068021452     
- fPrimo=   63.006634568540711      fSecondo=   1986.9767269750037     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.35712622412517575      j=           6 kappa(x)=           6
  aj=  0.14283496550023422      bj=  0.35712622412517575     
@@ -980,18 +712,14 @@
  e` stimata essere mlt=           1 (j=           6 )
  mi muovo verso sinistra
  xl(0)=  0.33453532328854158     
- fPrimo=   745.49402128358759      fSecondo=   40116.185458951251     
  mi muovo verso sinistra
  xl(0)=  0.33314266144072874     
- fPrimo=  -1824220.6828820461      fSecondo=  -102452397.19692220     
  mi muovo verso destra
  xl(0)=  0.33314320961158123     
- fPrimo=   2828453460.5208130      fSecondo=   158849663543.68549     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
  mi muovo verso destra
  xl(0)=  0.33314321001563851     
- fPrimo=   1319491038.1610265      fSecondo=   74104349858.650848     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
  mi muovo verso destra
@@ -1002,10 +730,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -42283368.490539901      fSecondo=  -1163997298.3616989     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=   25.991902350068283      fSecondo=   479.91920667157331     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.58332263706775389      j=           7 kappa(x)=           7
  aj=  0.16664527413550759      bj=  0.58332263706775389     
@@ -1016,22 +742,17 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           7 )
  mi muovo verso sinistra
- xl(0)=  0.50989089828521894     
- fPrimo=   116.40238331142255      fSecondo=   3963.8616223655681     
+ xl(0)=  0.50989089828521905     
  mi muovo verso sinistra
  xl(0)=  0.49966472747491447     
- fPrimo=   41081.922126873127      fSecondo=   1628083.6536722579     
  mi muovo verso sinistra
  xl(0)=  0.49964037411858991     
- fPrimo=  -55171462.244487457      fSecondo=  -2187350179.3021436     
  mi muovo verso destra
  xl(0)=  0.49964039224389600     
- fPrimo=   74145030644.535416      fSecondo=   2939583074776.9624     
  kappa e` diverso da numAut!
  kappa(a)=           7 numAut=           6
  mi muovo verso destra
  xl(0)=  0.49964039225930978     
- fPrimo=   34587306216.897415      fSecondo=   1371261958449.9436     
  kappa e` diverso da numAut!
  kappa(a)=           7 numAut=           6
  mi muovo verso destra
@@ -1042,13 +763,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   24825770.917218339      fSecondo=   1428093398.4677227     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
- fPrimo=   23.158231441367956      fSecondo=   387.97305301337462     
- fPrimo=   8.5224683591755372      fSecondo=   18.751357227685183     
- fPrimo=   1.1436093596052714      fSecondo=  -118.93258568676534     
- fPrimo=  -9.9253821072459445      fSecondo=  -327.88950745821023     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.94999678528402953      j=           8 kappa(x)=           7
  aj=  0.94999678528402953      bj=   1.0000000000000002     
@@ -1060,23 +776,18 @@
  e` stimata essere mlt=           1 (j=           8 )
  mi muovo verso destra
  xl(0)=  0.99885049858808539     
- fPrimo=  -2184.5518689546284      fSecondo=  -42089.504042576511     
  mi muovo verso destra
  xl(0)=  0.99930625329259248     
- fPrimo=   1582154.2798688177      fSecondo=   30386473.553364903     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
  mi muovo verso sinistra
  xl(0)=  0.99930562123914346     
- fPrimo=  -1137786291.2705524      fSecondo=  -21852145125.024254     
- kappa e` diverso da numAut!
- kappa(a)=           6 numAut=           7
  mi muovo verso destra
  xl(0)=  0.99930562211804308     
- fPrimo=   818332944490.80566      fSecondo=   15716774135494.285     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  mi muovo verso destra
  xl(0)=  0.99930562211943963     
- fPrimo=   381604116832.90454      fSecondo=   7329028794155.6787     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  mi muovo verso destra
  xl(0)=  0.99930562212243446     
  condizione di arresto (24) del secondo tipo
@@ -1084,10 +795,6 @@
  LagIt compie            7  iterazioni.
  Esco da LagIt
  
- fPrimo=  -100.00026827667919      fSecondo=   8708.7328515642712     
- fPrimo=   8.7245777203750379      fSecondo=   66.606396856885098     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           9 Tfine=          16
@@ -1095,10 +802,8 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -1795033.9764460293      fSecondo=  -431426349.60068405     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
- fPrimo=  -225.79999341853730      fSecondo=   43662.873853961435     
  Ho scelto l'intervallo [aj, bj]:
  x=   4.1661666689362428E-002 j=           1 kappa(x)=           0
  aj=   4.1661666689362428E-002 bj=   8.3323333378724856E-002
@@ -1109,20 +814,15 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
- xl(0)=   5.4753536075764969E-002
- fPrimo=  -420.71176551438759      fSecondo=   144854.70495760135     
+ xl(0)=   5.4753536075764990E-002
  mi muovo verso destra
  xl(0)=   6.0745940212929610E-002
- fPrimo=  -1018.3087290266084      fSecondo=   665651.71105233557     
  mi muovo verso destra
  xl(0)=   6.2413492546715021E-002
- fPrimo=  -12500.199196179457      fSecondo=   13259812.877774542     
  mi muovo verso destra
  xl(0)=   6.2497123908389532E-002
- fPrimo=  -60205859.444515109      fSecondo=   66457229361.560501     
  mi muovo verso destra
  xl(0)=   6.2497140518220806E-002
- fPrimo=  -106768508029492.75      fSecondo=   1.1785559303998006E+017
  mi muovo verso destra
  xl(0)=   6.2497140518230174E-002
  condizione di arresto (24) del terzo tipo
@@ -1131,11 +831,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   159220563.17392460      fSecondo=   54733194742.686310     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
- fPrimo=  -258.03102257139653      fSecondo=   56680.746391936635     
- fPrimo=   250.88837834663533      fSecondo=  -521148.43095088634     
  Ho scelto l'intervallo [aj, bj]:
  x=   6.8173878629807366E-002 j=           2 kappa(x)=           2
  aj=   4.5449252419871577E-002 bj=   6.8173878629807366E-002
@@ -1147,15 +844,12 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=   6.6846167484113095E-002
- fPrimo=   5189.7178415786366      fSecondo=  -2696410.2779493271     
  mi muovo verso sinistra
  xl(0)=   6.6662442353317600E-002
- fPrimo=   2978791.6810775674      fSecondo=  -1318063604.5642505     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
  xl(0)=   6.6662825985430454E-002
- fPrimo=   1389924.4645795058      fSecondo=  -615232274.90079653     
  mi muovo verso sinistra
  xl(0)=   6.6662106636405608E-002
  condizione di arresto (24) del secondo tipo
@@ -1164,13 +858,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -115372608.61718324      fSecondo=  -49608164759.416809     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
- fPrimo=  -314.60216914114670      fSecondo=   83260.112932474964     
- fPrimo=  -290.53901602292166      fSecondo=  -306204.26074101351     
- fPrimo=  -385797.91741672554      fSecondo=   425316583.51983690     
- fPrimo=  -24.305375961842955      fSecondo=  -418201.70408603991     
  Ho scelto l'intervallo [aj, bj]:
  x=   6.8743999251783178E-002 j=           3 kappa(x)=           2
  aj=   6.8743999251783178E-002 bj=   7.4993453729218007E-002
@@ -1182,18 +871,14 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso destra
  xl(0)=   7.0336143541895907E-002
- fPrimo=  -854.53252514809719      fSecondo=  -236847.70010587503     
  mi muovo verso destra
  xl(0)=   7.1353602339225275E-002
- fPrimo=  -14067.030809401485      fSecondo=   1258574.4798266462     
  mi muovo verso destra
  xl(0)=   7.1424917724091597E-002
- fPrimo=  -60787717.798520826      fSecondo=   6770508818.6744909     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=   7.1424898923281480E-002
- fPrimo=  -28367146.591969617      fSecondo=   3159356282.5221086     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -1204,14 +889,11 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   653082162531.37854      fSecondo=   356635876784137.50     
- fPrimo=  -448.54634775240856      fSecondo=   163294.61839446411     
- fPrimo=   359032.53201523097      fSecondo=   86059452.257867798     
- fPrimo=  -308.41804715575046      fSecondo=  -335774.90830390906     
- fPrimo=  -1784.3201384553299      fSecondo=  -422970.24900422170     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  Ho scelto l'intervallo [aj, bj]:
- x=   7.6382786621890672E-002 j=           4 kappa(x)=           3
- aj=   7.6382786621890672E-002 bj=   8.3326676314789822E-002
+ x=   7.6382786621890700E-002 j=           4 kappa(x)=           3
+ aj=   7.6382786621890700E-002 bj=   8.3326676314789849E-002
  kappa(aj)=           3 kappa(bj)=           5
  
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1220,15 +902,12 @@
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso destra
  xl(0)=   7.6909402048880665E-002
- fPrimo=  -162418.04784996729      fSecondo=  -16102831.788710920     
  mi muovo verso destra
  xl(0)=   7.6915557121808420E-002
- fPrimo=   1740414919.0120976      fSecondo=   169964259063.47705     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=   7.6915557778466301E-002
- fPrimo=   812152706.08398473      fSecondo=   79312529055.072342     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
@@ -1239,24 +918,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   9.6092965735120614E+017 fSecondo=  -1.0607147812355893E+021
- kappa e` diverso da numAut!
- kappa(a)=           1 numAut=           0
- fPrimo=   17.862420657176777      fSecondo=   279.15606414958535     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   37.589177190144227      fSecondo=   1235.3963642681317     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   85.110725310445758      fSecondo=   6308.8848187080748     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   285.28707594787261      fSecondo=   65786.205199907577     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   1250.8878962298686      fSecondo=   277216.40458288114     
- fPrimo=   4376.8513079661616      fSecondo=   188647.92318323290     
- fPrimo=   925.72183920987970      fSecondo=   37261.886693204826     
  Ho scelto l'intervallo [aj, bj]:
  x=   8.4469863787334162E-002 j=           5 kappa(x)=           5
  aj=   7.7145622697632837E-002 bj=   8.4469863787334162E-002
@@ -1268,15 +929,12 @@
  e` stimata essere mlt=           1 (j=           5 )
  mi muovo verso sinistra
  xl(0)=   8.3365327185303317E-002
- fPrimo=   24248.519417910778      fSecondo=   5632385.8763663322     
  mi muovo verso sinistra
  xl(0)=   8.3323888573392305E-002
- fPrimo=  -552913009.83203733      fSecondo=  -132830175706.59314     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
  mi muovo verso sinistra
  xl(0)=   8.3323886506418227E-002
- fPrimo=  -258013132.06488007      fSecondo=  -61984409983.401924     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
  mi muovo verso sinistra
@@ -1287,22 +945,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   38940947177756.125      fSecondo=  -17225427777023284.     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
- fPrimo=   17.779636734598320      fSecondo=   276.57502093956720     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   37.042290953829578      fSecondo=   1199.7404045027804     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   81.836543762874030      fSecondo=   5835.0856467253698     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   237.87986218079868      fSecondo=   47047.015626441760     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   135.18329137691353      fSecondo=  -97805.979743505872     
  Ho scelto l'intervallo [aj, bj]:
  x=   9.5828915868094305E-002 j=           6 kappa(x)=           6
  aj=   6.6662106702548948E-002 bj=   9.5828915868094305E-002
@@ -1314,18 +958,14 @@
  e` stimata essere mlt=           1 (j=           6 )
  mi muovo verso sinistra
  xl(0)=   9.2858992837348053E-002
- fPrimo=   600.33231122724249      fSecondo=   57984.680698092103     
  mi muovo verso sinistra
  xl(0)=   9.1040040421182619E-002
- fPrimo=   7229.8309507956465      fSecondo=   2328597.0902276887     
  mi muovo verso sinistra
  xl(0)=   9.0898534259230557E-002
- fPrimo=   28007777.670832075      fSecondo=   9627741849.8109951     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
  mi muovo verso destra
  xl(0)=   9.0898575064508713E-002
- fPrimo=   13069316.321327506      fSecondo=   4492525322.8556395     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
  mi muovo verso destra
@@ -1336,22 +976,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -680856788.56928825      fSecondo=   75836657686.514694     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=   17.685906290942757      fSecondo=   273.66714815182922     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   36.436195802679762      fSecondo=   1160.8325188659633     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   78.396781473773601      fSecondo=   5356.9476555820575     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   203.11032358451641      fSecondo=   34862.371955037837     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
- fPrimo=   2416.3473684747319      fSecondo=   908956.10267637868     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.10044290355853300      j=           7 kappa(x)=           7
  aj=   7.1424932705582436E-002 bj=  0.10044290355853300     
@@ -1363,15 +989,12 @@
  e` stimata essere mlt=           1 (j=           7 )
  mi muovo verso sinistra
  xl(0)=   9.9992398317069422E-002
- fPrimo=   894593.89054790931      fSecondo=   384526664.54895467     
  mi muovo verso sinistra
  xl(0)=   9.9991280222771317E-002
- fPrimo=  -12033613118.478003      fSecondo=  -5174225487804.0107     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
  mi muovo verso sinistra
  xl(0)=   9.9991280127799245E-002
- fPrimo=  -5615463609.1769781      fSecondo=  -2414542954963.5625     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
  mi muovo verso sinistra
@@ -1382,12 +1005,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   1778794.6107278140      fSecondo=   173471147.39025742     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
- fPrimo=   17.579062658489477      fSecondo=   270.37118700555840     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
  Ho scelto l'intervallo [aj, bj]:
  x=  0.53845805934401580      j=           8 kappa(x)=           8
  aj=   7.6916118688031401E-002 bj=  0.53845805934401580     
@@ -1398,62 +1017,36 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=           8 )
  mi muovo verso sinistra
- xl(0)=  0.35177191435356892     
- fPrimo=   29.852268748894463      fSecondo=   779.42379585427432     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.35177191435356914     
  mi muovo verso sinistra
- xl(0)=  0.24204861192318630     
- fPrimo=   50.775632488007965      fSecondo=   2252.5406047497008     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.24204861192318677     
  mi muovo verso sinistra
- xl(0)=  0.17791128209692314     
- fPrimo=   86.804462980980901      fSecondo=   6561.1137594055690     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.17791128209692328     
  mi muovo verso sinistra
- xl(0)=  0.14106524627465683     
- fPrimo=   151.07531734024030      fSecondo=   19630.621453274583     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.14106524627465700     
  mi muovo verso sinistra
- xl(0)=  0.12112069850972201     
- fPrimo=   284.82556434203690      fSecondo=   65593.620654615763     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.12112069850972204     
  mi muovo verso sinistra
- xl(0)=  0.11256168034650371     
- fPrimo=   939.12473199740441      fSecondo=   400756.17791508121     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.11256168034650373     
  mi muovo verso sinistra
- xl(0)=  0.11111390217849039     
- fPrimo=   85973.391669432531      fSecondo=   46831154.847023204     
- kappa e` diverso da numAut!
- kappa(a)=           7 numAut=           8
+ xl(0)=  0.11111390217849038     
  mi muovo verso sinistra
- xl(0)=  0.11110223364487030     
- fPrimo=  -694365509.46898901      fSecondo=  -379180052985.98706     
- kappa e` diverso da numAut!
- kappa(a)=           6 numAut=           7
+ xl(0)=  0.11110223364487029     
  mi muovo verso destra
- xl(0)=  0.11110223508503343     
- fPrimo=   5617021122573.9873      fSecondo=   3067349513546724.5     
+ xl(0)=  0.11110223508503345     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  mi muovo verso destra
- xl(0)=  0.11110223508523689     
- fPrimo=   2621024556492.3423      fSecondo=   1431292178284551.3     
+ xl(0)=  0.11110223508523694     
+ kappa e` diverso da numAut!
+ kappa(a)=           8 numAut=           7
  mi muovo verso destra
- xl(0)=  0.11110223508567293     
+ xl(0)=  0.11110223508567300     
  condizione di arresto (24) del secondo tipo
  
  LagIt compie           12  iterazioni.
  Esco da LagIt
  
- fPrimo=  -136.00009987946470      fSecondo=   17001.525249949467     
- fPrimo=   1456.4497501680273      fSecondo=   53001.827367590246     
- kappa e` diverso da numAut!
- kappa(a)=          15 numAut=          16
  -------------------------------------
  |Adesso dim=          16
  |Tinizio=           1 Tfine=          16
@@ -1461,10 +1054,8 @@
  -------------------------------------
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -1295469.0998108487      fSecondo=  -331687328.86843240     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           9
- fPrimo=  -262730.70020272548      fSecondo=   319723736.91212940     
  Ho scelto l'intervallo [aj, bj]:
  x=   6.2493325490193985E-002 j=           1 kappa(x)=           0
  aj=   6.2493325490193985E-002 bj=  0.12498665098038797     
@@ -1476,7 +1067,6 @@
  e` stimata essere mlt=           1 (j=           1 )
  mi muovo verso destra
  xl(0)=   6.2497140515139375E-002
- fPrimo=  -323541404051.15442      fSecondo=   394479775013754.06     
  mi muovo verso destra
  xl(0)=   6.2497140518230167E-002
  condizione di arresto (24) del terzo tipo
@@ -1485,14 +1075,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   109120450482.43921      fSecondo=   26979597690342.320     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=           9
- fPrimo=  -134317.00741987283      fSecondo=   31765405.780308411     
- fPrimo=  -235.30463673077369      fSecondo=   50028.905271172458     
- fPrimo=  -439.19470302578191      fSecondo=   166478.55137976518     
- fPrimo=  -146741.46305592032      fSecondo=   178303362.28325993     
- fPrimo=   3110.9277672457611      fSecondo=  -2184089.0424422030     
  Ho scelto l'intervallo [aj, bj]:
  x=   6.6953890078005479E-002 j=           2 kappa(x)=           2
  aj=   6.2490297406138443E-002 bj=   6.6953890078005479E-002
@@ -1504,13 +1088,10 @@
  e` stimata essere mlt=           1 (j=           2 )
  mi muovo verso sinistra
  xl(0)=   6.6663450081896183E-002
- fPrimo=   744041.24579257634      fSecondo=  -419402506.12883800     
  mi muovo verso sinistra
  xl(0)=   6.6662106579196412E-002
- fPrimo=  -8107788275.2506618      fSecondo=   4565470565114.3018     
  mi muovo verso destra
  xl(0)=   6.6662106702534613E-002
- fPrimo=   88161799986316.938      fSecondo=  -49643642323659312.     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           1
  mi muovo verso destra
@@ -1521,13 +1102,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -374560610155.09448      fSecondo=  -84819160941352.031     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=          11
- fPrimo=  -805361.68834841938      fSecondo=  -73081658.365972087     
- fPrimo=  -273.45046313525143      fSecondo=   67068.495466715802     
- fPrimo=  -194638.95447184471      fSecondo=   236702556.42516428     
- fPrimo=   401.66589936317882      fSecondo=  -405833.96756892354     
  Ho scelto l'intervallo [aj, bj]:
  x=   7.2907317778537109E-002 j=           3 kappa(x)=           3
  aj=   6.2491986667317520E-002 bj=   7.2907317778537109E-002
@@ -1539,18 +1115,14 @@
  e` stimata essere mlt=           1 (j=           3 )
  mi muovo verso sinistra
  xl(0)=   7.1570035576348195E-002
- fPrimo=   6757.2429461858264      fSecondo=  -1932713.2893765103     
  mi muovo verso sinistra
  xl(0)=   7.1425080197232718E-002
- fPrimo=   6847900.0666373707      fSecondo=  -1636172016.2364976     
  mi muovo verso sinistra
  xl(0)=   7.1424934169611806E-002
- fPrimo=  -214515050202.66467      fSecondo=   51244139046832.742     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
  xl(0)=   7.1424934164284179E-002
- fPrimo=  -100105390560.08286      fSecondo=   23913541318756.879     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
  mi muovo verso sinistra
@@ -1561,12 +1133,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   150814893.11108497      fSecondo=   29696483962.474007     
  kappa e` diverso da numAut!
  kappa(a)=          12 numAut=          11
- fPrimo=  -58655.259780437969      fSecondo=  -13254105.534187822     
- fPrimo=  -365.61185248597792      fSecondo=   117521.47198900775     
- fPrimo=  -352.23449024609528      fSecondo=  -264374.80305747053     
  Ho scelto l'intervallo [aj, bj]:
  x=   7.4980699087179109E-002 j=           4 kappa(x)=           3
  aj=   7.4980699087179109E-002 bj=   9.9974265449572150E-002
@@ -1578,18 +1146,14 @@
  e` stimata essere mlt=           1 (j=           4 )
  mi muovo verso destra
  xl(0)=   7.6595105216163986E-002
- fPrimo=  -3113.5887731283674      fSecondo=  -124463.26693892105     
  mi muovo verso destra
  xl(0)=   7.6914236370960731E-002
- fPrimo=  -757422.34936011769      fSecondo=   29392122.485143222     
  mi muovo verso destra
  xl(0)=   7.6915556672135690E-002
- fPrimo=   8008943663.3406677      fSecondo=  -313351513660.19238     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
  xl(0)=   7.6915556814833308E-002
- fPrimo=   3737318480.4804263      fSecondo=  -146223457979.25763     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
  mi muovo verso destra
@@ -1600,14 +1164,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   302889591.81144774      fSecondo=   48703326738.061974     
  kappa e` diverso da numAut!
  kappa(a)=          13 numAut=          12
- fPrimo=  -21276.619936141935      fSecondo=  -5503720.4652854074     
- fPrimo=  -37939.318136248126      fSecondo=   45646952.314776145     
- fPrimo=   319.83039342597647      fSecondo=  -72230.868387704133     
- fPrimo=   740.20579162551530      fSecondo=  -260435.51693930241     
- fPrimo=   275.34194153386261      fSecondo=  -144746.88739398168     
  Ho scelto l'intervallo [aj, bj]:
  x=   8.5896736391614242E-002 j=           5 kappa(x)=           5
  aj=   7.8087942174194763E-002 bj=   8.5896736391614242E-002
@@ -1619,18 +1177,14 @@
  e` stimata essere mlt=           1 (j=           5 )
  mi muovo verso sinistra
  xl(0)=   8.3755514930772032E-002
- fPrimo=   2335.9429466133638      fSecondo=   30530.780824441485     
  mi muovo verso sinistra
  xl(0)=   8.3326219495232445E-002
- fPrimo=   429352.84013858304      fSecondo=   38678492.245630808     
  mi muovo verso sinistra
  xl(0)=   8.3323890164127751E-002
- fPrimo=  -4593096751.4312639      fSecondo=  -415744093374.50708     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
  mi muovo verso sinistra
  xl(0)=   8.3323889915307148E-002
- fPrimo=  -2143338168.8962772      fSecondo=  -194004325126.56683     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
  mi muovo verso sinistra
@@ -1641,14 +1195,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   615550796.62090063      fSecondo=   74082166993.567795     
  kappa e` diverso da numAut!
  kappa(a)=          14 numAut=          13
- fPrimo=  -13454.489471789941      fSecondo=  -3073785.6360709500     
- fPrimo=  -26205.204045771741      fSecondo=  -2556667.1519180341     
- fPrimo=  -16900.755091427753      fSecondo=  -4383546.9085902125     
- fPrimo=   226.90280494589291      fSecondo=  -42989.755112407511     
- fPrimo=   321.40491816232890      fSecondo=  -71985.487820870170     
  Ho scelto l'intervallo [aj, bj]:
  x=   9.3696528060498746E-002 j=           6 kappa(x)=           6
  aj=   8.3285802720443336E-002 bj=   9.3696528060498746E-002
@@ -1660,16 +1208,12 @@
  e` stimata essere mlt=           1 (j=           6 )
  mi muovo verso sinistra
  xl(0)=   9.1303782762153438E-002
- fPrimo=   2536.2712559449428      fSecondo=   303050.58807850699     
  mi muovo verso sinistra
  xl(0)=   9.0899866046117536E-002
- fPrimo=   731244.03950609080      fSecondo=   127014568.42623660     
  mi muovo verso sinistra
  xl(0)=   9.0898498351154641E-002
- fPrimo=  -4785203326.9313889      fSecondo=  -832090926072.83752     
  mi muovo verso destra
  xl(0)=   9.0898498560132171E-002
- fPrimo=   31309189576904.855      fSecondo=   5444301188312559.0     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
  mi muovo verso destra
@@ -1680,15 +1224,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   16134344094.113552      fSecondo=   1259954809126.7146     
  kappa e` diverso da numAut!
  kappa(a)=          15 numAut=          14
- fPrimo=  -16247.663266464067      fSecondo=  -2622480.7136621336     
- fPrimo=  -12802.826343293000      fSecondo=  -3334531.0732959425     
- fPrimo=  -24364.024789158262      fSecondo=   29096149.101211108     
- fPrimo=   323.85922919454072      fSecondo=  -71602.897667651880     
- fPrimo=  -388.75899108067892      fSecondo=  -179784.64775578171     
- fPrimo=   734.25327955367482      fSecondo=   63877.735522678006     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.10148945468438408      j=           7 kappa(x)=           7
  aj=   9.3682573554816087E-002 bj=  0.10148945468438408     
@@ -1700,15 +1237,12 @@
  e` stimata essere mlt=           1 (j=           7 )
  mi muovo verso sinistra
  xl(0)=  0.10003867831286863     
- fPrimo=   21206.945335499513      fSecondo=   4648272.3005418945     
  mi muovo verso sinistra
  xl(0)=   9.9991278317428461E-002
- fPrimo=  -505968756.81522471      fSecondo=  -113419537817.82703     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
  mi muovo verso sinistra
  xl(0)=   9.9991276058678608E-002
- fPrimo=  -236109339.43735698      fSecondo=  -52927063814.746422     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
  mi muovo verso sinistra
@@ -1719,13 +1253,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   177950627076.63644      fSecondo=   6525392964499.3779     
- fPrimo=   80502.040368212009      fSecondo=   6284586.8601707453     
- fPrimo=  -18090.876384448075      fSecondo=  -2918861.1370737702     
- fPrimo=  -13343.820096026166      fSecondo=  -3473017.5518529182     
- fPrimo=  -25273.893313076660      fSecondo=   30205415.192726530     
- fPrimo=   323.44852314346275      fSecondo=  -71666.929144799884     
- fPrimo=  -389.65930232290975      fSecondo=  -180002.69284633148     
+ kappa e` diverso da numAut!
+ kappa(a)=          16 numAut=          15
  Ho scelto l'intervallo [aj, bj]:
  x=  0.10929905241964127      j=           8 kappa(x)=           7
  aj=  0.10929905241964127      bj=  0.12491320276530431     
@@ -1737,15 +1266,12 @@
  e` stimata essere mlt=           1 (j=           8 )
  mi muovo verso destra
  xl(0)=  0.11104096521675913     
- fPrimo=  -16402.401078864445      fSecondo=  -4174200.3553077118     
  mi muovo verso destra
  xl(0)=  0.11110146449610027     
- fPrimo=   191087047.57264593      fSecondo=   47712917678.301025     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           7
  mi muovo verso destra
  xl(0)=  0.11110147047692424     
- fPrimo=   89168154.539219588      fSecondo=   22264537912.107071     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           7
  mi muovo verso destra
@@ -1756,13 +1282,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   9.6092965735120614E+017 fSecondo=  -1.1716191834432200E+021
- kappa e` diverso da numAut!
- kappa(a)=           1 numAut=           0
- fPrimo=   66.735486236296978      fSecondo=   3342.9072442492370     
- fPrimo=   55.258921242407254      fSecondo=   1396.1274477185298     
- fPrimo=   132.76660951511056      fSecondo=   7051.2463624144748     
- fPrimo=  -68.218462365021850      fSecondo=  -79674.200269785069     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.12109106923584081      j=           9 kappa(x)=           8
  aj=  0.12109106923584081      bj=  0.17968499795345144     
@@ -1774,15 +1293,12 @@
  e` stimata essere mlt=           1 (j=           9 )
  mi muovo verso destra
  xl(0)=  0.12460045782637186     
- fPrimo=  -2450.8186802729651      fSecondo=  -684880.59872657328     
  mi muovo verso destra
  xl(0)=  0.12498707539899820     
- fPrimo=  -2878348.5294750272      fSecondo=  -736892524.58692920     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           9
  mi muovo verso sinistra
  xl(0)=  0.12498667836609913     
- fPrimo=  -1343131.3589135925      fSecondo=  -343888507.70596284     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           9
  mi muovo verso sinistra
@@ -1793,12 +1309,6 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -15123159546.333231      fSecondo=   8515804861831.2441     
- fPrimo=   64.549773272898179      fSecondo=   3177.0251992341114     
- fPrimo=   49.971405040286442      fSecondo=   760.97051625577149     
- fPrimo=   97.359953673275882      fSecondo=   220.56727580946043     
- fPrimo=   120572.35668462461      fSecondo=   30808615.696718901     
- fPrimo=   119.46585647763860      fSecondo=  -3630.1428280634436     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.15416253413924261      j=          10 kappa(x)=          10
  aj=  0.12499572497163028      bj=  0.15416253413924261     
@@ -1809,22 +1319,17 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=          10 )
  mi muovo verso sinistra
- xl(0)=  0.14668580913965198     
- fPrimo=   353.01141277889678      fSecondo=   49592.061772461209     
+ xl(0)=  0.14668580913965196     
  mi muovo verso sinistra
  xl(0)=  0.14302453882798732     
- fPrimo=   5396.0608579038562      fSecondo=   1294164.5585976338     
  mi muovo verso sinistra
  xl(0)=  0.14283495412979036     
- fPrimo=  -88005236.823770806      fSecondo=  -21758985179.018341     
  mi muovo verso destra
  xl(0)=  0.14283496549273456     
- fPrimo=   464596842658.79987      fSecondo=   114869722971075.34     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=           9
  mi muovo verso destra
  xl(0)=  0.14283496549519445     
- fPrimo=   216789921973.32419      fSecondo=   53600446631414.359     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=           9
  mi muovo verso destra
@@ -1835,12 +1340,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -13237867.970055068      fSecondo=   3161989673.9320979     
  kappa e` diverso da numAut!
  kappa(a)=           2 numAut=           3
- fPrimo=   62.330333436758735      fSecondo=   3009.2316714928675     
- fPrimo=   43.502488845781556      fSecondo=  -8.0391057697701243     
- fPrimo=   57.118039225370211      fSecondo=  -7347.1767940615973     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.18749675130574470      j=          11 kappa(x)=          11
  aj=   7.1424858635136770E-002 bj=  0.18749675130574470     
@@ -1852,21 +1353,16 @@
  e` stimata essere mlt=           1 (j=          11 )
  mi muovo verso sinistra
  xl(0)=  0.17772532683978587     
- fPrimo=   155.24874874681194      fSecondo=   11532.142383674120     
  mi muovo verso sinistra
  xl(0)=  0.16876048682324291     
- fPrimo=   576.22258679436675      fSecondo=   104134.32809401261     
  mi muovo verso sinistra
  xl(0)=  0.16666270771317496     
- fPrimo=   57543.651094257395      fSecondo=   13003754.266677460     
  mi muovo verso sinistra
  xl(0)=  0.16664529537538059     
- fPrimo=  -415431367.27129626      fSecondo=  -94074361121.234695     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=          11
  mi muovo verso sinistra
  xl(0)=  0.16664529262436831     
- fPrimo=  -193853584.34367201      fSecondo=  -43898124977.765739     
  kappa e` diverso da numAut!
  kappa(a)=          10 numAut=          11
  mi muovo verso sinistra
@@ -1877,12 +1373,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   378985443.74151206      fSecondo=  -14828111540.297470     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           3
- fPrimo=   60.074258039024670      fSecondo=   2839.4621116613225     
- fPrimo=   35.053962011660680      fSecondo=  -1005.1682420441671     
- fPrimo=  -10.866065423755895      fSecondo=  -20205.471039261385     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.19230111428745367      j=          12 kappa(x)=          11
  aj=  0.19230111428745367      bj=  0.30768666938924605     
@@ -1894,18 +1386,14 @@
  e` stimata essere mlt=           1 (j=          12 )
  mi muovo verso destra
  xl(0)=  0.19951155205622920     
- fPrimo=  -2188.6119156701689      fSecondo=  -448128.68966102693     
  mi muovo verso destra
  xl(0)=  0.19994850896278341     
- fPrimo=  -65321644.349840447      fSecondo=  -12862303079.480207     
  mi muovo verso destra
  xl(0)=  0.19994852427162174     
- fPrimo=   458286287017.25452      fSecondo=   90239756400464.156     
  kappa e` diverso da numAut!
  kappa(a)=          12 numAut=          11
  mi muovo verso destra
  xl(0)=  0.19994852427411550     
- fPrimo=   213852712015.30609      fSecondo=   42109085914954.609     
  kappa e` diverso da numAut!
  kappa(a)=          12 numAut=          11
  mi muovo verso destra
@@ -1916,11 +1404,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -120400133.28552200      fSecondo=  -10898196059.784824     
  kappa e` diverso da numAut!
  kappa(a)=           4 numAut=           5
- fPrimo=   57.770740594607624      fSecondo=   2667.1090022576768     
- fPrimo=   22.747785925056974      fSecondo=  -2454.0638870790331     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.31249291155772546      j=          13 kappa(x)=          13
  aj=   8.3323882076967198E-002 bj=  0.31249291155772546     
@@ -1932,21 +1417,16 @@
  e` stimata essere mlt=           1 (j=          13 )
  mi muovo verso sinistra
  xl(0)=  0.29394500938443413     
- fPrimo=   60.058367645496055      fSecondo=   1980.0398055013179     
  mi muovo verso sinistra
- xl(0)=  0.26894618272983012     
+ xl(0)=  0.26894618272983017     
  condizione di arresto (24) del secondo tipo
  
  LagIt compie            3  iterazioni.
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   6098517.7292787256      fSecondo=   1060320562.8531752     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           5
- fPrimo=   55.409896010402733      fSecondo=   2491.7122846283196     
- fPrimo=  0.98903117477552838      fSecondo=  -5024.9600594255216     
- fPrimo=   36.904086137656940      fSecondo=   887.36135764890560     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.43181166406977989      j=          14 kappa(x)=          14
  aj=  0.31817399688373582      bj=  0.43181166406977989     
@@ -1958,24 +1438,18 @@
  e` stimata essere mlt=           1 (j=          14 )
  mi muovo verso sinistra
  xl(0)=  0.38511295547736052     
- fPrimo=   60.756666179999890      fSecondo=   3018.1560095493878     
  mi muovo verso sinistra
  xl(0)=  0.34373102431516633     
- fPrimo=   150.03284616059702      fSecondo=   13201.013381797635     
  mi muovo verso sinistra
  xl(0)=  0.33325404795826347     
- fPrimo=   9076.4195424757036      fSecondo=   1087372.5955446379     
  mi muovo verso sinistra
  xl(0)=  0.33314313779467608     
- fPrimo=  -13984061.638540758      fSecondo=  -1683001197.5634630     
  mi muovo verso destra
  xl(0)=  0.33314320930435065     
- fPrimo=   21681929704.435589      fSecondo=   2609442552821.2959     
  kappa e` diverso da numAut!
  kappa(a)=          14 numAut=          13
  mi muovo verso destra
  xl(0)=  0.33314320935706077     
- fPrimo=   10114752666.750715      fSecondo=   1217320889884.5605     
  kappa e` diverso da numAut!
  kappa(a)=          14 numAut=          13
  mi muovo verso destra
@@ -1986,10 +1460,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=  -2706831529.1923189      fSecondo=  -606771355353.12085     
  kappa e` diverso da numAut!
  kappa(a)=           6 numAut=           7
- fPrimo=   52.977342729274540      fSecondo=   2312.5899550200120     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.54999563996213996      j=          15 kappa(x)=          15
  aj=   9.9991279924279614E-002 bj=  0.54999563996213996     
@@ -2000,19 +1472,15 @@
  la molteplicita` del j-esimo autovalore
  e` stimata essere mlt=           1 (j=          15 )
  mi muovo verso sinistra
- xl(0)=  0.50143678386730417     
- fPrimo=   595.04885472455715      fSecondo=   44535.140001652449     
+ xl(0)=  0.50143678386730406     
  mi muovo verso sinistra
  xl(0)=  0.49963912905962909     
- fPrimo=  -791030.91041015589      fSecondo=  -61774711.265643008     
  mi muovo verso destra
  xl(0)=  0.49964039317033382     
- fPrimo=   1063135110.9954826      fSecondo=   83021792447.781113     
  kappa e` diverso da numAut!
  kappa(a)=          15 numAut=          14
  mi muovo verso destra
  xl(0)=  0.49964039424532153     
- fPrimo=   495932926.62128490      fSecondo=   38728134343.101677     
  kappa e` diverso da numAut!
  kappa(a)=          15 numAut=          14
  mi muovo verso destra
@@ -2023,14 +1491,8 @@
  Esco da LagIt
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  Inizio a scegliere l'intervallo [aj, bj]:
- fPrimo=   1288921.1426959550      fSecondo=   321755388.61209923     
  kappa e` diverso da numAut!
  kappa(a)=           8 numAut=           7
- fPrimo=   50.454848847426980      fSecondo=   2128.9472847716388     
- fPrimo=   21.215993026566267      fSecondo=   381.15911837086293     
- fPrimo=   12.298616898488294      fSecondo=   37.237611740319885     
- fPrimo=   1.5016043183666363      fSecondo=  -356.38314581902620     
- fPrimo=  -17.890534069046840      fSecondo=  -1064.9481654084302     
  Ho scelto l'intervallo [aj, bj]:
  x=  0.97222194484642754      j=          16 kappa(x)=          15
  aj=  0.97222194484642754      bj=   1.0000000000000002     
@@ -2042,18 +1504,16 @@
  e` stimata essere mlt=           1 (j=          16 )
  mi muovo verso destra
  xl(0)=  0.99932877291678446     
- fPrimo=   43153.397597856791      fSecondo=   1582015.5756153853     
- kappa e` diverso da numAut!
- kappa(a)=          15 numAut=          16
  mi muovo verso sinistra
  xl(0)=  0.99930558992078533     
- fPrimo=  -31016574.759970088      fSecondo=  -1137368349.1482344     
  mi muovo verso destra
  xl(0)=  0.99930562216159258     
- fPrimo=   22305446904.925228      fSecondo=   817933651773.91492     
+ kappa e` diverso da numAut!
+ kappa(a)=          16 numAut=          15
  mi muovo verso destra
  xl(0)=  0.99930562221282926     
- fPrimo=   10401491103.106087      fSecondo=   381419374078.90021     
+ kappa e` diverso da numAut!
+ kappa(a)=          16 numAut=          15
  mi muovo verso destra
  xl(0)=  0.99930562232270359     
  condizione di arresto (24) del secondo tipo
@@ -2073,11 +1533,11 @@
   0.12498582756869564        6.2497140518230174E-002   8.3323333378724856E-002  0.11110201097015662     
   0.14283496550046618        6.6662106636405608E-002   9.0898504839743155E-002   9.9990664493835188E-002
   0.16664528672890661        7.1424858635136770E-002   9.9991271638957338E-002   9.0899159324108761E-002
-  0.19994852427945964        7.6915559185661300E-002  0.11110223508638643        8.3323518986431616E-002
-  0.26894618272983012        8.3323882076967198E-002   6.2497140518230174E-002   7.6916102360199370E-002
+  0.19994852427945964        7.6915559185661300E-002  0.11110223508638647        8.3323518986431616E-002
+  0.26894618272983017        8.3323882076967198E-002   6.2497140518230174E-002   7.6916102360199370E-002
   0.33314320947004988        9.0898662511647632E-002   6.6662106702548948E-002   7.1424270959359659E-002
   0.49964039654978082        9.9991279924279614E-002   7.1424932705582436E-002   6.6662667257751371E-002
-  0.99930562232270359       0.11110223508567293        7.6916118688031401E-002   6.2497261253132479E-002
+  0.99930562232270359       0.11110223508567300        7.6916118688031401E-002   6.2497261253132479E-002
  ii)
  
  
@@ -2087,56 +1547,42 @@
  
  
  
- fPrimo=  -2.0802399067213426      fSecondo=   2.9114204831649779     
- fPrimo=  -1439.3369420993258      fSecondo=   5270.1434973670848     
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           1 Tfine=           4
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo= -0.63409100823587072      fSecondo=  0.29860218459876986     
- fPrimo= -0.75897066416178205      fSecondo=  0.42586474860210444     
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           5 Tfine=           8
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo= -0.38488133229055138      fSecondo=  0.11084128987020782     
- fPrimo= -0.42649050831708979      fSecondo=  0.13598398239063764     
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           9 Tfine=          12
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo= -0.27728740653746664      fSecondo=   5.7615793703579297E-002
- fPrimo= -0.29810162570197185      fSecondo=   6.6569528262666641E-002
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=          13 Tfine=          16
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  -2.7141376431319446      fSecondo=   5.8493277499075367     
- fPrimo=  -1440.0956550968901      fSecondo=   7456.5336941978521     
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           1 Tfine=           8
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo= -0.66203660200963399      fSecondo=  0.38201343526765191     
- fPrimo= -0.72444798601116966      fSecondo=  0.45696200752682531     
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           9 Tfine=          16
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  -3.3759487885015673      fSecondo=   9.8290383718876964     
- fPrimo=  -1440.8198454243827      fSecondo=   9546.0057256423479     
  -------------------------------------
  |Adesso dim=          16
  |Tinizio=           1 Tfine=          16
@@ -2169,56 +1615,42 @@
  
  
  
- fPrimo=   2.0802399067213426      fSecondo=   2.9114204831649779     
- fPrimo=   1.2818323829570852      fSecondo=   1.1817648387112674     
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           1 Tfine=           4
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  0.63409100823587072      fSecondo=  0.29860218459876986     
- fPrimo=  0.54528016450566519      fSecondo=  0.22141786203660677     
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           5 Tfine=           8
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  0.38488133229055138      fSecondo=  0.11084128987020782     
- fPrimo=  0.35073957671009914      fSecondo=   9.2108297752282464E-002
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=           9 Tfine=          12
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  0.27728740653746664      fSecondo=   5.7615793703579297E-002
- fPrimo=  0.25920426378448164      fSecondo=   5.0358681976547963E-002
  -------------------------------------
  |Adesso dim=           4
  |Tinizio=          13 Tfine=          16
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=   2.7141376431319446      fSecondo=   5.8493277499075367     
- fPrimo=   1.8269579209416600      fSecondo=   2.8016883025984392     
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           1 Tfine=           8
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=  0.66203660200963399      fSecondo=  0.38201343526765191     
- fPrimo=  0.60982186814436623      fSecondo=  0.32438695309469129     
  -------------------------------------
  |Adesso dim=           8
  |Tinizio=           9 Tfine=          16
  |k1=           1 k2=           0
  -------------------------------------
  
- fPrimo=   3.3759487885015673      fSecondo=   9.8290383718876964     
- fPrimo=   2.4365793834918965      fSecondo=   5.3567208759772953     
  -------------------------------------
  |Adesso dim=          16
  |Tinizio=           1 Tfine=          16

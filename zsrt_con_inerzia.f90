@@ -444,7 +444,7 @@ do while (dim <= n)
          kappaB = k2-1
 
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
-
+            
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
 
@@ -458,7 +458,18 @@ do while (dim <= n)
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 
-100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+100         if ( bj-aj <= max(aj,bj)*machinePrecision ) then
+               write(*,*)"a e b distano pochissimo!"
+
+               !immagazzino i risultati
+               Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
+               !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
+               
+               cycle
+               
+            end if
+            
+            call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
             call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
             if ( verbose >= 3 .AND. kappa /= numAut ) then
@@ -760,6 +771,8 @@ do while ( .TRUE. )
 
    ! condizione (24)
 
+   !write(*,*)"deltaL=",deltaL
+
    if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
       if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del primo tipo"
@@ -778,6 +791,13 @@ do while ( .TRUE. )
    machinePrecision*abs(xl(0)) ) then
       if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del terzo tipo"
+      end if
+      GOTO 30
+   end if
+
+   if ( abs(xl(0))<machinePrecision ) then
+      if (verbose >= 2) then
+         write(*,*)"xl(0) troppo piccolo"
       end if
       GOTO 30
    end if
@@ -840,7 +860,7 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
-integer, parameter :: dq=16
+!integer, parameter :: dq=16
 
 real(dp), intent(IN) :: x
 
@@ -858,21 +878,25 @@ integer :: i, j, k, l
 
 integer :: verboseCalcoli
 
-real(dq), dimension(-2:0) :: xi, eta, zeta
+real(dp), dimension(-2:0) :: xi, eta, zeta
 
-real(dq) :: machinePrecision, zero, uno, due
+real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 4
+verboseCalcoli = 6
 
-zero= z'00000000000000000000000000000000'
+!zero= z'00000000000000000000000000000000'
 
-uno = z'3fff0000000000000000000000000000'
+!uno = z'3fff0000000000000000000000000000'
 
-due = uno+uno
+!due = uno+uno
 
-machinePrecision=epsilon(uno)
+!quattro = due + due
+
+!machinePrecision=epsilon(uno)
+machinePrecision = epsilon(1.d0)
+
 
 !ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
 !da Tinizio e da Sinizio. Si noti che T(:,0) ha n elementi,
@@ -889,28 +913,39 @@ machinePrecision=epsilon(uno)
 
 kappa = 0
 
-xi(-2) = zero
+xi(-2) = 0.d0
 
-xi(-1) = (T(Tinizio,0) - x * S(Sinizio,0))*uno
+xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
 if ( abs(xi(-1)) <= machinePrecision ) then
    xi(-1) = T(Tinizio,0) * machinePrecision**2
 end if
 
 xi(0)=xi(-1)
 
-if ( xi(0) <= zero ) then
+
+if ( verboseCalcoli >= 5 ) then
+   write(*,*) "-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"
+   write(*,*) "x in ingresso=",x
+end if
+
+if ( xi(0) < 0.d0 ) then
    kappa = kappa+1
 end if
 
-eta(-2) = zero
+
+if ( verboseCalcoli >= 5 ) then
+   write(*,*)"xi(0)=",xi(0),"kappa=",kappa
+end if
+
+eta(-2) = 0.d0
 eta(-1) = S(Sinizio,0)/xi(0)
 eta(0) = eta(-1)
 
-zeta(-2) = zero
+zeta(-2) = 0.d0
 zeta(-1) = zeta(-2)
 zeta(0) = zeta(-1)
 
-kappa = 0
+
 
 do i=1,dim-1
 
@@ -923,20 +958,27 @@ do i=1,dim-1
    (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)/&
    xi(-1)
 
+
    if ( abs(xi(0)) <= machinePrecision ) then
       xi(0) = ( (abs(T(Tinizio+i-1,1))+ & 
-      abs(x*S(Sinizio+i-1,1)))**2 * machinePrecision**2 )/&
+      abs(x*S(Sinizio+i-1,1)) )**2 * machinePrecision**2 )/&
       xi(-1)
    end if
 
-   if ( xi(0) <= zero ) then
-      kappa = kappa+1
+   
+   if ( xi(0) < 0.d0 ) then
+      kappa = kappa + 1
+   end if
+
+
+   if ( verboseCalcoli >= 5 ) then
+      write(*,*)"xi(0)=",xi(0),"kappa=",kappa
    end if
 
    !mi occupo di eta:
    !divido in due tappe il calcolo.
 
-   eta(0) =due*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
+   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
    S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
    x*S(Sinizio+i-1,1))**2*eta(-2)
       
@@ -954,7 +996,7 @@ do i=1,dim-1
    !mi occupo di zeta: 
    !divido in due tappe il calcolo.
       
-   zeta(0) = due*S(Sinizio+i-1,1)**2 + &
+   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
    4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
    S(Sinizio+i-1,1)*eta(-2) - &
    ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
@@ -965,7 +1007,7 @@ do i=1,dim-1
    end if
 
    zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
-   zeta(-1) + due*S(Sinizio+i,0)*eta(-1) - &
+   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
    zeta(0)/xi(-1) )/xi(0)
    
    if ( abs(zeta(0))<= machinePrecision ) then
@@ -973,12 +1015,11 @@ do i=1,dim-1
    end if
 
 
-   if ( verboseCalcoli >= 5 ) then
+   if ( verboseCalcoli >= 6 ) then
       write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
       write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
       write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
            "zeta(0)=", zeta(0)
-      write(*,*)"kappa=",kappa
    end if
       
    !aggiiorno le variabili
