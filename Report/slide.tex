@@ -162,7 +162,7 @@ tridiagonal\end{fminipage} pencil.
 \pause
 
 \begin{de}[Problem]
-  Find $\lambda \tc T v = \lambda S v$. \\
+  Find $\lambda\in\R \tc T v = \lambda S v$, with $v\in\C^n$. \\
   $T,S$ symmetric implies $\lambda\in\R$.
 \end{de}
 \end{frame}
@@ -252,6 +252,29 @@ using an iterative method, living on real line.
 s_{i,i+1}^2 \neq 0$\\
   for $i=1,2,\dots,n-1$.
 \end{de}
+
+\pause
+
+\emph{exemplum gratie}:
+
+\begin{Bdescription}
+  \item [\textcolor{red}{Bad}]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item $T=I,S=0$
+  \item $T=I,S=I$
+  \end{Bitemize}}
+  
+  \item [\textcolor{green}{Good}]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item $T=I,S=trid(-1,2,-1)$
+  \item $T=trid(-1,2,-1),S=trid(-1,2,-1)$
+  \item $T=trid(rnd_{sub},rnd_{diag},rnd_{sub}),S=I$,\\ 
+    with $rnd_{sub}$ random number $\ne 0$.
+  \end{Bitemize}}
+\end{Bdescription}
+
 \end{frame}
 
 \begin{frame}[fragile]

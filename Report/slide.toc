@@ -8,8 +8,8 @@
 \defcounter {refsection}{0}\relax 
 \beamer@subsectionintoc {2}{1}{Rapid tour}{6}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Laguerre's method}{9}{0}{3}
+\beamer@sectionintoc {3}{Laguerre's method}{10}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Good evaluation of $L_{\pm }(x)$}{23}{0}{4}
+\beamer@sectionintoc {4}{Good evaluation of $L_{\pm }(x)$}{24}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Good initial point}{27}{0}{5}
+\beamer@sectionintoc {5}{Good initial point}{28}{0}{5}
