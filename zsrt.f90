@@ -128,7 +128,7 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=3,file="risultato_i_inerzia.txt")
+Open(unit=3,file="risultato_i.txt")
 
 write(3,*) em
 
@@ -165,7 +165,7 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=4,file="risultato_ii_inerzia.txt")
+Open(unit=4,file="risultato_ii.txt")
 
 write(4,*) em
 
@@ -206,7 +206,7 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=5,file="risultato_iii_inerzia.txt")
+Open(unit=5,file="risultato_iii.txt")
 
 write(5,*) em
 

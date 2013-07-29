@@ -35,7 +35,7 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 3
+verbose = 4
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -698,7 +698,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 150 ) then
+   if ( l >= 15 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -884,7 +884,7 @@ real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 6
+verboseCalcoli = 5
 
 !zero= z'00000000000000000000000000000000'
 
@@ -916,6 +916,10 @@ kappa = 0
 xi(-2) = 0.d0
 
 xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
+
+!write(*,*)"abs(xi(-1))=",abs(xi(-1))
+!write(*,*)"machinePrecision**2=",machinePrecision**2
+
 if ( abs(xi(-1)) <= machinePrecision ) then
    xi(-1) = T(Tinizio,0) * machinePrecision**2
 end if
@@ -979,8 +983,8 @@ do i=1,dim-1
    !divido in due tappe il calcolo.
 
    eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
-   S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
-   x*S(Sinizio+i-1,1))**2*eta(-2)
+   S(Sinizio+i-1,1) + ((T(Tinizio+i-1,1)- &
+   x*S(Sinizio+i-1,1))**2)*eta(-2)
       
    if ( abs(eta(0))<= machinePrecision ) then
       write(*,*)"primo pezzo di eta e` zero!"
@@ -999,7 +1003,7 @@ do i=1,dim-1
    zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
    4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
    S(Sinizio+i-1,1)*eta(-2) - &
-   ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
+   (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)*&
    zeta(-2)
 
    if ( abs(zeta(0))<= machinePrecision ) then

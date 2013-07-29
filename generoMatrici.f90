@@ -5,7 +5,7 @@ integer, parameter :: dp=kind(0.d0)
 real(dp), dimension(:,:), allocatable :: T,S
 real(dp), dimension(:), allocatable :: v 
 integer :: n, i, j
-real(dp) :: rnd, machinePrecision
+real(dp) :: rnd, machinePrecision, count, max
 
 
 !!!
@@ -67,7 +67,7 @@ do i=1,n
          S(i,j) = 0.d0
       else
          if ( abs(i-j) == 1 ) then
-            S(i,j) = rnd*1.d-3
+            S(i,j) = rnd*1.d-1
             S(j,i) = S(i,j)
          else
             S(i,j)=0.d0
@@ -79,7 +79,7 @@ end do
 
 do i=1,n
    rnd = sum(S(i,:))
-   S(i,i) = i*1.d0 + rnd
+   S(i,i) = i*1.d-1 + rnd
 end do
 
 
@@ -133,6 +133,22 @@ do i=1,n-1
    end if
 end do
 
+
+!!!
+!Calcolo norma infinito (utile per il corollario 4.3)
+!!!
+max = 0
+do i=1,n
+   count = 0
+   do j=1,n
+      count = count + abs(S(i,j))
+   end do
+   if ( count > max ) then
+      max = count
+   end if
+end do
+
+write(*,*)"||S||_{\infty}=",max
 
 !!!
 !Stapo a video le matrici
