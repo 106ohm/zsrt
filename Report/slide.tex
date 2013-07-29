@@ -158,6 +158,9 @@ Corso Metodi di Approssimazione 2012-2013
 We consider \emph{only} \begin{fminipage}{0.8in} symmetric \\ and \\ 
 tridiagonal\end{fminipage} pencil.
 
+\pause
+
+$S$ is \textcolor{blue}{\emph{positive definite}}.
 
 \pause
 
@@ -456,9 +459,19 @@ have cubic rate convergence (much, much faster then \textcolor{red}{bisection})
 
 \pause
 
+\begin{tikzpicture}
+  \draw (0,0) [fill=yellow] ellipse (2cm and 1cm);
+  \draw[->] (-5,0) -- (5,0);
+  \node[circle, fill=black, label=above:$\lambda_m$] at (-.5,0) {};
+  \node[circle, fill=black!1, label=above:$x_{0}$] at (1.25,0) {};
+\end{tikzpicture}
+
+\pause
+
 The Laguerre's method is \textcolor{green}{fast}.
 
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Fast and secure iterative method}
@@ -568,21 +581,70 @@ estimate $mlt(\lambda_m)$. \\
 
     \begin{align*}
       \kappa(x) &:= \text{\# eigenvalues less then } x \\
-      \kappa(x) &= \textcolor{blue}{\text{\# consecutive sign changes in }} \{ \rho_i \}_{i=0,\dots,n}
+      \kappa(x) &= \textcolor{blue}{ \text{\# consecutive sign changes in } \{ \rho_i \}_{i=0,\dots,n} }
     \end{align*}
   \end{os}
 
   \begin{tikzpicture}
-    \draw[->] (-5,0) -- (2,0);
+    \draw[->] (-5,0) -- (4,0);
+    \node[circle, fill=black!1, label=above:$\lambda_1$] at (-4,0) {};
     \node[circle, fill=black!1, label=above:$\lambda_2$] at (-3,0) {};
     \node[circle, fill=black!1, label=above:$\lambda_3$] at (-2,0) {};
     \node[circle, fill=black!1, label=above:$\lambda_4$] at (-1,0) {};
     \node[circle, fill=green, label=above:$x$] at (0,0) {};
-    \node[circle, fill=green, label=below:$\kappa(x)\text{ is } 3$] at (0,0) {};
+    \node[circle, fill=green, label=below:$\kappa(x)\text{ is } 4$] at (0,0) {};
+    \node[circle, fill=black!1, label=above:$\lambda_5$] at (1,0) {};
+    \node[circle, fill=black!1, label=above:$\lambda_6$] at (2,0) {};
   \end{tikzpicture}
-
-  %We will see that $\kappa(x)$ is a fondamental
   
+\end{frame}
+
+\begin{frame}
+  \frametitle{Three term recurrence}
+
+  Obviusly $f^{'}=\rho_n^{'},f^{''}=\rho_n^{''}$.
+
+
+  %If .\\
+  %If $\kappa(x)< m$ then $sign(\lambda_m -x)=\textcolor{blue}{+}$.
+
+  \pause
+
+  So\symbolfootnote[1]{$\kappa(x)< m$ implies $sign(\lambda_m -x)=\textcolor{blue}{+}$} 
+  \begin{equation*}
+    \text{IF } ( \kappa(x)\ge m \text{ AND } -f^{'}< 0 ) \text{ OR } ( \kappa(x) < m \text{ AND } -f^{'}\ge 0 ) \text{ THEN }
+  \end{equation*}
+
+  \pause
+
+  We have cubic conbergence
+
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Example}
+
+  \begin{tikzpicture}
+    \uncover<3,4,5>{\draw (1,0) [fill=yellow] ellipse (1cm and .5cm);}
+    \draw[->] (-5,0) -- (5,0);
+    \uncover<5>{\node[circle, fill=black, label=above:$\lambda_m$] at (.5,0) {};}
+    \uncover<1,2,3>{\node[circle, fill=black!1, label=above:initial point] at (4,0) {};}
+    \uncover<2>{
+      \node[circle, fill=black!1, label=below:$\kappa$ is $m$] at (4,0) {};
+      \node[circle, fill=black!1, label=below:$\kappa$ is $m-1$] at (-4,0) {};
+    }
+    \uncover<3>{
+      \draw (-4,-.2) -- (-4,.2);
+      \draw (0,-.2) -- (0,.2);
+      \draw (2,-.2) -- (2,.2);
+      %\draw (1,-.2) -- (1,.2);
+    }
+    \uncover<4,5>{
+      \node[circle, fill=black!1, label=above:$x_0$] at (1.5,0) {};
+    }
+  \end{tikzpicture}
 
 \end{frame}
 

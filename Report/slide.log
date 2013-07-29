@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  28 JUL 2013 17:50
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  29 JUL 2013 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,17 +1169,17 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for U+msa on input line 168.
+LaTeX Font Info:    Try loading font information for U+msa on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 168.
+LaTeX Font Info:    Try loading font information for U+msb on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 168.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 171.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1198,12 +1198,12 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [8
 
+] [9
+
 ]
 \openout4 = `slide.vrb'.
 
- (./slide.vrb) [9
-
-] [10
+ (./slide.vrb) [10
 
 ] [11
 
@@ -1232,28 +1232,28 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [23
 
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 479.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\pm' on input line 479.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 479.
-
-[24
+] [24
 
 ] [25
 
-] [26
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 492.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 492.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\pm' on input line 492.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 492.
+
+[26
 
 ] [27
 
@@ -1261,43 +1261,96 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [29
 
-] [30
+]
+Overfull \hbox (6.19888pt too wide) detected at line 622
+[]\OT1/cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/
+it/10.95 x\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/m/it/10.95 m[
+] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OML/cmm/m/it/10.95 < \OT1/c
+mss/m/n/10.95 0)[](\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/it/1
+0.95 x\OT1/cmss/m/n/10.95 ) \OML/cmm/m/it/10.95 < \OT1/cmss/m/it/10.95 m[] \OMS
+/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/
+m/n/10.95 0)[]
+ []
 
-] [31
+[30
 
-] [32
+]
+Overfull \hbox (6.19888pt too wide) detected at line 622
+[]\OT1/cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/
+it/10.95 x\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/m/it/10.95 m[
+] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OML/cmm/m/it/10.95 < \OT1/c
+mss/m/n/10.95 0)[](\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/it/1
+0.95 x\OT1/cmss/m/n/10.95 ) \OML/cmm/m/it/10.95 < \OT1/cmss/m/it/10.95 m[] \OMS
+/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/
+m/n/10.95 0)[]
+ []
+
+[31
+
+]
+Overfull \hbox (6.19888pt too wide) detected at line 622
+[]\OT1/cmss/m/n/10.95 (\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/
+it/10.95 x\OT1/cmss/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/m/it/10.95 m[
+] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OML/cmm/m/it/10.95 < \OT1/c
+mss/m/n/10.95 0)[](\OML/cmm/m/it/10.95 ^^T\OT1/cmss/m/n/10.95 (\OT1/cmss/m/it/1
+0.95 x\OT1/cmss/m/n/10.95 ) \OML/cmm/m/it/10.95 < \OT1/cmss/m/it/10.95 m[] \OMS
+/cmsy/m/n/10.95 ^^@ \OT1/cmss/m/it/10.95 f[] \OMS/cmsy/m/n/10.95 ^^U \OT1/cmss/
+m/n/10.95 0)[]
+ []
+
+[32
 
 ] [33
 
-]
-Overfull \hbox (6.0903pt too wide) in paragraph at lines 746--746
-[][]  
- []
+] [34
 
-[34
+] [35
 
-]
-Overfull \hbox (6.0903pt too wide) in paragraph at lines 746--746
-[][]  
- []
+] [36
 
-[35
-
-]
-Overfull \hbox (6.0903pt too wide) in paragraph at lines 746--746
-[][]  
- []
-
-[36
-
-]
-Overfull \hbox (6.0903pt too wide) in paragraph at lines 764--764
-[][]  
- []
-
-[37
+] [37
 
 ] [38
+
+] [39
+
+] [40
+
+] [41
+
+] [42
+
+] [43
+
+]
+Overfull \hbox (6.0903pt too wide) in paragraph at lines 808--808
+[][]  
+ []
+
+[44
+
+]
+Overfull \hbox (6.0903pt too wide) in paragraph at lines 808--808
+[][]  
+ []
+
+[45
+
+]
+Overfull \hbox (6.0903pt too wide) in paragraph at lines 808--808
+[][]  
+ []
+
+[46
+
+]
+Overfull \hbox (6.0903pt too wide) in paragraph at lines 826--826
+[][]  
+ []
+
+[47
+
+] [48
 
 ]
 \tf@nav=\write8
@@ -1309,13 +1362,13 @@ Overfull \hbox (6.0903pt too wide) in paragraph at lines 764--764
 \tf@snm=\write10
 \openout10 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 777.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 777.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 839.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 839.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 777.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 777.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 839.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 839.
 Package rerunfilecheck Info: File `slide.out' has not changed.
-(rerunfilecheck)             Checksum: 8E3E20FB8D880EAC3EA3C4A5157BDAAC;321.
+(rerunfilecheck)             Checksum: 630DBF922FB0A663713DFFB0A97F144C;321.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1324,13 +1377,13 @@ LaTeX Font Warning: Size substitutions with differences
 Package logreq Info: Writing requests to 'slide.run.xml'.
 \openout1 = `slide.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 777.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 839.
  ) 
 Here is how much of TeX's memory you used:
- 24490 strings out of 494964
- 446025 string characters out of 3179448
- 619758 words of memory out of 3000000
- 27087 multiletter control sequences out of 15000+200000
+ 24732 strings out of 494964
+ 450499 string characters out of 3179448
+ 623308 words of memory out of 3000000
+ 27309 multiletter control sequences out of 15000+200000
  20252 words of font info for 78 fonts, out of 3000000 for 9000
  59 hyphenation exceptions out of 8191
  49i,15n,53p,910b,1185s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1360,10 +1413,10 @@ dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on slide.pdf (38 pages, 269390 bytes).
+Output written on slide.pdf (48 pages, 294590 bytes).
 PDF statistics:
- 1117 PDF objects out of 1200 (max. 8388607)
- 1041 compressed objects within 11 object streams
- 85 named destinations out of 1000 (max. 500000)
+ 1373 PDF objects out of 1440 (max. 8388607)
+ 1285 compressed objects within 13 object streams
+ 105 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
