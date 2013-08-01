@@ -58,7 +58,7 @@ do j=1,n
          Tcorta(i,0)=T(i,j)
          Scorta(i,0)=S(i,j)
       end if
-      if ( abs(i-j) == 1 .AND. i > j ) then
+      if ( abs(i-j)==1 .AND. j>i ) then
          Tcorta(j,1) = T(i,j)
          Scorta(j,1) = S(i,j)
       end if
@@ -107,6 +107,8 @@ Sfine= n
 
 write(*,*)"n=",n
 
+write(*,*)"********************"
+
 do j=1,n
 
    write(*,*)"j=",j
@@ -120,11 +122,11 @@ do j=1,n
 
    write(*,*)"x=",x
 
-   call numAutovaloriPrimaDiX(x,n,T,S,numAut)
+   call numAutovaloriPrimaDiX(x,n,Tcorta,Scorta,numAut)
 
    write(*,*)"numAut=",numAut
 
-   call calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, &
+   call calcoli(x, Tcorta, Scorta, n, dim, Tinizio, Tfine, Sinizio, &
         Sfine, fPrimo, fSecondo, kappa)
 
    write(*,*)"kappa=",kappa
@@ -132,6 +134,8 @@ do j=1,n
    write(*,*)"fPrimo=",fPrimo
 
    write(*,*)"fSecondo=",fSecondo
+
+   write(*,*)"********************"
 
 end do
 

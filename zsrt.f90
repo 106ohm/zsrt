@@ -35,7 +35,7 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 3
+verbose = 4
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -58,22 +58,26 @@ do j=1,n
          S(i,0) = lettore2
       end if
       if ( abs(i-j)==1 .AND. j>i ) then
-         T(i,1) = lettore1
-         S(i,1) = lettore2
+         T(j,1) = lettore1
+         S(j,1) = lettore2
       end if
    end do
 end do
 
-T(n,1)=-100.d0
-S(n,1)=-100.d0
+T(1,1)=0.d0
+S(1,1)=0.d0
 
-!do i=1,n
-!   write(*,*)"S(i,0)=",S(i,0)
-!end do
+!ATTENZIONE!
+!Il contenuto della sopradiagonale di T (e similmente di S)
+!lo leggo in T(2:n,1), cioe` partendo dal secondo elemento di T(:,1)
 
-!do i=1,n
-!   write(*,*)"S(i,1)=",S(i,1)
-!end do
+do i=1,n
+   write(*,*)"S(",i,",0)=",S(i,0)
+end do
+
+do i=1,n
+   write(*,*)"S(",i,",1)=",S(i,1)
+end do
 
 !scelgo le dimensioni di Eigenvalues, alloco memoria
 !ed inizializzo i suoi valori a zero
@@ -109,8 +113,11 @@ end if
 !!!
 !i)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"i)"
+write(*,*)""
+write(*,*)""
 
 a=0.d0
 b=1.d0 + machinePrecision
@@ -140,8 +147,11 @@ end do
 !!!
 !ii)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"ii)"
+write(*,*)""
+write(*,*)""
 
 do j=1,en
    do i=1,em
@@ -181,8 +191,11 @@ end do
 !!!
 !iii)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"iii)"
+write(*,*)""
+write(*,*)""
 
 do j=1,en
    do i=1,em
@@ -403,22 +416,22 @@ do while (dim <= n)
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
       !call numAutovaloriPrimaDiX(a,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-      if ( verbose >= 3 .AND. kappa /= numAut ) then
-         write(*,*)"kappa e` diverso da numAut!"
-         write(*,*)"kappa(a)=",kappa,"numAut=",numAut
-      end if
-      !k1 = kappa+1
-      k1 = numAut+1
+      !if ( verbose >= 3 .AND. kappa /= numAut ) then
+      !   write(*,*)"kappa e` diverso da numAut!"
+      !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      !end if
+      k1 = kappa+1
+      !k1 = numAut+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
       
       !call numAutovaloriPrimaDiX(b,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-      if ( verbose >= 3 .AND. kappa /= numAut ) then
-         write(*,*)"kappa e` diverso da numAut!"
-         write(*,*)"kappa(a)=",kappa,"numAut=",numAut
-      end if
-      !k2=kappa
-      k2=numAut
+      !if ( verbose >= 3 .AND. kappa /= numAut ) then
+      !   write(*,*)"kappa e` diverso da numAut!"
+      !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      !end if
+      k2=kappa
+      !k2=numAut
       
       if (verbose >= 2) then
          write(*,*)"-------------------------------------"
@@ -439,9 +452,6 @@ do while (dim <= n)
          !nel ricercare \lambda_j
          aj=a
          bj=b
-
-         kappaA = k1-1
-         kappaB = k2-1
 
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
             
@@ -472,11 +482,11 @@ do while (dim <= n)
             call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
             !call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-            if ( verbose >= 3 .AND. kappa /= numAut ) then
-               write(*,*)"kappa e` diverso da numAut!"
-               write(*,*)"kappa(a)=",kappa,"numAut=",numAut
-            end if
-            kappa=numAut
+            !if ( verbose >= 3 .AND. kappa /= numAut ) then
+            !   write(*,*)"kappa e` diverso da numAut!"
+            !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+            !end if
+            !kappa=numAut
 
             if ( verbose >= 4 ) then
                write(*,*)"work in progres..."
@@ -698,7 +708,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 150 ) then
+   if ( l >= 15 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -806,11 +816,11 @@ do while ( .TRUE. )
 20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
    Sfine, fPrimo, fSecondo, kappa)
    !call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-   if ( verbose >= 3 .AND. kappa /= numAut ) then
-      write(*,*)"kappa e` diverso da numAut!"
-      write(*,*)"kappa(a)=",kappa,"numAut=",numAut
-   end if
-   kappa=numAut
+   !if ( verbose >= 3 .AND. kappa /= numAut ) then
+   !   write(*,*)"kappa e` diverso da numAut!"
+   !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+   !end if
+   !kappa=numAut
 
    !aggiorno [aj, bj] secondo il nuovo kappa
    if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
@@ -878,7 +888,8 @@ integer :: i, j, k, l
 
 integer :: verboseCalcoli
 
-real(dp), dimension(-2:0) :: xi, eta, zeta
+real(dp), dimension(:), allocatable :: xi
+real(dp), dimension(:), allocatable ::  eta, zeta
 
 real(dp) :: machinePrecision
 
@@ -898,9 +909,8 @@ verboseCalcoli = 6
 machinePrecision = epsilon(1.d0)
 
 
-!ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
-!da Tinizio e da Sinizio. Si noti che T(:,0) ha n elementi,
-!mentre T(:,1) ne ha n-1 (ugualmente S)
+allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
+
 
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
@@ -911,135 +921,75 @@ machinePrecision = epsilon(1.d0)
 !tengo conto di quanti termini negativi compaiono 
 !nella successione degli xi; questo sara` kappa!
 
+if ( verboseCalcoli >= 4 ) then
+   write(*,*)"x=",x
+end if
+
 kappa = 0
 
-xi(-2) = 0.d0
+do i=0,dim
 
-xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
-if ( abs(xi(-1)) <= machinePrecision ) then
-   xi(-1) = T(Tinizio,0) * machinePrecision**2
-end if
-
-xi(0)=xi(-1)
-
-
-if ( verboseCalcoli >= 5 ) then
-   write(*,*) "-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-"
-   write(*,*) "x in ingresso=",x
-end if
-
-if ( xi(0) < 0.d0 ) then
-   kappa = kappa+1
-end if
-
-
-if ( verboseCalcoli >= 5 ) then
-   write(*,*)"xi(0)=",xi(0),"kappa=",kappa
-end if
-
-eta(-2) = 0.d0
-eta(-1) = S(Sinizio,0)/xi(0)
-eta(0) = eta(-1)
-
-zeta(-2) = 0.d0
-zeta(-1) = zeta(-2)
-zeta(0) = zeta(-1)
-
-
-
-do i=1,dim-1
-
-   !write(*,*)"T(Tinizio+i,0)=T(",Tinizio+i,",0)=",T(Tinizio+i,0)
-   !write(*,*)"T(Tinizio+i-1,1)=T(",Tinizio+i-1,",1)=",T(Tinizio+i-1,1)
+   if ( i==0 ) then
+      eta(0)=0.d0
+      zeta(0)=0.d0
+   end if
    
-   !mi occupo di xi
+   if ( i==1 ) then
+      xi(1)=T(Tinizio,0)-x*S(Sinizio,0)
+      
+      if ( abs(xi(1)) <= machinePrecision ) then
+         xi(1) = T(Tinizio,0)*machinePrecision**2
+      end if
+
+      eta(1)=S(Sinizio,0)/xi(1)
+      zeta(1)=0.d0
+   end if
    
-   xi(0) = T(Tinizio+i,0) - x*S(Sinizio+i,0) - &
-   (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)/&
-   xi(-1)
 
+   if ( i>=2 ) then
+      !Se mi trovo qui allora i>=2
+      xi(i) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(i-1)
 
-   if ( abs(xi(0)) <= machinePrecision ) then
-      xi(0) = ( (abs(T(Tinizio+i-1,1))+ & 
-      abs(x*S(Sinizio+i-1,1)) )**2 * machinePrecision**2 )/&
-      xi(-1)
+      if ( abs(xi(i)) <= machinePrecision ) then
+         xi(i) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(i-1)
+      end if
+
+      eta(i) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(i-2)
+      eta(i) = -eta(i)/xi(i-1)
+      eta(i) = ( eta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(i-1) + S(Sinizio-1+i,0) )/xi(i)
+
+      zeta(i) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(i-2) - &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(i-2)
+      zeta(i) = -zeta(i)/xi(i-1)
+      zeta(i) = ( zeta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(i-1) + 2.d0*S(Sinizio-1+i,0)*eta(i-1) )/xi(i)
+
    end if
 
-   
-   if ( xi(0) < 0.d0 ) then
+   !Adesso aggiorno il conteggio degli xi negativi
+   if ( xi(i) < 0.d0 ) then
       kappa = kappa + 1
    end if
 
-
    if ( verboseCalcoli >= 5 ) then
-      write(*,*)"xi(0)=",xi(0),"kappa=",kappa
+      write(*,*)"i=",i,"kappa=",kappa
    end if
 
-   !mi occupo di eta:
-   !divido in due tappe il calcolo.
-
-   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
-   S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
-   x*S(Sinizio+i-1,1))**2*eta(-2)
-      
-   if ( abs(eta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di eta e` zero!"
-   end if
-
-   eta(0) = ( (T(Tinizio+i,0)-x*S(Sinizio+i,0))* &
-   eta(-1) + S(Sinizio+i,0) - eta(0)/xi(-1) )/xi(0)
-
-   if ( abs(eta(0))<= machinePrecision ) then
-      write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
-   end if
-   
-   !mi occupo di zeta: 
-   !divido in due tappe il calcolo.
-      
-   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
-   4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
-   S(Sinizio+i-1,1)*eta(-2) - &
-   ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
-   zeta(-2)
-
-   if ( abs(zeta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di zeta e` zero!"
-   end if
-
-   zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
-   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
-   zeta(0)/xi(-1) )/xi(0)
-   
-   if ( abs(zeta(0))<= machinePrecision ) then
-      write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
-   end if
-
-
-   if ( verboseCalcoli >= 6 ) then
-      write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
-      write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
-      write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
-           "zeta(0)=", zeta(0)
-   end if
-      
-   !aggiiorno le variabili
-      
-   xi(-2)=xi(-1)
-   xi(-1)=xi(0)
-
-   eta(-2)=eta(-1)
-   eta(-1)=eta(0)
-
-   zeta(-2) = zeta(-1)
-   zeta(-1) = zeta(0)
-
-   
 end do
+
+if ( verboseCalcoli >= 6 ) then
+   write(*,*)"ecco il vettore xi:"
+   write(*,*)xi(:)
+   write(*,*)"ecco il vettore eta:"
+   write(*,*)eta(:)
+   write(*,*)"ecco il vettore zeta:"
+   write(*,*)zeta(:)
+end if
 
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
-fPrimo = - eta(0)
-fSecondo = zeta(0)
+fPrimo = - eta(dim)
+fSecondo = zeta(dim)
 
 if ( verboseCalcoli >= 4 ) then
    write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
@@ -1121,149 +1071,4 @@ end subroutine quick_sort
 
 
 
-!!$!!!
-!!$!SUBROUTINE PER IL CALCOLO INERZA
-!!$!!!
-!!$
-!!$subroutine numAutovaloriPrimaDiX(x,n,U,V,numAut)
-!!$
-!!$implicit none
-!!$
-!!$integer, parameter :: dp = kind(1.d0)
-!!$
-!!$integer, intent(IN) :: n
-!!$
-!!$real(dp), intent(IN) :: x
-!!$
-!!$real(dp), dimension(n,0:1), intent(IN) :: U
-!!$
-!!$real(dp), dimension(n,0:1), intent(IN) :: V
-!!$
-!!$integer, intent(OUT) :: numAut
-!!$
-!!$!!!
-!!$
-!!$real(dp), dimension(:,:), allocatable :: T,S
-!!$
-!!$character :: UPLO
-!!$
-!!$integer :: i, j, k, LWORK
-!!$
-!!$integer, dimension(:), allocatable :: IPIV
-!!$
-!!$integer :: INFO
-!!$
-!!$real(dp), dimension(:), allocatable :: WORK
-!!$
-!!$real(dp), dimension(:,:), allocatable :: A, xI
-!!$
-!!$real(dp) :: machinePrecision
-!!$
-!!$!!!
-!!$!FINE DICHIARAZIONI
-!!$!!!
-!!$
-!!$machinePrecision=epsilon(1.d0)
-!!$
-!!$allocate( T(n,n), S(n,n) )
-!!$
-!!$
-!!$do i=1,n
-!!$   do j=1,n
-!!$      if ( i==j ) then
-!!$         T(i,j)=U(i,0)
-!!$         S(i,j)=V(i,0)
-!!$      else if ( abs(i-j)==1 ) then
-!!$         T(i,j)=U(i,1)
-!!$         S(i,j)=V(i,1)
-!!$      else
-!!$         T(i,j)=0.d0
-!!$         S(i,j)=0.d0
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$allocate( A(n,n), xI(n,n) )
-!!$allocate( IPIV(n) )
-!!$
-!!$!compongo xI
-!!$do i=1,n
-!!$   do j=1,n
-!!$      if ( i==j ) then
-!!$         xI(i,j)=x
-!!$      else
-!!$         xI(i,j)=0.d0
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$UPLO = "L"
-!!$
-!!$
-!!$A = T - matmul(xI,S)
-!!$
-!!$do i=1,n
-!!$   do j=1,n
-!!$      if ( abs(A(i,j))<=machinePrecision ) then
-!!$         A(i,j)=0.d0
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$!stampo la matrice A
-!!$!write(*,*)"matrice A"
-!!$!do i=1,n
-!!$!   write(*,*)A(i,:)
-!!$!end do
-!!$
-!!$!cerco il miglior valor per LWORK:
-!!$allocate( WORK(n) )
-!!$call DSYTRF(UPLO, n, A, n, IPIV, WORK, -1, INFO)
-!!$LWORK=WORK(1)
-!!$deallocate( WORK )
-!!$!write(*,*)"LWORK=",LWORK
-!!$allocate( WORK(LWORK) )
-!!$
-!!$!calcolo la fattorizzazione A=LDL^T
-!!$call DSYTRF(UPLO, n, A, n, IPIV, WORK, LWORK, INFO)
-!!$
-!!$!write(*,*)"INFO=", INFO
-!!$!write(*,*)"IPIV=",IPIV(:)
-!!$
-!!$!write(*,*)"matrice A dopo DSYTRF"
-!!$!do i=1,n
-!!$!   write(*,*)A(i,:)
-!!$!end do
-!!$
-!!$numAut=0
-!!$k=1
-!!$do while( k <= n )
-!!$   !write(*,*)"k=",k
-!!$   if ( IPIV(k) > 0 ) then
-!!$      !A(k,k) e` l'inizio di un blocco 1x1
-!!$      !write(*,*)"A(k,k)=",A(k,k)
-!!$      if ( A(k,k) < 0.d0 ) then
-!!$         numAut = numAut + 1
-!!$         !write(*,*)"numAut=",numAut
-!!$      end if
-!!$      k = k+1
-!!$   else
-!!$      !A(k,k) e` l'inizio del blocco 2x2 simmetrico:
-!!$      !|A(k,k)   A(k+1,k)  |
-!!$      !|A(k+1,k) A(k+1,k+1)|
-!!$      !calcolo quindi la fattorizzazione A(k:k+1,k:k+1)=LDL^T 
-!!$      call DSYTRF(UPLO, 2, A(k:k+1,k:k+1), 2, IPIV, WORK, -1, INFO)
-!!$      LWORK=WORK(1)
-!!$      call DSYTRF(UPLO, 2, A(k:k+1,k:k+1), 2, IPIV, WORK, LWORK, INFO)
-!!$      !controllo dunque il segno di A(k,k) e di A(k+1,k+1),
-!!$      !che compongono l'attuale D
-!!$      do j=0,1
-!!$         if ( A(k+j,k+j) < 0.d0 ) then
-!!$            numAut = numAut + 1
-!!$         end if
-!!$      end do
-!!$      k = k+2
-!!$   end if
-!!$end do
-!!$
-!!$end subroutine numAutovaloriPrimaDiX
+
