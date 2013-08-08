@@ -297,7 +297,7 @@ But $T$ is symmetric, so $sub=super$. We define and use
 with $T(:,0)=diag$ and $T(:,1)=super$.
 
 \begin{os}
-  We don't use T(n,1) and S(n,1). 
+  We don't use T(1,1) and S(1,1). 
 \end{os}
 
 \end{frame}
@@ -377,8 +377,22 @@ and with algebraic manipulations:
   \hat X_{-}, \hat X_{+} = L_{\pm}(x) = x + \frac{ n }{ -\frac{f^{'}}{f} \pm \sqrt{(n-1)[ (n-1)(-\frac{f^{'}}{f}) -n\frac{f^{''}}{f} ]} }
 \end{equation*}
 
-with $\frac{f^{'}}{f}=\frac{ (\effe{T,S}{\lambda})^{'} }{ \effe{T,S}{\lambda} }$.
+with $\frac{f^{'}}{f}=\frac{ (\effe{T,S}{\lambda})^{'} }{ \effe{T,S}{\lambda} }$. 
 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Fast and secure iterative method}
+  So we need \textcolor{blue}{$\frac{f^{'}}{f}$} and \textcolor{blue}{$\frac{f^{''}}{f}$}. \\
+
+\pause
+
+This is one of the most important aspect of our calculation. \\
+
+\pause
+
+We will see that ``only'' with the \textcolor{blue}{symmetric tridiagonal} condition we can have \textcolor{green}{derivatives of determinats}.
 \end{frame}
 
 
@@ -612,12 +626,12 @@ estimate $mlt(\lambda_m)$. \\
 
   So\symbolfootnote[1]{$\kappa(x)< m$ implies $sign(\lambda_m -x)=\textcolor{blue}{+}$} 
   \begin{equation*}
-    \text{IF } ( \kappa(x)\ge m \text{ AND } -f^{'}< 0 ) \text{ OR } ( \kappa(x) < m \text{ AND } -f^{'}\ge 0 ) \text{ THEN }
+    \textcolor{blue}{\text{IF }} ( \kappa(x_0)\ge m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}< 0 ) \textcolor{cyan}{\text{ OR }} ( \kappa(x_0) < m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}\ge 0 ) \textcolor{blue}{\text{ THEN }}
   \end{equation*}
 
   \pause
 
-  We have cubic conbergence
+  We have \textcolor{blue}{cubic convergence} in Laguerre's method with $x_0$ as starting point.
 
 \end{frame}
 
@@ -727,12 +741,146 @@ estimate $mlt(\lambda_m)$. \\
   And if $n=4$?
   
   \begin{equation*}
-    \begin{bmatrix}
-      a & b\\
-      c & d
-    \end{bmatrix}
+    \begin{pmatrix}
+      t_{1,1} & t_{1,2} & 0 & 0\\
+      t_{2,1} & t_{2,2} & t_{2,3} & 0\\
+      0 & t_{3,2} & t_{3,3} & t_{3,4}\\
+      0 & 0 & t_{4,3} & t_{4,4}
+    \end{pmatrix} \begin{pmatrix} 
+      v_1 \\ 
+      v_2 \\
+      v_3 \\
+      v_4
+    \end{pmatrix} = \lambda \begin{pmatrix}
+      s_{1,1} & s_{1,2} & 0 & 0\\
+      s_{2,1} & s_{2,2} & s_{2,3} & 0\\
+      0 & s_{3,2} & s_{3,3} & s_{3,4}\\
+      0 & 0 & s_{4,3} & s_{4,4}
+    \end{pmatrix} \begin{pmatrix}
+      v_1 \\ 
+      v_2 \\
+      v_3 \\
+      v_4
+    \end{pmatrix}
   \end{equation*}
 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ideas:}
+
+  And if $n=4$?
+  
+  \begin{equation*}
+    \begin{pmatrix}
+      \textcolor{blue}{t_{1,1}} & \textcolor{blue}{t_{1,2}} & 0 & 0\\
+      \textcolor{blue}{t_{2,1}} & \textcolor{blue}{t_{2,2}} & t_{2,3} & 0\\
+      0 & t_{3,2} & \textcolor{cyan}{t_{3,3}} & \textcolor{cyan}{t_{3,4}}\\
+      0 & 0 & \textcolor{cyan}{t_{4,3}} & \textcolor{cyan}{t_{4,4}}
+    \end{pmatrix} \begin{pmatrix} 
+      \textcolor{blue}{v_1} \\ 
+      \textcolor{blue}{v_2} \\
+      \textcolor{cyan}{v_3} \\
+      \textcolor{cyan}{v_4}
+    \end{pmatrix} = \lambda \begin{pmatrix}
+      \textcolor{blue}{s_{1,1}} & \textcolor{blue}{s_{1,2}} & 0 & 0\\
+      \textcolor{blue}{s_{2,1}} & \textcolor{blue}{s_{2,2}} & s_{2,3} & 0\\
+      0 & s_{3,2} & \textcolor{cyan}{s_{3,3}} & \textcolor{cyan}{s_{3,4}}\\
+      0 & 0 & \textcolor{cyan}{s_{4,3}} & \textcolor{cyan}{s_{4,4}}
+    \end{pmatrix} \begin{pmatrix}
+      \textcolor{blue}{v_1} \\ 
+      \textcolor{blue}{v_2} \\
+      \textcolor{cyan}{v_3} \\
+      \textcolor{cyan}{v_4}
+    \end{pmatrix}
+  \end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ideas:}
+
+  And if $n=4$?
+  
+
+  \begin{equation*}
+    \begin{pmatrix}
+      \textcolor{blue}{t_{1,1}} & \textcolor{blue}{t_{1,2}} & 0 & 0\\
+      \textcolor{blue}{t_{2,1}} & \textcolor{blue}{t_{2,2}} & \textcolor{red}{0} & 0\\
+      0 & \textcolor{red}{0} & \textcolor{cyan}{t_{3,3}} & \textcolor{cyan}{t_{3,4}}\\
+      0 & 0 & \textcolor{cyan}{t_{4,3}} & \textcolor{cyan}{t_{4,4}}
+    \end{pmatrix} \begin{pmatrix} 
+      \textcolor{blue}{v_1} \\ 
+      \textcolor{blue}{v_2} \\
+      \textcolor{cyan}{v_3} \\
+      \textcolor{cyan}{v_4}
+    \end{pmatrix} = \lambda \begin{pmatrix}
+      \textcolor{blue}{s_{1,1}} & \textcolor{blue}{s_{1,2}} & 0 & 0\\
+      \textcolor{blue}{s_{2,1}} & \textcolor{blue}{s_{2,2}} & \textcolor{red}{0} & 0\\
+      0 & \textcolor{red}{0} & \textcolor{cyan}{s_{3,3}} & \textcolor{cyan}{s_{3,4}}\\
+      0 & 0 & \textcolor{cyan}{s_{4,3}} & \textcolor{cyan}{s_{4,4}}
+    \end{pmatrix} \begin{pmatrix}
+      \textcolor{blue}{v_1} \\ 
+      \textcolor{blue}{v_2} \\
+      \textcolor{cyan}{v_3} \\
+      \textcolor{cyan}{v_4}
+    \end{pmatrix}
+  \end{equation*}
+
+
+\pause
+
+
+We can solve the \textcolor{blue}{blue} part and obtain $\textcolor{blue}{\mu_{1}},\textcolor{blue}{\mu_{2}}$, the \textcolor{cyan}{cyan} part and obtain $\textcolor{cyan}{\mu_{3}},\textcolor{cyan}{\mu_{4}}$.
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Ideas:}
+
+For $j=1,2,3,4$, from $\textcolor{blue}{\mu_j}$ we can enter in our ``best neighborhood'' of $\lambda_j$ using bisection:
+
+\pause
+
+
+\begin{Bitemize}[t]
+\item \textcolor{blue}{set} $a_j=0$ and $b_j=\textcolor{blue}{\mu_j}$ 
+\item \# Start bisection
+\item \textcolor{blue}{set} $x=\mu_j$
+\item \textcolor{blue}{IF} $\kappa(x)<j$ 
+\item \textcolor{blue}{THEN} \textcolor{blue}{set} $a_j=x$ 
+\item \textcolor{blue}{ELSE} \textcolor{blue}{set} $b_j=x$
+\item \textcolor{blue}{IF} \textcolor{blue}{THEN} 
+\item \textcolor{blue}{ELSE} \textcolor{blue}{go to} \# 
+\end{Bitemize}
+
+%\begin{lstlisting}
+%  integer, parameter :: dp = kind(1.d0)
+%  real(dp), dimension(1:n,0:1) :: T, S  
+%\end{lstlisting}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Ideas:}
+
+\textcolor{green}{Hopefully} we have 
+$\begin{matrix}
+  \textcolor{blue}{x_{0}^{1}}, L(\textcolor{blue}{x_{0}^{1}}), L(L(\textcolor{blue}{x_{0}^{1}})),\dots \leadsto \lambda_1 \\
+  \\
+  \textcolor{blue}{x_{0}^{2}}, L(\textcolor{blue}{x_{0}^{2}}), L(L(\textcolor{blue}{x_{0}^{2}})),\dots \leadsto \lambda_2 \\
+  \\
+  \textcolor{cyan}{x_{0}^{3}}, L(\textcolor{cyan}{x_{0}^{3}}), L(L(\textcolor{cyan}{x_{0}^{3}})),\dots \leadsto \lambda_3 \\
+  \\
+  \textcolor{cyan}{x_{0}^{4}}, L(\textcolor{cyan}{x_{0}^{4}}), L(L(\textcolor{cyan}{x_{0}^{4}})),\dots \leadsto \lambda_4
+\end{matrix}$ 
 
 \end{frame}
 
