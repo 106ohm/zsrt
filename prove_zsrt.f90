@@ -110,8 +110,9 @@ end if
 ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
 
-a=5.d-1
-b=2.d0
+a=0.d0
+b=6.d-1
+
 
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
@@ -348,6 +349,11 @@ do while (dim <= n)
       !nella 0-esima chiamata ricorsiva,
       !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
       
+      if ( k1 > k2 ) then
+         write(*,*)"NON CALCOLO"
+         GOTO 200
+      end if
+
       do j = k1, k2
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
