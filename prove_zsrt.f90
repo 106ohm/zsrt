@@ -403,10 +403,10 @@ do while (dim <= n)
 
             if ( kappa < j ) then
                aj = x
-               kappaA = kappa
+               !kappaA = kappa
             else
                bJ = x
-               kappaB = kappa
+               !kappaB = kappa
             end if
  
 
@@ -428,7 +428,7 @@ do while (dim <= n)
             !allora procedo con la bisezione
             !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
             if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
-                 .OR. ( kappa < j .AND. segno < 0 ) ) then
+                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno > 0 ) ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
@@ -438,7 +438,6 @@ do while (dim <= n)
                write(*,*)"Ho scelto l'intervallo [aj, bj]:"
                write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
-               write(*,*)"kappa(aj)=",kappaA,"kappa(bj)=",kappaB
             end if
             
             !!!
@@ -698,12 +697,12 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   if ( abs(deltaL) >= abs(exDeltaL) ) then
-      if (verbose >= 2) then
-         write(*,*)"condizione di arresto (24) del secondo tipo"
-      end if
-      GOTO 30
-   end if
+!!$   if ( abs(deltaL) >= abs(exDeltaL) ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"condizione di arresto (24) del secondo tipo"
+!!$      end if
+!!$      GOTO 30
+!!$   end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
    machinePrecision*abs(xl(0)) ) then

@@ -446,6 +446,13 @@ do while (dim <= n)
       !nella 0-esima chiamata ricorsiva,
       !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
       
+      
+      if ( k1 > k2 ) then
+         write(*,*)"NON CALCOLO"
+         GOTO 200
+      end if
+
+      
       do j = k1, k2
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -520,7 +527,7 @@ do while (dim <= n)
             !allora procedo con la bisezione
             !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
             if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
-                 .OR. ( kappa < j .AND. segno < 0 ) ) then
+                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno >=0 ) ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
