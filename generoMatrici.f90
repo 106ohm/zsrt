@@ -28,59 +28,100 @@ allocate( T(n,n), S(n,n) )
 
 
 
+!!$!!!
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (autovalori "distanti")
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
+!!$!!!
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !T(i,i)> somma_su_j_di T(i,j)
+!!$         T(i,j) = 1.d0
+!!$      else
+!!$         if ( abs(i-j) == 1 ) then
+!!$            T(i,j) = rnd*1.d-3
+!!$            T(j,i) = T(i,j)
+!!$         else
+!!$            T(i,j)=0.d0
+!!$            T(j,i)=T(i,j)
+!!$         end if
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$!do i=1,n
+!!$!   rnd = sum(T(i,:))
+!!$!   T(i,i) = 2.d0*rnd
+!!$!end do
+!!$
+!!$do i=1,n
+!!$   do j=1,i
+!!$      call random_number(rnd)
+!!$      if (i == j) then
+!!$         !aggiungo n+1, cosi' sono sicuro che 
+!!$         !S(i,i)> somma_su_j_di S(i,j)
+!!$         S(i,j) = 0.d0
+!!$      else
+!!$         if ( abs(i-j) == 1 ) then
+!!$            S(i,j) = rnd*1.d-1
+!!$            S(j,i) = S(i,j)
+!!$         else
+!!$            S(i,j)=0.d0
+!!$            S(j,i)=S(i,j)
+!!$         end if
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$do i=1,n
+!!$   rnd = sum(S(i,:))
+!!$   S(i,i) = i*1.d-1 + rnd
+!!$end do
+
+
+
+
+
+
 !!!
-!Matrici tridiagonali simmetriche random, 
-!ma dominanti diagonali (autovalori "distanti")
-!Per i teoremi di Gershgorin T ed S sono
-!definite positive
+!Matrici Problema Sturm-Liouville
 !!!
 do i=1,n
    do j=1,i
-      call random_number(rnd)
       if (i == j) then
-         !aggiungo n+1, cosi' sono sicuro che 
-         !T(i,i)> somma_su_j_di T(i,j)
-         T(i,j) = 1.d0
-      else
-         if ( abs(i-j) == 1 ) then
-            T(i,j) = rnd*1.d-3
-            T(j,i) = T(i,j)
-         else
-            T(i,j)=0.d0
-            T(j,i)=T(i,j)
-         end if
+         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
+      end if
+      if ( abs(i-j) == 1 ) then
+         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
+         T(j,i) = T(i,j)
+      end if
+      if ( abs(i-j) > 1 ) then
+         T(i,j)=0.d0
+         T(j,i)=T(i,j)
       end if
    end do
 end do
 
-!do i=1,n
-!   rnd = sum(T(i,:))
-!   T(i,i) = 2.d0*rnd
-!end do
-
 do i=1,n
    do j=1,i
-      call random_number(rnd)
       if (i == j) then
-         !aggiungo n+1, cosi' sono sicuro che 
-         !S(i,i)> somma_su_j_di S(i,j)
-         S(i,j) = 0.d0
-      else
-         if ( abs(i-j) == 1 ) then
-            S(i,j) = rnd*1.d-1
-            S(j,i) = S(i,j)
-         else
-            S(i,j)=0.d0
-            S(j,i)=S(i,j)
-         end if
+         S(i,j) = 4.d0/(6.d0*(n+1))
+      end if
+      if ( abs(i-j) == 1 ) then
+         S(i,j) = 1.d0/(6.d0*(n+1))
+         S(j,i) = S(i,j)
+      end if
+      if ( abs(i-j) > 1) then
+         S(i,j)=0.d0
+         S(j,i)=S(i,j)
       end if
    end do
 end do
 
-do i=1,n
-   rnd = sum(S(i,:))
-   S(i,i) = i*1.d-1 + rnd
-end do
 
 
 

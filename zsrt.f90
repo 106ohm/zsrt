@@ -904,20 +904,11 @@ real(dp) :: machinePrecision
 
 verboseCalcoli = 6
 
-!zero= z'00000000000000000000000000000000'
-
-!uno = z'3fff0000000000000000000000000000'
-
-!due = uno+uno
-
-!quattro = due + due
-
-!machinePrecision=epsilon(uno)
 machinePrecision = epsilon(1.d0)
 
 
-allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
-
+!allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
+allocate( xi(0:1), eta(0:2), zeta(0:2) )
 
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
@@ -948,33 +939,35 @@ do i=0,dim
          xi(1) = T(Tinizio,0)*machinePrecision**2
       end if
 
-      eta(1)=S(Sinizio,0)/xi(1)
+      eta(1)=S(Sinizio,0)/xi(0)
       zeta(1)=0.d0
    end if
    
 
    if ( i>=2 ) then
       !Se mi trovo qui allora i>=2
-      xi(i) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(i-1)
 
-      if ( abs(xi(i)) <= machinePrecision ) then
-         xi(i) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(i-1)
+      xi(mod(i,2)) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(mod(i-1,2))
+
+      if ( abs(xi(mod(i,2))) <= machinePrecision ) then
+         xi(mod(i,2)) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(mod(i-1,2))
       end if
 
-      eta(i) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
-           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(i-2)
-      eta(i) = -eta(i)/xi(i-1)
-      eta(i) = ( eta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(i-1) + S(Sinizio-1+i,0) )/xi(i)
+      eta(mod(i,3)) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(mod(i-2,3))
+      eta(mod(i,3)) = -eta(mod(i,3))/xi(mod(i-1,2))
+      eta(mod(i,3)) = ( eta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(mod(i-1,3)) + S(Sinizio-1+i,0) )/xi(mod(i,2))
 
-      zeta(i) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(i-2) - &
-           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(i-2)
-      zeta(i) = -zeta(i)/xi(i-1)
-      zeta(i) = ( zeta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(i-1) + 2.d0*S(Sinizio-1+i,0)*eta(i-1) )/xi(i)
+      zeta(mod(i,3)) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(mod(i-2,3)) - &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(mod(i-2,3))
+      zeta(mod(i,3)) = -zeta(mod(i,3))/xi(mod(i-1,2))
+      zeta(mod(i,3)) = ( zeta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(mod(i-1,3)) + &
+           2.d0*S(Sinizio-1+i,0)*eta(mod(i-1,3)) )/xi(mod(i,2))
 
    end if
 
    !Adesso aggiorno il conteggio degli xi negativi
-   if ( xi(i) < 0.d0 ) then
+   if ( xi(mod(i,2)) < 0.d0 ) then
       kappa = kappa + 1
    end if
 
@@ -995,8 +988,8 @@ end if
 
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
-fPrimo = - eta(dim)
-fSecondo = zeta(dim)
+fPrimo = - eta(mod(dim,3))
+fSecondo = zeta(mod(dim,3))
 
 if ( verboseCalcoli >= 4 ) then
    write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo

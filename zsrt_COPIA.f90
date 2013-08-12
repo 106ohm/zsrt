@@ -11,7 +11,7 @@ implicit none
 
 integer, parameter :: dp = kind(1.d0)
 
-integer :: n, i, j, em, en
+integer :: n, i, j, em, en, numAut
 
 integer :: verbose
 
@@ -33,8 +33,9 @@ machinePrecision=epsilon(1.d0)
 !2) stampo k1, k2 e le condizioni di arresto
 !3) stampo (per ogni j=k1,k2) l'intervallo
 !chiamato [aj, bj], il numero x iniziale,
-! con la sua mlt, ed il numero di iterazioni 
-verbose = 3
+! con la sua mlt, ed il numero di iterazioni
+!4) stampo le informazioni dentro i cicli. 
+verbose = 4
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -57,22 +58,26 @@ do j=1,n
          S(i,0) = lettore2
       end if
       if ( abs(i-j)==1 .AND. j>i ) then
-         T(i,1) = lettore1
-         S(i,1) = lettore2
+         T(j,1) = lettore1
+         S(j,1) = lettore2
       end if
    end do
 end do
 
-T(n,1)=-100.d0
-S(n,1)=-100.d0
+T(1,1)=0.d0
+S(1,1)=0.d0
 
-!do i=1,n
-!   write(*,*)"S(i,0)=",S(i,0)
-!end do
+!ATTENZIONE!
+!Il contenuto della sopradiagonale di T (e similmente di S)
+!lo leggo in T(2:n,1), cioe` partendo dal secondo elemento di T(:,1)
 
-!do i=1,n
-!   write(*,*)"S(i,1)=",S(i,1)
-!end do
+do i=1,n
+   write(*,*)"S(",i,",0)=",S(i,0)
+end do
+
+do i=1,n
+   write(*,*)"S(",i,",1)=",S(i,1)
+end do
 
 !scelgo le dimensioni di Eigenvalues, alloco memoria
 !ed inizializzo i suoi valori a zero
@@ -108,12 +113,15 @@ end if
 !!!
 !i)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"i)"
+write(*,*)""
+write(*,*)""
 
 a=0.d0
-b=1.d0 + machinePrecision
-
+!b=1.d0 + machinePrecision
+b=1.d0
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 
@@ -139,8 +147,11 @@ end do
 !!!
 !ii)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"ii)"
+write(*,*)""
+write(*,*)""
 
 do j=1,en
    do i=1,em
@@ -180,8 +191,11 @@ end do
 !!!
 !iii)
 !!!
-
+write(*,*)""
+write(*,*)""
 write(*,*)"iii)"
+write(*,*)""
+write(*,*)""
 
 do j=1,en
    do i=1,em
@@ -274,6 +288,7 @@ integer :: numCol
 
 integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
+integer :: numAut
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
@@ -386,7 +401,6 @@ do while (dim <= n)
 
       end if
 
-
       !!!
       !Adesso dim>2 e numCol=numCol-1
       !!!
@@ -401,11 +415,23 @@ do while (dim <= n)
 
       call calcoli(a, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
+      !call numAutovaloriPrimaDiX(a,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+      !if ( verbose >= 3 .AND. kappa /= numAut ) then
+      !   write(*,*)"kappa e` diverso da numAut!"
+      !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      !end if
       k1 = kappa+1
+      !k1 = numAut+1
       call calcoli(b, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
            fPrimo, fSecondo, kappa)
-      !ATTENZIONE: c'e` qualche problema con k2
-      k2=kappa+1
+      
+      !call numAutovaloriPrimaDiX(b,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+      !if ( verbose >= 3 .AND. kappa /= numAut ) then
+      !   write(*,*)"kappa e` diverso da numAut!"
+      !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+      !end if
+      k2=kappa
+      !k2=numAut
       
       if (verbose >= 2) then
          write(*,*)"-------------------------------------"
@@ -420,6 +446,13 @@ do while (dim <= n)
       !nella 0-esima chiamata ricorsiva,
       !kappa(a)=0 e kappa(b)=n e dunque k1=0+1 e k2=dim
       
+      
+      if ( k1 > k2 ) then
+         write(*,*)"NON CALCOLO"
+         GOTO 200
+      end if
+
+      
       do j = k1, k2
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -427,24 +460,44 @@ do while (dim <= n)
          aj=a
          bj=b
 
-         kappaA = k1-1
-         kappaB = k2-1
-
          if ( bj-aj > max(aj,bj)*machinePrecision ) then
-
+            
             x = Eigenvalues(Tinizio+j-1,numCol+1)
             !cioe` x=\hat\lambda_j.
+
             !if ( dim > 4 .AND. x == 0.d0 ) cycle
             !Se x == 0.d0 non e` un candidato
 
+            if ( verbose >= 3 ) then
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Inizio a scegliere l'intervallo [aj, bj]:"
+            end if
+
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
 
-100         call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+100         if ( bj-aj <= max(aj,bj)*machinePrecision ) then
+               write(*,*)"a e b distano pochissimo!"
 
-            if ( verbose >= 3 ) then
+               !immagazzino i risultati
+               Eigenvalues(Tinizio+j-1,numCol) = (aj+bj)/2.d0
+               !write(*,*),"(",Tinizio+j-1,",",numCol,")=",Eigenvalues(Tinizio+j-1,numCol)
+               
+               cycle
+               
+            end if
+            
+            call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+            !call numAutovaloriPrimaDiX(x,dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+            !if ( verbose >= 3 .AND. kappa /= numAut ) then
+            !   write(*,*)"kappa e` diverso da numAut!"
+            !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+            !end if
+            !kappa=numAut
+
+            if ( verbose >= 4 ) then
                write(*,*)"work in progres..."
-               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
             end if
 
             if ( kappa < j ) then
@@ -454,58 +507,51 @@ do while (dim <= n)
                bJ = x
                kappaB = kappa
             end if
-      
+ 
+
+            !Definisco segno
+            if ( -fPrimo >= 0.d0 ) then
+               segno = 1
+            else
+               segno = -1
+            end if
+
+            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
+            !con sign( \lambda_j - x )
+            !vedi meta` p. 14
+     
             !Se il segno di -fPrimo non coincide con quello di
             !\lambda_j-x ( il fatto che questa condizione
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
             !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
-            if ( kappa+1 < j .OR. j < kappa ) then
+            if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
+                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno >=0 ) ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
             end if
 
             if ( verbose >= 3 ) then
-               write(*,*)"fine lavoro:"
-               write(*,*)"x=",x,"j=",j,"kappa=",kappa
+               write(*,*)"Ho scelto l'intervallo [aj, bj]:"
+               write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
-
-               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
-                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
-               
-               write(*,*)"kappa di aj=", kappa
-            
-               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
-                    Sinizio, Sfine, fPrimo, fSecondo, kappa)
-            
-               write(*,*)"kappa di bj=", kappa
-               
-               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
-                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               write(*,*)"kappa(aj)=",kappaA,"kappa(bj)=",kappaB
             end if
             
-
-            !Chiamo EstMlt e LagIt, ma prima mi occupo del segno
-            if ( -fPrimo >= 0.d0 ) then
-               segno = 1
-            else
-               segno = -1
-            end if
-      
-            !segno = sign( - fPrimo ) ed adesso dovrebbe coincidere
-            !con sign( \lambda_j - x )
-            !vedi meta` p. 14
+            !!!
+            !Chiamo EstMlt e LagIt
+            !!!
 
             !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             if (verbose >= 3) then
-               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
-               write(*,*)"entro in LagIt con"
-               write(*,*)"j=",j,"mlt=",mlt
-               write(*,*)"aj=",aj,"bj=",bj
+               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Entro in LagIt"
+               write(*,*)"la molteplicita` del j-esimo autovalore"
+               write(*,*)"e` stimata essere mlt=",mlt,"(j=",j,")"
             end if
 
 
@@ -514,8 +560,7 @@ do while (dim <= n)
                  fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
             if (verbose >= 3) then
-               write(*,*)"esco da LagIt"
-               write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~"
+               write(*,*)"Esco da LagIt"
             end if
 
             !immagazzino i risultati.
@@ -644,7 +689,7 @@ integer, intent(INOUT) :: kappa
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
 
-integer :: i, k, l, exKappa, kappaA, kappaB
+integer :: i, k, l, exKappa, kappaA, kappaB, numAut
 
 real(dp) :: deltaL, exDeltaL
 
@@ -670,7 +715,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 1000 ) then
+   if ( l >= 15 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -743,6 +788,8 @@ do while ( .TRUE. )
 
    ! condizione (24)
 
+   !write(*,*)"deltaL=",deltaL
+
    if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
       if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del primo tipo"
@@ -765,9 +812,22 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
+   if ( abs(xl(0))<machinePrecision ) then
+      if (verbose >= 2) then
+         write(*,*)"xl(0) troppo piccolo"
+      end if
+      GOTO 30
+   end if
+
    !calcolo (12), (13) e (14)
 20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
    Sfine, fPrimo, fSecondo, kappa)
+   !call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+   !if ( verbose >= 3 .AND. kappa /= numAut ) then
+   !   write(*,*)"kappa e` diverso da numAut!"
+   !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+   !end if
+   !kappa=numAut
 
    !aggiorno [aj, bj] secondo il nuovo kappa
    if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
@@ -817,6 +877,8 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
+!integer, parameter :: dq=16
+
 real(dp), intent(IN) :: x
 
 integer, intent(IN) :: n
@@ -833,19 +895,29 @@ integer :: i, j, k, l
 
 integer :: verboseCalcoli
 
-real(dp), dimension(-2:0) :: xi, eta, zeta
+real(dp), dimension(:), allocatable :: xi
+real(dp), dimension(:), allocatable ::  eta, zeta
 
 real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 0
+verboseCalcoli = 6
 
-machinePrecision=epsilon(1.d0)
+!zero= z'00000000000000000000000000000000'
 
-!ATTENZIONE: tutte le formule che coinvolgono T o S DEVONO partire
-!da Tinizio e da Sinizio. Si noti che T(:,0) ha n elementi,
-!mentre T(:,1) ne ha n-1 (ugualmente S)
+!uno = z'3fff0000000000000000000000000000'
+
+!due = uno+uno
+
+!quattro = due + due
+
+!machinePrecision=epsilon(uno)
+machinePrecision = epsilon(1.d0)
+
+
+allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
+
 
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
@@ -856,118 +928,79 @@ machinePrecision=epsilon(1.d0)
 !tengo conto di quanti termini negativi compaiono 
 !nella successione degli xi; questo sara` kappa!
 
-kappa = 0
-
-xi(-2) = 0.d0
-
-xi(-1) = T(Tinizio,0) - x * S(Sinizio,0)
-if ( xi(-1) == 0 ) then
-   xi(-1) = T(Tinizio,0)* machinePrecision**2
+if ( verboseCalcoli >= 4 ) then
+   write(*,*)"x=",x
 end if
-
-xi(0)=xi(-1)
-
-if ( xi(0) <= 0.d0 ) then
-   kappa = kappa+1
-end if
-
-eta(-2) = 0.d0
-eta(-1) = S(Sinizio,0)/xi(0)
-eta(0) = eta(-1)
-
-zeta(-2) = 0.d0
-zeta(-1) = zeta(-2)
-zeta(0) = zeta(-1)
 
 kappa = 0
 
-do i=1,dim-1
+do i=0,dim
 
-   !write(*,*)"T(Tinizio+i,0)=T(",Tinizio+i,",0)=",T(Tinizio+i,0)
-   !write(*,*)"T(Tinizio+i-1,1)=T(",Tinizio+i-1,",1)=",T(Tinizio+i-1,1)
-   
-   !mi occupo di xi
-   
-   xi(0) = T(Tinizio+i,0) - x*S(Sinizio+i,0) - &
-   (( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2)/&
-   xi(-1)
-
-   if ( abs(xi(0)) <= machinePrecision ) then
-      xi(0) = ( (abs(T(Tinizio+i-1,1))+ & 
-      abs(x*S(Sinizio+i-1,1)))**2 * machinePrecision**2 )/&
-      xi(-1)
+   if ( i==0 ) then
+      eta(0)=0.d0
+      zeta(0)=0.d0
    end if
-
-   if ( xi(0) <= 0.d0 ) then
-      kappa = kappa+1
-   end if
-
-   !mi occupo di eta:
-   !divido in due tappe il calcolo.
-
-   eta(0) =2.d0*(T(Tinizio+i,0)-x*S(Sinizio+i,0))*&
-   S(Sinizio+i-1,1) + (T(Tinizio+i-1,1)- &
-   x*S(Sinizio+i-1,1))**2*eta(-2)
+   
+   if ( i==1 ) then
+      xi(1)=T(Tinizio,0)-x*S(Sinizio,0)
       
-   if ( abs(eta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di eta e` zero!"
-   end if
+      if ( abs(xi(1)) <= machinePrecision ) then
+         xi(1) = T(Tinizio,0)*machinePrecision**2
+      end if
 
-   eta(0) = ( (T(Tinizio+i,0)-x*S(Sinizio+i,0))* &
-   eta(-1) + S(Sinizio+i,0) - eta(0)/xi(-1) )/xi(0)
-
-   if ( abs(eta(0))<= machinePrecision ) then
-      write(*,*)"secondo -ed ultimo- pezzo di eta e` zero!"
+      eta(1)=S(Sinizio,0)/xi(1)
+      zeta(1)=0.d0
    end if
    
-   !mi occupo di zeta: 
-   !divido in due tappe il calcolo.
-      
-   zeta(0) = 2.d0*S(Sinizio+i-1,1)**2 + &
-   4.d0*( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )*&
-   S(Sinizio+i-1,1)*eta(-2) - &
-   ( T(Tinizio+i-1,1)-x*S(Sinizio+i-1,1) )**2*&
-   zeta(-2)
 
-   if ( abs(zeta(0))<= machinePrecision ) then
-      write(*,*)"primo pezzo di zeta e` zero!"
+   if ( i>=2 ) then
+      !Se mi trovo qui allora i>=2
+      xi(i) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(i-1)
+
+      if ( abs(xi(i)) <= machinePrecision ) then
+         xi(i) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(i-1)
+      end if
+
+      eta(i) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(i-2)
+      eta(i) = -eta(i)/xi(i-1)
+      eta(i) = ( eta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(i-1) + S(Sinizio-1+i,0) )/xi(i)
+
+      zeta(i) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(i-2) - &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(i-2)
+      zeta(i) = -zeta(i)/xi(i-1)
+      zeta(i) = ( zeta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(i-1) + 2.d0*S(Sinizio-1+i,0)*eta(i-1) )/xi(i)
+
    end if
 
-   zeta(0) = (( T(Tinizio+i,0) -x*S(Sinizio+i,0))*&
-   zeta(-1) + 2.d0*S(Sinizio+i,0)*eta(-1) - &
-   zeta(0)/xi(-1) )/xi(0)
-   
-   if ( abs(zeta(0))<= machinePrecision ) then
-      write(*,*)"secondo -ed ultimo- pezzo di zeta e` zero!"
+   !Adesso aggiorno il conteggio degli xi negativi
+   if ( xi(i) < 0.d0 ) then
+      kappa = kappa + 1
    end if
 
-
-   if ( verboseCalcoli >= 4 ) then
-      write(*,*)"xi(-2)=",xi(-2),"xi(-1)=",xi(-1),"xi(0)=",xi(0)
-      write(*,*)"eta(-2)=",eta(-2),"eta(-1)=",eta(-1),"eta(0)=",eta(0)
-      write(*,*)"zeta(-2)=",zeta(-2),"zeta(-1)=",zeta(-1), &
-           "zeta(0)=", zeta(0)
-      write(*,*)"kappa=",kappa
+   if ( verboseCalcoli >= 5 ) then
+      write(*,*)"i=",i,"kappa=",kappa
    end if
-      
-   !aggiiorno le variabili
-      
-   xi(-2)=xi(-1)
-   xi(-1)=xi(0)
 
-   eta(-2)=eta(-1)
-   eta(-1)=eta(0)
-
-   zeta(-2) = zeta(-1)
-   zeta(-1) = zeta(0)
-
-   
 end do
+
+if ( verboseCalcoli >= 6 ) then
+   write(*,*)"ecco il vettore xi:"
+   write(*,*)xi(:)
+   write(*,*)"ecco il vettore eta:"
+   write(*,*)eta(:)
+   write(*,*)"ecco il vettore zeta:"
+   write(*,*)zeta(:)
+end if
 
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
-fPrimo = - eta(0)
-fSecondo = zeta(0)
+fPrimo = - eta(dim)
+fSecondo = zeta(dim)
+
+if ( verboseCalcoli >= 4 ) then
+   write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
+end if
 
 end subroutine calcoli
 
@@ -1042,3 +1075,7 @@ recursive subroutine quick_sort(a, n)
     end subroutine partition
 
 end subroutine quick_sort
+
+
+
+
