@@ -525,9 +525,8 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            !if ( kappa+1 < j .OR. j < kappa .OR. kappaB-kappaA > 1 ) then
             if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
-                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno >=0 ) ) then
+                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno <0 ) ) then
                x = (aj+bj)/2.d0
                !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
@@ -715,7 +714,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 15 ) then
+   if ( l >= 1000 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -863,8 +862,6 @@ lambdaJ = xl(0)
 end subroutine LagIt
 
 
-
-
 !!!                                                                   
 !Calcola (12), (13) e (14). Nell'altro articolo
 !questo algoritmo viene chiamato DetEvl               
@@ -904,11 +901,20 @@ real(dp) :: machinePrecision
 
 verboseCalcoli = 6
 
+!zero= z'00000000000000000000000000000000'
+
+!uno = z'3fff0000000000000000000000000000'
+
+!due = uno+uno
+
+!quattro = due + due
+
+!machinePrecision=epsilon(uno)
 machinePrecision = epsilon(1.d0)
 
 
-!allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
-allocate( xi(0:1), eta(0:2), zeta(0:2) )
+allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
+
 
 
 !OSS: ro_i=prodotto di xi_k per k=1, ..., i
@@ -939,35 +945,33 @@ do i=0,dim
          xi(1) = T(Tinizio,0)*machinePrecision**2
       end if
 
-      eta(1)=S(Sinizio,0)/xi(0)
+      eta(1)=S(Sinizio,0)/xi(1)
       zeta(1)=0.d0
    end if
    
 
    if ( i>=2 ) then
       !Se mi trovo qui allora i>=2
+      xi(i) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(i-1)
 
-      xi(mod(i,2)) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(mod(i-1,2))
-
-      if ( abs(xi(mod(i,2))) <= machinePrecision ) then
-         xi(mod(i,2)) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(mod(i-1,2))
+      if ( abs(xi(i)) <= machinePrecision ) then
+         xi(i) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(i-1)
       end if
 
-      eta(mod(i,3)) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
-           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(mod(i-2,3))
-      eta(mod(i,3)) = -eta(mod(i,3))/xi(mod(i-1,2))
-      eta(mod(i,3)) = ( eta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(mod(i-1,3)) + S(Sinizio-1+i,0) )/xi(mod(i,2))
+      eta(i) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(i-2)
+      eta(i) = -eta(i)/xi(i-1)
+      eta(i) = ( eta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(i-1) + S(Sinizio-1+i,0) )/xi(i)
 
-      zeta(mod(i,3)) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(mod(i-2,3)) - &
-           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(mod(i-2,3))
-      zeta(mod(i,3)) = -zeta(mod(i,3))/xi(mod(i-1,2))
-      zeta(mod(i,3)) = ( zeta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(mod(i-1,3)) + &
-           2.d0*S(Sinizio-1+i,0)*eta(mod(i-1,3)) )/xi(mod(i,2))
+      zeta(i) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(i-2) - &
+           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(i-2)
+      zeta(i) = -zeta(i)/xi(i-1)
+      zeta(i) = ( zeta(i) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(i-1) + 2.d0*S(Sinizio-1+i,0)*eta(i-1) )/xi(i)
 
    end if
 
    !Adesso aggiorno il conteggio degli xi negativi
-   if ( xi(mod(i,2)) < 0.d0 ) then
+   if ( xi(i) < 0.d0 ) then
       kappa = kappa + 1
    end if
 
@@ -988,14 +992,147 @@ end if
 
 
 !immagazzino i risultati in variabili dal nome piu` evocativo
-fPrimo = - eta(mod(dim,3))
-fSecondo = zeta(mod(dim,3))
+fPrimo = - eta(dim)
+fSecondo = zeta(dim)
 
 if ( verboseCalcoli >= 4 ) then
    write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 end if
 
 end subroutine calcoli
+
+
+!!$!!!                                                                   
+!!$!Calcola (12), (13) e (14). Nell'altro articolo
+!!$!questo algoritmo viene chiamato DetEvl               
+!!$!!!                                                                 
+!!$  
+!!$subroutine calcoli(x, T, S, n, dim, Tinizio, Tfine, Sinizio, Sfine, &
+!!$fPrimo, fSecondo, kappa)
+!!$
+!!$implicit none
+!!$
+!!$integer, parameter :: dp=kind(1.d0)
+!!$
+!!$!integer, parameter :: dq=16
+!!$
+!!$real(dp), intent(IN) :: x
+!!$
+!!$integer, intent(IN) :: n
+!!$
+!!$integer, intent(INOUT) :: dim, Tinizio, Tfine, Sinizio, Sfine
+!!$
+!!$integer, intent(OUT) :: kappa
+!!$
+!!$real(dp), intent(OUT) :: fPrimo, fSecondo
+!!$
+!!$real(dp), dimension(1:n,0:1), intent(IN) :: T, S
+!!$
+!!$integer :: i, j, k, l
+!!$
+!!$integer :: verboseCalcoli
+!!$
+!!$real(dp), dimension(:), allocatable :: xi
+!!$real(dp), dimension(:), allocatable ::  eta, zeta
+!!$
+!!$real(dp) :: machinePrecision
+!!$
+!!$!FINE DICHIARAZIONI
+!!$
+!!$verboseCalcoli = 6
+!!$
+!!$machinePrecision = epsilon(1.d0)
+!!$
+!!$
+!!$!allocate( xi(1:dim), eta(0:dim), zeta(0:dim) )
+!!$allocate( xi(0:1), eta(0:2), zeta(0:2) )
+!!$
+!!$
+!!$!OSS: ro_i=prodotto di xi_k per k=1, ..., i
+!!$!OSS: necessito in ogni momento di xi_{i-1}, zeta_{i-1}, 
+!!$!zeta_{i-2}, eta_{i-1} ed eta_{i-2}
+!!$
+!!$!FONDAMENTALE:
+!!$!tengo conto di quanti termini negativi compaiono 
+!!$!nella successione degli xi; questo sara` kappa!
+!!$
+!!$if ( verboseCalcoli >= 4 ) then
+!!$   write(*,*)"x=",x
+!!$end if
+!!$
+!!$kappa = 0
+!!$
+!!$do i=0,dim
+!!$
+!!$   if ( i==0 ) then
+!!$      eta(0)=0.d0
+!!$      zeta(0)=0.d0
+!!$   end if
+!!$   
+!!$   if ( i==1 ) then
+!!$      xi(1)=T(Tinizio,0)-x*S(Sinizio,0)
+!!$      
+!!$      if ( abs(xi(1)) <= machinePrecision ) then
+!!$         xi(1) = T(Tinizio,0)*machinePrecision**2
+!!$      end if
+!!$
+!!$      eta(1)=S(Sinizio,0)/xi(0)
+!!$      zeta(1)=0.d0
+!!$   end if
+!!$   
+!!$
+!!$   if ( i>=2 ) then
+!!$      !Se mi trovo qui allora i>=2
+!!$
+!!$      xi(mod(i,2)) = T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0) - (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1) )**2/xi(mod(i-1,2))
+!!$
+!!$      if ( abs(xi(mod(i,2))) <= machinePrecision ) then
+!!$         xi(mod(i,2)) = ( (abs(T(Tinizio-1+i,1))+abs(x*S(Sinizio-1+i,1)))**2 * machinePrecision**2  )/xi(mod(i-1,2))
+!!$      end if
+!!$
+!!$      eta(mod(i,3)) = 2.d0 * (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1)) * S(Sinizio-1+i,1) + &
+!!$           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * eta(mod(i-2,3))
+!!$      eta(mod(i,3)) = -eta(mod(i,3))/xi(mod(i-1,2))
+!!$      eta(mod(i,3)) = ( eta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*eta(mod(i-1,3)) + S(Sinizio-1+i,0) )/xi(mod(i,2))
+!!$
+!!$      zeta(mod(i,3)) = 2.d0*S(Sinizio-1+i,1)**2 * 4.d0*(T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))*S(Sinizio-1+i,1)*eta(mod(i-2,3)) - &
+!!$           (T(Tinizio-1+i,1) - x*S(Sinizio-1+i,1))**2 * zeta(mod(i-2,3))
+!!$      zeta(mod(i,3)) = -zeta(mod(i,3))/xi(mod(i-1,2))
+!!$      zeta(mod(i,3)) = ( zeta(mod(i,3)) + (T(Tinizio-1+i,0) - x*S(Sinizio-1+i,0))*zeta(mod(i-1,3)) + &
+!!$           2.d0*S(Sinizio-1+i,0)*eta(mod(i-1,3)) )/xi(mod(i,2))
+!!$
+!!$   end if
+!!$
+!!$   !Adesso aggiorno il conteggio degli xi negativi
+!!$   if ( xi(mod(i,2)) < 0.d0 ) then
+!!$      kappa = kappa + 1
+!!$   end if
+!!$
+!!$   if ( verboseCalcoli >= 5 ) then
+!!$      write(*,*)"i=",i,"kappa=",kappa
+!!$   end if
+!!$
+!!$end do
+!!$
+!!$if ( verboseCalcoli >= 6 ) then
+!!$   write(*,*)"ecco il vettore xi:"
+!!$   write(*,*)xi(:)
+!!$   write(*,*)"ecco il vettore eta:"
+!!$   write(*,*)eta(:)
+!!$   write(*,*)"ecco il vettore zeta:"
+!!$   write(*,*)zeta(:)
+!!$end if
+!!$
+!!$
+!!$!immagazzino i risultati in variabili dal nome piu` evocativo
+!!$fPrimo = - eta(mod(dim,3))
+!!$fSecondo = zeta(mod(dim,3))
+!!$
+!!$if ( verboseCalcoli >= 4 ) then
+!!$   write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
+!!$end if
+!!$
+!!$end subroutine calcoli
 
 
 recursive subroutine quick_sort(a, n)
