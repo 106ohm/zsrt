@@ -473,9 +473,10 @@ do while (dim <= n)
                write(*,*)"Inizio a scegliere l'intervallo [aj, bj]:"
             end if
 
-            !Chiamo la subroutine per il calcolo di (12), (13) e (14).
+100         write(*,*)""
 
-100         if ( bj-aj <= max(aj,bj)*machinePrecision ) then
+            !Chiamo la subroutine per il calcolo di (12), (13) e (14).
+            if ( bj-aj <= max(aj,bj)*machinePrecision ) then
                write(*,*)"a e b distano pochissimo!"
 
                !immagazzino i risultati
