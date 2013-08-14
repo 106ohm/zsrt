@@ -35,7 +35,7 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 4
+verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -284,7 +284,7 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
                                                           
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
-integer :: numCol
+integer :: numCol, countSubInterval
 
 integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
@@ -452,7 +452,6 @@ do while (dim <= n)
          GOTO 200
       end if
 
-      
       do j = k1, k2
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -473,7 +472,12 @@ do while (dim <= n)
                write(*,*)"Inizio a scegliere l'intervallo [aj, bj]:"
             end if
 
+
+            countSubInterval=0
+
 100         write(*,*)""
+
+            countSubInterval = countSubInterval + 1
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
             if ( bj-aj <= max(aj,bj)*machinePrecision ) then
@@ -526,17 +530,59 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            if ( kappa+1 < j .OR. j < kappa .OR. ( kappa >= j .AND. segno >= 0  ) &
-                 .OR. ( kappa < j .AND. segno < 0 ) .OR. ( kappa == 0 .AND. segno <0 ) ) then
+            if (kappa+1 < j) then
+               write(*,*)"UNO"
                x = (aj+bj)/2.d0
-               !ripeto il calcolo fatto alla etichetta 100:
                GOTO 100
             end if
+
+            if (j < kappa) then
+               write(*,*)"DUE"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
+
+            if (kappa >= j .AND. segno >= 0) then
+               write(*,*)"TRE"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
+
+            if (kappa < j .AND. segno < 0) then
+               write(*,*)"QUATTRO"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
+
+            if (kappa == 0 .AND. segno <0) then
+               write(*,*)"CINQUE"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
+
+            if (kappa == dim .AND. segno >=0) then
+               write(*,*)"SEI"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
+
+            if ( verbose >= 4 ) then
+               write(*,*)"countSubInterval=", countSubInterval
+            end if
+
 
             if ( verbose >= 3 ) then
                write(*,*)"Ho scelto l'intervallo [aj, bj]:"
                write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
+               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               kappaA=kappa
+               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               kappaB=kappa
+               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
                write(*,*)"kappa(aj)=",kappaA,"kappa(bj)=",kappaB
             end if
             
@@ -900,7 +946,8 @@ real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 6
+!verboseCalcoli = 6
+verboseCalcoli=0
 
 !zero= z'00000000000000000000000000000000'
 

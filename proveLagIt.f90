@@ -40,6 +40,7 @@ open(unit=2, file="S.txt")
 read(1,*) n
 read(2,*) n
 
+
 allocate( T(1:n,0:1),S(1:n,0:1) )
 
 do j=1,n
@@ -51,14 +52,15 @@ do j=1,n
          S(i,0) = lettore2
       end if
       if ( abs(i-j)==1 .AND. j>i ) then
-         T(i,1) = lettore1
-         S(i,1) = lettore2
+         T(j,1) = lettore1
+         S(j,1) = lettore2
       end if
    end do
 end do
 
-T(n,1)=-100.d0
-S(n,1)=-100.d0
+T(1,1)=0.d0
+S(1,1)=0.d0
+
 
 !do i=1,n
 !   write(*,*)"S(i,0)=",S(i,0)
@@ -69,11 +71,11 @@ S(n,1)=-100.d0
 !end do
 
 
-dim= 8
+dim= 16
 Tinizio= 1
-Tfine= 8
+Tfine= 16
 Sinizio= 1
-Sfine= 8
+Sfine= 16
 
 
 open(unit=3, file="Eispack/ris_eispack.txt")
@@ -90,7 +92,7 @@ end do
 
 call quick_sort(autovalori,n)
 
-do j=1,8
+do j=1,dim
 
    write(*,*)"j=",j
    write(*,*)"j-esimo autovalore=", autovalori(j)
@@ -113,7 +115,7 @@ do j=1,8
         Sinizio, Sfine, j, &
         fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
-   write(*,*)"lambdaj=",lambdaj
+   write(*,*)"lambdaj=", lambdaj
    write(*,*)"abs(lambdaj-autovalori(j))=",abs(lambdaj-autovalori(j))
 
 end do
