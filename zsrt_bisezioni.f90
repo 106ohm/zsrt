@@ -199,8 +199,8 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 !per grafico numero bisezioni nella ricerca di [aj, bj]
 !integer, dimension(1:n*(2**(en-1))) :: vettoreBisezioni
 integer, dimension(1:n*(en-1)) :: vettoreBisezioni
-real, dimension(1:n*(en-1)) :: xPlot, yPlot, zPlot
-real :: maxyPlot, maxzPlot
+real, dimension(1:n*(en-1)) :: xPlot, yPlot
+real :: maxyPlot
 !indici per identificare la T e la S:                                                                                
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -208,7 +208,7 @@ integer :: numCol, countSubInterval, countVettoreBisezioni
 
 integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
-integer :: numAut, numLagIt
+integer :: numAut
 
 real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
@@ -220,7 +220,7 @@ real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 
 !!!
 !preparo la grafica
-IER = PGBEG(0,'BisezioniEdAncheLagIt.ps/PS',1,1)
+IER = PGBEG(0,'istogrammaBisezioni.ps/PS',1,1)
 if (IER.ne.1) stop
 !!!
 
@@ -542,10 +542,7 @@ do while (dim <= n)
 
             call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
                  Sinizio, Sfine, j, &
-                 fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
-
-            !Numero di iterazioni all'interno di LagIt
-            zPlot(countVettoreBisezioni) = numLagIt * 1.0
+                 fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
             if (verbose >= 3) then
                write(*,*)"Esco da LagIt"
@@ -584,27 +581,19 @@ end do
 !ordino la prima colonna di Eigenvalues
 !call quick_sort( Eigenvalues(:,1), em )
 maxyPlot=0.0
-maxzPlot=0.0
 do i=1,n*(en-1)
    xPlot(i)=i*1.0
    yPlot(i)=vettoreBisezioni(i)*1.0
    !write(*,*)"yPlot(i)=", yPlot(i)
    if ( maxyPlot < yPlot(i) ) then
-      maxyPlot = yPlot(i)
-   end if
-   if ( maxzPlot < zPlot(i) ) then
-      maxzPlot = zPlot(i)
+      maxyPlot= yPlot(i)
    end if
 end do
 
-write(*,*)"massimo numero di bisezioni=", maxyPlot
-write(*,*)"massimo numero di iterazioni di LagIt=", maxzPlot
-
-CALL PGENV(0.,n*(en-1)*1.0,0.0,max(maxyPlot, maxzPlot)+1.0,0,1)
+CALL PGENV(0.,n*(en-1)*1.0,0.,maxyPlot+1.0,0,1)
 CALL PGPT(n*(en-1),xPlot,yPlot,3)
-CALL PGPT(n*(en-1),xPlot,zPlot,2)
 !call PGHIST(48, xPlot, 0.00, 48.00, 30, 0)
-call PGLAB('','', '')
+call PGLAB('','num bisezioni', '')
 call PGEND
 
 end subroutine calcoloAutovaloriDentroI
@@ -673,7 +662,7 @@ end subroutine EstMlt
 !!!
 subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
 Sinizio, Sfine, j, &
-fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
+fPrimo, fSecondo, kappa, lambdaJ, verbose)
 
 implicit none
 
@@ -701,7 +690,6 @@ integer, intent(INOUT) :: kappa
 
 real(dp), intent(INOUT) :: fPrimo, fSecondo
 
-integer, intent(OUT) :: numLagIt
 
 integer :: i, k, l, exKappa, kappaA, kappaB, numAut
 
@@ -867,8 +855,6 @@ do while ( .TRUE. )
 end do
 
 30 write(*,*) ""
-
-numLagIt = l
 
 if ( verbose >= 3 ) then
    write(*,*) "LagIt compie ",l," iterazioni."
