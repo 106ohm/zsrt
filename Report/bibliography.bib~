@@ -1,4 +1,4 @@
-@article {MR2019677,
+@article {julia,
     AUTHOR = {Drakopoulos, V.},
      TITLE = {Are there any {J}ulia sets for the {L}aguerre iteration
               function?},
@@ -18,3 +18,20 @@ nal
        URL = {http://dx.doi.org/10.1016/S0898-1221(03)90212-4},
 }
 
+@article {principal,
+    AUTHOR = {Bunse-Gerstner, A.},
+     TITLE = {An algorithm for the symmetric generalized eigenvalue pro
+blem},
+   JOURNAL = {Linear Algebra Appl.},
+  FJOURNAL = {Linear Algebra and its Applications},
+    VOLUME = {58},
+      YEAR = {1984},
+     PAGES = {43--68},
+      ISSN = {0024-3795},
+     CODEN = {LAAPAW},
+   MRCLASS = {65F15},
+  MRNUMBER = {739278 (85i:65045)},
+MRREVIEWER = {Wolfgang Bunse},
+       DOI = {10.1016/0024-3795(84)90203-9},
+       URL = {http://dx.doi.org/10.1016/0024-3795(84)90203-9},
+}

@@ -649,8 +649,6 @@ machinePrecision=epsilon(1.d0)
 
 mlt=1
 
-!write(*,*)"segno=", segno
-
 !k=1,...,numeroGrande (ho scelto 2*em)
 do k=1,em*2
 

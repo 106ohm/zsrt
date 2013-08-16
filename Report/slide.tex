@@ -13,7 +13,7 @@
 
 \usepackage{fancybox}
 
-\usepackage{biblatex}
+%\usepackage{biblatex}
 
 
 \usepackage{listings} %Per inserire codice
@@ -81,18 +81,18 @@
 %Stile: codice FORTRAN90
 %%%
 
-% \lstset{
-% basicstyle=\footnotesize,
-% numbers=left,
-% numbersep=5pt,
-% keywordstyle=\color{blue},
-% commentstyle=\color{green},
-% captionpos=b,
-% frame=single,
-% escapeinside={\!*}{*)},
-% language=Fortran,
-% caption=\lstname
-% }
+\lstdefinestyle{fortranSlide}{
+  basicstyle=\footnotesize,
+  numbers=left,
+  numbersep=5pt,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green},
+  captionpos=b,
+  frame=single,
+  escapeinside={\!*}{*)},
+  language=Fortran,
+  caption=\lstname
+}
 
 
 
@@ -118,10 +118,6 @@ Eigenvalue Problem}
 Corso Metodi di Approssimazione 2012-2013
 }
 \date{\today}
-
-%\bibliographystyle{authordate1}
-\bibliographystyle{apalike}
-\bibliography{slide}
 
 %%%
 %%%
@@ -251,7 +247,7 @@ using an iterative method, living on real line.
 \begin{frame}
 \frametitle{Unreducible pencil}
 
-\begin{de}[ as in \cite{MR739278} ]
+\begin{de}[ as in \cite{principal} ]
   $(T,S)$ is an \emph{unreducible pencil} if $t_{i,i+1}^2 + 
 s_{i,i+1}^2 \neq 0$\\
   for $i=1,2,\dots,n-1$.
@@ -290,7 +286,7 @@ s_{i,i+1}^2 \neq 0$\\
 
 But $T$ is symmetric, so $sub=super$. We define and use
 
-\begin{lstlisting}
+\begin{lstlisting}[style=fortranSlide, caption={$T,S$ as couple of array}]
   integer, parameter :: dp = kind(1.d0)
   real(dp), dimension(1:n,0:1) :: T, S  
 \end{lstlisting}
@@ -433,7 +429,7 @@ It's clear how we use $\lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \la
 
 
 
-\begin{frame}
+\begin{frame}[label=BeforeLagProof]
 \frametitle{Fast and secure iterative method}
 
 \begin{de}[Laguerre's iteration]
@@ -480,7 +476,7 @@ cubic rate to $\lambda_m$.
 \pause
 
 So we can exactly define a $\fbox{neighborhood ``near'' $\lambda$ }$ and in it we
-have cubic rate convergence (much, much faster then \textcolor{red}{bisection}) 
+have cubic rate convergence (much, much faster then \textcolor{red}{simple bisection}) 
 
 \pause
 
@@ -488,7 +484,7 @@ have cubic rate convergence (much, much faster then \textcolor{red}{bisection})
   \draw (0,0) [fill=yellow] ellipse (2cm and 1cm);
   \draw[->] (-5,0) -- (5,0);
   \node[circle, fill=black, label=above:$\lambda_m$] at (-.5,0) {};
-  \node[circle,fill=black!,label=below:$sign \Big( \frac{f^{'}}{f} \Big) \text{ eq } sign(\lambda_m - x_0)$] at (-.5,0) {};
+  \node[circle,fill=black!,label={[xshift=4cm, yshift=-1.5cm] $sign \Big( \frac{f^{'}}{f} \Big) \text{ eq } sign(\lambda_m - x_0)$}] at (-.5,0) {};
   \node[circle, fill=black!1, label=above:$x_{0}$] at (1.25,0) {};
 \end{tikzpicture}
 
@@ -504,7 +500,7 @@ The Laguerre's method is \textcolor{green}{fast}.
 
 It's clear that we need a powerfull method to obtain $x_{0}$ and an algorithm to 
 estimate $mlt(\lambda_m)$. \\
-\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{MR1289159}) causes no trouble, so the most importan aspects of our calculation are: 
+\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{secondary}) causes no trouble, so the most importan aspects of our calculation are: 
 
 \fbox{\setlength{\itemsep}{0pt}
 \begin{Bitemize}[t]
@@ -517,7 +513,7 @@ estimate $mlt(\lambda_m)$. \\
 \begin{frame}[label=Julia]
   \frametitle{Complex case (little digression)}
 
-  According to \cite{MR2019677}, we observe that searching $z\in\C \tc z^n - 1 = 0$ for $n>4$ with Laguerre's method it's difficult because near the origin there is a Julia fractal set for starting point $z_0$. (figure: $n=6$)
+  According to \cite{julia}, we observe that searching $z\in\C \tc z^n - 1 = 0$ for $n>4$ with Laguerre's method it's difficult because near the origin there is a Julia fractal set for starting point $z_0$. (figure: $n=6$)
 
 \begin{figure}
   \centering
@@ -611,15 +607,15 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[label=BeforeSturmSequence]
   \frametitle{Three term recurrence}
 
   \begin{os}
-    If $x = \lambda$ then $\rho_n(\lambda)=\effe{(T_n,S_n)}{\lambda}=f$
+    If $x = \lambda$ then $\rho_n(\lambda)=\effe{(T_n,S_n)}{\lambda}=f(\lambda)$
   \end{os}
 
-  \begin{os}
-    $\rho_0,\rho_1,\dots,\rho_n$ i a \textcolor{blue}{\emph{Sturm sequence}} of polynomials so, $\forall x\in\R$, we have
+  \begin{os}[ important results with \hyperlink{SturmSequence}{\beamergotobutton{proof}} in Appendice]
+    $\rho_0,\rho_1,\dots,\rho_n$ is a \textcolor{blue}{\emph{Sturm sequence}} of polynomials so, $\forall x\in\R$, we have
 
     \begin{align*}
       \kappa(x) &:= \text{\# eigenvalues less then } x \\
@@ -654,7 +650,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 
   So\symbolfootnote[1]{$\kappa(x)< m$ implies $sign(\lambda_m -x)=\textcolor{blue}{+}$} 
   \begin{equation*}
-    \textcolor{blue}{\text{IF }} ( \kappa(x_0)\ge m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}< 0 ) \textcolor{cyan}{\text{ OR }} ( \kappa(x_0) < m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}\ge 0 ) \textcolor{blue}{\text{ THEN }}
+    \textcolor{blue}{\text{IF }} \Big( \kappa(x_0)\ge m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}< 0 \Big) \textcolor{cyan}{\text{ OR }} \Big( \kappa(x_0) < m \textcolor{cyan}{\text{ AND }} -\frac{f^{'}}{f}\ge 0 \Big) \textcolor{blue}{\text{ THEN }}
   \end{equation*}
 
   \pause
@@ -682,6 +678,10 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
       \draw (0,-.2) -- (0,.2);
       \draw (2,-.2) -- (2,.2);
       %\draw (1,-.2) -- (1,.2);
+      \node[draw=none, label={[yshift=-1.5cm] with \textcolor{blue}{bisection} we can find the neighbourhood of $\lambda_m$}] at (0,0) {};
+    }
+    \uncover<4>{
+      \node[draw=none, label={[xshift=-3cm, yshift=2cm] we can now use the Laguerre's iteration}] at (1.5,0) {};
     }
     \uncover<4,5>{
       \node[circle, fill=black!1, label=above:$x_0$] at (1.5,0) {};
@@ -697,7 +697,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \section{Good initial point}
 
 \begin{frame}
-\frametitle{Searching $x_0$}
+\frametitle{Searching initial points}
 
 \begin{Bdescription}
   \item [We want:]
@@ -712,7 +712,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
   \fbox{\setlength{\itemsep}{0pt}%
   \begin{Bitemize}[t]
   \item Laguerre's method.
-  \item Cuppen's divide and conquer method.
+  \item \textcolor{blue}{Cuppen's divide and conquer method}.
   \item Symmetric tridiagonal matrices.
   \end{Bitemize}}
 
@@ -747,7 +747,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
   If $n=2$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
   
   
-  calling\symbolfootnote[1]{$\alpha=,\beta=,\gamma=$.} 
+  calling\symbolfootnote[1]{$\alpha=s_{2,2}t_{1,1}-s_{1,2}t_{1,2},\beta=-s_{1,2}t_{1,2}+s_{1,1}t_{2,2}$ \\ $\gamma=-s_{1,2}t_{1,2}+s_{1,1}t_{1,2}, \delta=s_{1,1}s_{2,2}-s_{1,2}^2$.} 
 
   \begin{equation*}
     S^{-1}T = \delta^{-1} \cdot \Big( \begin{matrix} \alpha & \gamma \\ \gamma & \beta \end{matrix}\Big)
@@ -866,33 +866,29 @@ We can solve the \textcolor{blue}{blue} part and obtain $\textcolor{blue}{\mu_{1
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[label=BeforeCodeIf]
   \frametitle{Ideas:}
 
-For $j=1,2,3,4$, from $\textcolor{blue}{\mu_j}$ we can enter in our ``best neighborhood'' of $\lambda_j$ using bisection:
+From $\mu_j$ we can enter in our ``neighbourhood'' of $\lambda_j$ using simple \textcolor{blue}{bisection}:
 
 \pause
 
-
+\begin{Bdescription}
+\item [Speudocode:]
+\fbox{\setlength{\itemsep}{0pt}
 \begin{Bitemize}[t]
-\item \textcolor{blue}{set} $a_j=0$ and $b_j=\textcolor{blue}{\mu_j}$ 
-\item \# Start bisection
+\item \textcolor{blue}{set} $a_j=0$ and $b_j=\mu_j$ 
 \item \textcolor{blue}{set} $x=\mu_j$
-\item \textcolor{blue}{IF} $\kappa(x)<j$ 
+\item \textcolor{cyan}{\#} \textcolor{blue}{IF} $\kappa(x)<j$ 
 \item \textcolor{blue}{THEN} \textcolor{blue}{set} $a_j=x$ 
 \item \textcolor{blue}{ELSE} \textcolor{blue}{set} $b_j=x$
-\item \textcolor{blue}{IF} \textcolor{blue}{THEN} 
-\item \textcolor{blue}{ELSE} \textcolor{blue}{go to} \# 
+\item \textcolor{blue}{\symbolfootnote[1]{This is the most important part of our method. \\ Authors of \cite{principal, secondary} doesn't explain this point. \hyperlink{CodeIf}{\beamergotobutton{code}} }IF} $-\frac{f^{'}(x)}{f(x)}=sign(\lambda_j - x)$
+\item \textcolor{blue}{THEN} \textcolor{blue}{stop}
+\item \textcolor{blue}{ELSE} \textcolor{blue}{set} $x=\frac{b_j-a_j}{2}$ and \textcolor{blue}{go to} \textcolor{cyan}{\#}
 \end{Bitemize}
-
-%\begin{lstlisting}
-%  integer, parameter :: dp = kind(1.d0)
-%  real(dp), dimension(1:n,0:1) :: T, S  
-%\end{lstlisting}
-
-
+}
+\end{Bdescription}
 \end{frame}
-
 
 
 \begin{frame}
@@ -918,17 +914,17 @@ $\begin{matrix}
 Consider $(\hat T, \hat S)$ with
 
 \begin{align*}
- \hat T &= \begin{bmatrix} T_{0} & 0\\ 0 & T_{1} \end{bmatrix}\\
- \hat S &= \begin{bmatrix} S_{0} & 0\\ 0 & S_{1} \end{bmatrix}\\
+ \hat T &= \begin{pmatrix} \textcolor{blue}{T_{0}} & 0\\ 0 & \textcolor{cyan}{T_{1}} \end{pmatrix}\\
+ \hat S &= \begin{pmatrix} \textcolor{blue}{S_{0}} & 0\\ 0 & \textcolor{cyan}{S_{1}} \end{pmatrix}\\
 \end{align*}
 
-and let be
+with $\textcolor{blue}{T_0}, \textcolor{cyan}{T_1}, \textcolor{blue}{S_0}, \textcolor{cyan}{S_1}$ symmetric tridiagonal, and let be
 
 \begin{equation*}
   \hat\lambda_1 \le \hat\lambda_2 \le \dots \le \hat\lambda_n
 \end{equation*}
 
-eigenvalues of $(\hat T, \hat S)$, then
+eigenvalues of $(\hat T, \hat S)$, they are what we call $\mu_1,\dots,\mu_n$.
 
 \end{frame}
 
@@ -986,6 +982,10 @@ It's possible that
 \begin{frame}
 \frametitle{Split}
 
+\begin{os}
+  Our method is \textcolor{blue}{monotonic}
+\end{os}
+
 \begin{tikzpicture}
 \draw[->] (-2,-.5) -- (9,-.5); 
 \node[circle, fill=black!1, label=above:$\lambda_{1}$] at (-1,-.5) {};
@@ -995,10 +995,78 @@ It's possible that
 \node[circle, fill=black!1, label=above:$\hat\lambda_{2}$] at (2.5,-.5) {};
 \node[circle, fill=black!1, label=above:$\lambda_{3}$] at (5,-.5) {};
 \node[circle, fill=black!1, label=above:$\hat\lambda_{4}$] at (8,-.5) {};
+\draw[green,->] (2.5,.5) -- (3.75,.5);
+\draw[green,->] (6.75,.5) -- (5,.5);
+\draw[red,->] (2.5,-1) -- (5.25,-1);
 \end{tikzpicture}
 
-So we can't 
+\pause
 
+We can reach $\lambda_2$ only from $\hat\lambda_2$, moving from left to right (and similar $\lambda_3$ only from $\hat\lambda_3$, moving from right to left).
+
+\pause
+
+If $| \lambda_2-\lambda_3 | \le 10^{-14}$ we can have trobles.
+
+\pause
+
+\textcolor{green}{Luckily} we also have a \emph{multiplicity estimator} (called EstMlt) that works only with $\hat\lambda_1,\dots,\hat\lambda_n$. 
+
+\pause 
+
+If $mlt=2$ then we consider $\lambda_2=\lambda_3$, i.e. we said that $\lambda_2$ has multiplicity $2$.   
+
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{EstMlt}
+
+We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,\dots,\hat\lambda_n$ as \emph{INPUT}.
+
+  \begin{Bdescription}
+  \item [Speudocode:]
+    \fbox{\setlength{\itemsep}{0pt}%
+      \begin{Bitemize}[t]
+      \item $mlt=1$
+      \item \textcolor{blue}{do} $k=1,\dots$
+      \item $m = j + k \text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$
+      \item \textcolor{blue}{if} $m \le 0$ \textcolor{blue}{then}
+      \item \textcolor{red}{something goes wrong}
+      \item \textcolor{blue}{go to} \textcolor{cyan}{\#}
+      \item \textcolor{blue}{end if}
+      \item \textcolor{blue}{if} $ | \hat\lambda_j - \hat\lambda_m | \le 0.01 | \hat\lambda_j - x | $ \textcolor{blue}{then}
+      \item $ mlt = mlt + 1$
+      \item \textcolor{blue}{else} \textcolor{green}{go to} \textcolor{cyan}{\#} 
+      \item \textcolor{blue}{end if}
+      \item \textcolor{blue}{end do}
+      \item \textcolor{cyan}{\#} \textcolor{blue}{stop}
+    \end{Bitemize}}
+    \end{Bdescription}
+
+
+\end{frame}
+
+
+\begin{frame}[label=LagProof]
+  \frametitle{Appendice A: proof of Laguerre's convergence}
+  \hyperlink{BeforeLagProof}{\beamergotobutton{back}}
+\end{frame}
+
+\begin{frame}[label=SturmSequence]
+  \frametitle{Appendice B: proof of property about Sturm sequence}
+  \hyperlink{BeforeSturmSequence}{\beamergotobutton{back}}
+\end{frame}
+
+\begin{frame}[label=CodeIf]
+  \frametitle{Appendice C: code}
+  \hyperlink{BeforeCodeIf}{\beamergotobutton{back}}
+\end{frame}
+
+
+\begin{frame}
+  \bibliography{bibliography}
+  \bibliographystyle{alpha}
 \end{frame}
 
 \frame{
