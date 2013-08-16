@@ -35,14 +35,14 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 3
+verbose = 0
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
 !cosi` avro` a disposizione la pencil (T,S).
 
-open(unit=1, file="T.txt")
-open(unit=2, file="S.txt")
+open(unit=1, file="Matrici/T.txt")
+open(unit=2, file="Matrici/S.txt")
 
 read(1,*) n
 read(2,*) n
@@ -121,7 +121,7 @@ write(*,*)""
 
 a=0.d0
 !b=1.d0 + machinePrecision
-b=24000.d0
+b=7.d0
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 
@@ -135,7 +135,7 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=3,file="risultato_un_solo_intervallo.txt")
+Open(unit=3,file="Sperimentazione/risultato.txt")
 
 write(3,*) em
 
@@ -192,11 +192,13 @@ real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
-!indici per identificare la T e la S:                       
-                                                          
+!per grafico numero bisezioni nella ricerca di [aj, bj]
+integer, dimension( n*(2**(en-1)) ) :: vettoreBisezioni
+
+!indici per identificare la T e la S:                                                                                
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
-integer :: numCol, countSubInterval
+integer :: numCol, countSubInterval, countVettoreBisezioni
 
 integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
@@ -219,6 +221,8 @@ machinePrecision=epsilon(1.d0)
 dim=2
 
 numCol=en
+
+countVettoreBisezioni = 0
 
 do while (dim <= n)
    
@@ -361,10 +365,14 @@ do while (dim <= n)
       
       if ( k1 > k2 ) then
          write(*,*)"NON CALCOLO"
+         vettoreBisezioni(countVettoreBisezioni) = 0
          GOTO 200
       end if
 
       do j = k1, k2
+
+         countVettoreBisezioni = countVettoreBisezioni + 1
+         !write(*,*)"countVettoreBisezioni=", countVettoreBisezioni
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
          !nel ricercare \lambda_j
@@ -443,41 +451,49 @@ do while (dim <= n)
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
             if (kappa+1 < j) then
-               write(*,*)"UNO"
+               !write(*,*)"UNO"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
             if (j < kappa) then
-               write(*,*)"DUE"
+               !write(*,*)"DUE"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
             if (kappa >= j .AND. segno >= 0) then
-               write(*,*)"TRE"
+               !write(*,*)"TRE"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
             if (kappa < j .AND. segno < 0) then
-               write(*,*)"QUATTRO"
+               !write(*,*)"QUATTRO"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
             if (kappa == 0 .AND. segno <0) then
-               write(*,*)"CINQUE"
+               !write(*,*)"CINQUE"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
             if (kappa == dim .AND. segno >=0) then
-               write(*,*)"SEI"
+               !write(*,*)"SEI"
                x = (aj+bj)/2.d0
                GOTO 100
             end if
 
+
+            !!!
+            !Se sono qui allora ho finito di scegliere l'intervallo [aj, bj]
+            !!!
+            
+            
+            vettoreBisezioni(countVettoreBisezioni) = countSubInterval
+            write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
             if ( verbose >= 4 ) then
                write(*,*)"countSubInterval=", countSubInterval
             end if
@@ -528,6 +544,7 @@ do while (dim <= n)
          else
       
             !in questo caso a e b distano solo "un passo macchina"
+            vettoreBisezioni(countVettoreBisezioni) = 0
             write(*,*)"a e b distano pochissimo!"
 
             !immagazzino i risultati
@@ -547,10 +564,15 @@ do while (dim <= n)
    
    numCol = numCol-1
 
+
 end do
 
 !ordino la prima colonna di Eigenvalues
 !call quick_sort( Eigenvalues(:,1), em )
+
+!stampo il vettoreBisezioni
+write(*,*) "Vettore delle bisezioni:"
+write(*,*) vettoreBisezioni(:)
 
 end subroutine calcoloAutovaloriDentroI
 

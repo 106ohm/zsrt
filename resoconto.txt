@@ -1,0 +1,398 @@
+ S(           1 ,0)=  0.16948766633235141     
+ S(           2 ,0)=  0.34392733530070263     
+ S(           3 ,0)=  0.47119703010863134     
+ S(           4 ,0)=  0.58985171414690929     
+ S(           5 ,0)=  0.62878017975675149     
+ S(           6 ,0)=  0.67722862438225406     
+ S(           7 ,0)=  0.80792688440033578     
+ S(           8 ,0)=  0.88540948611190251     
+ S(           9 ,0)=  0.97437743097524043     
+ S(          10 ,0)=   1.0924802499596260     
+ S(          11 ,0)=   1.2211025818657193     
+ S(          12 ,0)=   1.3401573747510758     
+ S(          13 ,0)=   1.4180419766431853     
+ S(          14 ,0)=   1.4840857090337449     
+ S(          15 ,0)=   1.5910629439656687     
+ S(          16 ,0)=   1.6688362003616692     
+ S(           1 ,1)=   0.0000000000000000     
+ S(           2 ,1)=   6.9487666332351414E-002
+ S(           3 ,1)=   7.4439668968351191E-002
+ S(           4 ,1)=   9.6757361140280107E-002
+ S(           5 ,1)=   9.3094353006629216E-002
+ S(           6 ,1)=   3.5685826750122239E-002
+ S(           7 ,1)=   4.1542797632131680E-002
+ S(           8 ,1)=   6.6384086768203995E-002
+ S(           9 ,1)=   1.9025399343698502E-002
+ S(          10 ,1)=   5.5352031631541954E-002
+ S(          11 ,1)=   3.7128218328083974E-002
+ S(          12 ,1)=   8.3974363537635321E-002
+ S(          13 ,1)=   5.6183011213440361E-002
+ S(          14 ,1)=   6.1858965429744985E-002
+ S(          15 ,1)=   2.2226743603999701E-002
+ S(          16 ,1)=   6.8836200361669042E-002
+ 
+ 
+ UN SOLO INTERVALLO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           7
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           8
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           7
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           7
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           4
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           5
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           3
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           2
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ vettoreBisezioni(countVettoreBisezioni)=           6
+ 
+ 
+ 
+ Vettore delle bisezioni:
+           3           3           2           4           2           4           6           2           2           4           7           2           2           5           8           2           2           5           5           6           4           3           2           5           2           3           3           5           6           6           7           2           2           2           7           6           5           4           5           8           6           6           4           4           5           3           2           6           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
+ FINE CALCOLO AUTOVALORI!
