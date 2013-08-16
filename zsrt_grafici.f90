@@ -201,6 +201,8 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 integer, dimension(1:n*(en-1)) :: vettoreBisezioni
 real, dimension(1:n*(en-1)) :: xPlot, yPlot, zPlot
 real :: maxyPlot, maxzPlot
+integer :: totaleBisezioni, totaleLagIt
+
 !indici per identificare la T e la S:                                                                                
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -234,6 +236,8 @@ dim=2
 numCol=en
 
 countVettoreBisezioni = 0
+totaleBisezioni = 0
+totaleLagIt = 0
 
 do while (dim <= n)
    
@@ -504,6 +508,7 @@ do while (dim <= n)
             
             
             vettoreBisezioni(countVettoreBisezioni) = countSubInterval
+            totaleBisezioni = totaleBisezioni + countSubInterval
             !write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
             if ( verbose >= 4 ) then
                write(*,*)"countSubInterval=", countSubInterval
@@ -546,6 +551,7 @@ do while (dim <= n)
 
             !Numero di iterazioni all'interno di LagIt
             zPlot(countVettoreBisezioni) = numLagIt * 1.0
+            totaleLagIt = totaleLagIt + numLagIt
 
             if (verbose >= 3) then
                write(*,*)"Esco da LagIt"
@@ -599,6 +605,12 @@ end do
 
 write(*,*)"massimo numero di bisezioni=", maxyPlot
 write(*,*)"massimo numero di iterazioni di LagIt=", maxzPlot
+
+write(*,*)"totale numero di bisezioni=", totaleBisezioni
+write(*,*)"totale numero di iterazioni in LagIt=", totaleLagIt
+write(*,*)"somma dei precedenti totali=", totaleBisezioni + totaleLagIt
+
+write(*,*)"numero chiamate a calcoli=", totaleBisezioni + totaleLagIt + 2*n*(en-1)
 
 CALL PGENV(0.,n*(en-1)*1.0,0.0,max(maxyPlot, maxzPlot)+1.0,0,1)
 CALL PGPT(n*(en-1),xPlot,yPlot,3)

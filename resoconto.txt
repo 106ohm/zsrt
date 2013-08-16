@@ -348,4 +348,8 @@
  
  massimo numero di bisezioni=   8.00000000    
  massimo numero di iterazioni di LagIt=   10.0000000    
+ totale numero di bisezioni=         199
+ totale numero di iterazioni in LagIt=         308
+ somma dei precedenti totali=         507
+ numero chiamate a calcoli=         603
  FINE CALCOLO AUTOVALORI!
