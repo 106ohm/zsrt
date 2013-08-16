@@ -30,6 +30,7 @@
  S(          14 ,1)=   6.1858965429744985E-002
  S(          15 ,1)=   2.2226743603999701E-002
  S(          16 ,1)=   6.8836200361669042E-002
+ en=           4
  
  
  UN SOLO INTERVALLO
@@ -46,38 +47,32 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
@@ -86,25 +81,21 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
@@ -114,18 +105,15 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           7
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
@@ -133,7 +121,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
@@ -144,18 +131,15 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           8
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
@@ -163,7 +147,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
@@ -171,7 +154,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
@@ -180,25 +162,21 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
@@ -206,25 +184,21 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
@@ -232,7 +206,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
@@ -241,7 +214,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
@@ -250,7 +222,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
@@ -260,23 +231,19 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           7
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
@@ -286,7 +253,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           7
  
  
  
@@ -295,7 +261,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
@@ -303,14 +268,12 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
@@ -318,7 +281,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
@@ -329,7 +291,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           8
  
  
  
@@ -338,7 +299,6 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
@@ -347,21 +307,18 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           4
  
  
  
@@ -369,18 +326,15 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           5
  
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           3
  
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           2
  
  
  
@@ -389,10 +343,7 @@
  
  
  
- vettoreBisezioni(countVettoreBisezioni)=           6
  
  
  
- Vettore delle bisezioni:
-           3           3           2           4           2           4           6           2           2           4           7           2           2           5           8           2           2           5           5           6           4           3           2           5           2           3           3           5           6           6           7           2           2           2           7           6           5           4           5           8           6           6           4           4           5           3           2           6           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0           0
  FINE CALCOLO AUTOVALORI!

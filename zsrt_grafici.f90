@@ -86,6 +86,7 @@ em=n
 !ATTENIONE: il "logarithmus dualis", ovvero in base 2,
 !lo calcoliamo tramite ld(n)=log(n)/log(2)
 en=int( log(n*1.d0)/log(2.d0) )
+write(*,*)"en=",en
 
 allocate( Eigenvalues(em,en) )
 
@@ -180,6 +181,9 @@ implicit  none
 !dichiaro la precisione di macchina (doppia):
 integer, parameter :: dp = kind(1.d0)
 
+!dichiaro la funzione PGBEG
+integer :: IER, pgbeg
+
 integer, intent(IN) :: n
 
 integer, intent(IN) :: en, em
@@ -193,8 +197,10 @@ real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
 !per grafico numero bisezioni nella ricerca di [aj, bj]
-integer, dimension( n*(2**(en-1)) ) :: vettoreBisezioni
-
+!integer, dimension(1:n*(2**(en-1))) :: vettoreBisezioni
+integer, dimension(1:n*(en-1)) :: vettoreBisezioni
+real, dimension(1:n*(en-1)) :: xPlot, yPlot
+real :: maxyPlot
 !indici per identificare la T e la S:                                                                                
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -212,6 +218,11 @@ real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 !FINE DICHIARAZIONI
 !!!
 
+!!!
+!preparo la grafica
+IER = PGBEG(0,'istogrammaBisezioni.ps/PS',1,1)
+if (IER.ne.1) stop
+!!!
 
 machinePrecision=epsilon(1.d0)
 
@@ -493,7 +504,7 @@ do while (dim <= n)
             
             
             vettoreBisezioni(countVettoreBisezioni) = countSubInterval
-            write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
+            !write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
             if ( verbose >= 4 ) then
                write(*,*)"countSubInterval=", countSubInterval
             end if
@@ -569,10 +580,21 @@ end do
 
 !ordino la prima colonna di Eigenvalues
 !call quick_sort( Eigenvalues(:,1), em )
+maxyPlot=0.0
+do i=1,n*(en-1)
+   xPlot(i)=i*1.0
+   yPlot(i)=vettoreBisezioni(i)*1.0
+   !write(*,*)"yPlot(i)=", yPlot(i)
+   if ( maxyPlot < yPlot(i) ) then
+      maxyPlot= yPlot(i)
+   end if
+end do
 
-!stampo il vettoreBisezioni
-write(*,*) "Vettore delle bisezioni:"
-write(*,*) vettoreBisezioni(:)
+CALL PGENV(0.,n*(en-1)*1.0,0.,maxyPlot+1.0,0,1)
+CALL PGPT(n*(en-1),xPlot,yPlot,3)
+!call PGHIST(48, xPlot, 0.00, 48.00, 30, 0)
+call PGLAB('','num bisezioni', '')
+call PGEND
 
 end subroutine calcoloAutovaloriDentroI
 
