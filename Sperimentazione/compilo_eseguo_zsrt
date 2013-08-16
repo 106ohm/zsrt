@@ -1,0 +1,14 @@
+#!/bin/bash
+
+gfortran zsrt.f90 -o zsrt -lpgplot -lX11
+
+START=$(date +%s.%N)
+
+./zsrt > resoconto.txt
+
+END=$(date +%s.%N)
+DIFF=$(echo "$END - $START" | bc)
+
+echo "il tempo di eseguzione e'" $DIFF
+
+

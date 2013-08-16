@@ -35,7 +35,7 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 4
+verbose = 3
 
 !leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
 !alloco la memoria e carico le matrici T ed S;
@@ -115,13 +115,13 @@ end if
 !!!
 write(*,*)""
 write(*,*)""
-write(*,*)"i)"
+write(*,*)"UN SOLO INTERVALLO"
 write(*,*)""
 write(*,*)""
 
 a=0.d0
 !b=1.d0 + machinePrecision
-b=1.d0
+b=24000.d0
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 
@@ -135,100 +135,12 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=3,file="risultato_i.txt")
+Open(unit=3,file="risultato_un_solo_intervallo.txt")
 
 write(3,*) em
 
 do i=1,em
    write(3,*) Eigenvalues(i,1)
-end do
-
-
-!!!
-!ii)
-!!!
-write(*,*)""
-write(*,*)""
-write(*,*)"ii)"
-write(*,*)""
-write(*,*)""
-
-do j=1,en
-   do i=1,em
-      Eigenvalues(i,j) = 0.d0
-   end do
-end do
-
-a=0.d0
-b=1.d0
-
-
-call calcoloAutovaloriDentroI(a, b, n, S, T, en, em, Eigenvalues, verbose)
-
-!Scrivo la prima colonna della matrice Eigenvalues sul file 
-!"risultato.txt"
-
-if ( verbose >= 1 ) then
-   write(*,*) "Eigenvalues dopo il calcolo:"
-   do i=1,n
-      write(*,*) Eigenvalues(i,:)
-   end do
-end if
-
-Open(unit=4,file="risultato_ii.txt")
-
-write(4,*) em
-
-do i=1,em
-   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
-      write(4,*) 1.d0/Eigenvalues(i,1)
-   else
-      write(4,*) 0.d0
-   end if
-end do
-
-
-!!!
-!iii)
-!!!
-write(*,*)""
-write(*,*)""
-write(*,*)"iii)"
-write(*,*)""
-write(*,*)""
-
-do j=1,en
-   do i=1,em
-      Eigenvalues(i,j) = 0.d0
-   end do
-end do
-
-a=0.d0
-b=1.d0
-
-
-call calcoloAutovaloriDentroI(a, b, n, S, -T, en, em, Eigenvalues, verbose)
-
-!Scrivo la prima colonna della matrice Eigenvalues sul file 
-!"risultato.txt"
-
-if ( verbose >= 1 ) then
-   write(*,*) "Eigenvalues dopo il calcolo:"
-   do i=1,n
-      write(*,*) Eigenvalues(i,:)
-   end do
-end if
-
-Open(unit=5,file="risultato_iii.txt")
-
-write(5,*) em
-
-do i=1,em
-   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
-      write(5,*) -1.d0/Eigenvalues(i,1)
-   else
-      write(5,*) 0.d0
-   end if
 end do
 
 
@@ -284,7 +196,7 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
                                                           
 integer :: Tinizio, Tfine, Sinizio, Sfine
 
-integer :: numCol
+integer :: numCol, countSubInterval
 
 integer :: i, j, k, h, dim, kappa, kappaA, kappaB, k1, k2, segno, mlt
 
@@ -452,7 +364,6 @@ do while (dim <= n)
          GOTO 200
       end if
 
-      
       do j = k1, k2
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -473,7 +384,12 @@ do while (dim <= n)
                write(*,*)"Inizio a scegliere l'intervallo [aj, bj]:"
             end if
 
+
+            countSubInterval=0
+
 100         write(*,*)""
+
+            countSubInterval = countSubInterval + 1
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
             if ( bj-aj <= max(aj,bj)*machinePrecision ) then
@@ -562,10 +478,23 @@ do while (dim <= n)
                GOTO 100
             end if
 
+            if ( verbose >= 4 ) then
+               write(*,*)"countSubInterval=", countSubInterval
+            end if
+
+
             if ( verbose >= 3 ) then
                write(*,*)"Ho scelto l'intervallo [aj, bj]:"
                write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
+               call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               kappaA=kappa
+               call calcoli(bj, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
+               kappaB=kappa
+               call calcoli(x, T, S, n, dim, Tinizio, Tfine, &
+                 Sinizio, Sfine, fPrimo, fSecondo, kappa)
                write(*,*)"kappa(aj)=",kappaA,"kappa(bj)=",kappaB
             end if
             
@@ -929,7 +858,8 @@ real(dp) :: machinePrecision
 
 !FINE DICHIARAZIONI
 
-verboseCalcoli = 6
+!verboseCalcoli = 6
+verboseCalcoli=0
 
 !zero= z'00000000000000000000000000000000'
 

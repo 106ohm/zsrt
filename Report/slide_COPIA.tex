@@ -120,7 +120,6 @@ Corso Metodi di Approssimazione 2012-2013
 \date{\today}
 
 %\bibliographystyle{authordate1}
-\bibliographystyle{apalike}
 \bibliography{slide}
 
 %%%
@@ -470,7 +469,7 @@ We also have un important property:
 
 \begin{te}
   If we choose\symbolfootnote[1]{ for $x_0 < \lambda_{m+1}$ s.t. 
-$sign \Big( \frac{f^{'}(x_0)}{f(x_0)} \Big) = sign(\lambda_m - x_0)$ we have 
+$sign( \frac{f^{'}(x_0)}{f(x_0)} ) = sign(\lambda_m - x_0)$ we have 
 $\{ x_{+}^{(k)} \}_{k=1,\dots}$ conv. mon. cubic to $\lambda_{m+1}$ } $\lambda_m < x_0$ s.t. 
 $sign \Big( \frac{f^{'}(x_0)}{f(x_0)} \Big) = sign(\lambda_m - x_0)$ then 
 $\{ x_{-}^{(k)} \}_{k=1,\dots}$ converge monotonically in asymptotically 
@@ -479,7 +478,7 @@ cubic rate to $\lambda_m$.
 
 \pause
 
-So we can exactly define a $\fbox{neighborhood ``near'' $\lambda$ }$ and in it we
+So we can exactly define a $\fbox{neighborood ``near'' $\lambda$ }$ and in it we
 have cubic rate convergence (much, much faster then \textcolor{red}{bisection}) 
 
 \pause
@@ -488,7 +487,7 @@ have cubic rate convergence (much, much faster then \textcolor{red}{bisection})
   \draw (0,0) [fill=yellow] ellipse (2cm and 1cm);
   \draw[->] (-5,0) -- (5,0);
   \node[circle, fill=black, label=above:$\lambda_m$] at (-.5,0) {};
-  \node[circle,fill=black!,label=below:$sign \Big( \frac{f^{'}}{f} \Big) \text{ eq } sign(\lambda_m - x_0)$] at (-.5,0) {};
+  %\node[circle,fillblack!,label=below:$ciao$] at (-.5,0) {};
   \node[circle, fill=black!1, label=above:$x_{0}$] at (1.25,0) {};
 \end{tikzpicture}
 
@@ -514,22 +513,6 @@ estimate $mlt(\lambda_m)$. \\
 
 \end{frame}
 
-\begin{frame}[label=Julia]
-  \frametitle{Complex case (little digression)}
-
-  According to \cite{MR2019677}, we observe that searching $z\in\C \tc z^n - 1 = 0$ for $n>4$ with Laguerre's method it's difficult because near the origin there is a Julia fractal set for starting point $z_0$. (figure: $n=6$)
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.3]{images/JuliaLaguerre.pdf}
-  %\caption{Julia set for $z^6 -1 =0$}
-\end{figure}
-
-\pause
-
-So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolor{blue}{\C}$ we have \textcolor{red}{great problems} to place the starting point if $n>4$. 
-
-\end{frame}
 
 \section{Good evaluation of $L_{\pm}(x)$}
 

@@ -1,0 +1,1613 @@
+ S(           1 ,0)=   3.9215686274509803E-002
+ S(           2 ,0)=   3.9215686274509803E-002
+ S(           3 ,0)=   3.9215686274509803E-002
+ S(           4 ,0)=   3.9215686274509803E-002
+ S(           5 ,0)=   3.9215686274509803E-002
+ S(           6 ,0)=   3.9215686274509803E-002
+ S(           7 ,0)=   3.9215686274509803E-002
+ S(           8 ,0)=   3.9215686274509803E-002
+ S(           9 ,0)=   3.9215686274509803E-002
+ S(          10 ,0)=   3.9215686274509803E-002
+ S(          11 ,0)=   3.9215686274509803E-002
+ S(          12 ,0)=   3.9215686274509803E-002
+ S(          13 ,0)=   3.9215686274509803E-002
+ S(          14 ,0)=   3.9215686274509803E-002
+ S(          15 ,0)=   3.9215686274509803E-002
+ S(          16 ,0)=   3.9215686274509803E-002
+ S(           1 ,1)=   0.0000000000000000     
+ S(           2 ,1)=   9.8039215686274508E-003
+ S(           3 ,1)=   9.8039215686274508E-003
+ S(           4 ,1)=   9.8039215686274508E-003
+ S(           5 ,1)=   9.8039215686274508E-003
+ S(           6 ,1)=   9.8039215686274508E-003
+ S(           7 ,1)=   9.8039215686274508E-003
+ S(           8 ,1)=   9.8039215686274508E-003
+ S(           9 ,1)=   9.8039215686274508E-003
+ S(          10 ,1)=   9.8039215686274508E-003
+ S(          11 ,1)=   9.8039215686274508E-003
+ S(          12 ,1)=   9.8039215686274508E-003
+ S(          13 ,1)=   9.8039215686274508E-003
+ S(          14 ,1)=   9.8039215686274508E-003
+ S(          15 ,1)=   9.8039215686274508E-003
+ S(          16 ,1)=   9.8039215686274508E-003
+ en=           4
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ 
+ 
+ UN SOLO INTERVALLO
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   258.75000000000011      j=           1 kappa(x)=           1
+ aj=   0.0000000000000000      bj=   258.75000000000011     
+ kappa(aj)=           0 kappa(bj)=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso sinistra
+ xl(0)=   205.58003393170250     
+ mi muovo verso sinistra
+ xl(0)=   205.18147896839326     
+ mi muovo verso destra
+ xl(0)=   205.18147916668832     
+ mi muovo verso sinistra
+ xl(0)=   205.18147916668823     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   926.99999999999943      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   926.99999999999943     
+ kappa(aj)=           0 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   705.59620358735765     
+ mi muovo verso destra
+ xl(0)=   722.20070582167750     
+ mi muovo verso destra
+ xl(0)=   722.33822870222014     
+ mi muovo verso destra
+ xl(0)=   722.33823760784708     
+ mi muovo verso destra
+ xl(0)=   722.33823760784708     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1812.4965552142958      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   1812.4965552142958     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   1751.4944304199205     
+ mi muovo verso sinistra
+ xl(0)=   1746.4123542516077     
+ mi muovo verso sinistra
+ xl(0)=   1746.3795069261901     
+ mi muovo verso sinistra
+ xl(0)=   1746.3795055631865     
+ mi muovo verso sinistra
+ xl(0)=   1746.3795055631865     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   12660.951722392852      j=           4 kappa(x)=           4
+ aj=   1321.9034447857043      bj=   12660.951722392852     
+ kappa(aj)=           2 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso sinistra
+ xl(0)=   3026.4118281663450     
+ mi muovo verso destra
+ xl(0)=   3293.6283671072147     
+ mi muovo verso destra
+ xl(0)=   3382.1909863131445     
+ mi muovo verso destra
+ xl(0)=   3389.2192546094975     
+ mi muovo verso destra
+ xl(0)=   3389.2586711710019     
+ mi muovo verso destra
+ xl(0)=   3389.2586723991208     
+ mi muovo verso sinistra
+ xl(0)=   3389.2586723991208     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           1 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   658.48718763845432      j=           1 kappa(x)=           0
+ aj=   658.48718763845432      bj=   1316.9743752769086     
+ kappa(aj)=           0 kappa(bj)=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso destra
+ xl(0)=   670.99395616706238     
+ mi muovo verso destra
+ xl(0)=   670.99418850839834     
+ mi muovo verso sinistra
+ xl(0)=   670.99418850839788     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            4  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1959.6512494461826      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   1959.6512494461826     
+ kappa(aj)=           0 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   1590.7730576633658     
+ mi muovo verso destra
+ xl(0)=   1617.2659828390206     
+ mi muovo verso destra
+ xl(0)=   1617.4644208544003     
+ mi muovo verso destra
+ xl(0)=   1617.4644314563950     
+ mi muovo verso destra
+ xl(0)=   1617.4644314563952     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   3805.4418451712118      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   3805.4418451712118     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   3540.9051805672989     
+ mi muovo verso sinistra
+ xl(0)=   3485.8928240667847     
+ mi muovo verso sinistra
+ xl(0)=   3483.7932745328972     
+ mi muovo verso sinistra
+ xl(0)=   3483.7903240496553     
+ mi muovo verso sinistra
+ xl(0)=   3483.7903240438368     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   13450.079077414393      j=           4 kappa(x)=           4
+ aj=   2900.1581548287872      bj=   13450.079077414393     
+ kappa(aj)=           2 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso sinistra
+ xl(0)=   2314.2201258207169     
+ mi muovo verso destra
+ xl(0)=   3223.4772340743984     
+ mi muovo verso destra
+ xl(0)=   3537.3311655357115     
+ mi muovo verso destra
+ xl(0)=   3596.3531312679493     
+ mi muovo verso destra
+ xl(0)=   3715.7167933603714     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           9 Tfine=          12
+ |k1=           1 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1331.4368856349931      j=           1 kappa(x)=           0
+ aj=   1331.4368856349931      bj=   2662.8737712699863     
+ kappa(aj)=           0 kappa(bj)=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso destra
+ xl(0)=   1636.8723967700946     
+ mi muovo verso destra
+ xl(0)=   1641.0238736728659     
+ mi muovo verso sinistra
+ xl(0)=   1641.0238703942623     
+ mi muovo verso destra
+ xl(0)=   1641.0238703942625     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   4144.6524574600298      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   4144.6524574600298     
+ kappa(aj)=           0 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   3302.1655712671327     
+ mi muovo verso destra
+ xl(0)=   3371.8686472253612     
+ mi muovo verso destra
+ xl(0)=   3372.6052599287450     
+ mi muovo verso destra
+ xl(0)=   3372.6053363050455     
+ mi muovo verso destra
+ xl(0)=   3372.6053363050460     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   7195.7719867087353      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   7195.7719867087353     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   6865.7312998565540     
+ mi muovo verso sinistra
+ xl(0)=   6821.3631950842846     
+ mi muovo verso sinistra
+ xl(0)=   6820.6378290072425     
+ mi muovo verso sinistra
+ xl(0)=   6820.6376383123015     
+ mi muovo verso sinistra
+ xl(0)=   6820.6376383122888     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   14846.114006645632      j=           4 kappa(x)=           4
+ aj=   5692.2280132912647      bj=   14846.114006645632     
+ kappa(aj)=           2 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso sinistra
+ xl(0)=   11391.958433948359     
+ mi muovo verso destra
+ xl(0)=   12313.358747313538     
+ mi muovo verso destra
+ xl(0)=   12606.234474295932     
+ mi muovo verso destra
+ xl(0)=   12627.715675531581     
+ mi muovo verso destra
+ xl(0)=   12627.819277000195     
+ mi muovo verso destra
+ xl(0)=   12627.819279390318     
+ mi muovo verso sinistra
+ xl(0)=   12627.819279390316     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=          13 Tfine=          16
+ |k1=           1 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   2354.1890995758968      j=           1 kappa(x)=           0
+ aj=   2354.1890995758968      bj=   4708.3781991517935     
+ kappa(aj)=           0 kappa(bj)=           1
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso destra
+ xl(0)=   3092.5316736329059     
+ mi muovo verso destra
+ xl(0)=   3112.4310795068113     
+ mi muovo verso destra
+ xl(0)=   3112.4320640013343     
+ mi muovo verso destra
+ xl(0)=   3112.4320640013357     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   7541.6436016964126      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   7541.6436016964126     
+ kappa(aj)=           0 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   5815.6909989209025     
+ mi muovo verso destra
+ xl(0)=   5978.8578793497918     
+ mi muovo verso destra
+ xl(0)=   5981.2692367094105     
+ mi muovo verso destra
+ xl(0)=   5981.2697076440409     
+ mi muovo verso destra
+ xl(0)=   5981.2697076440581     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   11989.781670872084      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   11989.781670872084     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   11757.940709080567     
+ mi muovo verso sinistra
+ xl(0)=   11745.615821536954     
+ mi muovo verso sinistra
+ xl(0)=   11745.582686054338     
+ mi muovo verso sinistra
+ xl(0)=   11745.582685815521     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   20422.954582281978      j=           4 kappa(x)=           3
+ aj=   20422.954582281978      bj=   24000.000000000000     
+ kappa(aj)=           3 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso destra
+ xl(0)=   21164.577664245739     
+ mi muovo verso destra
+ xl(0)=   21254.448996526109     
+ mi muovo verso destra
+ xl(0)=   21255.567047708097     
+ mi muovo verso destra
+ xl(0)=   21255.567217180229     
+ mi muovo verso destra
+ xl(0)=   21255.567217180233     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           1 k2=           8
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   205.18147916668823      j=           1 kappa(x)=           1
+ aj=   0.0000000000000000      bj=   205.18147916668823     
+ kappa(aj)=           0 kappa(bj)=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso sinistra
+ xl(0)=   182.37359973195316     
+ mi muovo verso sinistra
+ xl(0)=   175.94252276721016     
+ mi muovo verso sinistra
+ xl(0)=   175.50073314935108     
+ mi muovo verso sinistra
+ xl(0)=   175.49876474598301     
+ mi muovo verso sinistra
+ xl(0)=   175.49876470707503     
+ mi muovo verso destra
+ xl(0)=   175.49876470707505     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   361.16911880392354      j=           2 kappa(x)=           1
+ aj=   361.16911880392354      bj=   722.33823760784708     
+ kappa(aj)=           1 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso destra
+ xl(0)=   403.99254752774857     
+ mi muovo verso destra
+ xl(0)=   435.50037794441823     
+ mi muovo verso destra
+ xl(0)=   452.59785936591976     
+ mi muovo verso destra
+ xl(0)=   457.63404724931752     
+ mi muovo verso destra
+ xl(0)=   458.04623132866425     
+ mi muovo verso destra
+ xl(0)=   458.04888380978610     
+ mi muovo verso destra
+ xl(0)=   458.04888391919053     
+ mi muovo verso sinistra
+ xl(0)=   458.04888391919053     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            9  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   873.18975278159326      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   873.18975278159326     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   826.08577714547766     
+ mi muovo verso sinistra
+ xl(0)=   824.53350574612818     
+ mi muovo verso sinistra
+ xl(0)=   824.52949849993217     
+ mi muovo verso sinistra
+ xl(0)=   824.52949847266984     
+ mi muovo verso destra
+ xl(0)=   824.52949847266984     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1694.6293361995604      j=           4 kappa(x)=           4
+ aj=   0.0000000000000000      bj=   1694.6293361995604     
+ kappa(aj)=           0 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso sinistra
+ xl(0)=   1202.0257446707510     
+ mi muovo verso destra
+ xl(0)=   1394.4972254604031     
+ mi muovo verso sinistra
+ xl(0)=   1348.8378385776921     
+ mi muovo verso sinistra
+ xl(0)=   1347.4424303244616     
+ mi muovo verso sinistra
+ xl(0)=   1347.4406786080608     
+ mi muovo verso sinistra
+ xl(0)=   1347.4406786052803     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   2129.0570517266228      j=           5 kappa(x)=           5
+ aj=   670.99418850839788      bj=   2129.0570517266228     
+ kappa(aj)=           2 kappa(bj)=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           5 )
+ mi muovo verso sinistra
+ xl(0)=   2093.8012162461637     
+ mi muovo verso sinistra
+ xl(0)=   2091.9198032682111     
+ mi muovo verso sinistra
+ xl(0)=   2091.9143737401751     
+ mi muovo verso sinistra
+ xl(0)=   2091.9143736949436     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   3016.3729044903703      j=           6 kappa(x)=           5
+ aj=   3016.3729044903703      bj=   4415.2813775243458     
+ kappa(aj)=           5 kappa(bj)=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           6 )
+ mi muovo verso destra
+ xl(0)=   3080.0955810110081     
+ mi muovo verso destra
+ xl(0)=   3081.3368745732932     
+ mi muovo verso destra
+ xl(0)=   3081.3376258064395     
+ mi muovo verso destra
+ xl(0)=   3081.3376258067169     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ QUATTRO
+ 
+ DUE
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   6048.3165335383574      j=           7 kappa(x)=           7
+ aj=   3483.7903240438368      bj=   6048.3165335383574     
+ kappa(aj)=           6 kappa(bj)=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           7 )
+ mi muovo verso sinistra
+ xl(0)=   5859.5431394866682     
+ mi muovo verso sinistra
+ xl(0)=   5664.3909854692538     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   13857.858396680185      j=           8 kappa(x)=           8
+ aj=   3715.7167933603714      bj=   13857.858396680185     
+ kappa(aj)=           6 kappa(bj)=           8
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           8 )
+ mi muovo verso sinistra
+ xl(0)=   12272.900316301808     
+ mi muovo verso sinistra
+ xl(0)=   11022.352700646707     
+ mi muovo verso sinistra
+ xl(0)=   10032.227888555222     
+ mi muovo verso sinistra
+ xl(0)=   9246.1699370870283     
+ mi muovo verso sinistra
+ xl(0)=   8621.2482115717648     
+ mi muovo verso sinistra
+ xl(0)=   8124.7486696716633     
+ mi muovo verso sinistra
+ xl(0)=   7731.7437040755503     
+ mi muovo verso sinistra
+ xl(0)=   7423.2539315378745     
+ mi muovo verso sinistra
+ xl(0)=   7184.8038606708114     
+ mi muovo verso sinistra
+ xl(0)=   7004.8569715330377     
+ mi muovo verso sinistra
+ xl(0)=   6866.0852166515551     
+ mi muovo verso destra
+ xl(0)=   6871.2576805532572     
+ mi muovo verso destra
+ xl(0)=   6871.4482152308638     
+ mi muovo verso destra
+ xl(0)=   6871.4484694580387     
+ mi muovo verso destra
+ xl(0)=   6871.4484694584917     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie           16  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           9 Tfine=          16
+ |k1=           1 k2=           8
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1641.0238703942625      j=           1 kappa(x)=           1
+ aj=   0.0000000000000000      bj=   1641.0238703942625     
+ kappa(aj)=           0 kappa(bj)=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso sinistra
+ xl(0)=   1577.3442424023417     
+ mi muovo verso sinistra
+ xl(0)=   1562.3022419364659     
+ mi muovo verso sinistra
+ xl(0)=   1561.5709424977060     
+ mi muovo verso sinistra
+ xl(0)=   1561.5692867984087     
+ mi muovo verso sinistra
+ xl(0)=   1561.5692867899404     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ TRE
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   2529.4540022287847      j=           2 kappa(x)=           2
+ aj=   1686.3026681525230      bj=   2529.4540022287847     
+ kappa(aj)=           1 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   2465.0799594777272     
+ mi muovo verso destra
+ xl(0)=   2480.8813503070814     
+ mi muovo verso destra
+ xl(0)=   2482.1827035758993     
+ mi muovo verso destra
+ xl(0)=   2482.1911948967904     
+ mi muovo verso destra
+ xl(0)=   2482.1911952568944     
+ mi muovo verso sinistra
+ xl(0)=   2482.1911952568944     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   3410.3188191561444      j=           3 kappa(x)=           2
+ aj=   3410.3188191561444      bj=   6820.6376383122888     
+ kappa(aj)=           2 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso destra
+ xl(0)=   3705.8769450847408     
+ mi muovo verso sinistra
+ xl(0)=   3614.8068072141696     
+ mi muovo verso sinistra
+ xl(0)=   3610.8054807997751     
+ mi muovo verso sinistra
+ xl(0)=   3610.7944168546514     
+ mi muovo verso sinistra
+ xl(0)=   3610.7944167689047     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   6313.9096396951581      j=           4 kappa(x)=           4
+ aj=   0.0000000000000000      bj=   6313.9096396951581     
+ kappa(aj)=           0 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso sinistra
+ xl(0)=   5031.9116659475249     
+ mi muovo verso destra
+ xl(0)=   5302.1413780524881     
+ mi muovo verso sinistra
+ xl(0)=   5272.8702229663568     
+ mi muovo verso sinistra
+ xl(0)=   5272.6007519223185     
+ mi muovo verso sinistra
+ xl(0)=   5272.6007281702714     
+ mi muovo verso sinistra
+ xl(0)=   5272.6007281702714     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   8334.3240480010027      j=           5 kappa(x)=           5
+ aj=   3112.4320640013357      bj=   8334.3240480010027     
+ kappa(aj)=           2 kappa(bj)=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           5 )
+ mi muovo verso sinistra
+ xl(0)=   7807.6290145006824     
+ mi muovo verso sinistra
+ xl(0)=   7693.1188583173180     
+ mi muovo verso sinistra
+ xl(0)=   7686.7741190707666     
+ mi muovo verso sinistra
+ xl(0)=   7686.7544920887849     
+ mi muovo verso sinistra
+ xl(0)=   7686.7544919009752     
+ mi muovo verso destra
+ xl(0)=   7686.7544919009752     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   10485.952280733043      j=           6 kappa(x)=           5
+ aj=   10485.952280733043      bj=   14990.634853822030     
+ kappa(aj)=           5 kappa(bj)=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           6 )
+ mi muovo verso destra
+ xl(0)=   10966.095332665243     
+ mi muovo verso destra
+ xl(0)=   10983.852247646704     
+ mi muovo verso destra
+ xl(0)=   10983.913152445228     
+ mi muovo verso destra
+ xl(0)=   10983.913153183275     
+ mi muovo verso sinistra
+ xl(0)=   10983.913153183275     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   17872.791342907760      j=           7 kappa(x)=           7
+ aj=   11745.582685815521      bj=   17872.791342907760     
+ kappa(aj)=           6 kappa(bj)=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           7 )
+ mi muovo verso sinistra
+ xl(0)=   17357.180111286856     
+ mi muovo verso sinistra
+ xl(0)=   16878.696174372872     
+ mi muovo verso sinistra
+ xl(0)=   16450.143932926760     
+ mi muovo verso sinistra
+ xl(0)=   16082.981761563105     
+ mi muovo verso sinistra
+ xl(0)=   15787.173206690613     
+ mi muovo verso sinistra
+ xl(0)=   15570.719265223850     
+ mi muovo verso sinistra
+ xl(0)=   15437.681632871063     
+ mi muovo verso sinistra
+ xl(0)=   15381.016263545418     
+ mi muovo verso sinistra
+ xl(0)=   15370.402079689318     
+ mi muovo verso sinistra
+ xl(0)=   15370.044215839840     
+ mi muovo verso sinistra
+ xl(0)=   15370.043815237193     
+ mi muovo verso sinistra
+ xl(0)=   15370.043815236690     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie           13  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   21255.567217180233      j=           8 kappa(x)=           7
+ aj=   21255.567217180233      bj=   24000.000000000000     
+ kappa(aj)=           7 kappa(bj)=           8
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           8 )
+ mi muovo verso destra
+ xl(0)=   21617.434556378779     
+ mi muovo verso destra
+ xl(0)=   21888.388819347743     
+ mi muovo verso destra
+ xl(0)=   22059.356482173469     
+ mi muovo verso destra
+ xl(0)=   22135.416588085493     
+ mi muovo verso destra
+ xl(0)=   22150.993059876026     
+ mi muovo verso destra
+ xl(0)=   22151.620481259499     
+ mi muovo verso destra
+ xl(0)=   22151.621480948004     
+ mi muovo verso destra
+ xl(0)=   22151.621480950540     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            9  iterazioni.
+ Esco da LagIt
+ 
+ -------------------------------------
+ |Adesso dim=          16
+ |Tinizio=           1 Tfine=          16
+ |k1=           1 k2=          16
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   175.49876470707505      j=           1 kappa(x)=           1
+ aj=   0.0000000000000000      bj=   175.49876470707505     
+ kappa(aj)=           0 kappa(bj)=           1
+ EstMlt sovrastima la molteplicita`.
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ mi muovo verso sinistra
+ xl(0)=   175.39486287524821     
+ mi muovo verso sinistra
+ xl(0)=   175.39382254203787     
+ mi muovo verso sinistra
+ xl(0)=   175.39382243824969     
+ mi muovo verso destra
+ xl(0)=   175.39382243824969     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   458.04888391919053      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   458.04888391919053     
+ kappa(aj)=           0 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ mi muovo verso sinistra
+ xl(0)=   449.49233991362530     
+ mi muovo verso destra
+ xl(0)=   452.26734914967324     
+ mi muovo verso destra
+ xl(0)=   453.29147410600859     
+ mi muovo verso destra
+ xl(0)=   453.43345316113749     
+ mi muovo verso destra
+ xl(0)=   453.43608716075141     
+ mi muovo verso destra
+ xl(0)=   453.43608805974947     
+ mi muovo verso destra
+ xl(0)=   453.43608805974952     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   824.52949847266984      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   824.52949847266984     
+ kappa(aj)=           0 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ mi muovo verso sinistra
+ xl(0)=   797.95310251167996     
+ mi muovo verso sinistra
+ xl(0)=   783.63792510581106     
+ mi muovo verso sinistra
+ xl(0)=   778.06797609818591     
+ mi muovo verso sinistra
+ xl(0)=   777.09757352747749     
+ mi muovo verso sinistra
+ xl(0)=   777.06793841561671     
+ mi muovo verso sinistra
+ xl(0)=   777.06791094534537     
+ mi muovo verso sinistra
+ xl(0)=   777.06791094532184     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ TRE
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1010.5805089539601      j=           4 kappa(x)=           3
+ aj=   1010.5805089539601      bj=   1347.4406786052803     
+ kappa(aj)=           3 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ mi muovo verso destra
+ xl(0)=   1071.0120982189901     
+ mi muovo verso destra
+ xl(0)=   1114.3911619138287     
+ mi muovo verso destra
+ xl(0)=   1136.3377505426613     
+ mi muovo verso destra
+ xl(0)=   1142.2814258405178     
+ mi muovo verso destra
+ xl(0)=   1142.7105942698820     
+ mi muovo verso destra
+ xl(0)=   1142.7127788827383     
+ mi muovo verso destra
+ xl(0)=   1142.7127789392171     
+ mi muovo verso destra
+ xl(0)=   1142.7127789392171     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            9  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1568.9357802712077      j=           5 kappa(x)=           5
+ aj=   1045.9571868474718      bj=   1568.9357802712077     
+ kappa(aj)=           3 kappa(bj)=           5
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           5 )
+ mi muovo verso sinistra
+ xl(0)=   1548.0447933864389     
+ mi muovo verso sinistra
+ xl(0)=   1547.6900004295148     
+ mi muovo verso sinistra
+ xl(0)=   1547.6898079835300     
+ mi muovo verso sinistra
+ xl(0)=   1547.6898079834730     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ UNO
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1925.8360161291980      j=           6 kappa(x)=           5
+ aj=   1925.8360161291980      bj=   2311.0032193550378     
+ kappa(aj)=           5 kappa(bj)=           6
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           6 )
+ mi muovo verso destra
+ xl(0)=   1997.8424990230742     
+ mi muovo verso sinistra
+ xl(0)=   1990.1905554296466     
+ mi muovo verso sinistra
+ xl(0)=   1990.1717636946173     
+ mi muovo verso sinistra
+ xl(0)=   1990.1717635340024     
+ mi muovo verso destra
+ xl(0)=   1990.1717635340026     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ UNO
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   2478.1710561427985      j=           7 kappa(x)=           7
+ aj=   2124.1466195509702      bj=   2478.1710561427985     
+ kappa(aj)=           6 kappa(bj)=           7
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           7 )
+ mi muovo verso sinistra
+ xl(0)=   2474.2050568275704     
+ mi muovo verso sinistra
+ xl(0)=   2474.1840643125724     
+ mi muovo verso sinistra
+ xl(0)=   2474.1840637040978     
+ mi muovo verso sinistra
+ xl(0)=   2474.1840637040978     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ DUE
+ 
+ TRE
+ 
+ UNO
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   3006.2587053880902      j=           8 kappa(x)=           7
+ aj=   3006.2587053880902      bj=   3435.7242347292458     
+ kappa(aj)=           7 kappa(bj)=           8
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           8 )
+ mi muovo verso destra
+ xl(0)=   3018.4659135530455     
+ mi muovo verso sinistra
+ xl(0)=   3018.1912983024099     
+ mi muovo verso sinistra
+ xl(0)=   3018.1911644568140     
+ mi muovo verso sinistra
+ xl(0)=   3018.1911644567822     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ TRE
+ 
+ UNO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   3665.1721661533838      j=           9 kappa(x)=           9
+ aj=   2963.9712063655693      bj=   3665.1721661533838     
+ kappa(aj)=           7 kappa(bj)=           9
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           9 )
+ mi muovo verso sinistra
+ xl(0)=   3657.1752048887870     
+ mi muovo verso sinistra
+ xl(0)=   3657.0397749759818     
+ mi muovo verso sinistra
+ xl(0)=   3657.0397358684804     
+ mi muovo verso sinistra
+ xl(0)=   3657.0397358684768     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ TRE
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   4499.4857707015599      j=          10 kappa(x)=          10
+ aj=   3827.0542455533382      bj=   4499.4857707015599     
+ kappa(aj)=           9 kappa(bj)=          10
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          10 )
+ mi muovo verso sinistra
+ xl(0)=   4452.9970894841126     
+ mi muovo verso sinistra
+ xl(0)=   4448.5926243309932     
+ mi muovo verso sinistra
+ xl(0)=   4448.5525134072304     
+ mi muovo verso sinistra
+ xl(0)=   4448.5525100839341     
+ mi muovo verso sinistra
+ xl(0)=   4448.5525100839341     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   6159.4451146727915      j=          11 kappa(x)=          11
+ aj=   3610.7944167689047      bj=   6159.4451146727915     
+ kappa(aj)=           8 kappa(bj)=          11
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          11 )
+ mi muovo verso sinistra
+ xl(0)=   5882.8082492687636     
+ mi muovo verso sinistra
+ xl(0)=   5670.0533471773033     
+ mi muovo verso sinistra
+ xl(0)=   5541.4126792696079     
+ mi muovo verso sinistra
+ xl(0)=   5489.2190854576975     
+ mi muovo verso sinistra
+ xl(0)=   5480.6029740496888     
+ mi muovo verso sinistra
+ xl(0)=   5480.3808037339240     
+ mi muovo verso sinistra
+ xl(0)=   5480.3806582262014     
+ mi muovo verso sinistra
+ xl(0)=   5480.3806582261386     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie            9  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ DUE
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   7613.5256371489877      j=          12 kappa(x)=          12
+ aj=   5272.6007281702714      bj=   7613.5256371489877     
+ kappa(aj)=          10 kappa(bj)=          12
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          12 )
+ mi muovo verso sinistra
+ xl(0)=   7387.4775173546186     
+ mi muovo verso sinistra
+ xl(0)=   7142.6954016744658     
+ condizione di arresto (24) del secondo tipo
+ 
+ LagIt compie            3  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ QUATTRO
+ 
+ DUE
+ 
+ DUE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   9725.9101804133534      j=          13 kappa(x)=          13
+ aj=   7686.7544919009752      bj=   9725.9101804133534     
+ kappa(aj)=          12 kappa(bj)=          13
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          13 )
+ mi muovo verso sinistra
+ xl(0)=   9598.2921858871068     
+ mi muovo verso sinistra
+ xl(0)=   9473.6442607331574     
+ mi muovo verso sinistra
+ xl(0)=   9353.7560594302922     
+ mi muovo verso sinistra
+ xl(0)=   9240.4674355671814     
+ mi muovo verso sinistra
+ xl(0)=   9135.6199158861182     
+ mi muovo verso sinistra
+ xl(0)=   9041.0093671493178     
+ mi muovo verso sinistra
+ xl(0)=   8958.3425118739851     
+ mi muovo verso sinistra
+ xl(0)=   8889.1953357471593     
+ mi muovo verso sinistra
+ xl(0)=   8834.9566223081511     
+ mi muovo verso sinistra
+ xl(0)=   8796.6840918174366     
+ mi muovo verso sinistra
+ xl(0)=   8774.5844035625105     
+ mi muovo verso sinistra
+ xl(0)=   8766.3229739466096     
+ mi muovo verso sinistra
+ xl(0)=   8765.1526687625828     
+ mi muovo verso sinistra
+ xl(0)=   8765.1300528900920     
+ mi muovo verso sinistra
+ xl(0)=   8765.1300445201014     
+ mi muovo verso sinistra
+ xl(0)=   8765.1300445201014     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie           17  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   10983.913153183275      j=          14 kappa(x)=          13
+ aj=   10983.913153183275      bj=   24000.000000000000     
+ kappa(aj)=          13 kappa(bj)=          16
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          14 )
+ mi muovo verso destra
+ xl(0)=   11065.250622578815     
+ mi muovo verso destra
+ xl(0)=   11138.731114820537     
+ mi muovo verso destra
+ xl(0)=   11204.317243331401     
+ mi muovo verso destra
+ xl(0)=   11262.010524499157     
+ mi muovo verso destra
+ xl(0)=   11311.834530803846     
+ mi muovo verso destra
+ xl(0)=   11353.821034156239     
+ mi muovo verso destra
+ xl(0)=   11388.000066292308     
+ mi muovo verso destra
+ xl(0)=   11414.398895136846     
+ mi muovo verso destra
+ xl(0)=   11433.071795078793     
+ mi muovo verso destra
+ xl(0)=   11444.251657088549     
+ mi muovo verso destra
+ xl(0)=   11448.918876047170     
+ mi muovo verso destra
+ xl(0)=   11449.776631608504     
+ mi muovo verso destra
+ xl(0)=   11449.804744784884     
+ mi muovo verso destra
+ xl(0)=   11449.804774589511     
+ mi muovo verso destra
+ xl(0)=   11449.804774589544     
+ condizione di arresto (24) del terzo tipo
+ 
+ LagIt compie           16  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   15370.043815236690      j=          15 kappa(x)=          14
+ aj=   15370.043815236690      bj=   24000.000000000000     
+ kappa(aj)=          14 kappa(bj)=          16
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          15 )
+ mi muovo verso destra
+ xl(0)=   15398.211288311819     
+ mi muovo verso destra
+ xl(0)=   15421.652056778910     
+ mi muovo verso destra
+ xl(0)=   15440.447800588776     
+ mi muovo verso destra
+ xl(0)=   15456.318957917116     
+ mi muovo verso sinistra
+ xl(0)=   15453.951508733004     
+ mi muovo verso sinistra
+ xl(0)=   15453.603284727622     
+ mi muovo verso sinistra
+ xl(0)=   15453.595995845924     
+ mi muovo verso sinistra
+ xl(0)=   15453.595992681039     
+ mi muovo verso destra
+ xl(0)=   15453.595992681039     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie           10  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   22151.621480950540      j=          16 kappa(x)=          15
+ aj=   22151.621480950540      bj=   24000.000000000000     
+ kappa(aj)=          15 kappa(bj)=          16
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=          16 )
+ mi muovo verso destra
+ xl(0)=   22154.352922550654     
+ mi muovo verso destra
+ xl(0)=   22154.617598003904     
+ mi muovo verso destra
+ xl(0)=   22154.620010724484     
+ mi muovo verso destra
+ xl(0)=   22154.620010924147     
+ mi muovo verso destra
+ xl(0)=   22154.620010924147     
+ condizione di arresto (24) del primo tipo
+ 
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ 
+ Eigenvalues dopo il calcolo:
+   175.39382243824969        175.49876470707505        205.18147916668823        1035.0000000000005     
+   453.43608805974952        458.04888391919053        722.33823760784708        926.99999999999943     
+   777.06791094532184        824.52949847266984        1746.3795055631865        1812.4965552142958     
+   1142.7127789392171        1347.4406786052803        3389.2586723991208        1321.9034447857043     
+   1547.6898079834730        2091.9143736949436        670.99418850839788        2633.9487505538173     
+   1990.1717635340026        3081.3376258067169        1617.4644314563952        1959.6512494461826     
+   2474.1840637040978        5664.3909854692538        3483.7903240438368        3805.4418451712118     
+   3018.1911644567822        6871.4484694584917        3715.7167933603714        2900.1581548287872     
+   3657.0397358684768        1561.5692867899404        1641.0238703942625        5325.7475425399725     
+   4448.5525100839341        2482.1911952568944        3372.6053363050460        4144.6524574600298     
+   5480.3806582261386        3610.7944167689047        6820.6376383122888        7195.7719867087353     
+   7142.6954016744658        5272.6007281702714        12627.819279390316        5692.2280132912647     
+   8765.1300445201014        7686.7544919009752        3112.4320640013357        9416.7563983035870     
+   11449.804774589544        10983.913153183275        5981.2697076440581        7541.6436016964126     
+   15453.595992681039        15370.043815236690        11745.582685815521        11989.781670872084     
+   22154.620010924147        22151.621480950540        21255.567217180233        9691.8183291279165     
+ FINE CALCOLO AUTOVALORI!

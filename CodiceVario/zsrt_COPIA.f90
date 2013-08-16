@@ -115,13 +115,13 @@ end if
 !!!
 write(*,*)""
 write(*,*)""
-write(*,*)"UN SOLO INTERVALLO"
+write(*,*)"i)"
 write(*,*)""
 write(*,*)""
 
 a=0.d0
 !b=1.d0 + machinePrecision
-b=24000.d0
+b=1.d0
 
 call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
 
@@ -135,12 +135,100 @@ if ( verbose >= 1 ) then
    end do
 end if
 
-Open(unit=3,file="risultato_un_solo_intervallo.txt")
+Open(unit=3,file="risultato_i.txt")
 
 write(3,*) em
 
 do i=1,em
    write(3,*) Eigenvalues(i,1)
+end do
+
+
+!!!
+!ii)
+!!!
+write(*,*)""
+write(*,*)""
+write(*,*)"ii)"
+write(*,*)""
+write(*,*)""
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+a=0.d0
+b=1.d0
+
+
+call calcoloAutovaloriDentroI(a, b, n, S, T, en, em, Eigenvalues, verbose)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file 
+!"risultato.txt"
+
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
+Open(unit=4,file="risultato_ii.txt")
+
+write(4,*) em
+
+do i=1,em
+   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
+      write(4,*) 1.d0/Eigenvalues(i,1)
+   else
+      write(4,*) 0.d0
+   end if
+end do
+
+
+!!!
+!iii)
+!!!
+write(*,*)""
+write(*,*)""
+write(*,*)"iii)"
+write(*,*)""
+write(*,*)""
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+a=0.d0
+b=1.d0
+
+
+call calcoloAutovaloriDentroI(a, b, n, S, -T, en, em, Eigenvalues, verbose)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file 
+!"risultato.txt"
+
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
+Open(unit=5,file="risultato_iii.txt")
+
+write(5,*) em
+
+do i=1,em
+   if ( abs(Eigenvalues(i,1)) > machinePrecision ) then
+      write(5,*) -1.d0/Eigenvalues(i,1)
+   else
+      write(5,*) 0.d0
+   end if
 end do
 
 
