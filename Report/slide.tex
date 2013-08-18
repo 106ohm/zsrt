@@ -931,7 +931,7 @@ eigenvalues of $(\hat T, \hat S)$, they are what we call $\mu_1,\dots,\mu_n$.
 \begin{frame}
 \frametitle{Split}
 
-\begin{te}[A sort of ``interlacing'']
+\begin{te}[A sort of ``interlacing'' with \hyperlink{Interlacing}{\beamergotobutton{proof}}]
 
 \begin{align*}
   -\infty < &\lambda_1 \le \hat\lambda_1 \\
@@ -1050,16 +1050,159 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
 \begin{frame}[label=LagProof]
   \frametitle{Appendice A: proof of Laguerre's convergence}
+
+  According to \cite[p.444]{bookWilkinson} we can write 
+
+  \begin{align*}
+    x_{\pm}^{(k+1)} &= x_{\pm}^{(k)} - \frac{n f}{f^{'} \pm H^{\frac{1}{2}}} \\
+    H &= (n-1)^2 (f^{'})^2 -n(n-1)f f^{''}
+  \end{align*}
+
+  If we \textcolor{green}{choose the sign} so that the $| f^{'} \textcolor{green}{\pm} H^{\frac{1}{2}} |$ has the larger absolute value then we can approx $x_{\pm}^{(k+1)} - \lambda_m$ as
+
+  \begin{align*}
+    x_{\pm}^{(k+1)} - \lambda_m &\approx \frac{1}{2}(x_{\pm}^{(k)} - \lambda_m)^3 \frac{(n-1)\Sigma_2^{'} - (\Sigma_1^{'})^2}{n-1}\\
+    \Sigma_2^{'} &= \sum_{i\ne n} \frac{1}{(\lambda_m - \lambda_i)^2}\\
+    \Sigma_1^{'} &= \sum_{i\ne n} \frac{1}{\lambda_m - \lambda_i}
+  \end{align*}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendice A: proof of Laguerre's convergence}
+
+  So we have \textcolor{blue}{convergence} and $\textcolor{green}{x_{\pm}^{(k+1)} - \lambda_m} \textcolor{blue}{\approx} \text{ number } \textcolor{green}{(x_{\pm}^{(k)} - \lambda_m)^3}$ tell us that the convergence is \textcolor{blue}{cubic.}
+
   \hyperlink{BeforeLagProof}{\beamergotobutton{back}}
 \end{frame}
 
 \begin{frame}[label=SturmSequence]
   \frametitle{Appendice B: proof of property about Sturm sequence}
+
+  
   \hyperlink{BeforeSturmSequence}{\beamergotobutton{back}}
+
+\end{frame}
+
+\begin{frame}[label=Interlacing]
+  \frametitle{Appendice B: interlacing}
+
+  \begin{de}
+    For $\alpha\in[0,1]$ we define the pencil $\big( T(\alpha), S(\alpha) \big) := \big( (1-\alpha)\hat T + \alpha T, (1-\alpha)\hat S + \alpha S \big)$.
+  \end{de}
+
+  \begin{lem}
+    $\big( T(\alpha), S(\alpha) \big)$ is a \emph{symmetric definite} pencil for each $\alpha\in[0,1]$.
+  \end{lem}
+
+  Calling $\lambda_1(\alpha)\le \lambda_2(\alpha)\le \dots \le \lambda_n(\alpha)$ the $n$ real eigenvalues of the pencil  $\big( T(\alpha), S(\alpha) \big)$ we have
+
+  \begin{lem}
+    Each $\lambda_i(\alpha)$ is a continuous function of $\alpha\in[0,1]$.
+  \end{lem}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendice B: interlacing}
+
+  \begin{te}[A sort of ``interlacing'']
+    \begin{align*}
+      -\infty < &\lambda_1 \le \hat\lambda_1 \\
+      \hat\lambda_{i-1} \le &\lambda_i \le \hat\lambda_{i+1} \\
+      \hat\lambda_n \le &\lambda_n < \infty
+    \end{align*}
+
+    with $i=2,3,\dots,n-1$.
+  \end{te}
+
+  \pause
+
+  %\begin{proof}
+
+  \emph{Classic interlacing} still works for $-\infty < \lambda_1 \le \hat\lambda_1$ and for $\hat\lambda_n \le \lambda_n < \infty$.
+
+  \pause
+
+  We have to proove that $\textcolor{blue}{\lambda_i \ge \hat\lambda_{i-1}}$ (and similar $\lambda_i \le \hat\lambda_{i+1}$).
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendice B: interlacing}
+
+  (\textcolor{blue}{Proof by contradiction}) if we consider $\textcolor{red}{\lambda_i< \hat\lambda_{i-1}}$ for some $i\in\{2,3,\dots,n-1 \}$ (that, in our new writing, is $\textcolor{red}{\lambda_i(1)<\lambda_{i-1}(0)}$ because all $\lambda_j(1)$ are eigenvalues of $(T,S)$ and all $\lambda_j(0)$ are eigenvalues of $(\hat T, \hat S)$) then
+
+  \pause
+
+  \begin{tikzpicture}
+    \draw[->] (-5,-.5) -- (5,-.5); 
+    \node[circle, fill=black!1, label=below:$\lambda_{i-1}(1)$] at (-3.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{i}(1)$] at (-2,-.5) {};
+    \node[circle, fill=black!1, label=below:$\lambda_{i-1}(0)$] at (1.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{i}(0)$] at (4,-.5) {};
+
+    %\draw[green,->] (2.5,.5) -- (3.75,.5);
+    %\draw[green,->] (6.75,.5) -- (5,.5);
+    %\draw[red,->] (2.5,-1) -- (5.25,-1);
+  \end{tikzpicture}
+
+  \pause
+
+  in symbols: $\lambda_{i-1}(1) \le \lambda_i(1) < \lambda_{i-1}(0) \le \lambda_i(0)$. 
+
+  \pause
+  
+  \textcolor{blue}{For all} $\tilde\lambda\in [\lambda_i(1),\lambda_{i-1}(0)]$ we can find $\alpha_i, \alpha_{i-1}$ such as $\tilde\lambda=\lambda_i(\alpha_i)=\lambda_{i-1}(\alpha_{i-1})$.
+
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Appendice B: interlacing}
+  \begin{tikzpicture}
+    \draw[->] (-5,-.5) -- (5,-.5); 
+    \node[circle, fill=black!1, label=below:$\lambda_{i-1}(1)$] at (-3.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{i}(1)$] at (-2,-.5) {};
+    \node[circle, fill=black!1, label=below:$\lambda_{i-1}(0)$] at (1.5,-.5) {};
+    \node[circle, fill=black!1, label=above:$\lambda_{i}(0)$] at (4,-.5) {};
+
+    \uncover <2> {
+      \node[draw=none, label=center:$\textcolor{red}{\tilde\lambda}$] at (0,-.5) {}; 
+    }
+    \uncover <3> {
+      \draw[red,<-] (-2.6,-1) -- (1,-1);
+      \node[draw=none, label=below:$\textcolor{red}{\lambda_{i-1}(\alpha_{i-1})}$] at (0,0) {};
+    }
+    \uncover <4> {
+      \draw[red,<-] (-1.40,0.15) -- (3.75,0.15);
+      \node[draw=none, label=below:$\textcolor{red}{\lambda_{i}(\alpha_{i})}$] at (0,0) {};
+    }
+  \end{tikzpicture}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Appendice B: interlacing}
+
+  $H(\alpha,\lambda) := det[T(\alpha)-\lambda S(\alpha)] =$
+
+  \begin{equation*}
+    \begin{bmatrix}  
+     & \vdots & \vdots & \vdots & & \\
+      & \alpha(t_{k,k+1}-s_{k,k+1}) & t_{k,k}-\lambda s_{k,k} &  & & \\
+      & & \alpha(t_{k,k+1}-s_{k,k+1}) & t_{k+1,k+1}-\lambda s_{k+1,k+1} & \\
+    \end{bmatrix}
+  \end{equation*}
+
+  \hyperlink{BeforeInterlacing}{\beamergotobutton{back}}
+
 \end{frame}
 
 \begin{frame}[label=CodeIf]
-  \frametitle{Appendice C: code}
+  \frametitle{Appendice D: code}
   \hyperlink{BeforeCodeIf}{\beamergotobutton{back}}
 \end{frame}
 

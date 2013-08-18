@@ -75,12 +75,59 @@ do k=1,kMax
    !genero le matrici per l'esperimento
    call generoMatrici(n,T(1:n,0:1),S(1:n,0:1))
 
+   !mi occupo di Eispack
+   nm=n
+   !deallocate( Teispack, Seispack )
+   !allocate( Teispack(1:n,1:n), Seispack(1:n,1:n) )
+
+   do i=1,n
+      do j=1,n
+         if ( i==j ) then
+            Teispack(i,j)=T(i,0)
+            Seispack(i,j)=S(i,0)
+         end if
+         if ( abs(i-j)==1 .AND. i<j ) then
+            Teispack(i,j)=T(j,1)
+            Teispack(j,i)=Teispack(i,j)
+            Seispack(i,j)=S(j,1)
+            Seispack(j,i)=Seispack(i,j)
+         end if
+      end do
+   end do
+
    write(*,*)"n=",n
 
-   write(*,*)"S dig="
-   write(*,*)S(1:n,0)
-   write(*,*)"S super="
-   write(*,*)S(1:n,1)
+   if ( verbose >= 2 ) then
+      write(*,*)"T dig="
+      write(*,*)T(1:n,0)
+      write(*,*)"Teispack diag="
+      do i=1,n
+         write(*,*) Teispack(i,i)
+      end do
+      write(*,*)"T super="
+      write(*,*)T(1:n,1)
+      write(*,*)"Teispack super="
+      do i=1,n-1
+         write(*,*) Teispack(i,i+1)
+      end do
+
+      write(*,*)"n=",n
+
+      write(*,*)"S dig="
+      write(*,*)S(1:n,0)
+      write(*,*)"Seispack diag="
+      do i=1,n
+         write(*,*) Seispack(i,i)
+      end do
+      write(*,*)"S super="
+      write(*,*)S(1:n,1)
+      write(*,*)"Seispack super="
+      do i=1,n-1
+         write(*,*) Seispack(i,i+1)
+      end do
+   end if
+
+  
 
    !scelgo le dimensioni di Eigenvalues, alloco memoria
    !ed inizializzo i suoi valori a zero
@@ -135,39 +182,7 @@ do k=1,kMax
    write(*,*)"v="
    write(*,*) v(1:em)
 
-   !mi occupo di Eispack
-   nm=n
-   !deallocate( Teispack, Seispack )
-   !allocate( Teispack(1:n,1:n), Seispack(1:n,1:n) )
-
-   do i=1,n
-      do j=1,n
-         if ( i==j ) then
-            Teispack(i,j)=T(i,0)
-            Seispack(i,j)=S(i,0)
-         end if
-         if ( abs(i-j)==1 .AND. i<j ) then
-            Teispack(i,j)=T(j,1)
-            Teispack(j,i)=Teispack(i,j)
-            Seispack(i,j)=S(j,1)
-            Seispack(j,i)=Seispack(i,j)
-         end if
-      end do
-   end do
-
-   write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
-   write(*,*)"Seispack diag="
-   do i=1,n
-      write(*,*) Seispack(i,i)
-   end do
-   write(*,*)"Seispack super="
-   do i=1,n-1
-      write(*,*) Seispack(i,i+1)
-   end do
-
-   write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-
+   
    !deallocate( alfr, alfi, beta, z )
    !allocate( alfr(n), alfi(n), beta(n), z(nm,n) )
 
@@ -306,7 +321,7 @@ real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 
 character(len=27+10) :: char
-
+character(len=1) :: null
 !!!
 !FINE DICHIARAZIONI
 !!!
@@ -505,7 +520,7 @@ do while (dim <= n)
 
             countSubInterval=0
 
-100         write(*,*)""
+100         write(null,*)""
 
             countSubInterval = countSubInterval + 1
 
@@ -671,7 +686,7 @@ do while (dim <= n)
    
       end do
 
-200   write(*,*)""
+200   write(null,*)""
 
    end do
 
@@ -737,6 +752,8 @@ integer :: k, m
 
 real(dp) :: machinePrecision
 
+character(len=1) :: null
+
 !FINE DICHIARAZIONI
 
 machinePrecision=epsilon(1.d0)
@@ -764,7 +781,7 @@ do k=1,em*2
 
 end do
 
-10 write(*,*)""
+10 write(null,*)""
 
 !OSS: incrementare k non modifica il calcolo, ma fornisce indicazioni
 !sull'avanzamento dello stesso
@@ -816,6 +833,8 @@ real(dp), dimension(-2:0) :: xl
 real(dp), intent(OUT) :: lambdaJ
 
 real(dp) :: machinePrecision
+
+character(len=1) :: null
 
 !vedi p. 16
 
@@ -970,7 +989,7 @@ do while ( .TRUE. )
 
 end do
 
-30 write(*,*) ""
+30 write(null,*) ""
 
 numLagIt = l
 
@@ -1017,6 +1036,8 @@ real(dp), dimension(:), allocatable :: xi
 real(dp), dimension(:), allocatable ::  eta, zeta
 
 real(dp) :: machinePrecision
+
+character(len=1) :: null
 
 !FINE DICHIARAZIONI
 
@@ -1341,11 +1362,13 @@ integer, intent(IN) :: n
 
 real(dp), dimension(1:n,0:1), intent(OUT) :: T,S
 
+integer,parameter :: seed = 86456
+
 !real(dp), dimension(:), allocatable :: v 
 
 integer :: i, j
 
-real(dp) :: rnd, machinePrecision, count, max
+real(dp) :: rnd, machinePrecision, count, max, e1, e2
 
 
 !!!
@@ -1363,34 +1386,76 @@ machinePrecision=epsilon(1.d0)
 
 
 
+!!$!!!
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (autovalori "distanti")
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
+!!$!!!
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   T(i,0) = 1.d0
+!!$   T(i,1) = rnd*1.d-3
+!!$end do
+!!$
+!!$T(1,1)=0.d0
+!!$
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   S(i,0) = 0.d0
+!!$   S(i,1) = rnd*1.d-1
+!!$end do
+!!$
+!!$do i=1,n-1
+!!$   rnd = 2.d0*S(i+1,1)
+!!$   S(i,0) = i*1.d-1 + abs(rnd)
+!!$end do
+!!$
+!!$S(n,0) = n*1.d-1
+!!$
+!!$S(1,1)=0.d0
+
+
+
+
 !!!
 !Matrici tridiagonali simmetriche random, 
 !ma dominanti diagonali (autovalori "distanti")
 !Per i teoremi di Gershgorin T ed S sono
 !definite positive
+!Impongo T=I e gli autovalori di S
+!compresi fra e1 ed e2
 !!!
 do i=1,n
-   call random_number(rnd)
+   !call random_number(rnd)
+   rnd=rand(seed)
    T(i,0) = 1.d0
-   T(i,1) = rnd*1.d-3
+   !T(i,1) = rnd*1.d-3
+   T(i,1) = 0.d0
 end do
 
 T(1,1)=0.d0
 
+e1=1.d-1
+e2=3.d-1
+
 do i=1,n
-   call random_number(rnd)
+   !call random_number(rnd)
+   rnd=rand(seed)
    S(i,0) = 0.d0
-   S(i,1) = rnd*1.d-1
+   S(i,1) = rnd*1.d-3
 end do
 
-do i=1,n-1
+do i=0,n-1
    rnd = 2.d0*S(i+1,1)
-   S(i,0) = i*1.d-1 + abs(rnd)
+   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
 end do
 
-S(n,0) = n*1.d-1
+S(1,1) = 0.d0
 
-S(1,1)=0.d0
+
 
 
 

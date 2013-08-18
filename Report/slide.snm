@@ -12,7 +12,9 @@
 \beamer@slide {BeforeCodeIf<2>}{56}
 \beamer@slide {LagProof<1>}{68}
 \beamer@slide {LagProof}{68}
-\beamer@slide {SturmSequence<1>}{69}
-\beamer@slide {SturmSequence}{69}
-\beamer@slide {CodeIf<1>}{70}
-\beamer@slide {CodeIf}{70}
+\beamer@slide {SturmSequence<1>}{70}
+\beamer@slide {SturmSequence}{70}
+\beamer@slide {Interlacing<1>}{71}
+\beamer@slide {Interlacing}{71}
+\beamer@slide {CodeIf<1>}{84}
+\beamer@slide {CodeIf}{84}

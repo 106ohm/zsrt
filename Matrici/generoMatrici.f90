@@ -15,7 +15,7 @@ real(dp) :: rnd, machinePrecision, count, max
 machinePrecision=epsilon(1.d0)
 
 !scelgo la dimensione
-n=64
+n=4
 
 !alloco memoria
 allocate( T(n,n), S(n,n) )

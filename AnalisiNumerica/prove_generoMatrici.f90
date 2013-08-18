@@ -1,0 +1,252 @@
+!!!
+!PROGRAMMA PRINCIPALE
+!!!
+!Al momento funziona solo per "n=2^numero",
+!fra poco estendero` il calcolo al caso
+!"n > 1".
+
+program sperimentazione
+
+implicit none
+
+integer, parameter :: dp = kind(1.d0)
+
+integer :: n, i, j, em, en, numAut
+
+integer :: verbose
+
+real(dp) :: a,b, lettore1, lettore2, machinePrecision
+
+real(dp), dimension(:,:), allocatable :: T, S, Tdopo, Sdopo, TancoraDopo, SancoraDopo
+
+real(dp), dimension(:,:), allocatable :: Eigenvalues
+
+!!!
+!FINE DICHIARAZIONI
+!!!
+
+machinePrecision=epsilon(1.d0)
+
+!verbose=
+!0) non stampo a video informazioni
+!1) stapo Eigenvalues prima e dopo il calcolo
+!2) stampo k1, k2 e le condizioni di arresto
+!3) stampo (per ogni j=k1,k2) l'intervallo
+!chiamato [aj, bj], il numero x iniziale,
+! con la sua mlt, ed il numero di iterazioni
+!4) stampo le informazioni dentro i cicli. 
+verbose = 3
+
+!leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
+!alloco la memoria e carico le matrici T ed S;
+!cosi` avro` a disposizione la pencil (T,S).
+
+open(unit=1, file="T.txt")
+open(unit=2, file="S.txt")
+
+read(1,*) n
+read(2,*) n
+
+allocate( T(1:n,0:1),S(1:n,0:1), Tdopo(1:n,0:1), Sdopo(1:n,0:1), TancoraDopo(1:n,1:n), SancoraDopo(1:n,1:n) )
+
+do j=1,n
+   do i=1,n
+      read(1,*) lettore1
+      read(2,*) lettore2
+      if ( i == j ) then
+         T(i,0) = lettore1
+         S(i,0) = lettore2
+      end if
+      if ( abs(i-j)==1 .AND. j>i ) then
+         T(j,1) = lettore1
+         S(j,1) = lettore2
+      end if
+   end do
+end do
+
+T(1,1)=0.d0
+S(1,1)=0.d0
+
+call generoMatrici(n, Tdopo, Sdopo)
+
+
+do i=1,n
+   do j=1,n
+      if ( i==j ) then
+         TancoraDopo(i,j)=Tdopo(i,0)
+         SancoraDopo(i,j)=Sdopo(i,0)
+      end if
+      if ( abs(i-j)==1 .AND. i<j ) then
+         TancoraDopo(i,j)=Tdopo(j,1)
+         TancoraDopo(j,i)=TancoraDopo(i,j)
+         SancoraDopo(i,j)=Sdopo(j,1)
+         SancoraDopo(j,i)=SancoraDopo(i,j)
+      end if
+   end do
+end do
+
+do i=1,n
+   write(*,*)"S(",i,",0)=",S(i,0)
+end do
+
+do i=1,n
+   write(*,*)"Sdopo(",i,",0)=",Sdopo(i,0)
+end do
+
+do i=1,n
+   write(*,*)"SancoraDopo(",i,",",i,")=",SancoraDopo(i,i)
+end do
+
+do i=1,n
+   write(*,*)"S(",i,",1)=",S(i,1)
+end do
+
+do i=1,n
+   write(*,*)"Sdopo(",i,",1)=",Sdopo(i,1)
+end do
+
+do i=1,n-1
+   write(*,*)"SancoraDopo(",i,",",i+1,")=",SancoraDopo(i,i+1)
+end do
+
+
+end program sperimentazione
+
+
+subroutine generoMatrici(n, T, S)
+
+implicit none
+
+!lavoro in doppia precisione
+integer, parameter :: dp=kind(0.d0)
+
+integer, intent(IN) :: n
+
+real(dp), dimension(1:n,0:1), intent(OUT) :: T,S
+
+integer,parameter :: seed = 86456
+
+!real(dp), dimension(:), allocatable :: v 
+
+integer :: i, j
+
+real(dp) :: rnd, machinePrecision, count, max
+
+
+!!!
+!Fine dichiarazioni
+!!!
+
+machinePrecision=epsilon(1.d0)
+
+
+!!!
+!ATTENZIONE: mi devo ricordare di generale pencil (T,S)
+!che siano "non riducibili", ovvero t.c.
+!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
+!!!
+
+
+
+!!!
+!Matrici tridiagonali simmetriche random, 
+!ma dominanti diagonali (autovalori "distanti")
+!Per i teoremi di Gershgorin T ed S sono
+!definite positive
+!!!
+do i=1,n
+   !call random_number(rnd)
+   rnd=rand(seed)
+   T(i,0) = 1.d0
+   T(i,1) = rnd*1.d-3
+end do
+
+T(1,1)=0.d0
+
+do i=1,n
+   !call random_number(rnd)
+   rnd=rand(seed)
+   S(i,0) = 0.d0
+   S(i,1) = rnd*1.d-1
+end do
+
+do i=1,n-1
+   rnd = 2.d0*S(i+1,1)
+   S(i,0) = i*1.d-1 + abs(rnd)
+end do
+
+S(n,0) = n*1.d-1
+
+S(1,1)=0.d0
+
+
+
+!!$!!!
+!!$!Matrici Problema Sturm-Liouville
+!!$!!!
+!!$do i=1,n
+!!$   do j=1,i
+!!$      if (i == j) then
+!!$         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
+!!$      end if
+!!$      if ( abs(i-j) == 1 ) then
+!!$         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
+!!$         T(j,i) = T(i,j)
+!!$      end if
+!!$      if ( abs(i-j) > 1 ) then
+!!$         T(i,j)=0.d0
+!!$         T(j,i)=T(i,j)
+!!$      end if
+!!$   end do
+!!$end do
+!!$
+!!$do i=1,n
+!!$   do j=1,i
+!!$      if (i == j) then
+!!$         S(i,j) = 4.d0/(6.d0*(n+1))
+!!$      end if
+!!$      if ( abs(i-j) == 1 ) then
+!!$         S(i,j) = 1.d0/(6.d0*(n+1))
+!!$         S(j,i) = S(i,j)
+!!$      end if
+!!$      if ( abs(i-j) > 1) then
+!!$         S(i,j)=0.d0
+!!$         S(j,i)=S(i,j)
+!!$      end if
+!!$   end do
+!!$end do
+
+
+
+
+
+!!!
+!ATTENZIONE: mi devo ricordare di generare pencil (T,S)
+!che siano "non riducibili", ovvero t.c.
+!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
+!!!
+do i=2,n
+   if ( abs(T(i,1)**2 + S(i,1)**2) <= 10*machinePrecision ) then
+      write(*,*) "PENCIL NON RIDUCIBILE"
+   end if
+end do
+
+
+!!$!!!
+!!$!Calcolo norma infinito (utile per il corollario 4.3)
+!!$!!!
+!!$max = 0
+!!$do i=1,n
+!!$   count = 0
+!!$   do j=1,n
+!!$      count = count + abs(S(i,j))
+!!$   end do
+!!$   if ( count > max ) then
+!!$      max = count
+!!$   end if
+!!$end do
+!!$
+!!$write(*,*)"||S||_{\infty}=",max
+
+
+end subroutine generoMatrici
