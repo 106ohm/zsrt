@@ -159,7 +159,7 @@ do k=1,kMax
    ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
    a=0.d0
-   b=10.d0
+   b=5.d-1
 
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 
@@ -208,10 +208,10 @@ do k=1,kMax
       vEispack(i) = alfr(i)/beta(i)
    end do
 
-   call quick_sort( vEispack(1:em), em )
+   call quick_sort( vEispack(1:n), n )
 
    write(*,*)"vEispack="
-   write(*,*) vEispack(1:em)
+   write(*,*) vEispack(1:n)
 
    do i=1,n
       v(i) = abs( v(i)-vEispack(i) )
