@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+gfortran tanto_lavoro_solo_zsrt.f90 -o tanto_lavoro_solo_zsrt -lpgplot -lX11
+
+./tanto_lavoro_solo_zsrt > resoconto_tanto_lavoro_solo_zsrt.txt

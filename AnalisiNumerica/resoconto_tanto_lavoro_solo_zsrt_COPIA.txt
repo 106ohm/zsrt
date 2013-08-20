@@ -1,0 +1,2835 @@
+ -------------------------------------------------------
+ n=           2
+ massimo numero di bisezioni=   0.00000000    
+ massimo numero di iterazioni di LagIt=   0.00000000    
+ totale numero di bisezioni=           0
+ totale numero di iterazioni in LagIt=           0
+ somma dei precedenti totali=           0
+ numero chiamate a calcoli=           0
+ totCalcoli=           0
+ -------------------------------------------------------
+ n=           4
+ massimo numero di bisezioni=   3.00000000    
+ massimo numero di iterazioni di LagIt=   6.00000000    
+ totale numero di bisezioni=          11
+ totale numero di iterazioni in LagIt=          19
+ somma dei precedenti totali=          30
+ numero chiamate a calcoli=          38
+ totCalcoli=          38
+ -------------------------------------------------------
+ n=           8
+ massimo numero di bisezioni=   6.00000000    
+ massimo numero di iterazioni di LagIt=   8.00000000    
+ totale numero di bisezioni=          49
+ totale numero di iterazioni in LagIt=          91
+ somma dei precedenti totali=         140
+ numero chiamate a calcoli=         172
+ totCalcoli=         172
+ -------------------------------------------------------
+ n=          16
+ massimo numero di bisezioni=   7.00000000    
+ massimo numero di iterazioni di LagIt=   9.00000000    
+ totale numero di bisezioni=         197
+ totale numero di iterazioni in LagIt=         275
+ somma dei precedenti totali=         472
+ numero chiamate a calcoli=         568
+ totCalcoli=         568
+ -------------------------------------------------------
+ n=          32
+ massimo numero di bisezioni=   9.00000000    
+ massimo numero di iterazioni di LagIt=   12.0000000    
+ totale numero di bisezioni=         641
+ totale numero di iterazioni in LagIt=         749
+ somma dei precedenti totali=        1390
+ numero chiamate a calcoli=        1646
+ totCalcoli=        1646
+ -------------------------------------------------------
+ n=          64
+ massimo numero di bisezioni=   10.0000000    
+ massimo numero di iterazioni di LagIt=   15.0000000    
+ totale numero di bisezioni=        1888
+ totale numero di iterazioni in LagIt=        1912
+ somma dei precedenti totali=        3800
+ numero chiamate a calcoli=        4440
+ totCalcoli=        4440
+ -------------------------------------------------------
+ n=         128
+ massimo numero di bisezioni=   11.0000000    
+ massimo numero di iterazioni di LagIt=   39.0000000    
+ totale numero di bisezioni=        5247
+ totale numero di iterazioni in LagIt=        6279
+ somma dei precedenti totali=       11526
+ numero chiamate a calcoli=       13062
+ totCalcoli=       13062
+ -------------------------------------------------------
+ n=         256
+ LagIt impiega troppo iterazioni (piu` di mille).
+ massimo numero di bisezioni=   12.0000000    
+ massimo numero di iterazioni di LagIt=   1000.00000    
+ totale numero di bisezioni=       13935
+ totale numero di iterazioni in LagIt=       22756
+ somma dei precedenti totali=       36691
+ numero chiamate a calcoli=       40275
+ totCalcoli=       40275
+ -------------------------------------------------------
+ n=         512
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ massimo numero di bisezioni=   13.0000000    
+ massimo numero di iterazioni di LagIt=   1000.00000    
+ totale numero di bisezioni=       35813
+ totale numero di iterazioni in LagIt=      150043
+ somma dei precedenti totali=      185856
+ numero chiamate a calcoli=      194048
+ totCalcoli=      194048
+ -------------------------------------------------------
+ n=        1024
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ EstMlt sovrastima la molteplicita`.
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ LagIt impiega troppo iterazioni (piu` di mille).
+ massimo numero di bisezioni=   14.0000000    
+ massimo numero di iterazioni di LagIt=   1000.00000    
+ totale numero di bisezioni=       89559
+ totale numero di iterazioni in LagIt=     2633871
+ somma dei precedenti totali=     2723430
+ numero chiamate a calcoli=     2741862
+ totCalcoli=     2741862
+ -------------------------------------------------------
+ FINE CALCOLO!
