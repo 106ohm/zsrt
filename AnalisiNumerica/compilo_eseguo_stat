@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+gfortran tanto_lavoro_zsrt_statistica.f90 qzhes.o qzit.o qzval.o qzvec.o rgg.o -o tanto_lavoro_zsrt_statistica -lpgplot -lX11
+
+ ./tanto_lavoro_zsrt_statistica > resoconto_tanto_lavoro_statistica.txt
