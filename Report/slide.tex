@@ -690,9 +690,78 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 
 \end{frame}
 
+\begin{frame}
+  \frametitle{What we really calculate is...}
+
+  We \textcolor{blue}{define} $\xi_i=\frac{\rho_i}{\rho_{i-1}}$ for $i=2,\dots, n$ and we have $\rho_i=\prod_{k=1}^{n} \xi_k$.
+
+  \pause
+
+  We also \textcolor{blue}{define} $\eta_i=\frac{\rho^{'}_i}{\rho_i}, \zeta_i=\frac{\rho^{''}_i}{\rho_i}$ for $i=0,1,\dots,n$ and we finally we have
+
+  \begin{align*}
+    \kappa(x) &= \text{ number of \textcolor{blue}{negative terms} in } \{ \xi_i \}_{i=1}^{n} \\
+    - \frac{f^{'}(x)}{f(x)} &= \eta_n \\
+    \frac{f^{''}(x)}{f(x)} &= \zeta_n
+  \end{align*}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{What we really calculate is...}
+
+  So we have to calculate three three-term-recurrences.
+  
+  \pause
+
+  Total $=2 + 38n$ multiplications.
+
+  \pause
+
+  For every step in Laguerre's iteration we have to do $2 + 7 + 38n$ multiplications and $1$ square root extraction. Because the convergence is cubic we \textcolor{green}{hope} in a small number of iteration.
+
+\end{frame}
+
 %%%
 %%%
 %%%
+
+\section{Error Analysis}
+
+\begin{frame}
+  \frametitle{Error Analysis}
+
+It's a common knowledge that three-term-recurrences suffer from severe overflow and underflow problems, and because of the we use $\xi_i$ instead of $\rho_i$: 
+
+\pause
+
+\textcolor{blue}{$\xi_i=\frac{\rho_i}{\rho_{i-1}}$,it's \emph{self-scaled}}.
+
+\pause
+
+\begin{te}
+  \begin{equation*}
+    \text{fl}[f(x)] = \text{fl}[\text{det}[\textcolor{blue}{T}-x\textcolor{blue}{S}]] = (1 + \gamma)\text{det}[(\textcolor{cyan}{T+ \delta T}) -x(\textcolor{cyan}{S + \delta S})]
+  \end{equation*}
+  where $|\gamma|\le n\epsilon$, with $\epsilon$ machine precision, and both $\delta T$ and $\delta S$ are symmetric tridiagonal matrices satisfying entrywise inequalities $|\delta T|_{\infty}\le 2.51\epsilon |T|_{\infty} + \sqrt{\epsilon_u}, |\delta S|_{\infty}\le 3.51\epsilon |S|_{\infty}$, where $\epsilon_u$ is the underflow threshold (in double precision is $10^{-308}$).
+\end{te}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Error Analysis}
+
+We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \text{fl}[\xi_i]  \Big]$, but also in $\text{fl}[\eta_n]$ and $\text{fl}[\zeta_n]$, because we use these three value to colculate the Laguerre's iteration.
+
+\pause
+
+\textcolor{red}{The authors doesn't report this important aspect of analysis}.
+
+\pause
+
+
+
+\end{frame}
 
 \section{Good initial point}
 
