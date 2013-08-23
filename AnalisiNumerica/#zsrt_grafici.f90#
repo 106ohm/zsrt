@@ -5,31 +5,21 @@
 !fra poco estendero` il calcolo al caso
 !"n > 1".
 
-program analisiNumerica
+program sperimentazione
 
 implicit none
 
 integer, parameter :: dp = kind(1.d0)
 
-integer :: n, i, j, k, em, en, numAut, kMax, nm, ierr, matz
-
-integer :: IER, pgbeg
+integer :: n, i, j, em, en, numAut
 
 integer :: verbose
 
-real(dp) :: a,b, maxError, machinePrecision
+real(dp) :: a,b, lettore1, lettore2, machinePrecision
 
-real :: maxTotError
+real(dp), dimension(:,:), allocatable :: T, S
 
-real(dp), dimension(:,:), allocatable :: T, S, Teispack, Seispack
-
-real(dp), dimension(:,:), allocatable :: Eigenvalues, Z
-
-real(dp), dimension(:), allocatable :: alfr, alfi, beta, v, vEispack
-
-real, dimension(:), allocatable :: xPlot, statPlot
-
-integer :: statTot, statIndex, statCattivi
+real(dp), dimension(:,:), allocatable :: Eigenvalues
 
 !!!
 !FINE DICHIARAZIONI
@@ -47,248 +37,117 @@ machinePrecision=epsilon(1.d0)
 !4) stampo le informazioni dentro i cicli. 
 verbose = 0
 
-kMax=8
-
-allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
-allocate( Eigenvalues(2**kmax,kMax) )
-allocate( v(2**kMax), vEispack(2**kMax) )
-allocate( Teispack(1:2**kMax,1:2**kMax), Seispack(1:2**kMax,1:2**kMax) )
-allocate( alfr(2**kMax), alfi(2**kMax), beta(2**kMax), z(2**kMax,2**kMax) )
-
-!ATTENZIONE xPlot e yPlot non vengono piu` reallocati
-statTot=0
-do i=1, kMax
-   statTot = statTot + 2**i
-end do
-allocate( xPlot(kmax), statPlot( statTot ) )
-
-!preparo xPlot per il disegno
-do i=1,kMax
-   xPlot(i)=i*1.0
-end do
-
-IER = PGBEG(0,'IstogrammaEsponentiErrori.ps/PS',1,1)
-if (IER.ne.1) stop
-
-statIndex=1
+!leggo, per colonne, il contenuto dei file "T.txt" ed "S.txt",
+!alloco la memoria e carico le matrici T ed S;
+!cosi` avro` a disposizione la pencil (T,S).
 
 open(unit=1, file="T_buono.txt")
 open(unit=2, file="S_buono.txt")
 
-write(1,*) 2**kMax
-write(2,*) 2**kMax
+read(1,*) n
+read(2,*) n
 
-write(*,*)"-------------------------------------------------------"
-do k=1,kMax
+allocate( T(1:n,0:1),S(1:n,0:1) )
 
-   n=2**k
-
-   !deallocate( T, S )
-   !allocate( T(1:n,0:1), S(1:n,0:1) )
-
-   !genero le matrici per l'esperimento
-   call generoMatrici(n,T(1:n,0:1),S(1:n,0:1))
-
-   !mi occupo di Eispack
-   nm=n
-   !deallocate( Teispack, Seispack )
-   !allocate( Teispack(1:n,1:n), Seispack(1:n,1:n) )
-
-   do j=1,n
-      do i=1,n
-
-         Teispack(i,j)=0.d0
-         Seispack(i,j)=0.d0
-         
-         Teispack(j,i)=0.d0
-         Seispack(j,i)=0.d0
-
-         if ( i==j ) then
-            Teispack(i,j)=T(i,0)
-            Seispack(i,j)=S(i,0)
-         end if
-         if ( abs(i-j)==1 .AND. i<j ) then
-            Teispack(i,j)=T(j,1)
-            Teispack(j,i)=Teispack(i,j)
-            Seispack(i,j)=S(j,1)
-            Seispack(j,i)=Seispack(i,j)
-         end if
-
-         if ( k == kMax ) then
-            write(1,*) Teispack(i,j)
-            write(2,*) Seispack(i,j)
-         end if
-
-      end do
-   end do
-
-   write(*,*)"n=",n
-
-   if ( verbose >= 3 ) then
-      write(*,*)"T dig="
-      write(*,*)T(1:n,0)
-      write(*,*)"Teispack diag="
-      do i=1,n
-         write(*,*) Teispack(i,i)
-      end do
-      write(*,*)"T super="
-      write(*,*)T(1:n,1)
-      write(*,*)"Teispack super="
-      do i=1,n-1
-         write(*,*) Teispack(i,i+1)
-      end do
-
-      write(*,*)"n=",n
-
-      write(*,*)"S dig="
-      write(*,*)S(1:n,0)
-      write(*,*)"Seispack diag="
-      do i=1,n
-         write(*,*) Seispack(i,i)
-      end do
-      write(*,*)"S super="
-      write(*,*)S(1:n,1)
-      write(*,*)"Seispack super="
-      do i=1,n-1
-         write(*,*) Seispack(i,i+1)
-      end do
-   end if
-
-  
-
-   !scelgo le dimensioni di Eigenvalues, alloco memoria
-   !ed inizializzo i suoi valori a zero
-   em=n
-
-   !ATTENIONE: il "logarithmus dualis", ovvero in base 2,
-   !lo calcoliamo tramite ld(n)=log(n)/log(2)
-   en=k
-   !write(*,*)"en=",en
-   
-   !deallocate( Eigenvalues, v )
-   !allocate( Eigenvalues(em,en), v(em) )
-
-   do j=1,en
-      do i=1,em
-         Eigenvalues(i,j) = 0.d0
-      end do
-   end do
-
-   if ( verbose >= 4 ) then
-      write(*,*) "en=",en
-      write(*,*) "Eigenvalues prima del calcolo:"
-      do i=1,em
-         write(*,*) Eigenvalues(i,1:k)
-      end do
-   end if
-   
-   !Chiamo la subroutine che trova gli autovalori nell'intervallo
-   ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
-
-   a=5.d-2
-   b=1.d-1 + 5.d-2 + 2.d-2
-
-   call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
-
-
-   if ( verbose >= 4 ) then
-      write(*,*) "Eigenvalues dopo il calcolo:"
-      do i=1,n
-         write(*,*) Eigenvalues(i,1:k)
-      end do
-   end if
-
-   !immagazzino PRIMA gli autovalori calcolati dentro v
+do j=1,n
    do i=1,n
-      v(i) = Eigenvalues(i,1)
-   end do
-
-   !ordino v
-   call quick_sort( v(1:em), em )
-   call quick_sort( v(1:em), em )
-   call quick_sort( v(1:em), em )
-
-   if ( verbose >= 2 ) then
-      write(*,*)"v="
-      write(*,*) v(1:em)
-   end if
-
-   
-   !deallocate( alfr, alfi, beta, z )
-   !allocate( alfr(n), alfi(n), beta(n), z(nm,n) )
-
-   matz=0
-   
-   call rgg(nm,n,Teispack(1:n,1:n),Seispack(1:n,1:n),alfr,alfi,beta,matz,Z,ierr)
-
-   !POI immagazzino le differenze con Eispack
-
-   !So che gli autovalori sono reali, dunque
-   !(dopo un controllo) ignoro alfi e salvo
-   !il valore che cerco in eigenvalues.
-   do i=1,n
-      if ( abs( alfi(i) ) >= 10.d0*machinePrecision ) then
-         write(*,*)"ERRORE: alcuni autovalori non sono reali."
-         exit
+      read(1,*) lettore1
+      read(2,*) lettore2
+      if ( i == j ) then
+         T(i,0) = lettore1
+         S(i,0) = lettore2
       end if
-      if ( abs( beta(i) ) <= 10.0*machinePrecision ) then
-         write(*,*)"ERRORE: il denominatore e` troppo piccolo."
-         exit
+      if ( abs(i-j)==1 .AND. j>i ) then
+         T(j,1) = lettore1
+         S(j,1) = lettore2
       end if
-      !Se sono qui allora non ho incontrato errori
-      vEispack(i) = alfr(i)/beta(i)
    end do
-
-   call quick_sort(vEispack(1:n), n)
-   call quick_sort(vEispack(1:n), n)
-   call quick_sort(vEispack(1:n), n)
-
-   if ( verbose >= 0 ) then
-      write(*,*)"errori="
-      write(*,*) abs(vEispack(1:n)-v(1:n))
-   end if
-   
-   do i=1,n
-      v(i) = abs( v(i)-vEispack(i) )
-      statPlot(statIndex) = exponent(v(i))*log10(2.0)
-      statIndex=statIndex+1
-   end do
-
-!!$   maxError=0.d0
-!!$   do i=1,n
-!!$      if ( maxError < v(i) ) then
-!!$         maxError = v(i)
-!!$      end if
-!!$   end do
-!!$
-!!$   !dati per il disegno
-!!$   yPlot(k) = maxError
-!!$
-!!$   write(*,*)"maxError="
-!!$   write(*,*) maxError
-
-   write(*,*)"-------------------------------------------------------"
-   
 end do
 
-statCattivi=0
-do i=1,statTot
-   if ( statPlot(i) > -10.0 ) then
-      statCattivi = statCattivi + 1
-   end if
+T(1,1)=0.d0
+S(1,1)=0.d0
+
+!ATTENZIONE!
+!Il contenuto della sopradiagonale di T (e similmente di S)
+!lo leggo in T(2:n,1), cioe` partendo dal secondo elemento di T(:,1)
+
+do i=1,n
+   write(*,*)"S(",i,",0)=",S(i,0)
 end do
 
-write(*,*)"cattivi=", statCattivi
-write(*,*)"totale=", statTot
-write(*,*)"percentuale errori sopra 10^-10 e` ", (statCattivi*1.0)/statTot * 100.0
+do i=1,n
+   write(*,*)"S(",i,",1)=",S(i,1)
+end do
 
-CALL PGHIST(statTot, statPlot, -18.00, -1.00, 19, 0)
-call PGEND
+!scelgo le dimensioni di Eigenvalues, alloco memoria
+!ed inizializzo i suoi valori a zero
+
+em=n
+!ATTENIONE: il "logarithmus dualis", ovvero in base 2,
+!lo calcoliamo tramite ld(n)=log(n)/log(2)
+en=int( log(n*1.d0)/log(2.d0) )
+write(*,*)"en=",en
+
+allocate( Eigenvalues(em,en) )
+
+do j=1,en
+   do i=1,em
+      Eigenvalues(i,j) = 0.d0
+   end do
+end do
+
+if ( verbose >= 1 ) then
+
+   write(*,*) "en=",en
+
+   write(*,*) "Eigenvalues prima del calcolo:"
+   do i=1,em
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
 
 
-write(*,*) "FINE CALCOLO!"
+!Chiamo la subroutine che trova gli autovalori nell'intervallo
+![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
-end program analisiNumerica
+
+!!!
+!i)
+!!!
+write(*,*)""
+write(*,*)""
+write(*,*)"UN SOLO INTERVALLO"
+write(*,*)""
+write(*,*)""
+
+a=1.d-1 -1.d-3
+!b=1.d0 + machinePrecision
+b=1.d-1 + 5.d-2 + 1.d-3
+
+call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
+
+!Scrivo la prima colonna della matrice Eigenvalues sul file 
+!"risultato.txt"
+
+if ( verbose >= 1 ) then
+   write(*,*) "Eigenvalues dopo il calcolo:"
+   do i=1,n
+      write(*,*) Eigenvalues(i,:)
+   end do
+end if
+
+Open(unit=3,file="risultato_buono.txt")
+
+write(3,*) em
+
+do i=1,em
+   write(3,*) Eigenvalues(i,1)
+end do
+
+
+write(*,*) "FINE CALCOLO AUTOVALORI!"
+
+end program sperimentazione
 
 
 !!!
@@ -357,20 +216,14 @@ real(dp) :: machinePrecision, x, aj, bj, fPrimo, fSecondo, lambdaJ
 
 real(dp) :: alphaSecGrado, betaSecGrado, deltaSecGrado, gammaSecGrado
 
-character(len=27+10) :: char
-character(len=1) :: null
 !!!
 !FINE DICHIARAZIONI
 !!!
 
 !!!
 !preparo la grafica
-
-!write(char,*) "BisezioniEdAncheLagIt", n, ".ps/PS"
-write(char,*) "BisezioniEdAncheLagit.ps/PS"
-
-!IER = PGBEG(0,char,1,1)
-!if (IER.ne.1) stop
+IER = PGBEG(0,'BisezioniEdAncheLagIt.ps/PS',1,1)
+if (IER.ne.1) stop
 !!!
 
 machinePrecision=epsilon(1.d0)
@@ -557,7 +410,7 @@ do while (dim <= n)
 
             countSubInterval=0
 
-100         write(null,*)""
+100         write(*,*)""
 
             countSubInterval = countSubInterval + 1
 
@@ -723,7 +576,7 @@ do while (dim <= n)
    
       end do
 
-200   write(null,*)""
+200   write(*,*)""
 
    end do
 
@@ -759,11 +612,12 @@ write(*,*)"somma dei precedenti totali=", totaleBisezioni + totaleLagIt
 
 write(*,*)"numero chiamate a calcoli=", totaleBisezioni + totaleLagIt + 2*n*(en-1)
 
-!CALL PGENV(0.,n*(en-1)*1.0,0.0,max(maxyPlot, maxzPlot)+1.0,0,1)
-!CALL PGPT(n*(en-1),xPlot,yPlot,3)
-!CALL PGPT(n*(en-1),xPlot,zPlot,2)
-!call PGLAB('','', '')
-!call PGEND
+CALL PGENV(0.,n*(en-1)*1.0,0.0,max(maxyPlot, maxzPlot)+1.0,0,1)
+CALL PGPT(n*(en-1),xPlot,yPlot,3)
+CALL PGPT(n*(en-1),xPlot,zPlot,2)
+!call PGHIST(48, xPlot, 0.00, 48.00, 30, 0)
+call PGLAB('','', '')
+call PGEND
 
 end subroutine calcoloAutovaloriDentroI
 
@@ -788,8 +642,6 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 integer :: k, m
 
 real(dp) :: machinePrecision
-
-character(len=1) :: null
 
 !FINE DICHIARAZIONI
 
@@ -818,7 +670,7 @@ do k=1,em*2
 
 end do
 
-10 write(null,*)""
+10 write(*,*)""
 
 !OSS: incrementare k non modifica il calcolo, ma fornisce indicazioni
 !sull'avanzamento dello stesso
@@ -870,8 +722,6 @@ real(dp), dimension(-2:0) :: xl
 real(dp), intent(OUT) :: lambdaJ
 
 real(dp) :: machinePrecision
-
-character(len=1) :: null
 
 !vedi p. 16
 
@@ -1026,7 +876,7 @@ do while ( .TRUE. )
 
 end do
 
-30 write(null,*) ""
+30 write(*,*) ""
 
 numLagIt = l
 
@@ -1073,8 +923,6 @@ real(dp), dimension(:), allocatable :: xi
 real(dp), dimension(:), allocatable ::  eta, zeta
 
 real(dp) :: machinePrecision
-
-character(len=1) :: null
 
 !FINE DICHIARAZIONI
 
@@ -1386,185 +1234,6 @@ recursive subroutine quick_sort(a, n)
 
 end subroutine quick_sort
 
-
-
-subroutine generoMatrici(n, T, S)
-
-implicit none
-
-!lavoro in doppia precisione
-integer, parameter :: dp=kind(0.d0)
-
-integer, intent(IN) :: n
-
-real(dp), dimension(1:n,0:1), intent(OUT) :: T,S
-
-integer,parameter :: seed = 86456
-
-!real(dp), dimension(:), allocatable :: v 
-
-integer :: i, j
-
-real(dp) :: rnd, machinePrecision, count, max, e1, e2
-
-
-!!!
-!Fine dichiarazioni
-!!!
-
-machinePrecision=epsilon(1.d0)
-
-
-!!!
-!ATTENZIONE: mi devo ricordare di generale pencil (T,S)
-!che siano "non riducibili", ovvero t.c.
-!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
-!!!
-
-
-
-!!$!!!
-!!$!Matrici tridiagonali simmetriche random, 
-!!$!ma dominanti diagonali (autovalori "distanti")
-!!$!Per i teoremi di Gershgorin T ed S sono
-!!$!definite positive
-!!$!!!
-!!$do i=1,n
-!!$   !call random_number(rnd)
-!!$   rnd=rand(seed)
-!!$   T(i,0) = 1.d0
-!!$   T(i,1) = rnd*1.d-3
-!!$end do
-!!$
-!!$T(1,1)=0.d0
-!!$
-!!$do i=1,n
-!!$   !call random_number(rnd)
-!!$   rnd=rand(seed)
-!!$   S(i,0) = 0.d0
-!!$   S(i,1) = rnd*1.d-1
-!!$end do
-!!$
-!!$do i=1,n-1
-!!$   rnd = 2.d0*S(i+1,1)
-!!$   S(i,0) = i*1.d-1 + abs(rnd)
-!!$end do
-!!$
-!!$S(n,0) = n*1.d-1
-!!$
-!!$S(1,1)=0.d0
-
-
-
-
-!!!
-!Matrici tridiagonali simmetriche random, 
-!ma dominanti diagonali (autovalori "distanti")
-!Per i teoremi di Gershgorin T ed S sono
-!definite positive
-!Impongo T=I e gli autovalori di S
-!compresi fra e1 ed e2
-!!!
-do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   T(i,0) = 1.d0
-   !T(i,1) = rnd*1.d-3
-   T(i,1) = 0.d0
-end do
-
-T(1,1)=0.d0
-
-e1=1.d-1
-e2=1.d-1 + 5.d-2
-
-do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   S(i,0) = 0.d0
-   S(i,1) = rnd*1.d-3
-end do
-
-do i=0,n-1
-   rnd = 2.d0*S(i+1,1)
-   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
-end do
-
-S(1,1) = 0.d0
-
-
-
-
-
-!!$!!!
-!!$!Matrici Problema Sturm-Liouville
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1 ) then
-!!$         T(i,j)=0.d0
-!!$         T(j,i)=T(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         S(i,j) = 4.d0/(6.d0*(n+1))
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         S(i,j) = 1.d0/(6.d0*(n+1))
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1) then
-!!$         S(i,j)=0.d0
-!!$         S(j,i)=S(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-
-
-
-
-
-!!!
-!ATTENZIONE: mi devo ricordare di generare pencil (T,S)
-!che siano "non riducibili", ovvero t.c.
-!T(i,i+1)^2 + S(i,i+1)^2 \neq 0 per i=1,...,n-1
-!!!
-do i=2,n
-   if ( abs(T(i,1)**2 + S(i,1)**2) <= 10*machinePrecision ) then
-      write(*,*) "PENCIL NON RIDUCIBILE"
-   end if
-end do
-
-
-!!$!!!
-!!$!Calcolo norma infinito (utile per il corollario 4.3)
-!!$!!!
-!!$max = 0
-!!$do i=1,n
-!!$   count = 0
-!!$   do j=1,n
-!!$      count = count + abs(S(i,j))
-!!$   end do
-!!$   if ( count > max ) then
-!!$      max = count
-!!$   end if
-!!$end do
-!!$
-!!$write(*,*)"||S||_{\infty}=",max
-
-
-end subroutine generoMatrici
 
 
 

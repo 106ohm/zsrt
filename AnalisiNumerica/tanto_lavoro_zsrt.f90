@@ -61,7 +61,7 @@ do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'Errori.ps/PS',1,1)
+IER = PGBEG(0,'Errori_SturmLiouville.ps/PS',1,1)
 if (IER.ne.1) stop
 
 write(*,*)"-------------------------------------------------------"
@@ -158,8 +158,11 @@ do k=1,kMax
    !Chiamo la subroutine che trova gli autovalori nell'intervallo
    ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
-   a=5.d-2
-   b=1.d-1 + 5.d-2 + 2.d-2
+!!$   a=5.d-2
+!!$   b=1.d-1 + 5.d-2 + 2.d-2
+
+   a=1.d-2
+   b=1.d+3
 
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 
@@ -1429,81 +1432,73 @@ machinePrecision=epsilon(1.d0)
 
 
 
+!!$!!!
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (autovalori "distanti")
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
+!!$!Impongo T=I e gli autovalori di S
+!!$!compresi fra e1 ed e2
+!!$!!!
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   T(i,0) = 1.d0
+!!$   !T(i,1) = rnd*1.d-3
+!!$   T(i,1) = 0.d0
+!!$end do
+!!$
+!!$T(1,1)=0.d0
+!!$
+!!$e1=1.d-1
+!!$e2=1.d-1 + 5.d-2
+!!$
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   S(i,0) = 0.d0
+!!$   S(i,1) = rnd*1.d-3
+!!$end do
+!!$
+!!$do i=0,n-1
+!!$   rnd = 2.d0*S(i+1,1)
+!!$   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
+!!$end do
+!!$
+!!$S(1,1) = 0.d0
+
+
+
+
+
 !!!
-!Matrici tridiagonali simmetriche random, 
-!ma dominanti diagonali (autovalori "distanti")
-!Per i teoremi di Gershgorin T ed S sono
-!definite positive
-!Impongo T=I e gli autovalori di S
-!compresi fra e1 ed e2
+!Matrici Problema Sturm-Liouville
 !!!
 do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   T(i,0) = 1.d0
-   !T(i,1) = rnd*1.d-3
-   T(i,1) = 0.d0
+   do j=1,n
+      if (i == j) then
+         T(i,0) = -6.d0/(n+1) * ( 2.d0*i**2 - 2.d0*i -1.d0 )
+      end if
+      if ( abs(i-j) == 1 .AND. j>i ) then
+         T(j,1) = -1.d0/(n+1) + (n+1)*1.d0
+      end if
+   end do
 end do
 
 T(1,1)=0.d0
 
-e1=1.d-1
-e2=1.d-1 + 5.d-2
-
 do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   S(i,0) = 0.d0
-   S(i,1) = rnd*1.d-3
+   do j=1,n
+      if (i == j) then
+         S(i,0) = 4.d0/(6.d0*(n+1))
+      end if
+      if ( abs(i-j) == 1 .AND. j>i ) then
+         S(j,1) = 1.d0/(6.d0*(n+1))
+      end if
+   end do
 end do
 
-do i=0,n-1
-   rnd = 2.d0*S(i+1,1)
-   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
-end do
-
-S(1,1) = 0.d0
-
-
-
-
-
-!!$!!!
-!!$!Matrici Problema Sturm-Liouville
-!!$!!!
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1 ) then
-!!$         T(i,j)=0.d0
-!!$         T(j,i)=T(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-!!$
-!!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         S(i,j) = 4.d0/(6.d0*(n+1))
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         S(i,j) = 1.d0/(6.d0*(n+1))
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1) then
-!!$         S(i,j)=0.d0
-!!$         S(j,i)=S(i,j)
-!!$      end if
-!!$   end do
-!!$end do
-
-
+S(1,1)=0.d0
 
 
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+gfortran tanto_lavoro_solo_zsrt_autovalori_noti.f90 -o tanto_lavoro_solo_zsrt_autovalori_noti -lpgplot -lX11
+
+ ./tanto_lavoro_solo_zsrt_autovalori_noti > resoconto_tanto_lavoro_solo_autovalori_noti.txt

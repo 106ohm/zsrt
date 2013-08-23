@@ -1,0 +1,604 @@
+ n=         256
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ modifico dinamicamente mlt
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ EstMlt sovrastima la molteplicita`.
+ massimo numero di bisezioni=   11.0000000    
+ massimo numero di iterazioni di LagIt=   21.0000000    
+ totale numero di bisezioni=       14114
+ totale numero di iterazioni in LagIt=        8764
+ somma dei precedenti totali=       22878
+ numero chiamate a calcoli=       26462
+ errori=
+   8.2266343193054814E-006
+ errori=
+   4.6864705172122711E-010
+ errori=
+   3.6423157344506185E-006
+ errori=
+   2.6042616503574312E-007
+ errori=
+   3.4728941655792767E-006
+ errori=
+   1.0237560935377754E-006
+ errori=
+   3.5842095054972045E-006
+ errori=
+   2.0317036675682187E-006
+ errori=
+   2.3336826430880864E-006
+ errori=
+   2.7836300849487516E-006
+ errori=
+   2.4349882038893211E-006
+ errori=
+   3.2206276047164195E-006
+ errori=
+   8.6548517788664903E-007
+ errori=
+   2.6469940758305777E-006
+ errori=
+   3.3934085931497382E-007
+ errori=
+   3.7537583846697364E-006
+ errori=
+   5.8067532346384176E-007
+ errori=
+   7.7876397442250278E-006
+ errori=
+   9.6544268200771111E-007
+ errori=
+   3.7224431503057875E-006
+ errori=
+   1.7781445032782894E-006
+ errori=
+   2.7643119275416739E-006
+ errori=
+   2.0659231268066458E-006
+ errori=
+   3.2803271935166745E-006
+ errori=
+   2.6504055837539564E-006
+ errori=
+   1.9913118859404833E-006
+ errori=
+   2.9422583043697825E-006
+ errori=
+   2.6106173692946877E-006
+ errori=
+   3.2233905488399106E-006
+ errori=
+   1.2841699077725810E-006
+ errori=
+   3.9578064759682174E-006
+ errori=
+   1.9090046293190888E-006
+ errori=
+   3.5676791443062239E-006
+ errori=
+   7.3563463003079033E-007
+ errori=
+   3.8024934152364187E-006
+ errori=
+   1.3549555242242661E-006
+ errori=
+   3.7581161693167608E-006
+ errori=
+   3.9237598130348328E-007
+ errori=
+   3.9993716691583137E-006
+ errori=
+   1.0821733223698171E-006
+ errori=
+   3.8502847192894984E-006
+ errori=
+   2.7546656940213854E-007
+ errori=
+   4.0267123716936082E-006
+ errori=
+   1.1608638189608556E-006
+ errori=
+   3.8670828385323208E-006
+ errori=
+   3.9587603806179317E-007
+ errori=
+   4.0943067785431664E-006
+ errori=
+   1.5898766316801982E-006
+ errori=
+   3.7920143008129958E-006
+ errori=
+   7.6001221126220653E-007
+ errori=
+   3.6719851895239408E-006
+ errori=
+   2.2924361843396079E-006
+ errori=
+   3.5687860905769808E-006
+ errori=
+   1.3630984951190639E-006
+ errori=
+   4.1837802834815419E-006
+ errori=
+   3.1180958241366907E-006
+ errori=
+   3.1082969462609134E-006
+ errori=
+   2.1699187923024388E-006
+ errori=
+   2.1822536781929136E-006
+ errori=
+   3.8598899512465312E-006
+ errori=
+   2.3070004076669592E-006
+ errori=
+   3.0858833731522983E-006
+ errori=
+   3.2938486017597413E-006
+ errori=
+   4.2853317087365728E-006
+ errori=
+   1.0865233356638360E-006
+ errori=
+   3.9267771653750394E-006
+ errori=
+   6.7641847363575369E-007
+ errori=
+   4.1635771634435104E-006
+ errori=
+   5.3419169449009374E-007
+ errori=
+   4.3927042357450041E-006
+ errori=
+   3.0565484969852230E-006
+ errori=
+   3.2868211283093585E-006
+ errori=
+   2.3464843575127237E-006
+ errori=
+   1.6440048801469320E-006
+ errori=
+   4.3257689172487845E-006
+ errori=
+   1.5454058815145277E-006
+ errori=
+   3.9001716403974651E-006
+ errori=
+   2.0577285859690875E-006
+ errori=
+   4.2331524566924239E-006
+ errori=
+   8.7431135049886866E-007
+ errori=
+   4.5285772301839611E-006
+ errori=
+   3.8378401909788806E-006
+ errori=
+   2.6586758542362920E-006
+ errori=
+   3.2902882377006115E-006
+ errori=
+   3.2708615974735844E-006
+ errori=
+   4.5270811315917259E-006
+ errori=
+   1.7226961580851796E-007
+ errori=
+   4.6103295267968525E-006
+ errori=
+   3.6555309171903971E-006
+ errori=
+   2.9447744149813104E-006
+ errori=
+   3.2116111898378152E-006
+ errori=
+   3.4419712926503365E-006
+ errori=
+   4.5943030768519355E-006
+ errori=
+   4.1444263981782470E-007
+ errori=
+   4.7227475477029657E-006
+ errori=
+   4.1374378848685334E-006
+ errori=
+   2.4404711680275915E-006
+ errori=
+   3.8015860481938057E-006
+ errori=
+   2.6203717310852026E-006
+ errori=
+   4.3216870510842664E-006
+ errori=
+   1.6417730009932185E-006
+ errori=
+   4.6213034297359901E-006
+ errori=
+   4.7910250195598580E-006
+ errori=
+   8.8491541430646414E-007
+ errori=
+   4.6918343702267995E-006
+ errori=
+   9.6822717593481045E-008
+ errori=
+   3.0439249748548391E-006
+ errori=
+   3.5887601228939969E-006
+ errori=
+   1.1202912683222488E-006
+ errori=
+   4.4363904129485210E-006
+ errori=
+   1.8607596131287041E-006
+ errori=
+   4.6438578510527018E-006
+ errori=
+   4.9728568356499636E-006
+ errori=
+   1.3877787807814457E-017
+ errori=
+   2.6016211346346907E-007
+ errori=
+   0.0000000000000000     
+ errori=
+   1.3877787807814457E-017
+ errori=
+   4.6565999764214272E-006
+ errori=
+   4.9023174404916325E-006
+ errori=
+   0.0000000000000000     
+ errori=
+   1.3877787807814457E-017
+ errori=
+   2.3828113750457014E-006
+ errori=
+   4.0677598314442509E-006
+ errori=
+   3.0165958667116577E-006
+ errori=
+   3.9641065784357110E-006
+ errori=
+   4.6863161078242177E-006
+ errori=
+   2.1282805612726774E-006
+ errori=
+   0.0000000000000000     
+ errori=
+   0.0000000000000000     
+ errori=
+   5.1921118924547205E-006
+ errori=
+   5.2123279326299343E-006
+ errori=
+   4.3025933368912028E-007
+ errori=
+   4.9865726871323179E-006
+ errori=
+   4.9142204542745871E-006
+ errori=
+   3.3893166152404453E-006
+ errori=
+   2.0035651477762206E-006
+ errori=
+   5.3433247250572746E-006
+ errori=
+   1.8852039133238074E-006
+ errori=
+   3.2975629394443873E-006
+ errori=
+   2.2058662249441197E-006
+ errori=
+   5.4126978413504556E-006
+ errori=
+   5.3828869529121137E-006
+ errori=
+   2.7895085465134972E-006
+ errori=
+   6.0096149792632225E-007
+ errori=
+   4.7285022835852342E-006
+ errori=
+   5.2623154963848950E-006
+ errori=
+   5.5051775026127014E-006
+ errori=
+   3.6508533121093478E-006
+ errori=
+   1.2370199056199738E-006
+ errori=
+   4.7658045759652046E-006
+ errori=
+   5.4631998788745584E-006
+ errori=
+   5.6356854837708026E-006
+ errori=
+   1.5301981471232962E-006
+ errori=
+   2.1020976948837866E-006
+ errori=
+   1.1910083149158091E-006
+ errori=
+   4.0637285997902062E-006
+ errori=
+   2.1758949290962004E-006
+ errori=
+   5.3384755407670514E-006
+ errori=
+   5.7164993628178173E-006
+ errori=
+   4.5733983961016023E-008
+ errori=
+   3.2626257518153512E-006
+ errori=
+   4.2056130555856441E-006
+ errori=
+   5.6804387335573914E-007
+ errori=
+   2.4658992025528015E-006
+ errori=
+   4.0673747305763897E-006
+ errori=
+   5.1930860963111947E-006
+ errori=
+   5.7852681237813286E-006
+ errori=
+   5.0107116535691443E-006
+ errori=
+   5.7943958091666303E-006
+ errori=
+   5.8783675118689871E-006
+ errori=
+   5.6121527575170305E-006
+ errori=
+   6.0225478631104057E-006
+ errori=
+   5.1156490806225641E-006
+ errori=
+   6.0036700873511428E-006
+ errori=
+   4.7093912046436426E-006
+ errori=
+   5.9702691171947819E-006
+ errori=
+   5.3808595400217651E-006
+ errori=
+   6.1530830184897134E-006
+ errori=
+   6.0619079241819307E-006
+ errori=
+   5.9030784748115295E-006
+ errori=
+   6.1332689853810241E-006
+ errori=
+   5.0108054786557332E-006
+ errori=
+   5.4143497055514356E-006
+ errori=
+   4.5003403601751035E-006
+ errori=
+   3.0044309847210293E-006
+ errori=
+   3.8764860535167589E-006
+ errori=
+   1.8734345586246537E-006
+ errori=
+   1.8413070375367102E-006
+ errori=
+   5.5450111571819782E-006
+ errori=
+   6.2094837193216179E-006
+ errori=
+   6.0687473414089421E-006
+ errori=
+   4.7336559666211198E-006
+ errori=
+   3.6936554668742794E-006
+ errori=
+   2.1898048875590437E-006
+ errori=
+   4.8518659921115148E-006
+ errori=
+   6.5610658225023766E-006
+ errori=
+   5.0925093206255490E-006
+ errori=
+   3.0267914433723675E-006
+ errori=
+   3.2425105518374409E-006
+ errori=
+   6.4284013225057723E-006
+ errori=
+   6.6225473297765181E-006
+ errori=
+   1.1973625478056693E-006
+ errori=
+   4.1697661414263898E-006
+ errori=
+   6.7475362152402685E-006
+ errori=
+   3.4314598901796778E-006
+ errori=
+   2.5146539852638483E-006
+ errori=
+   6.6618755868441681E-006
+ errori=
+   3.5830506498191195E-006
+ errori=
+   3.6659840877972805E-006
+ errori=
+   6.6617581459538222E-006
+ errori=
+   1.6723324554601682E-006
+ errori=
+   6.2823816729395965E-006
+ errori=
+   5.2569986384309875E-006
+ errori=
+   2.6251311546487965E-006
+ errori=
+   6.4362391523076212E-006
+ errori=
+   1.0844365898043939E-006
+ errori=
+   6.8901066649362797E-006
+ errori=
+   5.6898956149464830E-007
+ errori=
+   7.0357701562329122E-006
+ errori=
+   2.3016680278376001E-007
+ errori=
+   7.0953661601425022E-006
+ errori=
+   6.9474781230760563E-007
+ errori=
+   6.3017672440324191E-006
+ errori=
+   5.4936776288094791E-006
+ errori=
+   3.0053773704408204E-006
+ errori=
+   6.9168922249285281E-006
+ errori=
+   5.0783867894255152E-007
+ errori=
+   6.1203305978252409E-006
+ errori=
+   6.9857700482067742E-006
+ errori=
+   1.2467414962635814E-006
+ errori=
+   4.4494203164657797E-006
+ errori=
+   5.3706088352645232E-006
+ errori=
+   1.6962683221932728E-007
+ errori=
+   3.6066819308067100E-006
+ errori=
+   6.6262049704945980E-006
+ errori=
+   7.5641914484558814E-006
+ errori=
+   6.4182397139789238E-006
+ errori=
+   3.3735351243346923E-006
+ errori=
+   4.6835669734179852E-007
+ errori=
+   2.6006325331839886E-006
+ errori=
+   7.2619788030192645E-006
+ errori=
+   6.0796495188752964E-006
+ errori=
+   5.4388586449849452E-006
+ errori=
+   7.5130976854853593E-006
+ errori=
+   4.0551177159231511E-006
+ errori=
+   7.7684240102626756E-006
+ errori=
+   3.8891006640118242E-006
+ errori=
+   7.3405086681854748E-006
+ errori=
+   5.0378604534995208E-006
+ errori=
+   5.2088153073281962E-006
+ errori=
+   7.0363659890604335E-006
+ errori=
+   1.0664193221543439E-006
+ errori=
+   2.5736593657343931E-006
+ errori=
+   6.5760159834726828E-006
+ errori=
+   8.9138204822925005E-006
+ errori=
+   2.5267244151916390E-005
+ cattivi=         249
+ totale=         256
+ percentuale errori sopra 10^-10 e`    97.2656250    
+ FINE CALCOLO!

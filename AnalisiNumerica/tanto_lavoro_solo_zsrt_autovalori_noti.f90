@@ -15,7 +15,7 @@ integer :: n, i, j, k, em, en, numAut, kMax, nm, ierr, matz
 
 integer :: IER, pgbeg
 
-integer :: verbose
+integer :: verbose, totCalcoli
 
 real(dp) :: a,b, maxError, machinePrecision
 
@@ -27,15 +27,17 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues, Z
 
 real(dp), dimension(:), allocatable :: alfr, alfi, beta, v, vEispack
 
-real, dimension(:), allocatable :: xPlot, statPlot
+real, dimension(:), allocatable :: xPlot, yPlot, zPlot, tPlot
 
-integer :: statTot, statIndex, statCattivi
+real(dp) :: pi
 
 !!!
 !FINE DICHIARAZIONI
 !!!
 
 machinePrecision=epsilon(1.d0)
+
+pi = 4*atan(1.0d0)
 
 !verbose=
 !0) non stampo a video informazioni
@@ -45,38 +47,30 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 0
 
-kMax=8
+
+
+verbose = 4
+
+kMax=5
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
-allocate( v(2**kMax), vEispack(2**kMax) )
+allocate( v(2**kMax), vEispack(2**kMax) ) 
+!allocate(vEispack(2**kMax) )
 allocate( Teispack(1:2**kMax,1:2**kMax), Seispack(1:2**kMax,1:2**kMax) )
 allocate( alfr(2**kMax), alfi(2**kMax), beta(2**kMax), z(2**kMax,2**kMax) )
 
 !ATTENZIONE xPlot e yPlot non vengono piu` reallocati
-statTot=0
-do i=1, kMax
-   statTot = statTot + 2**i
-end do
-allocate( xPlot(kmax), statPlot( statTot ) )
+allocate( xPlot(kmax), yPlot(kMax), zPlot(kMax), tPlot(kMax) )
 
 !preparo xPlot per il disegno
 do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'IstogrammaEsponentiErrori.ps/PS',1,1)
+IER = PGBEG(0,'Toeplitz_error_9.ps/PS',1,1)
 if (IER.ne.1) stop
-
-statIndex=1
-
-open(unit=1, file="T_buono.txt")
-open(unit=2, file="S_buono.txt")
-
-write(1,*) 2**kMax
-write(2,*) 2**kMax
 
 write(*,*)"-------------------------------------------------------"
 do k=1,kMax
@@ -94,64 +88,51 @@ do k=1,kMax
    !deallocate( Teispack, Seispack )
    !allocate( Teispack(1:n,1:n), Seispack(1:n,1:n) )
 
-   do j=1,n
-      do i=1,n
-
-         Teispack(i,j)=0.d0
-         Seispack(i,j)=0.d0
-         
-         Teispack(j,i)=0.d0
-         Seispack(j,i)=0.d0
-
-         if ( i==j ) then
-            Teispack(i,j)=T(i,0)
-            Seispack(i,j)=S(i,0)
-         end if
-         if ( abs(i-j)==1 .AND. i<j ) then
-            Teispack(i,j)=T(j,1)
-            Teispack(j,i)=Teispack(i,j)
-            Seispack(i,j)=S(j,1)
-            Seispack(j,i)=Seispack(i,j)
-         end if
-
-         if ( k == kMax ) then
-            write(1,*) Teispack(i,j)
-            write(2,*) Seispack(i,j)
-         end if
-
-      end do
-   end do
+!!$   do i=1,n
+!!$      do j=1,n
+!!$         if ( i==j ) then
+!!$            Teispack(i,j)=T(i,0)
+!!$            Seispack(i,j)=S(i,0)
+!!$         end if
+!!$         if ( abs(i-j)==1 .AND. i<j ) then
+!!$            Teispack(i,j)=T(j,1)
+!!$            Teispack(j,i)=Teispack(i,j)
+!!$            Seispack(i,j)=S(j,1)
+!!$            Seispack(j,i)=Seispack(i,j)
+!!$         end if
+!!$      end do
+!!$   end do
 
    write(*,*)"n=",n
 
    if ( verbose >= 3 ) then
       write(*,*)"T dig="
       write(*,*)T(1:n,0)
-      write(*,*)"Teispack diag="
-      do i=1,n
-         write(*,*) Teispack(i,i)
-      end do
+      !write(*,*)"Teispack diag="
+      !do i=1,n
+      !   write(*,*) Teispack(i,i)
+      !end do
       write(*,*)"T super="
       write(*,*)T(1:n,1)
-      write(*,*)"Teispack super="
-      do i=1,n-1
-         write(*,*) Teispack(i,i+1)
-      end do
+      !write(*,*)"Teispack super="
+      !do i=1,n-1
+      !   write(*,*) Teispack(i,i+1)
+      !end do
 
       write(*,*)"n=",n
 
       write(*,*)"S dig="
       write(*,*)S(1:n,0)
-      write(*,*)"Seispack diag="
-      do i=1,n
-         write(*,*) Seispack(i,i)
-      end do
+      !write(*,*)"Seispack diag="
+      !do i=1,n
+      !   write(*,*) Seispack(i,i)
+      !end do
       write(*,*)"S super="
       write(*,*)S(1:n,1)
-      write(*,*)"Seispack super="
-      do i=1,n-1
-         write(*,*) Seispack(i,i+1)
-      end do
+      !write(*,*)"Seispack super="
+      !do i=1,n-1
+      !   write(*,*) Seispack(i,i+1)
+      !end do
    end if
 
   
@@ -185,10 +166,17 @@ do k=1,kMax
    !Chiamo la subroutine che trova gli autovalori nell'intervallo
    ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
-   a=5.d-2
-   b=1.d-1 + 5.d-2 + 2.d-2
+   !a=5.d-2
+   !b=1.d-1 + 5.d-2 + 2.d-2
 
-   call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
+   a=2.d0
+   b=6.d0
+
+   !a=0.d0
+   !b=1.d0 + 1.d-4
+
+   call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose, totCalcoli)
+   !call calcoloAutovaloriDentroI(a, b, n, S(1:n,0:1), T(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose, totCalcoli)
 
 
    if ( verbose >= 4 ) then
@@ -202,87 +190,109 @@ do k=1,kMax
    do i=1,n
       v(i) = Eigenvalues(i,1)
    end do
+   !do i=1,n
+   !   v(i) = 1.d0/Eigenvalues(i,1)
+   !end do
 
    !ordino v
    call quick_sort( v(1:em), em )
    call quick_sort( v(1:em), em )
    call quick_sort( v(1:em), em )
 
-   if ( verbose >= 2 ) then
+   if ( verbose >= 0) then
       write(*,*)"v="
       write(*,*) v(1:em)
    end if
 
-   
-   !deallocate( alfr, alfi, beta, z )
-   !allocate( alfr(n), alfi(n), beta(n), z(nm,n) )
 
-   matz=0
-   
-   call rgg(nm,n,Teispack(1:n,1:n),Seispack(1:n,1:n),alfr,alfi,beta,matz,Z,ierr)
-
-   !POI immagazzino le differenze con Eispack
-
-   !So che gli autovalori sono reali, dunque
-   !(dopo un controllo) ignoro alfi e salvo
-   !il valore che cerco in eigenvalues.
-   do i=1,n
-      if ( abs( alfi(i) ) >= 10.d0*machinePrecision ) then
-         write(*,*)"ERRORE: alcuni autovalori non sono reali."
-         exit
-      end if
-      if ( abs( beta(i) ) <= 10.0*machinePrecision ) then
-         write(*,*)"ERRORE: il denominatore e` troppo piccolo."
-         exit
-      end if
-      !Se sono qui allora non ho incontrato errori
-      vEispack(i) = alfr(i)/beta(i)
-   end do
-
-   call quick_sort(vEispack(1:n), n)
-   call quick_sort(vEispack(1:n), n)
-   call quick_sort(vEispack(1:n), n)
-
-   if ( verbose >= 0 ) then
-      write(*,*)"errori="
-      write(*,*) abs(vEispack(1:n)-v(1:n))
-   end if
-   
-   do i=1,n
-      v(i) = abs( v(i)-vEispack(i) )
-      statPlot(statIndex) = exponent(v(i))*log10(2.0)
-      statIndex=statIndex+1
-   end do
-
+!!$   matz=0
+!!$   
+!!$   call rgg(nm,n,Teispack(1:n,1:n),Seispack(1:n,1:n),alfr,alfi,beta,matz,Z,ierr)
+!!$
+!!$   !POI immagazzino le differenze con Eispack
+!!$
+!!$   !So che gli autovalori sono reali, dunque
+!!$   !(dopo un controllo) ignoro alfi e salvo
+!!$   !il valore che cerco in eigenvalues.
+!!$   do i=1,n
+!!$      if ( abs( alfi(i) ) >= 10.d0*machinePrecision ) then
+!!$         write(*,*)"ERRORE: alcuni autovalori non sono reali."
+!!$         exit
+!!$      end if
+!!$      if ( abs( beta(i) ) <= 10.0*machinePrecision ) then
+!!$         write(*,*)"ERRORE: il denominatore e` troppo piccolo."
+!!$         exit
+!!$      end if
+!!$      !Se sono qui allora non ho incontrato errori
+!!$      vEispack(i) = alfr(i)/beta(i)
+!!$   end do
+!!$
+!!$   call quick_sort(vEispack(1:n), n)
+!!$   call quick_sort(vEispack(1:n), n)
+!!$   call quick_sort(vEispack(1:n), n)
+!!$
+!!$   if ( verbose >= 2 ) then
+!!$      write(*,*)"vEispack="
+!!$      write(*,*) vEispack(1:n)
+!!$   end if
+!!$   
+!!$   do i=1,n
+!!$      v(i) = abs( v(i)-vEispack(i) )
+!!$      if ( verbose >= 1 ) then
+!!$         write(*,*)"diff=", v(i)
+!!$      end if
+!!$   end do
+!!$
 !!$   maxError=0.d0
 !!$   do i=1,n
 !!$      if ( maxError < v(i) ) then
 !!$         maxError = v(i)
 !!$      end if
 !!$   end do
-!!$
-!!$   !dati per il disegno
-!!$   yPlot(k) = maxError
-!!$
-!!$   write(*,*)"maxError="
-!!$   write(*,*) maxError
+
+   !dati per il disegno
+   
+   do i=1,n
+      vEispack(i)= 4.d0 + 2.d0*cos((i*pi)/(n+1)) 
+   end do
+
+   call quick_sort( vEispack(1:em), em )
+
+   yPlot(k) = 0.0
+   if ( verbose >= 0 ) then
+      write(*,*)"elenco errori:"
+   end if
+   do i=1,n
+      v(i) = abs( v(i) - vEispack(i) )
+
+      if ( verbose >= 0 ) then
+         write(*,*) v(i)
+      end if
+
+      if ( v(i) > yPlot(k) ) then
+         yPlot(k) = v(i)
+      end if
+   end do
+
+!   yPlot(k)=maxError
+
+   write(*,*)"errore massimo=", yPlot(k)
 
    write(*,*)"-------------------------------------------------------"
    
 end do
 
-statCattivi=0
-do i=1,statTot
-   if ( statPlot(i) > -10.0 ) then
-      statCattivi = statCattivi + 1
+maxTotError=0.0
+do i=1,k
+   if ( maxTotError*1.d0 < v(i) ) then
+      maxTotError=v(i)
    end if
 end do
 
-write(*,*)"cattivi=", statCattivi
-write(*,*)"totale=", statTot
-write(*,*)"percentuale errori sopra 10^-10 e` ", (statCattivi*1.0)/statTot * 100.0
 
-CALL PGHIST(statTot, statPlot, -18.00, -1.00, 19, 0)
+CALL PGENV(0.0,kMax*1.0,0.0,maxTotError,0,1)
+CALL PGPT(kMax,xPlot,yPlot,3)
+call PGLAB('k','max error', '')
 call PGEND
 
 
@@ -314,7 +324,7 @@ end program analisiNumerica
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la scrittura all'interno di Eigenvalues.
 !!!
-subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose, totCalcoli)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -332,6 +342,8 @@ integer, intent(IN) :: en, em
 real(dp), intent(IN) :: a, b
 
 integer, intent(IN) :: verbose
+
+integer, intent(OUT) :: totCalcoli
 
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
@@ -757,7 +769,11 @@ write(*,*)"totale numero di bisezioni=", totaleBisezioni
 write(*,*)"totale numero di iterazioni in LagIt=", totaleLagIt
 write(*,*)"somma dei precedenti totali=", totaleBisezioni + totaleLagIt
 
-write(*,*)"numero chiamate a calcoli=", totaleBisezioni + totaleLagIt + 2*n*(en-1)
+totCalcoli = totaleBisezioni + totaleLagIt + 2*n*(en-1)
+
+write(*,*)"numero chiamate a calcoli=", totCalcoli
+
+
 
 !CALL PGENV(0.,n*(en-1)*1.0,0.0,max(maxyPlot, maxzPlot)+1.0,0,1)
 !CALL PGPT(n*(en-1),xPlot,yPlot,3)
@@ -889,7 +905,7 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 1000 ) then
+   if ( l >= 200 ) then
       write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
       exit
    end if
@@ -1457,42 +1473,54 @@ machinePrecision=epsilon(1.d0)
 
 
 
-!!!
-!Matrici tridiagonali simmetriche random, 
-!ma dominanti diagonali (autovalori "distanti")
-!Per i teoremi di Gershgorin T ed S sono
-!definite positive
-!Impongo T=I e gli autovalori di S
-!compresi fra e1 ed e2
-!!!
+!!$!!!
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (autovalori "distanti")
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
+!!$!Impongo T=I e gli autovalori di S
+!!$!compresi fra e1 ed e2
+!!$!!!
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   T(i,0) = 1.d0
+!!$   !T(i,1) = rnd*1.d-3
+!!$   T(i,1) = 0.d0
+!!$end do
+!!$
+!!$T(1,1)=0.d0
+!!$
+!!$e1=1.d-1
+!!$e2=1.d-1 + 5.d-2
+!!$
+!!$do i=1,n
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   S(i,0) = 0.d0
+!!$   S(i,1) = rnd*1.d-3
+!!$end do
+!!$
+!!$do i=0,n-1
+!!$   rnd = 2.d0*S(i+1,1)
+!!$   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
+!!$end do
+!!$
+!!$S(1,1) = 0.d0
+
+
 do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   T(i,0) = 1.d0
-   !T(i,1) = rnd*1.d-3
-   T(i,1) = 0.d0
+   S(i,0)=1.d0
+   T(i,0)=4.d0
 end do
 
+do i=1,n-1
+   S(i+1,1)=0.d0
+   T(i+1,1)=1.d0
+end do
+
+S(1,1)=0.d0
 T(1,1)=0.d0
-
-e1=1.d-1
-e2=1.d-1 + 5.d-2
-
-do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   S(i,0) = 0.d0
-   S(i,1) = rnd*1.d-3
-end do
-
-do i=0,n-1
-   rnd = 2.d0*S(i+1,1)
-   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
-end do
-
-S(1,1) = 0.d0
-
-
 
 
 

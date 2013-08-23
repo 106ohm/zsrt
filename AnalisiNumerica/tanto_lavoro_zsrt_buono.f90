@@ -27,9 +27,7 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues, Z
 
 real(dp), dimension(:), allocatable :: alfr, alfi, beta, v, vEispack
 
-real, dimension(:), allocatable :: xPlot, statPlot
-
-integer :: statTot, statIndex, statCattivi
+real, dimension(:), allocatable :: xPlot, yPlot
 
 !!!
 !FINE DICHIARAZIONI
@@ -56,27 +54,15 @@ allocate( Teispack(1:2**kMax,1:2**kMax), Seispack(1:2**kMax,1:2**kMax) )
 allocate( alfr(2**kMax), alfi(2**kMax), beta(2**kMax), z(2**kMax,2**kMax) )
 
 !ATTENZIONE xPlot e yPlot non vengono piu` reallocati
-statTot=0
-do i=1, kMax
-   statTot = statTot + 2**i
-end do
-allocate( xPlot(kmax), statPlot( statTot ) )
+allocate( xPlot(kmax), yPlot(kMax) )
 
 !preparo xPlot per il disegno
 do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'IstogrammaEsponentiErrori.ps/PS',1,1)
+IER = PGBEG(0,'Errori_SturmLiouville.ps/PS',1,1)
 if (IER.ne.1) stop
-
-statIndex=1
-
-open(unit=1, file="T_buono.txt")
-open(unit=2, file="S_buono.txt")
-
-write(1,*) 2**kMax
-write(2,*) 2**kMax
 
 write(*,*)"-------------------------------------------------------"
 do k=1,kMax
@@ -94,15 +80,8 @@ do k=1,kMax
    !deallocate( Teispack, Seispack )
    !allocate( Teispack(1:n,1:n), Seispack(1:n,1:n) )
 
-   do j=1,n
-      do i=1,n
-
-         Teispack(i,j)=0.d0
-         Seispack(i,j)=0.d0
-         
-         Teispack(j,i)=0.d0
-         Seispack(j,i)=0.d0
-
+   do i=1,n
+      do j=1,n
          if ( i==j ) then
             Teispack(i,j)=T(i,0)
             Seispack(i,j)=S(i,0)
@@ -113,12 +92,6 @@ do k=1,kMax
             Seispack(i,j)=S(j,1)
             Seispack(j,i)=Seispack(i,j)
          end if
-
-         if ( k == kMax ) then
-            write(1,*) Teispack(i,j)
-            write(2,*) Seispack(i,j)
-         end if
-
       end do
    end do
 
@@ -188,6 +161,9 @@ do k=1,kMax
    a=5.d-2
    b=1.d-1 + 5.d-2 + 2.d-2
 
+!!$   a=1.d-2
+!!$   b=1.d+3
+
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 
 
@@ -243,46 +219,45 @@ do k=1,kMax
    call quick_sort(vEispack(1:n), n)
    call quick_sort(vEispack(1:n), n)
 
-   if ( verbose >= 0 ) then
-      write(*,*)"errori="
-      write(*,*) abs(vEispack(1:n)-v(1:n))
+   if ( verbose >= 2 ) then
+      write(*,*)"vEispack="
+      write(*,*) vEispack(1:n)
    end if
    
    do i=1,n
       v(i) = abs( v(i)-vEispack(i) )
-      statPlot(statIndex) = exponent(v(i))*log10(2.0)
-      statIndex=statIndex+1
+      if ( verbose >= 0 .AND. n==256 ) then
+         write(*,*)"diff=", v(i)
+      end if
    end do
 
-!!$   maxError=0.d0
-!!$   do i=1,n
-!!$      if ( maxError < v(i) ) then
-!!$         maxError = v(i)
-!!$      end if
-!!$   end do
-!!$
-!!$   !dati per il disegno
-!!$   yPlot(k) = maxError
-!!$
-!!$   write(*,*)"maxError="
-!!$   write(*,*) maxError
+   maxError=0.d0
+   do i=1,n
+      if ( maxError < v(i) ) then
+         maxError = v(i)
+      end if
+   end do
+
+   !dati per il disegno
+   yPlot(k) = maxError
+
+   write(*,*)"maxError="
+   write(*,*) maxError
 
    write(*,*)"-------------------------------------------------------"
    
 end do
 
-statCattivi=0
-do i=1,statTot
-   if ( statPlot(i) > -10.0 ) then
-      statCattivi = statCattivi + 1
+maxTotError=0.0
+do i=1,kMax
+   if ( yPlot(i)>maxTotError ) then
+      maxTotError=yPlot(i)
    end if
 end do
 
-write(*,*)"cattivi=", statCattivi
-write(*,*)"totale=", statTot
-write(*,*)"percentuale errori sopra 10^-10 e` ", (statCattivi*1.0)/statTot * 100.0
-
-CALL PGHIST(statTot, statPlot, -18.00, -1.00, 19, 0)
+CALL PGENV(0.0,kMax*1.0,0.0,maxTotError,0,1)
+CALL PGPT(kMax,xPlot,yPlot,3)
+call PGLAB('','', '')
 call PGEND
 
 
@@ -1500,33 +1475,25 @@ S(1,1) = 0.d0
 !!$!Matrici Problema Sturm-Liouville
 !!$!!!
 !!$do i=1,n
-!!$   do j=1,i
+!!$   do j=1,n
 !!$      if (i == j) then
-!!$         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
+!!$         T(i,0) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
 !!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1 ) then
-!!$         T(i,j)=0.d0
-!!$         T(j,i)=T(i,j)
+!!$      if ( abs(i-j) == 1 .AND. j>i ) then
+!!$         T(j,1) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
 !!$      end if
 !!$   end do
 !!$end do
 !!$
+!!$T(1,1)=0.d0
+!!$
 !!$do i=1,n
-!!$   do j=1,i
+!!$   do j=1,n
 !!$      if (i == j) then
-!!$         S(i,j) = 4.d0/(6.d0*(n+1))
+!!$         S(i,0) = 4.d0/(6.d0*(n+1))
 !!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         S(i,j) = 1.d0/(6.d0*(n+1))
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1) then
-!!$         S(i,j)=0.d0
-!!$         S(j,i)=S(i,j)
+!!$      if ( abs(i-j) == 1 .AND. j>i ) then
+!!$         S(j,1) = 1.d0/(6.d0*(n+1))
 !!$      end if
 !!$   end do
 !!$end do

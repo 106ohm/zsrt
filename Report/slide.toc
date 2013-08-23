@@ -4,5 +4,5 @@
 \beamer@subsectionintoc {2}{1}{Rapid tour}{7}{0}{2}
 \beamer@sectionintoc {3}{Laguerre's method}{11}{0}{3}
 \beamer@sectionintoc {4}{Good evaluation of $L_{\pm }(x)$}{35}{0}{4}
-\beamer@sectionintoc {5}{Error Analysis}{52}{0}{5}
-\beamer@sectionintoc {6}{Good initial point}{58}{0}{6}
+\beamer@sectionintoc {5}{Error Analysis}{53}{0}{5}
+\beamer@sectionintoc {6}{Good initial point}{59}{0}{6}

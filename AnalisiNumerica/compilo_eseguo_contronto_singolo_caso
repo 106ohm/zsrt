@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+gfortran confronto_singolo_caso.f90 qzhes.o qzit.o qzval.o qzvec.o rgg.o -o confronto_singolo_caso -lpgplot -lX11
+
+./confronto_singolo_caso > resoconto_confronto_singolo_caso.txt

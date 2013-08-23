@@ -3,4 +3,4 @@
 
 gfortran tanto_lavoro_zsrt.f90 qzhes.o qzit.o qzval.o qzvec.o rgg.o -o tanto_lavoro_zsrt -lpgplot -lX11
 
- ./tanto_lavoro_zsrt > resoconto_tanto_lavoro.txt
+ ./tanto_lavoro_zsrt > resoconto_tanto_lavoro_SturmLiouville.txt
