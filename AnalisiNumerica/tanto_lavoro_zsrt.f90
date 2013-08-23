@@ -161,8 +161,8 @@ do k=1,kMax
 !!$   a=5.d-2
 !!$   b=1.d-1 + 5.d-2 + 2.d-2
 
-   a=1.d-2
-   b=1.d+3
+   a=0.d0
+   b=2.d0
 
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 

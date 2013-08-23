@@ -17,6 +17,7 @@ integer :: IER, pgbeg
 
 integer :: verbose
 
+
 real(dp) :: a,b, maxError, machinePrecision
 
 real :: maxTotError
@@ -150,9 +151,9 @@ end if
 ![a,b] e li salva nella prima colonna della matrice Eigenvalues.
 
 a=0.d0
-b=1.d-1 + 5.d-2 + 2.d-2
+b=2.d0
 
-call calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
+call calcoloAutovaloriDentroI(a, b, n, T, S, Teispack, Seispack, en, em, Eigenvalues, verbose)
 
 
 if ( verbose >= 4 ) then
@@ -270,7 +271,7 @@ end program analisiNumerica
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la scrittura all'interno di Eigenvalues.
 !!!
-subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, Teispack, Seispack, en, em, Eigenvalues, verbose)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -290,6 +291,8 @@ real(dp), intent(IN) :: a, b
 integer, intent(IN) :: verbose
 
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S
+
+real(dp), dimension(1:n,1:n), intent(IN) :: Teispack, Seispack
 
 real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 
@@ -613,14 +616,17 @@ do while (dim <= n)
             vettoreBisezioni(countVettoreBisezioni) = countSubInterval
             totaleBisezioni = totaleBisezioni + countSubInterval
             !write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
+            
+
+            
             if ( verbose >= 4 ) then
                write(*,*)"countSubInterval=", countSubInterval
             end if
 
-
+            
             if ( verbose >= 3 ) then
                write(*,*)"Ho scelto l'intervallo [aj, bj]:"
-               write(*,*)"x=",x,"j=",j,"kappa(x)=",kappa
+               write(*,*)"x=",x,"segno=",segno,"j=",j,"kappa(x)=",kappa
                write(*,*)"aj=",aj,"bj=",bj
                call calcoli(aj, T, S, n, dim, Tinizio, Tfine, &
                  Sinizio, Sfine, fPrimo, fSecondo, kappa)
@@ -648,7 +654,7 @@ do while (dim <= n)
             end if
 
 
-            call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+            call LagIt(x, mlt, aj, bj, n, dim, T, S, Teispack, Seispack, Tinizio, Tfine, &
                  Sinizio, Sfine, j, &
                  fPrimo, fSecondo, kappa, lambdaJ, 3, numLagIt)
 
@@ -785,7 +791,7 @@ end subroutine EstMlt
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
-subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Teispack, Seispack, Tinizio, Tfine, &
 Sinizio, Sfine, j, &
 fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
 
@@ -800,6 +806,7 @@ real(dp), intent(INOUT) :: x
 integer, intent(IN) :: n
 
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S 
+real(dp), dimension(1:n,1:n), intent(IN) :: Teispack, Seispack
 
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -829,6 +836,7 @@ real(dp), intent(OUT) :: lambdaJ
 
 real(dp) :: machinePrecision
 
+
 !real(dq) :: diff, zero, uno
 
 character(len=1) :: segno, exSegno
@@ -852,11 +860,7 @@ lambdaJ = 0.d0
 
 xl(0) = x
 
-if ( -fPrimo >= 0.d0 ) then
-   segno="+"
-else
-   segno="-"
-end if
+segno="c"
 
 exSegno=segno
 
@@ -905,6 +909,11 @@ do while ( .TRUE. )
    !questa e` la parte comune a + e -
    xl(0) = (n-1)*fPrimo**2 - n*fSecondo
    xl(0) = abs( ( (n-mlt) * xl(0) )/ (mlt*1.d0) )
+   
+   !!!
+   call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
+
+   kappa=numAut
 
    if ( kappa < j ) then
 
@@ -982,14 +991,18 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   !if ( deltaL * exDeltaL < 0.d0 ) then
-   if ( exSegno /= segno ) then
+   if ( deltaL*exDeltaL >= 0.d0 ) then
+      segno="c"
+   else
+      segno="d"
+   end if
+
+   if ( segno == "d" ) then
       if (verbose >= 2) then
          !deltaL ed exDeltaL sono discordi
          write(*,*)"condizione sul segno: si e` rotta la monotonia"
       end if
-      GOTO 30
-      !xl(0) = ( xl(-2) + xl(-1) )/2.d0
+      !GOTO 30
    end if
 
    !calcolo (12), (13) e (14)
@@ -1004,14 +1017,13 @@ do while ( .TRUE. )
    !end if
    !kappa=numAut
 
+   !!!
+   call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
+   kappa=numAut
+
    exSegno=segno
 
-   if ( -fPrimo >= 0.d0 ) then
-      segno="+"
-   else
-      segno="-"
-   end if
-
+   
    !aggiorno [aj, bj] secondo il nuovo kappa
    if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
 
@@ -1108,8 +1120,7 @@ character(len=1) :: null
 
 !FINE DICHIARAZIONI
 
-!verboseCalcoli = 6
-verboseCalcoli=0
+verboseCalcoli=1
 
 !zero= z'00000000000000000000000000000000'
 
@@ -1205,7 +1216,7 @@ end if
 fPrimo = - eta(dim)
 fSecondo = zeta(dim)
 
-if ( verboseCalcoli >= 4 ) then
+if ( verboseCalcoli >= 1 ) then
    write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 end if
 
@@ -1598,3 +1609,162 @@ end subroutine generoMatrici
 
 
 
+subroutine numAutovaloriPrimaDiX(x,n,T,S,numAut)
+
+implicit none
+
+integer, parameter :: dp = kind(1.d0)
+
+integer, intent(IN) :: n
+
+real(dp), intent(IN) :: x
+
+real(dp), dimension(n,n), intent(IN) :: T
+
+real(dp), dimension(n,n), intent(IN) :: S
+
+integer, intent(OUT) :: numAut
+
+!!!
+
+
+character :: UPLO
+
+integer :: i, j, k, LWORK
+
+integer, dimension(:), allocatable :: IPIV
+
+integer :: INFO
+
+real(dp), dimension(:), allocatable :: WORK
+
+real(dp), dimension(:,:), allocatable :: A, xI
+
+real(dp) :: machinePrecision
+
+!!!
+!FINE DICHIARAZIONI
+!!!
+
+machinePrecision=epsilon(1.d0)
+
+!!$allocate( T(n,n), S(n,n) )
+!!$
+!!$
+!!$do i=1,n
+!!$   do j=1,n
+!!$      if ( i==j ) then
+!!$         T(i,j)=U(i,0)
+!!$         S(i,j)=V(i,0)
+!!$      else if ( abs(i-j)==1 ) then
+!!$         T(i,j)=U(i,1)
+!!$         S(i,j)=V(i,1)
+!!$      else
+!!$         T(i,j)=0.d0
+!!$         S(i,j)=0.d0
+!!$      end if
+!!$   end do
+!!$end do
+
+allocate( A(n,n), xI(n,n) )
+allocate( IPIV(n) )
+
+!compongo xI
+do i=1,n
+   do j=1,n
+      if ( i==j ) then
+         xI(i,j)=x
+      else
+         xI(i,j)=0.d0
+      end if
+   end do
+end do
+
+UPLO = "L"
+
+
+!!$!fattorizzazione di Cholesky S=LL^T
+!!$call DPOTRF(UPLO, n, S, n, INFO)
+!!$
+!!$!cancello la parte sopradiagonale
+!!$!do i=1,n
+!!$!   do j=1,n
+!!$!      if ( i<j ) then
+!!$!         S(i,j) = 0.d0
+!!$!      end if
+!!$!   end do
+!!$!end do
+!!$
+!!$!inverto L. Il risultato e` salvato in S
+!!$call DTRTRI(UPLO, "N", n, S, n, INFO)
+!!$
+!!$!Compongo la matrice A
+!!$A = matmul(matmul(S,T),transpose(S)) - xI
+
+A = T - matmul(xI,S)
+
+do i=1,n
+   do j=1,n
+      if ( abs(A(i,j))<=machinePrecision ) then
+         A(i,j)=0.d0
+      end if
+   end do
+end do
+
+!stampo la matrice A
+!write(*,*)"matrice A"
+!do i=1,n
+!   write(*,*)A(i,:)
+!end do
+
+!cerco il miglior valor per LWORK:
+allocate( WORK(n) )
+call DSYTRF(UPLO, n, A, n, IPIV, WORK, -1, INFO)
+LWORK=WORK(1)
+deallocate( WORK )
+!write(*,*)"LWORK=",LWORK
+allocate( WORK(LWORK) )
+
+!calcolo la fattorizzazione A=LDL^T
+call DSYTRF(UPLO, n, A, n, IPIV, WORK, LWORK, INFO)
+
+!write(*,*)"INFO=", INFO
+!write(*,*)"IPIV=",IPIV(:)
+
+!write(*,*)"matrice A dopo DSYTRF"
+!do i=1,n
+!   write(*,*)A(i,:)
+!end do
+
+numAut=0
+k=1
+do while( k <= n )
+   !write(*,*)"k=",k
+   if ( IPIV(k) > 0 ) then
+      !A(k,k) e` l'inizio di un blocco 1x1
+      !write(*,*)"A(k,k)=",A(k,k)
+      if ( A(k,k) < 0.d0 ) then
+         numAut = numAut + 1
+         !write(*,*)"numAut=",numAut
+      end if
+      k = k+1
+   else
+      !A(k,k) e` l'inizio del blocco 2x2 simmetrico:
+      !|A(k,k)   A(k+1,k)  |
+      !|A(k+1,k) A(k+1,k+1)|
+      !calcolo quindi la fattorizzazione A(k:k+1,k:k+1)=LDL^T 
+      call DSYTRF(UPLO, 2, A(k:k+1,k:k+1), 2, IPIV, WORK, -1, INFO)
+      LWORK=WORK(1)
+      call DSYTRF(UPLO, 2, A(k:k+1,k:k+1), 2, IPIV, WORK, LWORK, INFO)
+      !controllo dunque il segno di A(k,k) e di A(k+1,k+1),
+      !che compongono l'attuale D
+      do j=0,1
+         if ( A(k+j,k+j) < 0.d0 ) then
+            numAut = numAut + 1
+         end if
+      end do
+      k = k+2
+   end if
+end do
+
+end subroutine numAutovaloriPrimaDiX
