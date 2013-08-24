@@ -45,7 +45,7 @@ machinePrecision=epsilon(1.d0)
 !4) stampo le informazioni dentro i cicli. 
 verbose = 0
 
-kMax=13
+kMax=10
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
@@ -62,7 +62,7 @@ do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'NumeroMoltiplicazioni_13_linea.ps/PS',1,1)
+IER = PGBEG(0,'NumMolt_10_cambioLag.ps/PS',1,1)
 if (IER.ne.1) stop
 
 write(*,*)"-------------------------------------------------------"
@@ -603,47 +603,65 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
-            if (kappa+1 < j) then
-               !write(*,*)"UNO"
-               x = (aj+bj)/2.d0
-               GOTO 100
+            
+
+
+            if ( kappa >= j .AND. -fPrimo < 0.d0 ) then
+               GOTO 150
             end if
 
-            if (j < kappa) then
-               !write(*,*)"DUE"
-               x = (aj+bj)/2.d0
-               GOTO 100
+            if ( kappa < j .AND. -fPrimo >= 0.d0 ) then
+               GOTO 150
             end if
 
-            if (kappa >= j .AND. segno >= 0) then
-               !write(*,*)"TRE"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
+            x = (aj+bj)/2.d0
+            GOTO 100
 
-            if (kappa < j .AND. segno < 0) then
-               !write(*,*)"QUATTRO"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
 
-            if (kappa == 0 .AND. segno <0) then
-               !write(*,*)"CINQUE"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
 
-            if (kappa == dim .AND. segno >=0) then
-               !write(*,*)"SEI"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
+
+!!$            if (kappa+1 < j) then
+!!$               !write(*,*)"UNO"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
+!!$
+!!$            if (j < kappa) then
+!!$               !write(*,*)"DUE"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
+!!$
+!!$            if (kappa >= j .AND. segno >= 0) then
+!!$               !write(*,*)"TRE"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
+!!$
+!!$            if (kappa < j .AND. segno < 0) then
+!!$               !write(*,*)"QUATTRO"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
+!!$
+!!$            if (kappa == 0 .AND. segno <0) then
+!!$               !write(*,*)"CINQUE"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
+!!$
+!!$            if (kappa == dim .AND. segno >=0) then
+!!$               !write(*,*)"SEI"
+!!$               x = (aj+bj)/2.d0
+!!$               GOTO 100
+!!$            end if
 
 
             !!!
             !Se sono qui allora ho finito di scegliere l'intervallo [aj, bj]
             !!!
-            
+
+150         write(null,*)""
             
             vettoreBisezioni(countVettoreBisezioni) = countSubInterval
             totaleBisezioni = totaleBisezioni + countSubInterval
@@ -917,7 +935,7 @@ l = 2
 do while ( .TRUE. )
 
    if ( l >= 200 ) then
-      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di 200)."
       exit
    end if
 
@@ -989,11 +1007,9 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo + sqrt(xl(0))
 
-      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
-
-      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
-      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
       if ( verbose >=3 ) then
          write(*,*)"mi muovo verso sinistra"
@@ -1002,10 +1018,9 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo - sqrt(xl(0))
       
-      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
-      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
-      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    end if
 
    if ( isnan(xl(0)) ) then

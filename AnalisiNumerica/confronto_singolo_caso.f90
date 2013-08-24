@@ -570,6 +570,10 @@ do while (dim <= n)
             !coincida con quella scritta sotto e` da
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
+
+
+            
+
             if (kappa+1 < j) then
                !write(*,*)"UNO"
                x = (aj+bj)/2.d0
@@ -611,6 +615,7 @@ do while (dim <= n)
             !Se sono qui allora ho finito di scegliere l'intervallo [aj, bj]
             !!!
             
+150         write(null,*)""
             
             vettoreBisezioni(countVettoreBisezioni) = countSubInterval
             totaleBisezioni = totaleBisezioni + countSubInterval
@@ -642,8 +647,7 @@ do while (dim <= n)
             !Chiamo EstMlt e LagIt
             !!!
 
-            !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
-            call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+            !call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
             !!!
             !ESPERIMENTO: fisso mlt=1
