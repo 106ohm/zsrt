@@ -50,7 +50,6 @@ verbose = 0
 
 
 IER = PGBEG(0,'IstogrammaEsponentiErrori_256.ps/PS',1,1)
-!IER = PGBEG(0,'NumeroMoltiplicazioni_256.ps/PS',1,1)
 if (IER.ne.1) stop
 
 
@@ -239,8 +238,8 @@ write(*,*)"cattivi=", statCattivi
 write(*,*)"totale=", n
 write(*,*)"percentuale errori sopra 10^-10 e` ", (statCattivi*1.0)/n * 100.0
 
-CALL PGHIST(n, statPlot, -18.00, -1.00, 19, 0)
-call PGEND
+!CALL PGHIST(n, statPlot, -18.00, -1.00, 19, 0)
+!call PGEND
 
 
 write(*,*) "FINE CALCOLO!"
@@ -326,11 +325,11 @@ character(len=1) :: null
 !preparo la grafica
 
 !write(char,*) "BisezioniEdAncheLagIt", n, ".ps/PS"
-write(char,*) "BisezioniEdAncheLagit.ps/PS"
+write(char,*) "NumMoltiplicazioni_256.ps/PS"
 
 !IER = PGBEG(0,char,1,1)
 !if (IER.ne.1) stop
-!!!
+
 
 machinePrecision=epsilon(1.d0)
 
