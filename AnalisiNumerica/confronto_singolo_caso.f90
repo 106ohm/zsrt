@@ -646,6 +646,11 @@ do while (dim <= n)
             !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
             call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
 
+            !!!
+            !ESPERIMENTO: fisso mlt=1
+            !!!
+            mlt=1
+
             if (verbose >= 3) then
                write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                write(*,*)"Entro in LagIt"
@@ -863,9 +868,11 @@ xl(0) = x
 segno="c"
 
 exSegno=segno
+exKappa=kappa
 
 if ( verbose >= 2 ) then
-   write(*,*)"xl(0)=", xl(0), "segno=",segno  
+   write(*,*)"xl(0)=", xl(0)
+   write(*,*)"kappa=",kappa, "j=",j
 end if
 
 l = 2
@@ -885,12 +892,20 @@ do while ( .TRUE. )
 !!$   end if
 
 
+   if ( verbose >= 2 ) then
+      if (kappa >= j .AND. -fPrimo >= 0) then
+         write(*,*)"Non sono nell'intorno buono"
+      end if
+      
+      if (kappa < j .AND. -fPrimo < 0) then
+         write(*,*)"Non sono nell'intorno buono"
+      end if
+   end if
+
    if ( verbose >= 4 ) then
       write(*,*)"bj-aj=", bj-aj
       write(*,*)"[aj, bj]=[",aj,", ",bj,"]"
    end if
-
-   !exKappa = kappa
 
    !aggiorno le variabili
    xl(-2) = xl(-1)
@@ -905,15 +920,30 @@ do while ( .TRUE. )
    end if
 
 
+   if ( kappa-j /= exKappa-j  ) then
+      segno="d"
+   else
+      segno="c"
+   end if
+
+   if ( segno == "d" ) then
+      if (verbose >= 2) then
+         !deltaL ed exDeltaL sono discordi
+         write(*,*)"condizione sul segno: si e` rotta la monotonia"
+      end if
+      !GOTO 30
+   end if
+
+
    !calcolo x_l(0) a tappe:
    !questa e` la parte comune a + e -
    xl(0) = (n-1)*fPrimo**2 - n*fSecondo
    xl(0) = abs( ( (n-mlt) * xl(0) )/ (mlt*1.d0) )
    
    !!!
-   call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
+   !call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
 
-   kappa=numAut
+   !kappa=numAut
 
    if ( kappa < j ) then
 
@@ -991,19 +1021,6 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   if ( deltaL*exDeltaL >= 0.d0 ) then
-      segno="c"
-   else
-      segno="d"
-   end if
-
-   if ( segno == "d" ) then
-      if (verbose >= 2) then
-         !deltaL ed exDeltaL sono discordi
-         write(*,*)"condizione sul segno: si e` rotta la monotonia"
-      end if
-      !GOTO 30
-   end if
 
    !calcolo (12), (13) e (14)
 20 exKappa = kappa
@@ -1018,8 +1035,12 @@ do while ( .TRUE. )
    !kappa=numAut
 
    !!!
-   call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
-   kappa=numAut
+   !call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
+   !kappa=numAut
+
+   if ( verbose >= 2 ) then
+      write(*,*)"kappa=", kappa
+   end if
 
    exSegno=segno
 
