@@ -1,92 +1,87 @@
  -------------------------------------------------------
  n=           2
- massimo numero di bisezioni=   0.00000000    
- massimo numero di iterazioni di LagIt=   0.00000000    
- totale numero di bisezioni=           0
- totale numero di iterazioni in LagIt=           0
- somma dei precedenti totali=           0
- numero chiamate a calcoli=           0
- totMoltiplicazioni (scala logaritmica) =        -Infinity
+ numero totale moltiplicazioni=                   30
+ totMoltiplicazioni (scala logaritmica) =   3.40119743    
  -------------------------------------------------------
  n=           4
- massimo numero di bisezioni=   3.00000000    
- massimo numero di iterazioni di LagIt=   5.00000000    
- totale numero di bisezioni=           9
- totale numero di iterazioni in LagIt=          14
- somma dei precedenti totali=          23
- numero chiamate a calcoli=          31
- totMoltiplicazioni (scala logaritmica) =   8.47093964    
+ numero totale moltiplicazioni=                 4680
+ totMoltiplicazioni (scala logaritmica) =   8.45105362    
  -------------------------------------------------------
  n=           8
- massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   3.00000000    
- totale numero di bisezioni=          24
- totale numero di iterazioni in LagIt=          46
- somma dei precedenti totali=          70
- numero chiamate a calcoli=         102
- totMoltiplicazioni (scala logaritmica) =   10.3485575    
+ numero totale moltiplicazioni=                32778
+ totMoltiplicazioni (scala logaritmica) =   10.3975124    
  -------------------------------------------------------
  n=          16
- massimo numero di bisezioni=   3.00000000    
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=          66
- totale numero di iterazioni in LagIt=         141
- somma dei precedenti totali=         207
- numero chiamate a calcoli=         303
- totMoltiplicazioni (scala logaritmica) =   12.1271915    
+ numero totale moltiplicazioni=               167784
+ totMoltiplicazioni (scala logaritmica) =   12.0304327    
  -------------------------------------------------------
  n=          32
- massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=         160
- totale numero di iterazioni in LagIt=         359
- somma dei precedenti totali=         519
- numero chiamate a calcoli=         775
- totMoltiplicazioni (scala logaritmica) =   13.7578287    
+ numero totale moltiplicazioni=               799466
+ totMoltiplicazioni (scala logaritmica) =   13.5916996    
  -------------------------------------------------------
  n=          64
- massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   3.00000000    
- totale numero di bisezioni=         384
- totale numero di iterazioni in LagIt=         905
- somma dei precedenti totali=        1289
- numero chiamate a calcoli=        1929
- totMoltiplicazioni (scala logaritmica) =   15.3620481    
+ numero totale moltiplicazioni=              3575430
+ totMoltiplicazioni (scala logaritmica) =   15.0895958    
  -------------------------------------------------------
  n=         128
- massimo numero di bisezioni=   3.00000000    
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=         897
- totale numero di iterazioni in LagIt=        2198
- somma dei precedenti totali=        3095
- numero chiamate a calcoli=        4631
- totMoltiplicazioni (scala logaritmica) =   16.9305553    
+ numero totale moltiplicazioni=             15434796
+ totMoltiplicazioni (scala logaritmica) =   16.5521355    
  -------------------------------------------------------
  n=         256
- massimo numero di bisezioni=   5.00000000    
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=        2051
- totale numero di iterazioni in LagIt=        5199
- somma dei precedenti totali=        7250
- numero chiamate a calcoli=       10834
- totMoltiplicazioni (scala logaritmica) =   18.4734135    
+ numero totale moltiplicazioni=             67096946
+ totMoltiplicazioni (scala logaritmica) =   18.0216484    
  -------------------------------------------------------
  n=         512
- massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   3.00000000    
- totale numero di bisezioni=        4608
- totale numero di iterazioni in LagIt=       11976
- somma dei precedenti totali=       16584
- numero chiamate a calcoli=       24776
- totMoltiplicazioni (scala logaritmica) =   19.9936447    
+ numero totale moltiplicazioni=            288886436
+ totMoltiplicazioni (scala logaritmica) =   19.4815445    
  -------------------------------------------------------
  n=        1024
- massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   3.00000000    
- totale numero di bisezioni=       10240
- totale numero di iterazioni in LagIt=       27134
- somma dei precedenti totali=       37374
- numero chiamate a calcoli=       55806
- totMoltiplicazioni (scala logaritmica) =   21.4987469    
+ numero totale moltiplicazioni=           1230048042
+ totMoltiplicazioni (scala logaritmica) =   20.9303188    
+ -------------------------------------------------------
+ n=        2048
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ numero totale moltiplicazioni=           5214969584
+ totMoltiplicazioni (scala logaritmica) =   22.3747997    
+ -------------------------------------------------------
+ n=        4096
+ LagIt impiega troppo iterazioni (piu` di 50).
+ numero totale moltiplicazioni=          22088190736
+ totMoltiplicazioni (scala logaritmica) =   23.8183098    
+ -------------------------------------------------------
+ n=        8192
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ LagIt impiega troppo iterazioni (piu` di 50).
+ numero totale moltiplicazioni=          93389041700
+ totMoltiplicazioni (scala logaritmica) =   25.2600403    
  -------------------------------------------------------
  FINE CALCOLO!

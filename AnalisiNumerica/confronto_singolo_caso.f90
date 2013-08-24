@@ -101,7 +101,7 @@ end do
 
 write(*,*)"n=",n
 
-if ( verbose >= 3 ) then
+if ( verbose >= 0 ) then
    write(*,*)"T dig="
    write(*,*)T(1:n,0)
    write(*,*)"Teispack diag="
@@ -238,8 +238,8 @@ write(*,*)"cattivi=", statCattivi
 write(*,*)"totale=", n
 write(*,*)"percentuale errori sopra 10^-10 e` ", (statCattivi*1.0)/n * 100.0
 
-!CALL PGHIST(n, statPlot, -18.00, -1.00, 19, 0)
-!call PGEND
+CALL PGHIST(n, statPlot, -18.00, -1.00, 19, 0)
+call PGEND
 
 
 write(*,*) "FINE CALCOLO!"
@@ -571,7 +571,16 @@ do while (dim <= n)
             !ricercarsi a p. 17 dell'articolo)
             !allora procedo con la bisezione
 
-
+!!$            if ( kappa >= j .AND. -fPrimo < 0.d0 ) then
+!!$               GOTO 150
+!!$            end if
+!!$
+!!$            if ( kappa <j .AND. -fPrimo >= 0.d0 ) then
+!!$               GOTO 150
+!!$            end if
+!!$
+!!$            x =(aj-bj)/2.d0
+!!$            GOTO 100
             
 
             if (kappa+1 < j) then
@@ -598,17 +607,17 @@ do while (dim <= n)
                GOTO 100
             end if
 
-            if (kappa == 0 .AND. segno <0) then
-               !write(*,*)"CINQUE"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
+            !if (kappa == 0 .AND. segno <0) then
+            !   !write(*,*)"CINQUE"
+            !   x = (aj+bj)/2.d0
+            !   GOTO 100
+            !end if
 
-            if (kappa == dim .AND. segno >=0) then
-               !write(*,*)"SEI"
-               x = (aj+bj)/2.d0
-               GOTO 100
-            end if
+            !if (kappa == dim .AND. segno >=0) then
+            !   !write(*,*)"SEI"
+            !   x = (aj+bj)/2.d0
+            !   GOTO 100
+            !end if
 
 
             !!!
@@ -885,7 +894,7 @@ l = 2
 do while ( .TRUE. )
 
    if ( l >= 200 ) then
-      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di 200)."
       exit
    end if
 
@@ -905,7 +914,7 @@ do while ( .TRUE. )
       end if
    end if
 
-   if ( verbose >= 4 ) then
+   if ( verbose >= 0 ) then
       write(*,*)"bj-aj=", bj-aj
       write(*,*)"[aj, bj]=[",aj,", ",bj,"]"
    end if
@@ -957,7 +966,8 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo + sqrt(xl(0))
 
-      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
 
       !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
@@ -970,7 +980,10 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo - sqrt(xl(0))
       
-      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
+
+
 
       !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
       !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )

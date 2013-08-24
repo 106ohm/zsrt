@@ -15,7 +15,8 @@ integer :: n, i, j, k, em, en, numAut, kMax, nm, ierr, matz
 
 integer :: IER, pgbeg
 
-integer :: verbose, totCalcoli
+integer :: verbose 
+integer(8) :: totMult
 
 real(dp) :: a,b, maxError, machinePrecision
 
@@ -27,7 +28,7 @@ real(dp), dimension(:,:), allocatable :: Eigenvalues, Z
 
 real(dp), dimension(:), allocatable :: alfr, alfi, beta, v, vEispack
 
-real, dimension(:), allocatable :: xPlot, yPlot, zPlot, tPlot
+real, dimension(:), allocatable :: xPlot, yPlot, zPlot, tPlot, wPlot
 
 !!!
 !FINE DICHIARAZIONI
@@ -45,7 +46,7 @@ machinePrecision=epsilon(1.d0)
 !4) stampo le informazioni dentro i cicli. 
 verbose = 0
 
-kMax=10
+kMax=13
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
@@ -55,14 +56,14 @@ allocate( v(2**kMax) )
 !allocate( alfr(2**kMax), alfi(2**kMax), beta(2**kMax), z(2**kMax,2**kMax) )
 
 !ATTENZIONE xPlot e yPlot non vengono piu` reallocati
-allocate( xPlot(kmax), yPlot(kMax), zPlot(kMax), tPlot(kMax) )
+allocate( xPlot(kmax), yPlot(kMax), zPlot(kMax), tPlot(kMax), wPlot(kMax) )
 
 !preparo xPlot per il disegno
 do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'NumMolt_10_cambioLag.ps/PS',1,1)
+IER = PGBEG(0,'NumMolt_13_maxLagIt_50.ps/PS',1,1)
 if (IER.ne.1) stop
 
 write(*,*)"-------------------------------------------------------"
@@ -162,7 +163,7 @@ do k=1,kMax
    a=5.d-2
    b=1.d-1 + 5.d-2 + 2.d-2
 
-   call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose, totCalcoli)
+   call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose, totMult)
 
 
    if ( verbose >= 4 ) then
@@ -237,7 +238,8 @@ do k=1,kMax
 !!$   end do
 
    !dati per il disegno
-   yPlot(k) = log( (2+38*n)*1.d0 )+ log( totCalcoli*1.0 )
+   !yPlot(k) = log( (2+38*n)*1.d0 )+ log( totCalcoli*1.0 )
+   yPlot(k) = log( totMult*1.0 )
 
    write(*,*)"totMoltiplicazioni (scala logaritmica) =", yPlot(k)
 
@@ -251,6 +253,7 @@ do i=1,kMax
       maxTotError=yPlot(i)
    end if
 
+   wPlot(i) = (i*2)*log(2.d0)
    zPlot(i) = (i*3)*log(2.d0)
    tPlot(i) = (i*4)*log(2.d0)
 
@@ -262,16 +265,22 @@ do i=1,kMax
       maxTotError = tPlot(i)
    end if
 
+   if ( maxTotError < wPlot(i) ) then
+      maxTotError = wPlot(i)
+   end if
+
 end do
 
 CALL PGENV(0.0,kMax*1.0,0.0,maxTotError,0,1)
-CALL PGPT(kMax,xPlot,yPlot,3)
+CALL PGPT(kMax,xPlot,yPlot,7)
 CALL PGLINE(kMax,xPlot,yPlot)
 CALL PGPT(kMax,xPlot,zPlot,1)
 CALL PGLINE(kMax,xPlot,zPlot)
 CALL PGPT(kMax,xPlot,tPlot,1)
 CALL PGLINE(kMax,xPlot,tPlot)
-call PGLAB('2^k','mult. number (log scale)', '')
+CALL PGPT(kMax,xPlot,wPlot,1)
+CALL PGLINE(kMax,xPlot,wPlot)
+call PGLAB('k','mult. number (log scale)', '')
 call PGEND
 
 
@@ -303,7 +312,7 @@ end program analisiNumerica
 !per questo una bandiera "flag", positiva o negativa, orienta
 !la scrittura all'interno di Eigenvalues.
 !!!
-subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose, totCalcoli)
+subroutine calcoloAutovaloriDentroI(a, b, n, T, S, en, em, Eigenvalues, verbose, totMult)
 !L'intervallo I=[a,b] e` identificato dai suoi estremi
 
 implicit  none
@@ -322,7 +331,7 @@ real(dp), intent(IN) :: a, b
 
 integer, intent(IN) :: verbose
 
-integer, intent(OUT) :: totCalcoli
+integer(8), intent(OUT) :: totMult
 
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S
 
@@ -333,7 +342,7 @@ real(dp), dimension(em,en), intent(INOUT) :: Eigenvalues
 integer, dimension(1:n*(en-1)) :: vettoreBisezioni
 real, dimension(1:n*(en-1)) :: xPlot, yPlot, zPlot
 real :: maxyPlot, maxzPlot
-integer :: totaleBisezioni, totaleLagIt
+!integer :: totaleBisezioni, totaleLagIt
 
 !indici per identificare la T e la S:                                                                                
 integer :: Tinizio, Tfine, Sinizio, Sfine
@@ -358,7 +367,7 @@ character(len=1) :: null
 !preparo la grafica
 
 !write(char,*) "BisezioniEdAncheLagIt", n, ".ps/PS"
-write(char,*) "BisezioniEdAncheLagit.ps/PS"
+!write(char,*) "GraficoMoltiplicazioni.ps/PS"
 
 !IER = PGBEG(0,char,1,1)
 !if (IER.ne.1) stop
@@ -373,9 +382,10 @@ dim=2
 
 numCol=en
 
-countVettoreBisezioni = 0
-totaleBisezioni = 0
-totaleLagIt = 0
+!countVettoreBisezioni = 0
+!totaleBisezioni = 0
+!totaleLagIt = 0
+totMult=0
 
 do while (dim <= n)
    
@@ -404,6 +414,9 @@ do while (dim <= n)
                Eigenvalues(Tinizio,numCol) = T(Tinizio,1)/ &
                     S(Sinizio,1)
             end if
+
+            totMult=totMult+1
+
          else
             !se mi trovo qui allora dim=2
             !risolvo a mano S^{-1}T x = \lambda x.
@@ -461,6 +474,7 @@ do while (dim <= n)
 
             !write(*,*),"(",Tinizio+1,",",numCol,")=",Eigenvalues(Tinizio+1,numCol)
 
+            totMult=totMult+30
 
          end if
 
@@ -501,6 +515,8 @@ do while (dim <= n)
       !end if
       k2=kappa
       !k2=numAut
+
+      totMult = totMult + 2*( 2 + 38*dim )
       
       if (verbose >= 2) then
          write(*,*)"-------------------------------------"
@@ -518,13 +534,13 @@ do while (dim <= n)
       
       if ( k1 > k2 ) then
          write(*,*)"NON CALCOLO"
-         vettoreBisezioni(countVettoreBisezioni) = 0
+         !vettoreBisezioni(countVettoreBisezioni) = 0
          GOTO 200
       end if
 
       do j = k1, k2
 
-         countVettoreBisezioni = countVettoreBisezioni + 1
+         !countVettoreBisezioni = countVettoreBisezioni + 1
          !write(*,*)"countVettoreBisezioni=", countVettoreBisezioni
 
          !Determino l'intervallo Ij=(aj, bj) in cui ho convergenza cubica
@@ -546,11 +562,11 @@ do while (dim <= n)
             end if
 
 
-            countSubInterval=0
+            !countSubInterval=0
 
 100         write(null,*)""
 
-            countSubInterval = countSubInterval + 1
+            !countSubInterval = countSubInterval + 1
 
             !Chiamo la subroutine per il calcolo di (12), (13) e (14).
             if ( bj-aj <= max(aj,bj)*machinePrecision ) then
@@ -572,6 +588,8 @@ do while (dim <= n)
             !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
             !end if
             !kappa=numAut
+
+            totMult = totMult + 2 + 38*dim
 
             if ( verbose >= 4 ) then
                write(*,*)"work in progres..."
@@ -606,55 +624,55 @@ do while (dim <= n)
             
 
 
-            if ( kappa >= j .AND. -fPrimo < 0.d0 ) then
-               GOTO 150
+!!$            if ( kappa >= j .AND. -fPrimo < 0.d0 ) then
+!!$               GOTO 150
+!!$            end if
+!!$
+!!$            if ( kappa < j .AND. -fPrimo >= 0.d0 ) then
+!!$               GOTO 150
+!!$            end if
+!!$
+!!$            x = (aj+bj)/2.d0
+!!$            GOTO 100
+
+
+
+
+            if (kappa+1 < j) then
+               !write(*,*)"UNO"
+               x = (aj+bj)/2.d0
+               GOTO 100
             end if
 
-            if ( kappa < j .AND. -fPrimo >= 0.d0 ) then
-               GOTO 150
+            if (j < kappa) then
+               !write(*,*)"DUE"
+               x = (aj+bj)/2.d0
+               GOTO 100
             end if
 
-            x = (aj+bj)/2.d0
-            GOTO 100
+            if (kappa >= j .AND. segno >= 0) then
+               !write(*,*)"TRE"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
 
+            if (kappa < j .AND. segno < 0) then
+               !write(*,*)"QUATTRO"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
 
+            if (kappa == 0 .AND. segno <0) then
+               !write(*,*)"CINQUE"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
 
-
-!!$            if (kappa+1 < j) then
-!!$               !write(*,*)"UNO"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
-!!$
-!!$            if (j < kappa) then
-!!$               !write(*,*)"DUE"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
-!!$
-!!$            if (kappa >= j .AND. segno >= 0) then
-!!$               !write(*,*)"TRE"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
-!!$
-!!$            if (kappa < j .AND. segno < 0) then
-!!$               !write(*,*)"QUATTRO"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
-!!$
-!!$            if (kappa == 0 .AND. segno <0) then
-!!$               !write(*,*)"CINQUE"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
-!!$
-!!$            if (kappa == dim .AND. segno >=0) then
-!!$               !write(*,*)"SEI"
-!!$               x = (aj+bj)/2.d0
-!!$               GOTO 100
-!!$            end if
+            if (kappa == dim .AND. segno >=0) then
+               !write(*,*)"SEI"
+               x = (aj+bj)/2.d0
+               GOTO 100
+            end if
 
 
             !!!
@@ -663,8 +681,8 @@ do while (dim <= n)
 
 150         write(null,*)""
             
-            vettoreBisezioni(countVettoreBisezioni) = countSubInterval
-            totaleBisezioni = totaleBisezioni + countSubInterval
+            !vettoreBisezioni(countVettoreBisezioni) = countSubInterval
+            !totaleBisezioni = totaleBisezioni + countSubInterval
             !write(*,*)"vettoreBisezioni(countVettoreBisezioni)=", vettoreBisezioni(countVettoreBisezioni)
             if ( verbose >= 4 ) then
                write(*,*)"countSubInterval=", countSubInterval
@@ -712,8 +730,10 @@ do while (dim <= n)
                  fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
 
             !Numero di iterazioni all'interno di LagIt
-            zPlot(countVettoreBisezioni) = numLagIt * 1.0
-            totaleLagIt = totaleLagIt + numLagIt
+            !zPlot(countVettoreBisezioni) = numLagIt * 1.0
+            !totaleLagIt = totaleLagIt + numLagIt
+
+            totMult = totMult + numLagIt * ( 2 + 38*dim )
 
             if (verbose >= 3) then
                write(*,*)"Esco da LagIt"
@@ -726,7 +746,7 @@ do while (dim <= n)
          else
       
             !in questo caso a e b distano solo "un passo macchina"
-            vettoreBisezioni(countVettoreBisezioni) = 0
+            !vettoreBisezioni(countVettoreBisezioni) = 0
             write(*,*)"a e b distano pochissimo!"
 
             !immagazzino i risultati
@@ -751,30 +771,30 @@ end do
 
 !ordino la prima colonna di Eigenvalues
 !call quick_sort( Eigenvalues(:,1), em )
-maxyPlot=0.0
-maxzPlot=0.0
-do i=1,n*(en-1)
-   xPlot(i)=i*1.0
-   yPlot(i)=vettoreBisezioni(i)*1.0
-   !write(*,*)"yPlot(i)=", yPlot(i)
-   if ( maxyPlot < yPlot(i) ) then
-      maxyPlot = yPlot(i)
-   end if
-   if ( maxzPlot < zPlot(i) ) then
-      maxzPlot = zPlot(i)
-   end if
-end do
+!!$maxyPlot=0.0
+!!$maxzPlot=0.0
+!!$do i=1,n*(en-1)
+!!$   xPlot(i)=i*1.0
+!!$   yPlot(i)=vettoreBisezioni(i)*1.0
+!!$   !write(*,*)"yPlot(i)=", yPlot(i)
+!!$   if ( maxyPlot < yPlot(i) ) then
+!!$      maxyPlot = yPlot(i)
+!!$   end if
+!!$   if ( maxzPlot < zPlot(i) ) then
+!!$      maxzPlot = zPlot(i)
+!!$   end if
+!!$end do
+!!$
+!!$write(*,*)"massimo numero di bisezioni=", maxyPlot
+!!$write(*,*)"massimo numero di iterazioni di LagIt=", maxzPlot
+!!$
+!!$write(*,*)"totale numero di bisezioni=", totaleBisezioni
+!!$write(*,*)"totale numero di iterazioni in LagIt=", totaleLagIt
+!!$write(*,*)"somma dei precedenti totali=", totaleBisezioni + totaleLagIt
+!!$
+!!$totCalcoli = totaleBisezioni + totaleLagIt + 2*n*(en-1)
 
-write(*,*)"massimo numero di bisezioni=", maxyPlot
-write(*,*)"massimo numero di iterazioni di LagIt=", maxzPlot
-
-write(*,*)"totale numero di bisezioni=", totaleBisezioni
-write(*,*)"totale numero di iterazioni in LagIt=", totaleLagIt
-write(*,*)"somma dei precedenti totali=", totaleBisezioni + totaleLagIt
-
-totCalcoli = totaleBisezioni + totaleLagIt + 2*n*(en-1)
-
-write(*,*)"numero chiamate a calcoli=", totCalcoli
+write(*,*)"numero totale moltiplicazioni=", totMult
 
 
 
@@ -934,8 +954,8 @@ l = 2
 
 do while ( .TRUE. )
 
-   if ( l >= 200 ) then
-      write(*,*)"LagIt impiega troppo iterazioni (piu` di 200)."
+   if ( l >= 50 ) then
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di 50)."
       exit
    end if
 
@@ -1007,8 +1027,8 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo + sqrt(xl(0))
 
-      xl(0) = xl(-1) - (n*1.d0)/xl(0)
-      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
    else
       if ( verbose >=3 ) then
@@ -1018,8 +1038,8 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo - sqrt(xl(0))
       
-      xl(0) = xl(-1) - (n*1.d0)/xl(0)
-      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
    end if
 
