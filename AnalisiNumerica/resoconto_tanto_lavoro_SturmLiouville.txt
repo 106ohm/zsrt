@@ -1,566 +1,1030 @@
  -------------------------------------------------------
  n=           2
+ T dig=
+   8.2222222238779068       -6.0000000000000000     
+ Teispack diag=
+   8.2222222238779068     
+  -6.0000000000000000     
+ T super=
+   0.0000000000000000       -4.4444444444444446     
+ Teispack super=
+  -4.4444444444444446     
+ n=           2
+ S dig=
+  0.22222222222222221       0.22222222222222221     
+ Seispack diag=
+  0.22222222222222221     
+  0.22222222222222221     
+ S super=
+   0.0000000000000000        5.5555555555555552E-002
+ Seispack super=
+   5.5555555555555552E-002
+ en=           1
+ Eigenvalues prima del calcolo:
+   0.0000000000000000     
+   0.0000000000000000     
  massimo numero di bisezioni=   0.00000000    
  massimo numero di iterazioni di LagIt=   0.00000000    
  totale numero di bisezioni=           0
  totale numero di iterazioni in LagIt=           0
  somma dei precedenti totali=           0
  numero chiamate a calcoli=           0
+ Eigenvalues dopo il calcolo:
+   37.000000007450581     
+  -27.000000000000004     
+ v=
+  -27.000000000000004        37.000000007450581     
+ vEispack=
+   0.0000000000000000        50.742151006375970     
  maxError=
-   9.8133296316858249     
+   27.000000000000004     
  -------------------------------------------------------
  n=           4
+ T dig=
+   12.133333340287209        14.133333340287209        16.133333340287209       -27.600000000000001     
+ Teispack diag=
+   12.133333340287209     
+   14.133333340287209     
+   16.133333340287209     
+  -27.600000000000001     
+ T super=
+   0.0000000000000000       -6.4666666666666668       -7.4666666666666668       -8.4666666666666668     
+ Teispack super=
+  -6.4666666666666668     
+  -7.4666666666666668     
+  -8.4666666666666668     
+ n=           4
+ S dig=
+  0.13333333333333333       0.13333333333333333       0.13333333333333333       0.13333333333333333     
+ Seispack diag=
+  0.13333333333333333     
+  0.13333333333333333     
+  0.13333333333333333     
+  0.13333333333333333     
+ S super=
+   0.0000000000000000        3.3333333333333333E-002   3.3333333333333333E-002   3.3333333333333333E-002
+ Seispack super=
+   3.3333333333333333E-002
+   3.3333333333333333E-002
+   3.3333333333333333E-002
+ en=           2
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           2 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   91.000000052154036      j=           2 kappa(x)=           2
+ work in progres...
+ x=   45.500000026077018      j=           2 kappa(x)=           2
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   45.500000026077018      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   45.500000026077018     
+ kappa(aj)=           1 kappa(bj)=           2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ xl(0)=   45.500000026077018     
+ kappa=           2 j=           2
+ bj-aj=   45.500000026077018     
+ [aj, bj]=[   0.0000000000000000      ,    45.500000026077018      ]
+ mi muovo verso sinistra
+ xl(0)=   25.297140372411778      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   20.202859653665239     
+ [aj, bj]=[   25.297140372411778      ,    45.500000026077018      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   25.923034719312945      segno=d
+ kappa=           1
+ aggiorno aj
+ bj-aj=   19.576965306764073     
+ [aj, bj]=[   25.923034719312945      ,    45.500000026077018      ]
+ mi muovo verso destra
+ xl(0)=   25.923745902591428      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   19.576254123485590     
+ [aj, bj]=[   25.923745902591428      ,    45.500000026077018      ]
+ mi muovo verso destra
+ xl(0)=   25.923745903506674      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   145.42831536233405      j=           3 kappa(x)=           3
+ countSubInterval=           1
+ Ho scelto l'intervallo [aj, bj]:
+ x=   145.42831536233405      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   145.42831536233405     
+ kappa(aj)=           1 kappa(bj)=           3
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ xl(0)=   145.42831536233405     
+ kappa=           3 j=           3
+ bj-aj=   145.42831536233405     
+ [aj, bj]=[   0.0000000000000000      ,    145.42831536233405      ]
+ mi muovo verso sinistra
+ xl(0)=   121.71823318952028      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   121.71823318952028     
+ [aj, bj]=[   0.0000000000000000      ,    121.71823318952028      ]
+ mi muovo verso sinistra
+ xl(0)=   116.26979253760469      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   116.26979253760469     
+ [aj, bj]=[   0.0000000000000000      ,    116.26979253760469      ]
+ mi muovo verso sinistra
+ xl(0)=   116.04740244901785      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   116.04740244901785     
+ [aj, bj]=[   0.0000000000000000      ,    116.04740244901785      ]
+ mi muovo verso sinistra
+ xl(0)=   116.04706122256097      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   116.04706122256097     
+ [aj, bj]=[   0.0000000000000000      ,    116.04706122256097      ]
+ mi muovo verso sinistra
+ xl(0)=   116.04706122176053      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=  -207.29498197336977      j=           4 kappa(x)=           1
+ work in progres...
+ x=   596.35250901331506      j=           4 kappa(x)=           4
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   596.35250901331506      j=           4 kappa(x)=           4
+ aj=  -207.29498197336977      bj=   596.35250901331506     
+ kappa(aj)=           1 kappa(bj)=           4
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ xl(0)=   596.35250901331506     
+ kappa=           4 j=           4
+ bj-aj=   803.64749098668483     
+ [aj, bj]=[  -207.29498197336977      ,    596.35250901331506      ]
+ mi muovo verso sinistra
+ xl(0)=   389.18193513971551      segno=c
+ kappa=           4
+ aggiorno bj
+ bj-aj=   596.47691711308528     
+ [aj, bj]=[  -207.29498197336977      ,    389.18193513971551      ]
+ mi muovo verso sinistra
+ xl(0)=   272.10827866188748      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   117.07365647782802     
+ [aj, bj]=[   272.10827866188748      ,    389.18193513971551      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   296.76507415281355      segno=d
+ kappa=           3
+ aggiorno aj
+ bj-aj=   92.416860986901952     
+ [aj, bj]=[   296.76507415281355      ,    389.18193513971551      ]
+ mi muovo verso destra
+ xl(0)=   300.32337950941752      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   88.858555630297985     
+ [aj, bj]=[   300.32337950941752      ,    389.18193513971551      ]
+ mi muovo verso destra
+ xl(0)=   300.38964310441304      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   88.792292035302467     
+ [aj, bj]=[   300.38964310441304      ,    389.18193513971551      ]
+ mi muovo verso destra
+ xl(0)=   300.38966571220669      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   88.792269427508813     
+ [aj, bj]=[   300.38966571220669      ,    389.18193513971551      ]
+ mi muovo verso destra
+ xl(0)=   300.38966571220936      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
  massimo numero di bisezioni=   2.00000000    
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=           2
- totale numero di iterazioni in LagIt=           6
- somma dei precedenti totali=           8
- numero chiamate a calcoli=          16
+ massimo numero di iterazioni di LagIt=   8.00000000    
+ totale numero di bisezioni=           5
+ totale numero di iterazioni in LagIt=          19
+ somma dei precedenti totali=          24
+ numero chiamate a calcoli=          32
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000        106.00000005215409     
+   25.923745903506674        91.000000052154036     
+   116.04706122176053        145.42831536233405     
+   300.38966571220936       -207.29498197336977     
+ v=
+   0.0000000000000000        25.923745903506674        116.04706122176053        300.38966571220936     
+ vEispack=
+   0.0000000000000000        25.923745903506685        116.04706122176052        300.38966571220948     
  maxError=
-   291.72684397624829     
+   1.1368683772161603E-013
  -------------------------------------------------------
  n=           8
- NON CALCOLO
- massimo numero di bisezioni=   1.07761587E+09
- massimo numero di iterazioni di LagIt=   6.00000000    
- totale numero di bisezioni=           4
- totale numero di iterazioni in LagIt=           8
- somma dei precedenti totali=          12
- numero chiamate a calcoli=          44
+ T dig=
+   20.074074074625969        22.074074074625969        24.074074074625969        26.074074074625969        28.074074074625969        30.074074074625969        32.074074074625969       -74.000000000000000     
+ Teispack diag=
+   20.074074074625969     
+   22.074074074625969     
+   24.074074074625969     
+   26.074074074625969     
+   28.074074074625969     
+   30.074074074625969     
+   32.074074074625969     
+  -74.000000000000000     
+ T super=
+   0.0000000000000000       -10.481481481481481       -11.481481481481481       -12.481481481481481       -13.481481481481481       -14.481481481481481       -15.481481481481481       -16.481481481481481     
+ Teispack super=
+  -10.481481481481481     
+  -11.481481481481481     
+  -12.481481481481481     
+  -13.481481481481481     
+  -14.481481481481481     
+  -15.481481481481481     
+  -16.481481481481481     
+ n=           8
+ S dig=
+   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002   7.4074074074074070E-002
+ Seispack diag=
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+   7.4074074074074070E-002
+ S super=
+   0.0000000000000000        1.8518518518518517E-002   1.8518518518518517E-002   1.8518518518518517E-002   1.8518518518518517E-002   1.8518518518518517E-002   1.8518518518518517E-002   1.8518518518518517E-002
+ Seispack super=
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+   1.8518518518518517E-002
+ en=           3
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           1 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   298.00000000745064      j=           1 kappa(x)=           2
+ work in progres...
+ x=   149.00000000372532      j=           1 kappa(x)=           1
+ work in progres...
+ x=   74.500000001862659      j=           1 kappa(x)=           1
+ countSubInterval=           3
+ Ho scelto l'intervallo [aj, bj]:
+ x=   74.500000001862659      j=           1 kappa(x)=           1
+ aj=   0.0000000000000000      bj=   74.500000001862659     
+ kappa(aj)=           0 kappa(bj)=           1
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           1 )
+ xl(0)=   74.500000001862659     
+ kappa=           1 j=           1
+ bj-aj=   74.500000001862659     
+ [aj, bj]=[   0.0000000000000000      ,    74.500000001862659      ]
+ mi muovo verso sinistra
+ xl(0)=   43.846871715875992      segno=c
+ kappa=           1
+ aggiorno bj
+ bj-aj=   43.846871715875992     
+ [aj, bj]=[   0.0000000000000000      ,    43.846871715875992      ]
+ mi muovo verso sinistra
+ xl(0)=   42.727403112127540      segno=c
+ kappa=           0
+ aggiorno aj
+ bj-aj=   1.1194686037484516     
+ [aj, bj]=[   42.727403112127540      ,    43.846871715875992      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   42.727407574364854      segno=d
+ kappa=           1
+ aggiorno bj
+ bj-aj=   4.4622373138736293E-006
+ [aj, bj]=[   42.727403112127540      ,    42.727407574364854      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso sinistra
+ xl(0)=   42.727407574364832      segno=d
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   271.00000000745052      j=           2 kappa(x)=           2
+ countSubInterval=           1
+ Ho scelto l'intervallo [aj, bj]:
+ x=   271.00000000745052      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   271.00000000745052     
+ kappa(aj)=           0 kappa(bj)=           2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ xl(0)=   271.00000000745052     
+ kappa=           2 j=           2
+ bj-aj=   271.00000000745052     
+ [aj, bj]=[   0.0000000000000000      ,    271.00000000745052      ]
+ mi muovo verso sinistra
+ xl(0)=   174.74985151857169      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   96.250148488878835     
+ [aj, bj]=[   174.74985151857169      ,    271.00000000745052      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   184.85469880370076      segno=d
+ kappa=           1
+ aggiorno aj
+ bj-aj=   86.145301203749767     
+ [aj, bj]=[   184.85469880370076      ,    271.00000000745052      ]
+ mi muovo verso destra
+ xl(0)=   185.04396759311254      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   85.956032414337983     
+ [aj, bj]=[   185.04396759311254      ,    271.00000000745052      ]
+ mi muovo verso destra
+ xl(0)=   185.04402537652501      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   85.955974630925510     
+ [aj, bj]=[   185.04402537652501      ,    271.00000000745052      ]
+ mi muovo verso destra
+ xl(0)=   185.04402537653036      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   466.05029458699846      j=           3 kappa(x)=           2
+ countSubInterval=           1
+ Ho scelto l'intervallo [aj, bj]:
+ x=   466.05029458699846      j=           3 kappa(x)=           2
+ aj=   466.05029458699846      bj=   1400.0000000000000     
+ kappa(aj)=           2 kappa(bj)=           4
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ xl(0)=   466.05029458699846     
+ kappa=           2 j=           3
+ bj-aj=   933.94970541300154     
+ [aj, bj]=[   466.05029458699846      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   478.64742867804483      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   12.597134091046371     
+ [aj, bj]=[   466.05029458699846      ,    478.64742867804483      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso sinistra
+ xl(0)=   477.99194998126984      segno=d
+ kappa=           3
+ aggiorno bj
+ bj-aj=   11.941655394271379     
+ [aj, bj]=[   466.05029458699846      ,    477.99194998126984      ]
+ mi muovo verso sinistra
+ xl(0)=   477.99005834617822      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   11.939763759179755     
+ [aj, bj]=[   466.05029458699846      ,    477.99005834617822      ]
+ mi muovo verso sinistra
+ xl(0)=   477.99005833047215      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   11.939763743473691     
+ [aj, bj]=[   466.05029458699846      ,    477.99005833047215      ]
+ mi muovo verso sinistra
+ xl(0)=   477.99005833047210      segno=c
+ condizione di arresto (24) del primo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   338.74970542889616      j=           4 kappa(x)=           2
+ work in progres...
+ x=   869.37485271444802      j=           4 kappa(x)=           3
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   869.37485271444802      j=           4 kappa(x)=           3
+ aj=   869.37485271444802      bj=   1400.0000000000000     
+ kappa(aj)=           3 kappa(bj)=           4
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ xl(0)=   869.37485271444802     
+ kappa=           3 j=           4
+ bj-aj=   530.62514728555198     
+ [aj, bj]=[   869.37485271444802      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   934.10823246603809      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   465.89176753396191     
+ [aj, bj]=[   934.10823246603809      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   949.57539923574075      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   450.42460076425925     
+ [aj, bj]=[   949.57539923574075      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   950.27543554190129      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   449.72456445809871     
+ [aj, bj]=[   950.27543554190129      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   950.27678625866179      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   449.72321374133821     
+ [aj, bj]=[   950.27678625866179      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   950.27678626367651      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           5 Tfine=           8
+ |k1=           2 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   392.98948862310380      j=           2 kappa(x)=           2
+ work in progres...
+ x=   196.49474431155190      j=           2 kappa(x)=           2
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   196.49474431155190      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   196.49474431155190     
+ kappa(aj)=           1 kappa(bj)=           2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ xl(0)=   196.49474431155190     
+ kappa=           2 j=           2
+ bj-aj=   196.49474431155190     
+ [aj, bj]=[   0.0000000000000000      ,    196.49474431155190      ]
+ mi muovo verso sinistra
+ xl(0)=   95.791913494060125      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   100.70283081749177     
+ [aj, bj]=[   95.791913494060125      ,    196.49474431155190      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   96.546607638444570      segno=d
+ kappa=           1
+ aggiorno aj
+ bj-aj=   99.948136673107328     
+ [aj, bj]=[   96.546607638444570      ,    196.49474431155190      ]
+ mi muovo verso destra
+ xl(0)=   96.546821429529459      segno=c
+ kappa=           1
+ aggiorno aj
+ bj-aj=   99.947922882022439     
+ [aj, bj]=[   96.546821429529459      ,    196.49474431155190      ]
+ mi muovo verso destra
+ xl(0)=   96.546821429546597      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   522.16189928015876      j=           3 kappa(x)=           3
+ countSubInterval=           1
+ Ho scelto l'intervallo [aj, bj]:
+ x=   522.16189928015876      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   522.16189928015876     
+ kappa(aj)=           1 kappa(bj)=           3
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ xl(0)=   522.16189928015876     
+ kappa=           3 j=           3
+ bj-aj=   522.16189928015876     
+ [aj, bj]=[   0.0000000000000000      ,    522.16189928015876      ]
+ mi muovo verso sinistra
+ xl(0)=   451.58289191821927      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   451.58289191821927     
+ [aj, bj]=[   0.0000000000000000      ,    451.58289191821927      ]
+ mi muovo verso sinistra
+ xl(0)=   441.03563985368140      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   441.03563985368140     
+ [aj, bj]=[   0.0000000000000000      ,    441.03563985368140      ]
+ mi muovo verso sinistra
+ xl(0)=   440.85303748726284      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   440.85303748726284     
+ [aj, bj]=[   0.0000000000000000      ,    440.85303748726284      ]
+ mi muovo verso sinistra
+ xl(0)=   440.85298534512270      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   440.85298534512270     
+ [aj, bj]=[   0.0000000000000000      ,    440.85298534512270      ]
+ mi muovo verso sinistra
+ xl(0)=   440.85298534511850      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=  -1014.4285659388780      j=           4 kappa(x)=           0
+ work in progres...
+ x=   192.78571703056099      j=           4 kappa(x)=           2
+ work in progres...
+ x=   796.39285851528052      j=           4 kappa(x)=           3
+ work in progres...
+ x=   1098.1964292576404      j=           4 kappa(x)=           3
+ countSubInterval=           4
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1098.1964292576404      j=           4 kappa(x)=           3
+ aj=   1098.1964292576404      bj=   1400.0000000000000     
+ kappa(aj)=           3 kappa(bj)=           4
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ xl(0)=   1098.1964292576404     
+ kappa=           3 j=           4
+ bj-aj=   301.80357074235963     
+ [aj, bj]=[   1098.1964292576404      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1127.8823946994635      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   272.11760530053652     
+ [aj, bj]=[   1127.8823946994635      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1129.0695884451632      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   270.93041155483684     
+ [aj, bj]=[   1129.0695884451632      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1129.0713505533076      segno=c
+ kappa=           3
+ aggiorno aj
+ bj-aj=   270.92864944669236     
+ [aj, bj]=[   1129.0713505533076      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1129.0713505571782      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ -------------------------------------
+ |Adesso dim=           8
+ |Tinizio=           1 Tfine=           8
+ |k1=           2 k2=           8
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   185.04402537653036      j=           2 kappa(x)=           3
+ work in progres...
+ x=   92.522012688265178      j=           2 kappa(x)=           3
+ work in progres...
+ x=   46.261006344132589      j=           2 kappa(x)=           2
+ work in progres...
+ x=   23.130503172066295      j=           2 kappa(x)=           2
+ countSubInterval=           4
+ Ho scelto l'intervallo [aj, bj]:
+ x=   23.130503172066295      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   23.130503172066295     
+ kappa(aj)=           1 kappa(bj)=           2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ xl(0)=   23.130503172066295     
+ kappa=           2 j=           2
+ bj-aj=   23.130503172066295     
+ [aj, bj]=[   0.0000000000000000      ,    23.130503172066295      ]
+ mi muovo verso sinistra
+ xl(0)=   19.840743079796219      segno=c
+ kappa=           2
+ aggiorno bj
+ bj-aj=   19.840743079796219     
+ [aj, bj]=[   0.0000000000000000      ,    19.840743079796219      ]
+ mi muovo verso sinistra
+ xl(0)=   19.559738351506940      segno=c
+ kappa=           2
+ aggiorno bj
+ bj-aj=   19.559738351506940     
+ [aj, bj]=[   0.0000000000000000      ,    19.559738351506940      ]
+ mi muovo verso sinistra
+ xl(0)=   19.557918386740507      segno=c
+ kappa=           2
+ aggiorno bj
+ bj-aj=   19.557918386740507     
+ [aj, bj]=[   0.0000000000000000      ,    19.557918386740507      ]
+ mi muovo verso sinistra
+ xl(0)=   19.557918311198527      segno=c
+ kappa=           2
+ aggiorno bj
+ bj-aj=   19.557918311198527     
+ [aj, bj]=[   0.0000000000000000      ,    19.557918311198527      ]
+ mi muovo verso sinistra
+ xl(0)=   19.557918311198517      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   477.99005833047210      j=           3 kappa(x)=           5
+ work in progres...
+ x=   238.99502916523605      j=           3 kappa(x)=           4
+ work in progres...
+ x=   119.49751458261802      j=           3 kappa(x)=           3
+ countSubInterval=           3
+ Ho scelto l'intervallo [aj, bj]:
+ x=   119.49751458261802      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   119.49751458261802     
+ kappa(aj)=           1 kappa(bj)=           3
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ xl(0)=   119.49751458261802     
+ kappa=           3 j=           3
+ bj-aj=   119.49751458261802     
+ [aj, bj]=[   0.0000000000000000      ,    119.49751458261802      ]
+ mi muovo verso sinistra
+ xl(0)=   86.859571916786308      segno=c
+ kappa=           3
+ aggiorno bj
+ bj-aj=   86.859571916786308     
+ [aj, bj]=[   0.0000000000000000      ,    86.859571916786308      ]
+ mi muovo verso sinistra
+ xl(0)=   72.190213424145384      segno=c
+ kappa=           2
+ aggiorno aj
+ bj-aj=   14.669358492640924     
+ [aj, bj]=[   72.190213424145384      ,    86.859571916786308      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   77.178879936853889      segno=d
+ kappa=           2
+ aggiorno aj
+ bj-aj=   9.6806919799324191     
+ [aj, bj]=[   77.178879936853889      ,    86.859571916786308      ]
+ mi muovo verso destra
+ xl(0)=   78.328764498346914      segno=c
+ kappa=           2
+ aggiorno aj
+ bj-aj=   8.5308074184393945     
+ [aj, bj]=[   78.328764498346914      ,    86.859571916786308      ]
+ mi muovo verso destra
+ xl(0)=   78.384944134277902      segno=c
+ kappa=           2
+ aggiorno aj
+ bj-aj=   8.4746277825084064     
+ [aj, bj]=[   78.384944134277902      ,    86.859571916786308      ]
+ mi muovo verso destra
+ xl(0)=   78.385074274954476      segno=c
+ kappa=           2
+ aggiorno aj
+ bj-aj=   8.4744976418318316     
+ [aj, bj]=[   78.385074274954476      ,    86.859571916786308      ]
+ mi muovo verso destra
+ xl(0)=   78.385074275651718      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            8  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   950.27678626367651      j=           4 kappa(x)=           7
+ work in progres...
+ x=   475.13839313183826      j=           4 kappa(x)=           5
+ work in progres...
+ x=   237.56919656591913      j=           4 kappa(x)=           4
+ countSubInterval=           3
+ Ho scelto l'intervallo [aj, bj]:
+ x=   237.56919656591913      j=           4 kappa(x)=           4
+ aj=   0.0000000000000000      bj=   237.56919656591913     
+ kappa(aj)=           1 kappa(bj)=           4
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ xl(0)=   237.56919656591913     
+ kappa=           4 j=           4
+ bj-aj=   237.56919656591913     
+ [aj, bj]=[   0.0000000000000000      ,    237.56919656591913      ]
+ mi muovo verso sinistra
+ xl(0)=   188.64499801532253      segno=c
+ kappa=           4
+ aggiorno bj
+ bj-aj=   188.64499801532253     
+ [aj, bj]=[   0.0000000000000000      ,    188.64499801532253      ]
+ mi muovo verso sinistra
+ xl(0)=   186.71395401791889      segno=c
+ kappa=           4
+ aggiorno bj
+ bj-aj=   186.71395401791889     
+ [aj, bj]=[   0.0000000000000000      ,    186.71395401791889      ]
+ mi muovo verso sinistra
+ xl(0)=   186.68293103900302      segno=c
+ kappa=           4
+ aggiorno bj
+ bj-aj=   186.68293103900302     
+ [aj, bj]=[   0.0000000000000000      ,    186.68293103900302      ]
+ mi muovo verso sinistra
+ xl(0)=   186.68292269603205      segno=c
+ kappa=           4
+ aggiorno bj
+ bj-aj=   186.68292269603205     
+ [aj, bj]=[   0.0000000000000000      ,    186.68292269603205      ]
+ mi muovo verso sinistra
+ xl(0)=   186.68292269603145      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   0.0000000000000000      j=           5 kappa(x)=           1
+ work in progres...
+ x=   700.00000000000000      j=           5 kappa(x)=           6
+ work in progres...
+ x=   350.00000000000000      j=           5 kappa(x)=           4
+ countSubInterval=           3
+ Ho scelto l'intervallo [aj, bj]:
+ x=   350.00000000000000      j=           5 kappa(x)=           4
+ aj=   350.00000000000000      bj=   700.00000000000000     
+ kappa(aj)=           4 kappa(bj)=           6
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           5 )
+ xl(0)=   350.00000000000000     
+ kappa=           4 j=           5
+ bj-aj=   350.00000000000000     
+ [aj, bj]=[   350.00000000000000      ,    700.00000000000000      ]
+ mi muovo verso destra
+ xl(0)=   360.01842067421137      segno=c
+ kappa=           5
+ aggiorno bj
+ bj-aj=   10.018420674211370     
+ [aj, bj]=[   350.00000000000000      ,    360.01842067421137      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso sinistra
+ xl(0)=   359.46671306617077      segno=d
+ kappa=           5
+ aggiorno bj
+ bj-aj=   9.4667130661707688     
+ [aj, bj]=[   350.00000000000000      ,    359.46671306617077      ]
+ mi muovo verso sinistra
+ xl(0)=   359.46505010662014      segno=c
+ kappa=           5
+ aggiorno bj
+ bj-aj=   9.4650501066201400     
+ [aj, bj]=[   350.00000000000000      ,    359.46505010662014      ]
+ mi muovo verso sinistra
+ xl(0)=   359.46505009149678      segno=c
+ kappa=           5
+ aggiorno bj
+ bj-aj=   9.4650500914967779     
+ [aj, bj]=[   350.00000000000000      ,    359.46505009149678      ]
+ mi muovo verso sinistra
+ xl(0)=   359.46505009149678      segno=c
+ condizione di arresto (24) del primo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   96.546821429546597      j=           6 kappa(x)=           3
+ work in progres...
+ x=   748.27341071477326      j=           6 kappa(x)=           6
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   748.27341071477326      j=           6 kappa(x)=           6
+ aj=   96.546821429546597      bj=   748.27341071477326     
+ kappa(aj)=           3 kappa(bj)=           6
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           6 )
+ xl(0)=   748.27341071477326     
+ kappa=           6 j=           6
+ bj-aj=   651.72658928522662     
+ [aj, bj]=[   96.546821429546597      ,    748.27341071477326      ]
+ mi muovo verso sinistra
+ xl(0)=   682.03950001394765      segno=c
+ kappa=           6
+ aggiorno bj
+ bj-aj=   585.49267858440101     
+ [aj, bj]=[   96.546821429546597      ,    682.03950001394765      ]
+ mi muovo verso sinistra
+ xl(0)=   515.64244786919335      segno=c
+ condizione di arresto (24) del secondo tipo
+ LagIt compie            3  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   440.85298534511850      j=           7 kappa(x)=           5
+ work in progres...
+ x=   920.42649267255922      j=           7 kappa(x)=           6
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   920.42649267255922      j=           7 kappa(x)=           6
+ aj=   920.42649267255922      bj=   1400.0000000000000     
+ kappa(aj)=           6 kappa(bj)=           8
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           7 )
+ xl(0)=   920.42649267255922     
+ kappa=           6 j=           7
+ bj-aj=   479.57350732744078     
+ [aj, bj]=[   920.42649267255922      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   942.81690457047864      segno=c
+ kappa=           7
+ aggiorno bj
+ bj-aj=   22.390411897919421     
+ [aj, bj]=[   920.42649267255922      ,    942.81690457047864      ]
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso sinistra
+ xl(0)=   939.19145953572627      segno=d
+ kappa=           7
+ aggiorno bj
+ bj-aj=   18.764966863167047     
+ [aj, bj]=[   920.42649267255922      ,    939.19145953572627      ]
+ mi muovo verso sinistra
+ xl(0)=   938.60669022353841      segno=c
+ kappa=           7
+ aggiorno bj
+ bj-aj=   18.180197550979187     
+ [aj, bj]=[   920.42649267255922      ,    938.60669022353841      ]
+ mi muovo verso sinistra
+ xl(0)=   938.59207401809658      segno=c
+ kappa=           7
+ aggiorno bj
+ bj-aj=   18.165581345537362     
+ [aj, bj]=[   920.42649267255922      ,    938.59207401809658      ]
+ mi muovo verso sinistra
+ xl(0)=   938.59206499203856      segno=c
+ kappa=           7
+ aggiorno bj
+ bj-aj=   18.165572319479338     
+ [aj, bj]=[   920.42649267255922      ,    938.59206499203856      ]
+ mi muovo verso sinistra
+ xl(0)=   938.59206499203503      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ work in progres...
+ x=   1129.0713505571782      j=           8 kappa(x)=           7
+ work in progres...
+ x=   1264.5356752785892      j=           8 kappa(x)=           7
+ countSubInterval=           2
+ Ho scelto l'intervallo [aj, bj]:
+ x=   1264.5356752785892      j=           8 kappa(x)=           7
+ aj=   1264.5356752785892      bj=   1400.0000000000000     
+ kappa(aj)=           7 kappa(bj)=           8
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           8 )
+ xl(0)=   1264.5356752785892     
+ kappa=           7 j=           8
+ bj-aj=   135.46432472141078     
+ [aj, bj]=[   1264.5356752785892      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1288.8446600816490      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   111.15533991835105     
+ [aj, bj]=[   1288.8446600816490      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1306.7782290751265      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   93.221770924873454     
+ [aj, bj]=[   1306.7782290751265      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1317.7922707545779      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   82.207729245422115     
+ [aj, bj]=[   1317.7922707545779      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1322.4491885602247      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   77.550811439775316     
+ [aj, bj]=[   1322.4491885602247      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1323.3117239035589      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   76.688276096441086     
+ [aj, bj]=[   1323.3117239035589      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1323.3403041139247      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   76.659695886075269     
+ [aj, bj]=[   1323.3403041139247      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1323.3403350621359      segno=c
+ kappa=           7
+ aggiorno aj
+ bj-aj=   76.659664937864136     
+ [aj, bj]=[   1323.3403350621359      ,    1400.0000000000000      ]
+ mi muovo verso destra
+ xl(0)=   1323.3403350621722      segno=c
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            9  iterazioni.
+ Esco da LagIt
+ massimo numero di bisezioni=   4.00000000    
+ massimo numero di iterazioni di LagIt=   9.00000000    
+ totale numero di bisezioni=          33
+ totale numero di iterazioni in LagIt=          84
+ somma dei precedenti totali=         117
+ numero chiamate a calcoli=         149
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000        42.727407574364832        298.00000000745064     
+   19.557918311198517        185.04402537653036        271.00000000745052     
+   78.385074275651718        477.99005833047210        466.05029458699846     
+   186.68292269603145        950.27678626367651        338.74970542889616     
+   359.46505009149678        0.0000000000000000        541.41051139279068     
+   515.64244786919335        96.546821429546597        392.98948862310380     
+   938.59206499203503        440.85298534511850        522.16189928015876     
+   1323.3403350621722        1129.0713505571782       -1014.4285659388780     
+ v=
+   0.0000000000000000        19.557918311198517        78.385074275651718        186.68292269603145        359.46505009149678        515.64244786919335        938.59206499203503        1323.3403350621722     
+ vEispack=
+   0.0000000000000000        20.726210153699697        77.412288371451140        182.12728401086187        352.74569729169770        570.42432344662836        995.74773229478228        1393.1045895556390     
  maxError=
-   1481.9962485054307     
- -------------------------------------------------------
- n=          16
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- massimo numero di bisezioni=   1.07970854E+09
- massimo numero di iterazioni di LagIt=   165.000000    
- totale numero di bisezioni=          19
- totale numero di iterazioni in LagIt=         201
- somma dei precedenti totali=         220
- numero chiamate a calcoli=         316
- maxError=
-   7471.2502088108822     
- -------------------------------------------------------
- n=          32
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- massimo numero di bisezioni=   2.06058445E+09
- massimo numero di iterazioni di LagIt=   2.37581859E+38
- totale numero di bisezioni=          22
- totale numero di iterazioni in LagIt=         435
- somma dei precedenti totali=         457
- numero chiamate a calcoli=         713
- ERRORE: alcuni autovalori non sono reali.
- maxError=
-   33854.445299914179     
- -------------------------------------------------------
- n=          64
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- massimo numero di bisezioni=   2.11578970E+09
- massimo numero di iterazioni di LagIt=   1.00334273E+34
- totale numero di bisezioni=           6
- totale numero di iterazioni in LagIt=          15
- somma dei precedenti totali=          21
- numero chiamate a calcoli=         661
- ERRORE: alcuni autovalori non sono reali.
- maxError=
-   147228.94984353732     
- -------------------------------------------------------
- n=         128
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- massimo numero di bisezioni=   2.13843366E+09
- massimo numero di iterazioni di LagIt=   2.07637746E+37
- totale numero di bisezioni=           2
- totale numero di iterazioni in LagIt=           4
- somma dei precedenti totali=           6
- numero chiamate a calcoli=        1542
- ERRORE: alcuni autovalori non sono reali.
- maxError=
-   622339.79126622505     
- -------------------------------------------------------
- n=         256
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- NON CALCOLO
- massimo numero di bisezioni=   2.09846170E+09
- massimo numero di iterazioni di LagIt=   4.33252488E+36
- totale numero di bisezioni=           6
- totale numero di iterazioni in LagIt=           9
- somma dei precedenti totali=          15
- numero chiamate a calcoli=        3599
- ERRORE: alcuni autovalori non sono reali.
- diff=   2580618.2035656767     
- diff=   2450552.1711854748     
- diff=   2348798.8893107944     
- diff=   2262290.1790241981     
- diff=   2185931.0486289929     
- diff=   2117050.2231370588     
- diff=   2054020.7876736266     
- diff=   1995756.0660161218     
- diff=   1941483.0374860202     
- diff=   1890626.0079152961     
- diff=   1842741.0118372324     
- diff=   1797476.1358958303     
- diff=   1754546.1754888054     
- diff=   1713715.7233453381     
- diff=   1674787.4725532879     
- diff=   1637593.8799866433     
- diff=   1601991.0715980323     
- diff=   1567854.2881487843     
- diff=   1535074.4167106487     
- diff=   1503555.3046568159     
- diff=   1473211.6487025386     
- diff=   1443967.3139394070     
- diff=   1415753.9794141545     
- diff=   1388510.0351670487     
- diff=   1362179.6753605348     
- diff=   1336712.1460779891     
- diff=   1312061.1164002453     
- diff=   1288184.1486826909     
- diff=   1270476.4458648365     
- diff=   1265042.2493605244     
- diff=   1242599.4856738839     
- diff=   1220822.6567422033     
- diff=   1199681.0100021441     
- diff=   1179145.9968985887     
- diff=   1159191.0704965340     
- diff=   1139791.5704675990     
- diff=   1120924.9619827776     
- diff=   1102572.8246956880     
- diff=   1084732.2765233652     
- diff=   1067493.3956835149     
- diff=   1052084.5361515242     
- diff=   1044520.7139115791     
- diff=   1031650.9879769090     
- diff=   1015438.9767874639     
- diff=   999031.53320870595     
- diff=   982656.99027926242     
- diff=   966356.15897788759     
- diff=   950152.31762483402     
- diff=   934068.18963258807     
- diff=   918124.26312862639     
- diff=   902332.66959310009     
- diff=   886696.37555583846     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   267.76508100056117     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- diff=   0.0000000000000000     
- maxError=
-   2580618.2035656767     
+   69.764254493466751     
  -------------------------------------------------------
  FINE CALCOLO!

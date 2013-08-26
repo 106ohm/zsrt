@@ -13,7 +13,7 @@ integer, parameter :: dp = kind(1.d0)
 
 integer :: n, i, j, verbose, dim, soloScrittura
 
-integer :: numAut, numLagIt, mlt
+integer :: numAut, numLagIt, mlt, countAutovaloriNonPositivi
 
 real(dp) :: x, lambdaJ, aj, bj
 
@@ -28,13 +28,14 @@ real(dp), dimension(:,:), allocatable :: Teispack, Seispack, T, S
 real(dp), dimension(:), allocatable :: autovalori
 
 real, dimension(:), allocatable :: xPlot, yPlot, zPlot
-real :: maxDiff
+
+real :: maxDiff, aus
 
 !!!
 !FINE DICHIARAZIONI
 !!!
 
-IER = PGBEG(0,'ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.ps/PS',1,1)
+IER = PGBEG(0,'ConfrontoLagItInerziaKappa_Sturm.ps/PS',1,1)
 if (IER.ne.1) stop
 
 
@@ -108,15 +109,24 @@ open(unit=3, file="ris_eispack.txt")
 
 read(3,*) n
 
-
+countAutovaloriNonPositivi=0
 do i=1,n
-
-   read(3,*) autovalori(i)
+   read(3,*) aus
+   if ( aus > 0.d0 ) then
+      autovalori(i)=aus
+   else
+      autovalori(i)=-1.d0
+      countAutovaloriNonPositivi=countAutovaloriNonPositivi+1
+   end if
 
 end do
 
 call quick_sort(autovalori,n)
 
+write(*,*)"autovalori positivi:"
+write(*,*)autovalori(:)
+
+write(*,*)"numero autovalori non positivi=", countAutovaloriNonPositivi
 
 !Testo la subroutine per il calcolo del numero di autovalori
 !che precedono un certo valore
@@ -124,13 +134,14 @@ call quick_sort(autovalori,n)
 !write(*,*)"n=",n
 
 !Fisso un autovalore
-j=32
+!j=countAutovaloriNonPositivi+1
+j=4
 
-dim=64
-Tinizio=193
-Tfine=4*dim
-Sinizio=193
-Sfine=4*dim
+dim=n
+Tinizio=1
+Tfine=n
+Sinizio=1
+Sfine=n
 
 write(*,*)"dim=",dim
 write(*,*)"j=",j
@@ -180,7 +191,7 @@ do i=1,16
 
    write(*,*)"errore con kappa=", yPlot(i)
 
-   yPlot(i)=log(1.d0/yPlot(i))
+   !yPlot(i) = log(1.0/yPlot(i))
 
    kappa=numAut
 
@@ -192,7 +203,7 @@ do i=1,16
 
    write(*,*)"errore con inerzia=",zPlot(i)
 
-   zPlot(i)=log(1.d0/zPlot(i))
+   !zPlot(i) = log(1.0/zPlot(i))
 
    if ( maxDiff < yPlot(i) ) then
       maxDiff=yPlot(i)
@@ -650,83 +661,60 @@ machinePrecision=epsilon(1.d0)
 
 
 
-!!!
-!Matrici tridiagonali simmetriche random, 
-!ma dominanti diagonali (autovalori "distanti")
-!Per i teoremi di Gershgorin T ed S sono
-!definite positive
-!Impongo T=I e gli autovalori di S
-!compresi fra e1 ed e2
-!!!
-do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   T(i,0) = 1.d0
-   !T(i,1) = rnd*1.d-3
-   T(i,1) = 0.d0
-end do
-
-T(1,1)=0.d0
-
-e1=1.d-1
-e2=1.d-1 + 5.d-2
-
-do i=1,n
-   !call random_number(rnd)
-   rnd=rand(seed)
-   S(i,0) = 0.d0
-   S(i,1) = rnd*1.d-3
-end do
-
-do i=0,n-1
-   rnd = 2.d0*S(i+1,1)
-   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
-end do
-
-S(1,1) = 0.d0
-
-
-
-
-
 !!$!!!
-!!$!Matrici Problema Sturm-Liouville
+!!$!Matrici tridiagonali simmetriche random, 
+!!$!ma dominanti diagonali (autovalori "distanti")
+!!$!Per i teoremi di Gershgorin T ed S sono
+!!$!definite positive
+!!$!Impongo T=I e gli autovalori di S
+!!$!compresi fra e1 ed e2
 !!$!!!
 !!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         T(i,j) = 2.d0*(n+1) + ( (3.d0*i**2 + 2.d0) * 8.d0 )/(n+1)
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         T(i,j) = -1.d0*(n+1) + ( -1.d0 * (2.d0 -3.d0*(2.d0*i+1) +6.d0*i*(i+1)) )/(n+1) 
-!!$         T(j,i) = T(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1 ) then
-!!$         T(i,j)=0.d0
-!!$         T(j,i)=T(i,j)
-!!$      end if
-!!$   end do
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   T(i,0) = 1.d0
+!!$   !T(i,1) = rnd*1.d-3
+!!$   T(i,1) = 0.d0
 !!$end do
 !!$
+!!$T(1,1)=0.d0
+!!$
+!!$e1=1.d-1
+!!$e2=1.d-1 + 5.d-2
+!!$
 !!$do i=1,n
-!!$   do j=1,i
-!!$      if (i == j) then
-!!$         S(i,j) = 4.d0/(6.d0*(n+1))
-!!$      end if
-!!$      if ( abs(i-j) == 1 ) then
-!!$         S(i,j) = 1.d0/(6.d0*(n+1))
-!!$         S(j,i) = S(i,j)
-!!$      end if
-!!$      if ( abs(i-j) > 1) then
-!!$         S(i,j)=0.d0
-!!$         S(j,i)=S(i,j)
-!!$      end if
-!!$   end do
+!!$   !call random_number(rnd)
+!!$   rnd=rand(seed)
+!!$   S(i,0) = 0.d0
+!!$   S(i,1) = rnd*1.d-3
 !!$end do
+!!$
+!!$do i=0,n-1
+!!$   rnd = 2.d0*S(i+1,1)
+!!$   S(i+1,0) = ( (e2-e1)*i )/( e1*e2*(n-1) ) + 1/e2  + abs(rnd)
+!!$end do
+!!$
+!!$S(1,1) = 0.d0
 
 
-!SCRIVO LE MATRICI
 
+
+
+!!!
+!Matrici Problema Sturm-Liouville
+!!!
+do i=1,n-1
+   T(i,0) = -(6.d0*(2.d0*i**2-2.d0*i-1.d0))/(n+1) 
+   T(i+1,1) = -(n+1)*1.d0 + 1.d0/(n+1)
+
+   S(i,0) = 4.d0/(6.d0*(n+1))
+   S(i+1,1) = 1.d0/(6.d0*(n+1))
+end do
+
+T(n,0) = -(6.d0*(2.d0*n**2-2.d0*n-1.d0))/(n+1)
+T(1,1) = 0.d0
+S(n,0) = 4.d0/(6.d0*(n+1))
+S(1,1) = 0.d0
 
 
 !!!

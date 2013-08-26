@@ -1,0 +1,123 @@
+ ||S||_{\infty}=  0.19999999999999998     
+ S(           1 ,0)=  0.13333333333333333     
+ S(           2 ,0)=  0.13333333333333333     
+ S(           3 ,0)=  0.13333333333333333     
+ S(           4 ,0)=  0.13333333333333333     
+ S(           1 ,1)=   0.0000000000000000     
+ S(           2 ,1)=   3.3333333333333333E-002
+ S(           3 ,1)=   3.3333333333333333E-002
+ S(           4 ,1)=   3.3333333333333333E-002
+ en=           2
+ Eigenvalues prima del calcolo:
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+ 
+ 
+ UN SOLO INTERVALLO
+ 
+ 
+ 
+ 
+ -------------------------------------
+ |Adesso dim=           4
+ |Tinizio=           1 Tfine=           4
+ |k1=           2 k2=           4
+ -------------------------------------
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ TRE
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   45.500000026077018      j=           2 kappa(x)=           2
+ aj=   0.0000000000000000      bj=   45.500000026077018     
+ kappa(aj)=           1 kappa(bj)=           2
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           2 )
+ xl(0)=   45.500000026077018      segno=+
+ mi muovo verso sinistra
+ xl(0)=   25.297140372411778      segno=+
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   25.923034719312945      segno=-
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso destra
+ xl(0)=   25.923745902591428      segno=-
+ mi muovo verso destra
+ xl(0)=   25.923745903506674      segno=+
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            5  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   145.42831536233405      j=           3 kappa(x)=           3
+ aj=   0.0000000000000000      bj=   145.42831536233405     
+ kappa(aj)=           1 kappa(bj)=           3
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           3 )
+ xl(0)=   145.42831536233405      segno=+
+ mi muovo verso sinistra
+ xl(0)=   121.71823318952028      segno=+
+ condizione sul segno: si e` rotta la monotonia
+ mi muovo verso sinistra
+ xl(0)=   116.26979253760469      segno=-
+ mi muovo verso sinistra
+ xl(0)=   116.04740244901785      segno=+
+ mi muovo verso sinistra
+ xl(0)=   116.04706122256097      segno=+
+ mi muovo verso sinistra
+ xl(0)=   116.04706122176053      segno=+
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            6  iterazioni.
+ Esco da LagIt
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Inizio a scegliere l'intervallo [aj, bj]:
+ 
+ UNO
+ 
+ UNO
+ 
+ QUATTRO
+ 
+ Ho scelto l'intervallo [aj, bj]:
+ x=   238.33812725332876      j=           4 kappa(x)=           3
+ aj=   238.33812725332876      bj=   302.00000000000000     
+ kappa(aj)=           3 kappa(bj)=           4
+ 
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Entro in LagIt
+ la molteplicita` del j-esimo autovalore
+ e` stimata essere mlt=           1 (j=           4 )
+ xl(0)=   238.33812725332876      segno=+
+ mi muovo verso destra
+ xl(0)=   284.36394155384886      segno=+
+ mi muovo verso destra
+ xl(0)=   299.16892477813315      segno=+
+ mi muovo verso destra
+ xl(0)=   300.38204770137372      segno=+
+ mi muovo verso destra
+ xl(0)=   300.38966541350618      segno=+
+ mi muovo verso destra
+ xl(0)=   300.38966571220942      segno=+
+ mi muovo verso sinistra
+ xl(0)=   300.38966571220931      segno=+
+ condizione di arresto (24) del terzo tipo
+ LagIt compie            7  iterazioni.
+ Esco da LagIt
+ 
+ Eigenvalues dopo il calcolo:
+   0.0000000000000000     
+   25.923745903506674     
+   116.04706122176053     
+   300.38966571220931     
+ FINE CALCOLO AUTOVALORI!

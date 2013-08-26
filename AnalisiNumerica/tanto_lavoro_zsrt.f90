@@ -43,9 +43,9 @@ machinePrecision=epsilon(1.d0)
 !chiamato [aj, bj], il numero x iniziale,
 ! con la sua mlt, ed il numero di iterazioni
 !4) stampo le informazioni dentro i cicli. 
-verbose = 0
+verbose = 4
 
-kMax=8
+kMax=3
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
@@ -73,7 +73,7 @@ do k=1,kMax
    !allocate( T(1:n,0:1), S(1:n,0:1) )
 
    !genero le matrici per l'esperimento
-   call generoMatrici(n,T(1:n,0:1),S(1:n,0:1))
+   call generoMatrici(n,T(1:n,0:1),S(1:n,0:1),0)
 
    !mi occupo di Eispack
    nm=n
@@ -162,7 +162,7 @@ do k=1,kMax
 !!$   b=1.d-1 + 5.d-2 + 2.d-2
 
    a=0.d0
-   b=2.d0
+   b=1400.d0
 
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 
@@ -211,8 +211,12 @@ do k=1,kMax
          write(*,*)"ERRORE: il denominatore e` troppo piccolo."
          exit
       end if
-      !Se sono qui allora non ho incontrato errori
-      vEispack(i) = alfr(i)/beta(i)
+
+      if ( alfr(i)/beta(i)<=0.d0 ) then
+         vEispack(i)=0.d0
+      else
+         vEispack(i) = alfr(i)/beta(i)
+      end if
    end do
 
    call quick_sort(vEispack(1:n), n)
@@ -656,8 +660,8 @@ do while (dim <= n)
             !Chiamo EstMlt e LagIt
             !!!
 
-            !call EstMlt(x, segno, en, em, Eigenvalues, en, j, mlt)
-            call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+            !call EstMlt(x, segno, en, em, Eigenvalues, numCol+1, j, mlt)
+            mlt=1
 
             if (verbose >= 3) then
                write(*,*)"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -667,7 +671,7 @@ do while (dim <= n)
             end if
 
 
-            call LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+            call LagIt(x, mlt, aj, bj, n, dim, T, S,Tinizio, Tfine, &
                  Sinizio, Sfine, j, &
                  fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
 
@@ -801,6 +805,7 @@ end do
 end subroutine EstMlt
 
 
+
 !!!
 !Calcola j-esimo autovalore con l'iterazione di Laguerre
 !!!
@@ -812,11 +817,16 @@ implicit none
 
 integer, parameter :: dp=kind(1.d0)
 
+!integer, parameter :: dq=16
+
 real(dp), intent(INOUT) :: x
 
 integer, intent(IN) :: n
 
+!integer, intent(IN) :: flag
+
 real(dp), dimension(1:n,0:1), intent(IN) :: T, S 
+!real(dp), dimension(1:n,1:n), intent(IN) :: Teispack, Seispack
 
 integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
 
@@ -846,11 +856,23 @@ real(dp), intent(OUT) :: lambdaJ
 
 real(dp) :: machinePrecision
 
+
+!real(dq) :: diff, zero, uno
+
+character(len=1) :: segno, exSegno
+
 character(len=1) :: null
 
 !vedi p. 16
 
+
 machinePrecision=epsilon(1.d0)
+
+!zero= z'00000000000000000000000000000000'
+
+!uno = z'3fff0000000000000000000000000000'
+
+!write(*,*)"machinePrecision=", machinePrecision
 
 lambdaJ = 0.d0
 !Se uscendo dallla subroutine questo valore non e`
@@ -858,21 +880,47 @@ lambdaJ = 0.d0
 
 xl(0) = x
 
+segno="c"
+
+exSegno=segno
+exKappa=kappa
+
+if ( verbose >= 2 ) then
+   write(*,*)"xl(0)=", xl(0)
+   write(*,*)"kappa=",kappa, "j=",j
+end if
+
 l = 2
 
 !write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
 
 do while ( .TRUE. )
 
-   if ( l >= 1000 ) then
-      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
+   if ( l >= 50 ) then
+      write(*,*)"LagIt impiega troppo iterazioni (piu` di 50)."
       exit
    end if
 
-   !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
-   !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
+!!$   if ( verbose >= 5 ) then
+!!$      write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
+!!$      write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
+!!$   end if
 
-   exKappa = kappa
+
+   if ( verbose >= 2 ) then
+      if (kappa >= j .AND. -fPrimo >= 0) then
+         write(*,*)"Non sono nell'intorno buono"
+      end if
+      
+      if (kappa < j .AND. -fPrimo < 0) then
+         write(*,*)"Non sono nell'intorno buono"
+      end if
+   end if
+
+   if ( verbose >= 4 ) then
+      write(*,*)"bj-aj=", bj-aj
+      write(*,*)"[aj, bj]=[",aj,", ",bj,"]"
+   end if
 
    !aggiorno le variabili
    xl(-2) = xl(-1)
@@ -887,10 +935,30 @@ do while ( .TRUE. )
    end if
 
 
+   if ( kappa-j /= exKappa-j  ) then
+      segno="d"
+   else
+      segno="c"
+   end if
+
+   if ( segno == "d" ) then
+      if (verbose >= 2) then
+         !deltaL ed exDeltaL sono discordi
+         write(*,*)"condizione sul segno: si e` rotta la monotonia"
+      end if
+      !GOTO 30
+   end if
+
+
    !calcolo x_l(0) a tappe:
    !questa e` la parte comune a + e -
    xl(0) = (n-1)*fPrimo**2 - n*fSecondo
    xl(0) = abs( ( (n-mlt) * xl(0) )/ (mlt*1.d0) )
+   
+   !!!
+   !call numAutovaloriPrimaDiX(xl(0),dim,Teispack(Tinizio:Tfine,Tinizio:Tfine),Seispack(Sinizio:Sfine,Sinizio:Sfine),numAut)
+
+   !kappa=numAut
 
    if ( kappa < j ) then
 
@@ -901,11 +969,9 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo + sqrt(xl(0))
 
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
       xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
-
-      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
-      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    else
       if ( verbose >=3 ) then
          write(*,*)"mi muovo verso sinistra"
@@ -914,10 +980,9 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo - sqrt(xl(0))
       
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
       xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
-      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
-      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
    end if
 
    if ( isnan(xl(0)) ) then
@@ -929,7 +994,7 @@ do while ( .TRUE. )
    end if
 
    if ( verbose >= 3 ) then
-      write(*,*)"xl(0)=",xl(0)
+      write(*,*)"xl(0)=",xl(0), "segno=", segno
    end if
 
    exDeltaL = xl(-1) - xl(-2)
@@ -954,7 +1019,7 @@ do while ( .TRUE. )
    end if
 
    if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
-   machinePrecision*abs(xl(0)) ) then
+   machinePrecision*abs(xl(0)) ) then      
       if (verbose >= 2) then
          write(*,*)"condizione di arresto (24) del terzo tipo"
       end if
@@ -968,18 +1033,32 @@ do while ( .TRUE. )
       GOTO 30
    end if
 
-   !calcolo (12), (13) e (14)
-20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
-   Sfine, fPrimo, fSecondo, kappa)
-   !call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
-   !if ( verbose >= 3 .AND. kappa /= numAut ) then
-   !   write(*,*)"kappa e` diverso da numAut!"
-   !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
-   !end if
-   !kappa=numAut
 
+   !calcolo (12), (13) e (14)
+20 exKappa = kappa
+
+   !if ( flag >=0 ) then
+      call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+           Sfine, fPrimo, fSecondo, kappa)
+   !   else
+   !      call numAutovaloriPrimaDiX(xl(0),n,dim,Teispack,Seispack,Tinizio,Tfine,Sinizio,Sfine,numAut)
+   !      call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+   !        Sfine, fPrimo, fSecondo, kappa)
+   !      kappa=numAut
+   !end if
+
+
+   if ( verbose >= 2 ) then
+      write(*,*)"kappa=", kappa
+   end if
+
+   exSegno=segno
+
+   
    !aggiorno [aj, bj] secondo il nuovo kappa
    if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
+
+      write(*,*)"modifico dinamicamente mlt"
 
       mlt = abs(kappa-exKappa)
 
@@ -989,9 +1068,28 @@ do while ( .TRUE. )
       !non sono in grado di fare un corretto
       !xl(-2)=xl(-1)
       !ma non mi interessa poiche'
-      !appena ri-entro nel ciclo lo perco comunque
-      
+      !appena ri-entro nel ciclo lo perdo comunque
+      !exKappa=kappa
       GOTO 20
+   end if
+
+   !Aggiorno l'intervallo [aj, bj]
+   if ( kappa < j ) then
+      if ( verbose >= 4 ) then
+         write(*,*)"aggiorno aj"
+      end if
+      aj = xl(0)
+   else
+      if ( verbose >= 4 ) then
+         write(*,*)"aggiorno bj"
+      end if
+      bj = xl(0)
+   end if
+
+   if ( abs(bj-aj) <= max(aj,bj)*machinePrecision ) then
+      write(*,*)"a e b distano pochissimo!"
+      xl(0)=(bj+aj)/2.d0
+      GOTO 30
    end if
 
    l = l+1
@@ -1012,6 +1110,220 @@ end if
 lambdaJ = xl(0)
 
 end subroutine LagIt
+
+
+
+!!$!!!
+!!$!Calcola j-esimo autovalore con l'iterazione di Laguerre
+!!$!!!
+!!$subroutine LagIt(x, mlt, aj, bj, n, dim, T, S, Tinizio, Tfine, &
+!!$Sinizio, Sfine, j, &
+!!$fPrimo, fSecondo, kappa, lambdaJ, verbose, numLagIt)
+!!$
+!!$implicit none
+!!$
+!!$integer, parameter :: dp=kind(1.d0)
+!!$
+!!$real(dp), intent(INOUT) :: x
+!!$
+!!$integer, intent(IN) :: n
+!!$
+!!$real(dp), dimension(1:n,0:1), intent(IN) :: T, S 
+!!$
+!!$integer, intent(INOUT) :: Tinizio, Tfine, Sinizio, Sfine
+!!$
+!!$real(dp), intent(INOUT) :: aj, bj
+!!$
+!!$integer, intent(IN) :: verbose
+!!$
+!!$integer, intent(IN) :: j
+!!$
+!!$integer, intent(INOUT) :: mlt
+!!$
+!!$integer, intent(INOUT) :: dim
+!!$
+!!$integer, intent(INOUT) :: kappa
+!!$
+!!$real(dp), intent(INOUT) :: fPrimo, fSecondo
+!!$
+!!$integer, intent(OUT) :: numLagIt
+!!$
+!!$integer :: i, k, l, exKappa, kappaA, kappaB, numAut
+!!$
+!!$real(dp) :: deltaL, exDeltaL
+!!$
+!!$real(dp), dimension(-2:0) :: xl
+!!$
+!!$real(dp), intent(OUT) :: lambdaJ
+!!$
+!!$real(dp) :: machinePrecision
+!!$
+!!$character(len=1) :: null
+!!$
+!!$!vedi p. 16
+!!$
+!!$machinePrecision=epsilon(1.d0)
+!!$
+!!$lambdaJ = 0.d0
+!!$!Se uscendo dallla subroutine questo valore non e`
+!!$!cambiato allora il calcolo e` errato.
+!!$
+!!$xl(0) = x
+!!$
+!!$l = 2
+!!$
+!!$!write(*,*)"fPrimo=",fPrimo,"fSecondo=",fSecondo
+!!$
+!!$do while ( .TRUE. )
+!!$
+!!$   if ( l >= 1000 ) then
+!!$      write(*,*)"LagIt impiega troppo iterazioni (piu` di mille)."
+!!$      exit
+!!$   end if
+!!$
+!!$   !write(*,*)"xl(-2)=",xl(-2),"xl(-1)=",xl(-1),"xl(0)=",xl(0)
+!!$   !write(*,*)"exDeltaL=",exDeltaL,"deltaL=",deltaL
+!!$
+!!$   exKappa = kappa
+!!$
+!!$   !aggiorno le variabili
+!!$   xl(-2) = xl(-1)
+!!$   xl(-1) = xl(0)
+!!$
+!!$
+!!$   if ( abs(fPrimo) <= machinePrecision .OR. &
+!!$   abs(fSecondo) <= machinePRecision ) then
+!!$      write(*,*)"fPrimo oppure fSecondo sono troppo piccoli!"
+!!$      !esco con xl(0) precedentemente calcolato
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$
+!!$   !calcolo x_l(0) a tappe:
+!!$   !questa e` la parte comune a + e -
+!!$   xl(0) = (n-1)*fPrimo**2 - n*fSecondo
+!!$   xl(0) = abs( ( (n-mlt) * xl(0) )/ (mlt*1.d0) )
+!!$
+!!$   if ( kappa < j ) then
+!!$
+!!$      if ( verbose >=3 ) then
+!!$         write(*,*)"mi muovo verso destra"
+!!$      end if
+!!$      !Calcolo xl(0) = L_{mlt +}(xl(-1))
+!!$
+!!$      xl(0) = -fPrimo + sqrt(xl(0))
+!!$
+!!$      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+!!$
+!!$
+!!$      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
+!!$      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+!!$   else
+!!$      if ( verbose >=3 ) then
+!!$         write(*,*)"mi muovo verso sinistra"
+!!$      end if
+!!$      !Calcolo x_l(0) = L_{mlt -}(xl(-1))
+!!$
+!!$      xl(0) = -fPrimo - sqrt(xl(0))
+!!$      
+!!$      xl(0) = xl(-1) + (n*1.d0)/xl(0)
+!!$
+!!$      !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo - &
+!!$      !sqrt( (((n-mlt)*1.d0)/(mlt*1.d0))* ( (n-1)*fPrimo**2 - n*fSecondo ) ) )
+!!$   end if
+!!$
+!!$   if ( isnan(xl(0)) ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"condizione di arresto particolare: xl(0) e` NaN!"
+!!$      end if
+!!$      xl(0)=xl(-1)
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$   if ( verbose >= 3 ) then
+!!$      write(*,*)"xl(0)=",xl(0)
+!!$   end if
+!!$
+!!$   exDeltaL = xl(-1) - xl(-2)
+!!$   deltaL = xl(0) - xl(-1)
+!!$
+!!$   ! condizione (24)
+!!$
+!!$   !write(*,*)"deltaL=",deltaL
+!!$
+!!$   if ( abs(deltaL) <= machinePrecision*abs(xl(0)) ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"condizione di arresto (24) del primo tipo"
+!!$      end if
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$   if ( abs(deltaL) >= abs(exDeltaL) ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"condizione di arresto (24) del secondo tipo"
+!!$      end if
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$   if ( (deltaL**2)/( abs(exDeltaL)-abs(deltaL) ) <= &
+!!$   machinePrecision*abs(xl(0)) ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"condizione di arresto (24) del terzo tipo"
+!!$      end if
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$   if ( abs(xl(0))<machinePrecision ) then
+!!$      if (verbose >= 2) then
+!!$         write(*,*)"xl(0) troppo piccolo"
+!!$      end if
+!!$      GOTO 30
+!!$   end if
+!!$
+!!$   !calcolo (12), (13) e (14)
+!!$20 call  calcoli(xl(0), T, S, n, dim, Tinizio, Tfine, Sinizio, &
+!!$   Sfine, fPrimo, fSecondo, kappa)
+!!$   !call numAutovaloriPrimaDiX(xl(0),dim,T(Tinizio:Tfine,:),S(Sinizio:Sfine,:),numAut)
+!!$   !if ( verbose >= 3 .AND. kappa /= numAut ) then
+!!$   !   write(*,*)"kappa e` diverso da numAut!"
+!!$   !   write(*,*)"kappa(a)=",kappa,"numAut=",numAut
+!!$   !end if
+!!$   !kappa=numAut
+!!$
+!!$   !aggiorno [aj, bj] secondo il nuovo kappa
+!!$   if (  mlt > 1  .AND.  abs(kappa-exKappa) > 1  ) then
+!!$
+!!$      mlt = abs(kappa-exKappa)
+!!$
+!!$      xl(-2) = xl(0)
+!!$      xl(0) = (xl(0)+xl(-1))/2.d0
+!!$      xl(-1) = xl(-2)
+!!$      !non sono in grado di fare un corretto
+!!$      !xl(-2)=xl(-1)
+!!$      !ma non mi interessa poiche'
+!!$      !appena ri-entro nel ciclo lo perco comunque
+!!$      
+!!$      GOTO 20
+!!$   end if
+!!$
+!!$   l = l+1
+!!$
+!!$   !OSS: incrementare l non modifica il calcolo ma indica l'avanzamento
+!!$   !dello stesso
+!!$
+!!$end do
+!!$
+!!$30 write(null,*) ""
+!!$
+!!$numLagIt = l
+!!$
+!!$if ( verbose >= 3 ) then
+!!$   write(*,*) "LagIt compie ",l," iterazioni."
+!!$end if
+!!$
+!!$lambdaJ = xl(0)
+!!$
+!!$end subroutine LagIt
 
 
 !!!                                                                   
@@ -1363,7 +1675,8 @@ end subroutine quick_sort
 
 
 
-subroutine generoMatrici(n, T, S)
+
+subroutine generoMatrici(n, T, S, soloScrittura)
 
 implicit none
 
@@ -1372,7 +1685,11 @@ integer, parameter :: dp=kind(0.d0)
 
 integer, intent(IN) :: n
 
-real(dp), dimension(1:n,0:1), intent(OUT) :: T,S
+integer, intent(IN) :: soloScrittura
+
+real(dp), dimension(1:n,0:1), intent(INOUT) :: T,S
+
+real(dp), dimension(:,:), allocatable :: Teispack, Seispack
 
 integer,parameter :: seed = 86456
 
@@ -1471,34 +1788,41 @@ machinePrecision=epsilon(1.d0)
 
 
 
+!!$!!!
+!!$!Matrici Problema Sturm-Liouville
+!!$!con p(x)=1 e q(x)=6
+!!$!!!
+!!$do i=1,n-1
+!!$   T(i,0) = -(6.d0*(2.d0*i**2-2.d0*i-1.d0))/(n+1) 
+!!$   T(i+1,1) = -(n+1)*1.d0 + 1.d0/(n+1)
+!!$
+!!$   S(i,0) = 4.d0/(6.d0*(n+1))
+!!$   S(i+1,1) = 1.d0/(6.d0*(n+1))
+!!$end do
+!!$
+!!$T(n,0) = -(6.d0*(2.d0*n**2-2.d0*n-1.d0))/(n+1)
+!!$T(1,1) = 0.d0
+!!$S(n,0) = 4.d0/(6.d0*(n+1))
+!!$S(1,1) = 0.d0
+
+
+
 !!!
 !Matrici Problema Sturm-Liouville
+!con p(x)=1+x e q(x)=1
 !!!
-do i=1,n
-   do j=1,n
-      if (i == j) then
-         T(i,0) = -6.d0/(n+1) * ( 2.d0*i**2 - 2.d0*i -1.d0 )
-      end if
-      if ( abs(i-j) == 1 .AND. j>i ) then
-         T(j,1) = -1.d0/(n+1) + (n+1)*1.d0
-      end if
-   end do
+do i=1,n-1
+   T(i,0) = 2.d0*(n+1+i) + (2.0/3.0)/(n+1) 
+   T(i+1,1) = -1.d0*n - 3.d0/2.d0 - 1.d0*i + (1.d0/6.d0)/(n+1)
+
+   S(i,0) = 4.d0/(6.d0*(n+1))
+   S(i+1,1) = 1.d0/(6.d0*(n+1))
 end do
 
-T(1,1)=0.d0
-
-do i=1,n
-   do j=1,n
-      if (i == j) then
-         S(i,0) = 4.d0/(6.d0*(n+1))
-      end if
-      if ( abs(i-j) == 1 .AND. j>i ) then
-         S(j,1) = 1.d0/(6.d0*(n+1))
-      end if
-   end do
-end do
-
-S(1,1)=0.d0
+T(n,0) = -(6.d0*(2.d0*n**2-2.d0*n-1.d0))/(n+1)
+T(1,1) = 0.d0
+S(n,0) = 4.d0/(6.d0*(n+1))
+S(1,1) = 0.d0
 
 
 
@@ -1514,22 +1838,81 @@ do i=2,n
 end do
 
 
-!!$!!!
-!!$!Calcolo norma infinito (utile per il corollario 4.3)
-!!$!!!
-!!$max = 0
-!!$do i=1,n
-!!$   count = 0
-!!$   do j=1,n
-!!$      count = count + abs(S(i,j))
-!!$   end do
-!!$   if ( count > max ) then
-!!$      max = count
-!!$   end if
-!!$end do
-!!$
-!!$write(*,*)"||S||_{\infty}=",max
 
+if ( soloScrittura > 0 ) then
+
+   allocate( Teispack(n,n), Seispack(n,n) )
+
+   open(unit=1, file="T_Sturm.txt")
+   open(unit=2, file="S_Sturm.txt")
+
+   write(1,*)n
+   write(2,*)n
+
+   do j=1,n
+      do i=1,n
+         if ( i==j ) then
+            Teispack(i,j)=T(i,0)
+            Seispack(i,j)=S(i,0)
+         end if
+         if ( abs(i-j)==1 .AND. i>j ) then
+            Teispack(i,j)=T(i,1)
+            Teispack(j,i)=Teispack(i,j)
+            Seispack(i,j)=S(i,1)
+            Seispack(j,i)=Seispack(i,j)
+         end if
+         write(1,*) Teispack(i,j)
+         write(2,*) Seispack(i,j)
+      end do
+   end do
+
+
+   !Calcolo norma infinito (utile per il corollario 4.3)
+   max = 0.d0
+   do i=1,n
+      count = 0.d0
+      do j=1,n
+
+         if ( i==j .AND. i>1 .AND. i<n  .AND. abs(Seispack(i,i))<(abs(Seispack(i,i-1))+abs(Seispack(i,i+1))) ) then
+            write(*,*)"S non dominante diagonale"
+         end if
+
+
+         if ( i==j .AND. i>1 .AND. i<n  .AND. abs(Teispack(i,i))<(abs(Teispack(i,i-1))+abs(Teispack(i,i+1))) ) then
+            write(*,*)"T non dominante diagonale"
+         end if
+
+
+         count = count + abs(Seispack(i,j))
+      end do
+      if ( count > max ) then
+         max = count
+      end if
+
+   end do
+   
+   write(*,*)"||S||_{\infty}=",max
+
+
+
+   if ( abs(Seispack(1,1))<abs(Seispack(1,2)) ) then
+      write(*,*)"S non dominante diagonale"
+   end if
+   
+   if ( abs(Seispack(n,n))<abs(Seispack(n,n-1)) ) then
+      write(*,*)"S non dominante diagonale"
+   end if
+   
+   if ( abs(Teispack(1,1))<abs(Teispack(1,2)) ) then
+      write(*,*)"T non dominante diagonale"
+   end if
+   
+   if ( abs(Teispack(n,n))<abs(Teispack(n,n-1)) ) then
+      write(*,*)"T non dominante diagonale"
+   end if
+
+   
+end if
 
 end subroutine generoMatrici
 
