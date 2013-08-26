@@ -836,6 +836,48 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
  
 \end{frame}
 
+\begin{frame}
+
+  $n=256$, $\text{dim}=64$ and pencil=$(T(193:4\text{dim}),S(193:4\text{dim}))$
+
+  \frametitle{Where is the problem?}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/ConfrontoLagItInerziaKappa.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+For $i=1,\dots,16$, \textcolor{purple}{absolute errors between $\lambda_{32}$ and $x_i$ with $\kappa$}, \textcolor{black}{absolute errors between $\lambda_{32}$ and $x_i$ with \emph{inertia}}.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Where is the problem?}
+
+  $n=256$, $\text{dim}=64$ and pencil=$(T(193:4\text{dim}),S(193:4\text{dim}))$
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+For $i=1,\dots,16$, \textcolor{purple}{absolute errors between $\lambda_{32}$ and $x_i$ with $\kappa$}, \textcolor{black}{absolute errors between $\lambda_{32}$ and $x_i$ with \emph{inertia}}. \\
+\textcolor{blue}{I use a different scale: $log(\frac{1}{|error|})$}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Where is the problem?}
+
+  When $x_0$ for Laguerre's iteration is into our \textcolor{blue}{good neighbourhood} but $10^{-9} \le |x_0-\lambda_m|\le 10^{-1}$, we can have troubles...
+
+  \pause
+
+  Starting points are the most important aspect of our calculation.
+
+\end{frame}
+
 \section{Good initial point}
 
 \begin{frame}
@@ -870,12 +912,12 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 
 \begin{frame}
   \frametitle{Ideas:}
-  If $n=1$ we have $t\cdot v=\lambda\cdot s\cdot v$. $s\ne 0$, so 
-  $\lambda= \frac{t}{s}$.\\
+  If $\textcolor{blue}{n=1}$ we have $t\cdot v=\lambda\cdot s\cdot v$ with $s\ne 0$, so 
+  $\textcolor{blue}{\lambda= \frac{t}{s}}$.\\
   
   \pause
   
-  If $n=2$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
+  If $\textcolor{blue}{n=2}$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
 
 
 \end{frame}
@@ -883,10 +925,10 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 
 \begin{frame}
   \frametitle{Ideas:}
-  If $n=1$ we have $t\cdot v=\lambda\cdot s\cdot v$. $s\ne 0$, so 
-  $\lambda= \frac{t}{s}$.\\
+  If $\textcolor{blue}{n=1}$ we have $t\cdot v=\lambda\cdot s\cdot v$ with $s\ne 0$, so 
+  $\textcolor{blue}{\lambda= \frac{t}{s}}$.\\
   
-  If $n=2$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
+  If $\textcolor{blue}{n=2}$ we have $\begin{bmatrix}t_{1,1}&t_{1,2}\\ t_{2,1} & t_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix} = \lambda \begin{bmatrix}s_{1,1} & s_{1,2}\\ s_{2,1} & s_{2,2}\end{bmatrix} \begin{bmatrix}v_{1} \\ v_{2}\end{bmatrix}$
   
   
   calling\symbolfootnote[1]{$\alpha=s_{2,2}t_{1,1}-s_{1,2}t_{1,2},\beta=-s_{1,2}t_{1,2}+s_{1,1}t_{2,2}$ \\ $\gamma=-s_{1,2}t_{1,2}+s_{1,1}t_{1,2}, \delta=s_{1,1}s_{2,2}-s_{1,2}^2$.} 
@@ -898,9 +940,9 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
   we resolve $det[ S^{-1}T - \lambda I ]=0$ with
 
   \begin{equation*}
-    \lambda_{1,2} = \frac{1}{2\delta}  
+    \textcolor{blue}{\lambda_{1,2}} = \textcolor{blue}{\frac{1}{2\delta}  
   \big( \alpha+\beta \pm \sqrt{ \alpha^2 + \beta^2 + 
-  \gamma^2 - \alpha\beta } \big)
+  \gamma^2 - \alpha\beta } \big)}
   \end{equation*}
 
 \end{frame}
@@ -908,7 +950,7 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 \begin{frame}
   \frametitle{Ideas:}
 
-  And if $n=4$?
+  And if $\textcolor{blue}{n=4}$?
   
   \begin{equation*}
     \begin{pmatrix}
@@ -940,7 +982,7 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 \begin{frame}
   \frametitle{Ideas:}
 
-  And if $n=4$?
+  And if $\textcolor{blue}{n=4}$?
   
   \begin{equation*}
     \begin{pmatrix}
@@ -972,7 +1014,7 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 \begin{frame}
   \frametitle{Ideas:}
 
-  And if $n=4$?
+  And if $\textcolor{blue}{n=4}$?
   
 
   \begin{equation*}
@@ -1011,12 +1053,12 @@ We can solve the \textcolor{blue}{blue} part and obtain $\textcolor{blue}{\mu_{1
 \begin{frame}[label=BeforeCodeIf]
   \frametitle{Ideas:}
 
-From $\mu_j$ we can enter in our ``neighbourhood'' of $\lambda_j$ using simple \textcolor{blue}{bisection}:
+From $\mu_j$ we can enter in our neighbourhood of $\lambda_j$ using simple \textcolor{blue}{bisection}:
 
 \pause
 
 \begin{Bdescription}
-\item [Speudocode:]
+\item [Pseudocode:]
 \fbox{\setlength{\itemsep}{0pt}
 \begin{Bitemize}[t]
 \item \textcolor{blue}{set} $a_j=0$ and $b_j=\mu_j$ 
@@ -1024,9 +1066,10 @@ From $\mu_j$ we can enter in our ``neighbourhood'' of $\lambda_j$ using simple \
 \item \textcolor{cyan}{\#} \textcolor{blue}{IF} $\kappa(x)<j$ 
 \item \textcolor{blue}{THEN} \textcolor{blue}{set} $a_j=x$ 
 \item \textcolor{blue}{ELSE} \textcolor{blue}{set} $b_j=x$
-\item \textcolor{blue}{\symbolfootnote[1]{This is the most important part of our method. \\ Authors of \cite{principal, secondary} doesn't explain this point. \hyperlink{CodeIf}{\beamergotobutton{code}} }IF} $-\frac{f^{'}(x)}{f(x)}=sign(\lambda_j - x)$
+\item \textcolor{blue}{\symbolfootnote[1]{This is an important part of our method. \\ Authors of \cite{principal, secondary} doesn't explain this point. \hyperlink{CodeIf}{\beamergotobutton{code}} }IF} $-\frac{f^{'}(x)}{f(x)}=sign(\lambda_j - x)$
 \item \textcolor{blue}{THEN} \textcolor{blue}{stop}
 \item \textcolor{blue}{ELSE} \textcolor{blue}{set} $x=\frac{b_j-a_j}{2}$ and \textcolor{blue}{go to} \textcolor{cyan}{\#}
+\item \textcolor{purple}{set} $x_0=x$
 \end{Bitemize}
 }
 \end{Bdescription}
@@ -1070,7 +1113,7 @@ eigenvalues of $(\hat T, \hat S)$, they are what we call $\mu_1,\dots,\mu_n$.
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=BeforeInterlacing]
 \frametitle{Split}
 
 \begin{te}[A sort of ``interlacing'' with \hyperlink{Interlacing}{\beamergotobutton{proof}}]
@@ -1167,7 +1210,7 @@ If $mlt=2$ then we consider $\lambda_2=\lambda_3$, i.e. we said that $\lambda_2$
 We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,\dots,\hat\lambda_n$ as \emph{INPUT}.
 
   \begin{Bdescription}
-  \item [Speudocode:]
+  \item [Pseudocode:]
     \fbox{\setlength{\itemsep}{0pt}%
       \begin{Bitemize}[t]
       \item $mlt=1$
@@ -1175,6 +1218,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
       \item $m = j + k \text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$
       \item \textcolor{blue}{if} $m \le 0$ \textcolor{blue}{then}
       \item \textcolor{red}{something goes wrong}
+      \item \textcolor{blue}{set} $mlt=1$
       \item \textcolor{blue}{go to} \textcolor{cyan}{\#}
       \item \textcolor{blue}{end if}
       \item \textcolor{blue}{if} $ | \hat\lambda_j - \hat\lambda_m | \le 0.01 | \hat\lambda_j - x | $ \textcolor{blue}{then}
@@ -1186,9 +1230,82 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
     \end{Bitemize}}
     \end{Bdescription}
 
+\end{frame}
+
+\section{Dynamic programming}
+
+\begin{frame}
+\frametitle{Dynamic programming}
+
+\begin{Bdescription}
+  \item [We want:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Fast and secure iterative method.
+  \item Starting points for our method.
+  \item Scalability.
+  \end{Bitemize}}
+  
+  \item [We have:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Laguerre's method.
+  \item Cuppen's divide and conquer method.
+  \item Symmetric tridiagonal matrices.
+  \end{Bitemize}}
+
+  \item [We add:]
+  \fbox{\setlength{\itemsep}{0pt}%
+  \begin{Bitemize}[t]
+  \item Unreducible condition.
+  \item \textcolor{blue}{Dynamic programming (Bottom-up)}.
+  \item Efficient matrix storing.
+  \end{Bitemize}}
+\end{Bdescription}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dynamic programming}
+
+  The author's poit of view is \textcolor{blue}{parallel computating}.
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/ParallelComputing_Broadcast_Operation.jpg}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
 
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Dynamic programming}
+  My point of view is \textcolor{blue}{sequential computating}.
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/SequentialComputing.jpg}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dynamic programming}
+
+  Instead of \textcolor{blue}{recurtion} I chose \textcolor{blue}{dynamic programming}, \emph{i.e.} \\ ``solving complex problems by breaking them down into simpler subproblems. [...] In general, to solve a given problem, we need to solve different parts of the problem (subproblems), then combine the solutions of the subproblems to reach an overall solution.'' \\ (cit. Wikipedia)
+
+  \pause
+
+  If $\textcolor{blue}{n=2^k}$, to compute eigenvalues of $(T,S)$ we use $(\hat T, \hat S)$, that use $(\hat{\hat T}, \hat{\hat S})$, that use $(\hat{\hat{\hat T}}, \hat{\hat{\hat S}})$, $\dots$
+
+\end{frame}
+
+\begin{frame}
+  Thank you.
+\end{frame}
+
+\section{Appendices}
 
 \begin{frame}[label=LagProof]
   \frametitle{Appendice A: proof of Laguerre's convergence}
@@ -1349,6 +1466,8 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
     H(\alpha,\lambda) = p(\lambda) + \alpha^2 q(\lambda)
   \end{equation*}
 
+  with $p,q$ polynomials.
+
 \end{frame}
 
 \begin{frame}
@@ -1389,7 +1508,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
 \frame{
 \begin{center}
-Grazie per l'attenzione.
+Grazie (ancora) per l'attenzione.
 \end{center}
 }
 

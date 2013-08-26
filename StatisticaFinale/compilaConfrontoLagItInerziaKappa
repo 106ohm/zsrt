@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gfortran confronto_LagIt_inerzia_kappa.f90 -lblas -llapack -lpgplot -lX11 -o confronto_LagIt_inerzia_kappa
+
+./confronto_LagIt_inerzia_kappa

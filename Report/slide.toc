@@ -5,4 +5,6 @@
 \beamer@sectionintoc {3}{Laguerre's method}{11}{0}{3}
 \beamer@sectionintoc {4}{Good evaluation of $L_{\pm }(x)$}{35}{0}{4}
 \beamer@sectionintoc {5}{Error Analysis}{55}{0}{5}
-\beamer@sectionintoc {6}{Good initial point}{66}{0}{6}
+\beamer@sectionintoc {6}{Good initial point}{70}{0}{6}
+\beamer@sectionintoc {7}{Dynamic programming}{91}{0}{7}
+\beamer@sectionintoc {8}{Appendices}{97}{0}{8}

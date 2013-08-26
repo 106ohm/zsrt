@@ -1,0 +1,117 @@
+ n=         256
+ dim=          64
+ j=          32
+ j-esimo autovalore=  0.10420873535597065     
+ -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+ i=           1
+ x=   4.2087353559706470E-003
+ aj=   4.2087353559706470E-003 bj=   4.2087353559706470E-003
+ numAut=           0
+ kappa=           0
+ errore con kappa=   8.60392600E-02
+ errore con inerzia=   8.60392600E-02
+ i=           2
+ x=   9.4208735355970658E-002
+ aj=   9.4208735355970658E-002 bj=   9.4208735355970658E-002
+ numAut=           0
+ kappa=           0
+ errore con kappa=   4.22261143E-03
+ errore con inerzia=   8.74432549E-03
+ i=           3
+ x=  0.10320873535597065     
+ aj=  0.10320873535597065      bj=  0.10320873535597065     
+ numAut=          24
+ kappa=          24
+ errore con kappa=   9.84290498E-04
+ errore con inerzia=   1.00000005E-03
+ i=           4
+ x=  0.10410873535597065     
+ aj=  0.10410873535597065      bj=  0.10410873535597065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   1.89388902E-05
+ errore con inerzia=   9.71445147E-17
+ i=           5
+ x=  0.10419873535597066     
+ aj=  0.10419873535597066      bj=  0.10419873535597066     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.99999975E-06
+ i=           6
+ x=  0.10420773535597065     
+ aj=  0.10420773535597065      bj=  0.10420773535597065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   1.11022302E-16
+ errore con inerzia=   9.99999997E-07
+ i=           7
+ x=  0.10420863535597065     
+ aj=  0.10420863535597065      bj=  0.10420863535597065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.99999301E-08
+ i=           8
+ x=  0.10420872535597066     
+ aj=  0.10420872535597066      bj=  0.10420872535597066     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.99999994E-09
+ i=           9
+ x=  0.10420873435597065     
+ aj=  0.10420873435597065      bj=  0.10420873435597065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.71445147E-17
+ i=          10
+ x=  0.10420873525597066     
+ aj=  0.10420873525597066      bj=  0.10420873525597066     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.71445147E-17
+ i=          11
+ x=  0.10420873534597065     
+ aj=  0.10420873534597065      bj=  0.10420873534597065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.71445147E-17
+ i=          12
+ x=  0.10420873535497065     
+ aj=  0.10420873535497065      bj=  0.10420873535497065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   1.11022302E-16
+ errore con inerzia=   1.11022302E-16
+ i=          13
+ x=  0.10420873535587065     
+ aj=  0.10420873535587065      bj=  0.10420873535587065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   1.11022302E-16
+ errore con inerzia=   1.11022302E-16
+ i=          14
+ x=  0.10420873535596065     
+ aj=  0.10420873535596065      bj=  0.10420873535596065     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   1.11022302E-16
+ errore con inerzia=   1.11022302E-16
+ i=          15
+ x=  0.10420873535596965     
+ aj=  0.10420873535596965      bj=  0.10420873535596965     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.71445147E-17
+ i=          16
+ x=  0.10420873535597056     
+ aj=  0.10420873535597056      bj=  0.10420873535597056     
+ numAut=          31
+ kappa=          31
+ errore con kappa=   9.71445147E-17
+ errore con inerzia=   9.71445147E-17
