@@ -7,4 +7,5 @@
 \beamer@sectionintoc {5}{Error Analysis}{55}{0}{5}
 \beamer@sectionintoc {6}{Good initial point}{70}{0}{6}
 \beamer@sectionintoc {7}{Dynamic programming}{91}{0}{7}
-\beamer@sectionintoc {8}{Appendices}{97}{0}{8}
+\beamer@sectionintoc {8}{Othder thinks}{101}{0}{8}
+\beamer@sectionintoc {9}{Appendices}{107}{0}{9}

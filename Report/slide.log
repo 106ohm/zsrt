@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  26 AUG 2013 13:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  26 AUG 2013 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -779,7 +779,42 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v2.10 (rcs-revision 1.2)
 x.code.tex
 File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
 )
-\c@de=\count175
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnake
+s.code.tex
+File: tikzlibrarysnakes.code.tex 2008/02/05 v2.10 (rcs-revision 1.6)
+
+
+Package tikz Warning: Snakes have been superseded by decorations. Please use th
+e decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathmorphing.code.tex
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.code.tex
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen201
+\pgfdecoratedremainingdistance=\dimen202
+\pgfdecoratedinputsegmentcompleteddistance=\dimen203
+\pgfdecoratedinputsegmentremainingdistance=\dimen204
+\pgf@decorate@distancetomove=\dimen205
+\pgf@decorate@repeatstate=\count175
+\pgfdecorationsegmentamplitude=\dimen206
+\pgfdecorationsegmentlength=\dimen207
+)
+\tikz@lib@dec@box=\box63
+)
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athmorphing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.shapes.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.s
+hapes.code.tex)))
+\c@de=\count176
 
 (/usr/share/texmf/tex/latex/beamer/base/themes/color/beamercolorthemedolphin.st
 y
@@ -838,16 +873,16 @@ LaTeX Font Info:    ... okay on input line 125.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count176
-\scratchdimen=\dimen201
-\scratchbox=\box63
-\nofMPsegments=\count177
-\nofMParguments=\count178
+\scratchcounter=\count177
+\scratchdimen=\dimen208
+\scratchbox=\box64
+\nofMPsegments=\count178
+\nofMParguments=\count179
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count179
-\MPscratchDim=\dimen202
-\MPnumerator=\count180
-\makeMPintoPDFobject=\count181
+\MPscratchCnt=\count180
+\MPscratchDim=\dimen209
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
 \everyMPtoPDFconversion=\toks60
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -865,7 +900,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box64
+\AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring OFF on input line 125.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -874,7 +909,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count182
+\c@section@level=\count183
 )
 LaTeX Info: Redefining \ref on input line 125.
 LaTeX Info: Redefining \pageref on input line 125.
@@ -951,7 +986,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@lstlisting=\count183
+\c@lstlisting=\count184
  (./slide.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
@@ -1082,7 +1117,7 @@ LaTeX Warning: Citation `secondary' on page 32 undefined on input line 511.
 
 LaTeX Warning: Citation `julia' on page 33 undefined on input line 528.
 
-<images/JuliaLaguerre.pdf, id=893, 408.32549pt x 414.1071pt>
+<images/JuliaLaguerre.pdf, id=898, 408.32549pt x 414.1071pt>
 File: images/JuliaLaguerre.pdf Graphic file (type pdf)
 
 <use images/JuliaLaguerre.pdf>
@@ -1182,7 +1217,7 @@ OML/cmm/m/it/10.95 < \OT1/cmss/m/it/10.95 m[][] \OMS/cmsy/m/n/10.95 ^^@ [] ^^U
 ] [51
 
 ]
-<images/Tempi_con_riferimento_quadrato_13.pdf, id=1391, 692.3466pt x 500.83109p
+<images/Tempi_con_riferimento_quadrato_13.pdf, id=1395, 692.3466pt x 500.83109p
 t>
 File: images/Tempi_con_riferimento_quadrato_13.pdf Graphic file (type pdf)
  <use images/Tempi_con_riferimento_quadrato_13.pdf>
@@ -1192,7 +1227,7 @@ nput line 737.
  [52
 
  <./images/Tempi_con_riferimento_quadrato_13.pdf>]
-<images/Tempi_13.pdf, id=1430, 781.96138pt x 570.21031pt>
+<images/Tempi_13.pdf, id=1435, 781.96138pt x 570.21031pt>
 File: images/Tempi_13.pdf Graphic file (type pdf)
 
 <use images/Tempi_13.pdf>
@@ -1201,7 +1236,7 @@ Package pdftex.def Info: images/Tempi_13.pdf used on input line 750.
  [53
 
  <./images/Tempi_13.pdf>]
-<images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf, id=1463, 692.34
+<images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf, id=1467, 692.34
 66pt x 500.83109pt>
 File: images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf Graphic fil
 e (type pdf)
@@ -1226,7 +1261,7 @@ ete.pdf used on input line 764.
 ] [60
 
 ]
-<images/IstogrammaEsponentiErrori_256.pdf, id=1650, 667.77483pt x 480.59549pt>
+<images/IstogrammaEsponentiErrori_256.pdf, id=1654, 667.77483pt x 480.59549pt>
 File: images/IstogrammaEsponentiErrori_256.pdf Graphic file (type pdf)
 
 <use images/IstogrammaEsponentiErrori_256.pdf>
@@ -1244,7 +1279,7 @@ Package pdftex.def Info: images/IstogrammaEsponentiErrori_256.pdf used on input
 ] [65
 
 ]
-<images/ConfrontoLagItInerziaKappa.pdf, id=1792, 674.27911pt x 472.6458pt>
+<images/ConfrontoLagItInerziaKappa.pdf, id=1796, 674.27911pt x 472.6458pt>
 File: images/ConfrontoLagItInerziaKappa.pdf Graphic file (type pdf)
 
 <use images/ConfrontoLagItInerziaKappa.pdf>
@@ -1254,7 +1289,7 @@ ne 852.
  [66
 
  <./images/ConfrontoLagItInerziaKappa.pdf>]
-<images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf, id=1825, 67
+<images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf, id=1829, 67
 4.27911pt x 472.6458pt>
 File: images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf Graphic
  file (type pdf)
@@ -1370,7 +1405,7 @@ Overfull \hbox (6.0903pt too wide) in paragraph at lines 1204--1204
 ] [91
 
 ]
-<images/ParallelComputing_Broadcast_Operation.jpg, id=2484, 326.21875pt x 232.8
+<images/ParallelComputing_Broadcast_Operation.jpg, id=2488, 326.21875pt x 232.8
 7pt>
 File: images/ParallelComputing_Broadcast_Operation.jpg Graphic file (type jpg)
  <use images/ParallelComputing_Broadcast_Operation.jpg>
@@ -1380,7 +1415,7 @@ on input line 1278.
  [92
 
  <./images/ParallelComputing_Broadcast_Operation.jpg>]
-<images/SequentialComputing.jpg, id=2511, 326.21875pt x 232.87pt>
+<images/SequentialComputing.jpg, id=2515, 326.21875pt x 232.87pt>
 File: images/SequentialComputing.jpg Graphic file (type jpg)
 
 <use images/SequentialComputing.jpg>
@@ -1396,12 +1431,7 @@ Package pdftex.def Info: images/SequentialComputing.jpg used on input line 1291
 
 ] [96
 
-]
-
-LaTeX Warning: Citation `bookWilkinson' on page 97 undefined on input line 1328
-.
-
-[97
+] [97
 
 ] [98
 
@@ -1421,14 +1451,18 @@ LaTeX Warning: Citation `bookWilkinson' on page 97 undefined on input line 1328
 
 ] [106
 
-] [107
+]
+
+LaTeX Warning: Citation `bookWilkinson' on page 107 undefined on input line 145
+3.
+
+[107
 
 ] [108
 
 ] [109
 
-]
-[110
+] [110
 
 ] [111
 
@@ -1447,10 +1481,33 @@ LaTeX Warning: Citation `bookWilkinson' on page 97 undefined on input line 1328
 ] [118
 
 ]
-No file slide.bbl.
 [119
 
 ] [120
+
+] [121
+
+] [122
+
+] [123
+
+] [124
+
+] [125
+
+] [126
+
+] [127
+
+] [128
+
+] [129
+
+]
+No file slide.bbl.
+[130
+
+] [131
 
 ]
 \tf@nav=\write7
@@ -1462,14 +1519,14 @@ No file slide.bbl.
 \tf@snm=\write9
 \openout9 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1520.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1520.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1680.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1680.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1520.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1520.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1680.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1680.
 
 Package rerunfilecheck Info: File `slide.out' has not changed.
-(rerunfilecheck)             Checksum: E128CB5924D495D8119516D944161914;469.
+(rerunfilecheck)             Checksum: DC2CF75629A4CD72349CB0F18B909193;518.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1478,16 +1535,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1520.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1680.
  ) 
 Here is how much of TeX's memory you used:
- 21280 strings out of 494964
- 393220 string characters out of 3179448
- 490176 words of memory out of 3000000
- 23722 multiletter control sequences out of 15000+200000
+ 22159 strings out of 494964
+ 420728 string characters out of 3179448
+ 504313 words of memory out of 3000000
+ 24550 multiletter control sequences out of 15000+200000
  20840 words of font info for 80 fonts, out of 3000000 for 9000
  59 hyphenation exceptions out of 8191
- 49i,21n,63p,394b,1215s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,21n,102p,394b,1582s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
@@ -1510,10 +1567,10 @@ nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on slide.pdf (120 pages, 739360 bytes).
+Output written on slide.pdf (131 pages, 767105 bytes).
 PDF statistics:
- 3366 PDF objects out of 3580 (max. 8388607)
- 3158 compressed objects within 32 object streams
- 274 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3655 PDF objects out of 4296 (max. 8388607)
+ 3433 compressed objects within 35 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 

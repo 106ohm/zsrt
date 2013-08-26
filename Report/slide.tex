@@ -25,7 +25,7 @@
 \usepackage{graphicx}
 
 \usepackage{tikz}
-\usetikzlibrary{trees,matrix}
+\usetikzlibrary{trees,matrix,snakes}
 
 %%%
 %Definizione nuovi comandi
@@ -115,7 +115,7 @@ Eigenvalue Problem}
 \subtitle{Kuiyuam Li, Tien-Yien Li, Zhonggang Zeng}
 \author{Giulio Masetti}
 \institute{Universit\`a di Pisa\\
-Corso Metodi di Approssimazione 2012-2013
+Metodi di Approssimazione 2012-2013
 }
 \date{\today}
 
@@ -153,7 +153,7 @@ Corso Metodi di Approssimazione 2012-2013
 \end{de}
 
 We consider \emph{only} \begin{fminipage}{0.8in} symmetric \\ and \\ 
-tridiagonal\end{fminipage} pencil.
+tridiagonal\end{fminipage} pencils.
 
 \pause
 
@@ -255,7 +255,7 @@ s_{i,i+1}^2 \neq 0$\\
 
 \pause
 
-\emph{exemplum gratie}:
+\emph{exempli gratia}:
 
 \begin{Bdescription}
   \item [\textcolor{red}{Bad}]
@@ -278,7 +278,7 @@ s_{i,i+1}^2 \neq 0$\\
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Matrix storin}
+\frametitle{Matrix storing}
 
 \begin{equation*}
   T = trid(sub,diag,super)
@@ -355,7 +355,7 @@ If $\lambda_m$ and $\lambda_{m+1}$ are simple zeros (mlt=1), then we consider $x
 \pause
 
 if $\fbox{$u\neq x$}$ then $g_{u}(x)<0$ and $g_u(\lambda_m),g_u(\lambda_{m+1})>0$. \\
-So we have two sign change. \\
+So we have two sign changes. \\
 
 \pause
 
@@ -433,12 +433,12 @@ It's clear how we use $\lambda_m \approx \hat X_{-} < x < \hat X_{+} \approx \la
 \frametitle{Fast and secure iterative method}
 
 \begin{de}[Laguerre's iteration]
-  If $mlt(\lambda_m)=mlt(\lambda_{m+1})=1$ then
+  \textcolor{blue}{If} $mlt(\lambda_m)=mlt(\lambda_{m+1})=1$ \textcolor{blue}{then}
   \begin{align*}
     x_{+}^{(k)} &= L_{+}^k(x)=L_{+}(L_{+}(\dots(x_{0})))\\
     x_{-}^{(k)} &= L_{-}^k(x)=L_{-}(L_{-}(\dots(x_{0})))
   \end{align*}
-  else we have a similar expression.
+  \textcolor{blue}{else} we have another similar expression.
 \end{de} 
 
 \pause
@@ -469,7 +469,7 @@ We also have un important property:
 $sign \Big( \frac{f^{'}(x_0)}{f(x_0)} \Big) = sign(\lambda_m - x_0)$ we have 
 $\{ x_{+}^{(k)} \}_{k=1,\dots}$ conv. mon. cubic to $\lambda_{m+1}$ } $\lambda_m < x_0$ s.t. 
 $sign \Big( \frac{f^{'}(x_0)}{f(x_0)} \Big) = sign(\lambda_m - x_0)$ then 
-$\{ x_{-}^{(k)} \}_{k=1,\dots}$ converge monotonically in asymptotically 
+$\{ x_{-}^{(k)} \}_{k=1,\dots}$ converges monotonically in asymptotically 
 cubic rate to $\lambda_m$. 
 \end{te}
 
@@ -500,7 +500,7 @@ The Laguerre's method is \textcolor{green}{fast}.
 
 It's clear that we need a powerfull method to obtain $x_{0}$ and an algorithm to 
 estimate $mlt(\lambda_m)$. \\
-\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{secondary}) causes no trouble, so the most importan aspects of our calculation are: 
+\emph{Overstimate} $mlt(\lambda_m)$ (as we can read in \cite{secondary}) causes no trouble, so the most important aspects of our calculation are: 
 
 \fbox{\setlength{\itemsep}{0pt}
 \begin{Bitemize}[t]
@@ -513,7 +513,7 @@ estimate $mlt(\lambda_m)$. \\
 \begin{frame}[label=Julia]
   \frametitle{Complex case (little digression)}
 
-  According to \cite{julia}, we observe that searching $z\in\C \tc z^n - 1 = 0$ for $n>4$ with Laguerre's method it's difficult because near the origin there is a Julia fractal set for starting point $z_0$. (figure: $n=6$)
+  According to \cite{julia}, we observe that with Laguerre's method searching $z\in\C \tc z^n - 1 = 0$ for $n>4$ it's difficult because near the origin there is a Julia fractal set for starting point $z_0$. (figure: $n=6$)
 
 \begin{figure}
   \centering
@@ -530,7 +530,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \section{Good evaluation of $L_{\pm}(x)$}
 
 \begin{frame}
-  \frametitle{Three term recurrence}
+  \frametitle{Three-term recurrence}
   For a generic $x\in\R$ we call $\rho_n(x) = \deter{T_n-x S_n}$,
   and $\rho_{n-1}(x) = \deter{T_{n-1}-x S_{n-1}}$, with $T_{n-1}$ leading principal submatrix. 
 
@@ -544,7 +544,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \end{frame}
 
 \begin{frame}
-  \frametitle{Three term recurrence}
+  \frametitle{Three-term recurrence}
 
   We can proove it with the \emph{Laplace expansion} (e.g. $n=4$)
 
@@ -574,7 +574,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \end{frame}
 
 \begin{frame}
-  \frametitle{Three term recurrence}
+  \frametitle{Three-term recurrence}
 
   We can proove it with the \emph{Laplace expansion} (e.g. $n=4$)
 
@@ -608,13 +608,13 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 
 
 \begin{frame}[label=BeforeSturmSequence]
-  \frametitle{Three term recurrence}
+  \frametitle{Three-term recurrence}
 
   \begin{os}
     If $x = \lambda$ then $\rho_n(\lambda)=\effe{(T_n,S_n)}{\lambda}=f(\lambda)$
   \end{os}
 
-  \begin{os}[ important results with \hyperlink{SturmSequence}{\beamergotobutton{proof}} in Appendice]
+  \begin{os}[ important results with \hyperlink{SturmSequence}{\beamergotobutton{proof}} in Appendix]
     $\rho_0,\rho_1,\dots,\rho_n$ is a \textcolor{blue}{\emph{Sturm sequence}} of polynomials so, $\forall x\in\R$, we have
 
     \begin{align*}
@@ -638,7 +638,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \end{frame}
 
 \begin{frame}
-  \frametitle{Three term recurrence}
+  \frametitle{Three-term recurrence}
 
   Obviusly $f^{'}=\rho_n^{'},f^{''}=\rho_n^{''}$.
 
@@ -693,11 +693,11 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \begin{frame}
   \frametitle{What we really calculate is...}
 
-  We \textcolor{blue}{define} $\xi_i=\frac{\rho_i}{\rho_{i-1}}$ for $i=2,\dots, n$ and we have $\rho_i=\prod_{k=1}^{n} \xi_k$.
+  We \textcolor{blue}{define} $\xi_i=\frac{\rho_i}{\rho_{i-1}}$ for $i=2,\dots, n$ and we have $\rho_i=\prod_{k=1}^{i} \xi_k$.
 
   \pause
 
-  We also \textcolor{blue}{define} $\eta_i=\frac{\rho^{'}_i}{\rho_i}, \zeta_i=\frac{\rho^{''}_i}{\rho_i}$ for $i=0,1,\dots,n$ and we finally we have
+  We also \textcolor{blue}{define} $\eta_i=\frac{\rho^{'}_i}{\rho_i}, \zeta_i=\frac{\rho^{''}_i}{\rho_i}$ for $i=0,1,\dots,n$ and finally we have
 
   \begin{align*}
     \kappa(x) &= \text{ number of \textcolor{blue}{negative terms} in } \{ \xi_i \}_{i=1}^{n} \\
@@ -710,7 +710,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \begin{frame}
   \frametitle{What we really calculate is...}
 
-  So we have to calculate three three-term-recurrences.
+  So we have to calculate three three-term recurrences.
   
   \pause
 
@@ -772,7 +772,7 @@ We can appreciate little differences between $T=(0,1,0)$ and $T=(a_i,1,a_i)$
 \begin{frame}
   \frametitle{Error Analysis}
 
-It's a common knowledge that three-term-recurrences suffer from severe overflow and underflow problems, and because of that we use $\xi_i$ instead of $\rho_i$: 
+It's known that three-term recurrences suffer from severe overflow and underflow problems, and because of that we use $\xi_i$ instead of $\rho_i$: 
 
 \pause
 
@@ -796,11 +796,11 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 
 \pause
 
-\textcolor{red}{The authors doesn't report this important aspect of analysis}.
+\textcolor{red}{The authors don't report this important aspect of analysis}.
 
 \pause
 
-($\text{fl}[\eta_n],\text{fl}[\zeta_n]$ suffer from similar problems and have similar backward analysis, but they are -in partucular $\zeta_n$- enourmous in magnitude, sometimes this can cause trobles)
+($\text{fl}[\eta_n],\text{fl}[\zeta_n]$ suffer from similar problems and have similar backward analysis, but they are -in partucular $\zeta_n$- enourmous in magnitude; sometimes this can cause troubles)
 
 \end{frame}
 
@@ -820,7 +820,7 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 \begin{frame}
   \frametitle{Where is the problem?}
 
-   Sometimes (about $3$ over $100$ eigenvalues with $n \ge 256$) Laguerre's iteration \textcolor{red}{break the monotonic convergence}! 
+   Sometimes (about $3$ over $100$ eigenvalues with $n \ge 256$) Laguerre's iteration \textcolor{red}{breaks the monotonic convergence}! 
 
    \pause
 
@@ -1191,7 +1191,7 @@ We can reach $\lambda_2$ only from $\hat\lambda_2$, moving from left to right (a
 
 \pause
 
-If $| \lambda_2-\lambda_3 | \le 10^{-14}$ we can have trobles.
+If $| \lambda_2-\lambda_3 | \le 10^{-14}$ we can have troubles.
 
 \pause
 
@@ -1267,7 +1267,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \begin{frame}
   \frametitle{Dynamic programming}
 
-  The author's poit of view is \textcolor{blue}{parallel computating}.
+  The author's point of view is \textcolor{blue}{parallel computating}.
 
   \begin{figure}
     \centering
@@ -1299,6 +1299,131 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
   If $\textcolor{blue}{n=2^k}$, to compute eigenvalues of $(T,S)$ we use $(\hat T, \hat S)$, that use $(\hat{\hat T}, \hat{\hat S})$, that use $(\hat{\hat{\hat T}}, \hat{\hat{\hat S}})$, $\dots$
 
+  \pause
+
+  There is a natural \textcolor{blue}{binary tree structure}.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dynamic programming}
+
+  We can 
+
+  \begin{itemize}
+
+    \item compute eigenvalues for all the pencils $2\times 2$ ( they are $2^{k-1}$)
+    \item compute eigenvalues for all the pencils $4\times 4$ ( they are $2^{k-2}$)
+    \item $\vdots$
+    \item compute eigenvalues for all the pencils $\frac{n}{2}\times \frac{n}{2}$ ( they are $2$)
+    \item compute eigenvalues of $(T,S)$
+
+  \end{itemize}
+
+  \pause
+
+  This is a ``Bottom-up approach'' because we start with dimension $2$ and finish with dimension $n$.
+
+\end{frame}
+
+\begin{frame}
+
+  \frametitle{Dynamic programming}
+  
+  \emph{e.g.} $n=16$ 
+
+  \tikzstyle{level 1}=[sibling angle=60]
+  \tikzstyle{level 2}=[sibling angle=45]
+  \tikzstyle{level 3}=[sibling angle=30]
+  \tikzstyle{every node}=[fill]
+  \tikzstyle{edge from parent}=[snake=expanding waves,segment length=1mm,segment angle=10,draw]
+  \begin{tikzpicture}[grow cyclic,shape=circle,very thick,level distance=13mm,cap=round]
+    \node {} child [color=\A] foreach \A in {green,blue}
+          { node {} child [color=\A!50!\B] foreach \B in {green,blue}
+            { node {}
+              child [color=\A!50!\B!50!\C] foreach \C in {green,blue}
+              { node {} }
+            }
+          };
+  \end{tikzpicture}
+  
+  We start from leaves ($\text{dim=}2$) and finish with the root ($\text{dim=}16$)
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Dynamic programming}
+
+  \begin{Bdescription}
+  \item [Code:]
+    \fbox{\setlength{\itemsep}{0pt}%
+      \begin{Bitemize}[t]
+        \item \textcolor{blue}{WHILE} $\text{dim} \le n$          
+        \item \textcolor{blue}{DO} $k=0, \frac{n}{\text{dim}} - 1$
+
+        \item \textcolor{blue}{set} $Tstart = 1 + k \text{dim}$ \textcolor{blue}{and} $Tend = (1 + k) \text{dim}$
+        \item \textcolor{blue}{set} $Sstart = 1 + k \text{dim}$ \textcolor{blue}{and} $Send = (1 + k) \text{dim}$
+
+        \item \textcolor{blue}{IF} $\text{dim}=2$ 
+        \item \textcolor{blue}{THEN}
+        \item \textcolor{green}{explicit calculation}
+        \item \textcolor{blue}{ELSE}
+        \item \textcolor{blue}{search eigenvalues of} 
+        \item $\textcolor{cyan}{(T(Tstart\dots Tend,0\dots 1),S(Sstart\dots Send,0\dots 1))}$
+        \item \textcolor{blue}{knowing eigenvalues of}
+        \item $\textcolor{green}{(T(Tstart\dots\frac{Tend}{2},0\dots 1),S(Sstart\dots\frac{Send}{2},0\dots 1))}$ 
+        \item \textcolor{blue}{and} 
+        \item $\textcolor{green}{(T(\frac{Tend}{2}+1\dots Tend,0\dots 1),S(\frac{Send}{2}+1,0\dots 1))}$
+        \item \textcolor{blue}{END DO}
+      
+    \end{Bitemize}}
+  \end{Bdescription}
+  
+\end{frame}
+
+\section{Othder thinks}
+
+\begin{frame}
+  \frametitle{Instead of all eigenvalues...}
+
+  ...We can search \textcolor{blue}{only} eigenvalues in one particular interval of real line.
+
+  \pause
+
+  \emph{e.g.} we are interested in $[0,10^{-16}]$ or $[10^{3},10^{8}]$ or we want to use \emph{Gershgorin theorems} to isolate particolar eigenvalues.
+
+  \pause
+
+  ...If \textcolor{blue}{also} $T$ is \emph{definite} we can search eigenvalues in $[1,\infty]$ using our method with (S,T) and $\lambda_j=\frac{1}{\mu_j}$.
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{``Real world'' matrices}
+
+  Consider \emph{piecewise linear finite element discretization of} the \textcolor{blue}{Sturm-Liouville problem}
+
+  \begin{equation*}
+    - \frac{d}{d x}\Big( p(x) \frac{d u}{d x} \Big) + q(x) u = \lambda u
+  \end{equation*}
+
+  where $u=u(x),0<x<\pi$ and $u(0)=u^{'}(\pi)=0$ and $p(x)=1,q(x)=6$ ( $h=\frac{1}{n+1}$). \\
+  We obtain\symbolfootnote[1]{authors doesn't report $(T,S)$}
+  
+  \begin{align*}
+    t_{k,k} &= -6 h (2 k^2 -2 k -1)\\
+    t_{k,k+1} &= -\frac{1}{h} + h\\
+    s_{k,k} &= \frac{4 h}{6}\\
+    s_{k,k+1} &= \frac{h}{6}
+  \end{align*}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{``Real world'' matrices}
+
+  
+
 \end{frame}
 
 \begin{frame}
@@ -1308,7 +1433,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \section{Appendices}
 
 \begin{frame}[label=LagProof]
-  \frametitle{Appendice A: proof of Laguerre's convergence}
+  \frametitle{Appendix A: proof of Laguerre's convergence}
 
   According to \cite[p.444]{bookWilkinson} we can write 
 
@@ -1328,7 +1453,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}
-  \frametitle{Appendice A: proof of Laguerre's convergence}
+  \frametitle{Appendix A: proof of Laguerre's convergence}
 
   So we have \textcolor{blue}{convergence} and $\textcolor{green}{x_{\pm}^{(k+1)} - \lambda_m} \textcolor{blue}{\approx} \text{ number } \textcolor{green}{(x_{\pm}^{(k)} - \lambda_m)^3}$ tell us that the convergence is \textcolor{blue}{cubic.}
 
@@ -1336,7 +1461,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}[label=SturmSequence]
-  \frametitle{Appendice B: proof of property about Sturm sequence}
+  \frametitle{Appendix B: proof of property about Sturm sequence}
 
   
   \hyperlink{BeforeSturmSequence}{\beamergotobutton{back}}
@@ -1344,7 +1469,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}[label=Interlacing]
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
 
   \begin{de}
     For $\alpha\in[0,1]$ we define the pencil $\big( T(\alpha), S(\alpha) \big) := \big( (1-\alpha)\hat T + \alpha T, (1-\alpha)\hat S + \alpha S \big)$.
@@ -1363,7 +1488,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
 
   \begin{te}[A sort of ``interlacing'']
     \begin{align*}
@@ -1388,7 +1513,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
 
   (\textcolor{blue}{Proof by contradiction}) if we consider $\textcolor{red}{\lambda_i< \hat\lambda_{i-1}}$ for some $i\in\{2,3,\dots,n-1 \}$ (that, in our new writing, is $\textcolor{red}{\lambda_i(1)<\lambda_{i-1}(0)}$ because all $\lambda_j(1)$ are eigenvalues of $(T,S)$ and all $\lambda_j(0)$ are eigenvalues of $(\hat T, \hat S)$) then
 
@@ -1419,7 +1544,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
 
 \begin{frame}
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
   \begin{tikzpicture}
     \draw[->] (-5,-.5) -- (5,-.5); 
     \node[circle, fill=black!1, label=below:$\lambda_{i-1}(1)$] at (-3.5,-.5) {};
@@ -1444,7 +1569,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
 
 \begin{frame}
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
 
   $H(\alpha,\lambda) := det[T(\alpha)-\lambda S(\alpha)] =$
 
@@ -1471,7 +1596,7 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 \begin{frame}
-  \frametitle{Appendice B: interlacing}
+  \frametitle{Appendix B: interlacing}
 
   If $q(\tilde\lambda)\ne 0$ then $\tilde\alpha= + \sqrt{H(\tilde\alpha,\tilde\lambda)-\frac{p(\tilde\lambda)}{q(\tilde\lambda)}}\in[0,1]$.\\
   only \textcolor{red}{one} solution in $\alpha$.
@@ -1496,7 +1621,42 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 
 
 \begin{frame}[label=CodeIf]
-  \frametitle{Appendice D: code}
+  \frametitle{Appendix D: code}
+
+%  \begin{lstlisting}[style=fortranSlide, caption={how to find $[a_j,b_j]$}]
+%    if (kappa+1 < j) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%    if (j < kappa) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%    if (kappa >= j .AND. segno >= 0) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%    \end{lstlisting}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Appendix D: code}
+
+%  \begin{lstlisting}[style=fortranSlide, caption={how to find $[a_j,b_j]$}]
+%    if (kappa < j .AND. segno < 0) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%    if (kappa == 0 .AND. segno <0) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%    if (kappa == dim .AND. segno >=0) then
+%    x = (aj+bj)/2.d0
+%    GOTO 100
+%    end if
+%  \end{lstlisting}
   \hyperlink{BeforeCodeIf}{\beamergotobutton{back}}
 \end{frame}
 

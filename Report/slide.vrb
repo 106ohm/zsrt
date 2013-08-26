@@ -1,4 +1,4 @@
-\frametitle {Matrix storin}
+\frametitle {Matrix storing}
 
 \begin{equation*}
   T = trid(sub,diag,super)
