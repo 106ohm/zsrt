@@ -614,7 +614,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
     If $x = \lambda$ then $\rho_n(\lambda)=\effe{(T_n,S_n)}{\lambda}=f(\lambda)$
   \end{os}
 
-  \begin{os}[ important results with \hyperlink{SturmSequence}{\beamergotobutton{proof}} in Appendix]
+  \begin{os}[ important \hyperlink{SturmSequence}{\beamergotobutton{results}} in Appendix]
     $\rho_0,\rho_1,\dots,\rho_n$ is a \textcolor{blue}{\emph{Sturm sequence}} of polynomials so, $\forall x\in\R$, we have
 
     \begin{align*}
@@ -1407,22 +1407,52 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
     - \frac{d}{d x}\Big( p(x) \frac{d u}{d x} \Big) + q(x) u = \lambda u
   \end{equation*}
 
-  where $u=u(x),0<x<\pi$ and $u(0)=u^{'}(\pi)=0$ and $p(x)=1,q(x)=6$ ( $h=\frac{1}{n+1}$). \\
+  where $u=u(x),0<x<\pi$ and $u(0)=u^{'}(\pi)=0$ and $p(x)=x+1,q(x)=1$ ( $h=\frac{1}{n+1}$). \\
   We obtain\symbolfootnote[1]{authors doesn't report $(T,S)$}
   
+  %\begin{align*}
+  %  t_{k,k} &= -6 h (2 k^2 -2 k -1)\\
+  %  t_{k,k+1} &= -\frac{1}{h} + h\\
+  %  s_{k,k} &= \frac{4 h}{6}\\
+  %  s_{k,k+1} &= \frac{h}{6}
+  %\end{align*}
+
   \begin{align*}
-    t_{k,k} &= -6 h (2 k^2 -2 k -1)\\
-    t_{k,k+1} &= -\frac{1}{h} + h\\
+    t_{k,k} &= 2(n+1+i) + \frac{2}{3}\frac{1}{n+1}\\
+    t_{k,k+1} &= -n -\frac{3}{2}-i+\frac{1}{6}\frac{1}{n+1}\\
     s_{k,k} &= \frac{4 h}{6}\\
     s_{k,k+1} &= \frac{h}{6}
   \end{align*}
 
 \end{frame}
 
+
 \begin{frame}
   \frametitle{``Real world'' matrices}
 
-  
+  Error analysis with $\{ x_i \}_{i=1,\dots,9}$ and $n=256$. We consider $|\lambda_4 - x_i|\le 10^{-i}$
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/ConfrontoLagItInerziaKappa_Sturm.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{``Real world'' matrices}
+
+  In this case we plot\symbolfootnote[1]{for $n=2^k$ with $k=1,\dots,9$} the absolute module of $\frac{\text{larger error}}{\text{larger eigenvalues}}$ 
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/Errori_SturmLiouville_9.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+In this case we observe a great error: $\eta_n,\zeta_n$ are too small to produce a good Laguerre's iteration. 
 
 \end{frame}
 
@@ -1460,13 +1490,6 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
   \hyperlink{BeforeLagProof}{\beamergotobutton{back}}
 \end{frame}
 
-\begin{frame}[label=SturmSequence]
-  \frametitle{Appendix B: proof of property about Sturm sequence}
-
-  
-  \hyperlink{BeforeSturmSequence}{\beamergotobutton{back}}
-
-\end{frame}
 
 \begin{frame}[label=Interlacing]
   \frametitle{Appendix B: interlacing}
@@ -1620,6 +1643,28 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
 \end{frame}
 
 
+\begin{frame}[label=SturmSequence]
+  \frametitle{Appendix C: property about Sturm sequence}
+
+  According to \cite[p.300]{bookWilkinson} we can proove \textcolor{blue}{by induction} the following
+
+  \begin{te}
+    Let the quantities $\rho_0(x),\dots,\rho_n(x)$ be evalueted for some value of $x$. Then $s(x)$, the number of agreements in sign of consecutive members of yhis sequence, is the number of eigenvalues of the problems which are strictly greater than $x$.
+  \end{te}
+
+  \pause
+
+  There is an equivalent way to mesure \textcolor{blue}{\# eigenvalues befor (after)} $\textcolor{blue}{x}$
+  
+  \begin{te}[Sylvester's law of inertia]
+   $T,S$ \textcolor{blue}{symmetric real matrices}. For all $Q \tc Q(T-xS)Q^{T}=D$, where $D$ is diagonal with only entries $0,+1,-1$, the number of $0,+1,-1$ is \textcolor{blue}{invariant}. 
+  \end{te}
+  
+  \hyperlink{BeforeSturmSequence}{\beamergotobutton{back}}
+
+\end{frame}
+
+
 \begin{frame}[label=CodeIf]
   \frametitle{Appendix D: code}
 
@@ -1666,11 +1711,6 @@ We have $j,x,\text{ sgn} \Big( -\frac{f^{`}(x)}{f(x)} \Big)$ and $\hat\lambda_1,
   \bibliographystyle{alpha}
 \end{frame}
 
-\frame{
-\begin{center}
-Grazie (ancora) per l'attenzione.
-\end{center}
-}
 
 
 

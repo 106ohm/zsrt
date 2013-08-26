@@ -1,0 +1,24 @@
+\begin{thebibliography}{Dra03}
+
+\bibitem[BG84]{principal}
+A.~Bunse-Gerstner.
+\newblock An algorithm for the symmetric generalized eigenvalue problem.
+\newblock {\em Linear Algebra Appl.}, 58:43--68, 1984.
+
+\bibitem[Dra03]{julia}
+V.~Drakopoulos.
+\newblock Are there any {J}ulia sets for the {L}aguerre iteration function?
+\newblock {\em Comput. Math. Appl.}, 46(8-9):1201--1210, 2003.
+
+\bibitem[LZ94]{secondary}
+T.~Y. Li and Zhong~Gang Zeng.
+\newblock The {L}aguerre iteration in solving the symmetric tridiagonal
+  eigenproblem, revisited.
+\newblock {\em SIAM J. Sci. Comput.}, 15(5):1145--1173, 1994.
+
+\bibitem[Wil65]{bookWilkinson}
+J.~H. Wilkinson.
+\newblock {\em The algebraic eigenvalue problem}.
+\newblock Clarendon Press, Oxford, 1965.
+
+\end{thebibliography}

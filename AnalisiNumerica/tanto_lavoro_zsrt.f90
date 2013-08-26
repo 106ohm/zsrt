@@ -45,7 +45,7 @@ machinePrecision=epsilon(1.d0)
 !4) stampo le informazioni dentro i cicli. 
 verbose = 4
 
-kMax=3
+kMax=9
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
@@ -61,7 +61,7 @@ do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'Errori_SturmLiouville.ps/PS',1,1)
+IER = PGBEG(0,'Errori_SturmLiouville_10.ps/PS',1,1)
 if (IER.ne.1) stop
 
 write(*,*)"-------------------------------------------------------"
@@ -162,7 +162,7 @@ do k=1,kMax
 !!$   b=1.d-1 + 5.d-2 + 2.d-2
 
    a=0.d0
-   b=1400.d0
+   b=10.d0**10
 
    call calcoloAutovaloriDentroI(a, b, n, T(1:n,0:1), S(1:n,0:1), en, em, Eigenvalues(1:n,1:k), verbose)
 
@@ -230,7 +230,7 @@ do k=1,kMax
    
    do i=1,n
       v(i) = abs( v(i)-vEispack(i) )
-      if ( verbose >= 0 .AND. n==256 ) then
+      if ( verbose >= 3 ) then
          write(*,*)"diff=", v(i)
       end if
    end do
@@ -243,7 +243,7 @@ do k=1,kMax
    end do
 
    !dati per il disegno
-   yPlot(k) = maxError
+   yPlot(k) = maxError/vEispack(n)
 
    write(*,*)"maxError="
    write(*,*) maxError
@@ -261,7 +261,7 @@ end do
 
 CALL PGENV(0.0,kMax*1.0,0.0,maxTotError,0,1)
 CALL PGPT(kMax,xPlot,yPlot,3)
-call PGLAB('','', '')
+call PGLAB('','', 'max error over max eigenvalues')
 call PGEND
 
 
@@ -1819,7 +1819,7 @@ do i=1,n-1
    S(i+1,1) = 1.d0/(6.d0*(n+1))
 end do
 
-T(n,0) = -(6.d0*(2.d0*n**2-2.d0*n-1.d0))/(n+1)
+T(n,0) = 2.d0*(n+1+n) + (2.0/3.0)/(n+1)
 T(1,1) = 0.d0
 S(n,0) = 4.d0/(6.d0*(n+1))
 S(1,1) = 0.d0

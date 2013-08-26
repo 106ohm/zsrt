@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  26 AUG 2013 17:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.7.1)  26 AUG 2013 22:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,31 +1022,25 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ] [7
 
-]
+] [8
 
-LaTeX Warning: Citation `principal' on page 8 undefined on input line 278.
-
-[8
-
-]
-
-LaTeX Warning: Citation `principal' on page 9 undefined on input line 278.
-
-[9
+] [9
 
 ]
 \openout4 = `slide.vrb'.
 
- (./slide.vrb (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ (./slide.vrb
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )) [10
 
-]
-[11
+] [11
 
-] [12
+]
+[12
 
 ] [13
 
@@ -1074,10 +1068,10 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 
 ] [25
 
-]
-[26
+] [26
 
-] [27
+]
+[27
 
 ]
 Overfull \hbox (5.27864pt too wide) in paragraph at lines 495--495
@@ -1107,17 +1101,9 @@ Overfull \hbox (5.27864pt too wide) in paragraph at lines 495--495
 
 [31
 
-]
+] [32
 
-LaTeX Warning: Citation `secondary' on page 32 undefined on input line 511.
-
-[32
-
-]
-
-LaTeX Warning: Citation `julia' on page 33 undefined on input line 528.
-
-<images/JuliaLaguerre.pdf, id=898, 408.32549pt x 414.1071pt>
+] <images/JuliaLaguerre.pdf, id=904, 408.32549pt x 414.1071pt>
 File: images/JuliaLaguerre.pdf Graphic file (type pdf)
 
 <use images/JuliaLaguerre.pdf>
@@ -1126,10 +1112,8 @@ Package pdftex.def Info: images/JuliaLaguerre.pdf used on input line 528.
  [33
 
  <./images/JuliaLaguerre.pdf>]
-
-LaTeX Warning: Citation `julia' on page 34 undefined on input line 528.
-
 File: images/JuliaLaguerre.pdf Graphic file (type pdf)
+
 <use images/JuliaLaguerre.pdf>
 Package pdftex.def Info: images/JuliaLaguerre.pdf used on input line 528.
 (pdftex.def)             Requested size: 122.49858pt x 124.23308pt.
@@ -1217,7 +1201,7 @@ OML/cmm/m/it/10.95 < \OT1/cmss/m/it/10.95 m[][] \OMS/cmsy/m/n/10.95 ^^@ [] ^^U
 ] [51
 
 ]
-<images/Tempi_con_riferimento_quadrato_13.pdf, id=1395, 692.3466pt x 500.83109p
+<images/Tempi_con_riferimento_quadrato_13.pdf, id=1403, 692.3466pt x 500.83109p
 t>
 File: images/Tempi_con_riferimento_quadrato_13.pdf Graphic file (type pdf)
  <use images/Tempi_con_riferimento_quadrato_13.pdf>
@@ -1227,7 +1211,7 @@ nput line 737.
  [52
 
  <./images/Tempi_con_riferimento_quadrato_13.pdf>]
-<images/Tempi_13.pdf, id=1435, 781.96138pt x 570.21031pt>
+<images/Tempi_13.pdf, id=1443, 781.96138pt x 570.21031pt>
 File: images/Tempi_13.pdf Graphic file (type pdf)
 
 <use images/Tempi_13.pdf>
@@ -1236,7 +1220,7 @@ Package pdftex.def Info: images/Tempi_13.pdf used on input line 750.
  [53
 
  <./images/Tempi_13.pdf>]
-<images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf, id=1467, 692.34
+<images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf, id=1475, 692.34
 66pt x 500.83109pt>
 File: images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf Graphic fil
 e (type pdf)
@@ -1261,7 +1245,7 @@ ete.pdf used on input line 764.
 ] [60
 
 ]
-<images/IstogrammaEsponentiErrori_256.pdf, id=1654, 667.77483pt x 480.59549pt>
+<images/IstogrammaEsponentiErrori_256.pdf, id=1662, 667.77483pt x 480.59549pt>
 File: images/IstogrammaEsponentiErrori_256.pdf Graphic file (type pdf)
 
 <use images/IstogrammaEsponentiErrori_256.pdf>
@@ -1279,7 +1263,7 @@ Package pdftex.def Info: images/IstogrammaEsponentiErrori_256.pdf used on input
 ] [65
 
 ]
-<images/ConfrontoLagItInerziaKappa.pdf, id=1796, 674.27911pt x 472.6458pt>
+<images/ConfrontoLagItInerziaKappa.pdf, id=1804, 674.27911pt x 472.6458pt>
 File: images/ConfrontoLagItInerziaKappa.pdf Graphic file (type pdf)
 
 <use images/ConfrontoLagItInerziaKappa.pdf>
@@ -1289,7 +1273,7 @@ ne 852.
  [66
 
  <./images/ConfrontoLagItInerziaKappa.pdf>]
-<images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf, id=1829, 67
+<images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf, id=1837, 67
 4.27911pt x 472.6458pt>
 File: images/ConfrontoLagItInerziaKappa_scala_logaritmica_reciproco.pdf Graphic
  file (type pdf)
@@ -1322,23 +1306,9 @@ ciproco.pdf used on input line 868.
 
 ] [77
 
-]
+] [78
 
-LaTeX Warning: Citation `principal' on page 78 undefined on input line 1076.
-
-
-LaTeX Warning: Citation `secondary' on page 78 undefined on input line 1076.
-
-[78
-
-]
-
-LaTeX Warning: Citation `principal' on page 79 undefined on input line 1076.
-
-
-LaTeX Warning: Citation `secondary' on page 79 undefined on input line 1076.
-
-[79
+] [79
 
 ] [80
 
@@ -1405,7 +1375,7 @@ Overfull \hbox (6.0903pt too wide) in paragraph at lines 1204--1204
 ] [91
 
 ]
-<images/ParallelComputing_Broadcast_Operation.jpg, id=2488, 326.21875pt x 232.8
+<images/ParallelComputing_Broadcast_Operation.jpg, id=2500, 326.21875pt x 232.8
 7pt>
 File: images/ParallelComputing_Broadcast_Operation.jpg Graphic file (type jpg)
  <use images/ParallelComputing_Broadcast_Operation.jpg>
@@ -1415,7 +1385,7 @@ on input line 1278.
  [92
 
  <./images/ParallelComputing_Broadcast_Operation.jpg>]
-<images/SequentialComputing.jpg, id=2515, 326.21875pt x 232.87pt>
+<images/SequentialComputing.jpg, id=2527, 326.21875pt x 232.87pt>
 File: images/SequentialComputing.jpg Graphic file (type jpg)
 
 <use images/SequentialComputing.jpg>
@@ -1447,16 +1417,27 @@ Package pdftex.def Info: images/SequentialComputing.jpg used on input line 1291
 
 ] [104
 
-] [105
-
-] [106
-
 ]
+<images/ConfrontoLagItInerziaKappa_Sturm.pdf, id=2833, 674.27911pt x 475.5366pt
+>
+File: images/ConfrontoLagItInerziaKappa_Sturm.pdf Graphic file (type pdf)
+ <use images/ConfrontoLagItInerziaKappa_Sturm.pdf>
+Package pdftex.def Info: images/ConfrontoLagItInerziaKappa_Sturm.pdf used on in
+put line 1441.
+(pdftex.def)             Requested size: 202.2853pt x 142.66208pt.
+ [105
 
-LaTeX Warning: Citation `bookWilkinson' on page 107 undefined on input line 145
-3.
+ <./images/ConfrontoLagItInerziaKappa_Sturm.pdf>]
+<images/Errori_SturmLiouville_9.pdf, id=2866, 673.55638pt x 506.6127pt>
+File: images/Errori_SturmLiouville_9.pdf Graphic file (type pdf)
 
-[107
+<use images/Errori_SturmLiouville_9.pdf>
+Package pdftex.def Info: images/Errori_SturmLiouville_9.pdf used on input line 
+1457.
+(pdftex.def)             Requested size: 202.06847pt x 151.98497pt.
+ [106
+
+ <./images/Errori_SturmLiouville_9.pdf>] [107
 
 ] [108
 
@@ -1478,10 +1459,10 @@ LaTeX Warning: Citation `bookWilkinson' on page 107 undefined on input line 145
 
 ] [117
 
-] [118
-
 ]
-[119
+[118
+
+] [119
 
 ] [120
 
@@ -1504,12 +1485,13 @@ LaTeX Warning: Citation `bookWilkinson' on page 107 undefined on input line 145
 ] [129
 
 ]
-No file slide.bbl.
 [130
 
 ] [131
 
-]
+] (./slide.bbl) [132
+
+ </usr/share/texmf/tex/latex/beamer/base/art/beamericonarticle.pdf>]
 \tf@nav=\write7
 \openout7 = `slide.nav'.
 
@@ -1519,11 +1501,11 @@ No file slide.bbl.
 \tf@snm=\write9
 \openout9 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1680.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1680.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1720.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1720.
  (./slide.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1680.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1680.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1720.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1720.
 
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: DC2CF75629A4CD72349CB0F18B909193;518.
@@ -1532,17 +1514,14 @@ Package rerunfilecheck Info: File `slide.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1680.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1720.
  ) 
 Here is how much of TeX's memory you used:
- 22159 strings out of 494964
- 420728 string characters out of 3179448
- 504313 words of memory out of 3000000
- 24550 multiletter control sequences out of 15000+200000
- 20840 words of font info for 80 fonts, out of 3000000 for 9000
+ 22219 strings out of 494964
+ 422805 string characters out of 3179448
+ 504421 words of memory out of 3000000
+ 24599 multiletter control sequences out of 15000+200000
+ 20252 words of font info for 78 fonts, out of 3000000 for 9000
  59 hyphenation exceptions out of 8191
  81i,21n,102p,394b,1582s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
@@ -1567,10 +1546,10 @@ nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm10.pfb>
-Output written on slide.pdf (131 pages, 767105 bytes).
+Output written on slide.pdf (132 pages, 781599 bytes).
 PDF statistics:
- 3655 PDF objects out of 4296 (max. 8388607)
- 3433 compressed objects within 35 object streams
- 297 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3722 PDF objects out of 4296 (max. 8388607)
+ 3490 compressed objects within 35 object streams
+ 304 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 
