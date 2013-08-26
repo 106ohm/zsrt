@@ -714,23 +714,53 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
   
   \pause
 
-  Total $=2 + 38n$ multiplications.
+  \symbolfootnote[1]{we consider all elements of diag and super of $(T,S)$ as non zero.} Total $\le 2 + 38n$ multiplications.
 
   \pause
 
-  For every step in Laguerre's iteration we have to do $2 + 7 + 38n$ multiplications and $1$ square root extraction. Because the convergence is cubic we \textcolor{green}{hope} in a small number of iteration.
+  For every step in Laguerre's iteration we have to do $2 + 7 + 38n$ (at most) multiplications and $1$ square root extraction. Because the convergence is cubic we \textcolor{green}{hope} in a small number of iteration.
 
 \end{frame}
 
 \begin{frame}
-  \frametitle{What we really calculate is...}
+  \frametitle{Complexity}
+
+  \symbolfootnote[1]{They use $n<100$, \\ my experiment ends up with $n=2^{13}=8192$.}Author's prevision: $O(n^2)$.\\
+  With $(I,S)$ and eigenvalues between $0.5$ and $1.5$ we have
 
   \begin{figure}
     \centering
-    \includegraphics[scale=0.3]{images/NumeroMoltiplicazioni_9_Modificato.pdf}
+    \includegraphics[scale=0.3]{images/Tempi_con_riferimento_quadrato_13.pdf}
     %\caption{$*$= Laguerre's iterations, $+$= bisections}
   \end{figure}
   
+\end{frame}
+
+\begin{frame}
+  \frametitle{Complexity}
+
+  And in linear scale:
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/Tempi_13.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Complexity}
+  With $T=(a_i,1,a_i),S=(b_i, c_i ,b_i)$ and $a_i, b_i$ random numbers $\tc |a_i|\le 10^{-3}, |b_i|\le 10^{-1}, c_i = i 10^{-1} + |2 b_i|$ we have
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/Tempi_con_riferimento_quadrato_13_matrici_complete.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+We can appreciate little differences between $T=(0,1,0)$ and $T=(a_i,1,a_i)$
+
 \end{frame}
 
 %%%
@@ -742,7 +772,7 @@ So if we want to solve the Generalized Eigenvalues Problem with $T,S\in\textcolo
 \begin{frame}
   \frametitle{Error Analysis}
 
-It's a common knowledge that three-term-recurrences suffer from severe overflow and underflow problems, and because of the we use $\xi_i$ instead of $\rho_i$: 
+It's a common knowledge that three-term-recurrences suffer from severe overflow and underflow problems, and because of that we use $\xi_i$ instead of $\rho_i$: 
 
 \pause
 
@@ -762,7 +792,7 @@ It's a common knowledge that three-term-recurrences suffer from severe overflow 
 \begin{frame}
   \frametitle{Error Analysis}
 
-We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \text{fl}[\xi_i]  \Big]$, but also in $\text{fl}[\eta_n]$ and $\text{fl}[\zeta_n]$, because we use these three value to colculate the Laguerre's iteration.
+We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \text{fl}[\xi_i]  \Big]$, but also in $\text{fl}[\eta_n]$ and $\text{fl}[\zeta_n]$, because we use these three value to calculate the Laguerre's iteration.
 
 \pause
 
@@ -770,8 +800,40 @@ We are interested not only in $\text{fl}[f(x)]=\text{fl}\Big[ \prod_{i=1}^n \tex
 
 \pause
 
+($\text{fl}[\eta_n],\text{fl}[\zeta_n]$ suffer from similar problems and have similar backward analysis, but they are -in partucular $\zeta_n$- enourmous in magnitude, sometimes this can cause trobles)
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exponent of absolute error ($n=256$)}
+  With $(I,S)$ and eigenvalue between $0.5$ and $1.5$ we have
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{images/IstogrammaEsponentiErrori_256.pdf}
+    %\caption{$*$= Laguerre's iterations, $+$= bisections}
+  \end{figure}
+
+\end{frame}
 
 
+\begin{frame}
+  \frametitle{Where is the problem?}
+
+   Sometimes (about $3$ over $100$ eigenvalues with $n \ge 256$) Laguerre's iteration \textcolor{red}{break the monotonic convergence}! 
+
+   \pause
+
+   In these cases we have slower convergence and greater error.
+
+   \pause
+
+   I think the problem is in $\kappa,\eta_n,\zeta_n$. \\ Sometimes, when $|\lambda_j - x_0|\le 10^{-4}$ and $(T,S)$ have small elements, we can have troubles.
+
+   \pause
+
+   If we compare $\kappa(x_i)$ and the same number \textcolor{blue}{obtained with \emph{inertia}} for $|\lambda_j - x_i|\le 10^{-i}$ and $i=1,\dots,16$ we have
+ 
 \end{frame}
 
 \section{Good initial point}

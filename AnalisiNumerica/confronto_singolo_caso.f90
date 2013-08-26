@@ -966,8 +966,8 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo + sqrt(xl(0))
 
-      xl(0) = xl(-1) - (n*1.d0)/xl(0)
-      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
 
       !xl(0) = xl(-1) + (n*1.d0)/(-fPrimo + &
@@ -980,8 +980,8 @@ do while ( .TRUE. )
 
       xl(0) = -fPrimo - sqrt(xl(0))
       
-      xl(0) = xl(-1) - (n*1.d0)/xl(0)
-      !xl(0) = xl(-1) + (n*1.d0)/xl(0)
+      !xl(0) = xl(-1) - (n*1.d0)/xl(0)
+      xl(0) = xl(-1) + (n*1.d0)/xl(0)
 
 
 

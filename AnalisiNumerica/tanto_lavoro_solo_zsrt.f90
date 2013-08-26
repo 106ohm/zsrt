@@ -46,7 +46,7 @@ machinePrecision=epsilon(1.d0)
 !4) stampo le informazioni dentro i cicli. 
 verbose = 0
 
-kMax=13
+kMax=14
 
 allocate( T(1:2**kMax,0:1), S(1:2**kMax,0:1) )
 allocate( Eigenvalues(2**kmax,kMax) )
@@ -63,7 +63,7 @@ do i=1,kMax
    xPlot(i)=i*1.0
 end do
 
-IER = PGBEG(0,'NumMolt_13_maxLagIt_50.ps/PS',1,1)
+IER = PGBEG(0,'NumMolt_14_maxLagIt_50.ps/PS',1,1)
 if (IER.ne.1) stop
 
 write(*,*)"-------------------------------------------------------"
